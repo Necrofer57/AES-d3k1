@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "d3k1-cikmis-sorular",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
