@@ -5,5 +5,8 @@
   "description": "Dönem 3 1. Kurul Çıkmış Sorular ve Sınav Platformu (2019-2026)",
   "scripts": {
     "start": "npx serve ."
+  },
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
   }
 }
