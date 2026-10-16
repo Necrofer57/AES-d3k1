@@ -104,8 +104,8 @@
           <span class="text-slate-300">|</span>
           <span class="text-amber-600 font-semibold" id="hdr-fav">★ 0 Favori</span>
         </div>
-        <button id="btn-view-toggle" type="button" class="hidden px-3 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 items-center gap-1.5 shadow-sm" title="Tek Soru / Liste Görünümü Değiştir">
-          <span id="view-toggle-label">📄 Liste Görünümü</span>
+        <button id="btn-view-toggle" type="button" class="hidden px-3 py-1.5 rounded-xl border border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-xs font-bold text-indigo-700 items-center gap-1.5 shadow-sm transition-colors" title="Liste / Tek Tek Soru Görünümü Değiştir">
+          <span id="view-toggle-label">🎯 Tek Tek Soru Ekranı</span>
         </button>
         <button id="btn-open-reset-modal" type="button" class="px-2.5 py-1.5 rounded-xl border border-rose-200 bg-rose-50 hover:bg-rose-100 text-xs font-semibold text-rose-700 transition-colors" title="Çözüm Geçmişini Sıfırla">
           Sıfırla
@@ -290,6 +290,14 @@
           </div>
         </div>
         <div class="flex flex-wrap items-center gap-2">
+          <div class="inline-flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200">
+            <button id="btn-toolbar-list" type="button" class="px-2.5 py-1 rounded-lg text-xs font-bold transition-all bg-white text-indigo-700 shadow-sm">
+              📋 Liste Görünümü
+            </button>
+            <button id="btn-toolbar-single" type="button" class="px-2.5 py-1 rounded-lg text-xs font-semibold transition-all text-slate-600 hover:text-slate-900">
+              🎯 Tek Tek Soru
+            </button>
+          </div>
           <button id="btn-shuffle-now" type="button" class="px-3 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 transition-colors">
             🎲 Karıştır
           </button>
@@ -596,7 +604,7 @@
     const state = {
       activeKurul: null,        // null (Ana Sayfa) | '1'..'7'
       viewMode: 'study',        // 'study' | 'exam' | 'stats'
-      displayStyle: 'single',   // 'single' | 'list'
+      displayStyle: 'list',     // 'list' | 'single'
       selectedYears: new Set(),
       selectedSubjects: new Set(),
       selectedProfs: new Set(),
@@ -857,6 +865,8 @@
       state.revealedIds.clear();
       state.currentIndex = 0;
       state.listPage = 1;
+      state.displayStyle = 'list';
+      syncDisplayStyleUI();
 
       document.getElementById('search-input').value = '';
       document.getElementById('prof-search-input').value = '';
@@ -1301,8 +1311,17 @@
               ${hasRepeats ? `<span class="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-rose-100 text-rose-800 border border-rose-300">🔁 ${totalAskCount} Kez Çıkmış</span>` : ''}
               ${q.note && q.note.toLowerCase().includes('iptal') ? `<span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-rose-100 text-rose-800 border border-rose-300">⚠️ Sınavda İptal Edildi</span>` : ''}
             </div>
-            <div class="flex items-center gap-1.5">
+            <div class="flex flex-wrap items-center gap-1.5">
               <span class="text-xs font-semibold text-slate-400 mr-1">#${idxInList + 1} / ${totalInList}</span>
+              ${state.displayStyle === 'list' ? `
+                <button type="button" data-open-single-idx="${idxInList}" class="btn-card-open-single px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-xs font-bold text-indigo-700 transition-colors" title="Bu soruyu tek tek soru çözme ekranında aç">
+                  🎯 Tek Soru Ekranı
+                </button>
+              ` : `
+                <button type="button" class="btn-card-back-list px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-xs font-bold text-slate-700 transition-colors" title="Liste görünümüne geri dön">
+                  📋 Liste Görünümü
+                </button>
+              `}
               ${!isExam ? `
                 <button type="button" data-reveal-qid="${q.id}" class="btn-card-reveal px-2.5 py-1 rounded-lg border border-slate-200 hover:bg-slate-100 text-xs font-semibold text-slate-600" title="Cevabı Göster/Gizle">
                   👁️ ${state.revealedIds.has(q.id) ? 'Cevabı Gizle' : 'Cevabı Göster'}
@@ -1415,12 +1434,17 @@
 
         container.innerHTML = `
           ${buildQuestionCardHtml(q, state.currentIndex, activeList.length)}
-          <div class="bg-white rounded-2xl border border-slate-200 p-3 flex items-center justify-between gap-2 shadow-sm">
+          <div class="bg-white rounded-2xl border border-slate-200 p-3 flex flex-wrap items-center justify-between gap-2 shadow-sm">
             <button id="btn-prev-q" type="button" ${state.currentIndex <= 0 ? 'disabled' : ''} class="px-4 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-1.5 ${prevDisabled}">
               ← Önceki Soru
             </button>
-            <div class="text-xs font-semibold text-slate-500">
-              Soru <strong class="text-slate-900">${state.currentIndex + 1}</strong> / ${activeList.length}
+            <div class="flex items-center gap-3">
+              <div class="text-xs font-semibold text-slate-500">
+                Soru <strong class="text-slate-900">${state.currentIndex + 1}</strong> / ${activeList.length}
+              </div>
+              <button type="button" class="btn-card-back-list px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-700">
+                📋 Liste Görünümüne Dön
+              </button>
             </div>
             <button id="btn-next-q" type="button" ${state.currentIndex >= activeList.length - 1 ? 'disabled' : ''} class="px-4 py-2 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center gap-1.5 ${nextDisabled}">
               Sonraki Soru →
@@ -1473,6 +1497,19 @@
           const qid = btn.getAttribute('data-qid');
           const opt = btn.getAttribute('data-opt');
           handleSelectOption(qid, opt);
+        });
+      });
+
+      container.querySelectorAll('.btn-card-open-single').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.getAttribute('data-open-single-idx'), 10);
+          setDisplayStyle('single', idx);
+        });
+      });
+
+      container.querySelectorAll('.btn-card-back-list').forEach(btn => {
+        btn.addEventListener('click', () => {
+          setDisplayStyle('list', state.currentIndex);
         });
       });
 
@@ -1904,6 +1941,49 @@
       });
     }
 
+    function syncDisplayStyleUI() {
+      const lbl = document.getElementById('view-toggle-label');
+      if (lbl) {
+        lbl.textContent = state.displayStyle === 'single'
+          ? '📋 Liste Görünümü'
+          : '🎯 Tek Tek Soru Ekranı';
+      }
+      const btnList = document.getElementById('btn-toolbar-list');
+      const btnSingle = document.getElementById('btn-toolbar-single');
+      if (btnList && btnSingle) {
+        if (state.displayStyle === 'list') {
+          btnList.className = "px-2.5 py-1 rounded-lg text-xs font-bold transition-all bg-white text-indigo-700 shadow-sm";
+          btnSingle.className = "px-2.5 py-1 rounded-lg text-xs font-semibold transition-all text-slate-600 hover:text-slate-900";
+        } else {
+          btnSingle.className = "px-2.5 py-1 rounded-lg text-xs font-bold transition-all bg-white text-indigo-700 shadow-sm";
+          btnList.className = "px-2.5 py-1 rounded-lg text-xs font-semibold transition-all text-slate-600 hover:text-slate-900";
+        }
+      }
+    }
+
+    function setDisplayStyle(style, targetIdx = null) {
+      state.displayStyle = style;
+      if (targetIdx !== null && !isNaN(targetIdx)) {
+        state.currentIndex = targetIdx;
+        state.listPage = Math.floor(targetIdx / state.listPageSize) + 1;
+      }
+      syncDisplayStyleUI();
+      renderMainArea();
+      renderQuestionMap();
+      if (style === 'single') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (targetIdx !== null) {
+        const activeList = state.viewMode === 'exam' && (state.examActive || state.examFinished)
+          ? state.examQuestions
+          : state.filteredQuestions;
+        const q = activeList[state.currentIndex];
+        if (q) {
+          const card = document.querySelector(`[data-card-qid="${q.id}"]`);
+          if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    }
+
     function switchViewMode(mode) {
       state.viewMode = mode;
       const tabs = {
@@ -1961,13 +2041,18 @@
       });
 
       document.getElementById('btn-view-toggle').addEventListener('click', () => {
-        state.displayStyle = state.displayStyle === 'single' ? 'list' : 'single';
-        document.getElementById('view-toggle-label').textContent = state.displayStyle === 'single'
-          ? '📄 Liste Görünümü'
-          : '🎯 Tek Soru Görünümü';
-        renderMainArea();
-        renderQuestionMap();
+        const nextStyle = state.displayStyle === 'single' ? 'list' : 'single';
+        setDisplayStyle(nextStyle, state.currentIndex);
       });
+
+      const btnToolbarList = document.getElementById('btn-toolbar-list');
+      const btnToolbarSingle = document.getElementById('btn-toolbar-single');
+      if (btnToolbarList) {
+        btnToolbarList.addEventListener('click', () => setDisplayStyle('list', state.currentIndex));
+      }
+      if (btnToolbarSingle) {
+        btnToolbarSingle.addEventListener('click', () => setDisplayStyle('single', state.currentIndex));
+      }
 
       const searchInput = document.getElementById('search-input');
       const clearSearchBtn = document.getElementById('btn-clear-search');
