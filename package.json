@@ -1,8 +1,8 @@
 {
-  "name": "d3k1-cikmis-sorular-platformu",
-  "version": "1.0.0",
+  "name": "d3-tum-kurullar-cikmis-sorular-platformu",
+  "version": "2.0.0",
   "private": true,
-  "description": "Dönem 3 1. Kurul Çıkmış Sorular ve Sınav Platformu (2019-2026)",
+  "description": "Dönem 3 Tüm Kurullar (1-7. Kurul) Çıkmış Sorular ve Sınav Platformu (2019-2026)",
   "scripts": {
     "start": "npx serve ."
   }

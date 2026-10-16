@@ -5,7 +5,7 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/((?!_vercel|data/).*)",
       "destination": "/index.html"
     }
   ]
