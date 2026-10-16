@@ -1324,15 +1324,6 @@
             </div>
             <div class="flex flex-wrap items-center gap-1.5">
               <span class="text-xs font-semibold text-slate-400 mr-1">#${idxInList + 1} / ${totalInList}</span>
-              ${state.displayStyle === 'list' ? `
-                <button type="button" data-open-single-idx="${idxInList}" class="btn-card-open-single px-2.5 py-1 rounded-lg bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-xs font-bold text-indigo-700 transition-colors" title="Bu soruyu tek tek soru çözme ekranında aç">
-                  🎯 Tek Soru Ekranı
-                </button>
-              ` : `
-                <button type="button" class="btn-card-back-list px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-300 text-xs font-bold text-slate-700 transition-colors" title="Liste görünümüne geri dön">
-                  📋 Liste Görünümü
-                </button>
-              `}
               ${!isExam ? `
                 <button type="button" data-reveal-qid="${q.id}" class="btn-card-reveal px-2.5 py-1 rounded-lg border border-slate-200 hover:bg-slate-100 text-xs font-semibold text-slate-600" title="Cevabı Göster/Gizle">
                   👁️ ${state.revealedIds.has(q.id) ? 'Cevabı Gizle' : 'Cevabı Göster'}
