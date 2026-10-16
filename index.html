@@ -498,13 +498,13 @@
   <div id="toast-box" class="hidden fixed bottom-5 right-5 z-50 px-4 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-semibold shadow-lg border border-slate-700"></div>
 
   <!-- Kurul Veri Dosyaları (1–7. Kurul) -->
-  <script src="data/kurul-1.js"></script>
-  <script src="data/kurul-2.js"></script>
-  <script src="data/kurul-3.js"></script>
-  <script src="data/kurul-4.js"></script>
-  <script src="data/kurul-5.js"></script>
-  <script src="data/kurul-6.js"></script>
-  <script src="data/kurul-7.js"></script>
+  <script src="/data/kurul-1.js"></script>
+  <script src="/data/kurul-2.js"></script>
+  <script src="/data/kurul-3.js"></script>
+  <script src="/data/kurul-4.js"></script>
+  <script src="/data/kurul-5.js"></script>
+  <script src="/data/kurul-6.js"></script>
+  <script src="/data/kurul-7.js"></script>
 
   <script>
     const KURUL_META = {
@@ -799,6 +799,62 @@
       });
     }
 
+    let _suppressUrlPush = false;
+
+    function syncUrlRoute(replace = false) {
+      if (_suppressUrlPush) return;
+      try {
+        let targetPath = '/';
+        if (state.activeKurul && KURUL_META[state.activeKurul]) {
+          targetPath = `/kurul-${state.activeKurul}`;
+          if (state.viewMode === 'exam') targetPath += '/sinav';
+          else if (state.viewMode === 'stats') targetPath += '/analiz';
+          document.title = `${KURUL_META[state.activeKurul].title} • Dönem 3 Çıkmış Sorular`;
+        } else {
+          document.title = 'Dönem 3 • Tüm Kurullar (1–7. Kurul) Çıkmış Sorular & Sınav Platformu (2019–2026)';
+        }
+
+        if (window.location.protocol !== 'file:') {
+          if (window.location.pathname !== targetPath) {
+            if (replace) {
+              window.history.replaceState({ kurul: state.activeKurul, mode: state.viewMode }, '', targetPath);
+            } else {
+              window.history.pushState({ kurul: state.activeKurul, mode: state.viewMode }, '', targetPath);
+            }
+            if (typeof window.va === 'function') {
+              window.va('pageview', { path: targetPath });
+            }
+          }
+        } else {
+          const hashVal = targetPath === '/' ? '' : `#${targetPath.slice(1)}`;
+          if (window.location.hash !== hashVal) {
+            window.location.hash = hashVal;
+          }
+        }
+      } catch (e) {}
+    }
+
+    function applyRouteFromUrl() {
+      const rawPath = window.location.protocol === 'file:'
+        ? window.location.hash.replace(/^#\/?/, '/')
+        : window.location.pathname;
+      const m = rawPath.match(/\/kurul-([1-7])(?:\/(sinav|analiz))?/i);
+      _suppressUrlPush = true;
+      try {
+        if (m) {
+          const kId = m[1];
+          const sub = (m[2] || '').toLowerCase();
+          const mode = sub === 'sinav' ? 'exam' : (sub === 'analiz' ? 'stats' : 'study');
+          selectKurul(kId, mode);
+        } else {
+          showHomeScreen();
+        }
+      } finally {
+        _suppressUrlPush = false;
+      }
+      syncUrlRoute(true);
+    }
+
     function showHomeScreen() {
       if (state.examTimerId) clearInterval(state.examTimerId);
       state.activeKurul = null;
@@ -817,6 +873,7 @@
       document.getElementById('hdr-subtitle').textContent = "2019–2026 • 1. Kurul'dan 7. Kurul'a Tüm Çıkmış ve Çalışma Soruları (4.768 Soru)";
       document.getElementById('hdr-kurul-icon').textContent = '🩺';
 
+      syncUrlRoute();
       renderHomeScreen();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -2000,6 +2057,7 @@
           el.className = "px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all text-slate-600 hover:text-slate-900";
         }
       });
+      syncUrlRoute();
       applyFiltersAndRender(false);
     }
 
@@ -2221,7 +2279,9 @@
         }
       });
 
-      showHomeScreen();
+      window.addEventListener('popstate', applyRouteFromUrl);
+      window.addEventListener('hashchange', applyRouteFromUrl);
+      applyRouteFromUrl();
     }
 
     if (document.readyState === 'loading') {
