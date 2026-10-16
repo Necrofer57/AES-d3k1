@@ -107,6 +107,9 @@
         <button id="btn-view-toggle" type="button" class="hidden px-3 py-1.5 rounded-xl border border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-xs font-bold text-indigo-700 items-center gap-1.5 shadow-sm transition-colors" title="Liste / Tek Tek Soru Görünümü Değiştir">
           <span id="view-toggle-label">🎯 Tek Tek Soru Ekranı</span>
         </button>
+        <button id="btn-open-welcome-modal" type="button" class="px-2.5 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 transition-colors" title="Uygulama Rehberi">
+          ℹ️ Rehber
+        </button>
         <button id="btn-open-reset-modal" type="button" class="px-2.5 py-1.5 rounded-xl border border-rose-200 bg-rose-50 hover:bg-rose-100 text-xs font-semibold text-rose-700 transition-colors" title="Çözüm Geçmişini Sıfırla">
           Sıfırla
         </button>
@@ -490,6 +493,49 @@
         <button id="btn-cancel-reset" type="button" class="px-3.5 py-2 rounded-xl border border-slate-200 hover:bg-slate-50 text-xs font-semibold text-slate-700">Vazgeç</button>
         <button id="btn-confirm-reset-answers" type="button" class="px-3.5 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-xs font-bold text-white">Sadece Cevapları Sıfırla</button>
         <button id="btn-confirm-reset-all" type="button" class="px-3.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-xs font-bold text-white">Her Şeyi Sıfırla (Favoriler Dahil)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- İlk Açılış Tanıtım (Hoş Geldiniz) Modalı -->
+  <div id="welcome-modal" class="hidden fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200">
+      <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-6">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-500/25 border border-indigo-400/30 text-indigo-200 text-[11px] font-bold mb-2">
+          <span>🩺 Dönem 3 • Kurul Soru & Sınav Platformu</span>
+        </div>
+        <h3 class="text-lg sm:text-xl font-extrabold tracking-tight">Hoş Geldiniz! Bu Platform Ne Yapar?</h3>
+        <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+          2019–2026 yılları arasındaki <strong>1. Kurul'dan 7. Kurul'a</strong> tüm çıkmış ve çalışma sorularını (<strong>4.768 soru</strong>) interaktif olarak çözmeniz için hazırlandı.
+        </p>
+      </div>
+      <div class="p-6 space-y-3.5 text-xs text-slate-700">
+        <div class="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-200/80">
+          <span class="text-lg shrink-0">🎯</span>
+          <div>
+            <div class="font-extrabold text-slate-900">Yıl, Ders ve Hoca Bazlı Filtreleme</div>
+            <p class="text-slate-600 mt-0.5 leading-relaxed">Sol menüden istediğiniz yılları, branşları veya hocaları seçip soruları <strong>Liste Görünümünde</strong> veya <strong>Tek Tek Soru Ekranında</strong> çözebilirsiniz.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 rounded-2xl bg-rose-50/70 border border-rose-200/80">
+          <span class="text-lg shrink-0">🔁</span>
+          <div>
+            <div class="font-extrabold text-rose-950">Tekrar Eden (Çıkmış) Soruların Tespiti</div>
+            <p class="text-rose-900/80 mt-0.5 leading-relaxed">Farklı yıllarda birden fazla kez sorulmuş sorular otomatik olarak işaretlenir. Sorunun üstündeki kutucuktan hangi yıl ve kurullarda çıktığını görüp tek tıkla o soruya geçebilirsiniz.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 p-3 rounded-2xl bg-indigo-50/70 border border-indigo-200/80">
+          <span class="text-lg shrink-0">⏱️</span>
+          <div>
+            <div class="font-extrabold text-indigo-950">Deneme Sınavı & Başarı Analizi</div>
+            <p class="text-indigo-900/80 mt-0.5 leading-relaxed">Gerçek sınav modunda süreli deneme çözebilir, <strong>Analiz & Tablo</strong> sekmesinden ders/hoca bazlı doğruluk oranlarınızı takip edebilirsiniz. İlerlemeniz bu cihazda otomatik kaydedilir.</p>
+          </div>
+        </div>
+        <div class="pt-2 flex justify-end">
+          <button id="btn-close-welcome-modal" type="button" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-extrabold shadow-md transition-colors">
+            Tamam, Başla →
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -2278,6 +2324,28 @@
           toggleFavorite(currentQ.id);
         }
       });
+
+      const welcomeModal = document.getElementById('welcome-modal');
+      const closeWelcome = () => {
+        if (welcomeModal) welcomeModal.classList.add('hidden');
+        try { localStorage.setItem('d3_welcome_seen_v1', '1'); } catch (e) {}
+      };
+      const btnOpenWelcome = document.getElementById('btn-open-welcome-modal');
+      const btnCloseWelcome = document.getElementById('btn-close-welcome-modal');
+      if (btnOpenWelcome) {
+        btnOpenWelcome.addEventListener('click', () => {
+          if (welcomeModal) welcomeModal.classList.remove('hidden');
+        });
+      }
+      if (btnCloseWelcome) {
+        btnCloseWelcome.addEventListener('click', closeWelcome);
+      }
+
+      try {
+        if (!localStorage.getItem('d3_welcome_seen_v1') && welcomeModal) {
+          welcomeModal.classList.remove('hidden');
+        }
+      } catch (e) {}
 
       window.addEventListener('popstate', applyRouteFromUrl);
       window.addEventListener('hashchange', applyRouteFromUrl);
