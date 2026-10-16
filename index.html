@@ -1225,19 +1225,29 @@
         ? `${ep} (Eşleşen Soru)`
         : (ep === 'Belirtilmemiş' ? 'Hoca Belirtilmemiş' : ep);
 
-      const hasRepeats = Array.isArray(q.repeats) && q.repeats.length > 0;
-      const totalAskCount = hasRepeats ? q.repeats.length + 1 : 1;
+      const validRepeats = Array.isArray(q.repeats)
+        ? q.repeats.filter(r => r.id !== q.id && r.year !== q.year)
+        : [];
+      const hasRepeats = validRepeats.length > 0;
+      const totalAskCount = hasRepeats ? validRepeats.length + 1 : 1;
 
       let repeatsBannerHtml = '';
       if (hasRepeats) {
-        const repeatPills = q.repeats.map(r => {
+        const selfPill = `
+          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border text-[11px] font-extrabold bg-slate-800 text-white border-slate-900 shadow-sm" title="Şu an görüntülediğiniz soru">
+            <span>📍 ${escapeHtml(q.year)}</span>
+            <span>•</span>
+            <span>${state.activeKurul}. Kurul (#${q.q_num}) (Bu Soru)</span>
+          </span>
+        `;
+        const repeatPills = validRepeats.map(r => {
           const isSameKurul = String(r.kurul) === String(state.activeKurul);
           const kurulLabel = `${r.kurul}. Kurul`;
           const badgeStyle = isSameKurul
             ? "bg-white hover:bg-rose-100 text-rose-900 border-rose-300"
             : "bg-indigo-600 hover:bg-indigo-700 text-white border-indigo-700";
           return `
-            <button type="button" data-jump-kurul="${r.kurul}" data-jump-qid="${r.id}" class="btn-jump-repeat inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border text-[11px] font-bold shadow-sm transition-colors ${badgeStyle}" title="Bu soruya git: ${r.year} • ${kurulLabel} ${r.q_num}. Soru">
+            <button type="button" data-jump-kurul="${r.kurul}" data-jump-qid="${r.id}" class="btn-jump-repeat inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border text-[11px] font-bold shadow-sm transition-colors ${badgeStyle}" title="Diğer çıktığı yıla git: ${r.year} • ${kurulLabel} ${r.q_num}. Soru">
               <span>📅 ${escapeHtml(r.year)}</span>
               <span>•</span>
               <span>${kurulLabel} (#${r.q_num})</span>
@@ -1248,10 +1258,11 @@
         repeatsBannerHtml = `
           <div class="px-3.5 py-2.5 rounded-xl bg-gradient-to-r from-rose-50 via-amber-50/70 to-rose-50 border border-rose-200/90 flex flex-wrap items-center justify-between gap-2">
             <div class="flex items-center gap-2 text-xs font-extrabold text-rose-900">
-              <span class="px-2 py-0.5 rounded-md bg-rose-600 text-white text-[11px] font-extrabold shadow-sm">🔁 ${totalAskCount} KEZ SORULDU</span>
-              <span>Bu soru şu yıl ve kurullarda da çıkmış:</span>
+              <span class="px-2 py-0.5 rounded-md bg-rose-600 text-white text-[11px] font-extrabold shadow-sm">🔁 ${totalAskCount} FARKLI YILDA SORULDU</span>
+              <span>Çıktığı yıllar ve kurullar:</span>
             </div>
             <div class="flex flex-wrap items-center gap-1.5">
+              ${selfPill}
               ${repeatPills}
             </div>
           </div>
