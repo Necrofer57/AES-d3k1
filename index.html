@@ -330,9 +330,14 @@
             <div class="text-[10px] font-bold uppercase tracking-wider text-indigo-300" id="sidebar-kurul-code">D3K1 • AKTİF KURUL</div>
             <div class="text-xs sm:text-sm font-extrabold truncate" id="sidebar-kurul-title">1. Kurul</div>
           </div>
-          <button id="btn-sidebar-change-kurul" type="button" class="px-2.5 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 text-white text-xs font-bold shrink-0 transition-colors">
-            ⇄ Kurul Seç
-          </button>
+          <div class="flex items-center gap-1.5 shrink-0">
+            <button id="btn-sidebar-kurul-info" type="button" class="px-2 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-400/30 text-xs font-bold transition-colors" title="Bu Kurulun Eksik Yıl ve Soru Durumu">
+              📋 Arşiv
+            </button>
+            <button id="btn-sidebar-change-kurul" type="button" class="px-2.5 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 text-white text-xs font-bold transition-colors">
+              ⇄ Kurul Seç
+            </button>
+          </div>
         </div>
 
         <!-- Arama ve Hızlı Filtre Sıfırlama -->
@@ -730,7 +735,7 @@
         </div>
         <div class="pt-2 flex justify-end">
           <button id="btn-confirm-donem-modal" type="button" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-extrabold shadow-md transition-colors">
-            Tamam, Sayfayı Aç →
+            Tamam, Sorulara Geç →
           </button>
         </div>
       </div>
@@ -1119,6 +1124,27 @@
       }
     };
 
+    const KURUL_MISSING_NOTE = {
+      "d1-1": "<strong>Eksik Yıl:</strong> 2023–2024 yılı 1. Kurul sınavı arşivde eksiktir. 2018–2019 ve 2019–2020 yılları ise öğrencilerin sınav sonrası hatırlayarak topladığı kısmi/eksik şıklı sorulardan oluşmaktadır.",
+      "d1-2": "<strong>Eksik Sınav:</strong> 2024–2025 yılında yalnızca <em>Tıbbi Biyoloji (Metin Hoca)</em> soruları mevcuttur. 2018–2019 ve 2019–2020 yılları öğrenci hatırlaması sorulardan oluşmaktadır.",
+      "d1-3": "<strong>Eksik Yıl:</strong> 2024–2025 yılı 3. Kurul sınavı arşivde eksiktir. 2018–2019 ve 2019–2020 yılları öğrenci hatırlaması sorulardan oluşmaktadır.",
+      "d1-4": "<strong>Eksik Yıllar:</strong> 2019–2020 ve 2024–2025 yılları 4. Kurul sınavları arşivde eksiktir.",
+      "d1-5": "<strong>Eksik Yıllar:</strong> 2023–2024 ve 2024–2025 yılları Final / Bütünleme sınavları arşivde eksiktir.",
+      "d2-1": "<strong>Eksik Yıl:</strong> 2024–2025 yılı 1. Kurul (Kas) çıkmış soruları arşivde eksiktir.",
+      "d2-2": "<strong>Eksik Yıl:</strong> 2024–2025 yılı 2. Kurul (Nöro) çıkmış soruları eksiktir; 2019–2020 yılı ise 25 soruluk kısmi hatırlamadan oluşmaktadır.",
+      "d2-3": "<strong>Eksik Yıllar:</strong> 2018–2019 ve 2024–2025 yılları 3. Kurul (Dolaşım & Solunum) sınavları eksiktir. 2020–2021 yılı soruları ise kaynak dosyada cevap anahtarsızdır.",
+      "d2-4": "<strong>Eksik Yıllar:</strong> 2018–2019 ve 2024–2025 yılları 4. Kurul (Endokrin & Ürogenital) sınavları arşivde eksiktir.",
+      "d2-5": "<strong>Eksik Yıllar:</strong> 2018–2019, 2024–2025 ve 2025–2026 (Çalışma) dosyaları 5. Kurul (Sindirim) arşivinde eksiktir.",
+      "d2-6": "<strong>Eksik Yıl:</strong> 2024–2025 yılı Final & Bütünleme sınavları arşivde eksiktir.",
+      "3": "<strong>Eksik Yıl:</strong> Bu kurulda (D3K3) yalnızca 2019–2020 yılı çıkmış soruları eksiktir; 2020–2026 arası tüm yıllar tamdır.",
+      "1": "<strong>Tam Arşiv:</strong> 2019–2026 arası tüm yılların çıkmış ve çalışma soruları eksiksiz mevcuttur.",
+      "2": "<strong>Tam Arşiv:</strong> 2019–2026 arası tüm yılların çıkmış ve çalışma soruları eksiksiz mevcuttur.",
+      "4": "<strong>Tam Arşiv:</strong> 2019–2026 arası tüm yılların çıkmış ve çalışma soruları eksiksiz mevcuttur.",
+      "5": "<strong>Tam Arşiv:</strong> 2019–2026 arası tüm yılların çıkmış ve çalışma soruları eksiksiz mevcuttur.",
+      "6": "<strong>Tam Arşiv:</strong> 2019–2026 arası tüm yılların çıkmış ve çalışma soruları eksiksiz mevcuttur.",
+      "7": "<strong>Tam Arşiv:</strong> 2019–2026 arası tüm yılların çıkmış ve çalışma soruları eksiksiz mevcuttur."
+    };
+
     let _donemModalConfirmCallback = null;
 
     function openDonemInfoModal(donem, onConfirm, kId = null) {
@@ -1140,12 +1166,14 @@
         const years = Array.from(new Set(qs.map(q => q.year))).sort();
         const incCnt = qs.filter(q => q.incomplete || q.q_type === 'open').length;
         const fullCnt = qs.length - incCnt;
+        const kNote = KURUL_MISSING_NOTE[kId] || '';
         kurulHighlightHtml = `
-          <div class="p-3.5 rounded-2xl bg-indigo-50/90 border border-indigo-200 space-y-1.5">
+          <div class="p-3.5 rounded-2xl bg-indigo-50/90 border border-indigo-200 space-y-2">
             <div class="flex items-center justify-between gap-2 flex-wrap">
-              <span class="px-2 py-0.5 rounded-md text-[11px] font-extrabold bg-indigo-600 text-white">Seçilen Kurul: ${escapeHtml(kMeta.shortTitle)} (${qs.length} Soru)</span>
+              <span class="px-2 py-0.5 rounded-md text-[11px] font-extrabold bg-indigo-600 text-white">Açılan Kurul: ${escapeHtml(kMeta.shortTitle)} (${qs.length} Soru)</span>
               <span class="text-[11px] font-bold text-indigo-900">✅ ${fullCnt} Tam Şıklı • 📝 ${incCnt} Hatırlanan/Açık Uçlu</span>
             </div>
+            ${kNote ? `<p class="text-xs text-rose-900 bg-rose-50/90 border border-rose-200 rounded-xl px-2.5 py-1.5 leading-relaxed">${kNote}</p>` : ''}
             <p class="text-xs text-indigo-950 leading-relaxed">
               <strong>Mevcut Sınav Yılları:</strong> ${years.map(y => `<span class="inline-block px-1.5 py-0.5 rounded bg-white border border-indigo-200 text-[11px] font-semibold mr-1 mb-1">${escapeHtml(y)}</span>`).join('')}
             </p>
@@ -1434,12 +1462,7 @@
         btn.addEventListener('click', () => {
           const kId = btn.getAttribute('data-open-kurul');
           const mode = btn.getAttribute('data-open-mode') || 'study';
-          const meta = KURUL_META[kId];
-          if (meta) {
-            openDonemInfoModal(meta.donem, () => selectKurul(kId, mode), kId);
-          } else {
-            selectKurul(kId, mode);
-          }
+          selectKurul(kId, mode);
         });
       });
     }
@@ -1612,6 +1635,7 @@
         }
       } else {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        openDonemInfoModal(meta.donem, null, kId);
       }
     }
 
@@ -2836,18 +2860,18 @@
 
       document.getElementById('btn-go-home').addEventListener('click', showHomeScreen);
       document.getElementById('btn-sidebar-change-kurul').addEventListener('click', showHomeScreen);
+      const btnSidebarKurulInfo = document.getElementById('btn-sidebar-kurul-info');
+      if (btnSidebarKurulInfo) {
+        btnSidebarKurulInfo.addEventListener('click', () => {
+          if (state.activeKurul && KURUL_META[state.activeKurul]) {
+            openDonemInfoModal(KURUL_META[state.activeKurul].donem, null, state.activeKurul);
+          }
+        });
+      }
       document.getElementById('header-kurul-select').addEventListener('change', e => {
         const val = e.target.value;
-        if (val === 'home') {
-          showHomeScreen();
-        } else {
-          const meta = KURUL_META[val];
-          if (meta) {
-            openDonemInfoModal(meta.donem, () => selectKurul(val, 'study'), val);
-          } else {
-            selectKurul(val, 'study');
-          }
-        }
+        if (val === 'home') showHomeScreen();
+        else selectKurul(val, 'study');
       });
 
       document.querySelectorAll('.donem-tab-btn').forEach(btn => {
