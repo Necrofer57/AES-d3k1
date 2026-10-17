@@ -787,26 +787,26 @@
   <div id="toast-box" class="hidden fixed bottom-5 right-5 z-50 px-4 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-semibold shadow-lg border border-slate-700"></div>
 
   <!-- Dönem 1 Veri Dosyaları -->
-  <script src="/data/d1-1.js"></script>
-  <script src="/data/d1-2.js"></script>
-  <script src="/data/d1-3.js"></script>
-  <script src="/data/d1-4.js"></script>
-  <script src="/data/d1-5.js"></script>
+  <script src="/data/d1-1.js?v=20261017v4"></script>
+  <script src="/data/d1-2.js?v=20261017v4"></script>
+  <script src="/data/d1-3.js?v=20261017v4"></script>
+  <script src="/data/d1-4.js?v=20261017v4"></script>
+  <script src="/data/d1-5.js?v=20261017v4"></script>
   <!-- Dönem 2 Veri Dosyaları -->
-  <script src="/data/d2-1.js"></script>
-  <script src="/data/d2-2.js"></script>
-  <script src="/data/d2-3.js"></script>
-  <script src="/data/d2-4.js"></script>
-  <script src="/data/d2-5.js"></script>
-  <script src="/data/d2-6.js"></script>
+  <script src="/data/d2-1.js?v=20261017v4"></script>
+  <script src="/data/d2-2.js?v=20261017v4"></script>
+  <script src="/data/d2-3.js?v=20261017v4"></script>
+  <script src="/data/d2-4.js?v=20261017v4"></script>
+  <script src="/data/d2-5.js?v=20261017v4"></script>
+  <script src="/data/d2-6.js?v=20261017v4"></script>
   <!-- Dönem 3 Veri Dosyaları -->
-  <script src="/data/kurul-1.js"></script>
-  <script src="/data/kurul-2.js"></script>
-  <script src="/data/kurul-3.js"></script>
-  <script src="/data/kurul-4.js"></script>
-  <script src="/data/kurul-5.js"></script>
-  <script src="/data/kurul-6.js"></script>
-  <script src="/data/kurul-7.js"></script>
+  <script src="/data/kurul-1.js?v=20261017v4"></script>
+  <script src="/data/kurul-2.js?v=20261017v4"></script>
+  <script src="/data/kurul-3.js?v=20261017v4"></script>
+  <script src="/data/kurul-4.js?v=20261017v4"></script>
+  <script src="/data/kurul-5.js?v=20261017v4"></script>
+  <script src="/data/kurul-6.js?v=20261017v4"></script>
+  <script src="/data/kurul-7.js?v=20261017v4"></script>
 
   <script>
     const KURUL_META = {
@@ -1327,6 +1327,21 @@
         .replace(/"/g, '&quot;');
     }
 
+    function getKurulQuestionValidRepeats(q, kurulQuestions, kId) {
+      if (!q || !Array.isArray(q.repeats)) return [];
+      return q.repeats.filter(r => {
+        if (!r || r.id === q.id || r.year === q.year) return false;
+        if (String(r.kurul) === String(kId)) {
+          return kurulQuestions.some(t => t.id === r.id);
+        }
+        const targetKurulData = window.KURUL_DATA && window.KURUL_DATA[r.kurul];
+        if (Array.isArray(targetKurulData)) {
+          return targetKurulData.some(t => t.id === r.id);
+        }
+        return true;
+      });
+    }
+
     function buildKurulCardHtml(kId) {
       const meta = KURUL_META[kId];
       const qs = (window.KURUL_DATA && window.KURUL_DATA[kId]) || [];
@@ -1334,7 +1349,7 @@
       const subjCounts = {};
       qs.forEach(q => {
         subjCounts[q.subject] = (subjCounts[q.subject] || 0) + 1;
-        if (q.repeats && q.repeats.length > 0) repCnt++;
+        if (getKurulQuestionValidRepeats(q, qs, kId).length > 0) repCnt++;
         if (q.incomplete || q.q_type === 'open') incCnt++;
         const ua = state.userAnswers[q.id];
         if (ua) {
@@ -1799,6 +1814,21 @@
       });
     }
 
+    function getValidRepeats(q) {
+      if (!q || !Array.isArray(q.repeats)) return [];
+      return q.repeats.filter(r => {
+        if (!r || r.id === q.id || r.year === q.year) return false;
+        if (state.activeKurul && String(r.kurul) === String(state.activeKurul)) {
+          return RAW_QUESTIONS.some(t => t.id === r.id);
+        }
+        const targetKurulData = window.KURUL_DATA && window.KURUL_DATA[r.kurul];
+        if (Array.isArray(targetKurulData)) {
+          return targetKurulData.some(t => t.id === r.id);
+        }
+        return true;
+      });
+    }
+
     function applyFiltersAndRender(resetIdx = false) {
       if (!state.activeKurul) {
         renderHomeScreen();
@@ -1819,7 +1849,7 @@
           const isIncOrOpen = Boolean(q.incomplete || q.q_type === 'open');
           const isAiOpt = q.ai_completion === 'options' || ((q.note || '').toLowerCase().includes('tamamlanmıştır') && (q.note || '').toLowerCase().includes('şıklı')) || (q.note || '').toLowerCase().includes('öğrenci hatırlama');
           const isAiAns = q.ai_completion === 'answer' || (q.note || '').toLowerCase().includes('tıbbi literatüre');
-          if (state.statusFilter === 'repeated' && (!q.repeats || q.repeats.length === 0)) return false;
+          if (state.statusFilter === 'repeated' && getValidRepeats(q).length === 0) return false;
           if (state.statusFilter === 'complete' && (isIncOrOpen || isAiOpt || isAiAns)) return false;
           if (state.statusFilter === 'ai_options' && !isAiOpt) return false;
           if (state.statusFilter === 'ai_answer' && !isAiAns) return false;
@@ -1846,7 +1876,7 @@
       if (state.sortOrder === 'year_desc') {
         list.sort((a, b) => b.year.localeCompare(a.year) || (a.q_num - b.q_num));
       } else if (state.sortOrder === 'repeat_desc') {
-        list.sort((a, b) => ((b.repeats ? b.repeats.length : 0) - (a.repeats ? a.repeats.length : 0)) || b.year.localeCompare(a.year) || (a.q_num - b.q_num));
+        list.sort((a, b) => (getValidRepeats(b).length - getValidRepeats(a).length) || b.year.localeCompare(a.year) || (a.q_num - b.q_num));
       } else if (state.sortOrder === 'random') {
         list = [...list];
         for (let i = list.length - 1; i > 0; i--) {
@@ -2036,9 +2066,7 @@
       const isAiOpt = q.ai_completion === 'options' || ((q.note || '').toLowerCase().includes('tamamlanmıştır') && (q.note || '').toLowerCase().includes('şıklı')) || (q.note || '').toLowerCase().includes('öğrenci hatırlama');
       const isAiAns = q.ai_completion === 'answer' || (q.note || '').toLowerCase().includes('tıbbi literatüre');
 
-      const validRepeats = Array.isArray(q.repeats)
-        ? q.repeats.filter(r => r.id !== q.id && r.year !== q.year)
-        : [];
+      const validRepeats = getValidRepeats(q);
       const hasRepeats = validRepeats.length > 0;
       const totalAskCount = hasRepeats ? validRepeats.length + 1 : 1;
 
