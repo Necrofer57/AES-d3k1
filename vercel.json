@@ -1,11 +1,10 @@
 {
-  "version": 2,
-  "name": "d3k1-cikmis-sorular",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "cleanUrls": true,
-  "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/((?!_vercel|data/).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]

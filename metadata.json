@@ -1,0 +1,6 @@
+{
+  "name": "AES d3k1 - Tıp Çıkmış Sınav Platformu",
+  "description": "Tıp Fakültesi Dönem 1, Dönem 2 ve Dönem 3 Tüm Kurullar Çıkmış Sorular ve Sınav Platformu (2018–2026).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

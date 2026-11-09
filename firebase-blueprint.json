@@ -1,0 +1,119 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User account profile information",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "email": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "displayName": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "createdAt": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "updatedAt": {
+          "type": "string",
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "userId",
+        "email"
+      ]
+    },
+    "UserBookmark": {
+      "title": "UserBookmark",
+      "description": "Bookmarked questions for a user",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "questionId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "kurulId": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "createdAt": {
+          "type": "string",
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "userId",
+        "questionId"
+      ]
+    },
+    "UserExamResult": {
+      "title": "UserExamResult",
+      "description": "Saved exam session statistics for user",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "kurulId": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "donem": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "totalQuestions": {
+          "type": "number"
+        },
+        "correctCount": {
+          "type": "number"
+        },
+        "wrongCount": {
+          "type": "number"
+        },
+        "emptyCount": {
+          "type": "number"
+        },
+        "score": {
+          "type": "number"
+        },
+        "completedAt": {
+          "type": "string",
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "userId",
+        "totalQuestions",
+        "correctCount"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile document storing basic user account details."
+    },
+    "/users/{userId}/bookmarks/{bookmarkId}": {
+      "schema": "UserBookmark",
+      "description": "Collection of saved bookmarked questions for the user."
+    },
+    "/users/{userId}/examResults/{resultId}": {
+      "schema": "UserExamResult",
+      "description": "Exam and trial session history and scores for the user."
+    }
+  }
+}

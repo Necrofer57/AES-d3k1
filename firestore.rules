@@ -1,0 +1,91 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidUserProfile(data) {
+      return data.keys().hasAll(['userId', 'email'])
+        && data.keys().hasOnly(['userId', 'email', 'displayName', 'createdAt', 'updatedAt'])
+        && data.userId == request.auth.uid
+        && data.userId is string && data.userId.size() <= 128
+        && data.email is string && data.email.size() <= 256
+        && (!('displayName' in data) || (data.displayName is string && data.displayName.size() <= 128))
+        && (!('createdAt' in data) || (data.createdAt is string && data.createdAt.size() <= 64))
+        && (!('updatedAt' in data) || (data.updatedAt is string && data.updatedAt.size() <= 64));
+    }
+
+    function isValidUserBookmark(data) {
+      return data.keys().hasAll(['userId', 'questionId'])
+        && data.keys().hasOnly(['userId', 'questionId', 'kurulId', 'createdAt'])
+        && data.userId == request.auth.uid
+        && data.userId is string && data.userId.size() <= 128
+        && data.questionId is string && data.questionId.size() <= 128
+        && (!('kurulId' in data) || (data.kurulId is string && data.kurulId.size() <= 64))
+        && (!('createdAt' in data) || (data.createdAt is string && data.createdAt.size() <= 64));
+    }
+
+    function isValidUserExamResult(data) {
+      return data.keys().hasAll(['userId', 'totalQuestions', 'correctCount'])
+        && data.keys().hasOnly(['userId', 'totalQuestions', 'correctCount', 'wrongCount', 'emptyCount', 'score', 'kurulId', 'donem', 'completedAt'])
+        && data.userId == request.auth.uid
+        && data.userId is string && data.userId.size() <= 128
+        && data.totalQuestions is number && data.totalQuestions >= 0 && data.totalQuestions <= 1000
+        && data.correctCount is number && data.correctCount >= 0 && data.correctCount <= 1000
+        && (!('wrongCount' in data) || (data.wrongCount is number && data.wrongCount >= 0 && data.wrongCount <= 1000))
+        && (!('emptyCount' in data) || (data.emptyCount is number && data.emptyCount >= 0 && data.emptyCount <= 1000))
+        && (!('score' in data) || (data.score is number))
+        && (!('kurulId' in data) || (data.kurulId is string && data.kurulId.size() <= 64))
+        && (!('donem' in data) || (data.donem is string && data.donem.size() <= 32))
+        && (!('completedAt' in data) || (data.completedAt is string && data.completedAt.size() <= 64));
+    }
+
+    // User profiles
+    match /users/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      allow list: if false;
+      allow create: if isOwner(userId) && isValidId(userId) && isValidUserProfile(incoming());
+      allow update: if isOwner(userId) && isValidId(userId) && incoming().userId == existing().userId && isValidUserProfile(incoming());
+      allow delete: if false;
+
+      // User bookmarks subcollection
+      match /bookmarks/{bookmarkId} {
+        allow get, list: if isOwner(userId);
+        allow create: if isOwner(userId) && isValidId(bookmarkId) && isValidUserBookmark(incoming());
+        allow update: if isOwner(userId) && isValidId(bookmarkId) && incoming().userId == existing().userId && isValidUserBookmark(incoming());
+        allow delete: if isOwner(userId);
+      }
+
+      // User exam sessions & scores subcollection
+      match /examResults/{resultId} {
+        allow get, list: if isOwner(userId);
+        allow create: if isOwner(userId) && isValidId(resultId) && isValidUserExamResult(incoming());
+        allow update: if false;
+        allow delete: if isOwner(userId);
+      }
+    }
+  }
+}
