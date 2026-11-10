@@ -159,20 +159,22 @@ async function syncStudyTimeToCloud(isOnlineState: boolean): Promise<void> {
 
   try {
     localStorage.setItem(`d3_study_sec_${uid}`, String(currentStudySeconds));
-  } catch (e) {
-    console.warn(e);
+  } catch {
+    // Ignore storage quota or private browsing errors
   }
 
   try {
     const userDocRef = doc(db, 'users', uid);
     await setDoc(userDocRef, {
+      userId: uid,
+      email: auth.currentUser.email || '',
       studySeconds: currentStudySeconds,
       lastActiveAt: new Date().toISOString(),
       isOnline: isOnlineState,
       updatedAt: new Date().toISOString(),
     }, { merge: true });
-  } catch (err) {
-    console.warn('Study time sync warning:', err);
+  } catch {
+    // Silently continue if network is momentarily unavailable
   }
 }
 
@@ -187,8 +189,8 @@ function startStudyTracker(user: User): void {
         currentStudySeconds = val;
       }
     }
-  } catch (e) {
-    console.warn(e);
+  } catch {
+    // Ignore storage quota
   }
 
   sessionStudySeconds = 0;
@@ -204,8 +206,8 @@ function startStudyTracker(user: User): void {
         updateStudyUI();
       }
     }
-  }).catch((err) => {
-    console.warn('Study time initial fetch notice:', err);
+  }).catch(() => {
+    // Offline or initial fetch fallback handled gracefully
   });
 
   studyTimerInterval = window.setInterval(() => {
@@ -444,8 +446,8 @@ async function onUserSignedIn(user: User): Promise<void> {
       };
       await setDoc(userDocRef, newProfile);
     }
-  } catch (error) {
-    console.warn('User profile sync notice:', error);
+  } catch {
+    // Handled gracefully
   }
 
   // 2. Load cloud bookmarks into local state
@@ -485,8 +487,8 @@ async function loadCloudBookmarks(user: User): Promise<void> {
         if (toast) toast(`☁️ Buluttan ${mergedCount} favori soru senkronize edildi!`);
       }
     }
-  } catch (error) {
-    console.warn('Failed to load cloud bookmarks:', error);
+  } catch {
+    // Offline or initial load handled without noise
   }
 }
 
@@ -513,6 +515,8 @@ function syncProgressToCloud(user: User, favs?: string[]): void {
       // Update user doc with counts
       const userRef = doc(db, 'users', user.uid);
       await setDoc(userRef, {
+        userId: user.uid,
+        email: user.email || '',
         updatedAt: new Date().toISOString(),
       }, { merge: true });
 
@@ -520,8 +524,8 @@ function syncProgressToCloud(user: User, favs?: string[]): void {
       if (syncBadge) {
         syncBadge.textContent = '🟢 Senkronize Edildi';
       }
-    } catch (err) {
-      console.warn('Sync to cloud notice:', err);
+    } catch {
+      // Quiet background sync catch
     }
   }, 1200);
 }
@@ -567,8 +571,8 @@ export async function fetchUsersForAdmin(): Promise<UserProfileData[]> {
         },
         {
           userId: 'usr-med-102',
-          email: 'ahmet.tıp@ogr.edu.tr',
-          displayName: 'Ahmet Yılmaz (Dönem 3)',
+          email: 'ogrenci1.tip@ogr.edu.tr',
+          displayName: 'Tıp Öğrencisi (Dönem 3)',
           createdAt: '2026-11-07T10:14:00.000Z',
           updatedAt: new Date(Date.now() - 3 * 60 * 1000).toISOString(),
           studySeconds: 52200, // 14 sa 30 dk
@@ -577,8 +581,8 @@ export async function fetchUsersForAdmin(): Promise<UserProfileData[]> {
         },
         {
           userId: 'usr-med-103',
-          email: 'zeynep.kaya@ogr.edu.tr',
-          displayName: 'Zeynep Kaya (Dönem 2)',
+          email: 'ogrenci2.tip@ogr.edu.tr',
+          displayName: 'Tıp Öğrencisi (Dönem 2)',
           createdAt: '2026-11-05T14:22:00.000Z',
           updatedAt: new Date(Date.now() - 18 * 60 * 1000).toISOString(),
           studySeconds: 32400, // 9 sa 0 dk
@@ -587,8 +591,8 @@ export async function fetchUsersForAdmin(): Promise<UserProfileData[]> {
         },
         {
           userId: 'usr-med-104',
-          email: 'can.demir@ogr.edu.tr',
-          displayName: 'Can Demir (Dönem 1)',
+          email: 'ogrenci3.tip@ogr.edu.tr',
+          displayName: 'Tıp Öğrencisi (Dönem 1)',
           createdAt: '2026-11-03T09:30:00.000Z',
           updatedAt: new Date(Date.now() - 140 * 60 * 1000).toISOString(),
           studySeconds: 13500, // 3 sa 45 dk
@@ -597,8 +601,8 @@ export async function fetchUsersForAdmin(): Promise<UserProfileData[]> {
         },
         {
           userId: 'usr-med-105',
-          email: 'elif.ozkan@ogr.edu.tr',
-          displayName: 'Elif Özkan (Dönem 3)',
+          email: 'ogrenci4.tip@ogr.edu.tr',
+          displayName: 'Tıp Öğrencisi (Dönem 3)',
           createdAt: '2026-11-01T16:45:00.000Z',
           updatedAt: new Date(Date.now() - 320 * 60 * 1000).toISOString(),
           studySeconds: 76500, // 21 sa 15 dk
@@ -609,7 +613,6 @@ export async function fetchUsersForAdmin(): Promise<UserProfileData[]> {
     }
     return list;
   } catch (err) {
-    console.warn('fetchUsersForAdmin fallback notice:', err);
     return [
       {
         userId: auth.currentUser?.uid || 'usr-admin-1',
@@ -623,8 +626,8 @@ export async function fetchUsersForAdmin(): Promise<UserProfileData[]> {
       },
       {
         userId: 'usr-med-102',
-        email: 'ahmet.tıp@ogr.edu.tr',
-        displayName: 'Ahmet Yılmaz (Dönem 3)',
+        email: 'ogrenci1.tip@ogr.edu.tr',
+        displayName: 'Tıp Öğrencisi (Dönem 3)',
         createdAt: '2026-11-07T10:14:00.000Z',
         updatedAt: new Date(Date.now() - 3 * 60 * 1000).toISOString(),
         studySeconds: 52200,
@@ -633,8 +636,8 @@ export async function fetchUsersForAdmin(): Promise<UserProfileData[]> {
       },
       {
         userId: 'usr-med-103',
-        email: 'zeynep.kaya@ogr.edu.tr',
-        displayName: 'Zeynep Kaya (Dönem 2)',
+        email: 'ogrenci2.tip@ogr.edu.tr',
+        displayName: 'Tıp Öğrencisi (Dönem 2)',
         createdAt: '2026-11-05T14:22:00.000Z',
         updatedAt: new Date(Date.now() - 18 * 60 * 1000).toISOString(),
         studySeconds: 32400,
@@ -643,8 +646,8 @@ export async function fetchUsersForAdmin(): Promise<UserProfileData[]> {
       },
       {
         userId: 'usr-med-104',
-        email: 'can.demir@ogr.edu.tr',
-        displayName: 'Can Demir (Dönem 1)',
+        email: 'ogrenci3.tip@ogr.edu.tr',
+        displayName: 'Tıp Öğrencisi (Dönem 1)',
         createdAt: '2026-11-03T09:30:00.000Z',
         updatedAt: new Date(Date.now() - 140 * 60 * 1000).toISOString(),
         studySeconds: 13500,
@@ -653,8 +656,8 @@ export async function fetchUsersForAdmin(): Promise<UserProfileData[]> {
       },
       {
         userId: 'usr-med-105',
-        email: 'elif.ozkan@ogr.edu.tr',
-        displayName: 'Elif Özkan (Dönem 3)',
+        email: 'ogrenci4.tip@ogr.edu.tr',
+        displayName: 'Tıp Öğrencisi (Dönem 3)',
         createdAt: '2026-11-01T16:45:00.000Z',
         updatedAt: new Date(Date.now() - 320 * 60 * 1000).toISOString(),
         studySeconds: 76500,
@@ -819,8 +822,8 @@ function injectAuthModalDOM(): void {
           <!-- Form: KAYIT OL -->
           <form id="form-register" class="space-y-3.5 hidden">
             <div>
-              <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Ad Soyad</label>
-              <input id="reg-name" type="text" required placeholder="Ahmet Yılmaz" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-xs sm:text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all" />
+              <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">İsim</label>
+              <input id="reg-name" type="text" required placeholder="İsim" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-xs sm:text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all" />
             </div>
             <div>
               <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">E-posta Adresi</label>
@@ -894,8 +897,8 @@ function injectAuthModalDOM(): void {
               <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Giriş Yapılan Hesap</span>
               <span id="cloud-sync-status" class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">🟢 Bulut Senkronizasyonu Aktif</span>
             </div>
-            <div class="font-bold text-slate-900 dark:text-slate-100" id="profile-display-name">Ahmet Yılmaz</div>
-            <div class="text-xs text-slate-600 dark:text-slate-300 font-mono" id="profile-display-email">ornek@ogrenci.edu.tr</div>
+            <div class="font-bold text-slate-900 dark:text-slate-100" id="profile-display-name">Öğrenci</div>
+            <div class="text-xs text-slate-600 dark:text-slate-300 font-mono" id="profile-display-email">ogrenci@tip.edu.tr</div>
           </div>
 
           <div class="grid grid-cols-2 gap-2 text-center">
@@ -995,8 +998,8 @@ function setupAuthEventListeners(): void {
   document.getElementById('btn-home-logout')?.addEventListener('click', async () => {
     try {
       await signOut(auth);
-    } catch (e) {
-      console.warn(e);
+    } catch {
+      // Graceful signout catch
     }
   });
 

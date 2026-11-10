@@ -2025,8 +2025,8 @@
           try {
             users = await authModule.fetchUsersForAdmin();
             _adminCachedUsers = users;
-          } catch (e) {
-            console.warn(e);
+          } catch {
+            // Silently fallback if auth not ready
           }
         }
       }
