@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { getFirestore, doc, getDocFromServer } from 'firebase/firestore';
+
 // Safe client config with environment variable support
 const defaultKey = typeof atob !== 'undefined'
   ? atob('QUl6YVN5QkRoekZkRkI1UUpMOEdxbHNsc2FGaHpPMEhRR24yN0RJ')
@@ -75,7 +76,6 @@ export function handleFirestoreError(error: unknown, operationType: OperationTyp
 
 // Safe connection check helper
 export async function testConnection(): Promise<void> {
-  // Only probe when authenticated to avoid unauthenticated permission-denied console spam
   if (!auth.currentUser) return;
   try {
     await getDocFromServer(doc(db, 'users', auth.currentUser.uid)).catch(() => {});
@@ -85,4 +85,3 @@ export async function testConnection(): Promise<void> {
     }
   }
 }
-

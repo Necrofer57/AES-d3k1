@@ -24,6 +24,19 @@
         "updatedAt": {
           "type": "string",
           "maxLength": 64
+        },
+        "studySeconds": {
+          "type": "number",
+          "description": "Total active study time accumulated in seconds"
+        },
+        "lastActiveAt": {
+          "type": "string",
+          "maxLength": 64,
+          "description": "ISO timestamp of the user's last interaction"
+        },
+        "isOnline": {
+          "type": "boolean",
+          "description": "Whether the user is actively working in a session"
         }
       },
       "required": [

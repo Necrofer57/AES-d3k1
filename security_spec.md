@@ -4,7 +4,8 @@
 1. Users may only read and write their own profile document (`/users/{userId}` where `request.auth.uid == userId`).
 2. Users cannot alter their `userId` or impersonate other users.
 3. Bookmarks and exam results are strictly scoped to the authenticated user under `/users/{userId}/bookmarks/{bookmarkId}` and `/users/{userId}/examResults/{resultId}`.
-4. Default-deny on all unspecified routes.
+4. Designated Admin (`sezgin45efe@gmail.com`) is granted strictly READ-ONLY viewing permissions to list user profiles and observe platform analytics. Admin has ZERO write, update, or delete privileges.
+5. Default-deny on all unspecified routes.
 
 ## Dirty Dozen Payloads (Rejection Scenarios)
 1. Unauthenticated user trying to read `/users/user123` -> PERMISSION_DENIED.

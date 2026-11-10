@@ -27,15 +27,22 @@ service cloud.firestore {
       return isSignedIn() && request.auth.uid == userId;
     }
 
+    function isAdmin() {
+      return isSignedIn() && request.auth.token.email != null && request.auth.token.email.lower() == 'sezgin45efe@gmail.com';
+    }
+
     function isValidUserProfile(data) {
       return data.keys().hasAll(['userId', 'email'])
-        && data.keys().hasOnly(['userId', 'email', 'displayName', 'createdAt', 'updatedAt'])
+        && data.keys().hasOnly(['userId', 'email', 'displayName', 'createdAt', 'updatedAt', 'studySeconds', 'lastActiveAt', 'isOnline'])
         && data.userId == request.auth.uid
         && data.userId is string && data.userId.size() <= 128
         && data.email is string && data.email.size() <= 256
         && (!('displayName' in data) || (data.displayName is string && data.displayName.size() <= 128))
         && (!('createdAt' in data) || (data.createdAt is string && data.createdAt.size() <= 64))
-        && (!('updatedAt' in data) || (data.updatedAt is string && data.updatedAt.size() <= 64));
+        && (!('updatedAt' in data) || (data.updatedAt is string && data.updatedAt.size() <= 64))
+        && (!('studySeconds' in data) || (data.studySeconds is number && data.studySeconds >= 0))
+        && (!('lastActiveAt' in data) || (data.lastActiveAt is string && data.lastActiveAt.size() <= 64))
+        && (!('isOnline' in data) || (data.isOnline is bool));
     }
 
     function isValidUserBookmark(data) {
@@ -54,9 +61,9 @@ service cloud.firestore {
         && data.userId == request.auth.uid
         && data.userId is string && data.userId.size() <= 128
         && data.totalQuestions is number && data.totalQuestions >= 0 && data.totalQuestions <= 1000
-        && data.correctCount is number && data.correctCount >= 0 && data.correctCount <= 1000
-        && (!('wrongCount' in data) || (data.wrongCount is number && data.wrongCount >= 0 && data.wrongCount <= 1000))
-        && (!('emptyCount' in data) || (data.emptyCount is number && data.emptyCount >= 0 && data.emptyCount <= 1000))
+        && data.correctCount is number && data.correctCount >= 0 && data.correctCount <= data.totalQuestions
+        && (!('wrongCount' in data) || (data.wrongCount is number && data.wrongCount >= 0 && data.wrongCount <= data.totalQuestions))
+        && (!('emptyCount' in data) || (data.emptyCount is number && data.emptyCount >= 0 && data.emptyCount <= data.totalQuestions))
         && (!('score' in data) || (data.score is number))
         && (!('kurulId' in data) || (data.kurulId is string && data.kurulId.size() <= 64))
         && (!('donem' in data) || (data.donem is string && data.donem.size() <= 32))
@@ -65,15 +72,15 @@ service cloud.firestore {
 
     // User profiles
     match /users/{userId} {
-      allow get: if isOwner(userId) && isValidId(userId);
-      allow list: if false;
+      allow get: if (isOwner(userId) || isAdmin()) && isValidId(userId);
+      allow list: if isAdmin();
       allow create: if isOwner(userId) && isValidId(userId) && isValidUserProfile(incoming());
       allow update: if isOwner(userId) && isValidId(userId) && incoming().userId == existing().userId && isValidUserProfile(incoming());
       allow delete: if false;
 
       // User bookmarks subcollection
       match /bookmarks/{bookmarkId} {
-        allow get, list: if isOwner(userId);
+        allow get, list: if isOwner(userId) || isAdmin();
         allow create: if isOwner(userId) && isValidId(bookmarkId) && isValidUserBookmark(incoming());
         allow update: if isOwner(userId) && isValidId(bookmarkId) && incoming().userId == existing().userId && isValidUserBookmark(incoming());
         allow delete: if isOwner(userId);
@@ -81,7 +88,7 @@ service cloud.firestore {
 
       // User exam sessions & scores subcollection
       match /examResults/{resultId} {
-        allow get, list: if isOwner(userId);
+        allow get, list: if isOwner(userId) || isAdmin();
         allow create: if isOwner(userId) && isValidId(resultId) && isValidUserExamResult(incoming());
         allow update: if false;
         allow delete: if isOwner(userId);

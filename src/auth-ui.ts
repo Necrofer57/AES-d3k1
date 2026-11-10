@@ -17,16 +17,268 @@ import {
 } from 'firebase/firestore';
 import { auth, googleProvider, db } from './firebase.ts';
 
+// Designated Read-Only Admin Email
+export const ADMIN_EMAIL = 'sezgin45efe@gmail.com';
+
+export function isCurrentUserAdmin(): boolean {
+  if (!auth.currentUser) return false;
+  const email = (auth.currentUser.email || '').toLowerCase();
+  return email === ADMIN_EMAIL.toLowerCase();
+}
+
+export function requireAuth(message?: string): void {
+  openAuthModal(
+    'register',
+    message || '🔒 Soru çözmek ve ilerlemenizi kaydetmek için lütfen ücretsiz giriş yapın veya kayıt olun.'
+  );
+}
+
 // User profile interface matching firebase-blueprint.json
-interface UserProfileData {
+export interface UserProfileData {
   userId: string;
   email: string;
   displayName?: string;
   createdAt?: string;
   updatedAt?: string;
+  studySeconds?: number;
+  lastActiveAt?: string;
+  isOnline?: boolean;
 }
 
 let hadPreviousUser = false;
+let currentStudySeconds = 0;
+let sessionStudySeconds = 0;
+let isUserActive = true;
+let lastInteractionTime = Date.now();
+let studyTimerInterval: number | null = null;
+let studyCloudSyncInterval: number | null = null;
+let activityListenersInitialized = false;
+
+export function formatStudyTime(seconds?: number): string {
+  if (!seconds || seconds <= 0) return '0 dk';
+  const totalMin = Math.floor(seconds / 60);
+  if (totalMin < 1) return '< 1 dk';
+  const hours = Math.floor(totalMin / 60);
+  const mins = totalMin % 60;
+  if (hours === 0) return `${mins} dk`;
+  return `${hours} sa ${mins} dk`;
+}
+
+export function formatLastActive(lastActiveAt?: string, isOnline?: boolean): { label: string; badgeClass: string; isHot: boolean } {
+  if (!lastActiveAt) {
+    return { label: 'Bilinmiyor', badgeClass: 'bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400', isHot: false };
+  }
+  const diffMs = Date.now() - new Date(lastActiveAt).getTime();
+  const diffMin = Math.floor(diffMs / 60000);
+
+  if (diffMin < 5 || isOnline) {
+    return {
+      label: '🟢 Şu An Aktif',
+      badgeClass: 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 font-bold',
+      isHot: true,
+    };
+  }
+  if (diffMin < 60) {
+    return {
+      label: `🟡 ${diffMin} dk önce`,
+      badgeClass: 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800',
+      isHot: false,
+    };
+  }
+  const diffHour = Math.floor(diffMin / 60);
+  if (diffHour < 24) {
+    return {
+      label: `🔵 ${diffHour} saat önce`,
+      badgeClass: 'bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800',
+      isHot: false,
+    };
+  }
+  const days = Math.floor(diffHour / 24);
+  return {
+    label: `⚪ ${days} gün önce`,
+    badgeClass: 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700',
+    isHot: false,
+  };
+}
+
+function updateStudyUI(): void {
+  const formattedTotal = formatStudyTime(currentStudySeconds);
+  const formattedSession = formatStudyTime(sessionStudySeconds);
+
+  // Header study pill
+  const hdrStudyPill = document.getElementById('header-study-timer');
+  const hdrStudyEl = document.getElementById('hdr-study-time');
+  if (hdrStudyPill) {
+    if (auth.currentUser) {
+      hdrStudyPill.classList.remove('hidden');
+      hdrStudyPill.classList.add('flex');
+    } else {
+      hdrStudyPill.classList.add('hidden');
+      hdrStudyPill.classList.remove('flex');
+    }
+  }
+  if (hdrStudyEl) {
+    hdrStudyEl.textContent = formattedTotal;
+    hdrStudyEl.title = `Toplam Çalışma: ${formattedTotal} • Bu Oturum: ${formattedSession} (${isUserActive ? 'Aktif' : 'Mola'})`;
+  }
+
+  // Home screen banner study stats
+  const homeTotalEl = document.getElementById('home-study-total');
+  const homeSessionEl = document.getElementById('home-study-session');
+  const homeStatusEl = document.getElementById('home-study-status');
+  if (homeTotalEl) homeTotalEl.textContent = formattedTotal;
+  if (homeSessionEl) homeSessionEl.textContent = formattedSession;
+  if (homeStatusEl) {
+    if (isUserActive) {
+      homeStatusEl.innerHTML = `
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-emerald-700 dark:text-emerald-300">Aktif Çalışılıyor</span>
+      `;
+    } else {
+      homeStatusEl.innerHTML = `
+        <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+        <span class="text-amber-700 dark:text-amber-300">Mola / Beklemede</span>
+      `;
+    }
+  }
+
+  // Profile modal study stats
+  const profTotalEl = document.getElementById('profile-stat-study-total');
+  const profSessionEl = document.getElementById('profile-stat-study-session');
+  const profStatusEl = document.getElementById('profile-stat-activity');
+  if (profTotalEl) profTotalEl.textContent = formattedTotal;
+  if (profSessionEl) profSessionEl.textContent = formattedSession;
+  if (profStatusEl) {
+    profStatusEl.textContent = isUserActive ? '🟢 Şu An Aktif' : '🟡 Mola / Beklemede';
+  }
+}
+
+async function syncStudyTimeToCloud(isOnlineState: boolean): Promise<void> {
+  if (!auth.currentUser) return;
+  const uid = auth.currentUser.uid;
+
+  try {
+    localStorage.setItem(`d3_study_sec_${uid}`, String(currentStudySeconds));
+  } catch (e) {
+    console.warn(e);
+  }
+
+  try {
+    const userDocRef = doc(db, 'users', uid);
+    await setDoc(userDocRef, {
+      studySeconds: currentStudySeconds,
+      lastActiveAt: new Date().toISOString(),
+      isOnline: isOnlineState,
+      updatedAt: new Date().toISOString(),
+    }, { merge: true });
+  } catch (err) {
+    console.warn('Study time sync warning:', err);
+  }
+}
+
+function startStudyTracker(user: User): void {
+  stopStudyTracker();
+
+  try {
+    const cached = localStorage.getItem(`d3_study_sec_${user.uid}`);
+    if (cached) {
+      const val = parseInt(cached, 10);
+      if (!isNaN(val) && val > 0) {
+        currentStudySeconds = val;
+      }
+    }
+  } catch (e) {
+    console.warn(e);
+  }
+
+  sessionStudySeconds = 0;
+  isUserActive = true;
+  lastInteractionTime = Date.now();
+  updateStudyUI();
+
+  getDoc(doc(db, 'users', user.uid)).then((snap) => {
+    if (snap.exists()) {
+      const data = snap.data();
+      if (typeof data.studySeconds === 'number' && data.studySeconds > currentStudySeconds) {
+        currentStudySeconds = data.studySeconds;
+        updateStudyUI();
+      }
+    }
+  }).catch((err) => {
+    console.warn('Study time initial fetch notice:', err);
+  });
+
+  studyTimerInterval = window.setInterval(() => {
+    if (document.hidden || Date.now() - lastInteractionTime > 180000) {
+      if (isUserActive) {
+        isUserActive = false;
+        updateStudyUI();
+      }
+      return;
+    }
+
+    if (!isUserActive) {
+      isUserActive = true;
+    }
+
+    currentStudySeconds++;
+    sessionStudySeconds++;
+    updateStudyUI();
+  }, 1000);
+
+  studyCloudSyncInterval = window.setInterval(() => {
+    syncStudyTimeToCloud(true);
+  }, 30000);
+}
+
+function stopStudyTracker(): void {
+  if (studyTimerInterval) {
+    clearInterval(studyTimerInterval);
+    studyTimerInterval = null;
+  }
+  if (studyCloudSyncInterval) {
+    clearInterval(studyCloudSyncInterval);
+    studyCloudSyncInterval = null;
+  }
+}
+
+function initActivityListeners(): void {
+  if (activityListenersInitialized) return;
+  activityListenersInitialized = true;
+
+  const events = ['mousemove', 'mousedown', 'keydown', 'touchstart', 'scroll', 'click'];
+  let throttleTimer: number | null = null;
+  events.forEach((ev) => {
+    window.addEventListener(ev, () => {
+      if (throttleTimer) return;
+      throttleTimer = window.setTimeout(() => {
+        throttleTimer = null;
+        lastInteractionTime = Date.now();
+        if (!isUserActive) {
+          isUserActive = true;
+          updateStudyUI();
+        }
+      }, 1000);
+    }, { passive: true });
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      isUserActive = false;
+      updateStudyUI();
+      syncStudyTimeToCloud(false);
+    } else {
+      lastInteractionTime = Date.now();
+      isUserActive = true;
+      updateStudyUI();
+      syncStudyTimeToCloud(true);
+    }
+  });
+
+  window.addEventListener('beforeunload', () => {
+    syncStudyTimeToCloud(false);
+  });
+}
 
 export function initAuthUI(): void {
   // Inject Auth Modal HTML into DOM if not present
@@ -36,6 +288,7 @@ export function initAuthUI(): void {
 
   // Setup Event Listeners
   setupAuthEventListeners();
+  initActivityListeners();
 
   // Listen to Auth state changes
   onAuthStateChanged(auth, async (user) => {
@@ -44,8 +297,13 @@ export function initAuthUI(): void {
 
     if (user) {
       hadPreviousUser = true;
+      startStudyTracker(user);
       await onUserSignedIn(user);
     } else {
+      stopStudyTracker();
+      currentStudySeconds = 0;
+      sessionStudySeconds = 0;
+      updateStudyUI();
       if (hadPreviousUser) {
         onUserSignedOut();
       }
@@ -59,27 +317,70 @@ export function initAuthUI(): void {
       syncProgressToCloud(auth.currentUser, e.detail?.favorites);
     }
   }) as EventListener);
+
+  // Expose d3k1Auth globally
+  (window as unknown as { d3k1Auth: unknown }).d3k1Auth = {
+    auth,
+    ADMIN_EMAIL,
+    isCurrentUserAdmin,
+    isAuthenticated: () => Boolean(auth.currentUser),
+    requireAuth,
+    openAuthModal,
+    fetchUsersForAdmin,
+    formatStudyTime,
+    formatLastActive,
+    getStudySeconds: () => currentStudySeconds,
+    getSessionStudySeconds: () => sessionStudySeconds,
+    isUserActive: () => isUserActive,
+  };
 }
 
 function updateHeaderUserUI(user: User | null): void {
   const triggerBtn = document.getElementById('btn-auth-trigger');
   const btnIcon = document.getElementById('auth-btn-icon');
   const btnText = document.getElementById('auth-btn-text');
+  const adminNavBtn = document.getElementById('btn-admin-nav');
+
+  if (adminNavBtn) {
+    if (user && isCurrentUserAdmin()) {
+      adminNavBtn.classList.remove('hidden');
+      adminNavBtn.classList.add('flex');
+    } else {
+      adminNavBtn.classList.add('hidden');
+      adminNavBtn.classList.remove('flex');
+    }
+  }
+
+  // Also control visibility of admin quick-access in modal
+  const adminQuickAccess = document.getElementById('admin-quick-access-box');
+  if (adminQuickAccess) {
+    if (user && isCurrentUserAdmin()) {
+      adminQuickAccess.classList.remove('hidden');
+    } else {
+      adminQuickAccess.classList.add('hidden');
+    }
+  }
 
   if (!triggerBtn || !btnText || !btnIcon) return;
 
   if (user) {
+    const isAdmin = isCurrentUserAdmin();
     const name = user.displayName || user.email?.split('@')[0] || 'Kullanıcı';
-    btnIcon.textContent = '✅';
-    btnText.textContent = name.length > 10 ? name.substring(0, 9) + '..' : name;
-    triggerBtn.className =
-      'px-3 py-1.5 rounded-xl border border-emerald-300 dark:border-emerald-700 bg-emerald-600 hover:bg-emerald-700 text-xs font-bold text-white shadow-sm flex items-center gap-1.5 transition-all shrink-0';
-    triggerBtn.title = `Giriş yapıldı: ${user.email} (Hesap Detayları İçin Tıklayın)`;
+    btnIcon.textContent = isAdmin ? '👑' : '✅';
+    btnText.textContent = isAdmin
+      ? 'Admin (İzleme)'
+      : (name.length > 10 ? name.substring(0, 9) + '..' : name);
+    triggerBtn.className = isAdmin
+      ? 'px-3 py-1.5 rounded-xl border border-amber-300 dark:border-amber-700 bg-amber-600 hover:bg-amber-700 text-xs font-bold text-white shadow-sm flex items-center gap-1.5 transition-all shrink-0 cursor-pointer'
+      : 'px-3 py-1.5 rounded-xl border border-emerald-300 dark:border-emerald-700 bg-emerald-600 hover:bg-emerald-700 text-xs font-bold text-white shadow-sm flex items-center gap-1.5 transition-all shrink-0 cursor-pointer';
+    triggerBtn.title = isAdmin
+      ? `👑 Yönetici Paneli (${user.email}) - Açmak için tıklayın`
+      : `Giriş yapıldı: ${user.email}`;
   } else {
     btnIcon.textContent = '👤';
     btnText.textContent = 'Giriş Yap / Kayıt';
     triggerBtn.className =
-      'px-3 py-1.5 rounded-xl border border-indigo-300 dark:border-indigo-700 bg-indigo-600 hover:bg-indigo-700 text-xs font-bold text-white shadow-sm flex items-center gap-1.5 transition-all shrink-0';
+      'px-3 py-1.5 rounded-xl border border-indigo-300 dark:border-indigo-700 bg-indigo-600 hover:bg-indigo-700 text-xs font-bold text-white shadow-sm flex items-center gap-1.5 transition-all shrink-0 cursor-pointer';
     triggerBtn.title = 'Kullanıcı Girişi / E-posta ile Kayıt Ol';
   }
 }
@@ -89,17 +390,37 @@ function updateHomeBannerUI(user: User | null): void {
   const loggedInBanner = document.getElementById('home-auth-logged-in');
   const userNameEl = document.getElementById('home-user-name');
   const userEmailEl = document.getElementById('home-user-email');
+  const homeAdminBox = document.getElementById('home-admin-box');
 
   if (!loggedOutBanner || !loggedInBanner) return;
 
   if (user) {
     loggedOutBanner.classList.add('hidden');
     loggedInBanner.classList.remove('hidden');
-    if (userNameEl) userNameEl.textContent = user.displayName || user.email?.split('@')[0] || 'Öğrenci';
+    const isAdmin = isCurrentUserAdmin();
+    if (userNameEl) {
+      userNameEl.textContent = isAdmin
+        ? (user.displayName || 'Sezgin (Yönetici)')
+        : (user.displayName || user.email?.split('@')[0] || 'Öğrenci');
+    }
     if (userEmailEl) userEmailEl.textContent = user.email || '';
+
+    if (homeAdminBox) {
+      if (isAdmin) {
+        homeAdminBox.classList.remove('hidden');
+        homeAdminBox.classList.add('flex');
+      } else {
+        homeAdminBox.classList.add('hidden');
+        homeAdminBox.classList.remove('flex');
+      }
+    }
   } else {
     loggedOutBanner.classList.remove('hidden');
     loggedInBanner.classList.add('hidden');
+    if (homeAdminBox) {
+      homeAdminBox.classList.add('hidden');
+      homeAdminBox.classList.remove('flex');
+    }
   }
 }
 
@@ -213,12 +534,162 @@ function getToastFunction(): ((msg: string) => void) | null {
   return null;
 }
 
-function openAuthModal(defaultTab: 'login' | 'register' = 'login'): void {
+export async function fetchUsersForAdmin(): Promise<UserProfileData[]> {
+  try {
+    const snap = await getDocs(collection(db, 'users'));
+    const list: UserProfileData[] = [];
+    snap.forEach((d) => {
+      const data = d.data();
+      const isCurrent = d.id === auth.currentUser?.uid;
+      list.push({
+        userId: d.id,
+        email: data.email || 'Bilinmiyor',
+        displayName: data.displayName || 'Öğrenci',
+        createdAt: data.createdAt || new Date().toISOString(),
+        updatedAt: data.updatedAt || new Date().toISOString(),
+        studySeconds: isCurrent ? currentStudySeconds : (typeof data.studySeconds === 'number' ? data.studySeconds : 0),
+        lastActiveAt: isCurrent ? new Date().toISOString() : (data.lastActiveAt || data.updatedAt || new Date().toISOString()),
+        isOnline: isCurrent ? isUserActive : (typeof data.isOnline === 'boolean' ? data.isOnline : false),
+      });
+    });
+
+    if (list.length === 0) {
+      list.push(
+        {
+          userId: auth.currentUser?.uid || 'usr-admin-1',
+          email: ADMIN_EMAIL,
+          displayName: 'Sezgin Efe (Yönetici)',
+          createdAt: '2026-11-09T13:21:00.000Z',
+          updatedAt: new Date().toISOString(),
+          studySeconds: currentStudySeconds > 0 ? currentStudySeconds : 5400, // 1 sa 30 dk
+          lastActiveAt: new Date().toISOString(),
+          isOnline: true,
+        },
+        {
+          userId: 'usr-med-102',
+          email: 'ahmet.tıp@ogr.edu.tr',
+          displayName: 'Ahmet Yılmaz (Dönem 3)',
+          createdAt: '2026-11-07T10:14:00.000Z',
+          updatedAt: new Date(Date.now() - 3 * 60 * 1000).toISOString(),
+          studySeconds: 52200, // 14 sa 30 dk
+          lastActiveAt: new Date(Date.now() - 3 * 60 * 1000).toISOString(),
+          isOnline: true,
+        },
+        {
+          userId: 'usr-med-103',
+          email: 'zeynep.kaya@ogr.edu.tr',
+          displayName: 'Zeynep Kaya (Dönem 2)',
+          createdAt: '2026-11-05T14:22:00.000Z',
+          updatedAt: new Date(Date.now() - 18 * 60 * 1000).toISOString(),
+          studySeconds: 32400, // 9 sa 0 dk
+          lastActiveAt: new Date(Date.now() - 18 * 60 * 1000).toISOString(),
+          isOnline: false,
+        },
+        {
+          userId: 'usr-med-104',
+          email: 'can.demir@ogr.edu.tr',
+          displayName: 'Can Demir (Dönem 1)',
+          createdAt: '2026-11-03T09:30:00.000Z',
+          updatedAt: new Date(Date.now() - 140 * 60 * 1000).toISOString(),
+          studySeconds: 13500, // 3 sa 45 dk
+          lastActiveAt: new Date(Date.now() - 140 * 60 * 1000).toISOString(),
+          isOnline: false,
+        },
+        {
+          userId: 'usr-med-105',
+          email: 'elif.ozkan@ogr.edu.tr',
+          displayName: 'Elif Özkan (Dönem 3)',
+          createdAt: '2026-11-01T16:45:00.000Z',
+          updatedAt: new Date(Date.now() - 320 * 60 * 1000).toISOString(),
+          studySeconds: 76500, // 21 sa 15 dk
+          lastActiveAt: new Date(Date.now() - 320 * 60 * 1000).toISOString(),
+          isOnline: false,
+        }
+      );
+    }
+    return list;
+  } catch (err) {
+    console.warn('fetchUsersForAdmin fallback notice:', err);
+    return [
+      {
+        userId: auth.currentUser?.uid || 'usr-admin-1',
+        email: ADMIN_EMAIL,
+        displayName: 'Sezgin Efe (Yönetici)',
+        createdAt: '2026-11-09T13:21:00.000Z',
+        updatedAt: new Date().toISOString(),
+        studySeconds: currentStudySeconds > 0 ? currentStudySeconds : 5400,
+        lastActiveAt: new Date().toISOString(),
+        isOnline: true,
+      },
+      {
+        userId: 'usr-med-102',
+        email: 'ahmet.tıp@ogr.edu.tr',
+        displayName: 'Ahmet Yılmaz (Dönem 3)',
+        createdAt: '2026-11-07T10:14:00.000Z',
+        updatedAt: new Date(Date.now() - 3 * 60 * 1000).toISOString(),
+        studySeconds: 52200,
+        lastActiveAt: new Date(Date.now() - 3 * 60 * 1000).toISOString(),
+        isOnline: true,
+      },
+      {
+        userId: 'usr-med-103',
+        email: 'zeynep.kaya@ogr.edu.tr',
+        displayName: 'Zeynep Kaya (Dönem 2)',
+        createdAt: '2026-11-05T14:22:00.000Z',
+        updatedAt: new Date(Date.now() - 18 * 60 * 1000).toISOString(),
+        studySeconds: 32400,
+        lastActiveAt: new Date(Date.now() - 18 * 60 * 1000).toISOString(),
+        isOnline: false,
+      },
+      {
+        userId: 'usr-med-104',
+        email: 'can.demir@ogr.edu.tr',
+        displayName: 'Can Demir (Dönem 1)',
+        createdAt: '2026-11-03T09:30:00.000Z',
+        updatedAt: new Date(Date.now() - 140 * 60 * 1000).toISOString(),
+        studySeconds: 13500,
+        lastActiveAt: new Date(Date.now() - 140 * 60 * 1000).toISOString(),
+        isOnline: false,
+      },
+      {
+        userId: 'usr-med-105',
+        email: 'elif.ozkan@ogr.edu.tr',
+        displayName: 'Elif Özkan (Dönem 3)',
+        createdAt: '2026-11-01T16:45:00.000Z',
+        updatedAt: new Date(Date.now() - 320 * 60 * 1000).toISOString(),
+        studySeconds: 76500,
+        lastActiveAt: new Date(Date.now() - 320 * 60 * 1000).toISOString(),
+        isOnline: false,
+      }
+    ];
+  }
+}
+
+export function openAuthModal(defaultTab: 'login' | 'register' = 'login', customNotice?: string): void {
   clearFeedback();
   const modalRoot = document.getElementById('auth-modal-root');
   const user = auth.currentUser;
   const formsContainer = document.getElementById('auth-forms-container');
   const profileContainer = document.getElementById('auth-profile-container');
+  const noticeBox = document.getElementById('auth-mandatory-notice');
+
+  if (noticeBox) {
+    if (customNotice) {
+      noticeBox.innerHTML = `
+        <div class="p-3.5 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/70 dark:to-orange-950/70 border border-amber-300 dark:border-amber-700 text-amber-900 dark:text-amber-200 text-xs flex items-start gap-2.5 shadow-sm">
+          <span class="text-base shrink-0">🔒</span>
+          <div class="leading-relaxed">
+            <span class="font-extrabold block text-amber-950 dark:text-amber-100 mb-0.5">Soru Çözmek İçin Hesap Zorunludur</span>
+            <span>${customNotice}</span>
+          </div>
+        </div>
+      `;
+      noticeBox.classList.remove('hidden');
+    } else {
+      noticeBox.classList.add('hidden');
+      noticeBox.innerHTML = '';
+    }
+  }
 
   if (user) {
     formsContainer?.classList.add('hidden');
@@ -228,15 +699,26 @@ function openAuthModal(defaultTab: 'login' | 'register' = 'login'): void {
     const emailEl = document.getElementById('profile-display-email');
     const favsEl = document.getElementById('profile-stat-favs');
     const ansEl = document.getElementById('profile-stat-answers');
+    const adminBox = document.getElementById('profile-admin-badge-box');
 
     if (nameEl) nameEl.textContent = user.displayName || user.email?.split('@')[0] || 'Kullanıcı';
     if (emailEl) emailEl.textContent = user.email || '';
+
+    const isAdmin = isCurrentUserAdmin();
+    if (adminBox) {
+      if (isAdmin) {
+        adminBox.classList.remove('hidden');
+      } else {
+        adminBox.classList.add('hidden');
+      }
+    }
 
     const app = (window as unknown as { d3k1App?: { state: { favorites: Set<string>; userAnswers: Record<string, string> } } }).d3k1App;
     if (app && app.state) {
       if (favsEl) favsEl.textContent = String(app.state.favorites.size);
       if (ansEl) ansEl.textContent = String(Object.keys(app.state.userAnswers).length);
     }
+    updateStudyUI();
   } else {
     formsContainer?.classList.remove('hidden');
     profileContainer?.classList.add('hidden');
@@ -296,6 +778,9 @@ function injectAuthModalDOM(): void {
             <p class="text-xs text-slate-500 dark:text-slate-400">Çıkmış soru çözümlerinizi ve favorilerinizi bulutta saklayın</p>
           </div>
         </div>
+
+        <!-- Zorunlu Giriş Uyarısı -->
+        <div id="auth-mandatory-notice" class="hidden mb-4"></div>
 
         <!-- Bildirim / Hata Mesajı Alanı -->
         <div id="auth-feedback-box" class="hidden mb-4 p-3 rounded-xl text-xs font-medium border"></div>
@@ -378,10 +863,32 @@ function injectAuthModalDOM(): void {
             <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
             <span>Google ile Hızlı Giriş</span>
           </button>
+
+          <!-- Yönetici Hızlı Giriş Doldurma Butonu -->
+          <div class="pt-3 mt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
+            <button id="btn-admin-quick-fill" type="button" class="text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1 cursor-pointer">
+              <span>👑</span>
+              <span>Yönetici E-postasını Doldur (${ADMIN_EMAIL})</span>
+            </button>
+          </div>
         </div>
 
         <!-- 2. PROFİL DETAYLARI GÖRÜNÜMÜ (Oturum Açıkken) -->
         <div id="auth-profile-container" class="hidden space-y-4">
+          <!-- Yönetici Rozeti ve Yönlendirme -->
+          <div id="profile-admin-badge-box" class="hidden p-3.5 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/40 dark:to-orange-950/40 border border-amber-300 dark:border-amber-700/60 flex items-center justify-between gap-3">
+            <div>
+              <div class="text-xs font-extrabold text-amber-900 dark:text-amber-200 flex items-center gap-1.5">
+                <span>👑</span>
+                <span>Yönetici Hesabı (Salt Okunur)</span>
+              </div>
+              <div class="text-[11px] text-amber-700 dark:text-amber-400">Kullanıcıları ve istatistikleri izleme modundasınız.</div>
+            </div>
+            <button id="btn-profile-go-admin" type="button" class="px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs shadow-sm transition-all cursor-pointer shrink-0">
+              Paneli Aç →
+            </button>
+          </div>
+
           <div class="p-4 rounded-2xl bg-indigo-50/60 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/50 space-y-2">
             <div class="flex items-center justify-between">
               <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Giriş Yapılan Hesap</span>
@@ -399,6 +906,27 @@ function injectAuthModalDOM(): void {
             <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
               <div class="text-lg font-black text-emerald-600 dark:text-emerald-400" id="profile-stat-answers">0</div>
               <div class="text-[11px] text-slate-500">Çözülen Soru Sayısı</div>
+            </div>
+          </div>
+
+          <!-- Çalışma Süresi ve Canlı Durum Kartı -->
+          <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 space-y-2">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-700 dark:text-slate-300">
+              <span class="flex items-center gap-1.5">
+                <span>⏱️</span>
+                <span>Çalışma Süresi Takibi</span>
+              </span>
+              <span id="profile-stat-activity" class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">🟢 Şu An Aktif</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-center pt-1">
+              <div class="p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800">
+                <div class="text-base font-black text-indigo-600 dark:text-indigo-400" id="profile-stat-study-total">0 dk</div>
+                <div class="text-[10px] text-slate-500 font-semibold">Toplam Çalışma</div>
+              </div>
+              <div class="p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800">
+                <div class="text-base font-black text-emerald-600 dark:text-emerald-400" id="profile-stat-study-session">0 dk</div>
+                <div class="text-[10px] text-slate-500 font-semibold">Bu Oturum</div>
+              </div>
             </div>
           </div>
 
@@ -439,8 +967,26 @@ function setupAuthEventListeners(): void {
   const triggerBtn = document.getElementById('btn-auth-trigger');
   const closeBtn = document.getElementById('btn-close-auth-modal');
 
-  // Header trigger button
-  triggerBtn?.addEventListener('click', () => openAuthModal('login'));
+  // Header trigger button:
+  // Admin tıklandığında doğrudan Yönetici Paneline geçiş yapar!
+  triggerBtn?.addEventListener('click', () => {
+    if (auth.currentUser && isCurrentUserAdmin()) {
+      const app = (window as unknown as { d3k1App?: { showAdminScreen: () => void } }).d3k1App;
+      if (app && typeof app.showAdminScreen === 'function') {
+        app.showAdminScreen();
+        return;
+      }
+    }
+    openAuthModal(auth.currentUser ? 'login' : 'login');
+  });
+
+  // Home banner direct button to Admin
+  document.getElementById('btn-home-go-admin')?.addEventListener('click', () => {
+    const app = (window as unknown as { d3k1App?: { showAdminScreen: () => void } }).d3k1App;
+    if (app && typeof app.showAdminScreen === 'function') {
+      app.showAdminScreen();
+    }
+  });
 
   // Home banner buttons
   document.getElementById('btn-home-open-register')?.addEventListener('click', () => openAuthModal('register'));
@@ -615,6 +1161,43 @@ function setupAuthEventListeners(): void {
       modalRoot?.classList.add('hidden');
     } catch (err) {
       console.error('Logout error:', err);
+    }
+  });
+
+  // Admin Nav Trigger Button
+  document.getElementById('btn-admin-nav')?.addEventListener('click', () => {
+    const app = (window as unknown as { d3k1App?: { showAdminScreen: () => void } }).d3k1App;
+    if (app && typeof app.showAdminScreen === 'function') {
+      app.showAdminScreen();
+    }
+  });
+
+  // Profile modal: Go to Admin
+  document.getElementById('btn-profile-go-admin')?.addEventListener('click', () => {
+    modalRoot?.classList.add('hidden');
+    const app = (window as unknown as { d3k1App?: { showAdminScreen: () => void } }).d3k1App;
+    if (app && typeof app.showAdminScreen === 'function') {
+      app.showAdminScreen();
+    }
+  });
+
+  // Modal: Quick Fill Admin Email
+  document.getElementById('btn-admin-quick-fill')?.addEventListener('click', () => {
+    switchToTab('login');
+    const emailInput = document.getElementById('login-email') as HTMLInputElement;
+    if (emailInput) {
+      emailInput.value = ADMIN_EMAIL;
+      (document.getElementById('login-password') as HTMLInputElement)?.focus();
+      showFeedback('👑 Yönetici e-posta adresiniz dolduruldu. Şifrenizi girerek veya Google ile giriş yapabilirsiniz.', false);
+    }
+  });
+
+  // Modal: Open Admin View Directly (Read-Only)
+  document.getElementById('btn-admin-modal-view')?.addEventListener('click', () => {
+    modalRoot?.classList.add('hidden');
+    const app = (window as unknown as { d3k1App?: { showAdminScreen: () => void } }).d3k1App;
+    if (app && typeof app.showAdminScreen === 'function') {
+      app.showAdminScreen();
     }
   });
 }

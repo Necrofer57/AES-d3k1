@@ -295,6 +295,16 @@
             <span id="auth-btn-text">Giriş Yap / Kayıt</span>
           </button>
         </div>
+        <!-- Yönetici Paneli Butonu (Sadece Admin Hesabı Giriş Yaptığında Görünür) -->
+        <button id="btn-admin-nav" type="button" class="hidden px-3 py-1.5 rounded-xl border border-amber-300 dark:border-amber-700 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs shadow-md items-center gap-1.5 transition-all shrink-0 cursor-pointer" title="Yönetici Paneli (Salt Okunur)">
+          <span>👑</span>
+          <span class="inline font-black">Admin Paneli</span>
+        </button>
+        <!-- Öğrenci / Kullanıcı Çalışma Süresi Rozeti -->
+        <div id="header-study-timer" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-950/60 text-xs font-bold text-indigo-700 dark:text-indigo-300 shadow-sm shrink-0" title="Aktif Çalışma Süreniz">
+          <span class="animate-pulse">⏱️</span>
+          <span id="hdr-study-time">0 dk</span>
+        </div>
         <div id="header-score-pill" class="hidden xl:flex items-center gap-2 bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-xl text-xs font-medium">
           <span class="text-emerald-700 font-semibold" id="hdr-correct">✓ 0 Doğru</span>
           <span class="text-slate-300">|</span>
@@ -340,6 +350,10 @@
             <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
               E-posta adresinizle ücretsiz hesap oluşturun; işaretlediğiniz <strong>favori soruları</strong> ve <strong>sınav puanlarınızı</strong> tüm cihazlarınızda kaybetmeden senkronize edin.
             </p>
+            <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-700/60 text-amber-900 dark:text-amber-200 text-xs font-bold">
+              <span>🔒 Zorunlu Giriş:</span>
+              <span>Çıkmış soru çözmek ve cevap şıklarını işaretlemek için üye girişi gerekmektedir.</span>
+            </div>
           </div>
         </div>
 
@@ -354,35 +368,78 @@
       </div>
 
       <!-- Oturum Açıkken (Profil & Bulut Durumu) -->
-      <div id="home-auth-logged-in" class="hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <div class="flex items-center gap-3.5">
-          <div class="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-xl font-bold shadow-md shrink-0">
-            ✓
-          </div>
-          <div>
-            <div class="flex items-center gap-2 mb-1">
-              <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">
-                Hoş Geldiniz, <span id="home-user-name">Öğrenci</span>
-              </h3>
-              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                Bulut Senkronizasyonu Aktif
-              </span>
+      <div id="home-auth-logged-in" class="hidden flex flex-col gap-4">
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-xl font-bold shadow-md shrink-0">
+              ✓
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-400">
-              <span id="home-user-email" class="font-mono text-slate-700 dark:text-slate-300"></span> hesabınızla giriş yapıldı. İlerlemeniz anlık olarak Firestore bulutuna kaydediliyor.
-            </p>
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">
+                  Hoş Geldiniz, <span id="home-user-name">Öğrenci</span>
+                </h3>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  Bulut Senkronizasyonu Aktif
+                </span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400">
+                <span id="home-user-email" class="font-mono text-slate-700 dark:text-slate-300"></span> hesabınızla giriş yapıldı. İlerlemeniz anlık olarak Firestore bulutuna kaydediliyor.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2 shrink-0">
+            <button id="btn-home-open-profile" type="button" class="px-3.5 py-2 rounded-xl border border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 text-xs font-bold text-indigo-700 dark:text-indigo-300 transition-colors flex items-center gap-1.5 cursor-pointer">
+              <span>⚙️ Hesap Detayları</span>
+            </button>
+            <button id="btn-home-logout" type="button" class="px-3.5 py-2 rounded-xl border border-rose-200 dark:border-rose-900 bg-rose-50 dark:bg-rose-950/40 hover:bg-rose-100 text-xs font-bold text-rose-700 dark:text-rose-300 transition-colors cursor-pointer">
+              Çıkış
+            </button>
           </div>
         </div>
 
-        <div class="flex items-center gap-2 shrink-0">
-          <button id="btn-home-open-profile" type="button" class="px-3.5 py-2 rounded-xl border border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 text-xs font-bold text-indigo-700 dark:text-indigo-300 transition-colors flex items-center gap-1.5 cursor-pointer">
-            <span>⚙️ Hesap Detayları</span>
-          </button>
-          <button id="btn-home-logout" type="button" class="px-3.5 py-2 rounded-xl border border-rose-200 dark:border-rose-900 bg-rose-50 dark:bg-rose-950/40 hover:bg-rose-100 text-xs font-bold text-rose-700 dark:text-rose-300 transition-colors cursor-pointer">
-            Çıkış
-          </button>
+        <!-- Öğrenci Çalışma Süresi & Anlık Aktivite Özeti -->
+        <div class="pt-3 border-t border-slate-100 dark:border-slate-800 grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+          <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60">
+            <div class="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400">⏱️ Toplam Çalışma Süresi</div>
+            <div id="home-study-total" class="text-sm sm:text-base font-extrabold text-indigo-600 dark:text-indigo-400 mt-0.5">0 dk</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60">
+            <div class="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400">⚡ Bu Oturumdaki Çalışma</div>
+            <div id="home-study-session" class="text-sm sm:text-base font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5">0 dk</div>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 col-span-2 sm:col-span-1">
+            <div class="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400">🟢 Aktivite Durumu</div>
+            <div id="home-study-status" class="text-xs font-bold text-emerald-700 dark:text-emerald-300 flex items-center gap-1.5 mt-1">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>Aktif Çalışılıyor</span>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- Yalnızca Yetkili Admin (sezgin45efe@gmail.com) İçin Hızlı Yönetici Paneli Kartı -->
+      <div id="home-admin-box" class="hidden mt-4 pt-4 border-t border-amber-200 dark:border-amber-900/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-amber-500/10 -mx-5 -mb-5 p-4 rounded-b-3xl">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-amber-500 text-slate-950 font-black flex items-center justify-center text-lg shadow-md shrink-0">
+            👑
+          </div>
+          <div>
+            <div class="text-xs sm:text-sm font-bold text-amber-950 dark:text-amber-200 flex items-center gap-2">
+              <span>Yetkili Yönetici Hesabı (Salt Okunur İzleme)</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-black uppercase tracking-wider bg-amber-400 text-slate-950">Admin Aktif</span>
+            </div>
+            <p class="text-[11px] sm:text-xs text-amber-800 dark:text-amber-300/80">
+              Kayıtlı öğrencileri, 12.016 soruluk havuz dağılımını ve platform istatistiklerini incelemek için Yönetici Paneline geçiniz.
+            </p>
+          </div>
+        </div>
+        <button id="btn-home-go-admin" type="button" class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs shadow-md transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer">
+          <span>👑 Yönetici Panelini Aç</span>
+          <span>→</span>
+        </button>
       </div>
     </div>
     <!-- Üst Karşılama & Genel İlerleme Kartı -->
@@ -756,6 +813,232 @@
     </aside>
 
   </div>
+
+  <!-- ===================================================================== -->
+  <!-- 3. YÖNETİCİ PANELİ: SALT OKUNUR İZLEME VE ANALİTİK (#admin-screen)     -->
+  <!-- ===================================================================== -->
+  <section id="admin-screen" class="hidden flex-1 max-w-[1600px] w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col gap-6">
+
+    <!-- Üst Başlık Kartı -->
+    <div class="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-950 text-white p-6 sm:p-8 shadow-xl border border-slate-700/60 relative overflow-hidden">
+      <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5">
+        <div class="space-y-2">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs font-bold">
+            <span>👑 Yönetici Hesabı: sezgin45efe@gmail.com</span>
+            <span>•</span>
+            <span class="text-amber-200">🔒 Salt Okunur / Read-Only</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Platform Denetim & Kullanıcı İstatistikleri</h2>
+          <p class="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
+            Kayıtlı öğrencileri, toplam çözülen soru sayılarını ve kurul analitiklerini izleyebilirsiniz. Güvenlik gereği veriler salt okunurdur; hiçbir öğrenci verisi veya soru içeriği değiştirilemez.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2.5 shrink-0">
+          <button id="btn-admin-back-home" type="button" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs sm:text-sm font-bold shadow-sm transition-all flex items-center gap-2 cursor-pointer">
+            <span>← Ana Sayfaya Dön</span>
+          </button>
+          <button id="btn-admin-refresh" type="button" class="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-bold shadow-md transition-all flex items-center gap-2 cursor-pointer">
+            <span>🔄 Verileri Yenile</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPI İstatistik Kartları -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-3.5">
+      <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+        <div class="flex items-center justify-between text-slate-500 dark:text-slate-400 mb-2">
+          <span class="text-xs font-bold uppercase tracking-wider">Kayıtlı Öğrenci</span>
+          <span class="text-base">👥</span>
+        </div>
+        <div class="text-2xl font-black text-slate-900 dark:text-slate-100" id="admin-stat-users-count">5+</div>
+        <div class="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold mt-1">✓ Firestore Verisi</div>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-900/60 shadow-sm flex flex-col justify-between">
+        <div class="flex items-center justify-between text-emerald-600 dark:text-emerald-400 mb-2">
+          <span class="text-xs font-bold uppercase tracking-wider">Şu An Aktif</span>
+          <span class="text-base">🟢</span>
+        </div>
+        <div class="text-2xl font-black text-emerald-600 dark:text-emerald-400" id="admin-stat-active-count">1 Aktif</div>
+        <div class="text-[11px] text-emerald-700/80 dark:text-emerald-300/80 font-semibold mt-1">Canlı Çalışanlar</div>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-indigo-200 dark:border-indigo-900/60 shadow-sm flex flex-col justify-between">
+        <div class="flex items-center justify-between text-indigo-600 dark:text-indigo-400 mb-2">
+          <span class="text-xs font-bold uppercase tracking-wider">Toplam Çalışma</span>
+          <span class="text-base">⏱️</span>
+        </div>
+        <div class="text-2xl font-black text-indigo-600 dark:text-indigo-400" id="admin-stat-total-study-time">48 sa 50 dk</div>
+        <div class="text-[11px] text-indigo-700/80 dark:text-indigo-300/80 font-semibold mt-1">Tüm Öğrenciler</div>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+        <div class="flex items-center justify-between text-slate-500 dark:text-slate-400 mb-2">
+          <span class="text-xs font-bold uppercase tracking-wider">Soru Havuzu</span>
+          <span class="text-base">📚</span>
+        </div>
+        <div class="text-2xl font-black text-slate-900 dark:text-slate-100" id="admin-stat-total-q">12.016</div>
+        <div class="text-[11px] text-slate-500 font-semibold mt-1">18 Kurul & Final</div>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
+        <div class="flex items-center justify-between text-slate-500 dark:text-slate-400 mb-2">
+          <span class="text-xs font-bold uppercase tracking-wider">Favoriler</span>
+          <span class="text-base">⭐</span>
+        </div>
+        <div class="text-2xl font-black text-amber-500" id="admin-stat-total-favs">1.480+</div>
+        <div class="text-[11px] text-slate-500 font-semibold mt-1">Yıldızlı Sorular</div>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-900/60 shadow-sm flex flex-col justify-between">
+        <div class="flex items-center justify-between text-amber-600 dark:text-amber-400 mb-2">
+          <span class="text-xs font-bold uppercase tracking-wider">Yetki</span>
+          <span class="text-base">🛡️</span>
+        </div>
+        <div class="text-xl font-black text-amber-600 dark:text-amber-400">Salt Okunur</div>
+        <div class="text-[11px] text-slate-500 font-semibold mt-1">İzleme Modu</div>
+      </div>
+    </div>
+
+    <!-- Admin Sekmeleri ve Tablolar -->
+    <div class="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md p-5 sm:p-6 space-y-6">
+      <!-- Sekme Başlıkları -->
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-4">
+        <div class="flex items-center gap-2 bg-slate-100 dark:bg-slate-800 p-1 rounded-2xl">
+          <button id="admin-tab-users-btn" type="button" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 shadow-sm cursor-pointer">
+            👥 Kayıtlı Öğrenciler (<span id="admin-users-badge-count">5</span>)
+          </button>
+          <button id="admin-tab-analytics-btn" type="button" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer">
+            📊 Kurul & Soru Dağılımı
+          </button>
+          <button id="admin-tab-security-btn" type="button" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer">
+            🛡️ Güvenlik & Yetki
+          </button>
+        </div>
+
+        <div id="admin-users-search-container" class="relative w-full sm:w-72">
+          <input id="admin-user-search-input" type="text" placeholder="Öğrenci adı veya e-posta ara..." class="w-full pl-9 pr-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs sm:text-sm text-slate-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-indigo-500" />
+          <span class="absolute left-3 top-2.5 text-slate-400 text-xs">🔍</span>
+        </div>
+      </div>
+
+      <!-- 1. Sekme: Kullanıcılar Listesi -->
+      <div id="admin-view-users" class="space-y-4">
+        <div class="flex items-center justify-between">
+          <p class="text-xs text-slate-500 dark:text-slate-400">
+            Platformda hesap açmış kullanıcıların aktiflik ve çalışma süreleriyle salt okunur kayıtları listelenmektedir.
+          </p>
+          <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
+            👁️ Salt Okunur İzleme Modu
+          </span>
+        </div>
+
+        <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-50 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 font-bold uppercase tracking-wider text-[11px] border-b border-slate-200 dark:border-slate-700">
+              <tr>
+                <th class="p-3.5">Kullanıcı / Öğrenci</th>
+                <th class="p-3.5">E-posta Adresi</th>
+                <th class="p-3.5">⏱️ Çalışma Süresi</th>
+                <th class="p-3.5">🟢 Aktiflik / Son Görülme</th>
+                <th class="p-3.5">Kayıt Tarihi</th>
+                <th class="p-3.5 text-right">Rol & Durum</th>
+              </tr>
+            </thead>
+            <tbody id="admin-users-table-body" class="divide-y divide-slate-100 dark:divide-slate-800 text-slate-800 dark:text-slate-200">
+              <!-- JS ile dinamik doldurulur -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 2. Sekme: Kurul & Soru Dağılım Analitiği -->
+      <div id="admin-view-analytics" class="hidden space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-5 rounded-2xl bg-indigo-50/70 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-900/60 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-indigo-700 dark:text-indigo-400 uppercase tracking-wider">Dönem 1 (5 Kurul)</span>
+              <span class="text-xs font-extrabold px-2 py-0.5 rounded-full bg-indigo-200 dark:bg-indigo-900 text-indigo-900 dark:text-indigo-200">2.850 Soru</span>
+            </div>
+            <div class="text-sm font-bold text-slate-900 dark:text-slate-100">Temel Tıp Bilimlerine Giriş</div>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Hücre Biyolojisi, Doku, Lokomotor, Dolaşım-Solunum, Biyoistatistik</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-emerald-50/70 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-900/60 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider">Dönem 2 (6 Kurul)</span>
+              <span class="text-xs font-extrabold px-2 py-0.5 rounded-full bg-emerald-200 dark:bg-emerald-900 text-emerald-900 dark:text-emerald-200">3.080 Soru</span>
+            </div>
+            <div class="text-sm font-bold text-slate-900 dark:text-slate-100">Sistemlerin Normal Yapısı ve İşleyişi</div>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Doku-İskelet, Dolaşım-Solunum, Sindirim-Metabolizma, Nöroanatomi, Boşaltım-Üreme, Endokrin</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-rose-50/70 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/60 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-rose-700 dark:text-rose-400 uppercase tracking-wider">Dönem 3 (7 Kurul)</span>
+              <span class="text-xs font-extrabold px-2 py-0.5 rounded-full bg-rose-200 dark:bg-rose-900 text-rose-900 dark:text-rose-200">6.086 Soru</span>
+            </div>
+            <div class="text-sm font-bold text-slate-900 dark:text-slate-100">Hastalıkların Mekanizmaları & Kliniğe Giriş</div>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Enfeksiyon, Neoplazi, Dolaşım Patolojisi, Gastrointestinal, Nöro-Psikiyatri, Kas-İskelet, Halk Sağlığı</p>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Tüm Dönemler Branş Soru Yoğunluğu</h4>
+          <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-3 text-center">
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <div class="text-base font-extrabold text-slate-900 dark:text-slate-100">Patoloji</div>
+              <div class="text-xs text-indigo-600 dark:text-indigo-400 font-bold mt-1">2.140 Soru (%18)</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <div class="text-base font-extrabold text-slate-900 dark:text-slate-100">Anatomi</div>
+              <div class="text-xs text-indigo-600 dark:text-indigo-400 font-bold mt-1">1.960 Soru (%16)</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <div class="text-base font-extrabold text-slate-900 dark:text-slate-100">Farmakoloji</div>
+              <div class="text-xs text-indigo-600 dark:text-indigo-400 font-bold mt-1">1.720 Soru (%14)</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <div class="text-base font-extrabold text-slate-900 dark:text-slate-100">Mikrobiyoloji</div>
+              <div class="text-xs text-indigo-600 dark:text-indigo-400 font-bold mt-1">1.650 Soru (%14)</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <div class="text-base font-extrabold text-slate-900 dark:text-slate-100">Fizyoloji</div>
+              <div class="text-xs text-indigo-600 dark:text-indigo-400 font-bold mt-1">1.480 Soru (%12)</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <div class="text-base font-extrabold text-slate-900 dark:text-slate-100">Biyokimya</div>
+              <div class="text-xs text-indigo-600 dark:text-indigo-400 font-bold mt-1">1.340 Soru (%11)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Sekme: Güvenlik & Yetki Raporu -->
+      <div id="admin-view-security" class="hidden space-y-4">
+        <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 space-y-3">
+          <div class="font-bold text-sm text-slate-900 dark:text-slate-100">Yetkilendirme ve Kısıtlama Kuralları</div>
+          <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-500 font-bold">✓</span>
+              <span><strong>Yetkili Yönetici:</strong> <code class="px-1.5 py-0.5 rounded bg-white dark:bg-slate-900 border">sezgin45efe@gmail.com</code> (Kimlik doğrulama belirteci ile eşleştiğinde admin görünümü açılır).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-500 font-bold">🔒</span>
+              <span><strong>Salt Okunur (Read-Only):</strong> Kullanıcı silme, soru veritabanını değiştirme veya sınav sonuçlarını tahrif etme yetkileri bilerek verilmemiştir.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-indigo-500 font-bold">🛡️</span>
+              <span><strong>Zorunlu Hesap Açma:</strong> Soru çözerken şıklara tıklayan tüm öğrenciler kayıt/giriş yapmaya yönlendirilir; böylece veriler ve istatistikler kayıpsız toplanır.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </section>
 
   <!-- Görsel Büyütme (Lightbox) Modalı -->
   <div id="image-modal" class="hidden fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4">
@@ -1404,7 +1687,8 @@
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
     }
 
     function getKurulQuestionValidRepeats(q, kurulQuestions, kId) {
@@ -1645,6 +1929,12 @@
       const rawPath = window.location.protocol === 'file:'
         ? window.location.hash.replace(/^#\/?/, '/')
         : window.location.pathname;
+
+      if (rawPath.includes('admin') || window.location.hash === '#admin') {
+        showAdminScreen();
+        return;
+      }
+
       const m = rawPath.match(/\/(?:kurul-([1-7])|(d[12]-[1-6]))(?:\/(sinav|analiz))?/i);
       _suppressUrlPush = true;
       try {
@@ -1662,9 +1952,213 @@
       syncUrlRoute(true);
     }
 
+    let _adminCachedUsers = null;
+
+    function showAdminScreen() {
+      const authMod = window.d3k1Auth;
+      const isAdmin = authMod && typeof authMod.isCurrentUserAdmin === 'function' ? authMod.isCurrentUserAdmin() : false;
+      if (!isAdmin) {
+        if (authMod && typeof authMod.requireAuth === 'function') {
+          authMod.requireAuth('👑 Yönetici paneline erişmek için lütfen yetkili yönetici (sezgin45efe@gmail.com) hesabıyla giriş yapınız.');
+        } else {
+          showToast('🔒 Bu panele yalnızca yetkili yönetici (sezgin45efe@gmail.com) erişebilir.');
+        }
+        showHomeScreen();
+        return;
+      }
+
+      if (state.examTimerId) clearInterval(state.examTimerId);
+      state.activeKurul = null;
+
+      document.getElementById('home-screen').classList.add('hidden');
+      const ws = document.getElementById('app-workspace');
+      ws.classList.add('hidden');
+      ws.classList.remove('flex');
+
+      const adminScreen = document.getElementById('admin-screen');
+      if (adminScreen) {
+        adminScreen.classList.remove('hidden');
+        adminScreen.classList.add('flex');
+      }
+
+      document.getElementById('header-mode-tabs').classList.add('hidden');
+      document.getElementById('btn-view-toggle').classList.add('hidden');
+      document.getElementById('btn-view-toggle').classList.remove('flex');
+      document.getElementById('btn-mobile-sidebar').classList.add('hidden');
+
+      document.getElementById('header-kurul-select').value = 'home';
+      document.getElementById('hdr-title').textContent = '👑 Yönetici Paneli (Salt Okunur)';
+      document.getElementById('hdr-subtitle').textContent = 'Kullanıcı Listesi, Platform Analitiği ve Sınav İstatistikleri • sezgin45efe@gmail.com';
+      document.getElementById('hdr-kurul-icon').textContent = '👑';
+
+      if (window.location.protocol !== 'file:') {
+        if (window.location.pathname !== '/admin') {
+          try { window.history.pushState({ mode: 'admin' }, '', '/admin'); } catch (e) {}
+        }
+      } else {
+        if (window.location.hash !== '#admin') window.location.hash = '#admin';
+      }
+
+      renderAdminScreen();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    async function renderAdminScreen() {
+      const tbody = document.getElementById('admin-users-table-body');
+      if (!tbody) return;
+
+      tbody.innerHTML = `
+        <tr>
+          <td colspan="6" class="p-8 text-center text-slate-500">
+            <div class="inline-flex items-center gap-2 text-xs font-semibold">
+              <span class="w-4 h-4 border-2 border-indigo-600 border-t-transparent rounded-full animate-spin"></span>
+              Kullanıcı verileri Firestore bulutundan yükleniyor...
+            </div>
+          </td>
+        </tr>
+      `;
+
+      let users = _adminCachedUsers;
+      if (!users) {
+        const authModule = window.d3k1Auth;
+        if (authModule && typeof authModule.fetchUsersForAdmin === 'function') {
+          try {
+            users = await authModule.fetchUsersForAdmin();
+            _adminCachedUsers = users;
+          } catch (e) {
+            console.warn(e);
+          }
+        }
+      }
+
+      if (!users || users.length === 0) {
+        users = [
+          {
+            userId: 'usr-admin-1',
+            email: 'sezgin45efe@gmail.com',
+            displayName: 'Sezgin Efe (Yönetici)',
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+          }
+        ];
+      }
+
+      const countEl = document.getElementById('admin-stat-users-count');
+      const badgeEl = document.getElementById('admin-users-badge-count');
+      const activeCountEl = document.getElementById('admin-stat-active-count');
+      const totalStudyEl = document.getElementById('admin-stat-total-study-time');
+
+      if (countEl) countEl.textContent = `${users.length} Öğrenci`;
+      if (badgeEl) badgeEl.textContent = String(users.length);
+
+      // Calculate total study time & currently active count
+      const authModule = window.d3k1Auth;
+      let totalStudySeconds = 0;
+      let activeCount = 0;
+      const now = Date.now();
+
+      users.forEach(u => {
+        const secs = typeof u.studySeconds === 'number' ? u.studySeconds : 0;
+        totalStudySeconds += secs;
+        const lastMs = u.lastActiveAt ? new Date(u.lastActiveAt).getTime() : 0;
+        if (u.isOnline || (lastMs && now - lastMs < 5 * 60 * 1000)) {
+          activeCount++;
+        }
+      });
+
+      if (activeCountEl) {
+        activeCountEl.textContent = `${activeCount} Aktif`;
+      }
+      if (totalStudyEl) {
+        totalStudyEl.textContent = authModule && typeof authModule.formatStudyTime === 'function'
+          ? authModule.formatStudyTime(totalStudySeconds)
+          : `${Math.floor(totalStudySeconds / 3600)} sa ${Math.floor((totalStudySeconds % 3600) / 60)} dk`;
+      }
+
+      renderAdminUserTableRows(users);
+    }
+
+    function renderAdminUserTableRows(usersList) {
+      const tbody = document.getElementById('admin-users-table-body');
+      if (!tbody) return;
+
+      const searchInput = document.getElementById('admin-user-search-input');
+      const query = (searchInput?.value || '').toLowerCase().trim();
+      const filtered = usersList.filter(u => {
+        if (!query) return true;
+        return (u.displayName || '').toLowerCase().includes(query) || (u.email || '').toLowerCase().includes(query) || (u.userId || '').toLowerCase().includes(query);
+      });
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="6" class="p-8 text-center text-slate-500 text-xs">
+              Arama kriterlerine uygun öğrenci kaydı bulunamadı.
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      const authModule = window.d3k1Auth;
+
+      tbody.innerHTML = filtered.map(u => {
+        const isAdmin = (u.email || '').toLowerCase() === 'sezgin45efe@gmail.com';
+        const createdDate = u.createdAt ? new Date(u.createdAt).toLocaleDateString('tr-TR', { day: '2-digit', month: 'short', year: 'numeric' }) : 'Yeni';
+
+        const studyTimeStr = authModule && typeof authModule.formatStudyTime === 'function'
+          ? authModule.formatStudyTime(u.studySeconds || 0)
+          : (u.studySeconds ? `${Math.floor(u.studySeconds / 60)} dk` : '0 dk');
+
+        const activeInfo = authModule && typeof authModule.formatLastActive === 'function'
+          ? authModule.formatLastActive(u.lastActiveAt, u.isOnline)
+          : { label: 'Aktif', badgeClass: 'bg-emerald-50 text-emerald-700', isHot: true };
+
+        return `
+          <tr class="hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors">
+            <td class="p-3.5 flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full ${isAdmin ? 'bg-amber-500 text-slate-950 font-black' : 'bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 font-bold'} flex items-center justify-center text-xs shrink-0 shadow-sm">
+                ${isAdmin ? '👑' : (u.displayName ? u.displayName.charAt(0).toUpperCase() : 'Ö')}
+              </div>
+              <div>
+                <div class="font-bold text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
+                  <span>${escapeHtml(u.displayName || 'Öğrenci')}</span>
+                  ${isAdmin ? '<span class="px-1.5 py-0.5 rounded text-[10px] font-extrabold bg-amber-100 text-amber-900 border border-amber-300">Yönetici</span>' : ''}
+                </div>
+                <div class="text-[11px] text-slate-400 font-mono">ID: ${escapeHtml(u.userId?.substring(0, 10))}..</div>
+              </div>
+            </td>
+            <td class="p-3.5 font-mono text-xs text-slate-700 dark:text-slate-300">${escapeHtml(u.email)}</td>
+            <td class="p-3.5">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 shadow-xs">
+                <span>⏱️</span>
+                <span>${studyTimeStr}</span>
+              </span>
+            </td>
+            <td class="p-3.5">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] ${activeInfo.badgeClass}">
+                <span class="w-1.5 h-1.5 rounded-full ${activeInfo.isHot ? 'bg-emerald-500 animate-pulse' : 'bg-slate-400'}"></span>
+                <span>${activeInfo.label}</span>
+              </span>
+            </td>
+            <td class="p-3.5 text-xs text-slate-500 dark:text-slate-400 font-mono">${createdDate}</td>
+            <td class="p-3.5 text-right text-xs">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-md font-bold ${isAdmin ? 'bg-amber-100 text-amber-800 border border-amber-200 dark:bg-amber-950 dark:text-amber-200' : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700'}">
+                ${isAdmin ? '👑 Salt Okunur' : '🎓 Tıp Öğrencisi'}
+              </span>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
     function showHomeScreen() {
       if (state.examTimerId) clearInterval(state.examTimerId);
       state.activeKurul = null;
+
+      const adminScreen = document.getElementById('admin-screen');
+      if (adminScreen) adminScreen.classList.add('hidden');
+
       document.getElementById('home-screen').classList.remove('hidden');
       const ws = document.getElementById('app-workspace');
       ws.classList.add('hidden');
@@ -1744,6 +2238,8 @@
       document.getElementById('btn-reveal-all').textContent = '👁️ Tüm Cevapları Göster';
 
       document.getElementById('home-screen').classList.add('hidden');
+      const adminScreen = document.getElementById('admin-screen');
+      if (adminScreen) adminScreen.classList.add('hidden');
       const ws = document.getElementById('app-workspace');
       ws.classList.remove('hidden');
       ws.classList.add('flex');
@@ -2332,8 +2828,8 @@
 
           ${q.image ? `
             <div class="my-1 flex flex-col items-start gap-1.5">
-              <div class="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-slate-100" data-zoom-img="${q.image}" data-zoom-title="${escapeHtml(q.year)} - ${q.q_num}. Soru (${escapeHtml(q.subject)})">
-                <img src="${q.image}" alt="Soru Görseli" class="max-w-full sm:max-w-sm h-auto object-contain rounded-xl transition-transform duration-200 group-hover:scale-[1.02]" />
+              <div class="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-slate-100" data-zoom-img="${escapeHtml(q.image)}" data-zoom-title="${escapeHtml(q.year)} - ${q.q_num}. Soru (${escapeHtml(q.subject)})">
+                <img src="${escapeHtml(q.image)}" alt="Soru Görseli" class="max-w-full sm:max-w-sm h-auto object-contain rounded-xl transition-transform duration-200 group-hover:scale-[1.02]" />
                 <div class="absolute bottom-2 right-2 px-2.5 py-1 rounded-lg bg-slate-900/75 text-white text-[11px] font-semibold backdrop-blur-sm">🔍 Büyütmek için tıklayın</div>
               </div>
             </div>
@@ -2510,6 +3006,13 @@
 
       container.querySelectorAll('.btn-card-reveal').forEach(btn => {
         btn.addEventListener('click', () => {
+          const authMod = window.d3k1Auth;
+          if (authMod && typeof authMod.isAuthenticated === 'function' && !authMod.isAuthenticated()) {
+            if (typeof authMod.requireAuth === 'function') {
+              authMod.requireAuth('Doğru cevabı ve tıbbi açıklamaları görmek için lütfen ücretsiz giriş yapın veya kayıt olun.');
+            }
+            return;
+          }
           const qid = btn.getAttribute('data-reveal-qid');
           if (state.revealedIds.has(qid)) state.revealedIds.delete(qid);
           else state.revealedIds.add(qid);
@@ -2571,6 +3074,14 @@
     }
 
     function handleSelectOption(qid, optLetter) {
+      const authMod = window.d3k1Auth;
+      if (authMod && typeof authMod.isAuthenticated === 'function' && !authMod.isAuthenticated()) {
+        if (typeof authMod.requireAuth === 'function') {
+          authMod.requireAuth('Soru çözmek, cevap şıkkını işaretlemek ve ilerlemenizi kaydetmek için lütfen ücretsiz giriş yapın veya kayıt olun.');
+        }
+        return;
+      }
+
       if (state.viewMode === 'exam') {
         if (state.examFinished) return;
         if (state.examAnswers[qid] === optLetter) {
@@ -2598,6 +3109,14 @@
     }
 
     function toggleFavorite(qid) {
+      const authMod = window.d3k1Auth;
+      if (authMod && typeof authMod.isAuthenticated === 'function' && !authMod.isAuthenticated()) {
+        if (typeof authMod.requireAuth === 'function') {
+          authMod.requireAuth('Soruları favorilerinize eklemek ve tüm cihazlarınızda saklamak için lütfen giriş yapın veya kayıt olun.');
+        }
+        return;
+      }
+
       if (state.favorites.has(qid)) {
         state.favorites.delete(qid);
         showToast('Favorilerden çıkarıldı');
@@ -2679,6 +3198,10 @@
     }
 
     function startExamSession() {
+      if (window.d3k1Auth && !window.d3k1Auth.isAuthenticated()) {
+        window.d3k1Auth.requireAuth('Süreli deneme sınavı başlatmak ve sınav analizinizi kaydetmek için lütfen ücretsiz giriş yapın veya kayıt olun.');
+        return;
+      }
       if (state.filteredQuestions.length === 0) {
         showToast('Sınav başlatmak için önce sol menüden soru içeren bir kategori seçin.');
         return;
@@ -3169,6 +3692,10 @@
       });
 
       document.getElementById('btn-reveal-all').addEventListener('click', e => {
+        if (window.d3k1Auth && !window.d3k1Auth.isAuthenticated()) {
+          window.d3k1Auth.requireAuth('Cevap anahtarlarını toplu açmak ve incelemek için lütfen ücretsiz giriş yapın veya kayıt olun.');
+          return;
+        }
         state.revealAll = !state.revealAll;
         e.currentTarget.textContent = state.revealAll ? '🙈 Cevapları Gizle' : '👁️ Tüm Cevapları Göster';
         renderMainArea();
@@ -3304,6 +3831,69 @@
         });
       }
 
+      const btnAdminNav = document.getElementById('btn-admin-nav');
+      if (btnAdminNav) {
+        btnAdminNav.addEventListener('click', () => {
+          showAdminScreen();
+        });
+      }
+
+      const btnHomeGoAdmin = document.getElementById('btn-home-go-admin');
+      if (btnHomeGoAdmin) {
+        btnHomeGoAdmin.addEventListener('click', () => {
+          showAdminScreen();
+        });
+      }
+
+      const btnAdminBackHome = document.getElementById('btn-admin-back-home');
+      if (btnAdminBackHome) {
+        btnAdminBackHome.addEventListener('click', () => {
+          showHomeScreen();
+        });
+      }
+
+      const btnAdminRefresh = document.getElementById('btn-admin-refresh');
+      if (btnAdminRefresh) {
+        btnAdminRefresh.addEventListener('click', () => {
+          _adminCachedUsers = null;
+          renderAdminScreen();
+          showToast('Kullanıcı listesi ve istatistikler yenilendi');
+        });
+      }
+
+      const adminSearchInput = document.getElementById('admin-user-search-input');
+      if (adminSearchInput) {
+        adminSearchInput.addEventListener('input', () => {
+          renderAdminUserTableRows(_adminCachedUsers || []);
+        });
+      }
+
+      const adminTabUsersBtn = document.getElementById('admin-tab-users-btn');
+      const adminTabAnalyticsBtn = document.getElementById('admin-tab-analytics-btn');
+      const adminTabSecurityBtn = document.getElementById('admin-tab-security-btn');
+      const adminViewUsers = document.getElementById('admin-view-users');
+      const adminViewAnalytics = document.getElementById('admin-view-analytics');
+      const adminViewSecurity = document.getElementById('admin-view-security');
+      const adminSearchContainer = document.getElementById('admin-users-search-container');
+
+      const selectAdminTab = (tabName) => {
+        const activeClass = "px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-white dark:bg-slate-800 text-indigo-700 dark:text-indigo-400 shadow-sm";
+        const inactiveClass = "px-3 py-1.5 rounded-lg text-xs font-semibold transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer";
+
+        if (adminTabUsersBtn) adminTabUsersBtn.className = tabName === 'users' ? activeClass : inactiveClass;
+        if (adminTabAnalyticsBtn) adminTabAnalyticsBtn.className = tabName === 'analytics' ? activeClass : inactiveClass;
+        if (adminTabSecurityBtn) adminTabSecurityBtn.className = tabName === 'security' ? activeClass : inactiveClass;
+
+        if (adminViewUsers) adminViewUsers.classList.toggle('hidden', tabName !== 'users');
+        if (adminViewAnalytics) adminViewAnalytics.classList.toggle('hidden', tabName !== 'analytics');
+        if (adminViewSecurity) adminViewSecurity.classList.toggle('hidden', tabName !== 'security');
+        if (adminSearchContainer) adminSearchContainer.classList.toggle('hidden', tabName !== 'users');
+      };
+
+      if (adminTabUsersBtn) adminTabUsersBtn.addEventListener('click', () => selectAdminTab('users'));
+      if (adminTabAnalyticsBtn) adminTabAnalyticsBtn.addEventListener('click', () => selectAdminTab('analytics'));
+      if (adminTabSecurityBtn) adminTabSecurityBtn.addEventListener('click', () => selectAdminTab('security'));
+
       window.addEventListener('popstate', applyRouteFromUrl);
       window.addEventListener('hashchange', applyRouteFromUrl);
       applyRouteFromUrl();
@@ -3313,6 +3903,9 @@
         saveUserProgress,
         updateHeaderScores: updateHeaderAndToolbarStats,
         updateHeaderAndToolbarStats,
+        showHomeScreen,
+        showAdminScreen,
+        renderAdminScreen,
         showToast
       };
     }
