@@ -101,6 +101,33 @@ export function formatLastActive(lastActiveAt?: string, isOnline?: boolean): { l
   };
 }
 
+export function saveUserToLocalRegistry(profile: UserProfileData): void {
+  try {
+    const raw = localStorage.getItem('d3k1_user_registry_cache') || '[]';
+    const list: UserProfileData[] = JSON.parse(raw);
+    const targetEmail = (profile.email || '').toLowerCase().trim();
+    const idx = list.findIndex(u => (u.userId && u.userId === profile.userId) || (targetEmail && (u.email || '').toLowerCase().trim() === targetEmail));
+    if (idx >= 0) {
+      list[idx] = { ...list[idx], ...profile };
+    } else {
+      list.push(profile);
+    }
+    localStorage.setItem('d3k1_user_registry_cache', JSON.stringify(list));
+  } catch {
+    // Ignore storage errors
+  }
+}
+
+export function getLocalUserRegistry(): UserProfileData[] {
+  try {
+    const raw = localStorage.getItem('d3k1_user_registry_cache') || '[]';
+    const list = JSON.parse(raw);
+    return Array.isArray(list) ? list : [];
+  } catch {
+    return [];
+  }
+}
+
 function updateStudyUI(): void {
   const formattedTotal = formatStudyTime(currentStudySeconds);
   const formattedSession = formatStudyTime(sessionStudySeconds);
@@ -432,20 +459,31 @@ async function onUserSignedIn(user: User): Promise<void> {
     toast(`👋 Hoş geldiniz, ${user.displayName || user.email}!`);
   }
 
-  // 1. Sync / Save user profile to Firestore
+  // 1. Sync / Save user profile to Firestore & local registry
   try {
     const userDocRef = doc(db, 'users', user.uid);
     const snap = await getDoc(userDocRef);
-    if (!snap.exists()) {
-      const newProfile: UserProfileData = {
-        userId: user.uid,
-        email: user.email || '',
-        displayName: user.displayName || user.email?.split('@')[0] || 'Öğrenci',
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      };
-      await setDoc(userDocRef, newProfile);
-    }
+    const existing = snap.exists() ? snap.data() : null;
+
+    const email = user.email || existing?.email || '';
+    const rawName = user.displayName || existing?.displayName;
+    const finalDisplayName = (rawName && rawName !== 'Öğrenci')
+      ? rawName
+      : (email ? email.split('@')[0] : 'Öğrenci');
+
+    const profileData: UserProfileData = {
+      userId: user.uid,
+      email: email,
+      displayName: finalDisplayName,
+      createdAt: existing?.createdAt || new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      studySeconds: typeof existing?.studySeconds === 'number' ? existing.studySeconds : currentStudySeconds,
+      lastActiveAt: new Date().toISOString(),
+      isOnline: true,
+    };
+
+    await setDoc(userDocRef, profileData, { merge: true });
+    saveUserToLocalRegistry(profileData);
   } catch {
     // Handled gracefully
   }
@@ -539,133 +577,109 @@ function getToastFunction(): ((msg: string) => void) | null {
 }
 
 export async function fetchUsersForAdmin(): Promise<UserProfileData[]> {
+  const map = new Map<string, UserProfileData>();
+
+  // 1. Fetch real students directly from Firestore 'users' collection
   try {
     const snap = await getDocs(collection(db, 'users'));
-    const list: UserProfileData[] = [];
     snap.forEach((d) => {
       const data = d.data();
       const isCurrent = d.id === auth.currentUser?.uid;
-      list.push({
+      const email = (data.email || '').trim();
+      const rawName = (data.displayName || '').trim();
+      const displayName = (rawName && rawName !== 'Öğrenci')
+        ? rawName
+        : (email && email.includes('@') ? email.split('@')[0] : 'Öğrenci');
+
+      const userItem: UserProfileData = {
         userId: d.id,
-        email: data.email || 'Bilinmiyor',
-        displayName: data.displayName || 'Öğrenci',
+        email: email || 'E-posta Kayıtlı Değil',
+        displayName: displayName,
         createdAt: data.createdAt || new Date().toISOString(),
         updatedAt: data.updatedAt || new Date().toISOString(),
         studySeconds: isCurrent ? currentStudySeconds : (typeof data.studySeconds === 'number' ? data.studySeconds : 0),
         lastActiveAt: isCurrent ? new Date().toISOString() : (data.lastActiveAt || data.updatedAt || new Date().toISOString()),
         isOnline: isCurrent ? isUserActive : (typeof data.isOnline === 'boolean' ? data.isOnline : false),
-      });
+      };
+      map.set(d.id, userItem);
+      if (email) map.set(email.toLowerCase(), userItem);
     });
-
-    if (list.length === 0) {
-      list.push(
-        {
-          userId: auth.currentUser?.uid || 'usr-admin-1',
-          email: ADMIN_EMAIL,
-          displayName: 'Sezgin Efe (Yönetici)',
-          createdAt: '2026-11-09T13:21:00.000Z',
-          updatedAt: new Date().toISOString(),
-          studySeconds: currentStudySeconds > 0 ? currentStudySeconds : 5400, // 1 sa 30 dk
-          lastActiveAt: new Date().toISOString(),
-          isOnline: true,
-        },
-        {
-          userId: 'usr-med-102',
-          email: 'ogrenci1.tip@ogr.edu.tr',
-          displayName: 'Tıp Öğrencisi (Dönem 3)',
-          createdAt: '2026-11-07T10:14:00.000Z',
-          updatedAt: new Date(Date.now() - 3 * 60 * 1000).toISOString(),
-          studySeconds: 52200, // 14 sa 30 dk
-          lastActiveAt: new Date(Date.now() - 3 * 60 * 1000).toISOString(),
-          isOnline: true,
-        },
-        {
-          userId: 'usr-med-103',
-          email: 'ogrenci2.tip@ogr.edu.tr',
-          displayName: 'Tıp Öğrencisi (Dönem 2)',
-          createdAt: '2026-11-05T14:22:00.000Z',
-          updatedAt: new Date(Date.now() - 18 * 60 * 1000).toISOString(),
-          studySeconds: 32400, // 9 sa 0 dk
-          lastActiveAt: new Date(Date.now() - 18 * 60 * 1000).toISOString(),
-          isOnline: false,
-        },
-        {
-          userId: 'usr-med-104',
-          email: 'ogrenci3.tip@ogr.edu.tr',
-          displayName: 'Tıp Öğrencisi (Dönem 1)',
-          createdAt: '2026-11-03T09:30:00.000Z',
-          updatedAt: new Date(Date.now() - 140 * 60 * 1000).toISOString(),
-          studySeconds: 13500, // 3 sa 45 dk
-          lastActiveAt: new Date(Date.now() - 140 * 60 * 1000).toISOString(),
-          isOnline: false,
-        },
-        {
-          userId: 'usr-med-105',
-          email: 'ogrenci4.tip@ogr.edu.tr',
-          displayName: 'Tıp Öğrencisi (Dönem 3)',
-          createdAt: '2026-11-01T16:45:00.000Z',
-          updatedAt: new Date(Date.now() - 320 * 60 * 1000).toISOString(),
-          studySeconds: 76500, // 21 sa 15 dk
-          lastActiveAt: new Date(Date.now() - 320 * 60 * 1000).toISOString(),
-          isOnline: false,
-        }
-      );
-    }
-    return list;
-  } catch (err) {
-    return [
-      {
-        userId: auth.currentUser?.uid || 'usr-admin-1',
-        email: ADMIN_EMAIL,
-        displayName: 'Sezgin Efe (Yönetici)',
-        createdAt: '2026-11-09T13:21:00.000Z',
-        updatedAt: new Date().toISOString(),
-        studySeconds: currentStudySeconds > 0 ? currentStudySeconds : 5400,
-        lastActiveAt: new Date().toISOString(),
-        isOnline: true,
-      },
-      {
-        userId: 'usr-med-102',
-        email: 'ogrenci1.tip@ogr.edu.tr',
-        displayName: 'Tıp Öğrencisi (Dönem 3)',
-        createdAt: '2026-11-07T10:14:00.000Z',
-        updatedAt: new Date(Date.now() - 3 * 60 * 1000).toISOString(),
-        studySeconds: 52200,
-        lastActiveAt: new Date(Date.now() - 3 * 60 * 1000).toISOString(),
-        isOnline: true,
-      },
-      {
-        userId: 'usr-med-103',
-        email: 'ogrenci2.tip@ogr.edu.tr',
-        displayName: 'Tıp Öğrencisi (Dönem 2)',
-        createdAt: '2026-11-05T14:22:00.000Z',
-        updatedAt: new Date(Date.now() - 18 * 60 * 1000).toISOString(),
-        studySeconds: 32400,
-        lastActiveAt: new Date(Date.now() - 18 * 60 * 1000).toISOString(),
-        isOnline: false,
-      },
-      {
-        userId: 'usr-med-104',
-        email: 'ogrenci3.tip@ogr.edu.tr',
-        displayName: 'Tıp Öğrencisi (Dönem 1)',
-        createdAt: '2026-11-03T09:30:00.000Z',
-        updatedAt: new Date(Date.now() - 140 * 60 * 1000).toISOString(),
-        studySeconds: 13500,
-        lastActiveAt: new Date(Date.now() - 140 * 60 * 1000).toISOString(),
-        isOnline: false,
-      },
-      {
-        userId: 'usr-med-105',
-        email: 'ogrenci4.tip@ogr.edu.tr',
-        displayName: 'Tıp Öğrencisi (Dönem 3)',
-        createdAt: '2026-11-01T16:45:00.000Z',
-        updatedAt: new Date(Date.now() - 320 * 60 * 1000).toISOString(),
-        studySeconds: 76500,
-        lastActiveAt: new Date(Date.now() - 320 * 60 * 1000).toISOString(),
-        isOnline: false,
-      }
-    ];
+  } catch {
+    // If Firestore collection permissions or network limits, local registry will supply
   }
+
+  // 2. Merge local registry (captures all students who have registered on this instance)
+  const localList = getLocalUserRegistry();
+  localList.forEach(u => {
+    const key = u.userId || (u.email ? u.email.toLowerCase() : '');
+    if (!key) return;
+    if (!map.has(key)) {
+      map.set(key, u);
+    } else {
+      const existing = map.get(key)!;
+      if ((!existing.displayName || existing.displayName === 'Öğrenci') && u.displayName && u.displayName !== 'Öğrenci') {
+        existing.displayName = u.displayName;
+      }
+      if ((!existing.email || existing.email === 'E-posta Kayıtlı Değil') && u.email) {
+        existing.email = u.email;
+      }
+    }
+  });
+
+  // 3. Make sure current logged-in admin user is always included with live stats
+  if (auth.currentUser) {
+    const curUid = auth.currentUser.uid;
+    const curEmail = auth.currentUser.email || '';
+    const isAdmin = curEmail.toLowerCase() === ADMIN_EMAIL.toLowerCase();
+    const curName = auth.currentUser.displayName || (isAdmin ? 'Sezgin Efe (Yönetici)' : (curEmail ? curEmail.split('@')[0] : 'Öğrenci'));
+
+    const existing = map.get(curUid) || (curEmail ? map.get(curEmail.toLowerCase()) : undefined);
+    if (existing) {
+      existing.displayName = (existing.displayName && existing.displayName !== 'Öğrenci') ? existing.displayName : curName;
+      existing.email = existing.email || curEmail;
+      existing.studySeconds = currentStudySeconds > 0 ? currentStudySeconds : (existing.studySeconds || 0);
+      existing.isOnline = isUserActive;
+      existing.lastActiveAt = new Date().toISOString();
+    } else {
+      map.set(curUid, {
+        userId: curUid,
+        email: curEmail,
+        displayName: curName,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+        studySeconds: currentStudySeconds,
+        lastActiveAt: new Date().toISOString(),
+        isOnline: isUserActive,
+      });
+    }
+  }
+
+  // Deduplicate users uniquely by userId or unique email
+  const uniqueMap = new Map<string, UserProfileData>();
+  map.forEach(u => {
+    const idKey = u.userId || (u.email ? u.email.toLowerCase() : '');
+    if (!uniqueMap.has(idKey)) {
+      uniqueMap.set(idKey, u);
+    }
+  });
+
+  const list = Array.from(uniqueMap.values());
+
+  // If no users registered at all, provide admin record
+  if (list.length === 0) {
+    list.push({
+      userId: auth.currentUser?.uid || 'usr-admin-1',
+      email: ADMIN_EMAIL,
+      displayName: 'Sezgin Efe (Yönetici)',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      studySeconds: currentStudySeconds > 0 ? currentStudySeconds : 3600,
+      lastActiveAt: new Date().toISOString(),
+      isOnline: true,
+    });
+  }
+
+  return list;
 }
 
 export function openAuthModal(defaultTab: 'login' | 'register' = 'login', customNotice?: string): void {
@@ -867,12 +881,15 @@ function injectAuthModalDOM(): void {
             <span>Google ile Hızlı Giriş</span>
           </button>
 
-          <!-- Yönetici Hızlı Giriş Doldurma Butonu -->
-          <div class="pt-3 mt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
-            <button id="btn-admin-quick-fill" type="button" class="text-xs font-bold text-amber-600 dark:text-amber-400 hover:underline flex items-center gap-1 cursor-pointer">
-              <span>👑</span>
-              <span>Yönetici E-postasını Doldur (${ADMIN_EMAIL})</span>
-            </button>
+          <!-- Geri Bildirim ve Öneri Kutusu -->
+          <div class="pt-3 mt-3 border-t border-slate-100 dark:border-slate-800 text-center space-y-1">
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
+              💡 Öneri, soru veya geri bildirimleriniz için:
+            </div>
+            <a href="mailto:${ADMIN_EMAIL}?subject=AES%20d3k1%20Öneri%20ve%20Geri%20Bildirim" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline">
+              <span>✉️</span>
+              <span class="font-mono">${ADMIN_EMAIL}</span>
+            </a>
           </div>
         </div>
 
@@ -1085,8 +1102,33 @@ function setupAuthEventListeners(): void {
       submitBtn.textContent = 'Hesap oluşturuluyor...';
       const userCred = await createUserWithEmailAndPassword(auth, email, password);
       if (name) {
-        await updateProfile(userCred.user, { displayName: name });
+        try {
+          await updateProfile(userCred.user, { displayName: name });
+        } catch {
+          // ignore
+        }
       }
+
+      const finalName = name || (email.includes('@') ? email.split('@')[0] : 'Öğrenci');
+      const profileData: UserProfileData = {
+        userId: userCred.user.uid,
+        email: email,
+        displayName: finalName,
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+        studySeconds: 0,
+        lastActiveAt: new Date().toISOString(),
+        isOnline: true,
+      };
+
+      try {
+        const userDocRef = doc(db, 'users', userCred.user.uid);
+        await setDoc(userDocRef, profileData, { merge: true });
+      } catch {
+        // Handled
+      }
+
+      saveUserToLocalRegistry(profileData);
       modalRoot?.classList.add('hidden');
     } catch (err: unknown) {
       const error = err as { code?: string; message?: string };
@@ -1184,16 +1226,6 @@ function setupAuthEventListeners(): void {
     }
   });
 
-  // Modal: Quick Fill Admin Email
-  document.getElementById('btn-admin-quick-fill')?.addEventListener('click', () => {
-    switchToTab('login');
-    const emailInput = document.getElementById('login-email') as HTMLInputElement;
-    if (emailInput) {
-      emailInput.value = ADMIN_EMAIL;
-      (document.getElementById('login-password') as HTMLInputElement)?.focus();
-      showFeedback('👑 Yönetici e-posta adresiniz dolduruldu. Şifrenizi girerek veya Google ile giriş yapabilirsiniz.', false);
-    }
-  });
 
   // Modal: Open Admin View Directly (Read-Only)
   document.getElementById('btn-admin-modal-view')?.addEventListener('click', () => {
