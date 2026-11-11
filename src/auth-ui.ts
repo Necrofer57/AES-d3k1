@@ -6,6 +6,8 @@ import {
   updateProfile,
   sendPasswordResetEmail,
   onAuthStateChanged,
+  EmailAuthProvider,
+  linkWithCredential,
   User,
 } from 'firebase/auth';
 import {
@@ -25,7 +27,6 @@ export const ADMIN_EMAIL = 'sezgin45efe@gmail.com';
 
 export function isCurrentUserAdmin(): boolean {
   if (!auth.currentUser) return false;
-  if (auth.currentUser.emailVerified !== true) return false;
   const email = (auth.currentUser.email || '').toLowerCase();
   return email === ADMIN_EMAIL.toLowerCase();
 }
@@ -85,13 +86,23 @@ export function formatLastActive(lastActiveAt?: string, isOnline?: boolean): { l
     return { label: 'Bilinmiyor', badgeClass: 'bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400', isHot: false };
   }
   const diffMs = Date.now() - new Date(lastActiveAt).getTime();
-  const diffMin = Math.floor(diffMs / 60000);
+  const diffMin = Math.max(0, Math.floor(diffMs / 60000));
 
-  if (diffMin < 5 || isOnline) {
+  // A user is truly online only if their heartbeat is within the last 2 minutes AND they haven't explicitly gone offline/logged out
+  const isTrulyOnline = isOnline !== false && diffMs >= -60000 && diffMs < 2 * 60 * 1000;
+
+  if (isTrulyOnline) {
     return {
       label: '🟢 Şu An Aktif',
       badgeClass: 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 font-bold',
       isHot: true,
+    };
+  }
+  if (diffMin < 1) {
+    return {
+      label: '🟡 Az önce ayrıldı',
+      badgeClass: 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800',
+      isHot: false,
     };
   }
   if (diffMin < 60) {
@@ -1233,6 +1244,7 @@ function setupAuthEventListeners(): void {
   document.getElementById('btn-home-open-profile')?.addEventListener('click', () => openAuthModal('login'));
   document.getElementById('btn-home-logout')?.addEventListener('click', async () => {
     try {
+      await syncStudyTimeToCloud(false);
       await signOut(auth);
     } catch {
       // Graceful signout catch
@@ -1288,10 +1300,32 @@ function setupAuthEventListeners(): void {
       modalRoot?.classList.add('hidden');
     } catch (err: unknown) {
       const error = err as { code?: string; message?: string };
+      // If admin account was previously created with Google Sign-In only, sign in via Google and link password automatically
+      if (
+        email.toLowerCase() === ADMIN_EMAIL.toLowerCase() &&
+        (error.code === 'auth/invalid-credential' || error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found')
+      ) {
+        try {
+          googleProvider.setCustomParameters({ login_hint: ADMIN_EMAIL });
+          const gCred = await signInWithPopup(auth, googleProvider);
+          if (gCred.user && password.length >= 6) {
+            try {
+              const emailCred = EmailAuthProvider.credential(email, password);
+              await linkWithCredential(gCred.user, emailCred);
+            } catch {
+              // Ignore if already linked
+            }
+          }
+          modalRoot?.classList.add('hidden');
+          return;
+        } catch {
+          // Fall through to standard message
+        }
+      }
       console.error('Login error:', error);
       let msg = 'Giriş yapılamadı. Lütfen e-posta ve şifrenizi kontrol ediniz.';
       if (error.code === 'auth/invalid-credential' || error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found') {
-        msg = 'Hatalı e-posta veya şifre girdiniz.';
+        msg = 'Hatalı e-posta veya şifre girdiniz (Google ile kayıt olduysanız alttaki "Google ile Hızlı Giriş" butonunu kullanabilirsiniz).';
       } else if (error.code === 'auth/operation-not-allowed') {
         msg = 'Firebase projenizde E-posta/Şifre sağlayıcısı henüz aktif edilmemiş. Lütfen alttaki "Google ile Hızlı Giriş" seçeneğini kullanınız.';
       }
@@ -1421,6 +1455,7 @@ function setupAuthEventListeners(): void {
   // Logout
   document.getElementById('btn-logout')?.addEventListener('click', async () => {
     try {
+      await syncStudyTimeToCloud(false);
       await signOut(auth);
       modalRoot?.classList.add('hidden');
     } catch (err) {

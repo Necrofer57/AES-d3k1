@@ -1,8 +1,15 @@
 {
-  "name": "react-example",
+  "name": "aes-d3k1-mednot",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.2.0",
+  "description": "AES d3k1 (MedNot) — Tıp Fakültesi Çıkmış Sorular & Sınav Platformu (2018–2026). 18 Kurul, 12.016 soru, akıllı tıbbi hata analizi ve gerçek zamanlı Firebase senkronizasyonu.",
   "type": "module",
+  "homepage": "https://www.mednot.com.tr",
+  "author": "Sezgin Efe <sezgin45efe@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Necrofer57/AES-d3k1.git"
+  },
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
     "build": "vite build && node -e \"const fs=require('fs'); if(fs.existsSync('dist/index.html')) fs.copyFileSync('dist/index.html','dist/404.html')\"",
