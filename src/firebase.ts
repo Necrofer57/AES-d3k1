@@ -7,17 +7,19 @@ const defaultKey = typeof atob !== 'undefined'
   ? atob('QUl6YVN5QkRoekZkRkI1UUpMOEdxbHNsc2FGaHpPMEhRR24yN0RJ')
   : '';
 
+const env = (typeof import.meta !== 'undefined' ? (import.meta as any).env : {}) || {};
+
 export const firebaseConfig = {
-  projectId: 'calcium-bonus-xvc14',
-  appId: '1:874299463262:web:f70fb32ee3efc92d5a06cf',
-  apiKey: defaultKey,
-  authDomain: 'calcium-bonus-xvc14.firebaseapp.com',
-  firestoreDatabaseId: 'ai-studio-aesd3k1tpkmsnavp-6bbd3dd0-b91a-4d1b-b624-55256fbe5fa4',
-  storageBucket: 'calcium-bonus-xvc14.firebasestorage.app',
-  messagingSenderId: '874299463262',
-  measurementId: '',
-  oAuthClientId: '874299463262-7fuajmnm3ks8lbcnvvtdrgidcaai9c96.apps.googleusercontent.com',
-  recaptchaSiteKey: '',
+  projectId: env.VITE_FIREBASE_PROJECT_ID || 'calcium-bonus-xvc14',
+  appId: env.VITE_FIREBASE_APP_ID || '1:874299463262:web:f70fb32ee3efc92d5a06cf',
+  apiKey: env.VITE_FIREBASE_API_KEY || defaultKey,
+  authDomain: env.VITE_FIREBASE_AUTH_DOMAIN || 'calcium-bonus-xvc14.firebaseapp.com',
+  firestoreDatabaseId: env.VITE_FIREBASE_FIRESTORE_DATABASE_ID || env.VITE_FIREBASE_DATABASE_ID || 'ai-studio-aesd3k1tpkmsnavp-6bbd3dd0-b91a-4d1b-b624-55256fbe5fa4',
+  storageBucket: env.VITE_FIREBASE_STORAGE_BUCKET || 'calcium-bonus-xvc14.firebasestorage.app',
+  messagingSenderId: env.VITE_FIREBASE_MESSAGING_SENDER_ID || '874299463262',
+  measurementId: env.VITE_FIREBASE_MEASUREMENT_ID || '',
+  oAuthClientId: env.VITE_FIREBASE_OAUTH_CLIENT_ID || '874299463262-7fuajmnm3ks8lbcnvvtdrgidcaai9c96.apps.googleusercontent.com',
+  recaptchaSiteKey: env.VITE_FIREBASE_RECAPTCHA_SITE_KEY || '',
 };
 
 const app = initializeApp(firebaseConfig);

@@ -28,21 +28,26 @@ service cloud.firestore {
     }
 
     function isAdmin() {
-      return isSignedIn() && request.auth.token.email != null && request.auth.token.email.lower() == 'sezgin45efe@gmail.com';
+      return isSignedIn()
+        && request.auth.token.email != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email.lower() == 'sezgin45efe@gmail.com';
     }
 
     function isValidUserProfile(data) {
       return data.keys().hasAll(['userId', 'email'])
-        && data.keys().hasOnly(['userId', 'email', 'displayName', 'createdAt', 'updatedAt', 'studySeconds', 'lastActiveAt', 'isOnline'])
+        && data.keys().hasOnly(['userId', 'email', 'displayName', 'createdAt', 'updatedAt', 'studySeconds', 'lastActiveAt', 'isOnline', 'userAnswers'])
         && data.userId == request.auth.uid
         && data.userId is string && data.userId.size() <= 128
         && data.email is string && data.email.size() <= 256
+        && (request.auth.token.email == null || data.email.lower() == request.auth.token.email.lower())
         && (!('displayName' in data) || (data.displayName is string && data.displayName.size() <= 128))
         && (!('createdAt' in data) || (data.createdAt is string && data.createdAt.size() <= 64))
-        && (!('updatedAt' in data) || (data.updatedAt is string && data.updatedAt.size() <= 64))
-        && (!('studySeconds' in data) || (data.studySeconds is number && data.studySeconds >= 0))
+        && (!('updatedAt' in data) || data.updatedAt is string)
+        && (!('studySeconds' in data) || (data.studySeconds is number && data.studySeconds >= 0 && data.studySeconds <= 31536000))
         && (!('lastActiveAt' in data) || (data.lastActiveAt is string && data.lastActiveAt.size() <= 64))
-        && (!('isOnline' in data) || (data.isOnline is bool));
+        && (!('isOnline' in data) || (data.isOnline is bool))
+        && (!('userAnswers' in data) || data.userAnswers is map);
     }
 
     function isValidUserBookmark(data) {
@@ -57,7 +62,7 @@ service cloud.firestore {
 
     function isValidUserExamResult(data) {
       return data.keys().hasAll(['userId', 'totalQuestions', 'correctCount'])
-        && data.keys().hasOnly(['userId', 'totalQuestions', 'correctCount', 'wrongCount', 'emptyCount', 'score', 'kurulId', 'donem', 'completedAt'])
+        && data.keys().hasOnly(['userId', 'totalQuestions', 'correctCount', 'wrongCount', 'emptyCount', 'score', 'kurulId', 'kurul', 'donem', 'durationSeconds', 'completedAt'])
         && data.userId == request.auth.uid
         && data.userId is string && data.userId.size() <= 128
         && data.totalQuestions is number && data.totalQuestions >= 0 && data.totalQuestions <= 1000
@@ -66,7 +71,9 @@ service cloud.firestore {
         && (!('emptyCount' in data) || (data.emptyCount is number && data.emptyCount >= 0 && data.emptyCount <= data.totalQuestions))
         && (!('score' in data) || (data.score is number))
         && (!('kurulId' in data) || (data.kurulId is string && data.kurulId.size() <= 64))
+        && (!('kurul' in data) || (data.kurul is string && data.kurul.size() <= 64))
         && (!('donem' in data) || (data.donem is string && data.donem.size() <= 32))
+        && (!('durationSeconds' in data) || (data.durationSeconds is number && data.durationSeconds >= 0))
         && (!('completedAt' in data) || (data.completedAt is string && data.completedAt.size() <= 64));
     }
 

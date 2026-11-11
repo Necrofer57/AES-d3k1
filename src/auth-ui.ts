@@ -14,6 +14,9 @@ import {
   getDoc,
   getDocs,
   collection,
+  writeBatch,
+  deleteDoc,
+  addDoc,
 } from 'firebase/firestore';
 import { auth, googleProvider, db } from './firebase.ts';
 
@@ -22,8 +25,19 @@ export const ADMIN_EMAIL = 'sezgin45efe@gmail.com';
 
 export function isCurrentUserAdmin(): boolean {
   if (!auth.currentUser) return false;
+  if (auth.currentUser.emailVerified !== true) return false;
   const email = (auth.currentUser.email || '').toLowerCase();
   return email === ADMIN_EMAIL.toLowerCase();
+}
+
+export function escapeHtml(str: string): string {
+  if (!str) return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
 }
 
 export function requireAuth(message?: string): void {
@@ -46,6 +60,7 @@ export interface UserProfileData {
 }
 
 let hadPreviousUser = false;
+let isCloudTimeLoaded = false;
 let currentStudySeconds = 0;
 let sessionStudySeconds = 0;
 let isUserActive = true;
@@ -53,6 +68,7 @@ let lastInteractionTime = Date.now();
 let studyTimerInterval: number | null = null;
 let studyCloudSyncInterval: number | null = null;
 let activityListenersInitialized = false;
+const cloudBookmarkIds = new Set<string>();
 
 export function formatStudyTime(seconds?: number): string {
   if (!seconds || seconds <= 0) return '0 dk';
@@ -183,23 +199,37 @@ function updateStudyUI(): void {
 async function syncStudyTimeToCloud(isOnlineState: boolean): Promise<void> {
   if (!auth.currentUser) return;
   const uid = auth.currentUser.uid;
+  const now = new Date().toISOString();
 
-  try {
-    localStorage.setItem(`d3_study_sec_${uid}`, String(currentStudySeconds));
-  } catch {
-    // Ignore storage quota or private browsing errors
+  if (isCloudTimeLoaded) {
+    try {
+      localStorage.setItem(`d3_study_sec_${uid}`, String(currentStudySeconds));
+    } catch {
+      // Ignore storage quota or private browsing errors
+    }
   }
 
   try {
     const userDocRef = doc(db, 'users', uid);
-    await setDoc(userDocRef, {
-      userId: uid,
-      email: auth.currentUser.email || '',
-      studySeconds: currentStudySeconds,
-      lastActiveAt: new Date().toISOString(),
-      isOnline: isOnlineState,
-      updatedAt: new Date().toISOString(),
-    }, { merge: true });
+    if (!isCloudTimeLoaded) {
+      // If cloud study time hasn't finished loading yet, never overwrite studySeconds!
+      await setDoc(userDocRef, {
+        userId: uid,
+        email: auth.currentUser.email || '',
+        isOnline: isOnlineState,
+        lastActiveAt: now,
+        updatedAt: now,
+      }, { merge: true });
+    } else {
+      await setDoc(userDocRef, {
+        userId: uid,
+        email: auth.currentUser.email || '',
+        studySeconds: currentStudySeconds,
+        lastActiveAt: now,
+        isOnline: isOnlineState,
+        updatedAt: now,
+      }, { merge: true });
+    }
   } catch {
     // Silently continue if network is momentarily unavailable
   }
@@ -207,6 +237,7 @@ async function syncStudyTimeToCloud(isOnlineState: boolean): Promise<void> {
 
 function startStudyTracker(user: User): void {
   stopStudyTracker();
+  isCloudTimeLoaded = false;
 
   try {
     const cached = localStorage.getItem(`d3_study_sec_${user.uid}`);
@@ -225,14 +256,16 @@ function startStudyTracker(user: User): void {
   lastInteractionTime = Date.now();
   updateStudyUI();
 
-  getDoc(doc(db, 'users', user.uid)).then((snap) => {
+  const userRef = doc(db, 'users', user.uid);
+  getDoc(userRef).then((snap) => {
     if (snap.exists()) {
       const data = snap.data();
-      if (typeof data.studySeconds === 'number' && data.studySeconds > currentStudySeconds) {
-        currentStudySeconds = data.studySeconds;
+      if (typeof data.studySeconds === 'number') {
+        currentStudySeconds = Math.max(currentStudySeconds, data.studySeconds);
         updateStudyUI();
       }
     }
+    isCloudTimeLoaded = true;
   }).catch(() => {
     // Offline or initial fetch fallback handled gracefully
   });
@@ -256,11 +289,12 @@ function startStudyTracker(user: User): void {
   }, 1000);
 
   studyCloudSyncInterval = window.setInterval(() => {
-    syncStudyTimeToCloud(true);
+    syncStudyTimeToCloud(isUserActive);
   }, 30000);
 }
 
 function stopStudyTracker(): void {
+  isCloudTimeLoaded = false;
   if (studyTimerInterval) {
     clearInterval(studyTimerInterval);
     studyTimerInterval = null;
@@ -343,7 +377,7 @@ export function initAuthUI(): void {
   // Listen to local progress saves to sync to cloud
   window.addEventListener('d3k1-save-progress', ((e: CustomEvent) => {
     if (auth.currentUser) {
-      syncProgressToCloud(auth.currentUser, e.detail?.favorites);
+      syncProgressToCloud(auth.currentUser, e.detail?.favorites, e.detail?.userAnswers);
     }
   }) as EventListener);
 
@@ -361,6 +395,10 @@ export function initAuthUI(): void {
     getStudySeconds: () => currentStudySeconds,
     getSessionStudySeconds: () => sessionStudySeconds,
     isUserActive: () => isUserActive,
+    saveExamResultToCloud,
+    syncProgressToCloud,
+    loadCloudBookmarks,
+    escapeHtml,
   };
 }
 
@@ -493,6 +531,41 @@ async function onUserSignedIn(user: User): Promise<void> {
 }
 
 function onUserSignedOut(): void {
+  try {
+    localStorage.removeItem('d3k1_user_answers_v1');
+    localStorage.removeItem('d3k1_favorites_v1');
+    localStorage.removeItem('d3k1_active_exam_v1');
+  } catch {
+    // Ignore storage errors
+  }
+  cloudBookmarkIds.clear();
+
+  const app = (window as unknown as {
+    d3k1App?: {
+      state?: { userAnswers: Record<string, string>; favorites: Set<string>; revealedIds?: Set<string> };
+      updateStats?: () => void;
+      updateHeaderScores?: () => void;
+      updateHeaderAndToolbarStats?: () => void;
+      renderQuestions?: () => void;
+      renderMainArea?: () => void;
+      renderQuestionMap?: () => void;
+    };
+  }).d3k1App;
+
+  if (app?.state) {
+    app.state.userAnswers = {};
+    app.state.favorites.clear();
+    if (app.state.revealedIds) {
+      app.state.revealedIds.clear();
+    }
+    app.updateStats?.();
+    app.updateHeaderScores?.();
+    app.updateHeaderAndToolbarStats?.();
+    app.renderQuestions?.();
+    app.renderMainArea?.();
+    app.renderQuestionMap?.();
+  }
+
   const toast = getToastFunction();
   if (toast) {
     toast('Oturum kapatıldı.');
@@ -501,28 +574,90 @@ function onUserSignedOut(): void {
 
 async function loadCloudBookmarks(user: User): Promise<void> {
   try {
+    cloudBookmarkIds.clear();
     const bookmarksRef = collection(db, 'users', user.uid, 'bookmarks');
     const snap = await getDocs(bookmarksRef);
     const cloudFavs: string[] = [];
     snap.forEach((d) => {
+      cloudBookmarkIds.add(d.id);
       const data = d.data();
       if (data.questionId) cloudFavs.push(data.questionId);
     });
 
-    const app = (window as unknown as { d3k1App?: { state: { favorites: Set<string> }; saveUserProgress: () => void; updateHeaderScores: () => void } }).d3k1App;
+    const app = (window as unknown as {
+      d3k1App?: {
+        state: { favorites: Set<string>; userAnswers: Record<string, string> };
+        saveUserProgress: () => void;
+        updateHeaderScores?: () => void;
+        updateHeaderAndToolbarStats?: () => void;
+        updateStats?: () => void;
+        renderQuestions?: () => void;
+        renderMainArea?: () => void;
+        renderQuestionMap?: () => void;
+      };
+    }).d3k1App;
+
+    let mergedFavCount = 0;
     if (app && app.state) {
-      let mergedCount = 0;
       cloudFavs.forEach((qid) => {
         if (!app.state.favorites.has(qid)) {
           app.state.favorites.add(qid);
-          mergedCount++;
+          mergedFavCount++;
         }
       });
-      if (mergedCount > 0) {
-        app.saveUserProgress();
-        app.updateHeaderScores();
+    }
+
+    // Also read user profile doc for cloud-synced userAnswers
+    let mergedAnsCount = 0;
+    try {
+      const userDocRef = doc(db, 'users', user.uid);
+      const userSnap = await getDoc(userDocRef);
+      if (userSnap.exists()) {
+        const uData = userSnap.data();
+        if (uData?.userAnswers && typeof uData.userAnswers === 'object' && !Array.isArray(uData.userAnswers)) {
+          if (app && app.state) {
+            if (!app.state.userAnswers) {
+              app.state.userAnswers = {};
+            }
+            for (const [qid, ans] of Object.entries(uData.userAnswers as Record<string, string>)) {
+              if (typeof ans === 'string' && !app.state.userAnswers[qid]) {
+                app.state.userAnswers[qid] = ans;
+                mergedAnsCount++;
+              }
+            }
+            try {
+              localStorage.setItem('d3k1_user_answers_v1', JSON.stringify(app.state.userAnswers));
+            } catch {
+              // Ignore storage errors
+            }
+          }
+        }
+      }
+    } catch {
+      // Ignore userAnswers fetch error
+    }
+
+    if (app && app.state) {
+      if (mergedFavCount > 0 || mergedAnsCount > 0) {
+        try {
+          localStorage.setItem('d3k1_favorites_v1', JSON.stringify(Array.from(app.state.favorites)));
+        } catch {
+          // Ignore storage errors
+        }
+        app.updateStats?.();
+        app.updateHeaderScores?.();
+        app.updateHeaderAndToolbarStats?.();
+        app.renderQuestions?.();
+        app.renderMainArea?.();
+        app.renderQuestionMap?.();
+
         const toast = getToastFunction();
-        if (toast) toast(`☁️ Buluttan ${mergedCount} favori soru senkronize edildi!`);
+        if (toast) {
+          const parts: string[] = [];
+          if (mergedFavCount > 0) parts.push(`${mergedFavCount} favori`);
+          if (mergedAnsCount > 0) parts.push(`${mergedAnsCount} yanıt`);
+          toast(`☁️ Buluttan ${parts.join(', ')} senkronize edildi!`);
+        }
       }
     }
   } catch {
@@ -531,32 +666,97 @@ async function loadCloudBookmarks(user: User): Promise<void> {
 }
 
 let syncTimeout: number | null = null;
-function syncProgressToCloud(user: User, favs?: string[]): void {
+export function syncProgressToCloud(userArg?: User, favsArg?: string[], userAnswersArg?: Record<string, string>): void {
   if (syncTimeout) window.clearTimeout(syncTimeout);
 
   syncTimeout = window.setTimeout(async () => {
+    const user = userArg || auth.currentUser;
+    if (!user) return;
+
     try {
-      if (favs && Array.isArray(favs)) {
-        // Sync up to 200 bookmarks to avoid batch limit
-        for (const qid of favs.slice(0, 200)) {
-          const sanitizedId = String(qid).replace(/[^a-zA-Z0-9_-]/g, '_');
-          if (!sanitizedId) continue;
-          const bmRef = doc(db, 'users', user.uid, 'bookmarks', sanitizedId);
-          await setDoc(bmRef, {
-            userId: user.uid,
-            questionId: String(qid),
-            createdAt: new Date().toISOString(),
-          }, { merge: true });
+      const app = (window as unknown as {
+        d3k1App?: {
+          state?: { favorites?: Set<string>; userAnswers?: Record<string, string> };
+        };
+      }).d3k1App;
+
+      // Determine current favorites
+      const favList: string[] = (favsArg && Array.isArray(favsArg))
+        ? favsArg
+        : (app?.state?.favorites ? Array.from(app.state.favorites) : []);
+
+      // Build sanitized ID map: sanitizedId -> original qid
+      const currentSanitizedMap = new Map<string, string>();
+      for (const qid of favList) {
+        const sanitizedId = String(qid).replace(/[^a-zA-Z0-9_-]/g, '_');
+        if (sanitizedId) {
+          currentSanitizedMap.set(sanitizedId, String(qid));
         }
       }
 
-      // Update user doc with counts
+      const currentSanitizedIds = new Set(currentSanitizedMap.keys());
+      const now = new Date().toISOString();
+
+      // Find new bookmarks to add (in currentSanitizedIds but not in cloudBookmarkIds)
+      const toAdd: { id: string; qid: string }[] = [];
+      currentSanitizedMap.forEach((qid, sId) => {
+        if (!cloudBookmarkIds.has(sId)) {
+          toAdd.push({ id: sId, qid });
+        }
+      });
+
+      // Find removed bookmarks to delete (in cloudBookmarkIds but not in currentSanitizedIds)
+      const toDelete: string[] = [];
+      cloudBookmarkIds.forEach((sId) => {
+        if (!currentSanitizedIds.has(sId)) {
+          toDelete.push(sId);
+        }
+      });
+
+      // Execute batch operations if there are bookmarks to add or delete
+      if (toAdd.length > 0 || toDelete.length > 0) {
+        const batch = writeBatch(db);
+        // Limit batch operations to stay safely below 500
+        const batchAdd = toAdd.slice(0, 200);
+        const batchDelete = toDelete.slice(0, 200);
+
+        for (const item of batchAdd) {
+          const bmRef = doc(db, 'users', user.uid, 'bookmarks', item.id);
+          batch.set(bmRef, {
+            userId: user.uid,
+            questionId: item.qid,
+            createdAt: now,
+          }, { merge: true });
+        }
+
+        for (const delId of batchDelete) {
+          const bmRef = doc(db, 'users', user.uid, 'bookmarks', delId);
+          batch.delete(bmRef);
+        }
+
+        await batch.commit();
+
+        // Update local tracking set
+        batchAdd.forEach(item => cloudBookmarkIds.add(item.id));
+        batchDelete.forEach(delId => cloudBookmarkIds.delete(delId));
+      }
+
+      // Sync user profile document (including userAnswers if present)
       const userRef = doc(db, 'users', user.uid);
-      await setDoc(userRef, {
+      const userUpdatePayload: Record<string, unknown> = {
         userId: user.uid,
         email: user.email || '',
-        updatedAt: new Date().toISOString(),
-      }, { merge: true });
+        updatedAt: now,
+        lastActiveAt: now,
+      };
+
+      if (userAnswersArg && typeof userAnswersArg === 'object') {
+        userUpdatePayload.userAnswers = userAnswersArg;
+      } else if (app?.state?.userAnswers && typeof app.state.userAnswers === 'object') {
+        userUpdatePayload.userAnswers = app.state.userAnswers;
+      }
+
+      await setDoc(userRef, userUpdatePayload, { merge: true });
 
       const syncBadge = document.getElementById('cloud-sync-status');
       if (syncBadge) {
@@ -568,6 +768,65 @@ function syncProgressToCloud(user: User, favs?: string[]): void {
   }, 1200);
 }
 
+export interface UserExamResultData {
+  userId?: string;
+  kurul?: string;
+  kurulId?: string;
+  donem?: string;
+  score?: number;
+  correctCount: number;
+  wrongCount?: number;
+  emptyCount?: number;
+  totalQuestions: number;
+  durationSeconds?: number;
+  completedAt?: string;
+}
+
+export async function saveExamResultToCloud(result: UserExamResultData): Promise<string | null> {
+  if (!auth.currentUser) return null;
+  const uid = auth.currentUser.uid;
+
+  try {
+    const examResultsCol = collection(db, 'users', uid, 'examResults');
+    const total = Number(result.totalQuestions) || 0;
+    const correct = Number(result.correctCount) || 0;
+    const wrong = Number(result.wrongCount) || 0;
+    const empty = Number(result.emptyCount) || 0;
+    const score = typeof result.score === 'number'
+      ? result.score
+      : (total > 0 ? Math.round((correct / total) * 100) : 0);
+
+    const docData: Record<string, unknown> = {
+      userId: uid,
+      totalQuestions: total,
+      correctCount: correct,
+      wrongCount: wrong,
+      emptyCount: empty,
+      score: score,
+      completedAt: result.completedAt || new Date().toISOString(),
+    };
+
+    if (result.kurul) {
+      docData.kurul = String(result.kurul);
+    }
+    if (result.kurulId) {
+      docData.kurulId = String(result.kurulId);
+    }
+    if (result.donem) {
+      docData.donem = String(result.donem);
+    }
+    if (typeof result.durationSeconds === 'number') {
+      docData.durationSeconds = result.durationSeconds;
+    }
+
+    const docRef = await addDoc(examResultsCol, docData);
+    return docRef.id;
+  } catch (err) {
+    console.warn('Failed to save exam result to cloud:', err);
+    return null;
+  }
+}
+
 function getToastFunction(): ((msg: string) => void) | null {
   const app = (window as unknown as { d3k1App?: { showToast: (msg: string) => void } }).d3k1App;
   if (app && typeof app.showToast === 'function') {
@@ -577,9 +836,12 @@ function getToastFunction(): ((msg: string) => void) | null {
 }
 
 export async function fetchUsersForAdmin(): Promise<UserProfileData[]> {
+  if (!isCurrentUserAdmin()) {
+    return [];
+  }
   const map = new Map<string, UserProfileData>();
 
-  // 1. Fetch real students directly from Firestore 'users' collection
+  // Fetch real students directly from Firestore 'users' collection
   try {
     const snap = await getDocs(collection(db, 'users'));
     snap.forEach((d) => {
@@ -602,38 +864,19 @@ export async function fetchUsersForAdmin(): Promise<UserProfileData[]> {
         isOnline: isCurrent ? isUserActive : (typeof data.isOnline === 'boolean' ? data.isOnline : false),
       };
       map.set(d.id, userItem);
-      if (email) map.set(email.toLowerCase(), userItem);
     });
-  } catch {
-    // If Firestore collection permissions or network limits, local registry will supply
+  } catch (err) {
+    console.error('Failed to fetch users for admin:', err);
+    return [];
   }
 
-  // 2. Merge local registry (captures all students who have registered on this instance)
-  const localList = getLocalUserRegistry();
-  localList.forEach(u => {
-    const key = u.userId || (u.email ? u.email.toLowerCase() : '');
-    if (!key) return;
-    if (!map.has(key)) {
-      map.set(key, u);
-    } else {
-      const existing = map.get(key)!;
-      if ((!existing.displayName || existing.displayName === 'Öğrenci') && u.displayName && u.displayName !== 'Öğrenci') {
-        existing.displayName = u.displayName;
-      }
-      if ((!existing.email || existing.email === 'E-posta Kayıtlı Değil') && u.email) {
-        existing.email = u.email;
-      }
-    }
-  });
-
-  // 3. Make sure current logged-in admin user is always included with live stats
+  // Ensure current logged-in admin user is included/updated with live memory stats
   if (auth.currentUser) {
     const curUid = auth.currentUser.uid;
-    const curEmail = auth.currentUser.email || '';
-    const isAdmin = curEmail.toLowerCase() === ADMIN_EMAIL.toLowerCase();
-    const curName = auth.currentUser.displayName || (isAdmin ? 'Sezgin Efe (Yönetici)' : (curEmail ? curEmail.split('@')[0] : 'Öğrenci'));
+    const curEmail = auth.currentUser.email || ADMIN_EMAIL;
+    const curName = auth.currentUser.displayName || 'Sezgin Efe (Yönetici)';
 
-    const existing = map.get(curUid) || (curEmail ? map.get(curEmail.toLowerCase()) : undefined);
+    const existing = map.get(curUid);
     if (existing) {
       existing.displayName = (existing.displayName && existing.displayName !== 'Öğrenci') ? existing.displayName : curName;
       existing.email = existing.email || curEmail;
@@ -654,32 +897,7 @@ export async function fetchUsersForAdmin(): Promise<UserProfileData[]> {
     }
   }
 
-  // Deduplicate users uniquely by userId or unique email
-  const uniqueMap = new Map<string, UserProfileData>();
-  map.forEach(u => {
-    const idKey = u.userId || (u.email ? u.email.toLowerCase() : '');
-    if (!uniqueMap.has(idKey)) {
-      uniqueMap.set(idKey, u);
-    }
-  });
-
-  const list = Array.from(uniqueMap.values());
-
-  // If no users registered at all, provide admin record
-  if (list.length === 0) {
-    list.push({
-      userId: auth.currentUser?.uid || 'usr-admin-1',
-      email: ADMIN_EMAIL,
-      displayName: 'Sezgin Efe (Yönetici)',
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-      studySeconds: currentStudySeconds > 0 ? currentStudySeconds : 3600,
-      lastActiveAt: new Date().toISOString(),
-      isOnline: true,
-    });
-  }
-
-  return list;
+  return Array.from(map.values());
 }
 
 export function openAuthModal(defaultTab: 'login' | 'register' = 'login', customNotice?: string): void {
@@ -692,12 +910,13 @@ export function openAuthModal(defaultTab: 'login' | 'register' = 'login', custom
 
   if (noticeBox) {
     if (customNotice) {
+      const safeNotice = escapeHtml(customNotice);
       noticeBox.innerHTML = `
         <div class="p-3.5 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/70 dark:to-orange-950/70 border border-amber-300 dark:border-amber-700 text-amber-900 dark:text-amber-200 text-xs flex items-start gap-2.5 shadow-sm">
           <span class="text-base shrink-0">🔒</span>
           <div class="leading-relaxed">
             <span class="font-extrabold block text-amber-950 dark:text-amber-100 mb-0.5">Soru Çözmek İçin Hesap Zorunludur</span>
-            <span>${customNotice}</span>
+            <span>${safeNotice}</span>
           </div>
         </div>
       `;

@@ -240,7 +240,7 @@
           <div>
             <div class="flex flex-wrap items-center gap-2">
               <h1 id="hdr-title" class="text-sm sm:text-base font-bold text-slate-900 tracking-tight">Dönem 1, 2 & 3 • Tüm Kurullar Çıkmış Sorular</h1>
-              <select id="header-kurul-select" class="px-2.5 py-0.5 rounded-lg text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-200 outline-none cursor-pointer hover:bg-indigo-100 transition-colors" title="Hızlı Kurul Değiştir">
+              <select id="header-kurul-select" class="px-2.5 py-0.5 rounded-lg text-base sm:text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-200 outline-none cursor-pointer hover:bg-indigo-100 transition-colors" title="Hızlı Kurul Değiştir">
                 <option value="home">📋 Kurul Seçim Ekranı (Tüm Dönemler)</option>
                 <optgroup label="Dönem 1 (1. Sınıf • 3.354 Soru)">
                   <option value="d1-1">D1 • 1. Kurul (Tıbba Giriş & Hücre • 569 Soru)</option>
@@ -694,9 +694,10 @@
             <span class="text-xs font-bold uppercase tracking-wider text-indigo-600">Deneme Sınavı Sonuç Karnesi</span>
             <h3 class="text-lg font-extrabold text-slate-900" id="exam-res-title">Sınav Tamamlandı!</h3>
           </div>
-          <div class="flex items-center gap-2">
-            <button id="btn-new-exam" type="button" class="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold">Yeni Sınav Oluştur</button>
-            <button id="btn-close-exam-res" type="button" class="px-3 py-1.5 rounded-xl border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-semibold">Soruları İncele</button>
+          <div class="flex flex-wrap items-center gap-2">
+            <button id="btn-new-exam" type="button" class="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition-colors">Yeni Sınav Oluştur</button>
+            <button id="btn-review-wrong-exam" type="button" class="px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold shadow-sm transition-colors" title="Sadece yanlış veya boş bıraktığınız soruları sırayla inceleyin">⚠️ Yanlış ve Boş Soruları İncele</button>
+            <button id="btn-close-exam-res" type="button" class="px-3 py-1.5 rounded-xl border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-semibold transition-colors">Tüm Soruları İncele</button>
           </div>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-5 gap-3" id="exam-res-kpis"></div>
@@ -1150,26 +1151,26 @@
   <div id="toast-box" class="hidden fixed bottom-5 right-5 z-50 px-4 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-semibold shadow-lg border border-slate-700"></div>
 
   <!-- Dönem 1 Veri Dosyaları -->
-  <script src="/data/d1-1.js?v=20261017v4"></script>
-  <script src="/data/d1-2.js?v=20261017v4"></script>
-  <script src="/data/d1-3.js?v=20261017v4"></script>
-  <script src="/data/d1-4.js?v=20261017v4"></script>
-  <script src="/data/d1-5.js?v=20261017v4"></script>
+  <script src="/data/d1-1.js?v=20261110v5"></script>
+  <script src="/data/d1-2.js?v=20261110v5"></script>
+  <script src="/data/d1-3.js?v=20261110v5"></script>
+  <script src="/data/d1-4.js?v=20261110v5"></script>
+  <script src="/data/d1-5.js?v=20261110v5"></script>
   <!-- Dönem 2 Veri Dosyaları -->
-  <script src="/data/d2-1.js?v=20261017v4"></script>
-  <script src="/data/d2-2.js?v=20261017v4"></script>
-  <script src="/data/d2-3.js?v=20261017v4"></script>
-  <script src="/data/d2-4.js?v=20261017v4"></script>
-  <script src="/data/d2-5.js?v=20261017v4"></script>
-  <script src="/data/d2-6.js?v=20261017v4"></script>
+  <script src="/data/d2-1.js?v=20261110v5"></script>
+  <script src="/data/d2-2.js?v=20261110v5"></script>
+  <script src="/data/d2-3.js?v=20261110v5"></script>
+  <script src="/data/d2-4.js?v=20261110v5"></script>
+  <script src="/data/d2-5.js?v=20261110v5"></script>
+  <script src="/data/d2-6.js?v=20261110v5"></script>
   <!-- Dönem 3 Veri Dosyaları -->
-  <script src="/data/kurul-1.js?v=20261017v4"></script>
-  <script src="/data/kurul-2.js?v=20261017v4"></script>
-  <script src="/data/kurul-3.js?v=20261017v4"></script>
-  <script src="/data/kurul-4.js?v=20261017v4"></script>
-  <script src="/data/kurul-5.js?v=20261017v4"></script>
-  <script src="/data/kurul-6.js?v=20261017v4"></script>
-  <script src="/data/kurul-7.js?v=20261017v4"></script>
+  <script src="/data/kurul-1.js?v=20261110v5"></script>
+  <script src="/data/kurul-2.js?v=20261110v5"></script>
+  <script src="/data/kurul-3.js?v=20261110v5"></script>
+  <script src="/data/kurul-4.js?v=20261110v5"></script>
+  <script src="/data/kurul-5.js?v=20261110v5"></script>
+  <script src="/data/kurul-6.js?v=20261110v5"></script>
+  <script src="/data/kurul-7.js?v=20261110v5"></script>
 
   <script>
     const KURUL_META = {
@@ -1634,11 +1635,13 @@
       listPageSize: 20,
       userAnswers: {},          // { [qId]: 'A' | 'CORRECT' | 'WRONG' }
       favorites: new Set(),     // Set of qId
+      currentKurul: null,       // alias/sync with activeKurul
       examActive: false,
       examFinished: false,
       examQuestions: [],
       examAnswers: {},
       examSeconds: 0,
+      examTotalSeconds: 0,
       examTimerId: null
     };
 
@@ -1646,7 +1649,7 @@
       if (!ua) return false;
       if (ua === 'CORRECT') return true;
       if (ua === 'WRONG') return false;
-      if (!q.answer) return true;
+      if (!q.answer) return false;
       return ua === q.answer;
     }
 
@@ -1670,6 +1673,110 @@
           }
         }));
       } catch (e) {}
+    }
+
+    function saveActiveExamState() {
+      if (!state.examActive) {
+        clearActiveExamState();
+        return;
+      }
+      try {
+        const data = {
+          examActive: true,
+          examQuestionIds: state.examQuestions.map(q => q.id),
+          examAnswers: state.examAnswers,
+          examSeconds: state.examSeconds,
+          examTotalSeconds: state.examTotalSeconds || (state.examQuestions.length * 60),
+          currentKurul: state.currentKurul || state.activeKurul,
+          currentIndex: state.currentIndex,
+          timestamp: Date.now()
+        };
+        localStorage.setItem('d3k1_active_exam_v1', JSON.stringify(data));
+      } catch (e) {
+        console.warn('Failed to save active exam:', e);
+      }
+    }
+
+    function clearActiveExamState() {
+      try {
+        localStorage.removeItem('d3k1_active_exam_v1');
+      } catch (e) {}
+    }
+
+    function restoreActiveExamIfAny() {
+      try {
+        const raw = localStorage.getItem('d3k1_active_exam_v1');
+        if (!raw) return false;
+        const data = JSON.parse(raw);
+        if (!data || !data.examActive || !data.currentKurul || !Array.isArray(data.examQuestionIds) || data.examQuestionIds.length === 0) {
+          clearActiveExamState();
+          return false;
+        }
+
+        const kId = data.currentKurul;
+        const allQuestions = (window.KURUL_DATA && window.KURUL_DATA[kId]) || [];
+        if (!allQuestions.length) return false;
+
+        const qMap = new Map();
+        allQuestions.forEach(q => qMap.set(q.id, q));
+        const matchedQuestions = data.examQuestionIds.map(id => qMap.get(id)).filter(Boolean);
+
+        if (matchedQuestions.length === 0) {
+          clearActiveExamState();
+          return false;
+        }
+
+        if (state.activeKurul !== kId) {
+          selectKurul(kId, 'exam');
+        } else {
+          switchViewMode('exam');
+        }
+
+        state.examQuestions = matchedQuestions;
+        state.examAnswers = data.examAnswers || {};
+        state.examSeconds = data.examSeconds || 0;
+        state.examTotalSeconds = data.examTotalSeconds || (matchedQuestions.length * 60);
+        state.currentIndex = Math.min(matchedQuestions.length - 1, Math.max(0, data.currentIndex || 0));
+        state.examActive = true;
+        state.examFinished = false;
+        state.currentKurul = kId;
+
+        const setupControls = document.getElementById('exam-setup-controls');
+        const activeControls = document.getElementById('exam-active-controls');
+        const resultCard = document.getElementById('exam-result-card');
+        const subtitle = document.getElementById('exam-status-subtitle');
+        if (setupControls) setupControls.classList.add('hidden');
+        if (activeControls) activeControls.classList.remove('hidden');
+        if (resultCard) resultCard.classList.add('hidden');
+        if (subtitle) subtitle.textContent = `${matchedQuestions.length} soruluk sınav devam ediyor. Şıkları işaretleyip bitirdiğinizde sonucu görebilirsiniz.`;
+
+        const mins = String(Math.floor(state.examSeconds / 60)).padStart(2, '0');
+        const secs = String(state.examSeconds % 60).padStart(2, '0');
+        const timerDisp = document.getElementById('exam-timer-display');
+        if (timerDisp) timerDisp.textContent = `${mins}:${secs}`;
+
+        clearInterval(state.examTimerId);
+        state.examTimerId = setInterval(() => {
+          state.examSeconds++;
+          const m = String(Math.floor(state.examSeconds / 60)).padStart(2, '0');
+          const s = String(state.examSeconds % 60).padStart(2, '0');
+          const td = document.getElementById('exam-timer-display');
+          if (td) td.textContent = `${m}:${s}`;
+          if (state.examSeconds % 5 === 0) {
+            saveActiveExamState();
+          }
+        }, 1000);
+
+        updateHeaderAndToolbarStats();
+        renderMainArea();
+        renderQuestionMap();
+        showToast('⏱️ Devam eden deneme sınavınız geri yüklendi.');
+        return true;
+      } catch (e) {
+        console.warn('Failed to restore active exam:', e);
+        clearActiveExamState();
+        return false;
+      }
     }
 
     function showToast(msg) {
@@ -1898,45 +2005,50 @@
     function syncUrlRoute(replace = false) {
       if (_suppressUrlPush) return;
       try {
-        let targetPath = '/';
+        let routeSlug = '';
         if (state.activeKurul && KURUL_META[state.activeKurul]) {
           const meta = KURUL_META[state.activeKurul];
-          targetPath = String(state.activeKurul).startsWith('d')
-            ? `/${state.activeKurul}`
-            : `/kurul-${state.activeKurul}`;
-          if (state.viewMode === 'exam') targetPath += '/sinav';
-          else if (state.viewMode === 'stats') targetPath += '/analiz';
+          routeSlug = String(state.activeKurul).startsWith('d')
+            ? `${state.activeKurul}`
+            : `kurul-${state.activeKurul}`;
+          if (state.viewMode === 'exam') routeSlug += '/sinav';
+          else if (state.viewMode === 'stats') routeSlug += '/analiz';
           document.title = `${meta.donemTitle} • ${meta.title} Çıkmış Sorular`;
         } else {
           document.title = 'Tıp Fakültesi • Dönem 1, 2 ve 3 Tüm Kurullar Çıkmış Sorular & Sınav Platformu (2018–2026)';
         }
 
+        const targetHash = routeSlug ? `#/${routeSlug}` : '';
+        const targetUrl = window.location.protocol !== 'file:'
+          ? `/${targetHash}`
+          : (targetHash || window.location.pathname);
+
         if (window.location.protocol !== 'file:') {
-          if (window.location.pathname !== targetPath) {
+          const currentFull = `${window.location.pathname}${window.location.hash}`;
+          const desiredFull = `/${targetHash}`;
+          if (currentFull !== desiredFull) {
             if (replace) {
-              window.history.replaceState({ kurul: state.activeKurul, mode: state.viewMode }, '', targetPath);
+              window.history.replaceState({ kurul: state.activeKurul, mode: state.viewMode }, '', desiredFull);
             } else {
-              window.history.pushState({ kurul: state.activeKurul, mode: state.viewMode }, '', targetPath);
+              window.history.pushState({ kurul: state.activeKurul, mode: state.viewMode }, '', desiredFull);
             }
             if (typeof window.va === 'function') {
-              window.va('pageview', { path: targetPath });
+              window.va('pageview', { path: routeSlug ? `/${routeSlug}` : '/' });
             }
           }
         } else {
-          const hashVal = targetPath === '/' ? '' : `#${targetPath.slice(1)}`;
-          if (window.location.hash !== hashVal) {
-            window.location.hash = hashVal;
+          if (window.location.hash !== targetHash) {
+            window.location.hash = targetHash;
           }
         }
       } catch (e) {}
     }
 
     function applyRouteFromUrl() {
-      const rawPath = window.location.protocol === 'file:'
-        ? window.location.hash.replace(/^#\/?/, '/')
-        : window.location.pathname;
+      const hashPath = (window.location.hash || '').replace(/^#\/?/, '/');
+      const rawPath = (hashPath && hashPath !== '/') ? hashPath : window.location.pathname;
 
-      if (rawPath.includes('admin') || window.location.hash === '#admin') {
+      if (rawPath.includes('admin') || window.location.hash === '#admin' || window.location.hash === '#/admin') {
         showAdminScreen();
         return;
       }
@@ -1974,7 +2086,9 @@
       }
 
       if (state.examTimerId) clearInterval(state.examTimerId);
+      if (state.examActive) clearActiveExamState();
       state.activeKurul = null;
+      state.currentKurul = null;
 
       document.getElementById('home-screen').classList.add('hidden');
       const ws = document.getElementById('app-workspace');
@@ -1998,11 +2112,11 @@
       document.getElementById('hdr-kurul-icon').textContent = '👑';
 
       if (window.location.protocol !== 'file:') {
-        if (window.location.pathname !== '/admin') {
-          try { window.history.pushState({ mode: 'admin' }, '', '/admin'); } catch (e) {}
+        if (`${window.location.pathname}${window.location.hash}` !== '/#/admin') {
+          try { window.history.pushState({ mode: 'admin' }, '', '/#/admin'); } catch (e) {}
         }
       } else {
-        if (window.location.hash !== '#admin') window.location.hash = '#admin';
+        if (window.location.hash !== '#/admin') window.location.hash = '#/admin';
       }
 
       _adminCachedUsers = null;
@@ -2237,7 +2351,11 @@
 
     function showHomeScreen() {
       if (state.examTimerId) clearInterval(state.examTimerId);
+      if (state.examActive) clearActiveExamState();
+      state.examActive = false;
+      state.examFinished = false;
       state.activeKurul = null;
+      state.currentKurul = null;
 
       const adminScreen = document.getElementById('admin-screen');
       if (adminScreen) adminScreen.classList.add('hidden');
@@ -2267,9 +2385,11 @@
       if (!meta) return showHomeScreen();
 
       if (state.examTimerId) clearInterval(state.examTimerId);
+      if (state.examActive && state.activeKurul !== kId) clearActiveExamState();
       state.examActive = false;
       state.examFinished = false;
       state.activeKurul = kId;
+      state.currentKurul = kId;
 
       RAW_QUESTIONS = (window.KURUL_DATA && window.KURUL_DATA[kId]) || [];
 
@@ -2601,6 +2721,221 @@
       return escaped.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-slate-900 underline decoration-indigo-300 decoration-2 underline-offset-2">$1</strong>');
     }
 
+    function buildSmartSolutionAnalysis(q, selectedLetter, selectedText, correctText) {
+      const isNegative = /yanlıştır|değildir|görülmez|beklenmez|yer almaz|olmaz|kullanılmaz|kontrendikedir|bulunmaz|söylenemez|hariç|dışında/i.test(q.question || '');
+      const isWrong = Boolean(selectedLetter && selectedLetter !== q.answer);
+      const subjectName = escapeHtml(q.subject || 'Tıp');
+
+      // Öncüllü (Romen rakamlı I., II., III...) soru tespiti ve analizi
+      const romanStatements = [];
+      const rRegex = /(?:^|\n|\s)(I{1,3}|IV|V)\s*[\.\-\)]\s*([^\n\r]+?)(?=(?:\n|\s+(?:I{1,3}|IV|V)\s*[\.\-\)]|$))/gi;
+      let rMatch;
+      while ((rMatch = rRegex.exec(q.question || '')) !== null) {
+        const num = rMatch[1].toUpperCase();
+        let text = rMatch[2].trim().replace(/\s+(?:hangisi|hangileri|yukarıdakilerden|ifadelerinden|yargılarından).*$/i, '').trim();
+        if (text.length > 1 && !romanStatements.some(s => s.num === num)) {
+          romanStatements.push({ num, text });
+        }
+      }
+
+      const extractRomans = (str) => {
+        if (!str) return [];
+        const m = str.match(/\b(I{1,3}|IV|V)\b/gi);
+        return m ? [...new Set(m.map(x => x.toUpperCase()))] : [];
+      };
+
+      const selectedRomans = extractRomans(selectedText);
+      const correctRomans = extractRomans(correctText);
+      const isRomanQuestion = romanStatements.length > 0 || selectedRomans.length > 0 || correctRomans.length > 0;
+
+      // 1. Hata Analizi (Neden selectedLetter Değil?)
+      let errorAnalysisHtml = '';
+      if (isWrong) {
+        let errorDetailHtml = '';
+
+        if (isRomanQuestion && (selectedRomans.length > 0 || correctRomans.length > 0)) {
+          const excessRomans = selectedRomans.filter(r => !correctRomans.includes(r));
+          const missingRomans = correctRomans.filter(r => !selectedRomans.includes(r));
+
+          let romanDiffText = '';
+          if (excessRomans.length > 0) {
+            romanDiffText += `Seçtiğiniz <strong>${selectedLetter}</strong> şıkkında yer alan <strong>[${excessRomans.join(', ')}]</strong> öncülü/öncülleri doğru cevaba dahil edilmemelidir (${isNegative ? 'bu öncül olumsuz/yanlış koşulu sağlamamakta, yani doğru bir ifadedir' : 'bu öncül hatalıdır veya soru kökündeki kriteri sağlamaz'}). `;
+          }
+          if (missingRomans.length > 0) {
+            romanDiffText += `Doğru cevap olan <strong>${q.answer}</strong> şıkkındaki <strong>[${missingRomans.join(', ')}]</strong> öncülü/öncülleri ise seçtiğiniz şıkta eksiktir. `;
+          }
+          if (!romanDiffText) {
+            romanDiffText = `Soru öncülleri incelendiğinde doğru kombinasyon <strong>${q.answer}) ${escapeHtml(correctText)}</strong> iken, işaretlediğiniz <strong>${selectedLetter}) ${escapeHtml(selectedText)}</strong> öncül kombinasyonu uyuşmamaktadır.`;
+          }
+
+          let romanListHtml = '';
+          if (romanStatements.length > 0) {
+            romanListHtml = `
+              <div class="mt-2 space-y-1.5 text-xs bg-white/90 p-2.5 rounded-lg border border-amber-200/80 shadow-xs">
+                <div class="font-bold text-slate-800">📌 Soru Öncülleri ve Doğruluk Durumu:</div>
+                ${romanStatements.map(st => {
+                  const inCorrect = correctRomans.includes(st.num);
+                  const inSelected = selectedRomans.includes(st.num);
+                  const badge = inCorrect 
+                    ? '<span class="text-emerald-700 font-bold ml-auto shrink-0">✓ Doğru Cevapta Var</span>'
+                    : '<span class="text-slate-500 font-medium ml-auto shrink-0">✗ Doğru Cevapta Yok</span>';
+                  return `
+                    <div class="flex items-start gap-2 py-0.5 border-b border-slate-100 last:border-0">
+                      <span class="font-bold text-slate-900 w-6 shrink-0">${st.num}.</span>
+                      <span class="text-slate-700 flex-1 leading-relaxed">${escapeHtml(st.text)}</span>
+                      ${badge}
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            `;
+          }
+
+          errorDetailHtml = `
+            <div class="space-y-2">
+              ${isNegative ? `
+                <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 text-[11px] font-extrabold mb-1">
+                  <span>⚠️</span>
+                  <span>Olumsuz Soru Kökü: Yanlış/İstisna Olan Öncüller İstenmektedir!</span>
+                </div>
+              ` : ''}
+              <p class="leading-relaxed">${romanDiffText}</p>
+              ${romanListHtml}
+            </div>
+          `;
+        } else if (isNegative) {
+          errorDetailHtml = `
+            <div class="space-y-1.5">
+              <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-900 text-[11px] font-extrabold mb-1">
+                <span>⚠️</span>
+                <span>Olumsuz Soru Kökü Uyarısı</span>
+              </div>
+              <p class="leading-relaxed">
+                Bu soru kökünde <strong>olumsuz / yanlış / istisna (değildir / beklenmez / görülmez / yer almaz)</strong> olan ifade sorulmaktadır.
+                İşaretlediğiniz <strong class="text-slate-900">${selectedLetter}) ${escapeHtml(selectedText)}</strong> seçeneği bu konu için <strong>doğru bir tıbbi bilgidir</strong>.
+                Ancak soru kökü sizden <em>yanlış / istisna</em> olanı aramanızı istediğinden, doğru yanıt <strong class="text-emerald-800">${q.answer}) ${escapeHtml(correctText)}</strong> şıkkıdır (yanlış / hatalı olan ifade budur).
+              </p>
+            </div>
+          `;
+        } else {
+          errorDetailHtml = `
+            <div class="space-y-1.5">
+              <p class="leading-relaxed">
+                İşaretlediğiniz <strong class="text-slate-900">${selectedLetter}) ${escapeHtml(selectedText)}</strong> şıkkı, ${subjectName} dersinde bu soru kökü için hazırlanmış güçlü bir <strong>çeldiricidir</strong>.
+                Soru kökündeki klinik ve teorik ipuçları doğrudan <strong class="text-emerald-800">${q.answer}) ${escapeHtml(correctText)}</strong> seçeneğini işaret etmektedir.
+              </p>
+            </div>
+          `;
+        }
+
+        errorAnalysisHtml = `
+          <div class="p-3.5 rounded-xl bg-rose-50/90 border border-rose-200 text-xs sm:text-sm text-rose-950 space-y-2">
+            <div class="font-extrabold text-rose-900 flex items-center gap-1.5">
+              <span>🔍</span>
+              <span>Hata Analizi (Neden ${selectedLetter} Şıkkı Değil?):</span>
+            </div>
+            ${errorDetailHtml}
+          </div>
+        `;
+      }
+
+      // 2. Tıbbi Açıklama ve Çözüm (Neden q.answer Şıkkı?)
+      let solutionText = '';
+      const rawExp = (q.explanation || '').trim();
+      const cleanExp = rawExp.replace(/^(?:Doğru\s+(?:Seçenek|Cevap)\s*[:\-]\s*[A-E]\s*[\)\.\-]?\s*)/i, '').trim();
+      const isExpSubstantial = cleanExp.length > 20;
+
+      if (isExpSubstantial) {
+        solutionText = formatExplanationText(rawExp);
+      } else {
+        const otherOpts = (q.options || []).filter(o => o.letter !== q.answer).map(o => o.letter).join(', ');
+        if (isNegative) {
+          solutionText = `Bu soru <strong>${subjectName}</strong> dersi kapsamında <strong>istisna / yanlış olan ifadeyi</strong> sorgulamaktadır. Seçenekler değerlendirildiğinde <strong>${q.answer}) ${escapeHtml(correctText)}</strong> ifadesi klinik veya teorik açıdan geçerli değildir (hatalı / istisna bilgidir). Diğer seçeneklerde (${otherOpts || 'A–E'}) yer alan tüm ifadeler ise tıp literatüründe kabul görmüş doğru klinik/teorik bilgilerdir. Dolayısıyla soru kökünde aranan olumsuz yanıt <strong>${q.answer}</strong> seçeneğidir.`;
+        } else {
+          solutionText = `Soru kökünde verilen klinik ve teorik bilgiler doğrultusunda <strong>${subjectName}</strong> dersi temel prensiplerine göre aranan doğru yanıt <strong>${q.answer}) ${escapeHtml(correctText)}</strong> seçeneğidir. Soru kökündeki anahtar klinik bulgular ve mekanizma bu seçeneği doğrulamaktadır. Diğer seçenekler (${otherOpts || 'diğer şıklar'}) ise konuyla ilişkili çeldirici nitelikte olup soru kökündeki kriterleri tam olarak karşılamamaktadır. Bu nedenle hedeflenen doğru seçenek <strong>${q.answer}</strong> şıkkıdır.`;
+        }
+        if (rawExp && !isExpSubstantial) {
+          solutionText += ` <span class="text-slate-500 text-xs block mt-1.5 font-medium">📌 Kaynak Notu: ${escapeHtml(rawExp)}</span>`;
+        }
+      }
+
+      const solutionBoxHtml = `
+        <div class="p-3.5 rounded-xl bg-white/95 border border-slate-200/90 text-xs sm:text-sm text-slate-800 leading-relaxed shadow-xs space-y-2">
+          <div class="font-extrabold text-indigo-900 flex items-center justify-between gap-2 border-b border-indigo-100/70 pb-2">
+            <div class="flex items-center gap-1.5">
+              <span>🩺</span>
+              <span>Soru Çözümü ve Tıbbi Açıklama (Neden ${q.answer} Şıkkı?):</span>
+            </div>
+            <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200">
+              ${escapeHtml(q.subject || 'Tıp')}
+            </span>
+          </div>
+          <div class="text-slate-700 leading-relaxed">${solutionText}</div>
+        </div>
+      `;
+
+      // 3. Tüm Şıkların Değerlendirmesi (A–E Özeti)
+      let optionsEvalItemsHtml = '';
+      if (q.options && q.options.length > 0) {
+        optionsEvalItemsHtml = q.options.map(opt => {
+          const isCorrectOpt = opt.letter === q.answer;
+          const isSelectedOpt = opt.letter === selectedLetter;
+
+          let badge = '';
+          let rowClass = '';
+
+          if (isCorrectOpt) {
+            badge = `<span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 border border-emerald-300 font-extrabold text-[11px] shrink-0">✓ Doğru Cevap</span>`;
+            rowClass = 'bg-emerald-50/90 border-emerald-300 text-emerald-950 font-semibold';
+          } else if (isNegative) {
+            badge = `<span class="px-2 py-0.5 rounded-md bg-sky-100 text-sky-800 border border-sky-300 font-semibold text-[11px] shrink-0">• Doğru Bilgi (Olumsuz Soru Kökü)</span>`;
+            rowClass = 'bg-white border-slate-200 text-slate-700';
+          } else {
+            badge = `<span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-300 font-semibold text-[11px] shrink-0">• Çeldirici / Diğer Seçenek</span>`;
+            rowClass = 'bg-white border-slate-200 text-slate-700';
+          }
+
+          const selectedBadge = isSelectedOpt
+            ? `<span class="px-1.5 py-0.5 rounded bg-rose-100 text-rose-800 border border-rose-300 font-bold text-[10px] shrink-0">İşaretlediğiniz (${opt.letter})</span>`
+            : '';
+
+          return `
+            <div class="p-2.5 rounded-xl border flex flex-wrap sm:flex-nowrap items-start justify-between gap-2 text-xs transition-colors ${rowClass}">
+              <div class="flex items-start gap-2 flex-1">
+                <span class="w-6 h-6 rounded-md font-bold text-xs flex items-center justify-center shrink-0 ${isCorrectOpt ? 'bg-emerald-600 text-white' : 'bg-slate-200 text-slate-800'}">${opt.letter}</span>
+                <span class="leading-relaxed mt-0.5">${escapeHtml(opt.text)}</span>
+              </div>
+              <div class="flex items-center gap-1.5 shrink-0 ml-auto">
+                ${selectedBadge}
+                ${badge}
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      const optionsSummaryHtml = optionsEvalItemsHtml ? `
+        <details class="group rounded-xl border border-slate-200 bg-slate-50/70 overflow-hidden text-xs">
+          <summary class="flex items-center justify-between p-3 cursor-pointer hover:bg-slate-100/90 transition-colors font-bold text-slate-800 select-none">
+            <span class="flex items-center gap-2">
+              <span>📋</span>
+              <span>Tüm Şıkların Değerlendirmesi (A–E Özeti)</span>
+            </span>
+            <span class="text-slate-400 group-open:rotate-180 transition-transform duration-200 text-[10px]">▼</span>
+          </summary>
+          <div class="p-3 pt-0 space-y-2 border-t border-slate-200/60 mt-1">
+            ${optionsEvalItemsHtml}
+          </div>
+        </details>
+      ` : '';
+
+      return {
+        errorAnalysisHtml,
+        solutionBoxHtml,
+        optionsSummaryHtml
+      };
+    }
+
     function buildExplanationPanelHtml(q, selectedLetter, isExam, isRevealed) {
       if (isExam && !state.examFinished) return '';
       if (q.q_type === 'open' || !q.options || q.options.length === 0) return '';
@@ -2610,12 +2945,25 @@
       // Eğer şıklı sorunun kaynak dosyada cevap anahtarı yoksa
       if (!q.answer) {
         if (!selectedLetter && !isManuallyRevealed) return '';
+        const selfEvalNotice = selectedLetter === 'CORRECT'
+          ? '<span class="text-emerald-800 font-bold">✓ Kendinizi "Biliyorum (Doğru)" olarak değerlendirdiniz.</span>'
+          : selectedLetter === 'WRONG'
+            ? '<span class="text-rose-800 font-bold">✗ Kendinizi "Tekrar Et (Yanlış)" olarak değerlendirdiniz.</span>'
+            : selectedLetter
+              ? `<span>Seçtiğiniz şık (<strong>${selectedLetter}</strong>) işaretlendi. Doğruluk istatistiği için yukarıdaki değerlendirme butonlarını kullanabilirsiniz.</span>`
+              : '';
         return `
           <div class="mt-2 px-4 py-3 rounded-xl bg-amber-50/90 border border-amber-200 flex flex-wrap items-center justify-between gap-2 text-xs text-amber-900">
             <div class="flex items-center gap-2 font-semibold">
               <span>📝</span>
-              <span>Bu sorunun resmi cevap anahtarı kaynak PDF'te belirtilmemiştir. ${selectedLetter ? `Seçtiğiniz şık (<strong>${selectedLetter}</strong>) çalışma kaydınıza eklendi.` : ''}</span>
+              <span>Bu arşiv sorusunun resmi cevap anahtarı kaynak dosyada yer almamaktadır. ${selfEvalNotice}</span>
             </div>
+            ${q.explanation ? `
+              <div class="w-full mt-2 p-3 rounded-xl bg-white/90 border border-amber-200/90 text-xs text-slate-800 leading-relaxed">
+                <div class="font-bold text-amber-900 mb-1">📖 Açıklama / Not:</div>
+                <p class="text-slate-700">${formatExplanationText(q.explanation)}</p>
+              </div>
+            ` : ''}
           </div>
         `;
       }
@@ -2623,6 +2971,7 @@
       const isWrong = Boolean(selectedLetter && selectedLetter !== q.answer);
       const isCorrect = Boolean(selectedLetter && selectedLetter === q.answer);
 
+      // Doğru yanıtlandığında ve henüz "Soru Çözümünü Gör" tıklanmadığında tebrik banner'ı
       if (isCorrect && !isManuallyRevealed) {
         return `
           <div class="mt-1 px-3.5 py-2.5 rounded-xl bg-emerald-50/80 border border-emerald-200 flex flex-wrap items-center justify-between gap-2">
@@ -2630,11 +2979,9 @@
               <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[11px]">✓</span>
               <span>Tebrikler, doğru cevapladınız! (${q.answer} şıkkı)</span>
             </div>
-            ${q.explanation ? `
-              <button type="button" data-reveal-qid="${q.id}" class="btn-card-reveal px-3 py-1 rounded-lg bg-white hover:bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-bold transition-colors">
-                📖 Soru Açıklamasını Gör
-              </button>
-            ` : ''}
+            <button type="button" data-reveal-qid="${q.id}" class="btn-card-reveal px-3 py-1 rounded-lg bg-white hover:bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-bold transition-colors">
+              📖 Soru Çözümünü Gör
+            </button>
           </div>
         `;
       }
@@ -2645,6 +2992,8 @@
       const correctOptObj = q.options.find(o => o.letter === q.answer);
       const selectedText = selectedOptObj ? selectedOptObj.text : '';
       const correctText = correctOptObj ? correctOptObj.text : '';
+
+      const { errorAnalysisHtml, solutionBoxHtml, optionsSummaryHtml } = buildSmartSolutionAnalysis(q, selectedLetter, selectedText, correctText);
 
       if (isWrong) {
         return `
@@ -2668,19 +3017,16 @@
               </div>
             </div>
 
-            ${q.explanation ? `
-              <div class="p-3.5 rounded-xl bg-white/90 border border-slate-200/90 text-xs sm:text-sm text-slate-800 leading-relaxed">
-                <div class="font-extrabold text-indigo-900 mb-1 flex items-center gap-1.5">
-                  <span>🩺</span>
-                  <span>Neden ${q.answer} Şıkkı? (Tıbbi Açıklama):</span>
-                </div>
-                <p class="text-slate-700 leading-relaxed">${formatExplanationText(q.explanation)}</p>
-              </div>
-            ` : ''}
+            ${errorAnalysisHtml}
+
+            ${solutionBoxHtml}
+
+            ${optionsSummaryHtml}
           </div>
         `;
       }
 
+      // Manuel olarak açıldığında ("Cevabı Göster", veya doğru bilip "Soru Çözümünü Gör" tıklandığında)
       const isAiOpt = q.ai_completion === 'options' || ((q.note || '').toLowerCase().includes('tamamlanmıştır') && (q.note || '').toLowerCase().includes('şıklı')) || (q.note || '').toLowerCase().includes('öğrenci hatırlama');
       const isAiAns = q.ai_completion === 'answer' || (q.note || '').toLowerCase().includes('tıbbi literatüre');
 
@@ -2689,6 +3035,16 @@
         : isAiAns
           ? `<span class="px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-900 border border-cyan-300 text-[11px] font-extrabold flex items-center gap-1 shadow-sm">✨ AI Literatür Analizi</span>`
           : `<span class="px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-800 border border-indigo-200 text-[11px] font-bold">📖 Cevap Anahtarı</span>`;
+
+      const correctBanner = isCorrect ? `
+        <div class="px-3.5 py-2.5 rounded-xl bg-emerald-100/90 border border-emerald-300 flex items-center justify-between gap-2 text-xs font-bold text-emerald-900">
+          <div class="flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[11px]">✓</span>
+            <span>Tebrikler, bu soruyu doğru yanıtladınız (${selectedLetter} şıkkı)! Detaylı çözüm ve şık analizi aşağıdadır:</span>
+          </div>
+          <span class="text-[11px] font-extrabold px-2 py-0.5 rounded-md bg-emerald-200 text-emerald-950 shrink-0">Doğru Yanıt</span>
+        </div>
+      ` : '';
 
       return `
         <div class="mt-2 rounded-2xl border-2 border-indigo-200 bg-gradient-to-br from-indigo-50/70 via-white to-emerald-50/40 p-4 sm:p-5 shadow-sm space-y-3">
@@ -2699,15 +3055,12 @@
             </div>
             ${expBadge}
           </div>
-          ${q.explanation ? `
-            <div class="p-3.5 rounded-xl bg-white/90 border border-slate-200/90 text-xs sm:text-sm text-slate-800 leading-relaxed">
-              <div class="font-extrabold text-indigo-900 mb-1 flex items-center gap-1.5">
-                <span>🩺</span>
-                <span>${isAiAns ? 'Tıbbi Literatür Açıklaması (AI):' : isAiOpt ? 'AI Soru Açıklaması & Çözüm:' : 'Konu Açıklaması:'}</span>
-              </div>
-              <p class="text-slate-700 leading-relaxed">${formatExplanationText(q.explanation)}</p>
-            </div>
-          ` : ''}
+
+          ${correctBanner}
+
+          ${solutionBoxHtml}
+
+          ${optionsSummaryHtml}
         </div>
       `;
     }
@@ -2867,6 +3220,27 @@
             </button>
           `;
         }).join('');
+
+        if (!q.answer) {
+          const isSelfCor = selectedLetter === 'CORRECT';
+          const isSelfWro = selectedLetter === 'WRONG';
+          optionsOrOpenHtml += `
+            <div class="mt-2 p-3.5 rounded-xl border border-amber-300 bg-amber-50/70 flex flex-wrap items-center justify-between gap-2.5">
+              <div class="flex items-center gap-2 text-xs text-amber-900 font-semibold leading-relaxed">
+                <span class="text-base shrink-0">⚠️</span>
+                <span><strong>Resmi Cevap Anahtarı Yok:</strong> Bu arşiv sorusunun doğru şıkkı orijinal kaynakta belirtilmemiştir. Şıkları inceleyip kendinizi değerlendirebilirsiniz:</span>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <button type="button" data-qid="${q.id}" data-opt="CORRECT" class="opt-select-btn px-3 py-1.5 rounded-xl border text-xs font-bold transition-colors ${isSelfCor ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm' : 'bg-white hover:bg-emerald-50 text-emerald-700 border-emerald-300'}">
+                  ✓ Biliyorum (Doğru Say)
+                </button>
+                <button type="button" data-qid="${q.id}" data-opt="WRONG" class="opt-select-btn px-3 py-1.5 rounded-xl border text-xs font-bold transition-colors ${isSelfWro ? 'bg-rose-600 text-white border-rose-600 shadow-sm' : 'bg-white hover:bg-rose-50 text-rose-700 border-rose-300'}">
+                  ✗ Tekrar Et (Yanlış Say)
+                </button>
+              </div>
+            </div>
+          `;
+        }
       }
 
       const formattedQText = escapeHtml(q.question).replace(/\n/g, '<br/>');
@@ -3172,6 +3546,7 @@
         } else {
           state.examAnswers[qid] = optLetter;
         }
+        saveActiveExamState();
       } else {
         if (state.userAnswers[qid] === optLetter) {
           delete state.userAnswers[qid];
@@ -3245,28 +3620,43 @@
         const isCurrent = idx === state.currentIndex && state.displayStyle === 'single';
         const isFav = state.favorites.has(q.id);
         let colorClass = "bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200";
+        let statusLabel = "Boş";
 
         if (state.viewMode === 'exam') {
           const ea = state.examAnswers[q.id];
           if (state.examFinished) {
-            if (ea && isUserAnswerCorrect(q, ea)) colorClass = "bg-emerald-500 text-white border-emerald-600 font-bold";
-            else if (ea) colorClass = "bg-rose-500 text-white border-rose-600 font-bold";
+            if (ea && isUserAnswerCorrect(q, ea)) {
+              colorClass = "bg-emerald-500 text-white border-emerald-600 font-bold";
+              statusLabel = "Doğru";
+            } else if (ea) {
+              colorClass = "bg-rose-500 text-white border-rose-600 font-bold";
+              statusLabel = "Yanlış";
+            } else {
+              statusLabel = "Boş";
+            }
           } else if (ea) {
             colorClass = "bg-indigo-600 text-white border-indigo-700 font-bold";
+            statusLabel = `İşaretlendi (${ea})`;
           }
         } else {
           const ua = state.userAnswers[q.id];
           if (ua) {
-            if (isUserAnswerCorrect(q, ua)) colorClass = "bg-emerald-500 text-white border-emerald-600 font-bold";
-            else colorClass = "bg-rose-500 text-white border-rose-600 font-bold";
+            if (isUserAnswerCorrect(q, ua)) {
+              colorClass = "bg-emerald-500 text-white border-emerald-600 font-bold";
+              statusLabel = "Doğru";
+            } else {
+              colorClass = "bg-rose-500 text-white border-rose-600 font-bold";
+              statusLabel = "Yanlış";
+            }
           }
         }
 
         const currentRing = isCurrent ? "ring-2 ring-slate-900 ring-offset-1" : "";
         const favRing = isFav && !isCurrent ? "ring-2 ring-amber-400" : "";
+        const ariaLabel = `Soru ${idx + 1}: ${statusLabel}${isFav ? ' (Favori)' : ''}`;
 
         return `
-          <button type="button" data-map-idx="${idx}" title="${escapeHtml(q.year)} • ${q.q_num}. Soru (${escapeHtml(q.subject)})" class="map-jump-btn h-7 rounded-lg border text-[11px] font-semibold flex items-center justify-center transition-all ${colorClass} ${currentRing} ${favRing}">
+          <button type="button" data-map-idx="${idx}" aria-label="${escapeHtml(ariaLabel)}" title="${escapeHtml(q.year)} • ${q.q_num}. Soru (${escapeHtml(q.subject)}) - ${statusLabel}" class="map-jump-btn h-7 rounded-lg border text-[11px] font-semibold flex items-center justify-center transition-all ${colorClass} ${currentRing} ${favRing}">
             ${idx + 1}
           </button>
         `;
@@ -3280,6 +3670,8 @@
       });
     }
 
+    const renderOpticalGrid = renderQuestionMap;
+
     function startExamSession() {
       if (window.d3k1Auth && !window.d3k1Auth.isAuthenticated()) {
         window.d3k1Auth.requireAuth('Süreli deneme sınavı başlatmak ve sınav analizinizi kaydetmek için lütfen ücretsiz giriş yapın veya kayıt olun.');
@@ -3290,7 +3682,21 @@
         return;
       }
       const countVal = document.getElementById('exam-q-count').value;
-      const pool = [...state.filteredQuestions];
+
+      // Sadece şıkları olan, açık uçlu olmayan ve cevap anahtarı bulunan soruları filtrele
+      let pool = state.filteredQuestions.filter(q => q.options && q.options.length > 0 && q.q_type !== 'open' && q.answer);
+      if (pool.length === 0) {
+        // Fallback: şıkları olan tüm sorular
+        pool = state.filteredQuestions.filter(q => q.options && q.options.length > 0 && q.q_type !== 'open');
+      }
+      if (pool.length === 0) {
+        pool = [...state.filteredQuestions];
+      }
+      if (pool.length === 0) {
+        showToast('Sınav için uygun soru bulunamadı.');
+        return;
+      }
+
       for (let i = pool.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [pool[i], pool[j]] = [pool[j], pool[i]];
@@ -3302,6 +3708,8 @@
       state.examFinished = false;
       state.currentIndex = 0;
       state.examSeconds = 0;
+      state.examTotalSeconds = limit * 60;
+      state.currentKurul = state.activeKurul;
 
       document.getElementById('exam-setup-controls').classList.add('hidden');
       document.getElementById('exam-active-controls').classList.remove('hidden');
@@ -3314,8 +3722,12 @@
         const mins = String(Math.floor(state.examSeconds / 60)).padStart(2, '0');
         const secs = String(state.examSeconds % 60).padStart(2, '0');
         document.getElementById('exam-timer-display').textContent = `${mins}:${secs}`;
+        if (state.examSeconds % 5 === 0) {
+          saveActiveExamState();
+        }
       }, 1000);
 
+      saveActiveExamState();
       updateHeaderAndToolbarStats();
       renderMainArea();
       renderQuestionMap();
@@ -3348,21 +3760,55 @@
           correct++;
           subjStats[q.subject].c++;
           profStats[ep].c++;
-          state.userAnswers[q.id] = ans;
         } else {
           wrong++;
           subjStats[q.subject].w++;
           profStats[ep].w++;
-          state.userAnswers[q.id] = ans;
         }
       });
 
-      saveUserProgress();
-
       const total = state.examQuestions.length;
-      const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
+      const scorePct = total > 0 ? Math.round((correct / total) * 100) : 0;
+      const pct = scorePct;
       const mins = Math.floor(state.examSeconds / 60);
       const secs = state.examSeconds % 60;
+
+      // Sınav geçmişini (en güncel 50 sınav) localStorage'a kaydet
+      try {
+        const examSummary = {
+          id: 'exam_' + Date.now(),
+          date: new Date().toISOString(),
+          kurul: state.currentKurul || state.activeKurul,
+          score: scorePct,
+          correctCount: correct,
+          wrongCount: wrong,
+          emptyCount: empty,
+          totalQuestions: total,
+          durationSeconds: state.examSeconds || 0
+        };
+        const rawHistory = localStorage.getItem('d3k1_exam_history_v1');
+        let history = rawHistory ? JSON.parse(rawHistory) : [];
+        if (!Array.isArray(history)) history = [];
+        history.unshift(examSummary);
+        if (history.length > 50) history = history.slice(0, 50);
+        localStorage.setItem('d3k1_exam_history_v1', JSON.stringify(history));
+      } catch (e) {
+        console.warn('Exam history save error:', e);
+      }
+
+      // Buluta sınav sonucunu kaydet
+      window.d3k1Auth?.saveExamResultToCloud?.({
+        kurul: state.currentKurul,
+        score: scorePct,
+        correctCount: correct,
+        wrongCount: wrong,
+        emptyCount: empty,
+        totalQuestions: total,
+        durationSeconds: Math.max(0, (state.examTotalSeconds || 0) - (state.examSeconds || 0))
+      });
+
+      // Sınav tamamlandığı için aktif sınav kaydını temizle
+      clearActiveExamState();
 
       document.getElementById('exam-res-kpis').innerHTML = `
         <div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center">
@@ -3802,7 +4248,29 @@
       document.getElementById('btn-new-exam').addEventListener('click', startExamSession);
       document.getElementById('btn-close-exam-res').addEventListener('click', () => {
         document.getElementById('exam-result-card').classList.add('hidden');
+        const container = document.getElementById('questions-container');
+        if (container) container.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
+
+      const btnReviewWrong = document.getElementById('btn-review-wrong-exam');
+      if (btnReviewWrong) {
+        btnReviewWrong.addEventListener('click', () => {
+          document.getElementById('exam-result-card').classList.add('hidden');
+          const wrongOrEmptyIdx = state.examQuestions.findIndex(q => {
+            const ea = state.examAnswers[q.id];
+            return !ea || !isUserAnswerCorrect(q, ea);
+          });
+          if (wrongOrEmptyIdx !== -1) {
+            goToQuestion(wrongOrEmptyIdx);
+            const card = document.querySelector(`[data-card-qid="${state.examQuestions[wrongOrEmptyIdx].id}"]`);
+            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            showToast(`İlk yanlış/boş soruya geçildi (#${wrongOrEmptyIdx + 1})`);
+          } else {
+            showToast('Tebrikler! Sınavda hiç yanlış veya boş sorunuz yok.');
+            goToQuestion(0);
+          }
+        });
+      }
 
       document.getElementById('btn-close-image-modal').addEventListener('click', () => {
         document.getElementById('image-modal').classList.add('hidden');
@@ -3836,6 +4304,56 @@
       });
 
       window.addEventListener('keydown', e => {
+        // Modal selectors to check and manage
+        const modalIds = [
+          'image-modal',
+          'lightbox-modal',
+          'reset-modal',
+          'reset-confirm-modal',
+          'welcome-modal',
+          'donem-info-modal',
+          'auth-modal',
+          'onboarding-modal',
+          'exam-setup-modal',
+          'exam-result-modal',
+          'incomplete-info-modal',
+          'ai-info-modal'
+        ];
+
+        // Specific modals currently in DOM and visible (not .hidden)
+        const visibleNamedModals = modalIds
+          .map(id => document.getElementById(id))
+          .filter(el => el && !el.classList.contains('hidden'));
+
+        // Generic visible modals / dialogs / fixed overlays
+        const genericModals = Array.from(document.querySelectorAll('.fixed.inset-0:not(.hidden), [role="dialog"]:not(.hidden)'));
+        const allOpenModals = Array.from(new Set([...visibleNamedModals, ...genericModals]));
+
+        const adminScreen = document.getElementById('admin-screen');
+        const isAdminActive = adminScreen && !adminScreen.classList.contains('hidden');
+
+        // Escape handling: close any open modal
+        if (e.key === 'Escape') {
+          let closedAny = false;
+          allOpenModals.forEach(m => {
+            m.classList.add('hidden');
+            closedAny = true;
+          });
+          if (window.d3k1Auth && typeof window.d3k1Auth.closeAuthModal === 'function') {
+            window.d3k1Auth.closeAuthModal();
+            closedAny = true;
+          }
+          if (closedAny) {
+            e.preventDefault();
+            return;
+          }
+        }
+
+        // If any modal is visible or admin screen is active, block all question shortcuts
+        if (allOpenModals.length > 0 || isAdminActive) {
+          return;
+        }
+
         if (!state.activeKurul) return;
         if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
         if (state.viewMode === 'stats' || state.displayStyle !== 'single') return;
@@ -3857,16 +4375,16 @@
           handleSelectOption(currentQ.id, 'A');
         } else if (['b', 'B', '2'].includes(e.key)) {
           handleSelectOption(currentQ.id, 'B');
-        } else if (['g', 'G'].includes(e.key)) {
-          if (state.revealedIds.has(currentQ.id)) state.revealedIds.delete(currentQ.id);
-          else state.revealedIds.add(currentQ.id);
-          renderMainArea();
         } else if (['c', 'C', '3'].includes(e.key)) {
           handleSelectOption(currentQ.id, 'C');
         } else if (['d', 'D', '4'].includes(e.key)) {
           handleSelectOption(currentQ.id, 'D');
         } else if (['e', 'E', '5'].includes(e.key)) {
           handleSelectOption(currentQ.id, 'E');
+        } else if (['g', 'G', 'r', 'R'].includes(e.key)) {
+          if (state.revealedIds.has(currentQ.id)) state.revealedIds.delete(currentQ.id);
+          else state.revealedIds.add(currentQ.id);
+          renderMainArea();
         } else if (['f', 'F'].includes(e.key)) {
           toggleFavorite(currentQ.id);
         }
@@ -3980,10 +4498,15 @@
       window.addEventListener('popstate', applyRouteFromUrl);
       window.addEventListener('hashchange', applyRouteFromUrl);
       applyRouteFromUrl();
+      restoreActiveExamIfAny();
 
       window.d3k1App = {
         state,
         saveUserProgress,
+        saveActiveExamState,
+        clearActiveExamState,
+        restoreActiveExamIfAny,
+        renderOpticalGrid,
         updateHeaderScores: updateHeaderAndToolbarStats,
         updateHeaderAndToolbarStats,
         showHomeScreen,
