@@ -98,7 +98,7 @@ window.KURUL_DATA["1"] = [
     "note": null,
     "id": "2019-2020_Q3",
     "prof_inferred": true,
-    "explanation": "Hücresel (T hücre) immün yetmezliklerde canlı viral ve bakteriyel aşılar (BCG,OPV, MMR, suçiçeği, rotavirüs) kontrendikedir; yaygın sistemik enfeksiyon ve ölümcül reaksiyonlara yol açabilir. Humoral immün yetmezliklerde anneden geçen IgG nedeniyle semptomlar 6. aydan sonra başlar. Çocuklarda en sık immünglobülin eksikliği Selektif IgA eksikliğidir."
+    "explanation": "T hücre aracılı **hücresel immün yetmezliklerde** canlı viral ve bakteriyel aşılar (BCG, OPV, MMR, suçiçeği, rotavirüs) kontrendikedir; uygulandığında kontrolsüz replikasyon sonucu yaygın sistemik hastalık ve **ölümcül reaksiyonlar** gelişebilir (B doğru). **Humoral immün yetmezliklerde** klinik bulgular doğumdan hemen sonraki ilk aylarda değil, anneden plasenta yoluyla geçen maternal IgG antikorlarının koruyuculuğu azaldıktan sonra genellikle **6. aydan itibaren** başlar (doğumdan ilk aylarda başlayanlar ağır kombine/hücresel immün yetmezliklerdir) (A yanlış). Kapsüllü bakteri enfeksiyonları (S. pneumoniae, H. influenzae vb.) başlıca **humoral (antikor) ve C3/terminal kompleman eksikliklerinde** görülür; fagosit fonksiyon bozukluklarında (ör. CGD) ise başlıca stafilokok gibi katalaz pozitif bakteriler ve mantarlarla (Aspergillus vb.) oluşan derin apseler ile granülomlar izlenir (C yanlış). Maternal kompleman proteinleri plasentayı anlamlı düzeyde geçemediği için kompleman eksikliklerinde 6. aydan başlama gibi bir maternal koruma penceresi yoktur; semptomların 6. aydan sonra başlaması humoral immün yetmezliklere özgüdür (D yanlış). Çocuklarda en sık görülen immünglobulin eksikliği Bruton hastalığı (X'e bağlı agammaglobulinemi) değil **selektif IgA eksikliğidir** (E yanlış)."
   },
   {
     "year": "2019-2020",
@@ -504,7 +504,7 @@ window.KURUL_DATA["1"] = [
     "answer": "E",
     "note": null,
     "id": "2019-2020_Q15",
-    "explanation": "Soruda cevap anahtarı B (Radyoterapi) olarak işaretlenmiştir; lokal kontrol ve palyasyon amacıyla diğer sistemik yaklaşımların sağkalım katkısı olmadığında radyoterapi uygulanabilir."
+    "explanation": "Soruda cevap anahtarı E (Radyoterapi) olarak verilmiştir; lokal kontrol ve palyasyon amacıyla diğer sistemik yaklaşımların sağkalım katkısı olmadığında radyoterapi uygulanabilir (E doğru). Eşzamanlı kemo-radyoterapi, kemoterapi ile radyoterapinin birlikte uygulandığı kombine küratif yaklaşımdır (A yanlış). Adjuvan kemoterapi, cerrahi veya radyoterapi gibi primer lokal tedaviden sonra mikrometastazları temizleyip nüksü önlemek için uygulanır (B yanlış). Neoadjuvan terapi, cerrahi/radyoterapi öncesi tümör yükünü küçültmek için verilir (C yanlış). Primer kemoterapi ise doğrudan ilk basamak ana sistemik tedavi olarak uygulanan kemoterapidir (D yanlış)."
   },
   {
     "year": "2019-2020",
@@ -3882,7 +3882,7 @@ window.KURUL_DATA["1"] = [
     "answer": "E",
     "note": null,
     "id": "2020-2021_Q4",
-    "explanation": "Çocukluk çağı kanserlerinin tanı, evreleme ve organ fonksiyon değerlendirmesinde periferik yayma/kemik iliği incelemesi, biyokimyasal testler, radyolojik görüntülemeler ve kesin tanı için doku biyopsisi birlikte kullanılır.",
+    "explanation": "Çocukluk çağı kanserlerinin tanı, ayırıcı tanı, evreleme ve tedavi öncesi organ fonksiyon değerlendirmesinde hematolojik incelemeler, biyokimyasal testler, radyolojik görüntülemeler ve kesin doku biyopsisinin **hepsi** bütüncül olarak uygulanır (E doğru). Periferik yayma ve kemik iliği aspirasyonu/biyopsisi lösemi gibi hematolojik kanserlerin tanısı ile solid tümörlerde kemik iliği metastazının gösterilmesi için temel olsa da solid tümörlerin primer histopatolojik tanısı ve organ değerlendirmesi için tek başına yeterli değildir (A yanlış). Karaciğer ve böbrek fonksiyon testleri kemoterapi doz ayarı, tümör lizis riski ve organ tutulumunu değerlendirmek için gerekli olmakla birlikte tek başına kanser tanısı koydurmaz (B yanlış). PA akciğer grafisi ve bilgisayarlı tomografi mediastinal kitlelerin, primer odakların ve metastazların saptanmasında kritik rol oynasa da hücresel/histopatolojik kesin tanı sağlamadığından tek başına eksik kalır (C yanlış). Doku biyopsisi solid tümörlerin kesin tanısında altın standart olmasına karşın lösemilerde kemik iliği değerlendirmesi ile sistemik evreleme ve biyokimyasal organ incelemelerinin yerini tek başına tutamaz (D yanlış).",
     "repeats": [
       {
         "kurul": "1",
@@ -4162,7 +4162,7 @@ window.KURUL_DATA["1"] = [
     "answer": "C",
     "note": null,
     "id": "2020-2021_Q13",
-    "explanation": "**Buspiron**, 5-HT1A reseptörleri üzerinde parsiyel agonist etki göstererek sedasyon veya bağımlılık yapmadan anksiyolitik etki oluşturan ilaçtır. (Sumatriptan 5-HT1B/1D agonistidir ve koroner hastalıkta kontrendikedir; ondansetron 5-HT3 antagonistidir; metoklopramid 5-HT4 agonisti/D2 antagonistidir)."
+    "explanation": "**Buspiron**, serotonerjik **5-HT₁A** reseptörleri üzerinde parsiyel agonist etki göstererek sedasyon, kas gevşemesi veya bağımlılık yapmadan anksiyolitik etki sağlayan bir anksiyolitiktir (C doğru). Koroner arter hastalarında vazospazm riski nedeniyle kontrendike olan migren ilacı ondansetron değil **sumatriptan** (ve diğer triptanlar / ergot alkaloidleri) olup, ondansetron kemoterapi bulantısında kullanılan bir 5-HT₃ antagonistidir (A yanlış). Metoklopramid 5-HT₃ agonisti ve 5-HT₄ antagonisti değil, tam tersine dopamin D₂ antagonisti, prokinetik etkili **5-HT₄ agonisti** ve yüksek dozlarda antiemetik etkili **5-HT₃ antagonistidir** (B yanlış). Kemoterapiye bağlı şiddetli bulantı ve kusmayı önlemede siproheptadin değil, **ondansetron, granisetron, palonosetron** gibi selektif **5-HT₃ reseptör antagonistleri** (ve NK₁ antagonistleri) kullanılır; siproheptadin 5-HT₂/H₁ antagonisti olup karsinoid sendrom ve serotonin sendromunda kullanılır (D yanlış). Sumatriptan akut migren tedavisinde kullanılır ancak 5-HT₁D reseptör antagonisti değil, kraniyal damarlarda vazokonstrüksiyon yapan selektif **5-HT₁B/1D agonistidir** (E yanlış)."
   },
   {
     "year": "2020-2021",
@@ -4228,7 +4228,7 @@ window.KURUL_DATA["1"] = [
     "answer": "D",
     "note": null,
     "id": "2020-2021_Q15",
-    "explanation": "NSAİ ilaçlar böbrekte vazodilatatör prostaglandinlerin (PGE2 ve PGI2) sentezini baskıladıkları için afferent arteriyolde vazokonstrüksiyona, **renal kan akımında ve GFR'de azalmaya** neden olurlar."
+    "explanation": "NSAİ ilaçlar böbrekte afferent arteriyolü açık tutan vazodilatatör prostaglandinlerin (PGE₂ ve PGI₂) sentezini inhibe ettiklerinden renal vazokonstrüksiyona yol açarak **renal kan akımında ve glomerüler filtrasyon hızında (GFR) azalmaya** neden olurlar (D doğru). NSAİİ'lerin antipyretik etkisi hipotalamusta santral PGE₂ inhibisyonuna bağlıyken, analjezik ve antiinflamatuvar etkileri esas olarak santral sinir sisteminde değil **periferik iltihaplı dokularda** prostaglandin sentezini baskılayıp nosiseptör duyarlılaşmasını önlemelerine dayanır (A yanlış). NSAİİ'ler akut somatik/inflamatuvar ağrılarda etkili olmakla birlikte tavan etkileri ve uzun süreli GI/renal toksisiteleri nedeniyle şiddetli kronik veya nöropatik ağrılarda güçlü analjezikler kadar etkili değildir (B yanlış). NSAİİ gastropatisi midede mukozayı koruyan **COX-1** kaynaklı PGE₂ ve PGI₂'nin baskılanmasıyla gelişir; bu nedenle **selektif COX-2 inhibitörleri** mide COX-1'ini koruduğu için non-selektif NSAİİ'lere göre çok daha **az** gastropati yapar (C yanlış). Trombositlerde tromboksan A₂ (TXA₂) sentezi COX-1 üzerinden, damar endotelinde prostasiklin (PGI₂) sentezi ise büyük ölçüde COX-2 üzerinden yürür; dolayısıyla selektif COX-2 inhibitörleri TXA₂'yi inhibe etmeyip **PGI₂ sentezini inhibe ederek** tromboza eğilimi artırır (seçenek mekanizmayı ters vermiştir) (E yanlış)."
   },
   {
     "year": "2020-2021",
@@ -4599,7 +4599,7 @@ window.KURUL_DATA["1"] = [
     "answer": "E",
     "note": null,
     "id": "2020-2021_Q28",
-    "explanation": "Talasemi otozomal resesif kalıtılır. Her ikisi de taşıyıcı (heterozigot: Bb) olan anne ve babadan doğacak çocukların her gebelikte **%25 olasılıkla sağlam (BB), %50 olasılıkla taşıyıcı (Bb) ve %25 olasılıkla talasemi majör (bb)** olma ihtimali vardır."
+    "explanation": "Beta-talasemi otozomal resesif kalıtıldığı için her ikisi de taşıyıcı (heterozigot: Bb) olan anne ve babanın her gebeliğinde doğacak çocuk için Mendelian dağılıma göre %25 sağlam (BB), %50 taşıyıcı (Bb) ve **%25 olasılıkla talasemi majör (bb)** olma ihtimali vardır (E doğru). İki heterozigot taşıyıcının eşleşmesinde %75 talasemi intermedia oranı görülmez; homozigot mutasyon %25 olasılıkla talasemi majör tablosuna yol açar (A yanlış). Doğacak çocuğun **talasemi taşıyıcısı (Bb)** olma olasılığı %25 değil **%50**dir (B yanlış). Doğacak çocuğun talasemi taşıyıcısı olma olasılığı %75 değil **%50**dir; %75 oranı sağlam (%25) ve taşıyıcı (%50) olan yani hasta olmayan çocukların toplam olasılığıdır (C yanlış). Doğacak çocuğun tamamen **sağlam (BB)** olma olasılığı %50 değil **%25**tir; %50 oranı taşıyıcı olma ihtimalidir (D yanlış)."
   },
   {
     "year": "2020-2021",
@@ -4764,7 +4764,7 @@ window.KURUL_DATA["1"] = [
     "answer": "E",
     "note": null,
     "id": "2020-2021_Q33",
-    "explanation": "Aplastik anemide kemik iliği biyopsisinde hematopoetik hücrelerin yerini yağ dokusu almıştır; **kemik iliği infiltrasyonu ve retikülin fibrozisi olmaksızın hiposellüler (<%25) kemik iliği** saptanır."
+    "explanation": "Aplastik anemide kemik iliği kök hücrelerinin hasarı sonucu pansitopeni gelişir ve hematopoetik hücrelerin yerini yağ dokusu alır; tanısal biyopside **kemik iliği infiltrasyonu ve retikülin fibrozisi olmaksızın hiposellüler (<%25) kemik iliği** saptanır (E doğru). Belirgin kemik iliği fibrozisi aplastik anemiyi dışlatır ve primer miyelofibrozis veya tüylü hücreli lösemi gibi tabloları düşündürür (A yanlış). Kemik iliği infiltrasyonu bulunması aplazi değil, miyelofitizik anemi veya malign hücre tutulumu anlamına gelir (B yanlış). Hem fibrozis hem de hipersellülarite aplastik anemide beklenmez; daha çok miyeloproliferatif neoplazilerin fibrotik fazlarıyla uyumludur (C yanlış). İnfiltrasyonla beraber hipersellüler kemik iliği aplastik anemi değil, akut lösemi veya lenfoma/metastaz tutulumu bulgusudur (D yanlış)."
   },
   {
     "year": "2020-2021",
@@ -7234,7 +7234,7 @@ window.KURUL_DATA["1"] = [
     "answer": "E",
     "note": null,
     "id": "2020-2021_Q100",
-    "explanation": "Tümör hücrelerinin CD8+ sitotoksik T lenfositleri tarafından tanınmasını önlemek için **yüzeylerindeki MHC Sınıf I moleküllerinin ekspresyonunu azaltması veya kaybetmesi**, tümörün immün sistemden kaçış (immune escape) mekanizmalarından biridir.",
+    "explanation": "CD8+ sitotoksik T lenfositler tümör antijenlerini yalnızca tümör hücresi yüzeyindeki MHC Sınıf I molekülleriyle sunulduğunda tanıyabildiğinden, **tümör hücrelerinin MHC sınıf I moleküllerini azaltması (veya kaybetmesi)** T hücre tanınmasından kaçışı sağlayan klasik **immün kaçış** kanıtıdır (E doğru). Pro-apoptotik Bax artışı ile tümör apoptozunun uyarılması tümörün bağışıklıktan kaçışını değil, programlı hücre ölümüyle yıkımını gösterir (A yanlış). Tümöre özgül antijenlere karşı antikor üretilmesi immün kaçışı değil, konak hümoral immün sisteminin tümörü tanıdığını kanıtlar (B yanlış). Makrofajların artmış TNF üretimi tümör kaçışını değil, konak antikanser inflamatuar ve tümörisidal yanıtını yansıtır (C yanlış). Tümör hücre çoğalmasının IFN-gamma ile baskılanması immün kaçışı değil, etkin Th1/sitotoksik anti-tümör bağışıklık kontrolünü gösterir (D yanlış).",
     "repeats": [
       {
         "kurul": "1",
@@ -7390,7 +7390,7 @@ window.KURUL_DATA["1"] = [
     "answer": "E",
     "note": null,
     "id": "2021-2022_Q4",
-    "explanation": "Çocuklarda kanser tanı ve evrelemesinde periferik yayma/kemik iliği, biyokimya, görüntüleme yöntemleri ve doku biyopsisinin tamamı kullanılır.",
+    "explanation": "Çocuklarda kanser tanısı, tiplendirmesi ve evrelemesi tek bir teste indirgenemez; periferik yayma/kemik iliği incelemesi, karaciğer/böbrek fonksiyon testleri, radyolojik görüntülemeler ve biyopsinin **hepsi** birlikte uygulanır (E doğru). Periferik yayma ve kemik iliği incelenmesi lösemiler ve kemik iliği tutulumu için zorunlu olsa da solid organ tümörlerinin kesin histolojik tanısı ile radyolojik evrelemesini tek başına sağlayamaz (A yanlış). Karaciğer ve böbrek fonksiyon testleri metabolik durumu, organ tutulumunu ve kemoterapi güvenliğini belirlese de doğrudan neoplastik tanı koymadığından diğer tanı yöntemleri olmadan yetersizdir (B yanlış). PA akciğer grafisi ve bilgisayarlı tomografi tümör lokalizasyonu ve metastaz taramasında temel olsa da histopatolojik veya hematolojik doğrulama sağlamadığı için tek başına eksiktir (C yanlış). Biyopsi solid tümörlerde kesin doku tanısı için vazgeçilmez olsa da lösemi tanısı, sistemik görüntüleme ve organ fonksiyon değerlendirmesini kapsamadığından tek başına yeterli değildir (D yanlış).",
     "repeats": [
       {
         "kurul": "1",
@@ -7835,7 +7835,7 @@ window.KURUL_DATA["1"] = [
     "answer": "C",
     "note": null,
     "id": "2021-2022_Q17",
-    "explanation": "Bir tarama testinin **duyarlılığı (sensitivitesi)**, toplumda **gerçekten hasta olanların ne kadarını doğru saptayabildiğini** (Gerçek Pozitif / Toplam Hasta) gösterir; özgüllük (spesifisite) ise sağlam olanları doğru saptama gücüdür.",
+    "explanation": "Bir tarama testinin **duyarlılığı (sensitivitesi)**, toplumda **gerçekten hasta olan bireylerin ne kadarını doğru pozitif olarak saptayabildiğini** [Gerçek Pozitif / (Gerçek Pozitif + Yalancı Negatif)] ifade eder (C doğru). Tarama testleri hızlı, basit ve maliyet-etkin olmalı, mutlaka hekim tarafından değil eğitimli **hemşire, ebe veya yardımcı sağlık personeli** tarafından da uygulanabilmelidir (A yanlış). Fenilketonüri gibi ulusal yenidoğan tarama programları ayrı ve kopuk özel programlar olarak değil, rutin **mevcut birinci basamak/doğum hizmetleri içine entegre edilerek** yürütülür (B yanlış). **Özgüllük (spesifisite)** hasta olma olasılığı olanları bulma gücü değil, gerçekten **sağlam (hasta olmayan) bireyleri doğru negatif olarak ayırt edebilme** gücüdür (D yanlış). Tarama uygulanmadan önce toplumun sağlık davranışlarının tamamen değiştirilmesi şart değildir; tarama testinin kendisi toplumun kültürel yapısına ve sağlık davranışlarına **kabul edilebilir** nitelikte planlanmalıdır (E yanlış).",
     "repeats": [
       {
         "kurul": "7",
@@ -8161,7 +8161,7 @@ window.KURUL_DATA["1"] = [
     "answer": "B",
     "note": null,
     "id": "2021-2022_Q25",
-    "explanation": "**Birincil (Primer) korunma**, hastalık henüz ortaya çıkmadan sağlığı koruma ve bağışıklama (aşılama) uygulamalarıdır; **gebelerin tetanoza karşı aşılanması** primer korumadır. Taramalar (PKU, mamografi) sekonder koruma; etkenin/tütünün tamamen yasaklanması ise primordial (temel) korumadır.",
+    "explanation": "**Birincil (Primer) korunma**, hastalık veya etkenle karşılaşma henüz gerçekleşmeden bağışıklama, sağlık eğitimi ve hijyen gibi önlemlerle hastalığın ortaya çıkmasını önlemektir; **yenidoğan tetanozunu önlemek amacıyla tüm gebelerin tetanoza karşı aşılanması** klasik bir primer korunma uygulamasıdır (B doğru). Yenidoğanlarda fenilketonüri taraması yapmak hastalığı önlemeye değil erken tanı ve tedaviyle sekelleri önlemeye yönelik ikincil (sekonder) korunmadır (A yanlış). Hastalık etkeninin ortadan kaldırılmasıyla hastalığın eradike edilmesi tekil bir bireysel primer korunma önleminden ziyade tüm koruyucu sağlık basamaklarının uzun vadeli nihai küresel sonucudur (C yanlış). 40 yaş üzeri kadınlarda meme kanseri taraması (mamografi) asemptomatik dönemde erken yakalamayı hedefleyen ikincil (sekonder) korunmadır (D yanlış). Tütün ekiminin ve ithalatının tamamen yasaklanması risk faktörünün toplumda ortaya çıkmasını en başından engelleyen temel (primordiyal) korunma önlemidir (E yanlış).",
     "repeats": [
       {
         "kurul": "2",
@@ -8276,7 +8276,7 @@ window.KURUL_DATA["1"] = [
     "answer": "D",
     "note": null,
     "id": "2021-2022_Q28",
-    "explanation": "**Richter transformasyonu (sendromu)**, yavaş seyirli **Kronik Lenfositik Lösemi (KLL)** hastalarının yaklaşık %5-10'unda hastalığın agresif seyirli **Diffüz Büyük B Hücreli Lenfomaya (DBBHL)** dönüşmesidir."
+    "explanation": "**Richter transformasyonu (sendromu)**, yavaş seyirli **Kronik Lenfositik Löseminin (KLL)** hastaların yaklaşık %5-10'unda hızlı büyüyen lenfadenopati ve B semptomlarıyla seyreden agresif **büyük B hücreli lenfomaya (diffüz büyük B hücreli lenfoma)** dönüşmesidir (D doğru). Esansiyel trombositozun miyelofibrozise ilerlemesi post-ET miyelofibrozis olarak adlandırılır, Richter transformasyonu değildir (A yanlış). Kronik miyeloid löseminin akut miyeloid veya lenfoblastik lösemiye dönüşmesi blastik kriz olarak tanımlanır (B yanlış). Miyelodisplastik sendromun akut miyeloid lösemiye dönüşümü sekonder AML progresyonudur (C yanlış). Mikozis fungoides'in dolaşımda atipik T hücreleriyle lösemik evreye geçmesi Sezary sendromudur, B hücreli KLL'deki Richter transformasyonuyla farklıdır (E yanlış)."
   },
   {
     "year": "2021-2022",
@@ -8904,7 +8904,7 @@ window.KURUL_DATA["1"] = [
     "note": null,
     "id": "2021-2022_Q47",
     "prof_inferred": true,
-    "explanation": "Prenatal (fetal) dönemde ana hemoglobin HbF (α2γ2) olduğu, yani beta-globin yerine **beta-benzeri gama (γ) globin genlerinin etkin olarak ifade edildiği** için beta-talasemi prenatal dönemde klinik bulgu vermez."
+    "explanation": "Prenatal (fetal) dönemde baskın olan hemoglobin HbF (α₂γ₂) yapısında β-globin zinciri yerine **β-benzeri globinlerden gama (γ) globin genlerinin etkin olarak ifade edilmesi** nedeniyle, β-talasemi mutasyonları doğum öncesi dönemde klinik bulgu vermez (B doğru). Hemoglobin molekülünü oluşturmak için prenatal dönemde tek başına α-globin ifadesi yeterli değildir, yanında mutlaka γ-globin zincirinin bulunması gerekir (A yanlış). β-talasemiye yol açan β-globin gen mutasyonları kalıtsal olup döllenmeden itibaren genomda mevcuttur, postnatal dönemde sonradan oluşmaz (C yanlış). α-globin gen ifadesi doğumdan sonra da yaşam boyu devam eder; postnatal dönemde ortadan kalkan koruyucu etki α-globinin değil γ-globinin yüksek üretimidir (D yanlış). Postnatal dönemde etkin olan ana hemoglobin HbA₂ (α₂δ₂) değil HbA (α₂β₂), prenatal dönemde etkin olan hemoglobin ise HbF (α₂γ₂)'dir (E yanlış)."
   },
   {
     "year": "2021-2022",
@@ -11447,7 +11447,7 @@ window.KURUL_DATA["1"] = [
     "answer": "C",
     "note": null,
     "id": "2022-2023_Q11",
-    "explanation": "**Kalsinörin inhibitörleri** (siklosporin ve takrolimus), T lenfositlerde NFAT defosforilasyonunu engelleyerek **interlökin-2 (IL-2) üretimini ve etkinliğini inhibe ederler**."
+    "explanation": "**Kalsinörin inhibitörleri** (siklosporin ve takrolimus), T lenfositlerde kalsinörini inhibe ederek transkripsiyon faktörü NFAT'ın defosforilasyonunu ve çekirdeğe geçişini engeller; böylece **interlökin-2 (IL-2) üretimini ve T-hücre yanıtını inhibe ederler** (C doğru). İmmünsüpresif ilaçlar T-hücre aktivasyonunu baskıladığından IL-2 üretimini artırmaz, aksine **azaltırlar** (IL-2 artışı immünstimülan etki oluşturur) (A yanlış). Azatioprin ve mikofenolat mofetil gibi antiproliferatif immünsüpresifler lenfosit çoğalmasını durdurmak için pürin sentezini artırmaz, **inhibe ederler** (B yanlış). Glukokortikoitler NF-κB ve AP-1'i baskılayarak IL-1, IL-2, IL-6 ve TNF-α gibi proinflamatuvar sitokin genlerinin ekspresyonunu artırmaz, **azaltırlar** (D yanlış). Organ nakillerinde greft red reaksiyonlarını önlemek amacıyla bağışıklığı uyaran immünstimülan maddeler değil, bağışıklık yanıtını baskılayan **immünsüpresif (bağışıklık baskılayıcı)** ilaçlar kullanılır (E yanlış)."
   },
   {
     "year": "2022-2023",
@@ -11727,7 +11727,7 @@ window.KURUL_DATA["1"] = [
     "answer": "C",
     "note": null,
     "id": "2022-2023_Q19",
-    "explanation": "Nikotin düşük dozda gangliyonları uyarırken yüksek dozda depolarizasyonlu blokaj yapar (I doğru), hem sempatik hem parasempatik gangliyonları etkiler (III doğru) ve SSS uyarısıyla ACTH/kortizol/ADH salınımını artırır (IV doğru). Trombosit agregasyonunu zorlaştırmaz ve iştahı azaltır (II ve V yanlış)."
+    "explanation": "Nikotin otonom gangliyonlardaki nikotinik (Nn) reseptörleri düşük dozda uyarırken yüksek dozda sürekli uyarıyla **depolarizasyonlu blokaj** yapar (I doğru), hem **sempatik hem parasempatik** gangliyonları uyarır (III doğru) ve SSS uyarısıyla hipotalamus-hipofiz eksenini aktive ederek **ACTH** (ayrıca ADH ve kortizol) salınımını artırır (IV doğru); bu nedenle I-III-IV birleşimi geçerlidir (C doğru). Bu seçenek I, III ve IV yanında yanlış olan **II.** ifadeyi de içermektedir; oysa nikotin tromboksan A₂ (TxA₂) düzeyini azaltıp agregasyonu zorlaştırmaz, aksine prostasiklini baskılayıp **trombosit agregasyonunu ve tromboz eğilimini artırır** (A yanlış). Bu seçenek yalnızca III. öncülü doğru yakalamakta, doğru olan I ve IV'ü dışlayıp yanlış olan **II.** (trombosit agregasyonunu artırması gerekir) ve **V.** (nikotin metabolizmayı hızlandırıp **iştahı azaltır**, artırmaz) ifadelerini içermektedir (B yanlış). Bu seçenek doğru olan **III.** öncülü (hem sempatik hem parasempatik gangliyon etkisi) dışlarken yanlış olan **V.** öncülü (iştah artırıcı etki; doğrusu iştahı baskılamasıdır) içermektedir (D yanlış). Bu seçenek doğru olan I ve III. öncülleri kapsamamakta ve yanlış olan **V.** öncülü (nikotinin iştahı artırması yerine azaltması gerekir) doğru kabul etmektedir (E yanlış)."
   },
   {
     "year": "2022-2023",
@@ -11793,7 +11793,7 @@ window.KURUL_DATA["1"] = [
     "answer": "D",
     "note": "Orijinal PDF'te eşleştirme sorusu olarak verilmiştir.",
     "id": "2022-2023_Q21",
-    "explanation": "**Siklosporin** hücre içinde **siklofilin** proteinine bağlanarak kalsinörini inhibe eder (I); **Leflunomid** ise **dihidrooratat dehidrojenaz** enzimini inhibe ederek pirimidin sentezini bozar (II)."
+    "explanation": "İmmünsüpresif bir kalsinörin inhibitörü olan **Siklosporin** hücre içinde **siklofilin** proteinine bağlanarak kalsinörini ve IL-2 sentezini inhibe eder (I); DMARD grubu **Leflunomid** ise pirimidin biyosentezindeki **dihidroorotat dehidrogenaz** enzimini inhibe ederek lenfosit çoğalmasını baskılar (II) (D doğru). İlaç ve mekanizma eşleştirmeleri tam ters verilmiştir; siklofiline bağlanan siklosporin, dihidroorotat dehidrogenazı inhibe eden ise leflunomiddir (A yanlış). Azatiyoprin pürin analoğu olarak metabolize olup pürin sentezini bozar, metotreksat ise dihidrofolat redüktazı inhibe eder; verilen iki mekanizmayla da eşleşmez (B yanlış). Takrolimus siklofiline değil FKBP-12'ye bağlanır; mikofenolat mofetil ise dihidroorotat dehidrogenazı değil inozin monofosfat dehidrogenazı (IMPDH) inhibe eder (C yanlış). Sirolimus FKBP-12 üzerinden mTOR'u inhibe eder, siklofosfamid ise alkilleyici ajandır; siklofilin veya dihidroorotat dehidrogenaz inhibisyonu yapmazlar (E yanlış)."
   },
   {
     "year": "2022-2023",
@@ -12601,7 +12601,7 @@ window.KURUL_DATA["1"] = [
     "answer": "D",
     "note": null,
     "id": "2022-2023_Q45",
-    "explanation": "Akut Hepatit B enfeksiyonunda karaciğer hücre (hepatosit) hasarı virüsün doğrudan sitopatik etkisinden ziyade, **enfekte hepatositlerin yüzeyindeki MHC Sınıf I molekülleriyle sunulan viral peptidlerin CD8+ sitotoksik T lenfositler (CTL) tarafından tanınarak apoptoza/nekroza uğratılması** sonucu oluşur.",
+    "explanation": "Akut Hepatit B enfeksiyonunda (HBsAg ve anti-HBc pozitif, transaminazlar yüksek) virüs doğrudan sitopatik değildir; karaciğer hücre hasarı esas olarak enfekte hepatositlerin yüzeyindeki **MHC Sınıf I molekülleriyle sunulan viral peptitlerin CD8+ sitotoksik T lenfositlerce tanınması** ve enfekte hücrelerin apoptoz/nekroza uğratılmasıyla gerçekleşir (D doğru). Aktive makrofajların sitokin salımı doku inflamasyonunu desteklese de hepatosit ölümünün primer spesifik mekanizması değildir (A yanlış). Antikorlar serbest virüs partiküllerini nötralize eder; akut HBV'de hepatosit nekrozunun ana sorumlusu antikor aracılı lizis değil CD8+ T hücre yanıtıdır (B yanlış). Dolaşımdaki çözünür HBsAg'yi doğrudan CD4+ T lenfositler tanımaz; CD4+ T hücreleri antijeni APC'lerin MHC Sınıf II molekülleri üzerinden tanır ve doğrudan sitotoksik ölüm yapmaz (C yanlış). NK hücreleri MHC Sınıf II aracılı peptit sunumuyla değil, MHC Sınıf I kaybı veya stres sinyalleri üzerinden aktive olur (E yanlış).",
     "repeats": [
       {
         "kurul": "1",
@@ -14648,7 +14648,7 @@ window.KURUL_DATA["1"] = [
     "answer": "D",
     "note": null,
     "id": "2023-2024_Q1",
-    "explanation": "Çocuklarda MCV alt sınırı 70 + yaş (üst sınırı 84 + 0.6×yaş) ile hesaplanır, anizositoz göstergesi RDW'dir ve MCV düşüklüğü mikrositer anemi lehinedir. **MCV değeri Mentzer indeksi (MCV / RBC) hesaplamasında** demir eksikliği ile talasemi taşıyıcılığını ayırt etmek için kullanılır.",
+    "explanation": "Çocuklarda **ortalama eritrosit hacmi (MCV)** değeri, demir eksikliği anemisi ile beta-talasemi taşıyıcılığını ayırt etmede kullanılan **Mentzer indeksinin (MCV / RBC)** hesaplanmasında doğrudan kullanılır; indeks <13 ise talasemi taşıyıcılığı, >13 ise demir eksikliği lehinedir (D doğru). Pediatrik yaş grubunda (2–10 yaş arası) MCV alt sınırı 80 − yaş ile değil **70 + yaş (fL)** formülüyle hesaplanır (A yanlış). 10 yaş altında MCV alt sınırı 80 fL sabit değildir; yaşla birlikte **70 + yaş** kuralına göre 80 fL'nin altında seyreder (80 fL alt sınırı ergen ve erişkinler için geçerlidir) (B yanlış). Eritrositlerin boyut farkını gösteren **anizositoz** göstergesi MCV değil **RDW (eritrosit dağılım genişliği)** parametresidir (C yanlış). MCV'nin düşük olması makrositer/megaloblastik anemi değil **mikrositer anemi** (demir eksikliği, talasemi, kronik hastalık, kurşun zehirlenmesi) lehinedir; megaloblastik anemide MCV **yüksek** saptanır (E yanlış).",
     "repeats": [
       {
         "kurul": "1",
@@ -14829,7 +14829,7 @@ window.KURUL_DATA["1"] = [
     "answer": "B",
     "note": null,
     "id": "2023-2024_Q6",
-    "explanation": "**Süt çocuğunun geçici hipogammaglobulinemisinde** hücresel bağışıklık, izohemaglütininler ve aşı yanıtları normaldir; IVIG genellikle gerekmez ve **karşılaşılan enfeksiyonlar uygun antibiyotiklerle kolayca tedavi edilebilir** (genellikle 24-36 ayda kendiliğinden düzelir)."
+    "explanation": "**Süt çocuğunun geçici hipogammaglobulinemisinde** T hücre fonksiyonları, B hücre sayısı, izohemaglütininler ve aşı antijenlerine karşı spesifik antikor yanıtları korunmuştur; bu nedenle ağır seyretmeyen **enfeksiyonlar uygun antibiyotiklerle kolayca tedavi edilebilir** (B doğru). Klasik pediatri ölçütlerine göre süt çocuğunun geçici hipogammaglobulinemisi genellikle **18–36 ay (2–3 yaş)** arasında kendiliğinden düzelir; 48 aya kadar uzaması tipik değildir ve 36 aydan uzun süren hipogammaglobulinemilerde CVID gibi kalıcı immün yetmezlikler araştırılır (A yanlış). X'e bağlı agammaglobulinemiden (Bruton) farklı olarak bu tabloda **izohemaglütininler normal düzeydedir** ve yokluğu söz konusu değildir (C yanlış). Spesifik antikor yanıtları ve hücresel bağışıklık normal seyrettiğinden rutin **IVIG tedavisi şart değildir**; IVIG yalnızca çok nadir ağır/tekrarlayan enfeksiyonlarda düşünülür (D yanlış). Protein ve polisakkarit aşılara karşı **spesifik antikor yanıtı normaldir** (aşı yanıtının korunmuş olması tanıda ayırt edicidir) (E yanlış)."
   },
   {
     "year": "2023-2024",
@@ -15093,7 +15093,7 @@ window.KURUL_DATA["1"] = [
     "answer": "C",
     "note": null,
     "id": "2023-2024_Q14",
-    "explanation": "**Yüksek doz adrenalin** uygulandığında damarlardaki alfa-1 adrenerjik vazokonstrüktör etki baskın hale geçer ve **Total Periferik Damar Direncini (TPR) artırır** (düşük dozda beta-2 etkisiyle TPR düşer; alfa-2 uyarı insülini azaltır; beta-1 pozitif inotropi yapar).",
+    "explanation": "**Yüksek doz adrenalin** uygulandığında damar düz kaslarındaki **alfa-1 (α₁)** adrenerjik reseptörler baskın şekilde uyarılır ve yaygın vazokonstrüksiyon gelişerek **Total Periferik Damar Direncini (TPR) artırır** (C doğru). Adrenalin kalpteki β₁ reseptörlerini uyararak cAMP artışıyla negatif inotropi değil **pozitif inotropi** (kasılma gücünde artış), pozitif kronotropi ve pozitif dromotropi oluşturur (A yanlış). Vasküler β₂ reseptörlerinin adrenaline duyarlılığının α reseptörlerden baskın olması **düşük dozlarda** (TPR'yi düşüren doz aralığında) geçerlidir; normal ve yüksek terapötik dozlarda α-adrenerjik etkiler de belirginleşip damar yataklarında β₂ etkisini dengeleyebilir veya aşabilir (B yanlış). Pankreas beta hücrelerindeki α₂ reseptörlerinin uyarılması **insülin salınımını artırmaz, inhibe eder (azaltır)**; insülin salınımını artıran reseptörler β₂ reseptörleridir (D yanlış). Adrenalinin α₁ aracılı vazokonstrüksiyonu cilt ve mukozanın kendisinde bir kasılma değil **cilt ve mukoza arteriyollerindeki damar düz kasında** daralma şeklindedir; ayrıca genel damar yatağındaki net direnç artışı yüksek dozda belirginleştiğinden 'cilt ve mukozada kasılma' ifadesi hedef dokuyu ve doz-reseptör dengesini hatalı genellemektedir (E yanlış).",
     "repeats": [
       {
         "kurul": "1",
@@ -15967,7 +15967,7 @@ window.KURUL_DATA["1"] = [
     "answer": "E",
     "note": null,
     "id": "2023-2024_Q40",
-    "explanation": "Ulusal kanser tarama programımızda meme (40-69 yaş 2 yılda bir mamografi), serviks ve kolorektal kanserler yer alır (I, II ve IV doğru); **ülkemizde prostat kanseri için PSA ile rutin ulusal toplum taraması önerilmemektedir** (III yanlış)."
+    "explanation": "Kanser tarama programlarında amaç premalign lezyonları veya asemptomatik erken evre kanseri yakalamaktır (I doğru), risk faktörlerini ve riskli bireyleri belirlemek esastır (II doğru) ve Türkiye Ulusal Kanser Tarama Programında meme kanseri için 40–69 yaş kadınlarda 2 yılda bir mamografi önerilmektedir (IV doğru); **ülkemizde prostat kanseri için 50 yaşından itibaren rutin toplum tabanlı PSA taraması önerilmemektedir** (III yanlış), dolayısıyla doğru bileşim I–II–IV'tür (E doğru). Bu seçenek doğru I ve II'nin yanında Türkiye ulusal programında yer almayan III. ifadeyi (rutin PSA taraması) içerip doğru olan IV. ifadeyi dışarıda bırakmaktadır (A yanlış). Bu seçenek yalnızca I ve II'yi içermekte, Sağlık Bakanlığı ulusal tarama protokolünde yer alan doğru IV. ifadeyi (40–69 yaş arası 2 yılda bir mamografi) dışlamaktadır (B yanlış). Bu seçenek doğru I. ifadeyi dışlarken rutin PSA taramasını öneren yanlış III. ifadeyi içermektedir (C yanlış). Bu seçenek tüm maddeleri doğru sayarak ulusal tarama programımızda rutin toplum taraması olarak önerilmeyen yanlış III. ifadeyi (PSA taraması) de kapsamaktadır (D yanlış)."
   },
   {
     "year": "2023-2024",
@@ -16000,7 +16000,7 @@ window.KURUL_DATA["1"] = [
     "answer": "A",
     "note": null,
     "id": "2023-2024_Q41",
-    "explanation": "Çevresel faktörlerin genetik/epigenetik etkisi (I), genetik faktörlerden daha büyük paya sahip olması (II), işlenmiş etin DSÖ Grup 1 kesin karsinojen olması (III) ve HCV, HBV, HPV, EBV'nin onkojenik virüsler olması (IV) ifadelerinin **tamamı (I-II-III-IV) doğrudur**."
+    "explanation": "Çevresel faktörler DNA mutasyonlarının yanı sıra epigenetik mekanizmalarla da karsinogeneze katılır (I doğru), sporadik kanser yükünde çevresel/yaşam tarzı faktörlerinin payı kalıtsal genetik faktörlerden çok daha büyüktür (II doğru), işlenmiş et DSÖ/IARC tarafından Grup 1 kesin karsinojen olarak sınıflandırılmıştır (III doğru) ve HCV, HBV, HPV ile EBV bilinen onkojenik virüslerdir (IV doğru); dolayısıyla ifadelerin **tamamı (I–II–III–IV)** doğrudur (A doğru). Bu seçenek doğru olan I. (epigenetik etki) ve IV. (onkojenik virüsler) ifadeleri kapsam dışı bırakmaktadır (B yanlış). Bu seçenek doğru olan I. ifadeyi (çevresel faktörlerin epigenetik katkısı) eksik bırakmaktadır (C yanlış). Bu seçenek doğru olan III. (işlenmiş etin Grup 1 karsinojenliği) ve IV. (onkojenik virüsler) ifadeleri içermemektedir (D yanlış). Bu seçenek doğru olan IV. ifadeyi (HCV, HBV, HPV ve EBV'nin karsinogenezle ilişkisi) dışarıda bırakmaktadır (E yanlış)."
   },
   {
     "year": "2023-2024",
@@ -16527,7 +16527,7 @@ window.KURUL_DATA["1"] = [
     "answer": "D",
     "note": null,
     "id": "2023-2024_Q56",
-    "explanation": "Akut Hepatit B enfeksiyonunda hepatosit ölümü, enfekte karaciğer hücrelerinin yüzeyindeki **MHC Sınıf I molekülleriyle sunulan viral peptidlerin CD8+ sitotoksik T lenfositler tarafından tanınması** ve apoptoza uğratılması sonucu gerçekleşir.",
+    "explanation": "HBsAg ve HBcAb pozitifliğiyle seyreden akut Hepatit B tablosunda hepatosit hasarı virüsün doğrudan sitopatik etkisinden ziyade, enfekte hepatositlerin yüzeyindeki **MHC Sınıf I molekülleriyle sunulan viral peptitlerin CD8+ sitotoksik T lenfositlerce tanınarak** hücre ölümüne götürülmesi sonucu gelişir (D doğru). Aktive makrofajların salgıladığı sitokinler inflamasyona eşlik etse de enfekte hepatositlerin primer spesifik yıkım mekanizması değildir (A yanlış). Antikorlar dolaşımdaki viral partiküllerin temizlenmesinde rol alır; hepatosit hasarının başlıca nedeni antikor aracılı lizis değil hücresel sitotoksisitedir (B yanlış). Dolaşımdaki serbest HBsAg doğrudan CD4+ T lenfositler tarafından tanınmaz; CD4+ hücreler MHC Sınıf II sunumuna yanıt verir ve primer sitotoksik efektör değildir (C yanlış). MHC Sınıf II molekülleri NK hücrelerinin değil CD4+ T lenfositlerin antijen tanıma reseptörleriyle etkileşir (E yanlış).",
     "repeats": [
       {
         "kurul": "1",
@@ -18143,7 +18143,7 @@ window.KURUL_DATA["1"] = [
     "answer": "A",
     "note": null,
     "id": "2023-2024_Q100",
-    "explanation": "**Tümör hücrelerinin yüzeylerindeki MHC Sınıf I moleküllerinin ekspresyonunu azaltması**, CD8+ sitotoksik T lenfositler tarafından tanınmalarını engelleyerek **tümörün immün sistemden kaçışına** doğrudan kanıt oluşturur.",
+    "explanation": "CD8+ sitotoksik T hücreleri tümör hücrelerini yüzeylerindeki MHC Sınıf I kompleksi üzerinden tanıdığından, **tümör hücrelerinin MHC sınıf I moleküllerini azaltması** antijen sunumunu engelleyerek **immün sistemden kaçışa** doğrudan kanıt oluşturur (A doğru). Makrofajlar tarafından artmış miktarda TNF üretilmesi immün kaçışı değil, tümöre karşı inflamatuar ve sitotoksik immün yanıtı gösterir (B yanlış). Tümör hücre çoğalmasının IFN-gamma aracılı baskılanması tümörün kaçışını değil, etkin hücresel anti-tümör bağışıklık kontrolünü ifade eder (C yanlış). Tümöre özgül antijenlere karşı antikor üretilmesi bağışıklık sisteminin tümörü tanıdığını ve hümoral yanıt geliştirdiğini gösterir, kaçış kanıtı değildir (D yanlış). Pro-apoptotik Bax artışıyla tümör hücresi apoptozunun uyarılması tümörün kaçmasını değil, ortadan kaldırılmasını sağlar (E yanlış).",
     "repeats": [
       {
         "kurul": "1",
@@ -18217,7 +18217,7 @@ window.KURUL_DATA["1"] = [
     "answer": "E",
     "note": null,
     "id": "2024-2025_Q2",
-    "explanation": "Fetal dönemde HbF (α2γ2) baskınken doğumdan sonra **globin değişimi (hemoglobin switch) nedeniyle γ-globin ifadesinin azalarak β-globin ifadesinin artması**, β-talasemi fenotipinin postnatal 3-6. aylarda ortaya çıkmasına neden olur."
+    "explanation": "Fetal dönemde ana hemoglobin HbF (α₂γ₂) olduğu için β-globin eksikliği klinik belirti vermez; doğum sonrası aylarda gerçekleşen **globin değişimi (hemoglobin switch) sebebiyle γ-globin ifadesinin azalarak erişkin tip HbA (α₂β₂) sentezi için β-globin ifadesinin artması**, β-talasemi fenotipinin postnatal dönemde ortaya çıkmasının temel nedenidir (E doğru). Postnatal dönemde α-globin ifadesi artarak β-globin ifadesini baskılamaz; α-globin her iki hemoglobinde de sabit olarak gereklidir (A yanlış). Postnatal dönemde α-globin ifadesi azalmaz ve β-globin genini baskılayıcı bir etkiye sahip değildir (B yanlış). Doğum sonrasında β-globin ifadesine ihtiyaç ortadan kalkmaz, tam tersine erişkin hemoglobini oluşturmak için β-globin sentezi zorunlu hale gelir (C yanlış). Doğumdan sonra γ-globin ifadesi aşırı yükselmez, aksine fizyolojik olarak azalır (yüksek kalması talasemi kliniğini hafifletirdi) (D yanlış)."
   },
   {
     "year": "2024-2025",
@@ -18250,7 +18250,7 @@ window.KURUL_DATA["1"] = [
     "answer": "C",
     "note": null,
     "id": "2024-2025_Q3",
-    "explanation": "Pediatrik yaş grubunda MCV alt sınırı 70 + yaş (fL) formülüyle hesaplanır ve **MCV'nin yüksek olması (makrositoz) Vitamin B12 veya folat eksikliğine bağlı megaloblastik anemi göstergesi olabilir**.",
+    "explanation": "Pediatrik yaş grubunda eritrosit hacmini gösteren **MCV değerinin yüksek olması (makrositoz)**, DNA sentez bozukluğuna yol açan Vitamin B₁₂ veya folik asit eksikliğine bağlı **megaloblastik anemi** göstergesi olabilir (C doğru). Çocuklarda MCV alt sınırı 80 + yaş ile değil **70 + yaş (fL)** formülüyle hesaplanır (A yanlış). 10 yaş altında MCV alt sınırı 80 fL sabit değildir; yaşa göre **70 + yaş** formülüyle belirlenen ve 80 fL'nin altında olan değerlerdir (B yanlış). Eritrosit büyüklüklerindeki değişkenliği (**anizositozu**) gösteren parametre MCV değil **RDW (eritrosit dağılım genişliği)**dir (D yanlış). İzole B₁₂ eksikliğine bağlı megaloblastik anemilerde MCV düşmesi değil aksine eritrosit öncüllerinin bölünemeden büyümesi nedeniyle **MCV yükselmesi (makrositoz)** beklenir (E yanlış).",
     "repeats": [
       {
         "kurul": "1",
@@ -18291,7 +18291,7 @@ window.KURUL_DATA["1"] = [
     "answer": "E",
     "note": null,
     "id": "2024-2025_Q4",
-    "explanation": "Ülkemizde Sağlık Bakanlığı 'Demir Gibi Türkiye' programına göre bebeklerde demir profilaksisine **term (zamanında doğan) bebeklerde 4. ayda (1-2 mg/kg/gün), preterm/düşük doğum ağırlıklı bebeklerde ise 2. ayda (2 mg/kg/gün)** başlanır; dolayısıyla **term ve preterm olmaya göre başlama zamanı değişir**."
+    "explanation": "Sağlık Bakanlığı 'Demir Gibi Türkiye' programı kapsamında demir profilaksisine **zamanında doğan (term) bebeklerde 4. ayda (1–2 mg/kg/gün), erken doğan (preterm) veya düşük doğum ağırlıklı bebeklerde ise demir depoları daha erken tükendiğinden 2. ayda (2 mg/kg/gün)** başlanır; dolayısıyla başlama zamanı bebeğin term veya preterm olmasına göre değişir (E doğru). Demir profilaksisine 2. ayda başlanması tüm bebekler için değil, yalnızca **preterm veya düşük doğum ağırlıklı (<2500 g)** bebekler için geçerlidir (A yanlış). Demir profilaksisine 4. ayda başlanması tüm bebekler için değil, yalnızca **term (≥37 hafta ve ≥2500 g)** doğan bebekler için geçerlidir (B yanlış). 1 yaşına kadar beklenip hemogram sonucuna göre başlanmaz; profilaksi anemi gelişimini önlemek için 2. veya 4. ayda rutin başlatılır, 9–12. aylarda ise tarama/izlem amaçlı hemoglobin kontrolü yapılır (C yanlış). İnfant döneminde demir profilaksisi güncelliğini yitirmemiştir; demir eksikliği anemisi beyin ve nöromotor gelişimi olumsuz etkilediğinden günümüzde de ulusal bir rutin koruyucu sağlık uygulamasıdır (D yanlış)."
   },
   {
     "year": "2024-2025",
@@ -18538,7 +18538,7 @@ window.KURUL_DATA["1"] = [
     "answer": "C",
     "note": null,
     "id": "2024-2025_Q11",
-    "explanation": "Stres/yorgunluk sonrası tek taraflı torakal **dermatom hattı boyunca** şiddetli radiküler ağrı ve eritemli zeminde grup yapmış veziküllerle karakterize tablo **Zona (Herpes Zoster)** olup etkeni **Varicella Zoster Virüs (VZV / HHV-3)**'tür.",
+    "explanation": "Stres, yorgunluk ve eşlik eden ateşli enfeksiyon sonrası tek taraflı torakal **dermatom hattı boyunca** şiddetli radiküler ağrı ile eritemli zeminde grup yapmış veziküllerin ortaya çıkması, dorsal kök gangliyonlarında latent kalan **Varicella Zoster Virüs (VZV / HHV-3)** reaktivasyonuna bağlı **Zona (Herpes Zoster)** tablosudur (C doğru). Uçuk (Herpes labialis) etkeni HSV-1 olmakla birlikte lezyonlar genellikle dudak ve ağız çevresi mukokutanöz sınırda yerleşir, tek taraflı torakal dermatomal yayılım göstermez (A yanlış). Suçiçeği etkeni HSV-2 değil primer VZV enfeksiyonudur ve döküntüler dermatomal sınırlı değil, tüm vücutta farklı evrelerde yaygın olarak görülür (B yanlış). Epstein-Barr Virüsü (EBV) kaynaklı enfeksiyöz mononükleoz ateş, eksüdatif farenjit, servikal lenfadenopati ve hepatosplenomegali ile seyreder, dermatomal veziküler cilt döküntüsü yapmaz (D yanlış). Kondiloma (kondiloma aküminata), Human Papilloma Virüs (HPV) tarafından oluşturulan ekzofitik anogenital siğil lezyonudur ve ağrılı veziküler dermatomal tutulumla ilişkili değildir (E yanlış).",
     "repeats": [
       {
         "kurul": "1",
@@ -18851,7 +18851,7 @@ window.KURUL_DATA["1"] = [
     "answer": "C",
     "note": null,
     "id": "2024-2025_Q20",
-    "explanation": "Kalpte SA düğümünde sempatik etkiyi sağlayan β1 reseptörlerin bloke edilmesi (beta-blokörler) kalp hızını azaltır, yani **negatif (-) kronotropi** sağlar (C şıkkı doğrudur)."
+    "explanation": "Kalpte sinoatriyal (SA) düğümde sempatik uyarıyı ve pozitif kronotropiyi sağlayan **β₁ (beta) reseptörlerin bloke edilmesi** (beta-blokör kullanımı) kalp atım hızını düşürerek **negatif (-) kronotropi** oluşturur (C doğru). Vasküler endotelden NO salınımı yoluyla damar düz kasında gevşeme sağlayan muskarinik reseptör M₂ değil **M₃**tür (M₂ esas olarak kalpte inhibisyona aracılık eder) (A yanlış). Kalpte pozitif (+) inotropiyi sağlayan adrenerjik reseptör α₂ değil **β₁** reseptörleridir (α₂ genellikle presinaptik otoreseptör olarak noradrenalin salınımını azaltır) (B yanlış). Gastrointestinal ve mesane sfinkterlerinde kasılma muskarinik (M) reseptörlerle değil sempatik **α₁** reseptörlerinin uyarılmasıyla sağlanır (M₃ uyarısı sfinkterleri gevşetir) (D yanlış). Bronş düz kasında gevşeme (bronkodilatasyon) β reseptörlerinin bloke edilmesiyle değil, **β₂ reseptörlerinin uyarılmasıyla** sağlanır; β blokajı bronkospazma yol açabilir (E yanlış)."
   },
   {
     "year": "2024-2025",
@@ -19016,7 +19016,7 @@ window.KURUL_DATA["1"] = [
     "answer": "A",
     "note": null,
     "id": "2024-2025_Q25",
-    "explanation": "**Kapesitabin** (5-FU ön ilacı), metotreksat, sitarabin ve gemsitabin gibi **antimetabolit grubu ilaçlar hücre siklusunun S fazına (DNA sentez dönemine) özgü** etki gösterirler."
+    "explanation": "5-florourasil ön ilacı olan **kapesitabin** (ve metotreksat, sitarabin gibi diğer **antimetabolit grubu antineoplastikler**), hücre döngüsünün özellikle DNA sentezinin gerçekleştiği **S fazına (döneme) özgü** etki gösterir (A doğru). Yavaş gelişen ve düzelmesi de yavaş/uzun süren lökopeni döneme özgü ilaçların değil, **döneme özgü olmayan** alkilleyici ilaçların tipik özelliğidir (döneme özgü ilaçlar hızlı başlayan ve çabuk düzelen lökopeni yapar) (B yanlış). Kullanılan antineoplastik ilacın seçiciliği tek bir hedef yapıya ne kadar özgüyse normal dokulara yönelik istenmeyen yan tesir profili o kadar **azdır** (fazla değil) (C yanlış). **Alkilleyici** grubu antineoplastikler (siklofosfamid, sisplatin, busulfan vb.) dinlenimdeki G₀ hücreleri dahil tüm evrelerde DNA'yı çapraz bağladığından döneme özgü değil **döneme özgü olmayan** ilaçlardır (D yanlış). Hücre döngüsünün tüm evrelerinde DNA'yı etkileyerek hücre ölümüne yol açanlar döneme özgü olanlar değil **döneme özgü olmayan (hücre siklusundan bağımsız)** antineoplastiklerdir; döneme özgü olanlar yalnızca belirli bir mitotik veya sentez fazındaki çoğalan hücreleri etkiler (E yanlış)."
   },
   {
     "year": "2024-2025",
@@ -19766,7 +19766,7 @@ window.KURUL_DATA["1"] = [
     "answer": "B",
     "note": null,
     "id": "2024-2025_Q47",
-    "explanation": "Beta talasemi majör (homozigot β0/β0) hastasında beta globin zinciri hiç sentezlenemediği için **HbA (%0) yoktur**; hemoglobinin tamamına yakınını **HbF (%90-95)** ve artmış **HbA2 (%5-8)** oluşturur.",
+    "explanation": "Beta talasemi majörde (homozigot β0/β0) beta globin zinciri hiç sentezlenemediği için **HbA (%0) tamamen yoktur**; azalan beta zincirinin yerini alfa2-gama2 yapısındaki **HbF (%92)** ile artmış delta zincir sentezine bağlı **HbA2 (%8)** alır (B doğru). Yüzde 96 HbA, %0.5 HbF ve %3.5 HbA2 değerleri normal erişkin veya sınırda beta-talasemi taşıyıcılığı (minör) profiline yakındır, transfüzyon bağımlı majör formu yansıtmaz (A yanlış). HbA'nın %60 düzeyinde korunup HbF'nin %30 olması kısmi beta zinciri üretiminin sürdüğü beta-talasemi intermedia (β+/β+ veya β+/β0) tablolarına uyar, tam sentez yokluğunu göstermez (C yanlış). HbA2'nin %85 oranında baskın hemoglobin haline gelmesi fizyopatolojik olarak mümkün değildir, çünkü delta globin geninin transkripsiyon kapasitesi sınırlıdır (D yanlış). HbA'nın %20 bulunması ve HbA2'nin %0 olması beta-talasemi majörle bağdaşmaz; beta-talasemi majörde HbA sıfırlanırken HbA2 azalmaz, aksine kompanzatuar olarak yükselir (E yanlış).",
     "repeats": [
       {
         "kurul": "1",
@@ -21398,7 +21398,7 @@ window.KURUL_DATA["1"] = [
     "answer": "A",
     "note": null,
     "id": "2024-2025_Q91",
-    "explanation": "**Warburg etkisi**, kanser hücrelerinin bol **oksijen varlığında bile** enerji ve biyosentetik ara ürün elde etmek için mitokondriyal oksidatif fosforilasyon yerine **glikolizi (ve laktat üretimini) tercih etmesidir (aerobik glikoliz)**."
+    "explanation": "**Warburg etkisi**, kanser hücrelerinin yeterli **oksijen varlığında bile** mitokondriyal oksidatif fosforilasyon yerine hızlı ATP ve makromolekül biyosentezi ara ürünleri sağlamak amacıyla **glikolizi (aerobik glikoliz)** tercih etmesini ifade eder (A doğru). Kanser hücrelerinde oksidatif fosforilasyon kapasitesi artmaz; aksine enerji metabolizması mitokondriyal solunumdan sitozolik glikolize kayar (B yanlış). Kanser hücreleri yalnızca laktik asit üretmez; glikolitik ara ürünleri pentoz fosfat yolu, serin/glisin sentezi ve lipogenez gibi anabolik yollara da yönlendirir, ayrıca Warburg etkisinin özü laktat birikiminden ziyade aerobik ortamda glikolizin tercih edilmesidir (C yanlış). Oksidatif fosforilasyon geri planda kaldığı için kanser hücrelerinin oksijen tüketimi artmaz, glukoz alımı ve glikolitik akı hızlanır (D yanlış). Warburg etkisinin temel yakıtı yağ asitleri değil, GLUT1/GLUT3 aracılığıyla yoğun şekilde hücre içine alınan glukozdur (E yanlış)."
   },
   {
     "year": "2024-2025",
@@ -21769,7 +21769,7 @@ window.KURUL_DATA["1"] = [
     "answer": "C",
     "note": "2025-2026 1. Kurul Çalışma Sorusu",
     "id": "2025-2026_Q2",
-    "explanation": "Makrositer anemide B12 eksikliği tek başına folik asit ile tedavi edilirse hematolojik tablo düzelir ancak B12 eksikliğine bağlı **geri dönüşümsüz nörolojik hasar (subakut kombine dejenerasyon) ilerlemeye devam eder**; bu nedenle **nörolojik hasarı önlemek için** her iki vitamin ve metabolitleri aynı anda değerlendirilmelidir."
+    "explanation": "Makrositer anemide tek başına folik asit verilmesi B12 eksikliğine bağlı megaloblastik anemiyi maskeleyerek düzeltse bile B12 eksikliğinin yol açtığı **geri dönüşümsüz nörolojik hasarı (subakut kombine dejenerasyon)** durduramaz; bu nedenle **nörolojik hasarı önlemek** için B12, folat, homosistein ve metilmalonik asit testleri birlikte istenmelidir (C doğru). Aplastik anemi kemik iliği kök hücre hasarına bağlı hiposelüler ilik ve pansitopeni tablosudur, B12 veya folat eksikliğinden kaynaklanmaz (A yanlış). B12 mide intrinsik faktörüne bağlanarak terminal ileumdan, folat ise proksimal ince bağırsaklardan (jejunum) emildiği için emilim yerleri ve mekanizmaları farklıdır (B yanlış). Megaloblastik anemide orta düzeyde trombositopeni görülebilse de bu test panelinin eş zamanlı istenmesinin temel nedeni trombositopeni değil, B12 eksikliğindeki kalıcı nöropatidir (D yanlış). Bir vitaminin yerine konması diğerinin eksikliğini tedavi etmez; aksine B12 eksikliğinde verilen folik asit nörolojik yıkımı maskeleyip derinleştirir (E yanlış)."
   },
   {
     "year": "2025-2026",
@@ -22034,7 +22034,7 @@ window.KURUL_DATA["1"] = [
     "answer": "D",
     "note": "2025-2026 1. Kurul Çalışma Sorusu",
     "id": "2025-2026_Q10",
-    "explanation": "Akut Hepatit B enfeksiyonunda hepatosit hasarı, enfekte hepatositlerde **MHC Sınıf I molekülleriyle sunulan viral peptidlerin CD8+ sitotoksik T lenfositlerce tanınarak** hücrenin apoptoza uğratılması sonucu oluşur."
+    "explanation": "Akut Hepatit B enfeksiyonunda hepatit B virüsü doğrudan sitopatik değildir; hepatosit hasarı, enfekte hepatositlerin yüzeyinde **MHC Sınıf I molekülleriyle sunulan viral peptidlerin CD8+ sitotoksik T lenfositlerce tanınarak** perforin/granzim ve Fas-FasL yolaklarıyla apoptoza uğratılması sonucu gelişir (D doğru). Aktive makrofajların sitokin salımı inflamasyonu desteklese de akut viral hepatitte hepatosit ölümünün birincil özgül mekanizması değildir (A yanlış). HBsAg'ye karşı gelişen antikorlar dolaşımdaki virüsü nötralize edip iyileşmeyi sağlar, enfekte hepatositleri hedef alarak fokal hepatit hasarı oluşturan ana mekanizma değildir (B yanlış). CD4+ yardımcı T lenfositler antijen sunan hücrelerdeki MHC Sınıf II üzerindeki antijenleri tanıyarak immün yanıtı koordine eder, hepatositleri doğrudan lize etmez (C yanlış). Doğal öldürücü (NK) hücreler antijenleri MHC Sınıf II molekülleri üzerinden tanımaz; MHC Sınıf I kaybı veya stres ligandları üzerinden uyarılır (E yanlış)."
   },
   {
     "year": "2025-2026",
@@ -23202,7 +23202,7 @@ window.KURUL_DATA["1"] = [
     "answer": "E",
     "note": "2025-2026 1. Kurul Çalışma Sorusu",
     "id": "2025-2026_Q45",
-    "explanation": "Mevcut immünsüpresif ilaçlar akut hücresel reddi önlemede ve otoimmün hastalıkları baskılamada oldukça etkiliyken, damar duvarında intimal fibrozis ve iskemiyle ilerleyen **geç gelişen kronik red (rejeksiyon) reaksiyonu üzerindeki etkinlikleri en düşüktür**."
+    "explanation": "İmmünsüpresif ilaçlar T ve B hücre aktivasyonunu güçlü şekilde baskılayabildikleri için akut hücresel reddi önlemede çok etkilidir; ancak damar duvarında konsantrik intimal fibrozis, kronik endotel hasarı ve iskemiyle yavaş ilerleyen **geç gelişen kronik red (rejeksiyon) reaksiyonu üzerindeki etkinlikleri en düşüktür** (E doğru). Romatoid artrit ve SLE gibi otoimmün hastalıklarda immünsüpresif ve immünmodülatör ajanlar inflamasyonu ve doku hasarını kontrol altına almada yüksek etkinlik gösterir (A yanlış). Psöriyazis ve atopik dermatit gibi T-hücre aracılı inflamatuvar cilt hastalıklarının tedavisinde siklosporin, metotreksat ve topikal/sistemik kalsinörin inhibitörleri oldukça etkilidir (B yanlış). CD4+ T lenfosit aracılı akut hücresel rejeksiyon mekanizmaları kalsinörin inhibitörleri, antiproliferatifler ve kortikosteroidlerle doğrudan ve başarıyla baskılanabilir (C yanlış). Böbrek, karaciğer ve kemik iliği nakillerinde erken dönem greft sağkalımı ve akut rejeksiyon profilaksisinde immünsüpresif tedavi yüksek klinik başarı sağlar (D yanlış)."
   },
   {
     "year": "2025-2026",
@@ -23361,7 +23361,7 @@ window.KURUL_DATA["1"] = [
     "note": "2025-2026 1. Kurul Çalışma Sorusu",
     "id": "2025-2026_Q49",
     "prof_inferred": true,
-    "explanation": "**Yüksek doz adrenalin**, damarlardaki alfa-1 adrenerjik reseptörleri güçlü şekilde uyararak vazokonstrüksiyon yapar ve **Total Periferik Damar Direncini artırır**.",
+    "explanation": "**Yüksek doz adrenalin** uygulandığında vasküler düz kaslardaki **α₁-adrenerjik reseptör** uyarısı baskın hale gelir, yaygın arteriyoler vazokonstrüksiyon gelişir ve **Total Periferik Damar Direnci (TPR) artar** (B doğru). Adrenalinin α₁ aracılı kasıcı etkisi cilt ve mukoza dokularının kendisinde değil, **cilt ve mukoza damar yataklarındaki arteriyol düz kaslarında** görülür; ayrıca normal/düşük dozlarda toplam periferik dirençte β₂ vazodilatasyonu ön planda olduğu için 'cilt ve mukozada kasılma' ifadesi hedef yapıyı ve doz dengesini hatalı yansıtmaktadır (A yanlış). Beta₁ reseptör uyarılması kalpte cAMP artışıyla negatif inotropi değil **pozitif inotropi** (ve pozitif kronotropi/dromotropi) oluşturur (C yanlış). Pankreas Langerhans adacıklarındaki β hücrelerinde yer alan α₂ reseptörlerinin uyarılması insülin salınımını artırmaz, aksine **baskılar (azaltır)**; insülin salınımını artıran reseptör β₂'dir (D yanlış). Vasküler β reseptörlerinin (β₂) α reseptörlere göre daha belirgin uyarılması **düşük dozlara** özgüdür; normal ve yüksek dozlarda α-adrenerjik vazokonstrüktör yanıtlar da devreye girip β₂ etkisini dengeleyebilir veya baskılayabilir (E yanlış).",
     "repeats": [
       {
         "kurul": "1",
@@ -24219,7 +24219,7 @@ window.KURUL_DATA["1"] = [
     "answer": "C",
     "note": "2025-2026 1. Kurul Çalışma Sorusu",
     "id": "2025-2026_Q73",
-    "explanation": "**Sporadik kanserlerde** genetik mutasyonlar yaşam boyunca **somatik hücrelerde** sonradan gelişirken; **herediter (kalıtsal) kanserlerde** yatkınlık yaratan ilk mutasyon (**germline mutasyon**) doğuştan tüm vücut hücrelerinde mevcuttur."
+    "explanation": "**Sporadik kanserlerde** sürücü genetik değişiklikler doğumda mevcut olmayıp yaşam boyunca çevresel mutajenler veya replikasyon hatalarıyla **somatik hücrelerde** sonradan birikirken; **herediter (kalıtsal) kanserlerde** yatkınlık yaratan ilk mutasyon **germline (eşey) mutasyonla** doğuştan tüm vücut hücrelerinde bulunur (C doğru). Herediter kanserler sıklıkla daha erken yaşta görülse de 'daima' erken yaşta, sporadiklerin de 'daima' ileri yaşta ortaya çıktığı genellemesi yanlıştır; sporadik tümörler gençlerde, kalıtsal olanlar da ileri yaşta gelişebilir (A yanlış). Her iki grup tamamen farklı genleri etkilemez; BRCA1/2, APC, TP53 ve RB1 gibi aynı tümör süpresör genler ve sinyal yolakları hem kalıtsal hem sporadik karsinogenezde ortaktır (B yanlış). Sporadik kanserlerin yalnızca germline mutasyona bağlı olduğu ve herediterlerin yalnız çevresel faktörlerle oluştuğu iddiası gerçeğin tam tersidir (D yanlış). Herediter kanserlerdeki genetik değişiklik yalnızca somatik hücrelerle sınırlı değildir, aksine eşey hücrelerinde (germline) taşındığı için nesilden nesile aktarılır (E yanlış)."
   },
   {
     "year": "2025-2026",
@@ -24559,7 +24559,7 @@ window.KURUL_DATA["1"] = [
     "answer": "C",
     "note": "2025-2026 1. Kurul Çalışma Sorusu",
     "id": "2025-2026_Q83",
-    "explanation": "**Primer hemostaz** (trombosit ve vWF) bozukluklarında mukozal kanamalar görülür ve **Kanama Zamanı (KZ) uzar** (PT ve aPTT genellikle normaldir; sekonder hemostaz bozukluklarında ise PT ve/veya aPTT uzar)."
+    "explanation": "Trombosit sayısı/fonksiyonu ve von Willebrand faktörünün (vWF) rol aldığı **primer hemostaz** bozukluklarında mukozal kanamalar ön plandadır ve trombosit tıkacı oluşumu geciktiğinden **Kanama Zamanı (KZ) uzar** (C doğru). Primer hemostaz bozukluklarında genellikle koagülasyon kaskadını ölçen aPTT uzamaz, **normaldir** (yalnızca ağır vWF eksikliğinde FVIII düşüklüğüne bağlı aPTT uzayabilir) (A yanlış). Pıhtılaşma faktörü eksikliklerine bağlı **sekonder hemostaz** bozukluklarında (ör. hemofili A ve B) trombosit sayısı düşmez, **normaldir** (trombositopeni DİK gibi tüketim koagülopatileri dışında izole sekonder hemostaz bozukluğunda beklenmez) (B yanlış). Sekonder hemostaz bozukluklarında trombosit tıkacı sağlam olduğundan kanama zamanı tipik olarak uzamaz, **normal** kalır; uzayan testler **PT ve/veya aPTT**dir (D yanlış). Primer hemostaz bozukluklarında koagülasyon faktörleri normal olduğundan **PT ve aPTT** belirgin şekilde uzamaz, normal sınırlardadır (E yanlış)."
   },
   {
     "year": "2025-2026",
@@ -24725,7 +24725,7 @@ window.KURUL_DATA["1"] = [
     "note": "2025-2026 1. Kurul Çalışma Sorusu",
     "id": "2025-2026_Q88",
     "prof_inferred": true,
-    "explanation": "Stresli dönemde tek taraflı torakal dermatom boyunca şiddetli ağrı ve eritemli zeminde veziküler döküntü tablosu **Zona (Herpes Zoster) — Varicella Zoster Virus (VZV)** enfeksiyonudur.",
+    "explanation": "Sınav stresi ve viral üst solunum yolu enfeksiyonu sonrasında sol torakal **dermatom hattı boyunca** ağrılı, eritemli zeminde çok sayıda veziküler lezyon gelişmesi, duyusal gangliyonlarda latent kalan **Varicella Zoster Virüs (VZV)** reaktivasyonunun yol açtığı **Zona (Herpes Zoster)** tablosudur (D doğru). HSV-1'in neden olduğu uçuk (herpes labialis) tipik olarak dudak ve perioral bölgede ortaya çıkar, torakal dermatomal dağılım izlemez (A yanlış). Suçiçeği HSV-2 tarafından değil primer VZV enfeksiyonuyla oluşur ve tek taraflı dermatomal yerleşim yerine yaygın, kaşıntılı ve farklı evrelerde lezyonlar yapar (B yanlış). Enfeksiyöz mononükleoz EBV'ye bağlı gelişir; farenjit, lenfadenopati ve ateş ile seyreder, dermatomal veziküllerle karakterize değildir (C yanlış). Kondiloma (genital siğil) etkeni HPV olup mukokutanöz papillomatöz proliferasyonlara yol açar, akut ağrılı veziküler döküntü oluşturmaz (E yanlış).",
     "repeats": [
       {
         "kurul": "1",
@@ -24907,7 +24907,7 @@ window.KURUL_DATA["1"] = [
     "answer": "A",
     "note": "2025-2026 1. Kurul Çalışma Sorusu",
     "id": "2025-2026_Q93",
-    "explanation": "Kontrolsüz diyabetik hastada rinoserebral **mukormikoz** (*Mucor, Rhizopus*) dokuda **geniş (90°) açıyla dallanan, septasız (bölmeli olmayan) şeritvari hifler** yapar; biyopside **dar (45°) açıyla dallanan septalı hifler görülmesi** mukormikozdan uzaklaştırıp *Aspergillus* tanısını düşündürür."
+    "explanation": "Doku biyopsisinde **dar (45°) açıyla dallanan ve septalı hiflerin** görülmesi mukormikozun değil *Aspergillus* enfeksiyonunun (aspergillozun) tipik histopatolojik bulgusudur; bu nedenle mukormikoz için geçerli değildir ve tanıyı mukormikozdan uzaklaştırır (A yanlış). Kontrolsüz diyabette rinoserebral mukormikoz etkeni olan Mucorales mantarları dokuda **geniş, düzensiz ve septasız (veya çok seyrek septalı)**, dik (90°) açıyla dallanan şeritvari hifler oluşturur (B doğru). Mucorales türleri kültürde hızla üreyerek petri kapağını yukarı kaldıracak kadar kabarık, pamuksu beyaz-gri koloniler ('kapak kaldıran' koloni) oluşturur (C doğru). Özellikle *Rhizopus* başta olmak üzere mukormikoz etkenlerinin koloni mikroskopisinde sporanjioforların tabanında **rizoid** adı verilen köksü yapılar saptanır (D doğru). Mucorales cinsi küflerin eşeysiz üreme yapıları sporanjiofor ucundaki **sporangiyum** keseleri ve içindeki sporangiyosporlardır (E doğru)."
   },
   {
     "year": "2025-2026",

@@ -607,7 +607,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Genç yaşta (<45 yaş) ortaya çıkan ya da sigara öyküsü az/olmayan bireylerde bazal amfizemle seyreden KOAH olgularında genetik bir zemin olan **alfa-1 antitripsin eksikliği** mutlaka taranmalıdır.",
+    "explanation": "Genç yaşta (<45 yaş) ortaya çıkan ya da belirgin sigara öyküsü olmayan bireylerde özellikle alt loblarda baskın panlobüler amfizemle seyreden KOAH olgularında genetik bir neden olan alfa-1 antitripsin (AAT) eksikliği mutlaka araştırılmalıdır (C doğru). KOAH tanısı için bronkodilatör sonrası solunum fonksiyon testinde kalıcı hava yolu obstrüksiyonunu gösteren FEV1/FVC oranının >%70 değil, <%70 (<0.70) olması gereklidir (A yanlış). Uzun süreli progresif nefes darlığı, kronik öksürük ve balgam KOAH için tipiktir; ancak hemoptizi KOAH'ın sık beklenen bir bulgusu değildir ve saptandığında akciğer kanseri, bronşektazi veya tüberküloz gibi başka nedenler araştırılmalıdır (B yanlış). KOAH'ta hava yolu obstrüksiyonu büyük ölçüde geri dönüşümsüz olduğu için erken reversibilite testi tipik olarak negatiftir (belirgin pozitif reversibilite astımı düşündürür) (D yanlış). KOAH tedavisinde ilk seçenek tek başına inhale kortikosteroidler değil, bronkodilatörlerdir (LAMA ve/veya LABA); İKS yalnızca sık alevlenme veya yüksek kan eozinofilisi gibi özel endikasyonlarda bronkodilatörlere eklenir (E yanlış).",
     "id": "K3_2020-2021_Q17"
   },
   {
@@ -673,7 +673,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "KOAH hastalarında akciğer fonksiyonlarındaki yıllık FEV₁ kaybını yavaşlattığı ve mortaliteyi belirgin şekilde azalttığı kanıtlanmış en etkili temel basamak **sigaranın bırakılmasıdır**; tanı anında öncelikli olarak sigara bırakma danışmanlığı verilmelidir.",
+    "explanation": "FEV1/FVC %65 ve reversibilitesi negatif saptanan KOAH tanılı bu hastada, yıllık FEV1 kaybını yavaşlattığı ve mortaliteyi azalttığı kanıtlanmış en etkili müdahale sigaranın bırakılması olduğundan öncelikle sigaranın zararları ve bırakma yöntemleri hakkında bilgi ve danışmanlık verilmelidir (A doğru). Stabil KOAH hastasında başlangıç tedavisinde teofilin (dar terapötik indeksi nedeniyle son basamak ajandır) ve alevlenme/eozinofil endikasyonu olmadan inhale kortikosteroid içeren üçlü kombinasyon başlamak uygun değildir (B yanlış). Bronş provokasyon testi spirometrisi normal olan şüpheli astım olgularında kullanılır; bu hastada spirometride kalıcı obstrüksiyon (FEV1/FVC <%70 ve negatif reversibilite) ile KOAH tanısı zaten konmuştur (C yanlış). KOAH'ın kesin tanısı toraks bilgisayarlı tomografisi ile değil, klinik öyküyle uyumlu post-bronkodilatör spirometride FEV1/FVC <%70 gösterilmesiyle konur (D yanlış). KOAH'ta kaşeksi ek yükü azaltarak mortaliteyi düşürmez; aksine solunum kas kütlesi kaybını ve sistemik inflamasyonu yansıtan bağımsız bir kötü prognoz ve artmış mortalite göstergesidir (E yanlış).",
     "id": "K3_2020-2021_Q19"
   },
   {
@@ -772,7 +772,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "**KOAH** patogenezinde sigara dumanının uyardığı **nötrofilik inflamasyon**, CD8+ T lenfositler ve makrofajlar hakimdir; **astımda** ise alerjenlere ve Tip 2 immün yanıta bağlı olarak hava yollarında ve balgamda **eozinofiller** baskındır.",
+    "explanation": "KOAH patogenezinde sigara dumanının uyardığı nötrofilik ve makrofaj/CD8+ T lenfosit ağırlıklı inflamasyon hakimken, astımda Tip 2 immün yanıta bağlı olarak hava yollarında ve balgamda eozinofilik inflamasyon daha sıktır (B doğru). Yaş dağılımı ters verilmiştir; KOAH genellikle uzun süreli sigara/biyomas maruziyeti sonrası 40 yaş üzeri ileri yaşlarda ortaya çıkarken, astım daha çok çocukluk veya genç erişkinlikte başlar ve her yaşta görülebilir (A yanlış). Bol balgam ve progresif efor dispnesi astımdan ziyade kronik bronşit/KOAH'ın belirgin özelliğidir; astımda ise değişken hışıltılı nefes darlığı nöbetleri ve genellikle kuru veya az miktarda yapışkan balgamlı öksürük izlenir (C yanlış). Tedaviler ters verilmiştir; astımda temel kontrol edici ilk basamak tedavi inhale kortikosteroidler (İKS) iken, KOAH'ta öncelikli temel tedavi uzun etkili bronkodilatörlerdir (LAMA/LABA) (D yanlış). KOAH'ta ekspiryumda küçük hava yollarının erken kapanması hava hapsine (air trapping) yol açtığından rezidüel akciğer hacmi (RV) azalmaz, aksine belirgin biçimde artar (E yanlış).",
     "id": "K3_2020-2021_Q22"
   },
   {
@@ -1368,7 +1368,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Daha önce geçirilmiş miyokard infarktüsü ve stent öyküsü olan olgular çok yüksek kardiyovasküler risk grubundadır. Güncel ESC kılavuzlarına göre bu grupta hedef **LDL düzeyi <55 mg/dL** olup, tolere edilen maksimum statine rağmen hedefe ulaşılamazsa tedaviye **Ezetimib** eklenmelidir.",
+    "explanation": "Geçirilmiş miyokard infarktüsü ve koroner stent öyküsü hastayı **çok yüksek kardiyovasküler risk** sınıfına sokar; 2019 ESC Dislipidemi Kılavuzuna göre hedef **LDL <55 mg/dL** (ve başlangıçtan ≥%50 düşüş) olduğundan maksimum doz Rosuvastatin 40 mg'a rağmen LDL düzeyi 89 mg/dL kalan hastanın tedavisine **Ezetimib** eklenmelidir (C doğru). LDL 89 mg/dL sağlıklı bireyler için kabul edilebilir görünse de stentli ikincil koruma hastası için hedef <55 mg/dL'nin çok üzerindedir, tedavi aynı bırakılamaz (A yanlış). LDL <70 mg/dL hedefi 2016 ESC kılavuzuna veya 2019 kılavuzundaki 'yüksek risk' grubuna aittir; çok yüksek riskteki bu hasta için <55 mg/dL hedeflenmelidir (B yanlış). LDL <100 mg/dL orta risk grubunun hedefidir ve mevcut statin dozunun düşürülmesi plak rüptürü ile tekrarlayan MI riskini artırır (D yanlış). Nikotinik asit (niasin) HDL'yi yükseltse de kardiyovasküler mortaliteyi azaltmadığı ve ciddi yan etkileri nedeniyle güncel kılavuzlarda önerilmez, primer hedef LDL düşürmektir (E yanlış).",
     "id": "K3_2020-2021_Q40",
     "repeats": [
       {
@@ -2335,7 +2335,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Rilmenidin, beyin sapındaki santral **imidazolin (I₁) reseptörlerini** selektif olarak uyararak periferik sempatik tonusu azaltır ve vazodilatasyonla kan basıncını düşürür; seçenekler arasında santral noradrenalin düzenlemesi üzerinden kan basıncını düşürme mekanizması vurgulanmıştır.",
+    "explanation": "Sınav anahtarında E şıkkı işaretlenmiş olup rilmenidin beyin sapındaki santral imidazolin (I1) reseptörlerini selektif olarak uyararak kan basıncını düşürür; ancak bilimsel olarak santral noradrenalin salınımını artırarak değil, periferik sempatik tonusu ve noradrenalin salınımını azaltarak vazodilatasyon ve hipotansiyon oluşturur (E doğru). Klonidin, beyin sapındaki vazomotor merkezde ve presinaptik sinir uçlarında alfa-2 adrenerjik reseptörleri uyararak sempatik deşarjı azaltan santral etkili bir antihipertansiftir; dolayısıyla bilimsel açıdan doğru bir ifade olmasına karşın bu soru anahtarında E şıkkı tercih edildiğinden yanlış sayılmıştır (A yanlış). Metildopa teratojenik olmadığı için gebelerde kontrendike değildir; aksine gebelik hipertansiyonunda güvenle tercih edilen birinci basamak ilaçlardan biridir (B yanlış). Amlodipin vasküler düz kas kalsiyum kanallarına seçici bir dihidropiridin kalsiyum kanal blokörüdür; kalp iletim sistemindeki (SA ve AV düğüm) kanalları belirgin bloke edenler non-dihidropiridin grubundaki verapamil ve diltiazemdir (C yanlış). Hidralazin doğrudan arteriyoler vazodilatasyon yaparken uteroplasental kan akımını azaltmaz (korur) ve bu nedenle gebelikteki hipertansif acillerde güvenle kullanılır (D yanlış).",
     "id": "K3_2020-2021_Q68"
   },
   {
@@ -3595,7 +3595,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Akut Solunum Sıkıntısı Sendromunda (ARDS) yaygın alveoler eksüda ve mikroatelektaziler nedeniyle kan perfüze edilen ancak havalanamayan alanlardan geçer; bu durum belirgin **intrapulmoner fizyolojik şanta (sağ-sol şant)** ve oksijen tedavisine dirençli hipoksemiye yol açar.",
+    "explanation": "Akut Solunum Sıkıntısı Sendromunda (ARDS) yaygın alveoler epitel ve endotel hasarı sonucu oluşan proteinöz eksüda ve atelektaziler nedeniyle kan perfüze edilen ancak ventile olamayan alveollerden geçer; bu durum belirgin intrapulmoner fizyolojik sağ-sol şantlara ve oksijen tedavisine dirençli hipoksemiye yol açar (B doğru). Fibroblast proliferasyonu ARDS'nin erken eksüdatif fazında değil, ilk haftadan sonraki geç proliferatif ve fibrotik fazlarında artar (eksüdatif fazda nötrofilik inflamasyon, alveoler ödem ve hiyalin membranlar hakimdir) (A yanlış). ARDS radyolojik olarak tek taraflı (yalnızca sağ akciğerde yoğun) infiltrasyon yapmaz; kalp yetmezliği ile açıklanamayan bilateral yaygın alveoler infiltratlarla karakterizedir (C yanlış). Berlin ve pediatrik ARDS tanı ölçütlerine göre tablo bilinen klinik tetikleyici hasarı (sepsis, travma, aspirasyon vb.) takiben iki hafta içinde değil, 1 hafta (7 gün) içinde gelişir (D yanlış). ARDS'nin ilk haftası akut eksüdatif fazdır; yaygın interstisyel fibrozis ilk haftada değil, genellikle 2-3. haftadan itibaren geç dönemde oluşur (E yanlış).",
     "id": "K3_2021-2022_Q4"
   },
   {
@@ -4543,7 +4543,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Dünya Sağlık Örgütü (DSÖ) seyahat tıbbı kılavuzlarına göre, gerekli rutin ve seyahat aşılarının antikor yanıtı oluşturabilmesi ve sıtma/enfeksiyon profilaksisinin planlanabilmesi için **seyahatten 4-6 hafta önce hekim değerlendirmesi** yapılmalıdır.",
+    "explanation": "Dünya Sağlık Örgütü (DSÖ) seyahat sağlığı rehberlerine göre gerekli seyahat aşılarının koruyucu antikor yanıtını oluşturabilmesi ve sıtma/enfeksiyon profilaksisinin uygun sürede başlanabilmesi için seyahatten 4-6 hafta önce hekim değerlendirmesi yapılmalıdır (C doğru). Turist diyaresi kontamine su ve besinlerle (en sık ETEC) bulaşsa da inkübasyon ve maruziyet süresi nedeniyle genellikle seyahatin ilk 24 saatinde değil, sıklıkla ilk 1-2 haftası içinde (çoğunlukla 3.-10. günler arasında) ortaya çıkar (A yanlış). Stabil kronik sindirim sistemi hastalıkları uçakla seyahat için genel bir kontrendikasyon değildir (yalnızca yakın tarihli batın cerrahisi, akut ileus veya aktif kanama kabin basıncı değişimi nedeniyle risk oluşturur) (B yanlış). Kafein geçici uyanıklık sağlasa da sirkadiyen faz kaymasını düzeltmez, aksine uyku kalitesini bozup dehidratasyonu artırarak jet lag adaptasyonunu zorlaştırabilir (D yanlış). Uçak kabinlerinde bulaşıcı hastalık riskini azaltmak için hava nemli ortamdan geçirilmez; yüksek debili taze hava değişimi sağlanarak mikroorganizmaları tutan HEPA filtrelerinden geçirilir (E yanlış).",
     "id": "K3_2021-2022_Q32",
     "repeats": [
       {
@@ -4956,7 +4956,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Koroner stent öyküsü olan hasta çok yüksek kardiyovasküler risk kategorisindedir; 2019 ESC kılavuzuna göre hedef **LDL <55 mg/dL** olup, maksimum doz Rosuvastatine rağmen LDL 89 mg/dL olan hastanın tedavisine **Ezetimib** eklenmelidir.",
+    "explanation": "Daha önce akut inferior MI geçirip koroner stent uygulanan hasta **çok yüksek kardiyovasküler risk** grubundadır; 2019 ESC kılavuzuna göre **LDL hedefi <55 mg/dL** olduğundan maksimum doz Rosuvastatin 40 mg altında LDL'si 89 mg/dL ölçülen bu hastaya **Ezetimib** eklenmesi gerekir (C doğru). Koroner arter hastalığı bulunan bireyde LDL 89 mg/dL normal kabul edilip tedaviye dokunulmaması güncel ikincil koruma hedeflerine aykırıdır (A yanlış). LDL <70 mg/dL eşiği çok yüksek risk değil yüksek risk hedefidir (veya 2016 eski ESC hedefidir), 2019 ESC kılavuzunda bu hasta için sınır <55 mg/dL'ye çekilmiştir (B yanlış). LDL <100 mg/dL orta riskli hastaların hedefidir ve yüksek potensli Rosuvastatin dozunun azaltılması iskemik olay riskini yükseltir (D yanlış). HDL düzeyini artırmak amacıyla nikotinik asit başlanması klinik sonlanımları iyileştirmediği ve yan etkileri nedeniyle güncel lipid kılavuzlarında terk edilmiştir (E yanlış).",
     "id": "K3_2021-2022_Q43",
     "repeats": [
       {
@@ -5857,7 +5857,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Atopik bronşiyal astımda eozinofilik hava yolu inflamasyonu zemininde subepitelyal bazal membran kalınlaşması, submukozal bez hipertrofisi ve **düz kas hiperplazisi ile birlikte hava yolu yeniden şekillenmesi (remodeling)** karakteristik histopatolojik bulgudur.",
+    "explanation": "Yedi yıldır süren, ilkbaharda artan hırıltı ve nefes darlığı nöbetleri, hiperrezonan muayene, hiperlüsen akciğer grafisi, yüksek serum IgE ile kan/balgam eozinofilisi atopik **bronşiyal astım** tablosudur; kronik astımda subepitelyal bazal membran kalınlaşması, mukus bez hiperplazisi ve **düz kas hiperplazisi ile birlikte hava yollarının yeniden modellenmesi (remodeling)** görülür (B doğru). Elastik lif kaybıyla respiratuvar bronşiyollerin kalıcı dilatasyonu astımın değil sentriasiner amfizemin histolojik özelliğidir (A yanlış). Bronş duvarlarının kronik iltihabi destrüksiyonu ile geri dönüşsüz genişlemesi bronşektaziyi tanımlar (C yanlış). Alveol lümenlerinde yoğun nötrofilik eksüdasyonla seyreden yamasal konsolidasyon akut bakteriyel bronkopnömoni bulgusudur (D yanlış). Hyalen membran oluşumu ile interstisyel ve alveoler ödem akut respiratuvar distress sendromunun (ARDS / diffüz alveoler hasar) karakteristik patolojisidir (E yanlış).",
     "id": "K3_2021-2022_Q69"
   },
   {
@@ -6913,7 +6913,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Standart posteroanterior (PA) akciğer grafisinde kalbin sağ kenarını süperior vena kava ve **sağ atriyum**, sol kenarını ise aort topuzu, pulmoner arter segmenti, **sol auriküler apendiks ve sol ventrikül** konturları oluşturur.",
+    "explanation": "Standart posteroanterior (PA) akciğer grafisinde kalp gölgesinin sağ alt kenarını **sağ atriyum** (üstte V. cava superior), sol kenarını ise yukarıdan aşağıya aort topuzu ve pulmoner konusun altında sırasıyla **sol auriküler apendiks ve sol ventrikül** oluşturur (E doğru). Sol atriyumun gövdesi kalbin arka yüzünde yerleştiği için sol kenarın tamamını oluşturmaz; sol kenara yalnızca küçük bir bölüm olan sol auriküler apendiks katılır, alt ana konturu ise sol ventrikül yapar (A yanlış). Sağ kenarı oluşturan yapı küçük sağ auriküler apendiks değil sağ atriyumun dış duvarıdır ve sol kenarda sol ventrikül de mutlaka yer alır (B yanlış). Sağ ventrikül kalbin ön yüzünü yaptığı için PA grafide sağ kenarı oluşturmaz ve C şıkkında sol ventrikül eksik bırakılmıştır (C yanlış). Sağ ventrikül PA grafide değil lateral grafide ön sınırı oluşturduğundan sağ kenar olarak verilmesi yanlıştır (D yanlış).",
     "id": "K3_2021-2022_Q96"
   },
   {
@@ -6946,7 +6946,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "**Hava bronkogramı**, akciğer alveollerinin eksüda, transüda veya hücre ile dolup konsolide olması durumunda, lümeni patent kalan bronşların bu opak zemin üzerinde radyolüsent tubüler hatlar şeklinde seçilmesidir ve lezyonun akciğer parankimine ait olduğunu kanıtlar.",
+    "explanation": "**Hava bronkogramı**, çevreleyen alveollerin sıvı, hücre veya inflamatuvar eksüda ile dolarak radyoopak hale gelmesi sonucunda, içi havayla dolu açık bronşların opak parankim zemininde koyu (hipodens/radyolüsent) tübüler hatlar biçiminde seçilmesidir ve lezyonun **akciğer parankimi içinde** olduğunu kanıtlar (B doğru). Eş dansiteli komşu yapıların birbirinin sınırını silmesi hava bronkogramı değil **silüet işareti**dir ve lezyonun akciğer dışında olduğunu göstermez (A yanlış). X-ışınına tanjansiyel bir kitlenin göğüs duvarıyla geniş açı oluşturması plevral/ekstraparankimal kitle (örneğin ekstraplevral işaret) bulgusudur (C yanlış). Hava bronkogramının tanımı doğru verilse de bu bulgu lezyonun spesifik olarak hangi lob veya segmentte yer aldığını tek başına belirlemez, yalnızca parankimal lokalizasyonu gösterir (D yanlış). Komşu eş dansiteli dokuların sınırını silme olgusu yine silüet işaretinin tanımıdır ve lob/segment komşuluğunu (ör. sağ orta lob-kalp sınırı) belirlemede kullanılır (E yanlış).",
     "id": "K3_2021-2022_Q97"
   },
   {
@@ -6979,7 +6979,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "PA akciğer grafisinde kardiyovasküler gölgenin sol kenarını yukarıdan aşağıya doğru sırasıyla **aort topuzu, pulmoner konus / arter segmenti, sol atriyal apendiks ve sol ventrikül** oluşturur.",
+    "explanation": "Posteroanterior akciğer grafisinde kalbin sol kenarını yukarıdan aşağıya sırasıyla **aort topuzu, pulmoner konus (ana pulmoner arter), sol atriyum (sol atriyal apendiks) ve sol ventrikül** oluşturur (D doğru). A seçeneğinde pulmoner arter ile sol ventrikül arasındaki sol atriyal apendiks segmenti atlanmıştır (A yanlış). B seçeneğinde en üstteki aort topuzu eksiktir ve sol kenarda yer almayan sağ atriyum hatalı olarak eklenmiştir (B yanlış). C seçeneğinde en üst konturu oluşturan aort topuzu dışarıda bırakılmıştır (C yanlış). E seçeneğinde kalbin sağ tarafında ve ön yüzünde bulunan sağ atriyum ile sağ ventrikül hatalı olarak sol kenar yapıları arasında sayılmıştır (E yanlış).",
     "id": "K3_2021-2022_Q98"
   },
   {
@@ -7425,7 +7425,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "**Bempedoik asit**, hepatik kolesterol biyosentez yolağında HMG-CoA redüktazın hemen ön basamağında yer alan **ATP-sitrat liyaz (ACL)** enzimini inhibe ederek hücre içi kolesterol sentezini azaltır ve LDL reseptör ekspresyonunu artırarak dolaşımdaki LDL miktarını düşürür.",
+    "explanation": "Bempedoik asit, hepatik kolesterol biyosentez yolağında HMG-CoA redüktazın bir ön basamağındaki adenozin trifosfat sitrat liyaz (ATP-sitrat liyaz / ACL) enzimini inhibe ederek hücre içi kolesterol sentezini düşürür, LDL reseptör ekspresyonunu artırır ve plazma LDL miktarını azaltır (D doğru). Ezetimib ince bağırsak fırçamsı kenarındaki NPC1L1 taşıyıcı proteinine bağlanarak kolesterol emilimini artırmaz, aksine selektif olarak inhibe edip azaltır (A yanlış). Mipomersen apo B-100 mRNA'sına bağlanan bir antisens oligonükleotid olup apo B-100 sentezini artırarak değil, inhibe ederek VLDL ve LDL üretimini azaltır (B yanlış). Statinlerin doğrudan etki yeri DNA değil, kolesterol sentezinin hız kısıtlayıcı enzimi olan HMG-CoA redüktazdır; hücre içi kolesterol düşünce kompansatuvar olarak LDL reseptör düzeyi azalmaz, aksine artar (C yanlış). PCSK9 inhibitörleri (evolokumab, alirokumab) LDL partiküllerine değil dolaşımdaki PCSK9 proteinine bağlanarak PCSK9'un LDL reseptörlerini lizozomal yıkıma göndermesini önler ve böylece LDL'nin reseptörlerce temizlenmesini kolaylaştırır (E yanlış).",
     "id": "K3_2022-2023_Q11"
   },
   {
@@ -7491,7 +7491,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "**Antimuskarinik ajanlar (ipratropium, tiotropium)**, parasempatik bronkokonstriktör tonusu bloke etmelerinin yanı sıra presinaptik ve mast hücre düzeyinde asetilkolin aracılı mediyatör ve mukus salınımını engelleyerek hava yollarını rahatlatırlar.",
+    "explanation": "Antimuskarinik ilaçlar (ipratropium, tiotropium), bronş düz kasındaki M3 reseptörlerini bloke etmelerinin yanı sıra kolinerjik uyarının mast hücrelerinden bronkokonstriktör otakoid salınımını ve submukozal bezlerden mukus sekresyonunu artırmasını da engelleyebilirler (E doğru). Betamimetikler (salbutamol, formoterol vb.) bronş düz kasındaki beta-2 adrenerjik reseptörleri inhibe etmez, tam tersine agonistik olarak uyararak (aktive ederek) hücre içi cAMP'yi artırır ve bronkodilatasyon yaparlar (A yanlış). Glukokortikoidler güçlü antiinflamatuvar etkileriyle hava yolu ödemini ve mukus üretimini baskılasalar da bronş düz kasını doğrudan gevşeten akut bir bronkodilatasyon etkileri yoktur (B yanlış). Teofilin fosfodiesteraz enzimini aktive etmez, non-selektif olarak inhibe eder (ayrıca proinflamatuvar hücrelerde egemen izoenzim FDE3 değil esasen FDE4'tür) (C yanlış). Montelukast sisteinil lökotrien (CysLT1) reseptörlerini aktive eden bir agonist değil, bu reseptörlere yarışmalı olarak bağlanıp bloke eden bir reseptör antagonistidir (D yanlış).",
     "id": "K3_2022-2023_Q13",
     "repeats": [
       {
@@ -8085,7 +8085,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "İdiyopatik Pulmoner Fibrozis (İPF) tanısı konulurken bağ dokusu hastalıklarına ikincil pulmoner tutulumları dışlamak amacıyla hastada belirgin eklem veya deri semptomu olmasa dahi **otoimmün romatolojik belirteçler** (ANA, RF, anti-CCP) taranmalıdır.",
+    "explanation": "İdiyopatik Pulmoner Fibrozis (İPF) bir dışlama tanısı olduğundan, hastada eklem veya deri gibi ekstra-pulmoner romatolojik bulgu olmasa dahi bağ dokusu hastalıklarına sekonder Olağan İnterstisyel Pnömoniyi (UIP) ekarte etmek için kanda otoantikor/romatolojik belirteçlere (ANA, RF, anti-CCP vb.) bakılması gereklidir (C doğru). İPF sıklıkla 50 yaş altında kadınlarda değil, 60 yaş üzeri ileri yaşlı erkeklerde (çoğunlukla sigara öyküsü bulunanlarda) görülür (genç kadın hastalarda öncelikle bağ dokusu hastalığı ilişkili interstisyel akciğer hastalığı düşünülür) (A yanlış). Akciğer HRCT'de tipik bazal ve subplevral dağılımlı bal peteği görünümüyle uyumlu kesin UIP paterni saptandığında ve ikincil nedenler dışlandığında tanı için açık akciğer biyopsisi yapılması gerekmez (biyopsi yalnızca atipik/belirsiz radyolojik olgularda istenir) (B yanlış). PANTHER-IPF çalışması sistemik kortikosteroid + azatioprin kombinasyonunun İPF hastalarında mortalite ve hospitalizasyonu artırdığını kanıtladığından günümüzde bu immünsüpresif rejim kullanılmaz (D yanlış). Antifibrotik ilaçlar (pirfenidon, nintedanib) mevcut pulmoner fibrozisi geri döndürüp FVC'de yıllık 200 mL artış sağlamaz; yalnızca yıllık FVC kayıp hızını azaltarak hastalığın ilerlemesini yavaşlatır (E yanlış).",
     "id": "K3_2022-2023_Q30",
     "repeats": [
       {
@@ -8126,7 +8126,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "NCCN akciğer kanseri tarama kılavuzuna göre 50-80 yaş arasında, en az 20 paket/yıl sigara içen veya son 15 yılda bırakmış kişiler düşük doz toraks BT ile taranır; **<50 yaş ve sigara öyküsü bulunmayan bireyler** tarama kriterlerine girmez.",
+    "explanation": "NCCN akciğer kanseri tarama önerilerine göre düşük doz toraks BT taraması yüksek riskli sigara içicileri ve eski içiciler için önerilir; **50 yaşından küçük ve sigara kullanım öyküsü olmayan kişiler** tarama grubuna dahil edilmez (D yanlış). Yaş ve paket-yıl kriterlerini karşılayan halen sigara içicileri NCCN tarama grubunun temel bileşenidir (A doğru). 55-74 (ve güncellemelerde 50-80) yaş aralığında olup ≥30 paket/yıl sigara öyküsü taşıyanlar klasik NCCN Kategori 1 tarama grubunu oluşturur (B doğru). Sigarayı bırakma süresi 15 yıldan kısa olan ve yaş/paket-yıl eşiğini sağlayan eski içiciler tarama programına alınır (C doğru). ≥50 yaş ve ≥20 paket/yıl sigara öyküsüne ek olarak aile öyküsü, radon veya mesleki maruziyet gibi en az 1 ek risk faktörü bulunanlar NCCN tarama grubunda yer alır (E doğru).",
     "id": "K3_2022-2023_Q31"
   },
   {
@@ -8233,7 +8233,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Plevral efüzyonda akciğer dokusu ile göğüs duvarı arasında biriken sıvı ses iletimini engellediği için efüzyon alanında **taktil (vokal) fremitus belirgin şekilde azalır veya kaybolur**; taktil fremitus artışı ise lober pnömoni gibi parankimal konsolidasyonlarda izlenir.",
+    "explanation": "Sağ plevral efüzyonu olan bu hastada plevra yaprakları arasında biriken sıvı ses titreşimlerinin göğüs duvarına iletimini engellediği için efüzyon üzerinde **taktil fremitusta artış değil, belirgin azalma veya kaybolma** görülür; taktil fremitus artışı parankimal konsolidasyonda (lober pnömonide) beklenir (B yanlış). Sıvı birikimi akciğer ekspansiyonunu kısıtladığından inspeksiyonda sağ hemitoraks kaidesinin solunuma katılımında azalma izlenir (A doğru). Palpasyonda da aynı mekanizmayla etkilenen sağ hemitoraks kaidesinin solunuma katılımının azaldığı hissedilir (C doğru). Plevral sıvı tabakası solunum seslerini perdelediği için oskültasyonda skapula alt ucundan kaideye kadar solunum sesleri azalır veya kaybolur (D doğru). Plevra boşluğundaki sıvının ses iletim özelliği nedeniyle perküsyonda skapula alt ucundan kaideye kadar matite (küt ses) alınır (E doğru).",
     "id": "K3_2022-2023_Q34"
   },
   {
@@ -8877,7 +8877,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Tüm konjenital atriyal septal defekt olgularının yaklaşık %70-80'ini oluşturan ve septum sekundumun yetersiz gelişimi veya fossa ovalis bölgesindeki doku defektinden kaynaklanan en sık tip **Fossa Ovalis tipi (Ostiyum Sekundum) ASD**'dir.",
+    "explanation": "Tüm konjenital atriyal septal defekt (ASD) olgularının yaklaşık %70-80'ini oluşturan en sık ASD tipi, interatriyal septumun orta kısmında yer alan **Fossa Ovalis tipi (Ostiyum Sekundum) ASD**'dir (B doğru). Primum tip ASD septumun alt kesiminde endokardiyal yastık defekti olarak gelişir, tüm ASD'lerin yaklaşık %15-20'sini oluşturur ve özellikle Down sendromunda sık görülse de en yaygın tip değildir (A yanlış). Süperior vena kaval tip (sinüs venosus) ASD olguların yaklaşık %5-10'unu teşkil eder ve sıklıkla parsiyel pulmoner venöz dönüş anomalisiyle birliktedir (C yanlış). İnferior vena kaval tip sinüs venosus ASD daha da nadir görülen bir alt tiptir (D yanlış). Koroner sinüs tipi ASD tüm ASD olgularının %1'inden azını oluşturan en nadir formdur (E yanlış).",
     "id": "K3_2022-2023_Q52"
   },
   {
@@ -9042,7 +9042,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Aort arkı rekonstruksiyonlarında beyin ve organ iskemisini önlemek amacıyla derin hipotermik **total sirkülatuvar arreste** geçebilmek için hastaya kardiyopulmoner baypas ve arteryel/venöz kanülasyon işlemlerinin önceden eksiksiz yapılmış olması zorunludur.",
+    "explanation": "Aort arkı cerrahisinde organ ve beyin iskemisini önlemek amacıyla derin hipotermik total sirkülatuvar arreste (TSA) geçebilmek için öncesinde hastanın soğutulması ve sonrasında ısıtılması gerektiğinden kardiyopulmoner baypas (CPB) için gerekli arteriyel/venöz kateterizasyon ve kanülasyon işlemlerinin yapılmış olması şarttır (A doğru). TSA esnasında hasta ısısı 34-36 °C (normotermiye yakın/hafif hipotermi) düzeyinde tutulmaz; güvenli serebral ve sistemik organ koruması için derin hipotermi (18-20 °C; selektif antegrad perfüzyonla 24-28 °C) sağlanır (B yanlış). TSA sırasında retrograd serebral perfüzyon uygulanacaksa oksijenize kan inferior vena kavadan değil, kapaksız venöz drenaj yolu olan süperior vena kavadan (SVC) verilir (C yanlış). Total sirkülatuvar arrest infrarenal abdominal aort anevrizması ameliyatlarında değil, aort arkına kros-klemp konulamadığı arkus aorta anevrizmaları ve akut Tip A aort diseksiyonu cerrahisinde kullanılır (D yanlış). TSA sırasında en kritik risk nörolojik hasar olduğundan serebral oksimetri (NIRS), EEG ve nazofarengeal/timpanik ısı gibi serebral monitörizasyon yöntemleri hayati öneme sahiptir (E yanlış).",
     "id": "K3_2022-2023_Q57"
   },
   {
@@ -9174,7 +9174,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Subklavyan arterin torasik çıkışta basıya uğramasıyla seyreden arteriyel Torasik Outlet Sendromunun en sık konjenital anatomik nedeni yedinci servikal vertebradan kaynaklanan **servikal kottur** (veya anomalili fibröz bantlar).",
+    "explanation": "Subklavyan arterin torasik çıkışta sıkışmasıyla ortaya çıkan arteriyel Torasik Outlet Sendromunun (TOS) en sık anatomik sebebi 7. servikal vertebradan köken alan konjenital servikal kottur (E doğru). TOS olguları içinde en sık görüleni arteriyel TOS (<%1-2) değil, vakaların yaklaşık %95'ini oluşturan brakiyal pleksus basısına bağlı nörojenik TOS'tur (A yanlış). Nörojenik TOS olgularının büyük çoğunluğu non-spesifik/semptomatik tipte seyrettiği için rutin EMG ve sinir iletim testleri sıklıkla normal çıkar; dolayısıyla tanısı EMG ile kolayca konulamaz (B yanlış). Venöz TOS (Paget-Schroetter sendromu), altta yatan bir hiperkoagülabilite bozukluğu olmadan da kostoklaviküler aralıkta tekrarlayan mekanik ven basısına bağlı efor trombozu şeklinde gelişebilir (C yanlış). Klavikula kırığına bağlı anormal kallus formasyonları TOS'a neden olabilse de nörojenik TOS'un en sık sebebi değildir; en sık nedenler skalen kas anomalileri/spazmı ve fibröz bantlardır (D yanlış).",
     "id": "K3_2022-2023_Q61"
   },
   {
@@ -9207,7 +9207,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Farinks girişini çevreleyen immünolojik koruyucu lenfoid halka olan **Waldeyer halkası**; süperior nazofarengeal tonsil (adenoid), orofarinksteki bilateral palatin tonsiller, tubal tonsiller ve dil kökündeki lingual tonsil tarafından oluşturulur.",
+    "explanation": "Farinks girişini çepeçevre saran koruyucu lenfoid doku halkası olan Waldeyer halkası; nazofarinksteki faringeal tonsil (adenoid), orofarinksteki bilateral palatin tonsiller, dil kökündeki lingual tonsiller ve tubal tonsiller tarafından oluşturulur (C doğru). Retrofaringeal boşluk farinks arka duvarı ile peritonsiller boşluk arasında değil, bukkofaringeal fasya (farinks arka duvarı) ile derin servikal fasyanın alar/prevertebral yaprağı arasında yer alır (A yanlış). Nazofarinkste östaki tüpü kıkırdağının oluşturduğu kabarıntı Rosenmüller fossası değil torus tubariustur; Rosenmüller fossası ise torus tubariusun hemen arkasındaki derin çukurluktur (B yanlış). Alt üçüncü molar dişin arkasındaki üçgen mukoza alanı olan retromolar trigon orofarinksin değil, oral kavitenin (ağız boşluğunun) anatomik alt bölgesidir (D yanlış). Piriform sinüsler, postkrikoid bölge ile lateral/posterior duvarlar hipofarinksin alt bölümleridir; ancak vokal kordlar hipofarinksin değil larinksin (glottik bölgenin) yapısıdır (E yanlış).",
     "id": "K3_2022-2023_Q62"
   },
   {
@@ -10315,7 +10315,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Heparine bağlı trombositopeni (HIT Tip II) gelişen hastalarda standart veya DMA heparinin hemen kesilmesi gerekir; bu olgularda tromboz profilaksisi ve tedavisinde güvenle kullanılan parenteral heparinoid ajan **Danaparoiddir**.",
+    "explanation": "Heparine bağlı immün trombositopeni (HIT Tip II) gelişen hastalarda standart ve düşük molekül ağırlıklı heparinler kesilerek tromboz profilaksi ve tedavisinde trombosit faktör-4 antikorlarıyla düşük çapraz reaksiyon riskine sahip parenteral heparinoid ajan danaparoid (veya direkt trombin inhibitörleri) endikedir (A doğru). Oluşmuş fibrin pıhtısını plazminojeni plazmine çevirerek eriten ilaçlara antitrombositik değil trombolitik (fibrinolitik) ilaçlar denir; antitrombositik ilaçlar yalnızca trombosit agregasyonunu inhibe eder (B yanlış). İdeal bir antitrombotik ilacın antihemostatik etkinlik (kanama riski) / antitrombotik etkinlik oranı yüksek değil, mümkün olduğunca düşük olmalıdır (C yanlış). Standart heparin antitrombin III'e bağlanarak trombin-antitrombin (ve Faktör Xa-antitrombin) reaksiyon hızını azaltmaz, aksine yaklaşık 1000 kat hızlandırır (D yanlış). Drotrekogin alfa, hirüdinin değil insan aktive Protein C'sinin rekombinant türevidir (hirüdinin rekombinant türevleri lepirudin ve desirudindir) (E yanlış).",
     "id": "K3_2023-2024_Q3"
   },
   {
@@ -11237,7 +11237,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Antimuskarinik ilaçlar bronş düz kasındaki M3 reseptörlerini bloke ederek bronkodilatasyon sağlamanın yanı sıra mast hücrelerinden otakoid ve mukus salınımını azaltıcı katkı sağlarlar.",
+    "explanation": "Antimuskarinik ilaçlar (ipratropium, tiotropium) bronş düz kasındaki M3 reseptörlerini bloke ederek bronkodilatasyon sağlamanın yanında, kolinerjik uyarı ile mast hücrelerinden bronkokonstriktör otakoid mediyatör salınımını ve mukus sekresyonu artışını da engelleyebilirler (A doğru). Montelukast sisteinil lökotrien (CysLT1) reseptörlerini aktive ederek değil, bu reseptörleri yarışmalı olarak bloke ederek (antagonize ederek) antiinflamatuvar ve bronkodilatör katkı sağlar (B yanlış). Teofilin fosfodiesteraz enzimini aktive etmez, non-selektif biçimde inhibe eder; ayrıca proinflamatuvar hücrelerde baskın olan izoenzim FDE3 değil esasen FDE4'tür (C yanlış). Astım profilaksisinde kullanılan glukokortikoidler hava yolu mukozasındaki inflamasyonu güçlü biçimde baskılayıp beta-2 reseptör duyarlılığını artırsalar da bronş düz kasını gevşeten doğrudan akut bronkodilatör etkileri yoktur (D yanlış). Betamimetikler (beta-2 agonistler) bronş düz kasındaki beta-2 reseptörlerini inhibe ederek değil, aktive (uyararak) adenilat siklaz üzerinden cAMP artışıyla bronkodilatasyon oluştururlar (E yanlış).",
     "id": "K3_2023-2024_Q29",
     "repeats": [
       {
@@ -11550,7 +11550,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "İdiyopatik Pulmoner Fibrozis (İPF) tanısı koymadan önce romatolojik bağ dokusu hastalıklarına sekonder interstisyel akciğer tutulumunu kesin olarak ekarte etmek amacıyla hastada eklem bulgusu olmasa bile kanda **romatolojik otoantikor belirteçlerine** (ANA, RF vb.) bakılması şarttır.",
+    "explanation": "İdiyopatik Pulmoner Fibrozis (İPF) tanısı konulurken hastada eklem veya deri belirtisi bulunmasa dahi romatolojik bağ dokusu hastalıklarına sekonder interstisyel akciğer tutulumunu ekarte etmek için kanda romatolojik otoantikor belirteçlerine (ANA, RF, anti-CCP vb.) bakılması şarttır (C doğru). İPF genellikle 50 yaş altında kadınlarda değil, 60 yaş üstü erkeklerde ve sıklıkla sigara öyküsü olan bireylerde görülür (A yanlış). Akciğer HRCT'de tipik bazal/subplevral bal peteği görünümüyle karakterize kesin UIP paterni varsa tanı için açık akciğer biyopsisi yapılmasına gerek yoktur (B yanlış). PANTHER-IPF çalışması sistemik steroid ve azatioprin tedavisinin İPF'de mortalite ve hastaneye yatışı artırdığını gösterdiği için bu immünsüpresif rejim kullanılmaz (D yanlış). İPF tedavisinde kullanılan antifibrotik ajanlar (pirfenidon, nintedanib) fibrotik dokuyu geriletip FVC değerinde yıllık 200 mL artış sağlamaz; sadece yıllık FVC kaybını yavaşlatır (E yanlış).",
     "id": "K3_2023-2024_Q38",
     "repeats": [
       {
@@ -12278,7 +12278,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "**Endarterektomi**, arteriyel damar lümenini tıkayan aterosklerotik aterom plağının ve hastalıklı tunika intima tabakasının cerrahi olarak damar duvarından soyularak çıkartılması işlemidir.",
+    "explanation": "Not: Bu sorunun cevap anahtarında A şıkkı işaretlenmiş görünse de endarterektominin tıbben doğru tanımı E seçeneğidir; **endarterektomi**, arter lümenini daraltan veya tıkayan **aterom plağının hastalıklı intima ile birlikte cerrahi olarak damar iç cidarından soyularak çıkartılması işlemidir** (E doğru). Ven üzerine yapılan cerrahi kesi endarterektomi değil venotomi (flebotomi) olarak tanımlanır (A yanlış). Arter duvarının cerrahi olarak kesilip açılması işlemine arteriyotomi adı verilir (B yanlış). Arterin en dar noktasından yapılan basit bir kesi aterom plağının çıkarılmasını kapsamadığı için endarterektomi değildir (C yanlış). Arter içindeki trombüs veya embolinin balonlu Fogarty kateteriyle çıkarılması işlemi endarterektomi değil trombektomi veya embolektomidir (D yanlış).",
     "id": "K3_2023-2024_Q58"
   },
   {
@@ -12477,7 +12477,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Koroner arter baypas cerrahisinde (KABG) miyokardiyal perfüzyonun en kritik damarı olan Sol Ön İnen Arter (LAD) darlıklarında 10 yıllık açıklık oranı %90'ın üzerinde olan **İnternal Torasik Arter (LITA/LIMA)** ilk tercih edilen grefttir.",
+    "explanation": "Koroner arter baypas cerrahisinde (KABG) sol ventrikül miyokardının en geniş alanını besleyen **LAD (sol ön inen) arteri için ilk tercih edilen altın standart greft**, 10 yıllık açıklık oranı %90'ın üzerinde olan **İnternal Torasik Arter (LITA/LIMA)**'dir (D doğru). Sağ koroner arterde ≥%70 darlık (özellikle çok damar hastalığında veya iskemi bulgularında) cerrahi revaskülarizasyon endikasyonu taşır, endikasyon yokluğu ifadesi hatalıdır (A yanlış). Çok damar baypaslarında genellikle yalnızca bir adet LITA kullanılırken diğer damarlara birden fazla safen ven grefti konulduğu için sayıca en çok kullanılan greft büyük safen vendir, internal torasik arter ise özellikle LAD için altın standarttır (B yanlış). Geleneksel altın standart KABG yöntemi off-pump (çalışan kalpte) değil, kardiyopulmoner baypas pompası eşliğinde uygulanan on-pump cerrahidir (C yanlış). Sol ana koroner arter (LMCA) darlığında cerrahi müdahale sınırı %30 değil **≥%50 stenoz**dur (E yanlış).",
     "id": "K3_2023-2024_Q64"
   },
   {
@@ -12543,7 +12543,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Takayasu arteritinde **Tip IV Takayasu**, diğer sistemik damar tutulumlarına ek olarak veya izole şekilde **Pulmoner Arter tutulumunun** bulunduğu özel anatomik evredir.",
+    "explanation": "Klasik Lupi-Herrera sınıflamasında Takayasu arteritinin Tip IV formu, sistemik aort ve büyük dal tutulumlarına ek olarak veya izole biçimde pulmoner arter tutulumunun bulunduğu evreyi ifade eder (B doğru). Torasik Outlet Sendromu olgularının yaklaşık %95'ini nörojenik TOS oluşturduğundan venöz TOS (%3-5) nörojenik TOS'tan daha sık değil, çok daha nadirdir (A yanlış). Dev hücreli temporal arterit ikinci dekatta (gençlerde) değil, tipik olarak 50 yaş üstü bireylerde (en sık 7.-8. dekatlarda) görülür; genç kadınlarda görülen büyük damar vasküliti Takayasu arteritidir (C yanlış). Buerger hastalığında (tromboanjitis obliterans) anjiyografide kaba aterosklerotik plaklar izlenmez; distal küçük-orta arterlerde ani segmenter tıkanmalar ve çevrelerinde karakteristik 'tirbuşon' (corkscrew) kollateraller görülür (D yanlış). Eritromelalji ekstremitelerde şiddetli yanıcı ağrı ve kızarıklıkla seyretmekle birlikte bir vazospastik hastalık değil, paroksismal mikrovasküler vazodilatasyon ve hiperemi ile giden bir bozukluktur (vazospastik olan Raynaud fenomenidir) (E yanlış).",
     "id": "K3_2023-2024_Q66"
   },
   {
@@ -12675,7 +12675,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Kalp ve büyük damar yaralanmaları masif hipovolemik şok ve kardiyak tamponadla seyreder; resüsitasyonda geniş lümenli santral/femoral kateterlerle **hızlı kan ve volüm replasmanı** sağlanması hayat kurtarıcı basamaktır.",
+    "explanation": "Kalp ve büyük damar yaralanmalarında hızla gelişen hemorajik şok ve ölümcül hipotansiyona karşı kısa sürede masif kan ve sıvı resüsitasyonu yapabilmek için geniş lümenli santral/femoral erişim sağlayan **geçici hemodiyaliz kateteri gibi yüksek akımlı kateterlerin yerleştirilmesi** doğru acil yaklaşımı ifade eder (C doğru). Kalp duvarı laserasyonlarında perikard içi kanama hızla ölümcül kardiyak tamponada yol açtığından bekleyerek izlem yapılmaz, acil cerrahi onarım gerekir (A yanlış). Aktif büyük damar veya kalp travmasında hemodinamik instabilite varken böbrek fonksiyon testlerinin sonucunu beklemek hayatı tehdit eden gecikmeye yol açar (B yanlış). Miyokard kontüzyonu olan hastalarda geç dönem aritmiler ve kalp yetmezliği gelişebildiği için disritmi düzelse dahi yoğun bakımda ritim takibi sürdürülmelidir (D yanlış). İnen (desendan) torasik aort yaralanmalarında cerrahi yaklaşım supin pozisyonda median sternotomi değil, sağ lateral dekübit pozisyonda **sol posterolateral torakotomidir** (E yanlış).",
     "id": "K3_2023-2024_Q70"
   },
   {
@@ -12741,7 +12741,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Lenfödem, lenfatik kanalların konjenital aplazisi veya cerrahi/radyasyon hasarı sonucu interstisyel dokuda protein birikmesiyle oluşur; lenfödem kronikleştiğinde tam şifa sağlanamadığından **ömür boyu fizik tedavi ve bakım gerektirir**.",
+    "explanation": "Sınav anahtarında doğru seçenek olarak A işaretlenmiş olsa da fizyolojik olarak lenfatik sistem arteriyel dolaşım gibi yüksek akımlı değildir; santral pompası bulunmayan, kapakçıklar, lenfanjiomotorik kasılmalar ve kas pompasıyla işleyen düşük basınçlı ve düşük akımlı bir drenaj sistemidir (A doğru). Toplayıcı lenfatik kanallar venöz sistemde olduğu gibi lenfin geriye kaçışını (retrograt akımı) engelleyen çok sayıda tek yönlü biküspit kapakçığa sahiptir (B yanlış). Sekonder lenfödemin en sık görüldüğü malignite akciğer kanseri değil, aksiller lenf nodu diseksiyonu ve radyoterapi uygulanan meme kanseridir (C yanlış). Doppler ultrasonografi venöz yetmezlik veya DVT'yi dışlamak için kullanılsa da lenfödemin kesin tanı yöntemi değildir; lenfatik drenajı doğrudan gösteren temel tanı yöntemi lenfosintigrafidir (D yanlış). Lenfödem kronikleştikçe tam kür sağlanamadığından kompleks dekonjestif terapi, kompresyon giysileri ve cilt bakımını içeren ömür boyu tedavi gerektirir; dolayısıyla bilimsel açıdan doğru önerme E şıkkı olmasına karşın bu soru anahtarında hatalı şekilde A şıkkı işaretlenmiştir (E yanlış).",
     "id": "K3_2023-2024_Q72"
   },
   {
@@ -13465,7 +13465,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Hipertrofik kardiyomiyopatinin (HKM) patognomonik mikroskobik bulgusu, miyofibrillerin ve miyositlerin birbirleriyle düzensiz ve kaotik açılarla dizildiği **rastgele dizilenmiş hipertrofik septal miyositler (disarray)** görüntüsüdür.",
+    "explanation": "Hipertrofik kardiyomiyopatinin (HKM) karakteristik ve tanı koydurucu histopatolojik bulgusu, hipertrofik kardiyomiyositlerin ve miyofibrillerin birbirine paralel yerine kaotik ve düzensiz açılarla yerleştiği **rastgele dizilenmiş hipertrofik septal miyositler (miyosit disarray)** görüntüsüdür (B doğru). Yaygın miyokardiyal hemosiderin birikimi herediter veya transfüzyon ilişkili hemokromatoziste (demir yüklenmesinde) görülür (A yanlış). Aort kapakçıklarının harabiyeti ile büyük vejetasyonların saptanması enfektif endokardit bulgusudur (C yanlış). Sol atriyum dilatasyonu ile birlikte mitral kapak stenozu kronik romatizmal kalp hastalığının tipik sonucudur (D yanlış). Miyokardda nekroz ve inflamasyon odakları içinde takizoitlerin görülmesi *Toxoplasma gondii* miyokarditine özgüdür (E yanlış).",
     "id": "K3_2023-2024_Q91"
   },
   {
@@ -13640,7 +13640,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Sınıf II antiaritmik ilaçlar olan beta-blokörler miyokardda sempatik adrenerjik tonusu baskılar, cAMP düzeyini azaltır ve bu yolla faz 2 platosunda voltaj bağımlı **kalsiyum kanallarının açılmasını dolaylı olarak inhibe ederler**.",
+    "explanation": "Sınıf II antiaritmikler (beta-blokörler) miyokardda adrenerjik sempatik tonusu ve cAMP üretimini azaltır; bunun sonucunda faz 2 ve SA/AV düğüm aksiyon potansiyellerinde voltaj bağımlı kalsiyum kanallarının açılmasını dolaylı olarak inhibe ederler (D doğru). Sınıf I antiaritmikler yalnızca Na⁺ kanallarını bloke etmez; özellikle Sınıf Ia üyeleri (kinidin, prokainamid, dizopiramid) eşzamanlı olarak repolarizan K⁺ kanallarını da bloke ederek aksiyon potansiyeli süresini ve QT aralığını uzatırlar (A yanlış). Fenitoin Sınıf IV (kalsiyum kanal blokörü) değil, özellikle dijital toksisitesine bağlı ventriküler aritmilerde kullanılan Sınıf Ib sodyum kanal blokörüdür (Sınıf IV prototipleri verapamil ve diltiazemdir) (B yanlış). Na⁺, Ca²⁺ ve K⁺ kanalları ile beta reseptörlerini birlikte bloke eden geniş spektrumlu antiaritmik lidokain değil amiodarondur; lidokain selektif bir Sınıf Ib Na⁺ kanal blokörüdür (C yanlış). Torsades de pointes'e en az neden olan grup Sınıf III K⁺ kanal blokörleri değildir; tam tersine Sınıf III ilaçlar (sotalol, dofetilid, ibutilid) QT süresini uzatarak Torsades de pointes riskini en çok artıran gruplardan biridir (E yanlış).",
     "id": "K3_2024-2025_Q2"
   },
   {
@@ -13780,7 +13780,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Standart heparin, plazmada bulunan doğal serin proteaz inhibitörü **antitrombin III'ün (AT-III) aktivitesini yaklaşık bin kat artırarak** trombin (Faktör IIa) ve Faktör Xa'nın hızla inaktive edilmesini sağlar.",
+    "explanation": "Standart heparin, plazmada bulunan doğal serin proteaz inhibitörü antitrombin III'ün (AT-III) aktivitesini yaklaşık bin kat artırarak trombin (Faktör IIa) ve Faktör Xa'nın hızla inaktive edilmesini sağlar (C doğru). Antikoagülanların primer etkisi TxA2 aktivasyonu değildir; aksine koagülasyon faktörlerinin sentezini veya aktivitesini inhibe ederek pıhtılaşmayı önlerler (TxA2 sentezini inhibe eden ise aspirin gibi antiagreganlardır) (A yanlış). Düşük doz aspirin endotel PGI2'sinden ziyade trombositlerdeki COX-1'i irreversibl inhibe ederek TxA2 üretimini baskılar ve fibrin oluşumunu artırıp tromboz yapmaz, tam tersine trombosit agregasyonunu inhibe ederek antitrombotik etki gösterir (B yanlış). Antihemostatik etkinlik (kanama riski) / antitrombotik etkinlik oranı yüksek olmamalıdır; oranın yüksekliği güçlü kanama eğilimini gösterdiğinden iyi bir ajanda bu oran mümkün olduğunca düşük olmalıdır (D yanlış). Direkt etkili oral antikoagülanlar (dabigatran, rivaroksaban, apiksaban) fibrin oluşumunu artırmaz; trombin veya Faktör Xa'yı direkt inhibe ederek fibrinojenden fibrin oluşumunu engellerler (E yanlış).",
     "id": "K3_2024-2025_Q6"
   },
   {
@@ -13813,7 +13813,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Lipoprotein katabolizmasını ve klerensini artıran hipolipidemik ilaçlar (örneğin LDL reseptör ekspresyonunu artıran statinler veya LPL aktivitesini artıran fibratlar) plazma kolesterol ve trigliserid düzeylerini düşürerek **hipolipidemi** oluştururlar.",
+    "explanation": "Lipoprotein katabolizmasını ve reseptör aracılı klerensini artırmak (örneğin statinlerin veya PCSK9 inhibitörlerinin LDL reseptör sayısını artırarak LDL yıkımını hızlandırması ya da fibratların LPL üzerinden trigliseridden zengin lipoprotein katabolizmasını artırması) plazma lipidlerini düşürerek hipolipidemiye neden olur (B doğru). Antihiperlipidemik ilaçlar arterlerde ateroskleroz gelişimini hızlandırmaz; aterojenik lipidleri düşürerek plak progresyonunu yavaşlatır ve kardiyovasküler olayları azaltırlar (A yanlış). Bağırsaklardan kolesterol emilimini artırmak hiperlipidemiyi azaltmaz, aksine artırır; hiperlipidemiyi azaltan yaklaşım ezetimib ve safra asidi reçinelerinin yaptığı gibi kolesterol/safra emilimini inhibe etmektir (C yanlış). Hiperlipidemi tedavisinde lipoprotein sentezini artıran değil, hepatik VLDL/apo B sentezini (niasin, lomitapid, mipomersen) veya kolesterol sentezini (statinler) azaltan ilaçlar kullanılır (D yanlış). Kolestiramin HMG-CoA redüktaz enzimini inhibe etmez (bu statinlerin mekanizmasıdır); bağırsak lümeninde safra asitlerini bağlayarak enterohepatik dolaşıma geri dönüşünü engelleyen bir safra asidi sekestranıdır (E yanlış).",
     "id": "K3_2024-2025_Q7"
   },
   {
@@ -13912,7 +13912,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Dolaşımdaki lipoproteinlerin hepatik ve periferik dokularda reseptör aracılı katabolizmasını artırmak plazma lipid düzeylerinde düşüş sağlayarak terapötik hipolipidemik etki meydana getirir.",
+    "explanation": "Dolaşımdaki lipoproteinlerin hepatik ve periferik dokularda katabolizmasını ve klerensini artırmak (örneğin statinlerle LDL reseptör aracılı yıkımın veya fibratlarla lipoprotein lipaz aktivitesinin artırılması) kan lipid düzeylerini düşürerek hipolipidemi oluşturur (B doğru). Antihiperlipidemikler arterlerde ateroskleroz gelişimini hızlandıran ilaçlar değil, LDL ve trigliserid yükünü düşürerek ateroskleroz ilerlemesini engelleyen ajanlardır (A yanlış). Bağırsaktan kolesterol emilimini artırmak kan kolesterolünü yükseltir; hiperlipidemiyi azaltan mekanizma ezetimib gibi ajanlarla kolesterol emilimini azaltmaktır (C yanlış). Hiperlipidemi tedavisinde kullanılan ilaçlar lipoprotein sentezini artırmaz, aksine VLDL ve apo B sentezini (niasin, mipomersen, lomitapid) veya endojen kolesterol sentezini baskılar (D yanlış). Kolestiramin HMG-CoA redüktaz inhibitörü değildir (statinler bu enzimi inhibe eder); bağırsakta safra asitlerini bağlayıp fekal atılımını artıran safra asidi bağlayıcı bir reçinedir (E yanlış).",
     "id": "K3_2024-2025_Q10"
   },
   {
@@ -13978,7 +13978,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Tipik bakteriyel lober pnömonide hasta yüksek ateş, titreme, produktif balgam ile düşkün ve **toksik görünümdedir**; Mycoplasma veya viral kökenli atipik pnömonide ise klinik daha ılımlı seyreder ve hastanın **genel durumu genellikle iyidir**.",
+    "explanation": "Tipik bakteriyel lober pnömonide hasta yüksek ateş, üşüme-titreme ve pürülan balgam ile genel durumu bozuk ve toksik görünümdeyken; Mycoplasma veya viral etkenli atipik pnömonide klinik tablo daha hafif seyreder ve hastanın genel durumu genellikle iyidir (C doğru). Başlangıç şekilleri ters verilmiştir; tipik pnömoni ani ve gürültülü, atipik pnömoni ise halsizlik ve subfebril ateşle sinsi başlangıçlıdır (A yanlış). Öksürük karakteri ters verilmiştir; tipik pnömonide bol pürülan/pas renkli balgamlı öksürük ön planda iken, atipik pnömonide genellikle balgamsız kuru öksürük görülür (B yanlış). Streptococcus pneumoniae ve Haemophilus influenzae atipik değil klasik tipik pnömoni etkenleridir (atipik pnömoniye Mycoplasma pneumoniae, Chlamydophila pneumoniae ve Legionella pneumophila yol açar) (D yanlış). Tipik pnömonide fizik muayenede konsolidasyona bağlı bronşiyal solunum, matite ve ince raller duyulur; hışıltılı solunum (wheezing) ise tipik pnömoniden ziyade viral/atipik alt solunum yolu enfeksiyonlarında ve bronşiyolitte daha sıktır (E yanlış).",
     "id": "K3_2024-2025_Q12"
   },
   {
@@ -14151,7 +14151,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "**Nikorandil**, çift etki mekanizmalı bir antianginal olup vasküler düz kas hücrelerinde hem **ATP duyarlı potasyum (K_ATP) kanallarını açarak** hiperpolarizasyon ve arteriyoler dilatasyon yapar hem de nitrat benzeri NO açığa çıkarır.",
+    "explanation": "Nikorandil çift etki mekanizmalı bir antianginal olup damar düz kas hücrelerinde ATP duyarlı potasyum (K_ATP) kanallarını açarak hiperpolarizasyon üzerinden arteriyoler vazodilatasyon yapar ve aynı zamanda nitrat parçasıyla NO açığa çıkarır (B doğru). Molsidomin endoteliyal nitrik oksit sentaz (eNOS) enzimini uyararak etki göstermez; karaciğerde aktif metaboliti SIN-1'e dönüşerek sentazdan bağımsız biçimde doğrudan kendiliğinden NO salıveren bir NO donörüdür (A yanlış). Trimetazidin yağ asidi oksidasyonunu artırmaz; tam tersine mitokondriyal uzun zincirli 3-ketoaçil-KoA tiyolazı inhibe ederek yağ asidi oksidasyonunu azaltır ve iskemik kalp hücresinin oksijen tasarrufu sağlayan glukoz kullanımını artırır (C yanlış). Venüllerde selektif gevşeme yaparak preşarjı belirgin düşüren ilaçlar organik nitratlardır; kalsiyum kanal blokörü diltiazem ise venüllerden çok arteriyollerde vazodilatasyon yaparak art yükü azaltır ve SA/AV iletimi yavaşlatır (D yanlış). Pindolol intrinsik sempatomimetik aktiviteye (İSA) sahip bir beta-blokör olduğu için istirahat kalp hızını yeterince düşürmez ve miyokard oksijen tüketimini artırma riski nedeniyle angina pektoris tedavisinde tercih edilmez (E yanlış).",
     "id": "K3_2024-2025_Q17"
   },
   {
@@ -14217,7 +14217,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "**Karvedilol**, non-selektif beta-1 ve beta-2 adrenerjik reseptör blokajı yapmasının yanı sıra vasküler düz kas hücrelerindeki **alfa-1 reseptörleri bloke ederek** periferik vazodilatasyon oluşturan üçüncü kuşak bir antihipertansif ve kalp yetmezliği ilacıdır.",
+    "explanation": "Üçüncü kuşak bir beta-blokör olan karvedilol, non-selektif beta-1 ve beta-2 adrenerjik reseptör blokajına ek olarak vasküler düz kas hücrelerindeki alfa-1 reseptörleri bloke ederek periferik vazodilatasyon ve art yük azalması sağlar (A doğru). Karvedilol temel olarak alfa-1 ve beta reseptör blokörüdür; klinik vazodilatör etkisini sağlayan mekanizma güçlü kalsiyum kanal blokajı değil alfa-1 adrenerjik antagonizmasıdır (B yanlış). Endoteliyal NO salınımını artırarak vazodilatasyon ve antihipertansif etkinlik sağlayan üçüncü kuşak beta-blokör karvedilol değil nebivololdür (C yanlış). Karvedilol kardiyoselektif değildir, hem beta-1 hem beta-2 reseptörleri bloke ettiği için bronkokonstriksiyona yol açabileceğinden astım hastalarında kontrendikedir (kardiyoselektifler metoprolol, bisoprolol ve nebivololdür) (D yanlış). Damar düz kasında K_ATP kanallarını açarak vazodilatasyon oluşturan etki karvedilole değil tilisolol veya nikorandil/minoksidil grubuna aittir (E yanlış).",
     "id": "K3_2024-2025_Q19"
   },
   {
@@ -14411,7 +14411,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "KOAH'ta nefes darlığı ve hava yolu kısıtlılığı kalıcı ve ilerleyicidir; semptomların gün içinde belirgin değişkenlik göstermesi ve özellikle gece ya da sabaha karşı nöbetler halinde alevlenmesi KOAH'ın değil, **Astımın** tipik klinik özelliğidir.",
+    "explanation": "KOAH'ta solunum semptomları süreklidir ve ilerleyici seyreder; semptomların **gün içinde değişkenlik göstermesi, özellikle gece ve sabaha karşı artış göstermesi KOAH'ın değil astımın tipik klinik özelliğidir** (C yanlış). KOAH hava yollarında tam olarak geri dönüşlü olmayan, büyük ölçüde kalıcı hava akımı kısıtlanmasıyla karakterizedir (A doğru). Kronik inflamasyon ve ortak tütün maruziyeti nedeniyle KOAH, akciğer kanseri gelişimi için bağımsız bir risk faktörüdür (B doğru). KOAH akut alevlenmelerinin en sık tetikleyicisi viral ve bakteriyel solunum yolu enfeksiyonlarıdır (D doğru). İstirahatte arter kan gazında PaO2 değerinin ≤55 mmHg olması uzun süreli oksijen tedavisi (USOT) endikasyonunun temel ölçütüdür (E doğru).",
     "id": "K3_2024-2025_Q25"
   },
   {
@@ -14609,7 +14609,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Akciğerde 6 cm boyutunda kist hidatik (Echinococcus granulosus) saptanan olgularda rüptür ve anafilaksi riskini önlemek için öncelikle **cerrahi müdahale (kistotomi ve kapitonaj)** yapılmalı, operasyon sonrasında nüksü engellemek için albendazol verilmelidir.",
+    "explanation": "Akciğer sağ alt lobda 6 cm boyutunda kist hidatik saptanan hastada rüptür, bronş içine açılma ve anafilaksi riski yüksek olduğundan **öncelikle cerrahi ile kistin çıkarılması (kistotomi ve kapitonaj) ve operasyon sonrası nüksü önlemek için 3 ay albendazol tedavisi** uygulanmalıdır (B doğru). Akciğerdeki 6 cm gibi büyük bir kist tek başına 6 ay albendazolle iyileşmez ve medikal tedavi kist duvarını zayıflatıp rüptüre yol açabilir (A yanlış). Cerrahi öncesinde (preoperatif) albendazol başlanması kist membranını dejenere ederek ameliyat öncesi ani rüptür ve boğulma/anafilaksi riskini artırdığından akciğer kist hidatiğinde kaçınılır (C yanlış). 6 cm'lik akciğer kist hidatiği spontan iyileşmez ve tedavisiz izlemde rüptür, ampiyem ve hemoptizi riski taşır (D yanlış). İnhaler bronkodilatör veya steroid tedavilerinin *Echinococcus granulosus* paraziti üzerinde hiçbir terapötik etkisi yoktur (E yanlış).",
     "id": "K3_2024-2025_Q31"
   },
   {
@@ -14815,7 +14815,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "**Postprimer (sekonder) tüberküloz**, daha önce basil ile karşılaşmış bireylerde bağışıklığın bozulması sonucu basillerin reaktivasyonuyla ortaya çıkan ve çocuklukta değil, öncelikle **erişkin yaş grubunda** görülen tüberküloz türüdür.",
+    "explanation": "**Postprimer (sekonder) tüberküloz**, önceden enfekte olmuş bireylerde hücresel bağışıklığın düşmesiyle latent basillerin reaktivasyonundan kaynaklanır ve öncelikle çocukluk yaş grubunda değil **erişkin yaş grubunda** görülür (A yanlış). Postprimer tüberkülozda aşırı duyarlılık yanıtına bağlı kazeifikasyon nekrozunun bronşlara boşalması sonucu akciğer üst loblarda kavite formasyonu sık izlenir (B doğru). Aktif tüberkülozun klasik sistemik yakınmaları arasında subfebril ateş, istemsiz kilo kaybı ve gece terlemesi yer alır (C doğru). Progresif primer tüberküloz, basili sınırlandıramayan küçük çocuklarda ve immün yetmezliği bulunan bireylerde sık gelişir (D doğru). Standart 6 aylık antitüberküloz tedavi sürecinin sonunda kür sağlandığından emin olmak veya gerekirse tedaviyi uzatmak için klinik, radyolojik ve mikrobiyolojik değerlendirme yapılır (E doğru).",
     "id": "K3_2024-2025_Q37"
   },
   {
@@ -14994,7 +14994,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Daha önce koroner anjiyografi sonrası stent implantasyonu uygulanmış olan hastalar kanıtlanmış aterosklerotik kardiyovasküler hastalık nedeniyle **Çok yüksek risk** grubundadır; 2019 ESC kılavuzuna göre bu hastada hedef **LDL kolesterol düzeyi <55 mg/dL** olmalıdır.",
+    "explanation": "Üç yıl önce koroner anjiyografi sonrası stent implantasyonu yapılmış olan hastada belgelenmiş aterosklerotik kardiyovasküler hastalık mevcuttur; bu nedenle hasta **Çok yüksek risk** grubundadır ve 2019 ESC kılavuzuna göre hedef **LDL kolesterol düzeyi <55 mg/dL** olmalıdır (E doğru). Düşük risk grubunda bile güncel 2019 ESC hedefi <160 değil <116 mg/dL olup stent öyküsü bulunan bu hasta düşük risk sınıfında değildir (A yanlış). Orta risk grubunun LDL hedefi <130 değil <100 mg/dL'dir ve koroner stentli bir hasta orta risk kategorisine alınamaz (B yanlış). Koroner arter hastalığı kanıtlanmış bir bireyin risk grubunda olmadığı ve <190 mg/dL hedefinin yeterli olduğu ileri sürülemez (C yanlış). Yüksek risk hedefi <70 mg/dL olmakla birlikte belgelenmiş koroner stent öyküsü hastayı yüksek riskten bir üst basamak olan çok yüksek risk (<55 mg/dL) grubuna taşır (D yanlış).",
     "id": "K3_2024-2025_Q42"
   },
   {
@@ -15187,7 +15187,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "ACC/AHA kalp yetmezliği sınıflamasında **Evre B**, belirgin bir kalp yetmezliği semptomu veya fizik muayene bulgusu bulunmayan ancak sol ventrikül hipertrofisi gibi yapısal kardiyak hasarı olan **asemptomatik hastaları** tanımlar.",
+    "explanation": "AHA/ACC kalp yetersizliği evrelemesinde **Evre B (Pre-kalp yetersizliği)**, henüz hiçbir kalp yetersizliği semptomu bulunmayan ancak **sol ventrikül konsantrik hipertrofisi** gibi yapısal kalp hastalığı veya asemptomatik ventrikül disfonksiyonu olan hastaları tanımlar (D doğru). Yapısal kalp hastalığı ve semptomu olmayan yalnızca obezite/hipertansiyon gibi risk faktörlü hastalar Evre B değil **Evre A** (risk altında) grubundadır (A yanlış). Dispne ve periferik ödem gibi kalp yetersizliği semptomları gelişmiş hastalar Evre B'yi geçmiş olup **Evre C** (semptomatik KY) grubuna girer (B yanlış). Sık hastane yatışı gerektiren ve standart tedaviye refrakter/kısmi yanıt veren hastalar son dönem **Evre D** kalp yetersizliğidir (C yanlış). MI sonrası kapak hastalığı gelişmiş ve cerrahi müdahale aşamasına gelmiş hastalar tipik olarak semptomatik/ileri evre değerlendirilir; kılavuzdaki saf asemptomatik yapısal hastalık tanımını doğrudan Evre B olarak D seçeneği karşılar (E yanlış).",
     "id": "K3_2024-2025_Q47",
     "repeats": [
       {
@@ -15327,7 +15327,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "**Pelvik konjesyon sendromunda** over ve pelvik venöz reflü nedeniyle hastaların uyluk posteriorunda, vulvada ve perinede variköz venöz genişlemeler izlenirken bimanuel muayenede belirgin adneksiyal hassasiyet saptanır.",
+    "explanation": "Pelvik konjesyon sendromunda gonadal ve pelvik venlerdeki kapakçık yetmezliği sonucu uyluk posteriorunda, vulvada ve perine bölgesinde variköz venöz dilatasyonlar gelişirken pelvik muayenede belirgin adneksiyal hassasiyet saptanır (C doğru). Pelvik konjesyon sendromu hiç doğum yapmamış (nullipar) kadınlarda değil, gebelik sırasındaki hormonal etki ve pelvik venöz kapasite/akım artışına bağlı olarak birden fazla doğum yapmış (multipar) üreme çağındaki kadınlarda sık görülür (A yanlış). Etiyolojide yalnızca iliofemoral derin ven trombozu yer almaz; başlıca nedenler primer over veni kapakçık yetmezliği ile Nutcracker (sol renal ven basısı) ve May-Thurner gibi venöz kompresyon sendromlarıdır (B yanlış). Abdominal ve transvajinal renkli Doppler ultrasonografi dilate pelvik venleri ve retrograd reflü akımını gösterebildiği için ilk basamak tanıda oldukça değerlidir ve başlangıç değerlendirmesinde tek başına yetersiz değildir (D yanlış). Güncel tedavide ilk ve kesin yaklaşım bilateral ooferektomi değildir; standart ve etkin tedavi endovasküler over/pelvik ven embolizasyonudur (cerrahi yalnızca medikal ve endovasküler tedaviye dirençli seçilmiş olgularda düşünülür) (E yanlış).",
     "id": "K3_2024-2025_Q51"
   },
   {
@@ -15393,7 +15393,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Kardiyak cerrahide Ross prosedüründe hastanın hastalıklı kireçlenmiş aort kapağı eksize edilerek yerine hastanın kendi sağlam **pulmoner kapağı (pulmoner otogreft)** nakledilir.",
+    "explanation": "Kardiyak cerrahide **Ross prosedürü** olarak bilinen otogreft ameliyatında hastanın hastalıklı **aort kapağı** çıkartılır ve yerine anatomik geometrisi ile büyüme potansiyeli aort köküne uyum sağlayabilen hastanın kendi sağlam **pulmoner kapağı** nakledilir (sağ ventrikül çıkım yoluna ise homogreft konulur) (D doğru). Atriyoventriküler kapaklar (mitral ve triküspit) korda tendinea ve papiller kas aparatına sahip olduğundan birbirlerinin veya semiluner kapakların yerine otogreft olarak değiştirilmez (A yanlış). Triküspit kapak patolojilerinde sağlam mitral kapağın çıkarılıp sağ kalbe taşınması hem hemodinamik hem anatomik olarak uygulanmaz (B yanlış). Triküspit kapak yaprakçık ve subvalvüler aparat yapısı nedeniyle yüksek sistemik basınçlı aort kapağının yerine nakledilemez (C yanlış). Triküspit kapak hastalığında pulmoner kapağın triküspit pozisyona otogreft olarak aktarılması gibi bir cerrahi yöntem tanımlanmamıştır (E yanlış).",
     "id": "K3_2024-2025_Q53"
   },
   {
@@ -15459,7 +15459,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Koroner baypas cerrahisinde internal torasik arterin (LITA/RITA) yanı sıra sağ gastroepiploik arter de anatomik pedikülü korunarak **in-situ arteryel greft** olarak kullanılabilir; dolayısıyla ITA in-situ kullanılabilen tek greft değildir.",
+    "explanation": "Koroner arter baypas greftlemede (CABG) anatomik pedikülü korunarak yerinde (in-situ) kullanılabilen tek greft internal torasik arter (LITA/RITA) değildir; sağ gastroepiploik arter (ve nadiren inferior epigastrik arter) de pediküllü in-situ arteryel greft olarak kullanılabilir (E doğru). Kronik böbrek yetmezliği hastalarında ileride hemodiyaliz için ön kolda arteriyovenöz fistül (AVF) açılması gerekeceğinden ve radyal arter sıklıkla kalsifik olabildiğinden sağ dominant dolaşımda dahi RCA stenozu için radyal arter grefti tercih edilmez (A yanlış). Sol dominant dolaşımda hem KBY hastasında ön kol damarlarının AVF erişimi için korunması zorunlu olduğundan hem de RCA zaten küçük bir alanı beslediğinden radyal arter en uygun greft değildir (B yanlış). CABG'de en uzun açık kalım oranına sahip altın standart greft LITA olsa da bir hastada çoğunlukla birden fazla damara baypas yapıldığı için sayısal olarak en fazla kullanılan greft büyük safen ven (VSM) greftidir (C yanlış). Hiberne miyokard canlılığını koruyan ancak kronik iskemi nedeniyle geçici olarak kasılması azalmış doku olduğundan revaskülarizasyon (CABG) ile kontraktilitesini geri kazanabilir; dolayısıyla transplantasyon değil CABG düşünülmelidir (D yanlış).",
     "id": "K3_2024-2025_Q55"
   },
   {
@@ -15492,7 +15492,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "**Akut Aortik Sendrom** kavramı aort diseksiyonu, intramural hematom ve penetran aterosklerotik ülseri kapsar; rüptüre olmamış kronik **aortik anevrizmalar akut aortik sendromlar içinde yer almaz**.",
+    "explanation": "Akut aortik sendrom kavramı akut aort diseksiyonu, intramural hematom ve penetran aterosklerotik aort ülseri tablolarını kapsar; rüptüre olmamış kronik aortik anevrizmalar akut aortik sendrom sınıflaması içinde yer almazlar (E doğru). Akut aort diseksiyonu saatler içinde yüksek mortaliteyle ilerleyen acil bir durum olduğundan kreatinin 2.2 mg/dL diye saatlerce hidrasyon bekleyerek BT anjiyografiyi geciktirmek doğru değildir; derhal hızlı görüntüleme (acil BT anjiyo veya yatak başı transözofageal EKO) yapılmalıdır (A yanlış). Desendan aortayı tutan komplike olmayan Tip 3 (Stanford Tip B) aort diseksiyonlarında en başarılı ilk seçenek açık cerrahi değil, agresif anti-impuls medikal tedavidir (komplike olgularda ise öncelikle TEVAR tercih edilir) (B yanlış). Spinal kord iskemisini önlemek için preoperatif BOS drenaj kateteri izole infrarenal abdominal aort cerrahisinde değil, Adamkiewicz arterini riske atan torakoabdominal aort anevrizması (TAAA) cerrahisinde uygulanır (C yanlış). Endoleak tanımı açık asendan aorta cerrahisi sonrası gelişen perikard içi kanamaları değil, endovasküler stent-greft onarımı (EVAR/TEVAR) sonrası anevrizma kesesi içine devam eden kan kaçağını ifade eder (D yanlış).",
     "id": "K3_2024-2025_Q56"
   },
   {
@@ -15558,7 +15558,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Sağ kalp kateterizasyonunda pulmoner arter basınçlarını, pulmoner kapiller uç basıncını (PCWP) ve termodilüsyon yöntemiyle kardiyak debiyi (output) ölçmek için kullanılan standart kateter **Swan-Ganz kateteridir**.",
+    "explanation": "Sağ kalp kateterizasyonunda pulmoner arter basınçlarını, pulmoner kapiller uç basıncını (PCWP) ve termodilüsyon yöntemiyle kardiyak outputu (debiyi) ölçmek için kullanılan balonlu pulmoner arter kateteri Swan-Ganz kateteridir (A doğru). Kemoterapi uygulamaları için geniş lümenli yüksek akımlı kalıcı hemodiyaliz kateterleri değil, enfeksiyon ve tromboz riski daha düşük olan subkutan kemoterapi port kateterleri veya tünelli santral venöz kateterler tercih edilir (B yanlış). Kronik böbrek yetmezliği hastalarında enfeksiyon ve santral venöz darlık riskini en aza indiren en iyi ve kalıcı hemodiyaliz erişim yolu kateter değil, nativ arteriyovenöz fistüldür (AVF) (C yanlış). Hemogram gibi rutin kan örneklemeleri için port kateteri iğnelemek kateter enfeksiyonu ve lümen tıkanması riskini artırdığından tercih edilmez; rutin örneklemeler periferik venden alınır (D yanlış). Arteriyovenöz fistül cerrahisi ağırlıklı olarak KBY'de diyaliz için uygulansa da yalnızca KBY hastalarıyla sınırlı değildir; seçilmiş yüksek riskli periferik arter baypaslarında akımı artırıp greft açıklığını korumak amacıyla distal AV fistül de oluşturulabilir (E yanlış).",
     "id": "K3_2024-2025_Q58"
   },
   {
@@ -15690,7 +15690,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Kalp nakli alıcılarında postoperatif yoğun immünsüpresif tedavi uygulanacağı için latent enfeksiyon odağı oluşturan ve perforasyon/sepsis riski taşıyan **aktif peptik ülser ve divertikülit varlığı transplantasyon için kontrendikasyondur**.",
+    "explanation": "Kalp nakli sonrası yoğun immünsüpresif tedavi ve yüksek doz kortikosteroid verileceği için gastrointestinal perforasyon, masif kanama ve sepsis riski doğuran aktif peptik ülser ve aktif divertikülit varlığı kalp nakli için kontrendikasyon sebepleri arasındadır (A doğru). ABO kan grubu uyuşmazlığı akut hücresel rejeksiyondan ziyade transplantasyon sonrası dakikalar/saatler içinde gelişen hiperakut humoral rejeksiyonun en önemli nedenidir (akut rejeksiyonun başlıca sebebi donör HLA antijenlerine karşı T hücre yanıtıdır) (B yanlış). Kalp nakli yapılan alıcılarda en sık primer endikasyon izole kalp kapak hastalıkları değil, son dönem dilate (non-iskemik) ve iskemik kardiyomiyopatilerdir (C yanlış). Donör kalbi soğuk iskemiye böbrek (24 saat) kadar dayanıklı değildir; güvenli kabul edilen maksimum soğuk iskemik süre 12-24 saat değil, yaklaşık 4-6 saattir (D yanlış). Alıcı ve verici atriyumlarının karşılıklı anastomoze edildiği teknik bikaval teknik değil, klasik biatrial (Lower-Shumway) tekniktir; bikaval teknikte süperior ve inferior vena kavalar uç uca dikilir (E yanlış).",
     "id": "K3_2024-2025_Q62"
   },
   {
@@ -16901,7 +16901,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Solunum sistemi gelişiminde doğumdan sonra yaklaşık **8 yaşına kadar alveollerin sayısı çoğalır (multiplikasyon evresi)**; 8 yaşından sonra ise yeni alveol oluşumu durur ve mevcut alveollerin çapı genişleyerek büyüme devam eder.",
+    "explanation": "Çocuklarda solunum sistemi gelişiminde doğumdan sonra yaklaşık 8 yaşına kadar yeni alveol oluşumuyla alveol sayısı artar (alveolarizasyon/multiplikasyon evresi), 8 yaşından sonra ise sayısal artış durup mevcut alveollerin çapı ve hacmi genişler (C doğru). Alveol sayısındaki çoğalma ergenliğe kadar devam etmez; sayısal gelişim büyük ölçüde 8 yaşına kadar tamamlanır ve sonrasında yalnızca boyutsal genişleme sürer (A yanlış). Alveol sayısı doğumdan sonra azalmaz; doğumda yaklaşık 20-50 milyon olan sayı hızlı bölünmelerle 8 yaşına kadar 300-500 milyona çıkar (B yanlış). Alveollerin çap artışı yalnızca ilk iki yılla sınırlı değildir; aksine ilk yıllarda esasen sayı artışı baskın olup çap ve hacim genişlemesi 8 yaştan sonra göğüs kafesi büyümesi tamamlanana kadar devam eder (D yanlış). Alveoller yalnızca yaşamın ilk yılında gelişmez; intrauterin 36. haftadan itibaren başlayan alveolarizasyon doğum sonrası yaklaşık 8 yaşına kadar aktif biçimde sürer (E yanlış).",
     "id": "K3_2025-2026_Q3"
   },
   {
@@ -17544,7 +17544,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Kısa etkili beta-2 reseptör agonistleri (SABA - salbutamol vb.) dakikalar içinde bronş düz kasını gevşeterek akut hava yolu darlığını hızla giderdiğinden **akut astım ataklarının ve semptomlarının hızlı tedavisinde** kurtarıcı olarak tercih edilir.",
+    "explanation": "Astım tedavisinde kısa etkili beta-2 agonistlerin (SABA; salbutamol, terbutalin) uzun etkililerden ayrılmasını sağlayan temel klinik özellik, dakikalar içinde bronkodilatasyon başlatmaları nedeniyle çoğunlukla **akut astım ataklarını ve bronkospazmı hızlı şekilde tedavi etmek için** kurtarıcı olarak kullanılmalarıdır (D doğru). Uzun etkili beta-2 agonistler (LABA; salmeterol vb.) geç başlangıçlı olup akut semptomları hızla gidermek için değil, İKS ile kombine uzun süreli idame kontrolü için kullanılır (A yanlış). SABA'lar yalnızca gece semptomlarında değil, günün herhangi bir saatinde gelişen akut nefes darlığında kurtarıcı olarak uygulanır (B yanlış). LABA'ların taşikardi, tremor, hipokalemi gibi yan etkileri vardır ve tek başlarına (İKS olmadan) kullanıldıklarında astıma bağlı mortalite riskini artırabilirler (C yanlış). SABA'lar egzersiz öncesi bronkospazmı önlemek için kullanılabilse de asıl kullanım alanları yalnızca egzersizle sınırlı değildir, tüm akut atakların tedavisidir (E yanlış).",
     "id": "K3_2025-2026_Q22"
   },
   {
@@ -17639,7 +17639,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Mesleksel maruziyete bağlı astım şüphesini objektif ve kesin olarak doğrulamak için altın standart yöntem, şüpheli mesleki ajan ile kontrollü koşullarda yapılan **Spesifik Bronş Provokasyon Testidir**.",
+    "explanation": "Mesleksel maruziyete bağlı astım şüphesinde nedensel ajanı ve hava yolu hiperreaktivitesini kesin ve objektif olarak doğrulayan altın standart yöntem, şüpheli mesleki ajanla kontrollü ortamda yapılan **Spesifik Bronş Provokasyon Testidir** (A doğru). Seri pik akım (PEF) ölçümünün mesleksel astımı göstermesi için yalnızca işten uzak kalındığında değil hem çalışılan iş günlerinde hem de işten uzak dönemlerde karşılaştırmalı yapılması gerekir; aynı şık içinde yer alan spesifik IgE ölçümü de yalnızca alerjik duyarlanmayı (sensitizasyonu) gösterir, klinik astım atağıyla nedenselliği tek başına kanıtlamaz (B yanlış). İş yerindeki ortam hava kalitesinin ölçülmesi maruziyet düzeyini saptasa da hastadaki spesifik bronşiyal yanıtı doğrulayan tanısal bir klinik test değildir (D yanlış). Yüksek çözünürlüklü bilgisayarlı tomografi (HRCT) bronşektazi veya interstisyel akciğer hastalıklarını gösterir, mesleksel astım tanısında doğrulayıcı primer test değildir (E yanlış).",
     "id": "K3_2025-2026_Q25"
   },
   {
@@ -17705,7 +17705,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Erişkin astım basamak tedavisinde (GINA Basamak 3) önerilen temel idame tedavi seçeneği, **düşük doz İnhaler Kortikosteroid (İKS) ile Uzun Etkili Beta-2 Agonist (LABA) kombinasyonudur**.",
+    "explanation": "Erişkin astım tedavisinde (GINA Basamak 3) önerilen tercih edilen kontrol edici idame tedavi seçeneği, düşük doz inhaler kortikosteroid (İKS) ile uzun etkili beta-2 agonist (LABA) kombinasyonudur (D doğru). Yalnızca kısa etkili beta-agonist (SABA) kullanımı altta yatan hava yolu inflamasyonunu tedavi etmediği ve alevlenme riskini artırdığı için Basamak 3'te (hatta güncel GINA rehberlerinde Basamak 1'de dahi) önerilmez (A yanlış). Astım tedavisinde LABA'ların İKS olmaksızın tek başına veya sadece montelukast ile birlikte kullanılması ağır alevlenme ve ölüm riskini artırdığından kontrendikedir (B yanlış). Sistemik oral kortikosteroidler ciddi yan etkileri nedeniyle Basamak 3 idame tedavisinde yer almaz; yalnızca akut ağır ataklarda kısa süreli veya en dirençli Basamak 5 ağır astımda son basamak olarak eklenir (C yanlış). Yüksek doz İKS Basamak 3'ün değil ağır astımı hedefleyen Basamak 5'in doz düzeyidir ve SABA düzenli kontrol edici ajan olarak kullanılmaz (E yanlış).",
     "id": "K3_2025-2026_Q27"
   },
   {
@@ -18471,7 +18471,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Mitral darlığının patognomonik dinleme bulguları apekste **S1 şiddetlenmesi, diyastol başında duyulan açılma sesi (Opening Snap) ve diyastol ortası-sonu apikal diyastolik rulmandır**.",
+    "explanation": "Mitral darlığının (stenozunun) klasik oskültasyon triadı; diyastol sonunda sol atriyum basıncı yüksekken kapakların hızla kapanmasına bağlı **S1 şiddetlenmesi**, diyastol başında sertleşmiş yaprakçıkların açılma sesi olan **Opening Snap** ve türbülan diyastolik kan akımının oluşturduğu **apikal diyastolik rulmandır** (A doğru). S3 kalp sesi ve Austin Flint üfürümü mitral darlığında değil, hızlı ventrikül doluşu yapan hacim yüklenmesinde ve ağır aort yetersizliğinde duyulur (B yanlış). Sistolik ejeksiyon üfürümü ve dekreşendo sistolik karakter mitral darlığının diyastolik üfürüm paterniyle uyuşmaz, aort darlığı veya mitral yetersizliğini düşündürür (C yanlış). Dekreşendo diyastolik üfürüm mitral stenozda değil aort veya pulmoner kapak yetersizliğinde işitilir (D yanlış). S1 yumuşaması mitral yetersizliğinde görülür; Graham Steell üfürümü ise şiddetli pulmoner hipertansiyona ikincil gelişen pulmoner yetersizlik üfürümü olup mitral darlığının doğrudan dinleme bulgusu değildir ve mezokardiyak sistolik üfürüm beklenmez (E yanlış).",
     "id": "K3_2025-2026_Q48"
   },
   {
@@ -18504,7 +18504,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "AHA/ACC evrelemesinde **Evre B**, kalp yetmezliğine ait hiçbir semptom veya fizik muayene bulgusu bulunmayan ancak sol ventrikül sistolik disfonksiyonu (EF %41-49) gibi yapısal kardiyak hastalığı olan **asemptomatik hastaları** tanımlar.",
+    "explanation": "AHA/ACC kılavuzunda **Evre B kalp yetersizliği**, dispne, ödem veya yorgunluk gibi hiçbir klinik semptom ve bulgu göstermeyen ancak **sol ventrikül ejeksiyon fraksiyonu (EF) %41-49** aralığına düşmüş olması gibi yapısal/fonksiyonel kalp hasarına sahip **asemptomatik hastaları** kapsar (C doğru). Yapısal kalp hastalığı bulunmayan obez hastalar yalnızca risk faktörü taşıdığı için Evre B değil **Evre A** kabul edilir (A yanlış). Sık hastane yatışı gerektiren ve medikal tedaviye kısmi yanıt veren dirençli hastalar Evre B değil ileri evre **Evre D** kalp yetersizliğindedir (B yanlış). Sol ventrikül hipertrofisi yapısal hastalık olsa da hastanın **semptomatik** hale gelmesi onu Evre B'den **Evre C**'ye geçirir (D yanlış). Miyokard enfarktüsü sonrası gelişen kapak hastalığı nedeniyle cerrahi planlanacak aşamaya gelmiş hastalar tipik asemptomatik Evre B profilini değil genellikle semptomatik/ileri evre hastaları temsil eder (E yanlış).",
     "id": "K3_2025-2026_Q49",
     "repeats": [
       {
@@ -18941,7 +18941,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "**Suprakristal (subarteriyel) VSD** defekti aort kapağının fibröz anulusunun hemen altında yer aldığından yüksek hızlı kan akımının yarattığı Venturi etkisiyle sağ koroner kuspis lümene prolabe olur ve sekonder **aort kapak yetmezliğine** neden olur.",
+    "explanation": "Suprakristal (subarteriyel / infundibüler) VSD defekti aort kapağının hemen altında konumlandığından yüksek hızlı sol-sağ şantın yarattığı Venturi etkisiyle sağ koroner (veya non-koroner) aort kuspisi prolabe olur ve ilerleyici aort kapak yetmezliği gelişebilir (C doğru). Eisenmenger sendromunda pulmoner vasküler hastalık geri dönüşsüz ilerleyip şant sağdan sola döndüğü için ASD veya VSD'nin PTFE yama ya da primer sütürle kapatılması kesinlikle kontrendikedir (sağ kalp yetmezliği ve ölüme yol açar) (A yanlış). Pulmoner atrezi olgusunda akciğerlere kan akımını sağlayan tek hayati geçiş PDA olduğundan önce PDA kapatılmaz; aksine ameliyata kadar PGE1 infüzyonuyla açık tutulup tam düzeltme veya sistemik-pulmoner şant sırasında kapatılır (B yanlış). Prostaglandin E2 (PGE2) duktus arteriosusun kapanmasını değil açık kalmasını sağlar; doğum sonrası duktusun kapanmasını sağlayan esas etken arteryel oksijen basıncı (PaO2) artışı ve plasental kaynaklı PGE2 düzeyinin düşmesidir (D yanlış). VSD'de şant oranı (Qp/Qs) arttıkça akciğer yatağına giden kan akımı ve pulmoner venöz dönüş arttığı için pulmoner konjesyon azalmaz, aksine artar (E yanlış).",
     "id": "K3_2025-2026_Q62"
   },
   {
@@ -18974,7 +18974,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "**Mezopozisyon**, kalbin apeksinin yönünden bağımsız olarak mediastinal kavitedeki anatomik pozisyonunun tam orta hatta yerleşmesi durumunu tanımlar.",
+    "explanation": "**Mezopozisyon**, kalbin apeksinin hangi yöne baktığından bağımsız olarak göğüs kafesi ve **mediastendeki genel konumunun (duruşunun) tam orta hatta** yerleşmesini ifade eden anatomik terimdir (D doğru). Aortanın pulmoner arterin arkasından konkordant çıkışı normal büyük damar ilişkisini veya çıkış geometrisini tanımlar, kalbin mediastinal pozisyonu değildir (A yanlış). Aortanın pulmoner arterle diskordant bağlantısı büyük arterlerin transpozisyonunu tanımlar, mezopozisyon değildir (B yanlış). Kalbin apeksinin orta hatta yönelmesi mezopozisyon değil **mezokardi** olarak adlandırılır (tıpkı dekstrokardi-dekstropozisyon ayrımında olduğu gibi) (C yanlış). Kalp ve iç organların sağ-sol yerleşim düzeninin ayırt edilemediği belirsiz durum ise heterotaksi sendromu (situs ambiguus) olarak bilinir (E yanlış).",
     "id": "K3_2025-2026_Q63"
   },
   {
@@ -19040,7 +19040,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Aort arkı cerrahisinde organ iskemisini önlemek ve beyin koruması sağlamak amacıyla derin hipotermik **Total Sirkülatuvar Arrest (TSA)** uygulayabilmek için hastanın kardiyopulmoner baypasa (CPB) bağlanmış olması zorunludur.",
+    "explanation": "Aort arkı cerrahisinde derin hipotermi altında güvenli dolaşım durdurulması olan Total Sirkülatuvar Arrest (TSA) uygulayabilmek için hastanın öncesinde soğutulması ve sonrasında ısıtılıp dolaşımın devralınması gerektiğinden kardiyopulmoner baypas (CPB) kullanımı şarttır (A doğru). Sol atriyofemoral baypas (sol kalp baypası) desendan torasik aorta ameliyatlarında oksijenatörsüz bir santrifüj pompa ile sol atriyumdan alınan oksijenize kanın distal aortaya/femoral artere gönderilmesi esasına dayandığından tam CPB gerektirmez (B yanlış). Asendan aorta koroner ostiyumların hemen çıkışında yüksek basınçlı ana damar olduğundan aort kros-klempi, kardiyopleji ve CPB altında ameliyat edilir; atan kalpte yapılan asendan aort replasmanları düşük mortaliteli standart bir yöntem değildir (C yanlış). Cox-Maze ameliyatı aort diseksiyonlarında değil, kronik veya paroksismal atriyal fibrilasyonun cerrahi ablasyonu amacıyla uygulanan bir ritim cerrahisi prosedürüdür (D yanlış). Stanford sınıflamasında Tip 3 diye bir kategori bulunmaz (Stanford yalnızca Tip A ve Tip B'den oluşur; sol subklavyan arter distalinden başlayan desendan diseksiyon DeBakey Tip III / Stanford Tip B olarak adlandırılır) (E yanlış).",
     "id": "K3_2025-2026_Q65"
   },
   {
@@ -19139,7 +19139,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Triküspit kapağın düşük akım hızlı ve düşük basınçlı sağ kalp boşluklarında yer alması nedeniyle mekanik kapaklarda tromboz riski çok yüksektir; bu nedenle triküspit kapak cerrahisinde **mekanik kapak replasmanı son tercihtir**.",
+    "explanation": "Triküspit kapak düşük basınçlı ve yavaş kan akımlı sağ kalp boşlukları arasında yer aldığından mekanik kapaklarda tromboz ve pannus oluşumu riski çok yüksektir; bu nedenle triküspit kapak cerrahisinde mekanik kapak replasmanı son tercihtir (öncelikle tamir veya biyoprotez seçilir) (D doğru). Risk faktörü bulunmayan klasik Marfan sendromlu hastalarda asendan aort replasmanı için standart cerrahi endikasyon sınırı 50 mm'dir (45 mm sınırı ailede diseksiyon öyküsü, hızlı çap artışı >3-5 mm/yıl veya eşlik eden ciddi kapak cerrahisi gibi ek risk faktörleri varlığında geçerlidir) (A yanlış). Konno-Rastan prosedürü (aortoventriküloplasti) interventriküler septumu da keserek hem aort anulusunu hem sol ventrikül çıkış yolunu genişleten en kapsamlı teknik olduğundan morbidite ve mortalitesi en düşük değil, en yüksek olan kök genişletme ameliyatıdır (en düşük olanlar Nicks ve Manouguian prosedürleridir) (B yanlış). CABG ameliyatlarında en önemli ve uzun ömürlü greft LITA olsa da çoklu damar baypaslarında en fazla anastomoz sayısına sahip greft olduğundan dünya genelinde sayısal olarak en çok kullanılan greft büyük safen ven (VSM) greftidir (C yanlış). Pelvik konjesyon sendromunda östrojen venöz dilatasyonu ve semptomları kötüleştirdiğinden yüksek östrojenli preparatlar kullanılmaz; medikal tedavide progestinler (medroksiprogesteron asetat) veya GnRH analogları tercih edilir (E yanlış).",
     "id": "K3_2025-2026_Q68"
   },
   {
@@ -19991,7 +19991,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "**D-dimer**, Faktör XIIIa tarafından kovalent çapraz bağlanmış fibrin pıhtısının plazmin tarafından enzimatik lizisi (fibrinoliz) sonucu plazmaya salınan spesifik bir **çapraz bağlı fibrin yıkım ürünüdür**.",
+    "explanation": "**D-dimer**, pıhtılaşma sonunda Faktör XIIIa ile kovalent çapraz bağlanmış fibrin ağının plazmin tarafından **fibrinolizle yıkılması sonucunda ortaya çıkan spesifik bir fibrin yıkım ürünüdür** (D doğru). K vitamini bağımlı pıhtılaşma faktörlerinin (II, VII, IX, X) aktivasyon sürecinde oluşan bir ara ürün değildir (A yanlış). Trombosit ve endotel kaynaklı fibrinoliz inhibitörü olan protein D-dimer değil plazminojen aktivatör inhibitörü-1 (PAI-1)'dir (B yanlış). Trombin ve Faktör Xa'yı inhibe eden doğal antikoagülan protein D-dimer değil Antitrombin III'tür (C yanlış). Fibrinojen (Faktör I) henüz pıhtılaşmamış çözünür plazma öncülüdür, D-dimer ise çapraz bağlı fibrinin yıkım ürünü olduğu için fibrinojenden farklıdır (E yanlış).",
     "id": "K3_2025-2026_Q92"
   },
   {
@@ -20213,7 +20213,7 @@ window.KURUL_DATA["3"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Yüksek ateş, toksik görünüm, stridor, tripod pozisyonu ve salya akması (drooling) akut **epiglottit** için patognomoniktir. Muayene veya gereksiz radyolojik tetkiklerle hastayı ajite etmek akut hava yolu obstrüksiyonuna yol açabileceğinden, acilen ameliyathane koşullarında **erken entübasyon** ile hava yolu güvenceye alınmalıdır.",
+    "explanation": "Çocuk hastada ani yüksek ateş, toksik görünüm, öne doğru eğilerek oturma (tripod pozisyonu) ve ağızdan salya akması (drooling) akut epiglottit için tipiktir; boğaz muayenesi veya radyolojik tetkik için zaman kaybetmek hastayı ajite edip ani tam hava yolu tıkanmasına yol açabileceğinden ileri tetkiklerden kaçınılarak ameliyathane koşullarında acil erken entübasyon planlanmalıdır (E doğru). Trakeal lümen içinde düzensiz membranöz gölgelenmeler akut epiglottitin değil bakteriyel trakeitin (psödomembranöz trakeit) radyolojik bulgusudur ve epiglottitte ilk adım radyografi çekmek değildir (A yanlış). Parainfluenza virüsü etkeni ile ilk tercih olan nebulize adrenalin + sistemik steroid tedavisi akut epiglottite değil, subglottik darlık yapan viral krup (akut laringotrakeobronşit) tablosuna aittir (B yanlış). Lateral boyun grafisinde şişmiş epiglottisi gösteren 'thumb sign' (başparmak işareti) akut epiglottit bulgusu olsa da tanıyı kesinleştirmek ve tedaviye başlamak için röntgen çekilmesi kesinlikle beklenmemelidir (C yanlış). AP boyun grafisindeki 'steeple sign' (kilise kulesi işareti) krup bulgusudur (epiglottitte görülmez) ve epiglottitte hava yolu güvenceye alınmadan yalnızca antibiyotikle izlem ölümcüldür (D yanlış).",
     "id": "K3_2025-2026_Q98"
   },
   {

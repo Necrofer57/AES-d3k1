@@ -104,7 +104,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Kızamık temas sonrasında duyarlı ve aşısız 6 ay üzerindeki bireylere ilk 72 saat içinde **kızamık (KKK) aşısı** uygulanması koruyuculuk sağlar ve ek olarak immünoglobulin verilmesine gerek kalmaz. Standart immünoglobulin profilaksisi ise aşı uygulanamayan gebelere, ağır immünsüprese bireylere veya ilk 6 gün içindeki temaslılara endikedir.",
+    "explanation": "Kızamıklı olguyla teması olan daha önce aşısız 6 ay ve üzeri duyarlı bireylere temas sonrası **ilk 72 saat** içinde uygulanan **kızamık (KKK) aşısı** hastalıktan koruma sağlar ve ek olarak immünoglobulin verilmesine gerek kalmaz (standart IG ise aşılanamayan gebeler, immünsüpresifler ve 4–6. gün arası temaslılar için endikedir) (C doğru). Boğmacalı ile temasta 4. doz DTaB (DaBT) aşısının uygulanabilmesi için 3. dozun üzerinden 4 aydan değil **6 aydan** daha uzun süre geçmiş olması (ve çocuğun 7 yaş altında olup 4. dozu henüz almamış olması) gerekir (A yanlış). Kirli yaralanması olan ve yaşamı boyunca **3 doz** tetanos aşısını tamamlamış bir bireyde son dozun üzerinden 5 yıldan fazla (ör. 6 yıl) geçmişse yalnızca **tetanos aşısı (rapel)** yapılır; aşı şeması <3 doz veya bilinmiyor olmadığı sürece **tetanos immünoglobulini (TIG) gerekmez** (B yanlış). Difteri içeren aşılar ömür boyu bağışıklık bırakmaz (erişkinlikte 10 yılda bir Td/Tdap rapeli gerekir) ve difteri hastalığını geçirmek de kalıcı bağışıklık sağlamadığından iyileşme sonrası **aşılama gereklidir** (D yanlış). Yaşamının ilk yılında hiç aşılanmamış 6 yaş altı (12–59 ay) çocuklara ilk karşılaşmada yalnızca DaBT-İPA-Hib ve KKK değil; ulusal telafi aşılama şemasına göre **Hepatit B, KPA** (ve yaş/PPD durumuna göre BCG/OPA) aşıları da birlikte uygulanmalıdır, ayrıca 5 yaşından (59 aydan) büyüklerde Hib aşısı yapılmaz (E yanlış).",
     "id": "K2_2020-2021_Q3"
   },
   {
@@ -236,7 +236,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Süt çocukluğu döneminde 3–4 gün süren yüksek ateşin kriz şeklinde aniden düşmesiyle birlikte gövdede başlayıp boyun ve ekstremitelere yayılan soluk pembe makülopapüler döküntü **Roseola infantum (6. hastalık)** için karakteristiktir; etkeni **Human herpesvirus-6 (HHV-6)**'dır.",
+    "explanation": "İki yaşındaki çocukta 3 gün süren 40°C'ye ulaşan yüksek ateşin aniden düşmesinin hemen ardından gövdeden başlayıp ekstremitelere yayılan makülopapüler döküntü görülmesi **Roseola infantum (6. hastalık / ekzantema subitum)** için patognomoniktir ve en sık etkeni **Human herpesvirus 6 (HHV-6)**'dır (E doğru). Parvovirus B19 etkenli eritema enfeksiyozum (5. hastalık) yüksek ateşten ziyade hafif prodrom sonrası yanaklarda 'tokatlanmış yanak' kızarıklığı ve ekstremitelerde dantelsi döküntüyle seyreder (A yanlış). VZV'nin yaptığı suçiçeğinde döküntü ateş düşerken değil ateşle eş zamanlı çıkar ve makül-papül-vezikül-kabuk evreleri bir arada görülür (B yanlış). Coxsackie virus A16'nın yol açtığı el-ayak-ağız hastalığında gövdesel makülopapüler döküntü yerine ağız içinde aftöz ülserler ile el içi ve ayak tabanında veziküller bulunur (C yanlış). A grubu beta hemolitik streptokok kaynaklı kızıl hastalığında ateşle birlikte eksüdatif tonsillofarenjit, çilek dili ve basmakla solan ince pürtüklü (zımpara kağıdı gibi) eritematöz döküntü izlenir (D yanlış).",
     "id": "K2_2020-2021_Q7"
   },
   {
@@ -788,7 +788,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Non-nükleozid ters transkriptaz inhibitörleri (NNRTI) grubundan olan **Nevirapin**, HIV-1 revers transkriptaz enziminin allosterik cebine özgül olarak bağlanır ve enzimi inhibe eder; ancak HIV-2 virüsünün polimeraz cepleri yapısal olarak farklı olduğundan HIV-2 üzerine klinik etkinlik göstermez.",
+    "explanation": "Non-nükleozid revers transkriptaz inhibitörü (NNRTI) grubundaki **nevirapin**, HIV-1 ters transkriptaz enziminin allosterik bağlanma cebine bağlanarak **HIV-1 üzerinde güçlü etki** gösterirken, HIV-2 polimerazının cep yapısı farklı olduğundan **HIV-2 üzerine etkisizdir** (D doğru). Kronik Hepatit B tedavisinde immünmodülatör olarak **IFN-γ** değil **İnterferon alfa (pegile IFN-α)** kullanılır (IFN-γ kronik granülomatöz hastalık ve osteopetroziste endikedir) (A yanlış). **Zidovudin (AZT)** RNA'ya bağımlı RNA polimerazı değil, HIV'deki **RNA'ya bağımlı DNA polimerazı (revers transkriptaz)** inhibe eden bir nükleozid revers transkriptaz inhibitörüdür (NRTI) (B yanlış). **Favipiravir**, non-nükleozid yapılı bir inhibitör değil, hücre içinde trifosfat formuna dönüşen **nükleozid (pürin) analoğu** yapılı bir RNA bağımlı RNA polimeraz inhibitörüdür (C yanlış). Nöraminidaz inhibitörü **oseltamivir**, virüsün zarfından soyulma (M₂ iyon kanalı) aşamasını değil (bunu **amantadin ve rimantadin** bloke eder), yeni oluşan virionların enfekte konak hücreden **salınımını (tomurcuklanmasını)** bloke ederek etki gösterir (E yanlış).",
     "id": "K2_2020-2021_Q23"
   },
   {
@@ -1052,7 +1052,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Sağlık Bakanlığı Bulaşıcı Hastalıkların İhbarı ve Bildirim Sistemi yönergesine göre **A grubu bulaşıcı hastalıklar** (kızamık, kolera, tifo, kuduz vb.), ülke genelinde tanı koyan tüm kamu ve özel sağlık kurumları ile hekimler tarafından vaka bazında doğrudan ve derhal bildirimi zorunlu hastalıklardır.",
+    "explanation": "Sağlık Bakanlığı Bulaşıcı Hastalıkların İhbarı ve Bildirim Sistemi esaslarına göre **A grubu Bildirimi Zorunlu Bulaşıcı Hastalıklar** (kızamık, tifo, kuduz, tetanoz, akut viral hepatitler, tüberküloz vb.), ülke genelinde hasta kabul eden tüm kamu ve özel sağlık kurumları ile serbest hekimler tarafından vaka bazında bildirilmesi zorunlu hastalık grubudur (A doğru). B grubu bulaşıcı hastalıklar çiçek, veba, sarı humma ve kolera gibi uluslararası ihbarı zorunlu acil küresel tehditleri kapsar ve doğrudan bakanlık/uluslararası düzeyde acil ihbar edilir (B yanlış). C grubu hastalıklar (influenza, lejyoner hastalığı, lepra, kist hidatik vb.) tüm kuruluşlardan rutin değil, belirlenmiş sentinel izleme merkezleri veya yetkili kurumlar üzerinden bildirilir (C yanlış). D grubu ise klinik vaka bildiriminden ziyade laboratuvarlar tarafından saptanan *Salmonella*, *Shigella*, *Campylobacter* gibi enfeksiyon etkenlerinin bildirimini içerir (D yanlış). Bakanlık sınıflaması A, B, C ve D olmak üzere dört gruptan oluştuğu için E grubu diye bir bildirim kategorisi yoktur (E yanlış).",
     "id": "K2_2020-2021_Q31"
   },
   {
@@ -1085,7 +1085,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Hastalık bulaştırma döneminde olan enfekte bireyin veya hayvanın sağlıklı bireylerden ayrılması ve temasın önlenmesi işlemine **izolasyon (yalıtım)** denir. Sağlıklı ancak şüpheli temaslıların en uzun kuluçka süresince gözlem altında tutulması ise karantinadır.",
+    "explanation": "Bulaşıcı bir hastalık açısından enfekte ya da hasta olan insan veya hayvanın, hastalığın **bulaştırma süresi boyunca** sağlam kişilerle temasının tam olarak kesilmesine **izolasyon (yalıtım)** adı verilir (sağlam temaslıların en uzun kuluçka süresince gözlenmesine ise karantina denir) (D doğru). İndeks olgudan sonraki **en kısa kuluçka süresi içinde** görülen olgular indeks olgudan sekonder bulaşmış sayılmaz, aynı kaynaktan eş zamanlı enfekte olmuş **ortak primer olgulardır**; primer atak hızı ise salgında risk altındaki tüm duyarlı nüfusta ortaya çıkan toplam olgu oranıdır (A yanlış). Bağışıklık bırakmayan ve aynı bireyde tekrarlayabilen bulaşıcı hastalıkların (ör. soğuk algınlığı, ishal, gonore) toplum içindeki sıklığını ölçmek için primer atak hızı değil **epizod hızı (olay insidansı)** kullanılır (B yanlış). **Sekonder atak hızı**, en kısa ikinci kuluçka süresi içindeki olgularla değil, indeks olgunun başlangıcından sonra hastalığın **en kısa kuluçka süresi ile en uzun kuluçka süresi arasındaki dönemde** (ikinci bir kuluçka dönemi içinde) duyarlı temaslılarda ortaya çıkan sekonder olguların risk altındaki duyarlı temaslı sayısına bölünmesiyle hesaplanır (C yanlış). Sekonder atak hızı salgının genel toplumdaki yaygınlığını değil, indeks olguyla yakın temastaki duyarlı bireyler arasındaki **kişiden kişiye bulaşıcılık (enfektivite) gücünü** gösterir (E yanlış).",
     "id": "K2_2020-2021_Q32",
     "repeats": [
       {
@@ -1385,7 +1385,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Bir tarama testinin **duyarlılığı (sensitivitesi)**, hedef popülasyonda **gerçekten hasta olan kişilerin test tarafından pozitif olarak doğru saptanma oranını** (Gerçek Pozitif / Toplam Hasta) gösterir.",
+    "explanation": "Bir tarama testinin duyarlılığı (sensitivitesi), hedef popülasyonda gerçekten hasta olan kişilerin test tarafından pozitif olarak doğru saptanma oranını [Gerçek Pozitif / (Gerçek Pozitif + Yalancı Negatif)] gösterir (A doğru). Toplumun sağlık davranışlarını değiştirmek taramanın hemen öncesinde zorunlu kılınan bir ön koşul değil, tarama sonuçlarından bağımsız yürütülen sağlık eğitimi ve sağlığı geliştirme sürecinin amacıdır (B yanlış). Fenilketonüri taraması birinci basamakta geçici veya özel kampanya programlarıyla değil, Ulusal Yenidoğan Tarama Programı kapsamında tüm yenidoğanlara doğum sonrası topuk kanıyla rutin ve sürekli olarak uygulanır (C yanlış). Tarama testinin özgüllüğü (spesifisitesi) hasta olma olasılığı olanları bulma gücü değil, gerçekten hasta olmayan (sağlam) bireyleri negatif olarak doğru ayırt edebilme oranıdır (D yanlış). Tarama testlerinin uygulanabilir olabilmesi için ucuz, hızlı ve pratik olması esastır; mutlaka hekim tarafından yapılması gerekmez, eğitilmiş yardımcı sağlık personeli (ebe, hemşire, teknisyen) tarafından da uygulanabilir (E yanlış).",
     "id": "K2_2020-2021_Q40",
     "repeats": [
       {
@@ -1473,7 +1473,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "**Primer (birincil) korunma**, hastalık ortaya çıkmadan risk faktörlerini ortadan kaldırma ve aşılama uygulamalarıdır; **gebelerin tetanoza karşı aşılanması** neonatal tetanozu önleyen klasik bir primer korunmadır.",
+    "explanation": "**Primer (birincil) korunma**, hastalık henüz ortaya çıkmadan etkenle karşılaşmayı önlemeyi veya konağın direncini artırmayı hedefler; **tüm gebelerin tetanoza karşı bağışıklanması**, maternal antikorların plasentadan geçerek yenidoğan tetanozunu önlediği klasik bir aktif immünizasyon (primer korunma) uygulamasıdır (B doğru). Yenidoğanlarda fenilketonüri taraması hastalık biyokimyasal olarak mevcutken klinik sekel gelişmeden erken yakalamaya yönelik **sekonder (ikincil) korunma** önlemidir (A yanlış). Hastalığın eradikasyonu tekil bir primer korunma uygulaması değil; aşılama, sürveyans, karantina ve tedavi gibi tüm koruyucu basamakların küresel ölçekte başarıya ulaşmasıyla elde edilen sonuç durumudur (C yanlış). 40 yaş üzeri kadınlarda mamografiyle meme kanseri taraması asemptomatik dönemde erken tanı koymayı amaçlayan **sekonder korunma** uygulamasıdır (D yanlış). Tütün ekiminin ve ithalatının yasaklanması, bireylerde risk faktörünün toplumda hiç ortaya çıkmamasını hedefleyen çevresel ve yasal düzeydeki **primordiyal (temel) korunma** kapsamında değerlendirilir (E yanlış).",
     "id": "K2_2020-2021_Q42",
     "repeats": [
       {
@@ -1514,7 +1514,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Tütün ve sigara dumanı içerdiği polasiklik aromatik hidrokarbonlar ve nitrozaminler nedeniyle yalnızca bronkojenik karsinom riskini katbekat artırmakla kalmaz; renal hücreli, mesane, serviks, özafagus ve **pankreas kanseri** insidansında da majör bir etiyolojik risk faktörüdür.",
+    "explanation": "Tütün ve sigara dumanı içerdiği polisiklik aromatik hidrokarbonlar ve nitrozaminler gibi karsinojenler nedeniyle yalnızca bronkojenik akciğer karsinomu riskini artırmakla kalmaz; mesane, serviks, pankreas, özofagus, larinks ve böbrek kanserlerinin insidansında da majör bir etiyolojik risk faktörüdür (E doğru). Kanserlerin tümü kalıtsal germ-line onkogenlerle aktarılmaz; olguların yaklaşık %90-95'i çevresel karsinojenler, yaşlanma ve rastgele replikasyon hatalarıyla oluşan sporadik somatik mutasyonlardan kaynaklanır (A yanlış). Asbest temel olarak solunum yoluyla akciğer kanseri ve plevral mezotelyomaya yol açsa da yutulması halinde sindirim sistemi kanserleri (mide, kolorektal) ve periton mezotelyoması gelişiminde de karsinojenik etki gösterir (B yanlış). Modern yaşam biçimi, yaşam süresinin uzaması, obezite, sedanter yaşam ve işlenmiş gıda tüketimi kanser sıklığını azaltmaz, aksine dünya genelinde kanser insidansını artırmaktadır (C yanlış). Kanser riskini artıran beslenme faktörü yetersiz enerji alımı değil, aşırı kalori alımı ve buna bağlı gelişen obezitedir (D yanlış).",
     "id": "K2_2020-2021_Q43"
   },
   {
@@ -2023,7 +2023,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "**Mikrobiyota**, belirli bir anatomik nişte (örneğin insan bağırsağı veya derisinde) konak ile kommensal, mutualist veya patobiont olarak yaşayan mikroorganizma topluluğunu; **mikrobiyom** ise bu mikroorganizmaların tüm genomik içeriğini ve genetik materyalini tanımlar.",
+    "explanation": "**Mikrobiyota**, insan vücudunun belirli anatomik bölgelerinde konakla birlikte yaşayan özel mikroorganizma türlerinin tamamını; **mikrobiyom** ise insanlarla kommensal olarak yaşayan bu mikroorganizmaların taşıdığı tüm genleri ve genomik içeriği ifade eder (D doğru). A seçeneği mikrobiyotayı yalnızca hayvanlarla yaşayan bakterilere indirgeyerek insan konağını ve bakteri dışındaki mikroorganizma gruplarını dışarıda bırakmaktadır (A yanlış). B seçeneğinde mikrobiyota ve mikrobiyom insan bağlamı yerine hayvanlarla ilişkilendirilmiş ve 'tüm türler' ifadesiyle mikroorganizma özgüllüğü bozulmuştur (B yanlış). C seçeneği mikrobiyotayı yalnızca parazitlerle sınırlandırmakta ve mikrobiyom tanımında konak olarak insan yerine hayvanları göstermektedir (C yanlış). E seçeneği mikrobiyotayı yalnızca virüslere (virom) indirgemekte ve mikrobiyomu hayvanlarla ilişkilendirmektedir (E yanlış).",
     "id": "K2_2020-2021_Q56",
     "repeats": [
       {
@@ -2772,7 +2772,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Termal dimorfik bir mantar olan **Blastomyces dermatitidis**, 37 °C'de ve dokuda kalın refraktil çift cidarlı, **geniş tabanlı tek tomurcuklanma gösteren maya (broad-based budding)** morfolojisi ile diğer sistemik mikoz etkenlerinden kolayca ayırt edilir.",
+    "explanation": "Termal dimorfik bir mantar olan Blastomyces dermatitidis, 37 °C'de ve dokuda kalın refraktil çift cidarlı, geniş tabanlı tek tomurcuklanma gösteren maya (broad-based budding) morfolojisi ile diğer sistemik mikoz etkenlerinden ayırt edilir (E doğru). Mağaralardaki yarasa dışkısının yüksek nitrojen içeriği nedeniyle izole edilen etken Blastomyces değil Histoplasma capsulatum'dur (A yanlış). Çini mürekkebi (India ink) boyamasında geniş polisakkarit kapsülü sayesinde berrak halo görünümüyle kolayca ayırt edilen maya mantarı Cryptococcus neoformans'tır (B yanlış). Dokuda üreyen büyük ana maya hücresi etrafında dar tabanlı çok sayıda tomurcuğun oluşturduğu 'gemici dümeni' (pilot's wheel) görünümü Paracoccidioides brasiliensis için patognomoniktir (C yanlış). Oda sıcaklığındaki küf fazında karakteristik tüberküllü makrokonidyumlar oluşturan etken Histoplasma capsulatum'dur; Blastomyces dermatitidis ise lolipop benzeri oval mikrokonidyumlar üretir (D yanlış).",
     "id": "K2_2020-2021_Q77"
   },
   {
@@ -3069,7 +3069,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Paramyxoviridae ailesinden zarflı bir tek iplikli RNA virüsü olan kabakulak virüsü nörotrop özellik taşır ve parotit tablosuna sıklıkla asemptomatik veya semptomatik **aseptik menenjit** (%10-30 oranında) ve meningoensefalit eşlik eder; canlı KKK aşısı ile korunulur.",
+    "explanation": "Paramyxoviridae ailesinden zarflı bir tek iplikli RNA virüsü olan kabakulak virüsü belirgin nörotrop özellik taşır ve parotit tablosuna %10-30 oranında semptomatik veya asemptomatik aseptik menenjit (ve nadiren meningoensefalit) eşlik eder (C doğru). Kabakulaktan korunmada ölü (inaktif) aşı değil, Kızamık-Kızamıkçık-Kabakulak (KKK) karması içinde yer alan canlı atenüe virüs aşısı kullanılmaktadır (A yanlış). Kabakulak virüsü tek iplikli DNA (ssDNA) virüsü (ör. Parvovirus B19) değil, negatif polariteli tek iplikli RNA (ssRNA) virüsüdür (B yanlış). Orthomyxoviridae ailesi segmentli RNA genomuna sahip İnfluenza virüslerini içerir; kabakulak virüsü ise segmentsiz genomlu Paramyxoviridae ailesinin üyesidir (D yanlış). Kabakulak virüsünün transkripsiyon ve replikasyon döngüsü çekirdekte (İnfluenza veya Retrovirüslerde olduğu gibi) değil, tamamen konak hücrenin sitoplazmasında gerçekleşir (E yanlış).",
     "id": "K2_2020-2021_Q86"
   },
   {
@@ -3607,7 +3607,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Sıtma tanısında hazırlanan kalın damla preparatlar eritrositlerin lizise uğraması (dehemoglobinizasyon) ve parazitin yoğunlaştırılması amacıyla **metanol ile tespit edilmez**, yalnızca havada kurutulup doğrudan Giemsa solüsyonu ile boyanır; ince yayma ise morfoloji ve tür tayini için metanol ile fikse edilir.",
+    "explanation": "Sıtma tanısında hazırlanan kalın damla preparatlar eritrositlerin boyama sırasında lizise uğraması (dehemoglobinizasyon) ve parazitin yoğunlaştırılması amacıyla metanol ile tespit edilmez; yalnızca havada kurutulup doğrudan Giemsa solüsyonu ile boyanır (A doğru). İnce yayma preparatlarda eritrosit morfolojisini ve parazit içi yapıların ayrıntılarını korumak için Giemsa boyaması öncesinde mutlaka metanol ile fiksasyon yapılır (B yanlış). Kalın damlada birim alana çok daha fazla kan hacmi yayıldığından parazit taramasındaki tanısal duyarlılığı ince yayma preparatlara göre daha düşük değil, çok daha yüksektir (C yanlış). Kalın damlada eritrositler parçalandığı ve parazitler büzüştüğü için Plasmodium tür ayrımı kalın damla ile değil, eritrosit ve parazit morfolojisinin korunduğu ince yayma preparatları ile yapılır (D yanlış). Kalın damla ve ince yayma boyama yöntemleri pahalı değil, düşük maliyetli ve sıtmanın rutin tanısında altın standart olarak yaygın kullanılan yöntemlerdir (E yanlış).",
     "id": "K2_2020-2021_Q100",
     "prof_inferred": true,
     "repeats": [
@@ -4229,7 +4229,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Bakteriyel enzimlerin ilacı kimyasal olarak modifiye etmesine bağlı direncin en tipik örneği; aminoglikozid yapısındaki amino ve hidroksil gruplarını asetilasyon (AAC), adenilasyon/nükleotidilasyon (ANT) ve fosforilasyona (APH) uğratarak ribozoma bağlanmasını engelleyen **aminoglikozid modifiye edici enzimler**dir.",
+    "explanation": "İlacın bakteri hücresi içinde enzimatik olarak kimyasal modifikasyona uğratılmasıyla oluşan direncin en tipik örneği; **aminoglikozid modifiye edici enzimlerin** (asetiltransferaz, nükleotidiltransferaz/adeniltransferaz ve fosfotransferaz) aminoglikozid molekülünü asetilasyon, nükleotidilasyon ve fosforilasyonla değiştirerek 30S ribozoma bağlanmasını engellemesidir (A doğru). Penisilin ve sefalosporinlere karşı gelişen beta-laktamaz direnci ilacın hücre içinde kimyasal grup eklenerek modifiye edilmesi değil, hücre dışında veya periplazmik aralıkta beta-laktam halkasının hidrolizle parçalanmasıdır (B yanlış). P-glikoprotein veya bakteri eflüks pompaları ilacı kimyasal olarak değiştirmeden enerji kullanarak hücre dışına atan taşınma temelli direnç mekanizmasıdır (C yanlış). Antibakteriyel ilacın ortamdan alımının (uptake) azaltılması porin kanallarının kaybı veya zar geçirgenliğinin düşmesine bağlıdır, enzimatik modifikasyon değildir (D yanlış). Aminoglikozidlerin sitoplazmik membranı aktif transportla aşamaması (örneğin anaeroblarda) enzimatik bir ilaç değişikliği değil fizyolojik/yapısal alım yokluğudur (E yanlış).",
     "id": "K2_2021-2022_Q17"
   },
   {
@@ -4947,7 +4947,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Türkiye'de Bulaşıcı Hastalıkların Bildirim Sistemi yönergesine göre **A Grubu bulaşıcı hastalıklar**, birinci basamak dahil tüm resmi ve özel sağlık kuruluşları tarafından tanı konulduğu anda vaka bildirim formu ile doğrudan ve derhal bildirimi zorunlu olan hastalıklardır.",
+    "explanation": "Ülke genelinde birinci basamak sağlık kuruluşları, hastaneler ve özel sağlık kuruluşları dahil hasta kabul eden tüm birimlerden vaka bazında doğrudan bildirilmesi gereken grup **A Grubu bildirimi zorunlu bulaşıcı hastalıklardır** (A doğru). Sağlık Bakanlığı sürveyans sisteminde A, B, C ve D grupları yer alıp E Grubu şeklinde tanımlanmış bir bulaşıcı hastalık bildirim sınıfı bulunmamaktadır (B yanlış). D Grubu klinik vakalardan değil, laboratuvarlarda izole edilip doğrulanan enfeksiyon etkenlerinin (*Salmonella*, *Shigella*, *Listeria* vb.) bildiriminden oluşur (C yanlış). C Grubu grip, lejyonelloz, kist hidatik ve CJD gibi hastalıkların tüm sağlık birimlerinden değil, seçilmiş sentinel gözetim merkezleri aracılığıyla bildirilmesini kapsar (D yanlış). B Grubu veba, sarı humma, çiçek ve kolera gibi uluslararası acil bildirim gerektiren sınırlı sayıda hastalığı kapsar (E yanlış).",
     "id": "K2_2021-2022_Q37"
   },
   {
@@ -5013,7 +5013,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Gözlemsel analitik araştırmalar içinde maruziyete göre belirlenen sağlıklı grupları ileriye dönük izleyerek doğrudan insidans ve relatif risk (RR) hesaplanmasına olanak tanıyan, neden-sonuç ilişkisini en güçlü kuran yöntem **kohort araştırmaları**dır.",
+    "explanation": "Gözlemsel analitik araştırmalar içinde etken maruziyetine göre belirlenen sağlıklı grupları ileriye dönük izleyerek doğrudan insidans ve kesin rölatif risk (RR) hesaplanmasına olanak tanıyan, neden-sonuç zamansal ilişkisini en güçlü kuran çalışma tasarımı kohort araştırmalarıdır (B doğru). Kesitsel araştırmalar belirli bir zaman noktasındaki durumu ölçtüğü için insidansı değil, yalnızca o andaki hastalık sıklığı olan prevalansı saptayabilir (A yanlış). Vaka (olgu)-kontrol araştırmalarında toplumdaki risk altındaki nüfusun insidansı bilinmediğinden kesin rölatif risk hesaplanamaz; bunun yerine tahmini rölatif risk olan odds oranı (OR) hesaplanır (C yanlış). Kohort araştırmaları başlangıçta hasta olmayan bireylerde yeni gelişen olguları izlediği için prevalansı değil, insidansı (ve kümülatif insidans/insidans hızını) hesaplar (D yanlış). Vaka-kontrol araştırmaları hastalıktan (sonuçtan) maruziyete (nedene) doğru geriye dönük (retrospektif) planlanan çalışmalardır; ileriye yönelik olanlar prospektif kohort ve deneysel çalışmalardır (E yanlış).",
     "id": "K2_2021-2022_Q39",
     "repeats": [
       {
@@ -5107,7 +5107,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Türkiye Cumhuriyeti Sağlık Bakanlığı Çocukluk Dönemi Ulusal Aşı Takviminde BCG, DaBT-İPA-Hib, KKK, KPA, OPA, Suçiçeği ve Hepatit aşıları bulunurken; çocukluk çağı gastroenteritlerinin önemli etkeni olan **Rotavirüs aşısı** güncel rutin ulusal aşı takviminde yer almamaktadır.",
+    "explanation": "T.C. Sağlık Bakanlığı Çocukluk Dönemi Ulusal Aşı Takviminde BCG, DaBT-İPA-Hib, KKK, KPA, OPA, Suçiçeği, Hepatit A ve Hepatit B aşıları ücretsiz rutin olarak yer alırken; çocukluk çağı ishallerinin önemli etkeni olan Rotavirüs aşısı güncel ulusal aşı takviminde bulunmamaktadır (D doğru). İmmünoglobulin (Ig) uygulaması bireye kendi bağışıklık sistemi antikor üretmeden dışarıdan hazır antikor verilmesi olduğundan yapay kazanılmış aktif değil, yapay kazanılmış pasif bağışıklığa örnektir (A yanlış). Hepatit A aşısı fekal-oral bulaşan viral hepatiti önler; çocukluk çağında ağır sulu ishal ve ishal ilişkili ölümlerin azaltılmasına doğrudan katkı sağlayan aşı ise Rotavirüs aşısıdır (B yanlış). Toplum bağışıklığında genel aşılama oranı yüksek olsa bile aşısız bireylerin belirli yerleşim veya okullarda kümelenmesi (gruplaşması) duyarlı eşiği aşarak lokal salgınlara yol açtığından, aşısızların gruplaşması toplumdaki genel orandan bağımsız olarak kritik önem taşır (C yanlış). Reel biyolojik bağışıklık toplumun kâğıt üzerindeki aşılama oranlarından ziyade soğuk zincir kalitesi, konak immün yanıtı, tam doz uygulaması ve antijenik varyant uyumu gibi etmenlerle belirlenen gerçek fizyolojik koruyuculuğu ifade eder; uygulanan aşının canlı ya da ölü olması aşının kendi immünolojik özelliğini ve rapel gereksinimini belirleyen aşıya özgü bir parametredir (E yanlış).",
     "id": "K2_2021-2022_Q41"
   },
   {
@@ -5598,7 +5598,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Aerodinamik çapı 2.5 mikron ve daha küçük olan havada asılı partiküler maddeler **ince partiküller (PM2.5)** olarak tanımlanır ve alveollere kadar derin inhalasyonla ulaşarak doğrudan dolaşıma geçebildikleri için en tehlikeli hava kirleticileridir.",
+    "explanation": "Aerodinamik çapı 2.5 mikron ve daha küçük olan havada asılı partiküler maddeler ince partiküller (PM2.5) olarak adlandırılır ve alveollere kadar derin inhalasyonla ulaşıp sistemik dolaşıma geçebildikleri için kardiyopulmoner açıdan en tehlikeli kirleticilerdir (C doğru). Türkiye'deki Hava Kalitesi Değerlendirme ve Yönetimi Yönetmeliği'nde (HKDYY) ulusal sınır değerler ve zorunlu değerlendirme esasları öncelikli olarak PM10 için belirlenmiştir; PM2.5 için aynı düzenleme kapsamında doğrudan zorunlu ulusal sınır değer uygulanmamıştır (A yanlış). Hava Kalitesi İndeksi (HKİ) skalasında 0-50 arasındaki değerler havanın kötü olduğunu değil, 'İyi' (yeşil) kalitede olduğunu gösterir (B yanlış). Günlük Hava Kalitesi İndeksi her kirleticinin ayrı hesaplanan alt indeks değerlerinin ortalaması alınarak değil, o gün tüm kirleticiler arasında elde edilen en yüksek (maksimum) alt indeks değerinin seçilmesiyle belirlenir (D yanlış). PM10 ifadesi havadaki partikül sayısını değil, aerodinamik çapı 10 mikrometre veya daha küçük olan solunabilir partiküllerin kütle konsantrasyonunu (µg/m³) ifade eder (E yanlış).",
     "id": "K2_2021-2022_Q54"
   },
   {
@@ -5746,7 +5746,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Biyoterörizm; biyolojik ajanların (mikroorganizmalar veya toksinleri) insan, hayvan ve bitki ayrımı yapmaksızın **tüm canlılarda** kitlesel ölümlere, tarımsal yıkıma, hastalık ve toplumsal kaosa yol açmak amacıyla ideolojik veya siyasi gayelerle kasıtlı olarak kullanılmasıdır.",
+    "explanation": "**Biyoterörizm**, patojen mikroorganizmaların veya biyolojik toksinlerin insan, hayvan ve bitki ayrımı olmaksızın **tüm canlılarda** hastalık ve ölüme yol açmak, tarım/gıda güvenliğini çökertmek ve toplumda panik oluşturmak amacıyla kişi veya gruplarca kasıtlı olarak kullanılmasıdır (A doğru). B seçeneği biyoterörizmin yalnızca insanları hedef aldığını ileri sürerek hayvanları ve tarımsal üretimi hedefleyen agro-terörizm boyutunu dışlamaktadır (B yanlış). C seçeneği biyoterörizmi yalnızca hayvanlara yönelik kullanımla sınırlandırarak insanlara karşı yapılan biyolojik saldırıları göz ardı etmektedir (C yanlış). D seçeneği etken yelpazesini sadece tarımsal toksinlere indirgemekte; şarbon, veba, tularemi ve çiçek gibi mikroorganizmaları kapsam dışı bırakmaktadır (D yanlış). E seçeneği yalnızca virüsleri sayarak *Bacillus anthracis*, *Yersinia pestis* ve botulinum toksini gibi başlıca bakteriyel ve toksin kökenli biyolojik silah ajanlarını dışlamaktadır (E yanlış).",
     "id": "K2_2021-2022_Q58",
     "repeats": [
       {
@@ -5905,7 +5905,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "**Mikrobiyota**, belirli bir anatomik nişte (örneğin insan bağırsağı veya derisinde) konak ile kommensal, mutualist veya patobiont olarak yaşayan mikroorganizma topluluğunu; **mikrobiyom** ise bu mikroorganizmaların tüm genomik içeriğini ve genetik materyalini tanımlar.",
+    "explanation": "**Mikrobiyota** insanlarla birlikte belirli anatomik nişlerde yaşayan özel mikroorganizma türlerinin tamamını; **mikrobiyom** ise insanlarla kommensal olarak yaşayan bu mikroorganizmaların sahip olduğu genetik materyali (genlerini) tanımlar (A doğru). B seçeneği mikrobiyota ve mikrobiyomu insan yerine hayvanlarla ilişkilendirmekte ve 'tüm türler' ifadesiyle özgül mikroorganizma topluluğunu yanlış genellemektedir (B yanlış). C seçeneği mikrobiyotayı yalnızca virüslere (virom) kısıtlamakta ve mikrobiyomda konak olarak hayvanları belirtmektedir (C yanlış). D seçeneği mikrobiyotayı yalnızca hayvanlardaki bakterilere indirgemekte, insan mikrobiyotasındaki diğer mikroorganizmaları ve insan konağını dışlamaktadır (D yanlış). E seçeneği mikrobiyotayı yalnızca parazitlere sınırlandırmakta ve mikrobiyom kısmında konak olarak insan yerine hayvanları yazmaktadır (E yanlış).",
     "id": "K2_2021-2022_Q61",
     "repeats": [
       {
@@ -5991,7 +5991,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Tip IV (gecikmiş tip) aşırı duyarlılık reaksiyonları antikorlardan bağımsızdır; duyarlı **T lenfositler** (özellikle Th1 hücreleri) spesifik antijeni tanıdıktan sonra **sitokinler** (başta IFN-γ) salgılayarak makrofajları aktive eder ve granülomatöz inflamasyon doku hasarını meydana getirir.",
+    "explanation": "Tip IV (gecikmiş tip) aşırı duyarlılık reaksiyonları antikorlardan bağımsız hücresel immün yanıttır; duyarlı T lenfositler (özellikle Th1 ve CD8+ T hücreleri) spesifik antijeni tanıdıktan sonra sitokinler (başta IFN-γ ve TNF) salgılayarak makrofajları aktive eder ve granülomatöz/hücresel doku hasarını oluşturur (E doğru). Eozinofiller ve lökotrienler gecikmiş hücresel aşırı duyarlılıktan ziyade Tip I (IgE aracılı) alerjik inflamasyonun geç fazında ve paraziter yanıtlarda rol oynar (A yanlış). İmmünoglobulin E (IgE) ve mast hücresi/bazofillerden salınan histamin Tip IV reaksiyonun değil, Tip I (anafilaktik / erken tip) aşırı duyarlılık reaksiyonunun tanıma komponenti ve mediyatörüdür (B yanlış). Dolaşan antijen-antikor immün komplekslerinin birikerek kompleman sistemini aktive etmesi Tip III (immün kompleks aracılı) aşırı duyarlılık mekanizmasıdır (C yanlış). Tip IV aşırı duyarlılıkta antijeni özgül olarak tanıyan primer hücre makrofaj değil duyarlı T lenfosittir; ayrıca kompleman sistemi hücresel gecikmiş yanıtta değil antikor aracılı Tip II ve Tip III reaksiyonlarda efektör mediyatör olarak görev alır (D yanlış).",
     "id": "K2_2021-2022_Q63"
   },
   {
@@ -6626,7 +6626,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "*Treponema pallidum* subsp. *endemicum* etkenli **Bejel** (endemik sifiliz), cinsel yolla değil kalabalık ortamlarda direkt deri/mukoza teması veya ortak kap kullanımıyla çocukluk çağında bulaşan venereal olmayan bir treponamatozdur (*T. pallidum* subsp. *pallidum* ise venereal sifiliz etkenidir).",
+    "explanation": "Treponema pallidum subsp. endemicum etkenli Bejel (endemik sifiliz), cinsel yolla değil kalabalık ortamlarda direkt deri/mukoza teması veya ortak yeme-içme kapları aracılığıyla çocukluk çağında bulaşan venereal olmayan bir treponematozdur (A doğru). Non-venereal treponematozlardan biri olan frambezi etkeni T. pallidum subsp. pertenue'nun neden olduğu hastalık Yaws olup 'Yanni' tıbbi literatürde tanımlı geçerli bir hastalık adı değildir (B yanlış). Yalnızca deriyi tutan diğer non-venereal treponemal hastalık Treponema carateum'un oluşturduğu Pinta'dır; 'Pikka' geçerli bir treponemal hastalık adı değildir (C yanlış). Salmonella bir Treponema/spiroket türü değil, Enterobacterales takımına ait fekal-oral yolla bulaşan Gram negatif bir basildir (D yanlış). Sifiliz (Treponema pallidum subsp. pallidum) venereal olmayan değil, başlıca cinsel temasla (ve transplasental yolla) bulaşan klasik venereal treponemal hastalıktır (E yanlış).",
     "id": "K2_2021-2022_Q78",
     "repeats": [
       {
@@ -6741,7 +6741,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Şarbon etkeni *Bacillus anthracis*'in majör virülans faktörleri pXO1 plazmidinde kodlanan üç bileşenli **ekzotoksin kompleksi** (koruyucu antijen, ödem faktörü, letal faktör) ve pXO2 plazmidinde kodlanan poli-D-glutamik asit yapısındaki antifagositik kapsülüdür; hareketsizdir ve sporları ile ayırt edilir.",
+    "explanation": "Klinik ve mikrobiyolojik bulguları (ağrısız siyah eskar/nekroze ödemli cilt lezyonu, yan yana dizilmiş Gram pozitif sporlu basiller, kanlı agarda non-hemolitik tırtıklı medusa başı koloniler) şarbon etkeni Bacillus anthracis'i tanımlamakta olup majör virülans faktörleri pXO1 plazmidinde kodlanan ekzotoksinleridir (koruyucu antijen, ödem faktörü ve letal faktör) (A doğru). Bacillus anthracis diğer birçok Bacillus türünün (ör. B. cereus) aksine peritrik flagellaya sahip değildir ve hareketsizdir (B yanlış). B. anthracis'in antifagositik kapsülü bakterilerin çoğundaki gibi polisakkarit yapıda değil, pXO2 plazmidinde kodlanan polipeptid (poli-D-glutamik asit) yapısındadır (C yanlış). Şarbon olgularının %95'inden fazlası sporların cilt sıyrıklarından girmesiyle oluşan deri şarbonu şeklinde görülür; akciğer (inhalasyon) şarbonu en ağır/mortal form olsa da en sık görülen form değildir (D yanlış). B. anthracis suşlarının büyük çoğunluğu penisilinaz (beta-laktamaz) üretmez ve penisiline duyarlıdır; penisilinaz üreten genellikle B. cereus'tur (E yanlış).",
     "id": "K2_2021-2022_Q81"
   },
   {
@@ -8193,7 +8193,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "I numaralı ifade (MİK'in bakteriyostatik gücün kantitatif göstergesi olması) ve III numaralı ifade (patojenin terapötik serum konsantrasyonlarından etkilenmemesinin direnç olarak tanımlanması) farmakolojik olarak doğrudur. MBK minimum bakterisit konsantrasyondur, benzer ilaçlara direnç çapraz dirençtir ve toleransta MİK değişmezken MBK artar.",
+    "explanation": "I numaralı ifade (MİK'in bakteriyostatik etkinliğin kantitatif göstergesi olması) ve III numaralı ifade (direnç kavramının patojenin terapötik doz aralığında ulaşılan serum konsantrasyonlarından etkilenmemesi olarak tanımlanması) farmakolojik açıdan doğrudur (C doğru). II numaralı ifadede bakterisid etki gücünün göstergesi 'maksimum' değil Minimum Bakterisid Konsantrasyon (MBK) olmalıdır, IV numaralı ifadede benzer yapı ve etki mekanizmalı ilaçlara karşı gelişen direnç çoklu rezistans değil çapraz dirençtir ve V numaralı ifadede toleransta MİK değişmezken MBK artar (A yanlış). B seçeneği doğru I ve III ifadelerinin yanında hatalı V numaralı ifadeyi de içerdiği için yanlıştır, çünkü toleransta bakteriyi öldürmek için gereken MBK sabit kalmaz belirgin biçimde artar ve MİK düşmez (B yanlış). D seçeneği doğru I ve III'ün yanında hatalı II numaralı ifadeyi içerir; zira MBK'nin açılımı maksimum değil Minimum Bakterisid Konsantrasyondur (D yanlış). E seçeneğindeki hem II (minimum yerine maksimum bakterisid konsantrasyon denmesi) hem de IV (çapraz direnç yerine çoklu rezistans denmesi) numaralı ifadeler hatalı tanımlardır (E yanlış).",
     "id": "K2_2022-2023_Q18"
   },
   {
@@ -8226,7 +8226,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "**Aminoglikozidler**, protein sentezini 30S alt birimine bağlanarak inhibe eden antibiyotikler arasında yer almalarına rağmen, tipik ribozomal inhibitörlerin aksine bakteriyostatik değil hızlı ve irreversibl **bakterisid** etki gösterirler. Karbapenemler hücre duvarını yıkar, sülfonamidler folat sentezini bozar.",
+    "explanation": "Aminoglikozidler protein sentezini 30S ribozomal alt birimine bağlanarak inhibe eden antibiyotikler arasında yer almalarına rağmen, diğer ribozomal inhibitörlerin aksine çoğunlukla hızlı ve irreversibl bakterisid etki gösterirler ve bu öldürücü etkinin tüm mekanizmaları tek bir basamakla tam olarak açıklanamamıştır (A doğru). Karbapenemler 50S ribozomal alt birimine değil, bakteri hücre duvarındaki penisilin bağlayan proteinlere (PBP) bağlanarak peptidoglikan sentezini inhibe eden beta-laktam antibiyotiklerdir (B yanlış). Sülfonamidler topoizomeraz IV'ü inhibe etmez (bu etki florokinolonlara aittir); PABA analoğu olarak dihidropteroat sentaz enzimini yarışmalı bloke edip bakteri folik asit sentezini bozarlar (C yanlış). Hücre zarının geçirgenliğini deterjan etkisiyle bozarak bakteriyi öldüren ajanlar polimiksinler (kolistin, polimiksin B) olup tetrasiklinler 30S alt birime bağlanan bakteriyostatik protein sentez inhibitörleridir (D yanlış). Daunorubisin bakteri hücre duvarı sentezini bozan bir antibakteriyel değil, DNA interkalasyonu ve topoizomeraz II inhibisyonu yapan antrasiklin grubu bir antineoplastik ilaçtır (E yanlış).",
     "id": "K2_2022-2023_Q19"
   },
   {
@@ -8358,7 +8358,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Sistemik derin mantar enfeksiyonlarının tedavisinde kullanılan bir poliyen olan **Amfoterisin B**, gastrointestinal kanaldan emilmediği için sistemik etki amacıyla yalnızca **intravenöz (IV)** infüzyon yoluyla uygulanır; primer fungisidal etkilidir ve en önemli doza bağımlı yan etkisi miyelotoksisite değil nefrotoksisitedir.",
+    "explanation": "Yalnızca III numaralı ifade doğrudur; poliyen yapılı bir antifungal olan Amfoterisin B gastrointestinal kanaldan anlamlı düzeyde emilmediği için sistemik derin mantar enfeksiyonlarının tedavisinde yalnızca parenteral (intravenöz, IV) yolla uygulanır (B doğru). I, II ve IV numaralı ifadelerin üçü de yanlıştır; çünkü Amfoterisin B ergosterole bağlanıp membran porları açarak primer fungisidal etki gösterir, yüzeyel cilt mikozlarında değil yaşamı tehdit eden sistemik mikozlarda tercih edilir ve en önemli doz kısıtlayıcı yan etkisi miyelotoksisite değil nefrotoksisitedir (A yanlış). C seçeneğindeki II (yüzeyel enfeksiyonlarda ilk tercih olması) ve IV (en önemli yan etkisinin miyelotoksisite olması) ifadelerinin her ikisi de Amfoterisin B'nin klinik ve toksisite profiliyle bağdaşmaz (C yanlış). D seçeneğindeki I numaralı ifade ilacı hatalı biçimde fungustatik kabul ederken, IV numaralı ifade flusitozine özgü miyelotoksisiteyi Amfoterisin B'nin ana toksisitesi olan nefrotoksisiteyle karıştırmaktadır (D yanlış). E seçeneği doğru III'ü içerse de hatalı olan I (fungisidal yerine fungustatik denmesi) ve IV (nefrotoksisite yerine miyelotoksisite denmesi) ifadelerini de barındırdığı için yanlıştır (E yanlış).",
     "id": "K2_2022-2023_Q23"
   },
   {
@@ -9000,7 +9000,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "**Mikrobiyota**, belirli bir anatomik nişte (örneğin insan bağırsağı veya derisinde) konak ile kommensal, mutualist veya patobiont olarak yaşayan mikroorganizma topluluğunu; **mikrobiyom** ise bu mikroorganizmaların tüm genomik içeriğini ve genetik materyalini tanımlar.",
+    "explanation": "**Mikrobiyota** insan vücudunda konakla simbiyotik yaşayan özel mikroorganizma türlerinin bütününü; **mikrobiyom** ise insanlarla kommensal olarak yaşayan bu mikroorganizmaların toplam genlerini ifade eder (C doğru). A seçeneği mikrobiyota ve mikrobiyom için konak olarak insan yerine hayvanları göstermekte ve 'tüm türler' diyerek mikrobiyal kapsamı bozmaktadır (A yanlış). B seçeneği mikrobiyotayı yalnızca hayvanlarla yaşayan bakterilere kısıtlayıp insan mikrobiyotasını ve diğer mikrobiyal üyeleri dışarıda bırakmaktadır (B yanlış). D seçeneği mikrobiyotayı sadece virüslere indirgemekte ve mikrobiyomu hayvanlarla ilişkilendirmektedir (D yanlış). E seçeneği mikrobiyotayı yalnızca parazitlerle sınırlandırmakta ve mikrobiyom için hayvan konağını esas almaktadır (E yanlış).",
     "id": "K2_2022-2023_Q41",
     "repeats": [
       {
@@ -10634,7 +10634,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Biyoterörizm; biyolojik ajanların (patojen mikroorganizmalar veya toksinleri) insan, hayvan ve bitki ayrımı yapmaksızın **tüm canlılarda** kitlesel ölümlere, tarımsal yıkıma, ekonomik felakete ve toplumsal paniğe yol açmak amacıyla ideolojik veya siyasi gayelerle kasıtlı olarak kullanılmasıdır.",
+    "explanation": "**Biyoterörizm**, mikroorganizmaların veya ürettikleri toksinlerin **tüm canlılarda** (insan, hayvan ve bitkilerde) ölüm, hastalık ve toplumsal panik meydana getirmek gayesiyle kişi veya örgütlerce kasıtlı biçimde kullanılmasıdır (A doğru). B seçeneği hedefi yalnızca insanlarla kısıtlayarak hayvan sürülerini ve ekinleri hedef alan biyolojik saldırıları dışlamaktadır (B yanlış). C seçeneği tanımı sadece hayvanlarla sınırlayarak insan popülasyonuna yönelik biyolojik tehditleri kapsam dışı bırakmaktadır (C yanlış). D seçeneği ajanları yalnızca tarımsal toksinlere indirgemekte, enfeksiyöz bakteri ve virüsleri göz ardı etmektedir (D yanlış). E seçeneği yalnızca virüsleri kapsadığını belirterek şarbon, veba veya botulinum toksini gibi klasik biyoterörizm etkenlerini dışlamaktadır (E yanlış).",
     "id": "K2_2022-2023_Q87",
     "repeats": [
       {
@@ -11375,7 +11375,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Flaviviridae ailesinden zarflı bir RNA virüsü olan Batı Nil Virüsünün (WNV) temel rezervuarı vahşi kuşlar olup insanlara bulaşmasında primer vektör **Culex cinsi sivrisineklerdir**. Enfeksiyonların yaklaşık %80'i asemptomatiktir; semptomatik olguların yalnızca <%1'inde nöroinvaziv hastalık (ensefalit) gelişir.",
+    "explanation": "Flaviviridae ailesinden zarflı bir RNA virüsü olan Batı Nil Virüsünün (WNV) doğal rezervuarı yabani kuşlar olup insanlara bulaşmada başlıca vektör Culex cinsi sivrisineklerdir (B doğru). Semptomatik WNV olgularının büyük çoğunluğu ateş, baş ağrısı, miyalji ve döküntüyle seyreden kendi kendini sınırlayan 'Batı Nil Ateşi' tablosu şeklindedir; menenjit, ensefalit veya akut flask paralizi gibi nöroinvazif tutulum tüm enfekte bireylerin yalnızca <%1'inde gelişir (A yanlış). WNV ile enfekte olan insanların yalnızca %20'si asemptomatik kalmaz; tam tersine enfeksiyonların yaklaşık %80'i asemptomatik seyrederken yaklaşık %20'sinde semptomatik hastalık gelişir (C yanlış). WNV enfeksiyonunda etkinliği kanıtlanmış spesifik bir antiviral tedavi bulunmamaktadır ve ribavirinin klinik yararı gösterilemediğinden rutin tedavide kullanılmaz; yönetim semptomatik destek tedavisidir (D yanlış). Türkiye göçmen kuş yolları üzerinde yer aldığından 2010'dan bu yana yaz-sonbahar dönemlerinde sporadik olgular ve sınırlı salgınlar bildirilmekle birlikte ülkemiz Batı Nil Virüsü için yüksek endemik bir bölge değildir (E yanlış).",
     "id": "K2_2023-2024_Q11"
   },
   {
@@ -11941,7 +11941,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Bakterilerin hücre duvarında bulunan penisilin bağlayan proteinlerin (PBP) genetik mutasyonlarla modifiye olması veya yeni PBP üretilmesi (MRSA'daki PBP2a gibi), ilacın hedef enzime afinitesini düşürerek beta-laktamlara karşı majör bir **direnç mekanizması** oluşturur.",
+    "explanation": "Bakteri hücre duvarı sentezinden sorumlu transpeptidazların ve penisilin bağlayan proteinlerin (PBP) mutasyon veya yeni PBP sentezi (ör. MRSA'da PBP2a) yoluyla ilaca afinitelerinin azalması, beta-laktam antibiyotiklere karşı temel bir direnç mekanizmasıdır (C doğru). Penisilinler beta-laktamaz enzimini inhibe etmez; tam tersine bakterilerin salgıladığı beta-laktamaz enzimleri penisilinin beta-laktam halkasını hidrolize ederek ilacı etkisizleştirir (beta-laktamaz inhibitörleri klavulanik asit, sulbaktam ve tazobaktamdır) (A yanlış). 7-aminosefalosporanik asit (7-ASA) sefalosporinlerin temel çekirdeğidir; tüm penisilinlerin temel kimyasal yapısı ise 6-aminopenisilanik asittir (6-APA) (B yanlış). Penisilinlerin birincil ve doğrudan hedefi murein hidrolaz inhibitör faktörlerini doğrudan enzimatik olarak inhibe etmek değil, PBP'lere bağlanıp peptidoglikan çapraz bağlanmasını bloke etmektir; otolizinlerin (murein hidrolazların) serbest kalıp duvarı eritmesi duvar sentezinin durmasını izleyen dolaylı bir sonuçtur (D yanlış). Penisilinler hücre duvarı sentezini bloke ettiklerinden gelişmesi tamamlanmış, bölünmeyen durağan fazdaki bakterilere değil, aktif olarak çoğalan ve yeni hücre duvarı sentezleyen bakterilere karşı etkilidirler (E yanlış).",
     "id": "K2_2023-2024_Q27"
   },
   {
@@ -12007,7 +12007,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Bir ilacın tekrarlayan dozlarında etkinliğin hızla azalması fenomenine **taşiflaksi (akut tolerans)** adı verilir; bu durum reseptör desensitizasyonu veya endojen nörotransmitter depolarının tükenmesiyle hızla gelişir.",
+    "explanation": "Bir ilacın tekrarlayan dozlarına karşı hızlı biçimde gelişen yanıt azalması fenomeni taşiflaksi (akut tolerans) olarak tanımlanır; reseptör desensitizasyonu veya endojen nörotransmitter depolarının hızla tükenmesiyle gelişir (not: klasik farmakolojide ilaca kısa süre ara verilip depolar yenilendiğinde duyarlılık genellikle geri döner, bu soruda akut tolerans tanımı taşiflaksi olarak hedeflenmiştir) (B doğru). Bakterisid etki gücünün niceliksel göstergesi 'maksimum' değil, test edilen bakterilerin %99.9'unu öldüren en düşük konsantrasyon olan Minimum Bakterisid Konsantrasyondur (MBK) (A yanlış). Bakteri hücre çeperinin ilaca geçirgenliğinin ve hücre içine ilaç alımının artması duyarlılığı artırır; antibiyotik direnci porin kaybı veya efluks pompalarıyla ilaç geçirgenliğinin ve birikiminin azalması sonucu gelişir (C yanlış). Direnç, bakterinin terapötik doz aralığındaki serum konsantrasyonlarından etkilenmesi değil, bu konsantrasyonlardan etkilenmeyerek üremeyi sürdürmesidir (D yanlış). Antibiyotik toleransında bakterinin üremesinin durduğu eşik olan MİK değişmez (artmaz), ancak bakterisid öldürme için gereken MBK belirgin biçimde artar (azalmaz) (E yanlış).",
     "id": "K2_2023-2024_Q29"
   },
   {
@@ -12370,7 +12370,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Florokinolonlar (özellikle siprofloksasin), mononükleer fagositik sistem hücrelerine ve safraya mükemmel penetrasyon göstermeleri ve nüks oranını en aza indirmeleri nedeniyle *Salmonella enterica* serovar Typhi kaynaklı **enterik ateşin (Tifo)** tedavisinde en çok tercih edilen birinci basamak ilaç grubudur.",
+    "explanation": "Florokinolonlar (özellikle siprofloksasin) safra yollarına ve mononükleer fagositik sistem hücrelerine yüksek penetrasyon gösterip taşıyıcılık ve relaps oranlarını düşürdüklerinden Salmonella enterica serovar Typhi kaynaklı enterik ateş (tifo) tedavisinde en sık tercih edilen ilaç gruplarındandır (C doğru). Bakteriyel RNA polimeraz enzimini inhibe ederek transkripsiyonu bozan antibiyotik grubu rifampisin gibi rifamisinlerdir; florokinolonlar ise DNA jiraz (topoizomeraz II) ve topoizomeraz IV enzimlerini inhibe eder (A yanlış). Başta siprofloksasin, ofloksasin ve levofloksasin olmak üzere florokinolonların çoğu büyük oranda böbreklerden değişmeden atıldığı için idrarda yüksek konsantrasyonlara ulaşır ve idrar yolu enfeksiyonlarında oldukça etkilidir (yalnızca moksifloksasin ağırlıklı karaciğerden atılır) (B yanlış). Florokinolonlar magnezyum, çinko, kalsiyum, alüminyum ve demir gibi iki veya üç değerlikli katyonlarla GİS'te çözünmeyen şelat bileşikleri oluşturduğundan emilimleri ve biyoyararlanımları artmaz, aksine belirgin olarak azalır (D yanlış). Anaerobik bakterilere karşı klinik olarak belirgin etkinlik 3. kuşak florokinolon olan levofloksasinde değil, moksifloksasin ve gemifloksasin gibi 4. kuşak florokinolonlarda görülür (E yanlış).",
     "id": "K2_2023-2024_Q40"
   },
   {
@@ -12477,7 +12477,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Aminoglikozidler (neomisin dahil) polikatyonik ve yüksek derecede polar moleküller oldukları için gastrointestinal sistemden **neredeyse hiç emilmezler (<%1-3)**; bu nedenle neomisin sistemik etki için değil, bağırsak cerrahisi öncesi lokal kolon dezenfeksiyonu veya hepatik komada bağırsak florasını baskılamak amacıyla oral verilir.",
+    "explanation": "Aminoglikozidler (neomisin dahil) yüksek polariteli polikatyonik yapıları nedeniyle gastrointestinal kanaldan **neredeyse hiç emilmezler (<%1-3)**; neomisinin oral kullanılmasının nedeni yüksek sistemik emilimi değil, emilmeden bağırsak lümeninde kalarak hepatik komada amonyak üreten veya cerrahi öncesi kolon florasını lokal olarak baskılamasıdır (C yanlış). Aminoglikozidler esas olarak aerobik Gram-negatif basillere karşı dar spektrumlu ve 30S ribozomal alt birime bağlanarak bakterisid etki gösteren ilaçlardır (A doğru). Bakteri sitoplazmik zarını oksijen bağımlı aktif transportla geçtikleri için zorunlu anaeroblara etkisiz olup yalnızca aerobik bakterilere etki ederler (B doğru). Streptomisin, *Mycobacterium tuberculosis* tedavisinde direnç gelişimini önlemek için diğer antitüberküloz ilaçlarla kombine olarak kullanılır (D doğru). Gentamisin, klasik farmakoloji sınıflamasında aynı kütle başına antimikrobiyal etkinliği (gravimetrik gücü) en yüksek aminoglikozid olarak kabul edilir (E doğru).",
     "id": "K2_2023-2024_Q43"
   },
   {
@@ -14231,7 +14231,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Sıtma tanısında parazit yoğunluğunu artırarak duyarlılığı yükseltmek amacıyla hazırlanan kalın damla preparatları **metanol ile fikse edilmez**, yalnızca havada kurutulup doğrudan Giemsa ile boyanır; ince yayma ise morfoloji ve tür tayini için metanolle tespit edilir.",
+    "explanation": "Sıtma tanısında parazit yoğunluğunu artırmak ve eritrositlerin boyama esnasında hemolize uğramasını (dehemoglobinizasyonu) sağlamak amacıyla kalın damla preparatları metanolle fikse edilmez; havada iyice kurutulduktan sonra doğrudan Giemsa boyama işlemine geçilir (B doğru). Kalın damla ve ince yayma boyama yöntemleri pahalı moleküler testler olmayıp aksine ucuz, pratik ve sıtmanın rutin tanısında hala altın standart kabul edilen yöntemlerdir (A yanlış). Kalın damlada birim alana ince yaymaya göre çok daha fazla kan damlası yoğunlaştırıldığı için tanısal duyarlılığı ince yaymaya kıyasla daha düşük değil, çok daha yüksektir (C yanlış). Kalın damlada eritrositler parçalandığı ve parazit morfolojisi büzüşebildiği için Plasmodium tür ayrımı kalın damladan ziyade eritrosit içi morfolojinin net izlendiği ince yayma preparatlarıyla yapılır (D yanlış). İnce yayma preparatlarında eritrosit zarlarının ve parazit yapısının korunması için Giemsa boyaması öncesinde mutlaka metanol ile fiksasyon yapılır (E yanlış).",
     "id": "K2_2023-2024_Q91",
     "repeats": [
       {
@@ -14567,7 +14567,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "**Sitokinler**, bağışıklık ve inflamatuvar yanıtlarda hücreler arası haberleşmeyi ve regülasyonu sağlayan düşük molekül ağırlıklı regülatör protein veya glikoproteinlerdir; depolanmazlar, ihtiyaç halinde de novo üretilirler ve etkileri geçicidir.",
+    "explanation": "Sitokinler bağışıklık, inflamasyon ve hematopoez süreçlerinde hücreler arası sinyal iletimini ve immün yanıt regülasyonunu sağlayan düşük molekül ağırlıklı protein veya glikoprotein yapılı haberci moleküllerdir (B doğru). Histamin gibi granüllerde önceden depolanan mediyatörlerin aksine sitokinler genellikle hücre içinde depolanmazlar; antijenik veya inflamatuvar uyarı sonrasında de novo sentezlenip hızla salınırlar (A yanlış). Sitokinlerin etkisi yalnızca salgılandığı hücreyle (otokrin) sınırlı değildir; komşu hücreler üzerinde parakrin ve yüksek düzeyde sistemik dolaşıma katıldıklarında uzak organlarda endokrin etki gösterebilirler (C yanlış). Sitokinlerin yarı ömürleri kısa olup üretimleri sıkı negatif geri bildirim mekanizmalarıyla kontrol edildiğinden etkileri kalıcı değil, geçici ve kendi kendini sınırlayan özelliktedir (D yanlış). Sitokinler glikolipid yapıda değil, polipeptid (küçük protein veya glikoprotein) yapısındadırlar (E yanlış).",
     "id": "K2_2024-2025_Q8"
   },
   {
@@ -14699,7 +14699,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Light kriterlerine göre; Plevral sıvı protein / Serum protein oranı 3.5 / 6.5 = 0.54 saptanmıştır. Bu oran **>0.5** eşik değerini aştığı için sıvı kesinlikle **eksüda** vasfındadır (ayrıca LDH oranı 250/300 = 0.83 olup >0.6'dır).",
+    "explanation": "Light kriterlerine göre **plevral sıvı protein / serum protein oranı** 3.5 / 6.5 = **0.54** bulunmuştur; bu değer **>0.5** eşik sınırının üzerinde olduğu için sıvı **eksüda** niteliğindedir (ayrıca plevral LDH / serum LDH oranı 250 / 300 = 0.83 olup >0.6 kriterini de sağlamaktadır) (B doğru). Plevral sıvı protein düzeyinin >3.0 g/dL olması transüda lehine değil eksüda lehine bir bulgudur ve tek başına Light kriteri değildir (A yanlış). Plevral LDH / serum LDH oranı 250 / 300 = 0.83 hesaplanmakta olup <0.6 değil >0.6 çıktığından transüdayı desteklemez (C yanlış). Light'ın üçüncü kriteri plevral sıvı LDH değerinin serum normal üst sınırının iki katından değil **2/3'ünden (>0.67 katından)** büyük olmasıdır ve soruda serum normal üst sınırı verilmemiştir (D yanlış). Protein oranı 3.5 / 6.5 = 0.54 ile <0.5 değil >0.5'tir; zaten <0.5 oranı eksüda değil transüda lehine bir kriterdir (E yanlış).",
     "id": "K2_2024-2025_Q12"
   },
   {
@@ -14798,7 +14798,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "**Klorokin**, oral yoldan uygulandığında gastrointestinal sistemden neredeyse eksiksiz (%90-100) ve hızla absorbe edilir; yüksek doku afinitesi nedeniyle çok geniş bir dağılım hacmine sahiptir. Ön-ilaç değildir ve retinopati riski doza bağımlı ve geri dönüşümsüzdür.",
+    "explanation": "Klorokin ağız yolundan alındığında gastrointestinal kanaldan tama yakın (%90-100) ve hızlı biçimde absorbe edilir, ardından dokulara yüksek afiniteyle bağlanarak çok geniş bir dağılım hacmi oluşturur (D doğru). Karaciğerde CYP2C19 enzimiyle aktif metaboliti sikloguanile dönüşen antimalaryal ön-ilaç klorokin değil proguanildir; klorokin ön-ilaç olmayıp doğrudan etki gösterir (A yanlış). Klorokin yalnızca antimalaryal olarak kullanılmaz; ekstraintestinal amebiyaziste (amebik karaciğer apsesi) ve immünomodülatör özelliğiyle romatoid artrit ile sistemik lupus eritematozus tedavisinde de kullanılır (B yanlış). Klorokin, P. vivax'ın karaciğerdeki latent hipnozoit doku şekillerine etkisiz olsa da P. vivax'ın (ve P. ovale ile P. malariae'nın) gametositleri üzerinde etkilidir (gametositlere tamamen etkisiz kaldığı tür P. falciparum'dur) (C yanlış). Klorokin korneada geri dönüşlü opasite yapabilse de özellikle kümülatif toplam doz 100 gramı aştığında gelişen maküler retinopati geri dönüşlü değil, kalıcı ve geri dönüşsüz görme kaybına yol açar (E yanlış).",
     "id": "K2_2024-2025_Q15",
     "repeats": [
       {
@@ -15125,7 +15125,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Aminoglikozid grubu antibiyotikler 30S ribozom alt birimine irreversibl bağlanarak A bölgesinin konformasyonunu bozar; bu durum **mRNA kodonlarının yanlış okunmasına (misreading)** ve kusurlu, toksik proteinlerin üretilmesine yol açar.",
+    "explanation": "Aminoglikozid grubu protein sentez inhibitörleri 30S ribozomal alt birimine irreversibl bağlanarak A bölgesinin geometrisini bozar ve mRNA üzerindeki kodonların tRNA'lar tarafından yanlış okunmasına (misreading) ve kusurlu proteinlerin sentezlenmesine yol açar (D doğru). Protein sentez inhibitörlerinin tamamı bakteriyostatik değildir; tetrasiklinler, makrolidler ve kloramfenikol bakteriyostatik iken aminoglikozidler hızlı bakterisid etki gösterir (A yanlış). Protein sentez inhibitörleri amino asitlerin tRNA'ya bağlanmasını aktive etmez; aksine mupirosin gibi ajanlar izolezil-tRNA sentetazı inhibe ederek bu aktivasyon basamağını engeller (B yanlış). Protein sentez inhibitörleri mRNA veya aminoasil-tRNA kompleksinin ribozoma bağlanmasını uyarmaz, tam tersine tetrasiklinlerin A bölgesine bağlanmayı engellemesi gibi çeşitli basamakları inhibe ederler (C yanlış). DNA jiraz (topoizomeraz II) ve topoizomeraz IV enzimlerini inhibe etmek protein sentez inhibitörlerinin değil, florokinolon grubu antibiyotiklerin etki mekanizmasıdır (E yanlış).",
     "id": "K2_2024-2025_Q24"
   },
   {
@@ -15224,7 +15224,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Bir oksazolidinon olan **linezolid**, bakteriyel 50S ribozomal alt birimindeki **23S rRNA'ya bağlanarak** 30S alt birimi, mRNA ve fMet-tRNA'dan oluşan 70S fonksiyonel başlatma (inisiyasyon) kompleksinin kurulmasını önler.",
+    "explanation": "Oksazolidinon sınıfı bir antibiyotik olan **linezolid**, bakteriyel 50S ribozomal alt biriminin **23S rRNA bölgesine bağlanarak** 30S alt birimi, mRNA ve fMet-tRNA'nın birleşip fonksiyonel 70S başlatma kompleksini oluşturmasını engeller (B doğru). Penisilin bağlayan proteinler (transpeptidaz) üzerinden hücre duvarı çapraz bağlanmasını inhibe eden ilaçlar linezolid değil beta-laktam antibiyotiklerdir (A yanlış). DNA-bağımlı RNA polimerazı inhibe ederek RNA sentezini bozan temel antibiyotik rifampisindir (C yanlış). 30S alt birimine bağlanarak mRNA'nın yanlış okunmasına yol açan antibiyotikler aminoglikozidlerdir (D yanlış). Folik asit sentezini antimetabolit olarak inhibe eden ilaçlar sülfonamidler (dihidropteorat sentaz) ve trimetoprimdir (dihidrofolat redüktaz) (E yanlış).",
     "id": "K2_2024-2025_Q27"
   },
   {
@@ -15323,7 +15323,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "HIV proteaz inhibitörleri (sakinavir, ritonavir vb.), gag-pol poliprotein prekürsörlerinin bölünmesini ve yapısal proteinlerin olgunlaşmasını sağlayan viral **aspartil proteaz enzimini** yarışmalı olarak inhibe ederek enfektif olmayan olgunlaşmamış viryonlar oluşturur.",
+    "explanation": "HIV tedavisinde kullanılan proteaz inhibitörleri (ritonavir, darunavir, atazanavir vb.), viral gag-pol poliprotein prekürsörlerinin kesilmesini ve olgun viryon oluşumunu sağlayan viral aspartil (aspartat) proteaz enzimini yarışmalı olarak inhibe eder (soruda 'proteaz' yerine sehven 'polimeraz' yazılmış olup kastedilen viral aspartat proteazdır) (D doğru). Proviral HIV DNA'sının konak hücre DNA'sına entegrasyonunu engelleyen ilaçlar proteaz inhibitörleri değil raltegravir ve dolutegravir gibi integraz inhibitörleridir (A yanlış). Doğal nükleozidlerle yarışarak viral DNA sentezini zincir sonlandırıcı olarak durduranlar nükleozid revers transkriptaz inhibitörleridir (NRTI) (B yanlış). Virüsün konak hücre membranıyla kaynaşmasını (füzyonunu) engelleyen ilaçlar gp41 bağlayıcı enfuvirtid gibi füzyon/giriş inhibitörleridir (C yanlış). Revers transkriptaz enzimini bloke edenler proteaz inhibitörleri değil NRTI ve NNRTI grubu antiretroviral ilaçlardır (E yanlış).",
     "id": "K2_2024-2025_Q30"
   },
   {
@@ -15521,7 +15521,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Tetrasiklinler (özellikle tek doz **doksisiklin**), salgın bölgelerinde temaslılarda *Vibrio cholerae* kolonizasyonunu ve toksin üretimini hızla baskılayarak **kolera profilaksisinde** ve tedavisinde ilk tercih edilen antibiyotiktir.",
+    "explanation": "Tetrasiklin grubu antibiyotikler (özellikle tek doz veya kısa süreli doksisiklin), salgın dönemlerinde Vibrio cholerae kolonizasyonunu ve enterotoksin üretimini hızla baskıladığı için kolera profilaksisinde ve tedavisinde tercih edilen ajanlardır (D doğru). 30S ribozomal alt birimine bağlanarak mRNA kodonlarının yanlış okunmasına (misreading) ve anormal protein üretimine yol açan grup tetrasiklinler değil aminoglikozidlerdir; tetrasiklinler aminoasil-tRNA'nın A bölgesine bağlanmasını engelleyerek zincir uzamasını durdurur (A yanlış). Tetrasiklinler ribozomal protein sentezini geri dönüşümlü (reversibl) olarak inhibe ettikleri için bakterisid değil, bakteriyostatik etkilidir (B yanlış). Tetrasiklinler süt ve süt ürünlerindeki kalsiyum (ayrıca Mg²⁺, Al³⁺, Fe²⁺) iyonlarıyla bağırsak lümeninde çözünmeyen şelat kompleksleri oluşturur ve bu durum emilimlerini artırmaz, aksine belirgin şekilde azaltır (C yanlış). Tetrasiklinler hücre içine yüksek penetrasyon gösterdiklerinden Mycoplasma, Chlamydia ve Rickettsia gibi atipik bakterilere karşı oldukça etkilidir (E yanlış).",
     "id": "K2_2024-2025_Q36"
   },
   {
@@ -16040,7 +16040,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Patojenik prion proteini (**PrPˢᶜ**), nükleik asit içermez; konak nöronlarında normal olarak bulunan alfa-heliks zengin hücresel prion proteinini (**PrPᶜ**) şablon olarak kullanarak beta-kırmalı patolojik PrPˢᶜ izoformuna dönüştürür (post-translasyonel konformasyonel dönüşüm).",
+    "explanation": "Patojenik prion proteinleri (**PrPSc**) nükleik asit taşımaz; konak hücrelerde normalde alfa-heliks yapıda bulunan çözünür hücresel prion proteini (**PrPc**) ile heterodimer oluşturarak onun konformasyonunu beta-kırmalı yaprakça zengin patojenik PrPSc formuna dönüştürür (D doğru). Prionlar DNA ya da RNA içermediği için kendi nükleik asit kalıplarına göre replikasyon yapamaz (A yanlış). Prion replikasyonu konak hücreyi eş zamanlı enfekte eden yardımcı bir virüsün genomuna bağımlı değildir (B yanlış). PrPSc konak hücre nükleik asidini kalıp alarak yeni sentez gerçekleştirmez; PRNP geninden normal olarak sentezlenmiş PrPc proteininin katlanmasını post-translasyonel olarak değiştirir (C yanlış). Normal PrPc proteinleri patojenik PrPSc şablonu olmaksızın kendi içlerinde kendiliğinden patolojik prion replikasyonu başlatmaz (E yanlış).",
     "id": "K2_2024-2025_Q51",
     "repeats": [
       {
@@ -16879,7 +16879,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Herpesviridae ailesi üyeleri (özellikle HSV-1, EBV, CMV ve VZV) insandan insana tükürük, temas ve solunumla çok kolay bulaştığı için **erişkin yaşa gelindiğinde toplumun %80-90'ından fazlası** bu virüslerle primer enfeksiyonu geçirmiş ve seropozitif hale gelmiştir.",
+    "explanation": "Herpesviridae ailesi virüsleri (özellikle HSV-1, EBV, CMV, VZV ve HHV-6) tükürük, yakın temas ve solunum damlacıklarıyla insandan insana kolayca bulaştığı için erişkin yaşa gelindiğinde toplumun büyük çoğunluğu (%80-90'dan fazlası) bu virüslerle enfekte olmuş ve seropozitif hale gelmiştir (E doğru). Herpes virüsler RNA virüsü değil, ikozahedral kapsidli ve çift iplikli DNA (dsDNA) virüsleridir (A yanlış). Herpes virüsler yalnızca kan yoluyla bulaşmaz; türe göre tükürük (EBV, HSV-1), cinsel ve yakın deri/mukoza teması (HSV-2), solunum damlacıkları (VZV) veya vertikal/transplantasyon yollarıyla da bulaşır (B yanlış). Geçirilen primer enfeksiyon sonrası sterilizan kalıcı bağışıklık oluşmaz; virüsler nöronal gangliyonlarda (HSV, VZV) veya lenfosit/monositlerde (EBV, CMV) ömür boyu latent kalıp immün baskılanma ya da stresle reaktive olabilir (C yanlış). Herpes virüsler zarfsız değildir; konak hücre nükleer membranından tomurcuklanarak edindikleri bir lipid zarfa sahiptirler (D yanlış).",
     "id": "K2_2024-2025_Q74"
   },
   {
@@ -17011,7 +17011,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "KKKA tedavisinde kanıtlanmış spesifik bir viral eradikasyon ilacı bulunmayıp yaklaşımın temelini sıvı-elektrolit desteği, trombosit ve taze donmuş plazma transfüzyonlarından oluşan **destekleyici ve semptomatik tedavi** oluşturur (ağır olgularda ribavirin denenebilir).",
+    "explanation": "Kırım Kongo Kanamalı Ateşi (KKKA) tedavisinde kanıtlanmış spesifik bir viral eradikasyon ilacı bulunmadığından tedavinin temelini sıvı-elektrolit dengesi, trombosit ve taze donmuş plazma replasmanı gibi destekleyici ve semptomatik yaklaşımlar oluşturur (D doğru). Türkiye (özellikle Kelkit Vadisi, İç Anadolu'nun kuzeyi ve Doğu Karadeniz'in iç kesimleri) KKKA açısından yalnızca nadir sporadik olguların görüldüğü bir ülke değil, her yıl düzenli salgın ve olguların izlendiği endemik bir bölgedir (A yanlış). KKKA virüsünü insanlara bulaştıran birincil vektör sivrisinekler değil, başta Hyalomma marginatum olmak üzere kenelerdir (B yanlış). Literatürdeki bazı salgınlarda %10-40 fatalite bildirilse de Türkiye'deki geniş serilerde erken destek tedavisiyle mortalite yaklaşık %4-5 düzeyinde seyretmekte olup Ebola gibi 'çok yüksek mortaliteli' filovirüs düzeyinde değildir (C yanlış). KKKA etkeni Hanta virüs grubundan değil, Nairoviridae ailesinin Orthonairovirus (Nairovirus) cinsinden bir RNA virüsüdür (E yanlış).",
     "id": "K2_2024-2025_Q78"
   },
   {
@@ -17513,7 +17513,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Kalın damla preparatında eritrositlerin dehemoglobinize olması için fiksasyon yapılmaz; yayma havada iyice kurutulduktan sonra doğrudan Giemsa ile boyanır ve parazit taramasında duyarlılığı en yüksek yöntemdir.",
+    "explanation": "Sıtma tanısında hazırlanan kalın damla preparatlarında eritrositlerin suyla parçalanarak (dehemoglobinizasyon) parazitlerin yoğun biçimde görülmesi amaçlandığından fiksasyon yapılmaz; preparat havada kurutulduktan sonra doğrudan Giemsa ile boyanır (A doğru). İnce yayma preparatları Giemsa öncesinde metanol ile fikse edildiği için eritrositlerin zarları korunur ve preparatta parazitler sağlam eritrositlerin içinde görülür (eritrositlerin parçalanıp görülmediği yöntem kalın damladır) (B yanlış). Kalın damlada birim alandaki kan hacmi ince yaymaya kıyasla 20-40 kat daha fazla olduğu için tanısal duyarlılığı ince yayma preparatlara göre daha düşük değil, çok daha yüksektir (C yanlış). Kalın damlada eritrositler lizise uğradığı için parazitin eritrosit içindeki morfolojik özellikleri değerlendirilemez; bu nedenle Plasmodium tür ayrımı ince yayma preparatı üzerinden yapılır (D yanlış). Kalın damla ve ince yayma mikroskopisi pahalı değil, son derece ucuz ve sıtmanın rutin tanısında altın standart olarak kullanılan temel yöntemlerdir (E yanlış).",
     "id": "K2_2024-2025_Q92",
     "repeats": [
       {
@@ -17925,7 +17925,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "**İnterlökin-1 (IL-1)** ve **TNF-α** ateş indüksiyonu ve lökosit adezyonu gibi benzer proinflamatuvar etkilere sahiptir; ancak TNF-α'dan farklı olarak IL-1 in vivo doğrudan hemorajik tümör nekrozuna ve apoptoza yol açmaz.",
+    "explanation": "**İnterlökin-1 (IL-1)** ve **TNF-alfa** ateş oluşturma, endotelyal adezyon molekülü ekspresyonu ve akut faz proteinlerinin indüklenmesi gibi birçok inflamatuvar etkiyi paylaşır; ancak IL-1 reseptörü TNF-R1 gibi ölüm bölgesi (death domain) içermediğinden IL-1, TNF-alfa'dan farklı olarak doğrudan apoptoza ve **hemorajik tümör nekrozuna neden olmaz** (C doğru). IL-1 ateş ve doku inflamasyonu oluşturabilse de doğrudan hemorajik tümör nekrozunu tetiklemez, bu etki TNF-alfa'ya özgüdür (A yanlış). MHC moleküllerinin güçlü indükleyicisi esasen IFN-gama olup TNF ve IL-1 de lokal antijen sunumu ile immün aktivasyonu destekleyebilir; iki sitokini ayıran temel klasik fark MHC etkisi değil tümör nekrozu ve apoptoz indüksiyonudur (B yanlış). IL-1 kemik iliğinde koloni uyarıcı faktörlerin (CSF) etkilerini baskılamaz, aksine hematopoezi ve miyeloid koloni oluşumunu sinerjik olarak uyarır (D yanlış). IL-1 de tıpkı TNF-alfa gibi endotel hücrelerinde doku faktörü sentezini artırıp trombomodülini azaltarak güçlü prokoagülan özellik gösterir (E yanlış).",
     "id": "K2_2025-2026_Q12"
   },
   {
@@ -18020,7 +18020,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Akut faz yanıtında karaciğerden sentezlenen C-reaktif protein, serum amiloid A, fibrinojen ve kompleman proteinleri proinflamatuvar sitokinlerin (özellikle IL-6) uyarısıyla de novo sentezlenip dolaşıma verilir; proteolitik kaskadlar ve peptit dönüşümleri akut faz biyokimyasının dinamik regülasyonunda yer alır.",
+    "explanation": "Not: Bu sorunun cevap anahtarında A şıkkı işaretlenmiş görünse de tıbben doğru yanıt B seçeneğidir; akut faz yanıtında karaciğerden sentezlenen bazı proteinler (örneğin kompleman sistemi bileşenleri ve pıhtılaşma faktörleri) **öncül inaktif zimojen veya proprotein formlarının proteolitik yıkımı/bölünmesiyle aktif hâle geçer** (B doğru). Akut faz proteinlerinin yalnızca böbreklerde sentezlenip proteolize uğramadığı ifadesi bilimsel olarak yanlıştır, çünkü akut faz proteinlerinin ana sentez organı proinflamatuvar sitokinlerin (özellikle IL-6) uyardığı karaciğerdir ve birçoğu proteolitik kaskadlara katılır (A yanlış). Proteoliz akut faz proteinlerinin karaciğerdeki transkripsiyonel sentezini baskılayan bir mekanizma değildir (C yanlış). Soruda sorgulanan mekanizma proteinlerin yıkılıp plazma düzeyinin düşürülmesi değil, proteolitik işlenme yoluyla işlevsel aktif formların oluşturulmasıdır (D yanlış). Akut faz proteinleri tamamen immün hücrelerce değil, başlıca karaciğer hepatositleri tarafından sentezlenip dolaşıma salınır (E yanlış).",
     "id": "K2_2025-2026_Q15"
   },
   {
@@ -18218,7 +18218,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Mikroorganizmanın belirli bir doku veya organı seçerek orada yerleşmesi ve hastalık yapması özelliğine patojenite değil **organ veya doku tropizmi** denir; patojenite ise bir mikroorganizmanın konakta hastalık oluşturabilme yeteneğidir.",
+    "explanation": "Mikroorganizmanın belirli bir doku veya organı seçerek orada yerleşip hastalık oluşturma eğilimi patojenite değil **doku/organ tropizmi** olarak adlandırılır; **patojenite** ise bir mikroorganizmanın konakta hastalık yapabilme yeteneğini tanımlar (C yanlış). Çapraz enfeksiyon, gerekli enfeksiyon kontrol önlemleri alınmadığında hastalık etkeninin bir hastadan başka bir kişiye bulaşmasıdır (A doğru). Kontaminasyon, mikroorganizmaların kirli bir ortamdan veya kaynaktan temiz bir ortama ya da yüzeye taşınması/bulaşmasıdır (B doğru). Toksemi, bakterilerin ürettiği ekzotoksin veya endotoksinlerin kan dolaşımına geçmesiyle oluşan sistemik klinik tablodur (D doğru). Sporadi, bir enfeksiyon hastalığının belirli bir salgın veya kümelenme göstermeksizin tek tük ve dağınık vakalar halinde görülmesidir (E doğru).",
     "id": "K2_2025-2026_Q21"
   },
   {
@@ -18523,7 +18523,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Sefalosporin grubu antibiyotiklerin büyük bir kısmı (seftriakson ve sefoperazon hariç) karaciğerde anlamlı metabolizmaya uğramaksızın **böbreklerden glomerüler filtrasyon ve aktif tübüler sekresyonla** değişmeden idrarla atılırlar.",
+    "explanation": "Sefalosporin grubu antibiyotiklerin büyük çoğunluğu (başlıca safrayla atılan seftriakson ve sefoperazon dışında) vücutta anlamlı metabolizmaya uğramadan böbreklerden glomerüler filtrasyon ve aktif tübüler sekresyon yoluyla idrarla itrah edilirler (D doğru). Sefalosporinlere karşı gelişen direncin en az görülen nedeni değil, en önemli ve en sık nedeni bakterilerin salgıladığı beta-laktamaz (özellikle GSBL/ESBL ve AmpC) enzimleridir ve erken kuşaklar bu enzimlerce kolayca hidrolize edilir (A yanlış). Penicillium türü mantarlardan elde edilen antibiyotikler sefalosporinler değil penisilinlerdir; sefalosporinler Cephalosporium acremonium adlı mantardan köken alır (B yanlış). 6-aminopenisilanik asit (6-APA) penisilinlerin temel halkasıdır; sefalosporinlerin temel kimyasal çekirdek yapısı ise 7-aminosefalosporanik asittir (7-ASA) (C yanlış). Beta-laktamazlara en dayanıklı olan sefalosporinler 1. kuşak değil, 3., 4. (ör. sefepim) ve 5. kuşak sefalosporinlerdir (1. kuşak sefalosporinler beta-laktamazlara en duyarlı gruptur) (E yanlış).",
     "id": "K2_2025-2026_Q30"
   },
   {
@@ -18828,7 +18828,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Bir oksazolidinon olan **linezolid**, bakteriyel 50S ribozomal alt birimindeki **23S rRNA'ya bağlanarak** mRNA, fMet-tRNA ve 30S alt biriminden oluşan 70S fonksiyonel inisiyasyon (başlangıç) kompleksinin kurulmasını başlangıç aşamasında bloke eder.",
+    "explanation": "Oksazolidinon grubu antibiyotik **linezolid**, bakteriyel 50S ribozomal alt birimin **23S rRNA bölgesine bağlanarak** 30S alt birimi, mRNA ve fMet-tRNA'dan oluşan fonksiyonel 70S **başlangıç (inisiyasyon) kompleksinin kurulmasını bloke eder** (E doğru). 30S ribozomal alt birime bağlanarak başlangıç kompleksini engelleyen antibiyotik grubu linezolid değil aminoglikozidlerdir (A yanlış). mRNA kodonlarının hatalı okunmasına (misreading) yol açan etki mekanizması yine aminoglikozidlere aittir (B yanlış). Ribozomun A bölgesine yeni aminoaçil-tRNA girişini engelleyen antibiyotikler tetrasiklinlerdir (C yanlış). Ribozomun mRNA üzerindeki translokasyon hareketini inhibe eden antibiyotikler makrolidler ve klindamisindir (D yanlış).",
     "id": "K2_2025-2026_Q39"
   },
   {
@@ -18993,7 +18993,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "**Tetrasiklinler**, 30S ribozomal alt birimine reversibl olarak bağlanarak **aminoasil-tRNA'nın ribozom üzerindeki A (akseptör) bölgesine erişimini ve bağlanmasını sterik olarak engeller**; böylece uzayan peptit zincirine yeni amino asit eklenemez.",
+    "explanation": "Tetrasiklinler bakteri ribozomunun 30S alt birimine reversibl olarak bağlanıp yeni gelen aminoasil-tRNA'nın ribozom üzerindeki A (akseptör) bölgesine girişini sterik olarak engeller ve böylece peptit zincirinin uzamasını durdurur (E doğru). Tetrasiklinler 50S alt birimine irreversibl değil, 30S alt birimine reversibl olarak bağlanır (50S'e bağlananlar makrolid, kloramfenikol ve linkozamidlerdir) (A yanlış). Tetrasiklinler tRNA'nın P (peptidil) bölgesine geçişini (translokasyonu) değil, yeni aminoasil-tRNA'nın A bölgesine bağlanmasını bloke eder (translokasyonu engelleyenler makrolidler ve klindamisindir) (B yanlış). Hem inisiyasyon kompleksini hem elongasyonu ve yanlış okumayı bozarak bakterisid etki yapan antibiyotikler tetrasiklinler değil aminoglikozidlerdir (C yanlış). mRNA ile 30S ve 50S alt birimlerinin birleşerek 70S inisiyasyon kompleksini oluşturmasını engelleyen başlıca ajan linezolid (ve kısmen aminoglikozidler) olup tetrasiklinler bu aşamayı değil elongasyon aşamasındaki A bölgesi bağlanmasını engeller (D yanlış).",
     "id": "K2_2025-2026_Q44"
   },
   {
@@ -19833,7 +19833,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Clostridium tetani ekzotoksini olan **tetanospazmin**, retrograd aksonal transport ile omuriliğe taşınır ve inhibitör internöronlarda sinaptobrevini parçalayarak **GABA ve glisin** salınımını geri dönüşsüz inhibe eder; motor nöronların baskılanamaması kontrolsüz jeneralize kas spazmlarına yol açar.",
+    "explanation": "*Clostridium tetani* ekzotoksini olan **tetanospazmin**, motor nöron aksonları boyunca retrograd yolla omuriliğe taşınıp inhibitör ara nöronlardaki SNARE proteini sinaptobrevini parçalar; böylece **GABA ve glisin salınımını engelleyerek** motor nöronların baskılanmasını kaldırır ve kaslarda sürekli spastik kasılmaya yol açar (A doğru). Kas-sinir kavşağında postsinaptik asetilkolin reseptörlerini bloke etmek kürar benzeri non-depolarizan kas gevşeticilerin ve myastenia gravis antikorlarının mekanizmasıdır, tetanospazmin presinaptik MSS ara nöronlarına etki eder (B yanlış). Nöronlarda veya konak hücrelerde protein sentezini durdurarak hücre ölümüne yol açan mekanizma difteri toksini (EF-2 inaktivasyonu) veya Shiga toksinine özgüdür (C yanlış). Sempatik sinir sisteminden adrenalin salınımına bağlı otonomik dengesizlik tetanozda ikincil olarak görülse de tetanospazminin primer moleküler etki mekanizması değildir (D yanlış). Periferik sinirlerde miyelin kılıf hasarıyla ileti hızını azaltan durum Guillain-Barré sendromu gibi demiyelinizan nöropatilerdir, tetanospazmin miyelin yıkımı yapmaz (E yanlış).",
     "id": "K2_2025-2026_Q68"
   },
   {
@@ -20039,7 +20039,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "**Vankomisin** oral yoldan gastrointestinal kanaldan neredeyse hiç emilmez (biyoyararlanımı <%10); bu farmakokinetik özellik kolon lümeninde çok yüksek lokal konsantrasyon sağlayarak sistemik toksisite olmaksızın **Clostridioides difficile koliti** (psödomembranöz kolit) tedavisinde oral kullanımını sağlar.",
+    "explanation": "**Vankomisin** gastrointestinal kanaldan neredeyse hiç emilmediğinden (<%10 biyoyararlanım) oral uygulandığında bağırsak lümeninde çok yüksek konsantrasyona ulaşır; bu nedenle yalnızca bağırsak lümeninde yerleşen **antibiyotik ilişkili *Clostridioides difficile* koliti (psödomembranöz kolit)** tedavisinde oral kullanılır (A doğru). *Staphylococcus epidermidis*'e bağlı kateter ilişkili kan dolaşımı enfeksiyonu sistemik bakteriyemi olduğu için oral vankomisin emilip kana geçemez, intravenöz uygulanmalıdır (B yanlış). MRSA menenjitinde ilacın kana geçip kan-beyin bariyerini aşması gerektiğinden oral kullanım tamamen etkisizdir, IV tedavi şarttır (C yanlış). *Streptococcus pyogenes*'e bağlı nekrotizan fasiit derin yumuşak doku ve sistemik tutulum gösterdiğinden oral emilmeyen vankomisinle tedavi edilemez (D yanlış). Enterokok kaynaklı infektif endokardit kalp kapakçıklarında ve kan dolaşımında yüksek serum düzeyi gerektirdiğinden yalnızca parenteral yolla tedavi edilir (E yanlış).",
     "id": "K2_2025-2026_Q74"
   },
   {
@@ -20105,7 +20105,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Patojen prionların replikasyonunda nükleik asit yer almaz; enfeksiyöz patolojik prion proteini (**PrP^Sc**, beta kırmalı yaprak zengin), konak hücredeki normal çözünür **PrP^C** (alfa heliks zengin) ile heterodimer oluşturarak onun tersiyer yapısını kendine benzer patolojik PrP^Sc formuna dönüştürür.",
+    "explanation": "Patojenik prionların replikasyonunda nükleik asit bulunmaz; enfeksiyöz beta-kırmalı yapıdaki **PrPSc** molekülü, konak nöronlarında doğal olarak bulunan alfa-heliks yapılı **PrPc** ile dimer oluşturarak onun üç boyutlu katlanmasını kendi patolojik PrPSc formuna dönüştürür (D doğru). Prionlar DNA ya da RNA içermeyen enfeksiyöz proteinler oldukları için kendi nükleik asitlerine göre replike olamaz (A yanlış). Prionların çoğalması için eş zamanlı bir virüs enfeksiyonuna veya viral genoma gereksinim yoktur (B yanlış). PrPSc konak nükleik asidini kalıp kullanarak protein sentezletmez, konak PRNP genince sentezlenmiş hazır PrPc proteininin konformasyonunu değiştirir (C yanlış). Normal PrPc molekülleri PrPSc kalıbı olmaksızın kendi içlerinde kendiliğinden dimerize olup enfeksiyöz prion replikasyonu yürütmez (E yanlış).",
     "id": "K2_2025-2026_Q76",
     "repeats": [
       {
@@ -20319,7 +20319,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Kuduz şüpheli hayvan temasında daha önce aşılanmamış bireylerde standart temas sonrası profilaksi (PEP) şeması, yara temizliği ve immünglobulin uygulamasıyla birlikte **0, 3, 7, 14 ve 28. günlerde** toplam 5 doz intramüsküler aşı uygulamasıdır (deltoid kasa). Temas öncesi profilaksi ise 3 doz olarak yapılır.",
+    "explanation": "Kuduz şüpheli veya kuduz hayvan temasında daha önce aşılanmamış bireylerde klasik Essen temas sonrası profilaksi şemasına (ve güncel rehberde immünsüpresif bireylere uygulanan tam protokole) göre yara temizliği ile kuduz immünglobulinine ek olarak **0, 3, 7, 14 ve 28. günlerde toplam 5 doz** intramüsküler kuduz aşısı uygulanır (A doğru). 0, 3, 7 ve 14. günlerde toplam 4 dozluk kısaltılmış şema güncel rehberde immün sistemi sağlam kişilerde kullanılabilse de bu soruda esas alınan klasik 5 dozluk Essen şemasında yer alan 28. gün dozu eksiktir (B yanlış). 0, 1, 2, 12 ve 28. günler şeklinde bir kuduz aşılama takvimi ulusal veya uluslararası profilaksi kılavuzlarında tanımlanmamıştır (C yanlış). 0, 3 ve 7. günlerde toplam 3 doz şeması yalnızca önceden tam aşılanmış veya temas öncesi profilaksi alanlarda 2 dozluk rapel dışında yetersiz bir uygulamadır (D yanlış). 0, 7 ve 21 (veya 28). günlerde toplam 3 doz uygulaması kuduz riskli temas sonrası tedavi için değil, yüksek riskli meslek gruplarına yönelik **temas öncesi profilaksi** şemasıdır (E yanlış).",
     "id": "K2_2025-2026_Q82"
   },
   {
@@ -20352,7 +20352,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Prion hastalıkları arasında serebellar korteks hasarı ve Purkinje hücresi kaybının en belirgin olduğu, kliniğin erken dönemde şiddetli serebellar ataksi, koordinasyon bozukluğu ve yürüme güçlüğüyle başladığı hastalıklar **Kuru hastalığı** ile otozomal dominant **Gerstmann-Sträussler-Scheinker sendromu**'dur.",
+    "explanation": "Prion hastalıkları içinde serebellar korteks harabiyetinin ve Purkinje hücresi kaybının en baskın olduğu, kliniğin ilerleyici serebellar ataksi, koordinasyon bozukluğu ve yürüme güçlüğüyle ön plana çıktığı tablolar **Kuru hastalığı** ve otozomal dominant kalıtılan **Gerstmann-Sträussler-Scheinker (GSS) sendromudur** (B doğru). Creutzfeldt-Jakob hastalığı (CJH) öncelikle hızlı ilerleyen demans ve miyoklonusla, Fatal Familial Insomnia (FFI) ise talamus dejenerasyonuna bağlı ağır uykusuzluk ve otonomik bozuklukla seyreder (A yanlış). Varyant CJH erken psikiyatrik semptomlar ve ağrılı duyusal yakınmaları izleyen demansla, FFI ise talamik tutulumla karakterizedir (C yanlış). Klasik ve varyant CJH'de serebellar bulgular gelişebilse de temel baskın klinik tablo demans, miyoklonus ve psikiyatrik bozulmadır (D yanlış). Bu seçenekte GSS yer alsa da eşleştirilen FFI'da ana hedef serebellum değil ön/dorsomedial talamustur (E yanlış).",
     "id": "K2_2025-2026_Q83"
   },
   {
@@ -20533,7 +20533,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Sifiliz tanısında geleneksel tarama algoritmasında önce maliyeti düşük ve sensitivitesi yüksek **non-treponemal test** (VDRL veya RPR) yapılır; reaktif saptanan serumlar Treponema pallidum antijenlerine özgül **treponemal testler** (TPHA, FTA-ABS) ile doğrulanır. RPR/VDRL tedavi takibinde titre izlemi için kullanılır.",
+    "explanation": "Sifiliz serolojik tanısında geleneksel algoritmaya göre önce maliyeti düşük ve duyarlılığı yüksek non-treponemal bir tarama testi (VDRL veya RPR) yapılır; reaktif çıkan örnekler Treponema pallidum'a özgül antikorları saptayan treponemal testlerle (TPHA, FTA-ABS) doğrulanır (A doğru). RPR ve VDRL testleri Treponema pallidum'a özgül antikorları değil, doku hasarı sonucu açığa çıkan kardiyolipin-lesitin-kolesterol antijen kompleksine karşı gelişen non-spesifik reagin antikorlarını saptar (B yanlış). Treponemal testler (TPHA, FTA-ABS) başarılı tedaviden sonra dahi hastaların büyük çoğunluğunda ömür boyu pozitif kalabildiği için tedavi takibinde kullanılmaz; tedavi yanıtının izlenmesinde titreleri tedaviyle düşen kantitatif non-treponemal testler (VDRL/RPR) kullanılır (C yanlış). Non-treponemal testler yalnızca konjenital sifilizde değil, edinilmiş sifilizin tüm evrelerinin taramasında ve tedavi takibinde rutin olarak kullanılır (D yanlış). Konak hücre ve mitokondri zarındaki kardiyolipin-lesitin-kolesterol antijenlerine karşı gelişen antikorları saptayanlar treponemal değil non-treponemal (VDRL/RPR) testlerdir; treponemal testler doğrudan bakteri yüzey antijenlerine karşı oluşan özgül antikorları belirler (E yanlış).",
     "id": "K2_2025-2026_Q88"
   },
   {
@@ -20640,7 +20640,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Poxvirüslerden **Variola virüsü** çift zincirli DNA virüsü olmasına rağmen istisnai olarak kendi viral enzimleri sayesinde konak sitoplazmasında replike olur; klasik biyolojik kural DNA virüslerinin çekirdekte replike olmasıdır. Ayrıca Variola'da tüm lezyonlar monomorfiktir (aynı evrededir), Varisella gibi polimorfik değildir.",
+    "explanation": "Not: Bu sorunun cevap anahtarında A şıkkı işaretlenmiş görünse de Variola virüsü için tıbben yanlış olan ifade C seçeneğidir; çiçek hastalığında (Variola) deri döküntüleri aynı anda farklı evrelerde görülmez, aksine tüm lezyonlar **aynı evrede (senkron/monomorfik)** bulunur; farklı evrelerin (makül, papül, vezikül, püstül) aynı anda bir arada görülmesi suçiçeği (Varisella) için karakteristiktir (C yanlış). Poxvirüslerden Variola çift zincirli bir DNA virüsü olmasına rağmen kendi transkripsiyon ve replikasyon enzimlerini taşıdığı için istisnai olarak konak hücre sitoplazmasında replike olur (A doğru). Variola virüsünün doğal konağı yalnızca insandır ve hayvan rezervuarı bulunmadığı için başarılı aşılama kampanyasıyla dünyadan tamamen eradike edilebilmiştir (B doğru). Çiçek aşısı, Variola virüsüyle güçlü çapraz bağışıklık sağlayan canlı atenüe Vaccinia virüsü kullanılarak geliştirilmiştir (D doğru). Doğal Variola enfeksiyonu geçirip iyileşen bireylerde ömür boyu kalıcı bağışıklık oluşur (E doğru).",
     "id": "K2_2025-2026_Q91"
   },
   {
@@ -20772,7 +20772,7 @@ window.KURUL_DATA["2"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Sıtma şüphesinde hazırlanan **kalın damla preparat**, eritrositlerin distile suyla parçalanması (dehemoglobinizasyon) ve parazit yoğunluğunun artırılması amacıyla metanolle fikse edilmeden havada kurutulur ve doğrudan **Giemsa boyama** işlemine geçilir. İnce yayma ise metanolle fikse edilir ve tür tayininde kullanılır.",
+    "explanation": "Sıtma şüphesinde hazırlanan kalın damla preparatlarda eritrositlerin distile su veya boya çözeltisiyle parçalanması (dehemoglobinizasyon) ve parazit yoğunluğunun artırılması amacıyla metanolle fiksasyon yapılmaz; havada kurutulduktan sonra doğrudan Giemsa boyama işlemine geçilir (A doğru). İnce yayma preparatlarda eritrosit bütünlüğünü ve parazit içi morfolojik detayları bozulmadan koruyabilmek için Giemsa öncesinde mutlaka metanol ile fiksasyon yapılır (B yanlış). Kalın damla preparatlarında ince yaymaya göre birim alanda çok daha fazla kan hacmi tarandığı için tanısal duyarlılığı ince yaymadan daha düşük değil, çok daha yüksektir (C yanlış). Kalın damlada eritrositler lizise uğrayıp parazitler deforme olabildiğinden Plasmodium tür ayrımı kalın damla yerine ince yayma preparatı ile yapılır (D yanlış). Kalın damla ve ince yayma preparatları pahalı yöntemler olmayıp düşük maliyetleri ve yüksek tanısal değerleri nedeniyle sıtma tanısında hala rutin altın standarttır (E yanlış).",
     "id": "K2_2025-2026_Q95",
     "repeats": [
       {

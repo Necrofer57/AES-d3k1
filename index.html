@@ -1213,26 +1213,26 @@
   <div id="toast-box" class="hidden fixed bottom-5 right-5 z-50 px-4 py-2.5 rounded-xl bg-slate-900 text-white text-xs font-semibold shadow-lg border border-slate-700"></div>
 
   <!-- Dönem 1 Veri Dosyaları -->
-  <script src="/data/d1-1.js?v=20261110v5"></script>
-  <script src="/data/d1-2.js?v=20261110v5"></script>
-  <script src="/data/d1-3.js?v=20261110v5"></script>
-  <script src="/data/d1-4.js?v=20261110v5"></script>
-  <script src="/data/d1-5.js?v=20261110v5"></script>
+  <script src="/data/d1-1.js?v=20261115v6"></script>
+  <script src="/data/d1-2.js?v=20261115v6"></script>
+  <script src="/data/d1-3.js?v=20261115v6"></script>
+  <script src="/data/d1-4.js?v=20261115v6"></script>
+  <script src="/data/d1-5.js?v=20261115v6"></script>
   <!-- Dönem 2 Veri Dosyaları -->
-  <script src="/data/d2-1.js?v=20261110v5"></script>
-  <script src="/data/d2-2.js?v=20261110v5"></script>
-  <script src="/data/d2-3.js?v=20261110v5"></script>
-  <script src="/data/d2-4.js?v=20261110v5"></script>
-  <script src="/data/d2-5.js?v=20261110v5"></script>
-  <script src="/data/d2-6.js?v=20261110v5"></script>
+  <script src="/data/d2-1.js?v=20261115v6"></script>
+  <script src="/data/d2-2.js?v=20261115v6"></script>
+  <script src="/data/d2-3.js?v=20261115v6"></script>
+  <script src="/data/d2-4.js?v=20261115v6"></script>
+  <script src="/data/d2-5.js?v=20261115v6"></script>
+  <script src="/data/d2-6.js?v=20261115v6"></script>
   <!-- Dönem 3 Veri Dosyaları -->
-  <script src="/data/kurul-1.js?v=20261110v5"></script>
-  <script src="/data/kurul-2.js?v=20261110v5"></script>
-  <script src="/data/kurul-3.js?v=20261110v5"></script>
-  <script src="/data/kurul-4.js?v=20261110v5"></script>
-  <script src="/data/kurul-5.js?v=20261110v5"></script>
-  <script src="/data/kurul-6.js?v=20261110v5"></script>
-  <script src="/data/kurul-7.js?v=20261110v5"></script>
+  <script src="/data/kurul-1.js?v=20261115v6"></script>
+  <script src="/data/kurul-2.js?v=20261115v6"></script>
+  <script src="/data/kurul-3.js?v=20261115v6"></script>
+  <script src="/data/kurul-4.js?v=20261115v6"></script>
+  <script src="/data/kurul-5.js?v=20261115v6"></script>
+  <script src="/data/kurul-6.js?v=20261115v6"></script>
+  <script src="/data/kurul-7.js?v=20261115v6"></script>
 
   <script>
     const KURUL_META = {
@@ -2794,122 +2794,800 @@
         .replace(/^<br>/, '');
     }
 
-    function buildSmartSolutionAnalysis(q, selectedLetter, selectedText, correctText) {
-      const isNegative = /yanlıştır|değildir|görülmez|beklenmez|yer almaz|olmaz|kullanılmaz|kontrendikedir|bulunmaz|söylenemez|hariç|dışında/i.test(q.question || '');
-      const isWrong = Boolean(selectedLetter && selectedLetter !== q.answer);
-      const subjectName = escapeHtml(q.subject || 'Tıp');
+    const _MED_STOPWORDS = new Set([
+      'bir','ve','veya','ile','için','olarak','olan','olur','olabilir','olanlar','daha','çok','en','gibi','kadar',
+      'sonra','önce','arasında','üzerinde','altında','içinde','göre','karşı','nedeniyle','bağlı','görülür','saptanır',
+      'izlenir','bulunur','oluşur','artar','azalır','yüksek','düşük','normal','artmış','azalmış','hangisi','hangileri',
+      'doğrudur','yanlıştır','değildir','aşağıdakilerden','aşağıdaki','ifadelerden','hastada','hastalarda','hastalık',
+      'hastalığı','hastalığında','sendromu','sendromunda','durumunda','tedavide','tedavisi','tedavisinde','tanıda',
+      'tanısı','vakada','çocuklarda','erişkinlerde','genellikle','sıklıkla','başlar','gelişir','gider','gösterir',
+      'sahiptir','neden','yol','açar','özelliği','bulgusu','verilen','yukarıdaki','bunlardan','ise','ancak','fakat'
+    ]);
 
-      // Öncüllü (Romen rakamlı I., II., III...) soru tespiti ve analizi
-      const romanStatements = [];
-      const rRegex = /(?:^|\n|\s)(I{1,3}|IV|V)\s*[\.\-\)]\s*([^\n\r]+?)(?=(?:\n|\s+(?:I{1,3}|IV|V)\s*[\.\-\)]|$))/gi;
-      let rMatch;
-      while ((rMatch = rRegex.exec(q.question || '')) !== null) {
-        const num = rMatch[1].toUpperCase();
-        let text = rMatch[2].trim().replace(/\s+(?:hangisi|hangileri|yukarıdakilerden|ifadelerinden|yargılarından).*$/i, '').trim();
-        if (text.length > 1 && !romanStatements.some(s => s.num === num)) {
-          romanStatements.push({ num, text });
+    const _MED_GENERIC_NOUNS = new Set([
+      'sendrom','sendromu','sendromunda','hastalık','hastalığı','hastalığında','bozukluk','bozukluğu',
+      'tip','tipi','evre','evresi','grup','grubu','sistem','sistemi','yapı','yapısı','yaklaşım','model','modeli',
+      'yöntem','yöntemi','tedavi','tedavisi','tanı','tanısı','test','testi','faktör','faktörü','eksikliği','fazlalığı',
+      'artışı','azalması','kanser','kanseri','tümör','tümörü','hücre','hücresi','doku','dokusu','organ','lob','lobu',
+      'korteks','sinir','siniri','arter','arteri','ven','veni','kas','kası','kemiği','eklem','kanama','enfeksiyon',
+      'inflamasyon','reaksiyon','refleks','yanıt','skala','indeks','düzey','oranı','süresi','bulgu','belirti',
+      'primer','sekonder','tersiyer','akut','kronik','benign','malign','pozitif','negatif','normal','yüksek','düşük',
+      'erken','geç','veya','ile','olan','olur','bilir','sağ','sol','ön','arka','bilateral','unilateral','hangisi',
+      'tümü','hepsi','hiçbiri','diğer'
+    ]);
+
+    const _NEGATIVE_STEM_RE = /yanlış|değildir|değildi[^a-zA-ZçğıöşüÇĞİÖŞÜ]|değil\s*\?|görülmez|görülmeyen|beklenmez|beklenmeyen|yer almaz|yer almayan|almayan|olmaz|olmayan|olmazsa|kullanılmaz|kullanılmayan|kontrendikedir|bulunmaz|bulunmayan|bulunmamaktadır|söylenemez|hariç|dışında|açılmaz|açılmayan|katılmaz|katılmayan|uymaz|uymayan|içermez|içermeyen|yapılmaz|yapılmayan|verilmez|verilmeyen|verilmemiştir|yoktur|gerekmez|gerekmeyen|sınıflandırılmaz|etmez|etmeyen|sağlamaz|sağlamayan|oluşturmaz|oluşturmayan|azaltmaz|artırmaz|arttırmaz|etkilemez|göstermez|göstermeyen|rastlanmaz|rastlanmayan|tercih edilmez|önerilmez|endike değildir|uygun değildir/i;
+    const _ROMAN_OPT_RE = /^(?:yalnız(?:ca)?\s+)?(?:VIII|VII|VI|IV|I{1,3}|V|[1-8])(?:\s*(?:,|ve|veya|&|-|–|\s)\s*(?:VIII|VII|VI|IV|I{1,3}|V|[1-8]))*$/i;
+    const _HEPSI_OPT_RE = /^(?:hepsi|hiçbiri|yukarıdakilerin\s+hepsi|yukarıdakilerin\s+hiçbiri)$/i;
+    const _COUNT_STEM_RE = /kaç\s+tanesi|kaç\s+adet|kaçı\s+(?:doğrudur|yanlıştır)/i;
+
+    const _ANTONYM_PAIRS = [
+      [/\bhipo/i, /\bhiper/i, 'hipo- / hiper- (düşüklük vs. yükseklik) düzeyi'],
+      [/\bartar|artış|yükselir|yüksek\b/i, /\bazalır|azalış|düşer|düşük\b/i, 'artış vs. azalış yönü'],
+      [/\bsağ\b/i, /\bsol\b/i, 'anatomik taraf (sağ vs. sol)'],
+      [/\bön\b|\banterior\b/i, /\barka\b|\bposterior\b/i, 'anatomik konum (ön/anterior vs. arka/posterior)'],
+      [/\bsuperior\b|\büst\b/i, /\binferior\b|\balt\b/i, 'anatomik seviye (üst/superior vs. alt/inferior)'],
+      [/\bprimer\b|\bbirincil\b/i, /\bsekonder\b|\bikincil\b/i, 'basamak/evreleme (primer vs. sekonder)'],
+      [/\bakut\b/i, /\bkronik\b/i, 'klinik seyir (akut vs. kronik)'],
+      [/\bbenign\b|\biyi huylu\b/i, /\bmalign\b|\bkötü huylu\b/i, 'lezyon biyolojisi (benign vs. malign)'],
+      [/\bintrasellüler\b|\bhücre içi\b/i, /\bekstrasellüler\b|\bhücre dışı\b/i, 'kompartman (hücre içi vs. hücre dışı)'],
+      [/\bgram\s*\(\+\)|\bgram pozitif/i, /\bgram\s*\(\-\)|\bgram negatif/i, 'Gram boyanma özelliği'],
+      [/\basidoz\b/i, /\balkaloz\b/i, 'asit-baz dengesi (asidoz vs. alkaloz)'],
+      [/\bmetabolik\b/i, /\brespiratuvar\b|\bsolunumsal\b/i, 'komponent (metabolik vs. respiratuvar)'],
+      [/\bsistolik\b/i, /\bdiyastolik\b/i, 'kardiyak faz (sistolik vs. diyastolik)'],
+      [/\bsempatik\b/i, /\bparasempatik\b/i, 'otonom sistem (sempatik vs. parasempatik)'],
+      [/\bagonist\b/i, /\bantagonist\b/i, 'reseptör etkisi (agonist vs. antagonist)'],
+      [/\baktivatör\b|\baktive\b|\bstimüle\b/i, /\binhibitör\b|\binhibe\b|\bbaskılar\b/i, 'etki yönü (aktivasyon vs. inhibisyon)'],
+      [/\bdominant\b|\bbaskın\b/i, /\bresesif\b|\bçekinik\b/i, 'kalıtım modeli (dominant vs. resesif)']
+    ];
+
+    function _trLower(str) {
+      return String(str || '').replace(/İ/g, 'i').replace(/I/g, 'ı').toLowerCase();
+    }
+
+    function _normMedTok(str) {
+      return _trLower(str)
+        .replace(/\bfakt[öo]r\s+(viii|vii|vi|iv|i{1,3}|v|ix|xiii|xii|xi|x)\b/gi, (_, r) => {
+          const m = { i:1, ii:2, iii:3, iv:4, v:5, vi:6, vii:7, viii:8, ix:9, x:10, xi:11, xii:12, xiii:13 };
+          return 'faktör ' + (m[r.toLowerCase()] || r);
+        })
+        .replace(/\btip\s+(iv|i{1,3}|v)\b/gi, (_, r) => {
+          const m = { i:1, ii:2, iii:3, iv:4, v:5 };
+          return 'tip ' + (m[r.toLowerCase()] || r);
+        })
+        .replace(/[^a-zçğıöşü0-9]+/g, ' ')
+        .trim();
+    }
+
+    function _protectNonSentenceDots(str) {
+      return String(str || '')
+        .replace(/(?<![a-zçğıöşüA-ZÇĞİÖŞÜ0-9])(\d{1,3})\.(?=\s+[a-zçğıöşü])/g, '$1\uE000')
+        .replace(/(?<![a-zçğıöşüA-ZÇĞİÖŞÜ0-9])([A-ZÇĞİÖŞÜ])\.(?=\s+[a-zçğıöşü])/g, '$1\uE000')
+        .replace(/(?<![a-zçğıöşüA-ZÇĞİÖŞÜ0-9])(ör|örn|örneğin|vb|vs|dr|prof|doç|uzm|dk|sa|yak|krş|bkz|sf|md|şekil|tablo|spp?|yakl)\.(?=\s)/gi, '$1\uE000')
+        .replace(/(?<![a-zçğıöşüA-ZÇĞİÖŞÜ0-9])([a-zçğıöşüA-ZÇĞİÖŞÜ]\.){2,}/g, m => m.replace(/\./g, '\uE000'));
+    }
+
+    function _restoreNonSentenceDots(str) {
+      return String(str || '').replace(/\uE000/g, '.');
+    }
+
+    function _splitExpSentences(str) {
+      return _protectNonSentenceDots(str)
+        .split(/(?<=[.!?])\s+|\n+/)
+        .map(s => _restoreNonSentenceDots(s).trim())
+        .filter(Boolean);
+    }
+
+    function _splitExpClauses(str) {
+      return _protectNonSentenceDots(str)
+        .split(/(?<=[.!?])\s+|\n+|;\s*/)
+        .map(s => _restoreNonSentenceDots(s).trim())
+        .filter(Boolean);
+    }
+
+    function _cleanBold(str) {
+      return String(str || '').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
+    }
+
+    function getCorpusMedicalIndex() {
+      if (window.__MED_CORPUS_INDEX) return window.__MED_CORPUS_INDEX;
+      const phraseMap = new Map();
+      const sentences = [];
+      const wordSents = new Map();
+      const pref7Sents = new Map();
+      const boldRe = /\*\*([^*]{3,75}?)\*\*/g;
+      const metaRe = /cevap\s+anahtar|işaretlenmiştir|\b[A-E]\s+şıkkı|\([A-E]\s+(?:doğru|yanlış)|^(?:I|II|III|IV|V)\s+(?:doğru|yanlış)/i;
+
+      const addPhrase = (raw, subj, sentIdx, weight) => {
+        const nt = _normMedTok(raw);
+        if (!nt || nt.length < 3 || _MED_GENERIC_NOUNS.has(nt)) return;
+        if (/^(hepsi|hiçbiri|doğru|yanlış|cevap|seçenek|tümü)$/.test(nt)) return;
+        let arr = phraseMap.get(nt);
+        if (!arr) { arr = []; phraseMap.set(nt, arr); }
+        if (arr.length < 5 && !arr.some(e => e.i === sentIdx)) {
+          arr.push({ s: subj, i: sentIdx, w: weight });
+        }
+      };
+
+      const groups = Object.values(window.KURUL_DATA || {});
+      for (let gi = 0; gi < groups.length; gi++) {
+        const qList = groups[gi] || [];
+        for (let qi = 0; qi < qList.length; qi++) {
+          const q = qList[qi];
+          const exp = q.explanation;
+          if (!exp || exp.length < 22) continue;
+          const subj = _trLower(q.subject || '');
+          const rawParts = _splitExpSentences(exp);
+          let firstValidIdx = -1;
+
+          for (let pi = 0; pi < rawParts.length; pi++) {
+            const rs = rawParts[pi];
+            if (rs.length < 22 || rs.length > 420) continue;
+            if (metaRe.test(rs)) continue;
+            const clean = rs.indexOf('**') !== -1 ? rs.replace(/\*\*/g, '').trim() : rs.trim();
+            if (clean.length < 22 || clean.length > 380) continue;
+
+            const idx = sentences.length;
+            if (firstValidIdx === -1) firstValidIdx = idx;
+            const norm = _normMedTok(clean);
+            sentences.push({ qid: q.id, s: subj, c: clean, n: norm });
+
+            const toks = norm.split(' ');
+            for (let ti = 0; ti < toks.length; ti++) {
+              const w = toks[ti];
+              if (w.length < 4) continue;
+              let wArr = wordSents.get(w);
+              if (!wArr) { wArr = []; wordSents.set(w, wArr); }
+              if (wArr.length < 28 && wArr[wArr.length - 1] !== idx) wArr.push(idx);
+              if (w.length >= 6) {
+                const p7 = w.slice(0, Math.min(7, w.length));
+                let pArr = pref7Sents.get(p7);
+                if (!pArr) { pArr = []; pref7Sents.set(p7, pArr); }
+                if (pArr.length < 28 && pArr[pArr.length - 1] !== idx) pArr.push(idx);
+              }
+            }
+
+            if (rs.indexOf('**') !== -1) {
+              boldRe.lastIndex = 0;
+              let m;
+              while ((m = boldRe.exec(rs)) !== null) {
+                const b = m[1].trim();
+                if (b.split(/\s+/).length <= 6) addPhrase(b, subj, idx, 4);
+              }
+            }
+
+            const leadM = clean.match(/^([A-ZÇĞİÖŞÜ][a-zçğıöşüA-ZÇĞİÖŞÜ0-9\-\s]{2,45}?)(?:\s*\([^)]{2,30}\))?\s*(?::|ise\b|tarafından\b|,)/);
+            if (leadM) {
+              const head = leadM[1].trim();
+              if (head.split(/\s+/).length <= 4 && !/^(Bu|Ancak|Dolayısıyla|Diğer|Soruda|Ayrıca|Böylece|Örneğin|Hekim|Hasta|Aşağıdaki)/i.test(head)) {
+                addPhrase(head, subj, idx, 2);
+              }
+            }
+          }
+
+          if (firstValidIdx !== -1 && q.answer && q.options) {
+            const ansOpt = q.options.find(o => o.letter === q.answer);
+            if (ansOpt) {
+              const at = (ansOpt.text || '').trim();
+              if (at.length >= 3 && at.length <= 75 && at.split(/\s+/).length <= 5) {
+                const an = _normMedTok(at);
+                let bestIdx = firstValidIdx;
+                for (let si = firstValidIdx; si < sentences.length && sentences[si].qid === q.id; si++) {
+                  if (sentences[si].n.indexOf(an) !== -1) { bestIdx = si; break; }
+                }
+                addPhrase(at, subj, bestIdx, 3);
+                const noPar = at.replace(/\([^)]*\)/g, ' ').replace(/\s+/g, ' ').trim();
+                if (noPar && noPar !== at) addPhrase(noPar, subj, bestIdx, 2);
+              }
+            }
+          }
+        }
+      }
+      window.__MED_CORPUS_INDEX = { phraseMap, sentences, wordSents, pref7Sents };
+      return window.__MED_CORPUS_INDEX;
+    }
+
+    function lookupEntityDefinition(optText, subject, ownQId, ownExp, correctText, isNegative) {
+      const wordsInOpt = (optText || '').trim().split(/\s+/).filter(Boolean);
+      if (wordsInOpt.length > 5) return '';
+
+      const idx = getCorpusMedicalIndex();
+      const subj = _trLower(subject || '');
+      const ownNorm = _normMedTok(ownExp || '');
+      const ansNorm = _normMedTok(correctText || '');
+      const cleanOpt = (optText || '').replace(/\([^)]*\)/g, ' ').replace(/\s+/g, ' ').trim();
+      const parenAliases = [...(optText || '').matchAll(/\(([^)]+)\)/g)]
+        .map(m => m[1].trim())
+        .filter(a => a.length >= 4 && a.split(/\s+/).length <= 4);
+
+      const candidates = [optText, cleanOpt, ...parenAliases];
+      for (const cand of candidates) {
+        const nt = _normMedTok(cand);
+        if (!nt || nt.length < 3 || nt === ansNorm) continue;
+        const hits = idx.phraseMap.get(nt);
+        if (hits && hits.length > 0) {
+          const sorted = [...hits].sort((a, b) => ((b.s === subj ? 10 : 0) + b.w) - ((a.s === subj ? 10 : 0) + a.w));
+          const picked = sorted.find(h => {
+            const sObj = idx.sentences[h.i];
+            if (sObj.qid === ownQId || ownNorm.includes(sObj.n)) return false;
+            if (isNegative && sObj.s !== subj && nt.split(' ').length === 1) return false;
+            return true;
+          });
+          if (picked) return idx.sentences[picked.i].c;
         }
       }
 
-      const extractRomans = (str) => {
-        if (!str) return [];
-        const m = str.match(/\b(I{1,3}|IV|V)\b/gi);
-        return m ? [...new Set(m.map(x => x.toUpperCase()))] : [];
+      const allToks = _normMedTok(cleanOpt).split(/\s+/).filter(w => w.length >= 4);
+      const coreToks = allToks.filter(w => !_MED_GENERIC_NOUNS.has(w) && !_MED_STOPWORDS.has(w));
+      const searchToks = coreToks.length > 0 ? coreToks : allToks;
+      if (searchToks.length === 0) return '';
+      if (isNegative && searchToks.length === 1 && wordsInOpt.length === 1) return '';
+
+      const wordsRaw = cleanOpt.split(/\s+/).filter(Boolean);
+      const lastCap = wordsRaw.length >= 2 && /^[A-ZÇĞİÖŞÜ]/.test(wordsRaw[wordsRaw.length - 1])
+        ? _normMedTok(wordsRaw[wordsRaw.length - 1])
+        : '';
+
+      let sentIds = null;
+      for (const tok of searchToks) {
+        let list = idx.wordSents.get(tok);
+        if (!list && tok.length >= 6) {
+          list = idx.pref7Sents.get(tok.slice(0, Math.min(7, tok.length)));
+        }
+        if (list && list.length > 0 && (!sentIds || list.length < sentIds.length)) {
+          sentIds = list;
+        }
+      }
+      if ((!sentIds || sentIds.length === 0) && lastCap && lastCap.length >= 5) {
+        sentIds = idx.wordSents.get(lastCap) || [];
+      }
+      if (!sentIds || sentIds.length === 0) return '';
+
+      const reqHits = searchToks.length === 1 ? 1 : Math.min(2, searchToks.length);
+      let best = null, bestScore = -1;
+      for (const sid of sentIds) {
+        const item = idx.sentences[sid];
+        if (item.qid === ownQId || (ownNorm && ownNorm.includes(item.n))) continue;
+        if (isNegative && item.s !== subj) continue;
+        let hits = 0;
+        for (const tok of allToks) {
+          if (item.n.includes(tok.slice(0, Math.min(7, tok.length)))) hits++;
+        }
+        if (hits < reqHits && !(lastCap && lastCap.length >= 5 && item.n.includes(lastCap))) continue;
+        if (ansNorm.length >= 5 && item.n.startsWith(ansNorm) && !item.n.includes(searchToks[0])) continue;
+        let score = hits * 3 + (item.s === subj ? 5 : 0);
+        if (item.n.indexOf(searchToks[0].slice(0, 6)) < 50) score += 2;
+        if (score > bestScore) { bestScore = score; best = item.c; }
+      }
+      return best || '';
+    }
+
+    function extractNumTokens(str) {
+      if (!str) return [];
+      const cleaned = str.trim()
+        .replace(/\b(?:yalnız(?:ca)?|ve|veya|ile|hem|de|da)\b/gi, ' ')
+        .trim();
+      if (!cleaned) return [];
+      if (!/^(?:VIII|VII|VI|IV|I{1,3}|V|[1-8])(?:\s*(?:,|&|-|–|\s)\s*(?:VIII|VII|VI|IV|I{1,3}|V|[1-8]))*$/i.test(cleaned)) {
+        return [];
+      }
+      const re = /(?:^|[\s,&\-–])(VIII|VII|VI|IV|I{1,3}|V|[1-8])(?=$|[\s,&\-–.])/gi;
+      const tokens = [];
+      let m;
+      while ((m = re.exec(cleaned)) !== null) {
+        const u = m[1].toUpperCase();
+        if (!tokens.includes(u)) tokens.push(u);
+      }
+      return tokens;
+    }
+
+    function parseNumberedStatements(q) {
+      const opts = q.options || [];
+      if (opts.length === 0 || _COUNT_STEM_RE.test(q.question || '')) return null;
+      const nonHepsi = opts.filter(o => !_HEPSI_OPT_RE.test((o.text || '').trim()));
+      const numOpts = nonHepsi.filter(o => extractNumTokens(o.text).length > 0);
+      if (numOpts.length < 3 || numOpts.length < nonHepsi.length - 1) return null;
+
+      const usesArabic = numOpts.some(o => /[1-8]/.test(o.text));
+      const tokPat = usesArabic ? '[1-8]' : 'VIII|VII|VI|IV|I{1,3}|V';
+      const qText = q.question || '';
+      const stmts = [];
+      const stRe = new RegExp(`(?:^|\\n|\\s|[?.:;])(${tokPat})\\s*[\\.\\-\\)]\\s*([^\\n]+?)(?=(?:(?:\\n|\\s|[?.:;])(?:${tokPat})\\s*[\\.\\-\\)]|\\s+(?:hangisi|hangileri|yukarıdakilerden|ifadelerinden|yargılarından|öncüllerinden|buna\\s+göre)|$))`, 'g');
+      let m;
+      while ((m = stRe.exec(qText)) !== null) {
+        const num = m[1].toUpperCase();
+        const txt = m[2].trim().replace(/\s+(?:hangisi|hangileri|yukarıdakilerden|ifadelerinden|yargılarından|öncüllerinden).*$/i, '').trim();
+        if (txt.length > 1 && !stmts.some(s => s.num === num)) {
+          stmts.push({ num, text: txt });
+        }
+      }
+      const allNums = stmts.length > 0
+        ? stmts.map(s => s.num)
+        : [...new Set(numOpts.flatMap(o => extractNumTokens(o.text)))];
+      const resolveOptTokens = (text) => {
+        const t = (text || '').trim();
+        if (/^(?:hepsi|yukarıdakilerin\s+hepsi)$/i.test(t)) return allNums;
+        if (/^(?:hiçbiri|yukarıdakilerin\s+hiçbiri)$/i.test(t)) return [];
+        return extractNumTokens(t);
       };
+      return { usesArabic, stmts, allNums, resolveOptTokens };
+    }
 
-      const selectedRomans = extractRomans(selectedText);
-      const correctRomans = extractRomans(correctText);
-      const isRomanQuestion = romanStatements.length > 0 || selectedRomans.length > 0 || correctRomans.length > 0;
+    function findStmtReasonInExp(num, exp, stmtText) {
+      const sents = _splitExpSentences(exp);
+      const esc = num.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const tokInParenRe = new RegExp(`(?:^|[\\s,(])${esc}(?=$|[\\s,).])`, 'i');
+      const prefixRe = new RegExp(`^(?:${esc}\\.|${esc}\\)|${esc}\\s*[-:]|Öncül\\s*${esc})`, 'i');
+      const anyTagParenRe = /\(([^()]{1,45})\)/g;
+      const direct = [];
 
-      // 1. Hata Analizi (Neden selectedLetter Değil?)
+      const matchUnits = [];
+      for (const sent of sents) {
+        const parenMatches = [...sent.matchAll(anyTagParenRe)];
+        const matchedNums = parenMatches.filter(pm => {
+          const idx = sent.indexOf(pm[0]);
+          const before = sent.slice(Math.max(0, idx - 12), idx);
+          if (/(?:tip|evresi?|sınıf|grup|fakt[öo]r|evrede)\s*$/i.test(before)) return false;
+          return /(?:^|[\s,(])(?:VIII|VII|VI|IV|I{1,3}|V|[1-8])(?=$|[\s,).])/.test(pm[1]) && !/[a-zçğıöşü]{5,}/i.test(pm[1].replace(/\b(?:doğru|doğrudur|yanlış|yanlıştır|hatalı|eksik|dahil|ve|veya|önce|sonra)\b/gi, ''));
+        });
+        if (matchedNums.length > 1 && sent.includes(';')) {
+          sent.split(/;\s*/).forEach(sub => matchUnits.push(sub.trim()));
+        } else {
+          matchUnits.push(sent);
+        }
+      }
+
+      for (const c of matchUnits) {
+        if (!c) continue;
+        let hit = prefixRe.test(c);
+        if (!hit) {
+          anyTagParenRe.lastIndex = 0;
+          let m;
+          while ((m = anyTagParenRe.exec(c)) !== null) {
+            const before = c.slice(Math.max(0, m.index - 12), m.index);
+            if (/(?:tip|evresi?|sınıf|grup|fakt[öo]r|evrede)\s*$/i.test(before)) continue;
+            if (tokInParenRe.test(m[1])) { hit = true; break; }
+          }
+        }
+        if (hit) direct.push(_cleanBold(c));
+      }
+      if (direct.length > 0) return direct.join(' ');
+
+      const clauses = _splitExpClauses(exp);
+      if (stmtText) {
+        const toks = _normMedTok(stmtText).split(/\s+/).filter(w => w.length >= 5 && !_MED_STOPWORDS.has(w));
+        let best = '', bestHits = 0;
+        for (const c of clauses) {
+          const cn = _normMedTok(c);
+          const hits = toks.filter(w => cn.includes(w.slice(0, 6))).length;
+          if (hits > bestHits) { bestHits = hits; best = _cleanBold(c); }
+        }
+        if (bestHits >= 1) return best;
+      }
+      return '';
+    }
+
+    function _clauseHasLetterTag(clause, letter) {
+      const L = String(letter || '').toUpperCase();
+      if (!L) return null;
+      const parenRe = /\(([^()]{1,45})\)/g;
+      let m;
+      while ((m = parenRe.exec(clause)) !== null) {
+        const inner = m[1].trim();
+        const verdictM = inner.match(/\b(doğru|doğrudur|yanlış|yanlıştır|hatalı|geçersiz|hariç)\s*$/i);
+        if (!verdictM) continue;
+        const head = inner.slice(0, verdictM.index);
+        const letters = head.match(/\b[A-E]\b/g) || [];
+        if (letters.includes(L)) {
+          return /yanlış|hatalı|geçersiz|hariç/i.test(verdictM[1]) ? 'false' : 'true';
+        }
+      }
+      const explicitOptRe = new RegExp(`(?:^|[\\s.,;])(?:${L}\\s+(?:şıkkı|seçeneği)|şıkkı\\s*${L})\\b`, 'i');
+      if (explicitOptRe.test(clause)) {
+        return /yanlış|hatalı|değil|olumsuz/i.test(clause) ? 'false' : 'neutral';
+      }
+      return null;
+    }
+
+    function extractOwnOptionClauses(q, optLetter, optText, isNegative) {
+      const exp = q.explanation || '';
+      if (!exp) return { clauses: [], verdict: null };
+      const sents = _splitExpSentences(exp);
+      const L = String(optLetter || '').toUpperCase();
+
+      // Build smart units: preserve full sentence (with ;) if it only discusses 1 option tag; split by ; only when multiple option tags share one sentence
+      const tagParenAnyRe = /\(([^()]{1,45})\)/g;
+      const smartUnits = [];
+      for (const sent of sents) {
+        const distinctLetters = new Set();
+        tagParenAnyRe.lastIndex = 0;
+        let pm;
+        while ((pm = tagParenAnyRe.exec(sent)) !== null) {
+          const vm = pm[1].trim().match(/\b(doğru|doğrudur|yanlış|yanlıştır|hatalı|geçersiz|hariç)\s*$/i);
+          if (vm) {
+            (pm[1].slice(0, vm.index).match(/\b[A-E]\b/g) || []).forEach(ch => distinctLetters.add(ch));
+          }
+        }
+        if (distinctLetters.size > 1 && sent.includes(';')) {
+          sent.split(/;\s*/).forEach(sub => { if (sub.trim()) smartUnits.push(sub.trim()); });
+        } else {
+          smartUnits.push(sent);
+        }
+      }
+
+      // Priority 1: Explicit tag "(L yanlış)", "(L doğru)", "(A, C yanlış)", "L şıkkı"
+      const tagged = [];
+      let taggedVerdict = null;
+      for (const c of smartUnits) {
+        const v = _clauseHasLetterTag(c, L);
+        if (v) {
+          tagged.push(_cleanBold(c));
+          if (!taggedVerdict || v !== 'neutral') taggedVerdict = v;
+        }
+      }
+      if (tagged.length > 0) return { clauses: tagged, verdict: taggedVerdict };
+
+      const clauses = _splitExpClauses(exp);
+
+      // Priority 2: Unique option tokens matched in q.explanation (only if clause has no conflicting letter tag)
+      const qWords = new Set(_normMedTok(q.question || '').split(/\s+/).filter(w => w.length >= 4));
+      const ansOpt = (q.options || []).find(o => o.letter === q.answer);
+      const ansWords = new Set(_normMedTok(ansOpt?.text || '').split(/\s+/).filter(w => w.length >= 4 && !_MED_STOPWORDS.has(w)));
+      const allOptToks = _normMedTok(optText || '').split(/\s+/).filter(w => w.length >= 4 && !_MED_STOPWORDS.has(w) && !qWords.has(w));
+      const uniqueOptToks = allOptToks.filter(w => !_MED_GENERIC_NOUNS.has(w) && !ansWords.has(w));
+      if (uniqueOptToks.length === 0) return { clauses: [], verdict: null };
+
+      const ansExactNorm = _normMedTok(ansOpt?.text || '');
+      const matched = [];
+      for (const c of clauses) {
+        const cn = _normMedTok(c);
+        const coreHits = uniqueOptToks.filter(w => cn.includes(w.slice(0, Math.min(7, w.length))));
+        if (coreHits.length === 0) continue;
+        const totalHits = allOptToks.filter(w => cn.includes(w.slice(0, Math.min(7, w.length)))).length;
+        const req = uniqueOptToks.length >= 3 ? 2 : 1;
+        if (coreHits.length < req && totalHits < 2) continue;
+
+        if (!isNegative && L !== q.answer) {
+          // For wrong options on positive questions, make sure the clause gives a genuine reason/contrast
+          const hasContrast = /değil|yanlış|aksine|yerine|olmayıp|görülmez|yapılmaz|bulunmaz|ancak|oysa|fakat|özgüdür|karakteristiktir|tedavisinde|antidot|sebep olur|sonra|önce|sadece|yalnız|duodenum|ileum|en sık/i.test(c);
+          const pureAnsStmt = ansExactNorm.length >= 5 && cn.startsWith(ansExactNorm) && !hasContrast;
+          if (!pureAnsStmt && (hasContrast || totalHits >= 2 || coreHits.length >= 1)) {
+            matched.push(_cleanBold(c));
+          }
+        } else {
+          matched.push(_cleanBold(c));
+        }
+      }
+      return { clauses: matched.slice(0, 2), verdict: null };
+    }
+
+    function detectStructuralDiff(optText, correctText, explanation) {
+      const o = (optText || '').trim();
+      const c = (correctText || '').trim();
+      if (!o || !c) return null;
+
+      // 1. Sequence ("->" or "→")
+      if ((o.includes('->') || o.includes('→')) && (c.includes('->') || c.includes('→'))) {
+        const oSteps = o.split(/->|→/).map(x => x.trim());
+        const cSteps = c.split(/->|→/).map(x => x.trim());
+        const diffs = [];
+        const maxLen = Math.max(oSteps.length, cSteps.length);
+        for (let i = 0; i < maxLen; i++) {
+          if (_normMedTok(oSteps[i] || '') !== _normMedTok(cSteps[i] || '')) {
+            diffs.push(`${i + 1}. basamakta doğrusu "<strong>${escapeHtml(cSteps[i] || '-')}</strong>" iken "<strong>${escapeHtml(oSteps[i] || '-')}</strong>" yazılmıştır`);
+          }
+        }
+        if (diffs.length > 0 && diffs.length < maxLen) {
+          return {
+            shortText: `Bu sıralamada ${diffs.slice(0, 2).join('; ')}.`,
+            html: `Bu sıralama sorusunda işaretlediğiniz seçenekte ${diffs.slice(0, 2).join('; ')}.`,
+            includesExpProof: false
+          };
+        }
+      }
+
+      // 2. Multi-part pair (" / ", " - ")
+      const splitPair = (s) => s.includes('/') ? s.split('/').map(x => x.trim()) : (s.includes(' - ') ? s.split(' - ').map(x => x.trim()) : null);
+      const oParts = splitPair(o);
+      const cParts = splitPair(c);
+      if (oParts && cParts && oParts.length >= 2 && oParts.length === cParts.length) {
+        const sameParts = [];
+        const diffParts = [];
+        for (let i = 0; i < oParts.length; i++) {
+          if (_normMedTok(oParts[i]) === _normMedTok(cParts[i])) sameParts.push(oParts[i]);
+          else diffParts.push({ wrong: oParts[i], right: cParts[i] });
+        }
+        if (diffParts.length > 0 && (sameParts.length > 0 || diffParts.length <= 2)) {
+          const diffDesc = diffParts.map(d => `"<strong>${escapeHtml(d.wrong)}</strong>" yerine "<strong>${escapeHtml(d.right)}</strong>"`).join(' ve ');
+          return {
+            shortText: `Eşleştirmede ${diffDesc} gelmelidir.`,
+            html: `Bu çoklu eşleştirmede doğru karşılık olarak ${diffDesc} gelmelidir; seçtiğiniz kombinasyondaki eşleştirme uyuşmamaktadır.`,
+            includesExpProof: false
+          };
+        }
+      }
+
+      // 3. Numerical / threshold comparison
+      const numM = o.match(/([<>≤≥]?\s*\d+(?:[.,\s]\d+)*)\s*(%|mm3|mm³|mg\/dl|mg|g\/dl|ml|dk|saat|gün|ay|yıl|yaş)?/i);
+      const cNumM = c.match(/([<>≤≥]?\s*\d+(?:[.,\s]\d+)*)\s*(%|mm3|mm³|mg\/dl|mg|g\/dl|ml|dk|saat|gün|ay|yıl|yaş)?/i);
+      if (numM && cNumM && o.length < 35 && c.length < 35) {
+        const rawNum = numM[1].replace(/\s+/g, '').replace(/[<>≤≥]/g, '');
+        const cRawNum = cNumM[1].replace(/\s+/g, '').replace(/[<>≤≥]/g, '');
+        const clauses = _splitExpClauses(explanation || '');
+        const paramClause = clauses.find(cl => {
+          const compactCl = cl.replace(/[.\s]/g, '');
+          return rawNum.length >= 2 && compactCl.includes(rawNum.replace(/[.,]/g, '')) && !_normMedTok(cl).includes(_normMedTok(cNumM[0]));
+        });
+        if (paramClause) {
+          const cleanCl = _cleanBold(paramClause);
+          return {
+            shortText: `${escapeHtml(o)} değeri bu parametreye ait değildir: ${escapeHtml(cleanCl)}`,
+            html: `İşaretlediğiniz <strong>${escapeHtml(o)}</strong> değeri soruda istenen parametreye ait değildir: ${escapeHtml(cleanCl)}`,
+            includesExpProof: true
+          };
+        }
+        if (rawNum !== cRawNum) {
+          return {
+            shortText: `Doğru eşik/sayısal değer <strong>${escapeHtml(c)}</strong> iken <strong>${escapeHtml(o)}</strong> verilmiştir.`,
+            html: `Soru kökündeki tanı/klinik eşik değeri <strong>${escapeHtml(c)}</strong> olup işaretlediğiniz <strong>${escapeHtml(o)}</strong> değeri bu kriteri karşılamamaktadır.`,
+            includesExpProof: false
+          };
+        }
+      }
+
+      // 4. Minimal-pair contrast
+      for (const [reA, reB, label] of _ANTONYM_PAIRS) {
+        if ((reA.test(o) && reB.test(c)) || (reB.test(o) && reA.test(c))) {
+          return {
+            shortText: `Temel ayrım <strong>${label}</strong> yönündedir (doğrusu: <strong>${escapeHtml(c)}</strong>).`,
+            html: `İşaretlediğiniz seçenek ile doğru yanıt arasında temel ayrım <strong>${label}</strong> yönündedir: bu tabloda beklenen durum "<strong>${escapeHtml(o)}</strong>" değil, "<strong>${escapeHtml(c)}</strong>" şeklindedir.`,
+            includesExpProof: false
+          };
+        }
+      }
+
+      return null;
+    }
+
+    function _getCoreProofText(explanation) {
+      const sents = _splitExpSentences(explanation || '')
+        .map(_cleanBold)
+        .filter(s => s.length >= 18 && !/cevap\s+anahtar|işaretlenmiştir/i.test(s));
+      if (sents.length === 0) return '';
+      return sents.slice(0, 2).join(' ');
+    }
+
+    function _getStemCriterion(question) {
+      let s = String(question || '').replace(/\s+/g, ' ').trim();
+      if (s.length > 180) {
+        const sents = _splitExpSentences(s);
+        s = sents[sents.length - 1] || s.slice(-160);
+      }
+      return s;
+    }
+
+    function analyzeOptionForQuestion(q, optLetter, optText, ctx) {
+      const { isNegative, numbered, correctText } = ctx;
+      const exp = q.explanation || '';
+      const isCorrect = optLetter === q.answer;
+      const own = extractOwnOptionClauses(q, optLetter, optText, isNegative);
+      const coreProof = _getCoreProofText(exp);
+
+      // Doğru şık
+      if (isCorrect) {
+        const taggedReason = own.clauses.length > 0 ? own.clauses.join(' ') : coreProof;
+        return {
+          isCorrect: true,
+          badgeText: 'Doğru Cevap',
+          badgeClass: 'bg-emerald-100 text-emerald-800 border-emerald-300 font-extrabold',
+          reasonHtml: `<p class="leading-relaxed">${escapeHtml(taggedReason || 'Sorunun doğru yanıtıdır.')}</p>`,
+          summaryReasonHtml: escapeHtml(taggedReason || 'Sorunun doğru yanıtıdır.')
+        };
+      }
+
+      // Katman 1: Öncüllü soru (I..VIII veya 1..8)
+      if (numbered) {
+        const selNums = numbered.resolveOptTokens(optText);
+        const corNums = numbered.resolveOptTokens(correctText);
+        const excess = selNums.filter(n => !corNums.includes(n));
+        const missing = corNums.filter(n => !selNums.includes(n));
+        const bullets = [];
+        const shortParts = [];
+
+        for (const num of excess) {
+          const st = numbered.stmts.find(x => x.num === num);
+          const rsn = findStmtReasonInExp(num, exp, st ? st.text : '');
+          const fallback = isNegative
+            ? 'Bu öncül doğru bir bilgi olduğu için olumsuz/yanlış olanları soran kökte dahil edilmemelidir.'
+            : 'Bu öncül hatalıdır veya soru kökündeki koşulu sağlamamaktadır.';
+          const stLabel = st ? ` (${escapeHtml(st.text)})` : '';
+          bullets.push(`<li><strong>${num}. Öncül${stLabel} — Yanlış / Çıkarılmalı:</strong> ${escapeHtml(rsn || fallback)}</li>`);
+          shortParts.push(`${num} dahil edilmemeli (${rsn || fallback})`);
+        }
+        for (const num of missing) {
+          const st = numbered.stmts.find(x => x.num === num);
+          const rsn = findStmtReasonInExp(num, exp, st ? st.text : '');
+          const fallback = isNegative
+            ? 'Bu öncül yanlış/istisna koşulunu sağladığı için doğru cevaba dahil edilmelidir.'
+            : 'Bu öncül doğru olduğu halde seçtiğiniz şıkta eksiktir.';
+          const stLabel = st ? ` (${escapeHtml(st.text)})` : '';
+          bullets.push(`<li><strong>${num}. Öncül${stLabel} — Doğru / Eklenmeliydi:</strong> ${escapeHtml(rsn || fallback)}</li>`);
+          shortParts.push(`${num} eksik`);
+        }
+
+        const headerMsg = (excess.length || missing.length)
+          ? `Seçtiğiniz <strong>${optLetter}) ${escapeHtml(optText)}</strong> öncül kombinasyonu doğru yanıt olan <strong>${q.answer}) ${escapeHtml(correctText)}</strong> ile örtüşmemektedir:`
+          : `Doğru öncül kombinasyonu <strong>${q.answer}) ${escapeHtml(correctText)}</strong> seçeneğidir.`;
+
+        return {
+          isCorrect: false,
+          badgeText: 'Öncül Farkı',
+          badgeClass: 'bg-rose-50 text-rose-800 border-rose-200 font-semibold',
+          reasonHtml: `<p class="leading-relaxed mb-1.5">${headerMsg}</p>${bullets.length ? `<ul class="list-disc pl-4 space-y-1 text-rose-950/90">${bullets.join('')}</ul>` : ''}`,
+          summaryReasonHtml: escapeHtml(shortParts.join('; ') || `Doğru öncül kombinasyonu ${q.answer}) ${correctText} şıkkıdır.`)
+        };
+      }
+
+      // Katman 2: Sorunun kendi açıklamasında bu şıkka özel doğrulama / reddiye cümlesi varsa
+      if (own.clauses.length > 0) {
+        const clauseText = own.clauses.join(' ');
+        if (isNegative) {
+          // If tagged specifically as '(L yanlış)' due to source key anomaly, surface honestly!
+          if (own.verdict === 'false') {
+            return {
+              isCorrect: false,
+              badgeText: 'Açıklama Notu',
+              badgeClass: 'bg-amber-100 text-amber-900 border-amber-300 font-semibold',
+              reasonHtml: `<p class="leading-relaxed">${escapeHtml(clauseText)}</p><p class="leading-relaxed mt-1">Kaynak cevap anahtarı ise <strong>${q.answer}) ${escapeHtml(correctText)}</strong> seçeneğini işaretlemektedir${coreProof ? `: ${escapeHtml(coreProof)}` : '.'}</p>`,
+              summaryReasonHtml: escapeHtml(clauseText)
+            };
+          }
+          return {
+            isCorrect: false,
+            badgeText: 'Doğru Bilgi (Soru Yanlışı Arıyor)',
+            badgeClass: 'bg-sky-100 text-sky-800 border-sky-300 font-semibold',
+            reasonHtml: `<p class="leading-relaxed">Bu soru kökü <strong>yanlış / istisna</strong> olan ifadeyi aramaktadır. İşaretlediğiniz <strong>${optLetter}) ${escapeHtml(optText)}</strong> ise tıbben <strong>doğrudur</strong>: ${escapeHtml(clauseText)}</p><p class="leading-relaxed mt-1">Sorunun aradığı yanlış/istisna ifade olan <strong>${q.answer}) ${escapeHtml(correctText)}</strong> için gerekçe: ${escapeHtml(coreProof)}</p>`,
+            summaryReasonHtml: `Doğru bilgidir (soru yanlışı arıyor): ${escapeHtml(clauseText)}`
+          };
+        }
+
+        if (own.verdict === 'true') {
+          return {
+            isCorrect: false,
+            badgeText: 'Açıklama Notu',
+            badgeClass: 'bg-amber-100 text-amber-900 border-amber-300 font-semibold',
+            reasonHtml: `<p class="leading-relaxed">${escapeHtml(clauseText)}</p><p class="leading-relaxed mt-1">Kaynak cevap anahtarı <strong>${q.answer}) ${escapeHtml(correctText)}</strong> seçeneğini göstermektedir${coreProof ? `: ${escapeHtml(coreProof)}` : '.'}</p>`,
+            summaryReasonHtml: escapeHtml(clauseText)
+          };
+        }
+
+        return {
+          isCorrect: false,
+          badgeText: 'Yanlış İfade',
+          badgeClass: 'bg-rose-50 text-rose-800 border-rose-200 font-semibold',
+          reasonHtml: `<p class="leading-relaxed"><strong>Neden Yanlış?</strong> ${escapeHtml(clauseText)}</p><p class="leading-relaxed mt-1"><strong>Doğrusu (${q.answer}):</strong> ${escapeHtml(coreProof)}</p>`,
+          summaryReasonHtml: escapeHtml(clauseText)
+        };
+      }
+
+      // Katman 3: Olumsuz soru kökü (yanlışı / istisnayı soran sorular)
+      if (isNegative) {
+        const corpusDef = !_HEPSI_OPT_RE.test((optText || '').trim())
+          ? lookupEntityDefinition(optText, q.subject, q.id, exp, correctText, true)
+          : '';
+        const stemTopic = _getStemCriterion(q.question);
+        const validationPart = corpusDef
+          ? ` (${escapeHtml(corpusDef)})`
+          : '';
+        const shortNeg = corpusDef
+          ? `Bu konu için doğru/beklenen bir bilgidir (${escapeHtml(corpusDef)}); soru yanlışı/istisnayı aradığı için elenir.`
+          : `Soruda belirtilen kapsamda tıbben doğru/beklenen bir özelliktir; soru yanlışı/istisnayı aradığı için cevap olamaz.`;
+
+        return {
+          isCorrect: false,
+          badgeText: 'Doğru Bilgi (Soru Yanlışı Arıyor)',
+          badgeClass: 'bg-sky-100 text-sky-800 border-sky-300 font-semibold',
+          reasonHtml: `<p class="leading-relaxed">Bu soruda "<strong>${escapeHtml(stemTopic)}</strong>" kalıbıyla <strong>yanlış / istisna</strong> olan ifade sorulmaktadır. İşaretlediğiniz <strong>${optLetter}) ${escapeHtml(optText)}</strong> seçeneği ise tıbben <strong>doğru ve beklenen bir bilgidir</strong>${validationPart}; bu nedenle aranan istisna değildir.</p><p class="leading-relaxed mt-1"><strong>Doğru Cevap Olan Yanlış/İstisna İfade (${q.answer}):</strong> ${escapeHtml(coreProof || correctText)}</p>`,
+          summaryReasonHtml: shortNeg
+        };
+      }
+
+      // Katman 4: Yapısal / Sıralama / Eşleştirme / Sayısal / Zıt Kavram Farkı
+      const structDiff = detectStructuralDiff(optText, correctText, exp);
+      if (structDiff) {
+        const extraProof = (!structDiff.includesExpProof && coreProof)
+          ? `<p class="leading-relaxed mt-1"><strong>Tıbbi Gerekçe (${q.answer}):</strong> ${escapeHtml(coreProof)}</p>`
+          : '';
+        return {
+          isCorrect: false,
+          badgeText: 'Yapısal / Kavramsal Fark',
+          badgeClass: 'bg-rose-50 text-rose-800 border-rose-200 font-semibold',
+          reasonHtml: `<p class="leading-relaxed">${structDiff.html}</p>${extraProof}`,
+          summaryReasonHtml: structDiff.shortText
+        };
+      }
+
+      // Katman 5A: Corpus Tıbbi Kavram Tanımı İndeksi (Farklı hastalık / ilaç / yapı açıklaması)
+      const corpusDef = lookupEntityDefinition(optText, q.subject, q.id, exp, correctText, false);
+      if (corpusDef) {
+        return {
+          isCorrect: false,
+          badgeText: 'Farklı Klinik / Teorik Antite',
+          badgeClass: 'bg-rose-50 text-rose-800 border-rose-200 font-semibold',
+          reasonHtml: `<p class="leading-relaxed"><strong>${optLetter}) ${escapeHtml(optText)}:</strong> ${escapeHtml(corpusDef)} Bu nedenle soru kökünde tanımlanan tabloyla örtüşmemektedir.</p><p class="leading-relaxed mt-1"><strong>Sorudaki Tablonun Doğru Karşılığı (${q.answer} — ${escapeHtml(correctText)}):</strong> ${escapeHtml(coreProof)}</p>`,
+          summaryReasonHtml: `${escapeHtml(corpusDef)} — bu soruda aranan mekanizma/tanım değildir.`
+        };
+      }
+
+      // Katman 5B: Soru Kökü Ölçütü vs Doğru Cevap Mekanizması (Genel boş kalıp olmadan mantıksal karşılaştırma)
+      const stemCriterion = _getStemCriterion(q.question);
+      const criterionProof = coreProof || `${q.answer}) ${correctText} doğru seçenektir.`;
+      return {
+        isCorrect: false,
+        badgeText: 'Ölçütü Karşılamıyor',
+        badgeClass: 'bg-slate-100 text-slate-700 border-slate-300 font-semibold',
+        reasonHtml: `<p class="leading-relaxed">Soru kökünde aranan "<strong>${escapeHtml(stemCriterion)}</strong>" koşulu <strong>${q.answer}) ${escapeHtml(correctText)}</strong> seçeneğine özgüdür: ${escapeHtml(criterionProof)}</p><p class="leading-relaxed mt-1">İşaretlediğiniz <strong>${optLetter}) ${escapeHtml(optText)}</strong> seçeneği soru kökündeki bu mekanizma veya tanı ölçütünü karşılamadığı için doğru değildir.</p>`,
+        summaryReasonHtml: `Soru kökündeki koşul ${q.answer}) ${escapeHtml(correctText)} için geçerlidir; bu seçenek aranan kriteri karşılamaz.`
+      };
+    }
+
+    function buildSmartSolutionAnalysis(q, selectedLetter, selectedText, correctText) {
+      const isNegative = _NEGATIVE_STEM_RE.test(q.question || '');
+      const isWrong = Boolean(selectedLetter && selectedLetter !== q.answer);
+      const subjectName = escapeHtml(q.subject || 'Tıp');
+      const numbered = parseNumberedStatements(q);
+      const ctx = { isNegative, numbered, correctText };
+
+      // 1. Hata Analizi (Neden selectedLetter Yanlış?)
       let errorAnalysisHtml = '';
       if (isWrong) {
-        let errorDetailHtml = '';
-
-        if (isRomanQuestion && (selectedRomans.length > 0 || correctRomans.length > 0)) {
-          const excessRomans = selectedRomans.filter(r => !correctRomans.includes(r));
-          const missingRomans = correctRomans.filter(r => !selectedRomans.includes(r));
-
-          let romanDiffText = '';
-          if (excessRomans.length > 0) {
-            romanDiffText += `Seçtiğiniz <strong>${selectedLetter}</strong> şıkkında yer alan <strong>[${excessRomans.join(', ')}]</strong> öncülü/öncülleri doğru cevaba dahil edilmemelidir (${isNegative ? 'bu öncül olumsuz/yanlış koşulu sağlamamakta, yani doğru bir ifadedir' : 'bu öncül hatalıdır veya soru kökündeki kriteri sağlamaz'}). `;
-          }
-          if (missingRomans.length > 0) {
-            romanDiffText += `Doğru cevap olan <strong>${q.answer}</strong> şıkkındaki <strong>[${missingRomans.join(', ')}]</strong> öncülü/öncülleri ise seçtiğiniz şıkta eksiktir. `;
-          }
-          if (!romanDiffText) {
-            romanDiffText = `Soru öncülleri incelendiğinde doğru kombinasyon <strong>${q.answer}) ${escapeHtml(correctText)}</strong> iken, işaretlediğiniz <strong>${selectedLetter}) ${escapeHtml(selectedText)}</strong> öncül kombinasyonu uyuşmamaktadır.`;
-          }
-
-          let romanListHtml = '';
-          if (romanStatements.length > 0) {
-            romanListHtml = `
-              <div class="mt-2 space-y-1.5 text-xs bg-white/90 p-2.5 rounded-lg border border-amber-200/80 shadow-xs">
-                <div class="font-bold text-slate-800">Soru Öncülleri ve Doğruluk Durumu:</div>
-                ${romanStatements.map(st => {
-                  const inCorrect = correctRomans.includes(st.num);
-                  const inSelected = selectedRomans.includes(st.num);
-                  const badge = inCorrect 
-                    ? '<span class="text-emerald-700 font-bold ml-auto shrink-0">Doğru Cevapta Var</span>'
-                    : '<span class="text-slate-500 font-medium ml-auto shrink-0">Doğru Cevapta Yok</span>';
-                  return `
-                    <div class="flex items-start gap-2 py-0.5 border-b border-slate-100 last:border-0">
-                      <span class="font-bold text-slate-900 w-6 shrink-0">${st.num}.</span>
-                      <span class="text-slate-700 flex-1 leading-relaxed">${escapeHtml(st.text)}</span>
-                      ${badge}
-                    </div>
-                  `;
-                }).join('')}
-              </div>
-            `;
-          }
-
-          errorDetailHtml = `
-            <div class="space-y-2">
-              ${isNegative ? `
-                <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 text-[11px] font-extrabold mb-1">
-                  <span>Olumsuz Soru Kökü: Yanlış/İstisna Olan Öncüller İstenmektedir!</span>
-                </div>
-              ` : ''}
-              <p class="leading-relaxed">${romanDiffText}</p>
-              ${romanListHtml}
-            </div>
-          `;
-        } else if (isNegative) {
-          errorDetailHtml = `
-            <div class="space-y-1.5">
-              <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-900 text-[11px] font-extrabold mb-1">
-                <span>Olumsuz Soru Kökü Uyarısı</span>
-              </div>
-              <p class="leading-relaxed">
-                Bu soru kökünde <strong>olumsuz / yanlış / istisna (değildir / beklenmez / görülmez / yer almaz)</strong> olan ifade sorulmaktadır.
-                İşaretlediğiniz <strong class="text-slate-900">${selectedLetter}) ${escapeHtml(selectedText)}</strong> seçeneği bu konu için <strong>doğru bir tıbbi bilgidir</strong>.
-                Ancak soru kökü sizden <em>yanlış / istisna</em> olanı aramanızı istediğinden, doğru yanıt <strong class="text-emerald-800">${q.answer}) ${escapeHtml(correctText)}</strong> şıkkıdır (yanlış / hatalı olan ifade budur).
-              </p>
-            </div>
-          `;
-        } else {
-          errorDetailHtml = `
-            <div class="space-y-1.5">
-              <p class="leading-relaxed">
-                İşaretlediğiniz <strong class="text-slate-900">${selectedLetter}) ${escapeHtml(selectedText)}</strong> şıkkı, ${subjectName} dersinde bu soru kökü için hazırlanmış güçlü bir <strong>çeldiricidir</strong>.
-                Soru kökündeki klinik ve teorik ipuçları doğrudan <strong class="text-emerald-800">${q.answer}) ${escapeHtml(correctText)}</strong> seçeneğini işaret etmektedir.
-              </p>
+        const selectedAnalysis = analyzeOptionForQuestion(q, selectedLetter, selectedText, ctx);
+        let priorTableHtml = '';
+        if (numbered && numbered.stmts.length > 0) {
+          const selNums = numbered.resolveOptTokens(selectedText);
+          const corNums = numbered.resolveOptTokens(correctText);
+          priorTableHtml = `
+            <div class="mt-2 space-y-1.5 text-xs bg-white/90 p-2.5 rounded-lg border border-amber-200/80 shadow-xs">
+              <div class="font-bold text-slate-800">Soru Öncülleri ve Doğruluk Durumu:</div>
+              ${numbered.stmts.map(st => {
+                const inCorrect = corNums.includes(st.num);
+                const inSelected = selNums.includes(st.num);
+                const badge = inCorrect
+                  ? '<span class="text-emerald-700 font-bold ml-auto shrink-0">Doğru Cevapta Var</span>'
+                  : (inSelected ? '<span class="text-rose-700 font-bold ml-auto shrink-0">Seçiminizde Var (Hatalı)</span>' : '<span class="text-slate-500 font-medium ml-auto shrink-0">Doğru Cevapta Yok</span>');
+                return `
+                  <div class="flex items-start gap-2 py-0.5 border-b border-slate-100 last:border-0">
+                    <span class="font-bold text-slate-900 w-7 shrink-0">${escapeHtml(st.num)}.</span>
+                    <span class="text-slate-700 flex-1 leading-relaxed">${escapeHtml(st.text)}</span>
+                    ${badge}
+                  </div>
+                `;
+              }).join('')}
             </div>
           `;
         }
+
+        const negativeBanner = isNegative ? `
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-900 text-[11px] font-extrabold mb-1">
+            <span>Olumsuz Soru Kökü: Yanlış / İstisna İfade İstenmektedir</span>
+          </div>
+        ` : '';
 
         errorAnalysisHtml = `
           <div class="p-3.5 rounded-xl bg-rose-50/90 border border-rose-200 text-xs sm:text-sm text-rose-950 space-y-2">
             <div class="font-extrabold text-rose-900 flex items-center gap-1.5">
-              <span>Hata Analizi (Neden ${selectedLetter} Şıkkı Değil?):</span>
+              <span>Hata Analizi (Neden ${selectedLetter} Şıkkı Yanlış?):</span>
             </div>
-            ${errorDetailHtml}
+            ${negativeBanner}
+            <div class="space-y-1.5">
+              ${selectedAnalysis.reasonHtml}
+            </div>
+            ${priorTableHtml}
           </div>
         `;
       }
 
-      // 2. Tıbbi Açıklama ve Çözüm (Neden q.answer Şıkkı?)
+      // 2. Tıbbi Açıklama ve Çözüm (Neden q.answer Şıkkı Doğru?)
       let solutionText = '';
       const rawExp = (q.explanation || '').trim();
       const cleanExp = rawExp.replace(/^(?:Doğru\s+(?:Seçenek|Cevap)\s*[:\-]\s*[A-E]\s*[\)\.\-]?\s*)/i, '').trim();
@@ -2918,11 +3596,11 @@
       if (isExpSubstantial) {
         solutionText = formatExplanationText(rawExp);
       } else {
-        const otherOpts = (q.options || []).filter(o => o.letter !== q.answer).map(o => o.letter).join(', ');
+        const stemTopic = escapeHtml(_getStemCriterion(q.question));
         if (isNegative) {
-          solutionText = `Bu soru <strong>${subjectName}</strong> dersi kapsamında <strong>istisna / yanlış olan ifadeyi</strong> sorgulamaktadır. Seçenekler değerlendirildiğinde <strong>${q.answer}) ${escapeHtml(correctText)}</strong> ifadesi klinik veya teorik açıdan geçerli değildir (hatalı / istisna bilgidir). Diğer seçeneklerde (${otherOpts || 'A–E'}) yer alan tüm ifadeler ise tıp literatüründe kabul görmüş doğru klinik/teorik bilgilerdir. Dolayısıyla soru kökünde aranan olumsuz yanıt <strong>${q.answer}</strong> seçeneğidir.`;
+          solutionText = `Bu soru <strong>${subjectName}</strong> dersi kapsamında "<strong>${stemTopic}</strong>" ifadesiyle <strong>istisna veya yanlış olan bilgiyi</strong> sorgulamaktadır. <strong>${q.answer}) ${escapeHtml(correctText)}</strong> seçeneği tıbbi/teorik açıdan hatalı olduğu için aranan doğru yanıttır; diğer şıklardaki bilgiler ise bu konu açısından geçerlidir.`;
         } else {
-          solutionText = `Soru kökünde verilen klinik ve teorik bilgiler doğrultusunda <strong>${subjectName}</strong> dersi temel prensiplerine göre aranan doğru yanıt <strong>${q.answer}) ${escapeHtml(correctText)}</strong> seçeneğidir. Soru kökündeki anahtar klinik bulgular ve mekanizma bu seçeneği doğrulamaktadır. Diğer seçenekler (${otherOpts || 'diğer şıklar'}) ise konuyla ilişkili çeldirici nitelikte olup soru kökündeki kriterleri tam olarak karşılamamaktadır. Bu nedenle hedeflenen doğru seçenek <strong>${q.answer}</strong> şıkkıdır.`;
+          solutionText = `<strong>${subjectName}</strong> dersi kapsamında "<strong>${stemTopic}</strong>" sorusu için bilimsel kriterleri tam olarak karşılayan yanıt <strong>${q.answer}) ${escapeHtml(correctText)}</strong> seçeneğidir.`;
         }
         if (rawExp && !isExpSubstantial) {
           solutionText += ` <span class="text-slate-500 text-xs block mt-1.5 font-medium">Kaynak Notu: ${formatExplanationText(rawExp)}</span>`;
@@ -2933,50 +3611,47 @@
         <div class="p-3.5 rounded-xl bg-white/95 border border-slate-200/90 text-xs sm:text-sm text-slate-800 leading-relaxed shadow-xs space-y-2">
           <div class="font-extrabold text-indigo-900 flex items-center justify-between gap-2 border-b border-indigo-100/70 pb-2">
             <div class="flex items-center gap-1.5">
-              <span>Soru Çözümü ve Tıbbi Açıklama (Neden ${q.answer} Şıkkı?):</span>
+              <span>Soru Çözümü ve Tıbbi Açıklama (Neden ${q.answer} Şıkkı Doğru?):</span>
             </div>
             <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200">
-              ${escapeHtml(q.subject || 'Tıp')}
+              ${subjectName}
             </span>
           </div>
           <div class="text-slate-700 leading-relaxed">${solutionText}</div>
         </div>
       `;
 
-      // 3. Tüm Şıkların Değerlendirmesi (A–E Özeti)
+      // 3. Tüm Şıkların Değerlendirmesi (A–E Analizi)
       let optionsEvalItemsHtml = '';
       if (q.options && q.options.length > 0) {
         optionsEvalItemsHtml = q.options.map(opt => {
           const isCorrectOpt = opt.letter === q.answer;
           const isSelectedOpt = opt.letter === selectedLetter;
+          const optInfo = analyzeOptionForQuestion(q, opt.letter, opt.text, ctx);
 
-          let badge = '';
-          let rowClass = '';
+          const rowClass = isCorrectOpt
+            ? 'bg-emerald-50/90 border-emerald-300 text-emerald-950 font-semibold'
+            : (isSelectedOpt ? 'bg-rose-50/70 border-rose-200 text-rose-950' : 'bg-white border-slate-200 text-slate-700');
 
-          if (isCorrectOpt) {
-            badge = `<span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 border border-emerald-300 font-extrabold text-[11px] shrink-0">Doğru Cevap</span>`;
-            rowClass = 'bg-emerald-50/90 border-emerald-300 text-emerald-950 font-semibold';
-          } else if (isNegative) {
-            badge = `<span class="px-2 py-0.5 rounded-md bg-sky-100 text-sky-800 border border-sky-300 font-semibold text-[11px] shrink-0">Doğru Bilgi (Olumsuz Soru Kökü)</span>`;
-            rowClass = 'bg-white border-slate-200 text-slate-700';
-          } else {
-            badge = `<span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-300 font-semibold text-[11px] shrink-0">Çeldirici / Diğer Seçenek</span>`;
-            rowClass = 'bg-white border-slate-200 text-slate-700';
-          }
-
+          const badge = `<span class="px-2 py-0.5 rounded-md border text-[11px] shrink-0 ${optInfo.badgeClass}">${optInfo.badgeText}</span>`;
           const selectedBadge = isSelectedOpt
             ? `<span class="px-1.5 py-0.5 rounded bg-rose-100 text-rose-800 border border-rose-300 font-bold text-[10px] shrink-0">İşaretlediğiniz (${opt.letter})</span>`
             : '';
 
           return `
-            <div class="p-2.5 rounded-xl border flex flex-wrap sm:flex-nowrap items-start justify-between gap-2 text-xs transition-colors ${rowClass}">
-              <div class="flex items-start gap-2 flex-1">
-                <span class="w-6 h-6 rounded-md font-bold text-xs flex items-center justify-center shrink-0 ${isCorrectOpt ? 'bg-emerald-600 text-white' : 'bg-slate-200 text-slate-800'}">${opt.letter}</span>
-                <span class="leading-relaxed mt-0.5">${escapeHtml(opt.text)}</span>
+            <div class="p-2.5 rounded-xl border space-y-1.5 text-xs transition-colors ${rowClass}">
+              <div class="flex flex-wrap sm:flex-nowrap items-start justify-between gap-2">
+                <div class="flex items-start gap-2 flex-1">
+                  <span class="w-6 h-6 rounded-md font-bold text-xs flex items-center justify-center shrink-0 ${isCorrectOpt ? 'bg-emerald-600 text-white' : (isSelectedOpt ? 'bg-rose-600 text-white' : 'bg-slate-200 text-slate-800')}">${opt.letter}</span>
+                  <span class="leading-relaxed mt-0.5 font-medium">${escapeHtml(opt.text)}</span>
+                </div>
+                <div class="flex items-center gap-1.5 shrink-0 ml-auto">
+                  ${selectedBadge}
+                  ${badge}
+                </div>
               </div>
-              <div class="flex items-center gap-1.5 shrink-0 ml-auto">
-                ${selectedBadge}
-                ${badge}
+              <div class="pl-8 text-[11px] leading-relaxed ${isCorrectOpt ? 'text-emerald-900/90 font-normal' : 'text-slate-600 font-normal'}">
+                ${optInfo.summaryReasonHtml}
               </div>
             </div>
           `;
@@ -2987,7 +3662,7 @@
         <details class="group rounded-xl border border-slate-200 bg-slate-50/70 overflow-hidden text-xs">
           <summary class="flex items-center justify-between p-3 cursor-pointer hover:bg-slate-100/90 transition-colors font-bold text-slate-800 select-none">
             <span class="flex items-center gap-2">
-              <span>Tüm Şıkların Değerlendirmesi (A–E Özeti)</span>
+              <span>Tüm Şıkların Değerlendirmesi (A–E Analizi)</span>
             </span>
             <span class="text-slate-400 group-open:rotate-180 transition-transform duration-200 text-[10px]">▼</span>
           </summary>
@@ -4594,6 +5269,8 @@
         renderAdminScreen,
         showToast
       };
+
+      setTimeout(() => { try { getCorpusMedicalIndex(); } catch (_) {} }, 700);
     }
 
     if (document.readyState === 'loading') {

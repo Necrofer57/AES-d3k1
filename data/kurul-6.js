@@ -63,7 +63,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Yenidoğanda hipereksitabilite durumunda aşırı uyarılabilirlik, tremorlar ve artmış refleks yanıtları izlenir; bu klinik tabloda **Moro refleksi** eşik değerinin belirgin düşmesi nedeniyle zaman zaman spontan ya da minimal uyaranlarla dahi kolayca tetiklenir.",
+    "explanation": "Yenidoğanda hipereksitabilite sendromunda santral sinir sisteminde uyarılma eşiği düştüğünden hipertonisite, kaba tremorlar ve artmış refleks yanıtları izlenir; bu tabloda **Moro refleksi zaman zaman kendiliğinden veya hafif uyaranlarla dahi belirir** (B doğru). Hareketler ve reflekslerde ileri derecede azalma hipereksitabilite değil, hipotonik/letarjik bebeklerde görülen santral sinir sistemi depresyonu (hipoeksitabilite/apati) bulgusudur (A yanlış). Hipereksitabilite gösteren yenidoğanlarda aşırı nöromüsküler uyarılabilirliğe bağlı gözlerde nistagmus ve çene/ekstremite tremorları görülebilir (C yanlış). Hipereksitabiliteli bebeklerde artmış otonomik ve motor uyarılabilirlik nedeniyle nadir değil **sık kusma** ve beslenme güçlüğü izlenir (D yanlış). Çok uyuyup az ağlama santral depresyon (letarji) tablosuna özgüdür; hipereksitabilitesi olan yenidoğanlar ise **az uyur, aşırı huzursuzdur ve tiz sesle çok ağlar** (E yanlış).",
     "id": "K6_2019-2020_Q2"
   },
   {
@@ -1134,7 +1134,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Subaraknoid kanama sonrası BOS'a geçen eritrositler lizise uğrayarak oksihemoglobin ve bilirubine dönüşür; BOS spektrofotometrisinde bu **hemoglobin yıkım ürünlerinin saptanmaması**, subaraknoid kanama tanısını güvenle dışlar.",
+    "explanation": "Subaraknoid kanama (SAK) sonrası BOS'a geçen eritrositler saatler içinde parçalanarak oksihemoglobin ve bilirubine dönüşür; uygun zaman penceresinde santrifüj sonrası üstte kalan sıvının **spektrofotometresinde hemoglobin yıkım ürünlerinin görülmemesi** SAK tanısını güvenle dışlar (B doğru). Üç tüp testinde BOS'taki kanlı görünümün ve eritrosit sayısının son tüpe doğru açılmayıp aynı kalması travmatik lomber ponksiyonu değil, aksine gerçek **subaraknoid kanamayı destekler** (A yanlış). Subaraknoid kanamada BOS içinde defibrinasyon gerçekleştiği için alınan sıvıda **pıhtı görülmemesi** beklenen bir bulgudur; pıhtı oluşması travmatik ponksiyon lehine olup pıhtı olmaması SAK'ı dışlamaz (C yanlış). Santrifüj sonrası üst sıvının sarımsı (**ksantokromik**) görünmesi eritrosit lizisiyle açığa çıkan bilirubin varlığını gösterdiğinden SAK lehine en güçlü bulgulardan biridir ve kanamayı dışlamaz (D yanlış). Subaraknoid boşluğa ani kan dolumu intrakraniyal basıncı yükselttiği için **BOS açılış basıncının yüksek olması** SAK ile uyumludur ve tanıyı ekarte ettirmez (E yanlış).",
     "id": "K6_2019-2020_Q33"
   },
   {
@@ -2297,7 +2297,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Kohlberg'in ahlaki gelişim kuramında Gelenek Öncesi Düzey'in ilk basamağı olan **İtaat ve Ceza Eğilimi**nde otoriteye mutlak uyum ve fiziksel cezadan kaçınma esastır; gücü elinde bulunduranın haklı olduğu düşüncesi hakimdir.",
+    "explanation": "Kohlberg'in ahlaki gelişim kuramında **Gelenek Öncesi Düzey**in ilk evresi olan **İtaat ve Ceza Eğilimi**nde kurallara fiziksel cezadan kaçınmak için mutlak itaat edilir, otoritenin üstünlüğü sorgulanmaz ve 'güçlü olan kazanır / haklıdır' düşüncesi egemendir (E doğru). Gelenek Öncesi Düzey'in ikinci basamağı olan Saf Çıkarcı Eğilim'de güç korkusundan ziyade bireysel çıkar, ödül beklentisi ve karşılıklı alışveriş ('sen bana yardım edersen ben de sana ederim') esastır (A yanlış). Geleneksel Düzey'deki Yasa ve Düzen Eğilimi'nde birey güçlü olana boyun eğdiği için değil, toplumsal düzenin ve hukuk sisteminin işlerliğini korumak gerektiği için kurallara uyar (B yanlış). Gelenek Ötesi Düzey'deki Evrensel Ahlak İlkesi en üst basamak olup kişi otorite veya güçten bağımsız şekilde adalet, eşitlik ve insan hakları gibi soyut vicdani ilkelerle hareket eder (C yanlış). Geleneksel Düzey'deki İyi Çocuk Eğilimi'nde temel motivasyon ceza veya güç değil, yakın çevrenin sevgisini ve sosyal onayını kazanma isteğidir (D yanlış).",
     "id": "K6_2019-2020_Q66"
   },
   {
@@ -3023,7 +3023,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Kronik alkol bağımlısında kesilmeden 48-72 saat sonra başlayan görsel varsanılar, konfüzyon ve otonom hiperaktivite (ateş, taşikardi, hipertansiyon) **deliryum tremens** tablosudur; acil hospitalizasyon ve parenteral **diazepam** gerektirir.",
+    "explanation": "25 yıldır her gün alkol tüketen hastada alkol alımının kesilmesi sonrası ortaya çıkan görsel varsanılar, konfüzyon, ajitasyon ve otonom hiperaktivite (ateş 38,5 °C, taşikardi 126/dk, hipertansiyon 165/102 mmHg) mortalitesi yüksek bir acil durum olan **deliryum tremens** tablosudur; ilk yaklaşım hastayı **acil servisten hastaneye yatırıp oral veya IV diazepam (benzodiazepin)** başlamaktır (E doğru). Deliryum tremens aktif farmakolojik müdahale gerektiren yaşamı tehdit edici bir tablodur; yalnızca gözlem ve sosyal servis değerlendirmesiyle bırakılıp benzodiazepin verilmemesi nöbet ve kardiyovasküler kollapsa yol açabilir (A yanlış). Otonom dengesizliği ve halüsinasyonları devam eden akut deliryum tremens hastasını taburcu edip ayaktan alkol tedavi merkezine yönlendirmek hayati tehlike doğurur (B yanlış). Tek başına IM haloperidol uygulanması alkol yoksunluğundaki temel GABAerjik yetmezliği düzeltmez, konvülsiyon eşiğini düşürür ve poliklinik kontrolüne göndermek ağır akut tabloda yetersizdir (C yanlış). Modern tıpta alkol yoksunluğu tedavisinde IV etil alkol uygulanması güvenli ve standart değildir; ayrıca bu klinik tablodaki hasta kesinlikle taburcu edilemez (D yanlış).",
     "id": "K6_2019-2020_Q86"
   },
   {
@@ -3056,7 +3056,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Yaygın anksiyete bozukluğunun etiyolojisinde genetik-nörobiyolojik yatkınlıklar (GABA/serotonin disfonksiyonu), erken yaşam travmaları ve kronik çevresel stresörlerin tamamı belirleyici rol oynamaktadır.",
+    "explanation": "Yaygın anksiyete bozukluğunun (YAB) etyolojisinde genetik ve nörobiyolojik yatkınlıklar (GABA, serotonin ve noradrenalin sistemindeki düzenleme bozuklukları), erken aile içi stresörler ve çevresel yaşam olaylarının **tamamı birlikte rol oynamaktadır** (D doğru). YAB erkeklerde kadınların 2 katı sıklıkta değil, tam tersine **kadınlarda erkeklerin yaklaşık 2 katı** sıklıkta gözlenir (A yanlış). Özgül fobi ve sosyal anksiyete bozukluğu çocukluk/erken ergenlikte başlarken, YAB'ın başlangıç yaşı diğer anksiyete bozukluklarına göre daha erken (14 yaş civarı) değil **daha geçtir** (genellikle geç ergenlik ile 20-30'lu yaşlar arası) (B yanlış). Davranışsal inhibisyon mizacı erken çocuklukta yabancı durumlara çekingenlik ve kaçınma ile karakterize olup öncelikle sosyal anksiyete bozukluğu ve panik bozukluk için özgül bir yatkınlık faktörü olarak tanımlanır; YAB etyolojisi ise tek bir mizaç özelliğinden ziyade biyolojik, ailesel ve çevresel etmenlerin bütünüyle açıklanır (C yanlış). Hipertiroidi (tirotoksikoz) anksiyete, çarpıntı, tremor ve huzursuzlukla YAB kliniğini birebir taklit edebildiği için tiroid fonksiyon testleri ayırıcı tanıda son derece önemlidir (E yanlış).",
     "id": "K6_2019-2020_Q87"
   },
   {
@@ -4849,7 +4849,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Kistik fibrozis **otozomal resesif** kalıtılır; her iki ebeveynin heterozigot mutant (taşıyıcı) olduğu durumda Mendel kurallarına göre doğacak çocukların hasta olma riski **%25**'tir.",
+    "explanation": "Kistik fibrozis, 7. kromozomdaki *CFTR* geninde yer alan mutasyonlarla oluşan **otozomal resesif** kalıtımlı bir hastalıktır; her iki ebeveyn heterozigot mutant taşıyıcı (Aa × Aa) olduğunda Mendel kurallarına göre doğacak her çocukta homozigot hasta (aa) olma ihtimali **%25**'tir (B doğru). Kistik fibrozis X'e bağlı dominant kalıtılmaz; ayrıca X'e bağlı dominant kalıtımda dahi bu soy ağacı yapısından tüm çocuklarda sabit %75 hasta oranı çıkmaz (A yanlış). Hastalık otozomal dominant değildir; kaldı ki iki heterozigot (Aa × Aa) ebeveynin otozomal dominant kalıtımında dahi çocukların %100'ü değil %75'i hasta olur (C yanlış). *CFTR* geni X kromozomunda değil 7. otozom üzerinde bulunduğu için hastalık X'e bağlı resesif kalıtım göstermez ve her çocuk için %50 hasta riski taşımaz (D yanlış). İki heterozigot ebeveynin evliliğinde %75 hasta oranı otozomal dominant kalıtım için geçerlidir; ancak kistik fibrozis dominant değil **otozomal resesif** bir hastalıktır (E yanlış).",
     "id": "K6_2020-2021_Q39"
   },
   {
@@ -5435,7 +5435,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Etanol metabolizması sonucu karaciğerde oluşan asetat kana salınır; iskelet kası ve kalp gibi periferik dokular tarafından alınarak **asetil-KoA sentetaz** ile asetil-KoA'ya dönüştürülüp TCA döngüsünde yakılır.",
+    "explanation": "Etanol metabolizmasında alkol dehidrogenaz ve aldehit dehidrogenaz basamakları sonucunda karaciğerde oluşan **asetat** kana geçer; iskelet kası, kalp kası ve diğer ekstrahepatik dokular tarafından alınarak **asetil-KoA sentetaz** enzimi aracılığıyla **asetil-KoA**'ya aktive edilip TCA döngüsünde enerji üretiminde kullanılır (E doğru). Karaciğer dokusu için doğrudan toksik olup protein adductları oluşturarak hepatoselüler nekroza ve fibrozise yol açan metabolit asetat değil, bir önceki basamakta oluşan reaktif **asetaldehit**tir (A yanlış). Asetat safra yoluyla bağırsağa atılan bir ekskresyon ürünü değildir; periferik dokular için dolaşıma verilen oksidatif yakıttır (B yanlış). Serbest asetat molekülü Koenzim A ile bağlanmadan doğrudan TCA döngüsüne giremez; sitrat sentaz reaksiyonuna katılabilmesi için önce ATP harcanarak **asetil-KoA** formuna dönüştürülmesi gerekir (C yanlış). Alkol dehidrogenaz enzimi asetatı NADH'a çevirmez; etanolü NAD+ eşliğinde asetaldehide yükseltger, asetat ise aldehit dehidrogenaz basamağının ürünüdür (D yanlış).",
     "id": "K6_2020-2021_Q55"
   },
   {
@@ -5600,7 +5600,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Doping kontrol standartlarına göre sporcunun idrarında serbest **kafein konsantrasyonunun 12 μg/mL ve üzerinde** saptanması yüksek doz farmakolojik uyarıcı kullanımını gösteren pozitif test kriteridir.",
+    "explanation": "Doping kontrol mevzuatında (klasik IOC ve spor hekimliği kriterlerinde) normal diyet alımı serbest kabul edilirken, sporcunun idrarında serbest **kafein miktarının 12 mikrogram/mL ve üzerinde** saptanması performansı artırmaya yönelik yüksek doz uyarıcı kullanımını gösteren pozitif test sınırı olarak kabul edilir (A doğru). Kişinin vücut ağırlığı, hidrasyon durumu, kahve demleme yöntemi ve CYP1A2 metabolizma hızı değişebildiğinden 6 fincan kahve içmek tüm sporcular için sabit bir yasak sınır ölçütü oluşturmaz (B yanlış). Kafein normal diyet miktarlarında alındığında merkezi sinir sistemini hafifçe uyarsa da bazal vücut ısısını belirgin şekilde artıran bir hipertermi ajanı değildir (C yanlış). Çok düşük miktarlarda kafein tüketimi sağlıklı bireylerde ve sporcularda klinik olarak anlamlı ve sürekli kan basıncı ile kan şekeri yüksekliği oluşturmaz (D yanlış). Diyet içecekleri yasaklanmasa da idrarda 12 mikrogram/mL eşik değerinin aşılması pozitif doping sonucu sayıldığından kafeinin her dozda tamamen serbest ve kuralsız olduğu söylenemez (E yanlış).",
     "id": "K6_2020-2021_Q60"
   },
   {
@@ -7520,7 +7520,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Presinaptik akson ucundaki voltaj kapılı kalsiyum kanalları bloke edilirse hücre içine Ca²⁺ girişi engellenir; nörotransmitter ekzositozu yapılamayacağı için **sinaptik aşırım durur**.",
+    "explanation": "Presinaptik nöron akson ucundaki voltaj kapılı kalsiyum kanalları bloke edildiğinde aksiyon potansiyeli terminale ulaşsa bile hücre içine **Ca²⁺ girişi engellenir**; kalsiyuma bağımlı SNARE-sinaptotagmin aracılı vezikül ekzositozu durduğundan postsinaptik nöronu uyaracak nörotransmitter salınamaz ve **sinaptik aşırım durur** (B doğru). Nörotransmitter veziküllerinin sinaptik aralığa boşaltımı kesinlikle hücre içi Ca²⁺ artışına bağımlıdır; bu nedenle Ca²⁺ kanalları bloke iken ekzositoz devam edemez (A yanlış). Presinaptik nörondan uyarıcı veya inhibe edici nörotransmitter salınamadığı için postsinaptik membranda reseptör aktivasyonu gerçekleşmez ve uyarı aşırımı kesilir (C yanlış). Kalsiyum kanal blokajına rağmen nörotransmitter maddelerin sinaptik aralığa normal biçimde verilmeye devam etmesi fizyolojik olarak mümkün değildir (D yanlış). Akson boyunca yayılan **presinaptik depolarizasyon** voltaj kapılı **sodyum (Na⁺) kanalları** ile oluştuğundan, Ca²⁺ kanal blokajı aksiyon potansiyelinin terminale kadar gelişini ve membran depolarizasyonunu engellemez (E yanlış).",
     "id": "K6_2021-2022_Q18"
   },
   {
@@ -7981,7 +7981,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "İskemik inmede geri dönüşümsüz nekroza uğramış çekirdeğin çevresinde yer alan, perfüzyonun bozulduğu fakat erken reperfüzyonla **kurtarılabilen canlı doku alanı iskemik penumbra**dır.",
+    "explanation": "İskemik inmede geri dönüşümsüz nekroza uğramış enfarkt çekirdeğini çevreleyen, kan akımının elektriksel aktiviteyi durduracak kadar azaldığı ancak hücresel bütünlüğü koruyacak düzeyde kaldığı ve erken reperfüzyonla **kurtarılabilen geri dönüşümlü nöronal fonksiyon kaybı alanı iskemik penumbra**dır (C doğru). İskemik çekirdeğin merkezi zaten geri dönüşümsüz hücre ölümünün (nekrozun) gerçekleştiği enfarkt çekirdeğidir (core), penumbra ise bu çekirdeği çevreleyen alandır (A yanlış). Penumbra sahasında hücreler henüz nekroza gitmemiştir; metabolik olarak canlıdırlar ve yalnızca hipoperfüzyon uzar ya da derinleşirse nekroza ilerlerler (B yanlış). Penumbra dokusunun temel özelliği erken trombolitik tedavi veya mekanik trombektomiyle dolaşım yeniden sağlandığında nöronların fonksiyonlarını **tekrar kazanabilmesidir** (D yanlış). Penumbra sahasındaki hücrelerin nekroza gidip gitmeyeceği doğrudan **iskeminin şiddetine (kollateral perfüzyon düzeyine) ve süresine** bağlıdır ('zaman beyindir' ilkesi) (E yanlış).",
     "id": "K6_2021-2022_Q31"
   },
   {
@@ -9529,7 +9529,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Genç bir kadında tekrarlayan Down sendromlu çocuk ve spontan düşük öyküsü, ebeveynde akrosentrik kromozomlar arasında dengeli bir **Robertsonian translokasyonu [rob(14q21q)]** taşıyıcılığı olduğunu gösterir.",
+    "explanation": "26 yaşında genç bir kadında tekrarlayan iki Down sendromlu doğum ve iki spontan düşük bulunması, yaşa bağlı mayotik ayrılmamadan (nondisjunction) ziyade ebeveynlerden birinde akrosentrik **14. ve 21. kromozomlar arasında dengeli bir Robertsonian translokasyonu** taşıyıcılığını gösterir; bu taşıyıcılık dengesiz gamet oluşumuyla yüksek oranda trizomi 21'e ve gebelik kayıplarına yol açar (D doğru). İlk kuzeninde sporadik Down sendromu bulunması annenin veya babanın gametlerinde tekrarlayan 21. kromozom dengesizliği gelişmesini açıklamaz (A yanlış). İleri baba yaşı akondroplazi veya Apert sendromu gibi paternal tek gen mutasyonlarını artırırken, Down sendromunda başlıca risk faktörü ileri baba yaşı değil ileri **anne yaşı** veya translokasyon taşıyıcılığıdır (B yanlış). 14. ve 18. kromozomlar arasındaki karşılıklı (resiprokal) translokasyon 21. kromozomu içermediği için trizomi 21 (Down sendromu) doğumlarına neden olmaz (C yanlış). Annenin çocukluğunda tanısal amaçlı BT çekilmiş olması sonraki gebeliklerde tekrarlayan özgül 21. kromozom trizomisi ve düşük öyküsünü açıklayan bir kalıtsal mekanizma değildir (E yanlış).",
     "id": "K6_2021-2022_Q75"
   },
   {
@@ -9636,7 +9636,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Gowers belirtisi, baldır hipertrofisi ve çok yüksek serum CK düzeyiyle DMD düşünülen çocukta ekzon delesyon ve duplikasyonlarını taramak için ilk istenecek test **DMD geni MLPA analizidir**.",
+    "explanation": "Parmak ucunda yürüme, Gowers belirtisi, bilateral baldır psödohipertrofisi ve serum CK değerinde 75 kat artış ile tipik **Duchenne Musküler Distrofi (DMD)** düşünülen çocukta olguların yaklaşık %65-75'i *DMD* genindeki büyük ekzon delesyon veya duplikasyonlarından kaynaklandığı için ilk istenecek moleküler genetik test **DMD geni MLPA (delesyon/duplikasyon) analizidir** (A doğru). Klinik ve biyokimyasal tablo doğrudan DMD ile uyumlu olduğunda ilk adımda tüm müsküler distrofi genlerini tarayan geniş bir NGS paneli istemek yerine doğrudan *DMD* genine yönelik hızlı MLPA testi tercih edilir (B yanlış). *DMD* geninin dizi analizi (sekanslama), büyük delesyon veya duplikasyon saptamayan MLPA testi negatif çıktığında kalan ~%25-30'luk nokta mutasyonu grubunu yakalamak amacıyla ikinci adımda istenir (C yanlış). Distrofin proteini için Western blot çalışmak üzere iskelet kası biyopsisi almak invaziv bir cerrahi işlemdir ve moleküler kan testlerinin sonuçsuz kaldığı durumlarda başvurulan ileri basamak incelemedir (D yanlış). İmmünohistokimya çalışmaları için kas biyopsisi de genel anestezi ve doku örneklemesi gerektirdiğinden günümüzde ilk basamak genetik tanı yöntemi olarak uygulanmaz (E yanlış).",
     "id": "K6_2021-2022_Q78"
   },
   {
@@ -10492,7 +10492,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Peteşiyal döküntü ve BOS'ta gram-negatif diplokoklarla meningokok menenjiti saptanan olgunun yakın temaslılarına kemoprofilakside tek doz **oral siprofloksasin (500 mg)** verilir.",
+    "explanation": "Yüksek ateş, şuur bulanıklığı, döküntü ve BOS'ta nötrofillerle birlikte gram-negatif diplokok görülmesi ***Neisseria meningitidis*** menenjiti tanısını koydurur; yakın temaslı sağlık çalışanlarında nazofaringeal taşıyıcılığı eradike etmek için standart kemoprofilaksi tek doz **oral siprofloksasin 500 mg** (veya rifampisin / IM seftriakson) uygulamasıdır (B doğru). *Listeria monocytogenes* gram-negatif diplokok değil, özellikle yenidoğan, gebe ve immünsüpresiflerde menenjit yapan **gram-pozitif basil**dir ve yakın temaslı sağlık personeline amoksisilin profilaksisi verilmez (A yanlış). *Streptococcus pneumoniae* gram-negatif değil **gram-pozitif** lanset şeklinde diplokoktur; ayrıca pnömokok menenjitinde temaslılara gentamisin kemoprofilaksisi uygulanmaz (C yanlış). *Escherichia coli* diplokok yapısında olmayıp **gram-negatif basildir**, başlıca yenidoğan menenjitlerinden sorumludur ve sağlık çalışanı temas profilaksisi gerektirmez (D yanlış). *Klebsiella* türleri diplokok değil kapsüllü **gram-negatif çomaklardır**; döküntülü meningokoksemi kliniğinin etkeni olmadığı gibi temaslılarda sefuroksim profilaksisi de önerilmez (E yanlış).",
     "id": "K6_2022-2023_Q3",
     "repeats": [
       {
@@ -10731,7 +10731,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Botulinum toksini (Botoks), motor nöron presinaptik terminalinde SNARE proteinlerini parçalayarak **asetilkolinin ekzositozla salınmasını geri dönüşümsüz bloke eder**.",
+    "explanation": "*Clostridium botulinum* toksini (Botoks), kolinerjik motor nöronların presinaptik terminaline girerek vezikül füzyonunda görevli SNARE proteinlerini (özellikle SNAP-25) proteolitik olarak parçalar ve **presinaptik nörondan asetilkolin ekzositozunu bloke eder** (D doğru). Sinaptik aralıktan presinaptik uca geri alınan madde asetilkolinin kendisi değil parçalanma ürünü olan **kolin**dir; kolin geri alımını engelleyen madde ise botoks değil **hemikolinyum**dur (A yanlış). Asetilkolini kolin ve asetata (asetil-KoA'ya değil) hidrolize eden yapı botoks değil sinaptik aralıktaki **asetilkolinesteraz** enzimidir (B yanlış). Botulinum toksini presinaptik otoreseptörleri bloke ederek asetilkolin salınımını artırmaz; aksine nöromüsküler kavşakta asetilkolin salınımını tamamen durdurarak gevşek (flask) felç oluşturur (C yanlış). Postsinaptik muskarinik reseptörlerde asetilkolinle yarışan ajanlar atropin grubu antikolinerjikler, nikotinik reseptörlerde yarışanlar ise kürar benzeri nöromüsküler blokerlerdir; botoks postsinaptik reseptöre bağlanmaz (E yanlış).",
     "id": "K6_2022-2023_Q9",
     "prof_inferred": true
   },
@@ -10765,7 +10765,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Atipik antipsikotiklerin tipik antipsikotiklerden temel farkı, **5-HT2A reseptör blokaj etkilerinin D2 reseptör blokajından belirgin şekilde daha güçlü olmasıdır**.",
+    "explanation": "Atipik (ikinci kuşak) antipsikotikleri klasik (tipik) ajanlardan ayıran en temel farmakolojik özellik, **5-HT2A serotoninerjik reseptörleri bloke etme güçlerinin D2 dopamin reseptör blokajından daha fazla olmasıdır**; bu sayede nigrostriatal yolda dopamin salınımını görece koruyarak motor yan etkileri azaltırlar (E doğru). Atipik antipsikotikler apati, sosyal çekilme ve anhedoni gibi **negatif semptomlar** üzerinde klasik antipsikotiklere göre daha az değil, **daha üstün** etkinlik gösterir (A yanlış). Akut distoni, parkinsonizm ve akatizi gibi ekstrapiramidal yan etkiler en sık yüksek potensli klasik D2 antagonistlerinde görülür; atipik antipsikotiklerde EPS sıklığı belirgin ölçüde düşüktür (B yanlış). Klasik antipsikotikler bilişsel işlevleri iyileştirmeyip bazen antikolinerjik/sedatif etkiyle olumsuz etkilerken, atipik antipsikotikler prefrontal dopamin salınımını destekleyerek bilişsel fonksiyonları klasiklerden daha fazla bozmaz, aksine daha iyi korur (C yanlış). Sanrı ve halüsinasyon gibi **pozitif semptomlar** üzerinde (klozapinin tedaviye dirençli olgulardaki yeri hariç) atipik antipsikotikler klasiklerden belirgin şekilde daha yüksek etkinlik göstermez, genel etkinlikleri benzerdir (D yanlış).",
     "id": "K6_2022-2023_Q10",
     "prof_inferred": true
   },
@@ -10906,7 +10906,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Madde kesildiğinde somatik belirtiler yerine anksiyete, irritabilite, huzursuzluk ve yoğun aşerme gibi psikolojik semptomların görülmesi **psişik (psikolojik) bağımlılık**tır.",
+    "explanation": "Bağımlı olunan madde alınamadığında bedensel/fizyolojik yoksunluk belirtileri yerine ruhsal huzursuzluk, keyifsizlik, anksiyete ve sinirlilik gibi psikolojik belirtiler ile maddeyi arama isteğinin ön planda olması **psişik bağımlılıktır** (D doğru). Bir ilacın yanlış endikasyonda, yanlış dozda, yanlış yoldan veya yanlış aralıklarla kullanılması ilaç suistimali (drug abuse) değil **hatalı/yanlış ilaç kullanımı (drug misuse)** olarak tanımlanır; ilaç suistimali ise maddenin tıbbi amaç dışında keyif verici veya psişik etkileri için kötüye kullanılmasıdır (A yanlış). Bağımlılık oluşturan maddenin sağladığı keyif, öfori ve ödül duygusunun tekrar kullanımı pekiştirmesi negatif pekiştiri değil **pozitif pekiştiridir** (B yanlış). Maddenin alınamamasının yol açacağı keyif kaybı, disfori ve yoksunluk sıkıntısından kaçınmak için madde alımına devam edilmesi pozitif pekiştiri değil **negatif pekiştiridir** (C yanlış). Bütün madde bağımlılıklarında fiziksel (somatik) yoksunluk belirtileriyle giden fiziksel bağımlılık gelişmez; bazı psikoaktif maddelerde (ör. halüsinojenler) fiziksel bağımlılık görülmeden yalnızca psişik bağımlılık gelişebilir (E yanlış).",
     "id": "K6_2022-2023_Q14",
     "repeats": [
       {
@@ -10947,7 +10947,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "**Pirasetam**, serebral mikrosirkülasyonu artıran, nöronal membran akışkanlığını düzenleyen ve vertigo ile miyoklonus tedavisinde kullanılan bir nootropiktir.",
+    "explanation": "**Pirasetam**, serebral mikrosirkülasyonu artıran, eritrosit deformabilitesini ve nöronal membran akışkanlığını düzenleyen, bilişsel bozuklukların yanı sıra vertigo ve kortikal miyoklonus tedavisinde de kullanılan bir nootropik ilaçtır (D doğru). Alzheimer hastalığında bazal önbeyin (nucleus basalis of Meynert) kolinerjik nöronlarının dejenerasyonuna bağlı **asetilkolin eksikliği** bulunduğundan tedavide amaç kolinerjik aktiviteyi baskılamak değil artırmaktır (A yanlış). Galantamin beyindeki kolinerjik reseptörleri doğrudan uyaran bir muskarinik agonist değil, asetilkolin yıkımını önleyen geri dönüşümlü bir **asetilkolinesteraz inhibitörüdür** (nikotinik reseptörler üzerinde ise yalnızca allosterik modülatör etkilidir) (B yanlış). Memantin beyinde azalmış glutamat aktivitesini artırmaz; tam aksine Alzheimer'da nörodejenerasyona yol açan aşırı glutamat uyarımını (eksitotoksisiteyi) engellemek için **NMDA reseptörlerini bloke eden (antagonist)** bir ajandır (C yanlış). *Ginkgo biloba* ekstresi kolinesteraz inhibisyonu yaparak kolinerjik aktiviteyi artırmaz; serbest radikal süpürücü (antioksidan), PAF antagonisti ve mikrosirkülasyonu düzenleyici etki gösterir (E yanlış).",
     "id": "K6_2022-2023_Q15"
   },
   {
@@ -11153,7 +11153,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Peptid yapılı nörotransmitterler akson ucunda sentezlenemez; ribozomal mekanizmalarla **nöron somasında (hücre gövdesinde)** sentezlenip aksonal taşımayla terminale iletilir.",
+    "explanation": "Peptid yapılı nörotransmitterler (nöropeptidler) amino asit zincirlerinden ribozomal translasyonla üretildiklerinden sentezleri akson terminalinde gerçekleşemez; **nöron somasındaki (hücre gövdesindeki) granüllü endoplazmik retikulumda** sentezlenip Golgi'de paketlendikten sonra aksonal taşımayla sinir ucuna iletilir (A doğru). Katekolaminlerin (noradrenalin, dopamin) sinaptik aralıktan uzaklaştırılmasında birincil mekanizma sinaptik aralıkta enzimatik yıkım değil, presinaptik uca **aktif geri alımdır (reuptake-1)**; enzimatik yıkım (MAO ve COMT) esas olarak nöron içi veya ekstranöronal dokuda gerçekleşir (B yanlış). Endokannabinoidler (anandamid, 2-AG) presinaptik nöron somasında sentezlenip veziküllerde depolanmaz; aksine uyarım sırasında **postsinaptik nörondaki** membran lipidlerinden anında sentezlenip retrograd olarak presinaptik CB1 reseptörlerine gider (C yanlış). Presinaptik uçtan noradrenalin salıverilen sinapslar kolinerjik değil **adrenerjik (noradrenerjik)** sinapslardır; kolinerjik sinapslardan salınan mediyatör asetilkolindir (D yanlış). Benzodiazepin bağlanma bölgesi glutamaterjik NMDA reseptörü üzerinde değil, iyonotropik **GABA-A reseptörü** kompleksi üzerinde yer alır (E yanlış).",
     "id": "K6_2022-2023_Q21",
     "repeats": [
       {
@@ -11233,7 +11233,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Botulinum toksini, kolinerjik presinaptik uçtaki SNAP-25 proteinini yıkarak **asetilkolinin ekzositozla salınımını bloke eder**.",
+    "explanation": "Botulinum toksini (Botoks), motor nöron presinaptik ucundaki SNAP-25 ve ilişkili SNARE proteinlerini parçalayarak sinaptik veziküllerin membrana kenetlenmesini önler ve **presinaptik nörondan asetilkolin ekzositozunu bloke eder** (A doğru). Botoks presinaptik otoreseptör blokajı yaparak asetilkolin salınımını artırmaz; tam tersine asetilkolin salınımını durdurarak kas gevşemesi ve flask paralizi meydana getirir (B yanlış). Postsinaptik muskarinik veya nikotinik reseptörler için asetilkolinle yarışan ilaçlar atropin ve non-depolarizan kas gevşeticilerdir; botoks postsinaptik reseptör antagonisti değildir (C yanlış). Asetilkolini yıkan enzim asetilkolinesterazdır ve ürünü kolin ile asetattır (asetil-KoA değildir); botulinum toksininin kolinesteraz benzeri bir enzimatik etkisi yoktur (D yanlış). Sinaptik aralıktan presinaptik uca geri alınan madde asetilkolin değil kolindir ve kolin geri alımını bloke eden madde hemikolinyumdur (E yanlış).",
     "id": "K6_2022-2023_Q23"
   },
   {
@@ -11373,7 +11373,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Sigara bağımlılığının temel mekanizması, nikotinin mezolimbik dopaminerjik nöronlardaki **alfa4-beta2 (α4β2) nikotinik reseptörlerine** bağlanarak dopamin salınımını artırmasıdır.",
+    "explanation": "Sigara bağımlılığının temel nörobiyolojik mekanizması, nikotinin ödül devresini oluşturan **mezolimbik sistemdeki (ventral tegmental alan ve nükleus akkumbens) nöronal nikotinik reseptörlerin α4β2 alt birimine** bağlanarak dopamin salınımını ve pekiştirici etkiyi artırmasıdır (A doğru). Prefrontal korteks ve hipokampusta yer alan α7 nikotinik reseptörleri daha çok dikkat ve bilişsel süreçlerle ilişkilidir; bağımlılık oluşturan temel mezolimbik ödül yolağının ana hedefi α4β2 reseptörleridir (B yanlış). Otonom gangliyonlardaki NN tipi nikotinik reseptörlerin uyarılması bağımlılık gelişiminden değil, taşikardi ve vazokonstriksiyon gibi periferik sempatik/parasempatik yanıtlardan sorumludur (C yanlış). İskelet kası nöromüsküler kavşağındaki NM tipi reseptörler somatik kas kasılmasını sağlar; santral sinir sistemindeki nikotin bağımlılığı mekanizmasında yer almaz (D yanlış). Nikotin dopaminerjik D2 reseptörlerine doğrudan bağlanan bir agonist değildir; presinaptik α4β2 nikotinik reseptörleri aktive ederek endojen dopamin salınımını dolaylı biçimde artırır (E yanlış).",
     "id": "K6_2022-2023_Q27"
   },
   {
@@ -11513,7 +11513,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Atipik antipsikotikleri tipik ajanlardan ayıran anahtar farmakolojik mekanizma, **5-HT2A reseptörlerine olan blokaj afinitelerinin D2 reseptör blokajından belirgin şekilde daha güçlü olmasıdır**.",
+    "explanation": "Atipik antipsikotikleri klasik nöroleptiklerden ayıran temel farmakodinamik özellik, serotoninerjik **5-HT2A reseptör blokaj etkilerinin D2 dopamin reseptör blokajından belirgin şekilde daha güçlü olmasıdır** (E doğru). Atipik antipsikotikler negatif semptomlar üzerinde klasik ajanlara kıyasla daha az değil, bilakis daha yüksek klinik etkinlik gösterir (A yanlış). Genel olarak şizofreninin pozitif semptomları üzerindeki etkinlik bakımından atipik ve klasik antipsikotikler benzer güçtedir; atipiklerin üstünlüğü pozitif semptomlardan ziyade düşük EPS profili ve negatif/bilişsel semptomlara etkisindedir (B yanlış). Atipik antipsikotikler klasik antipsikotiklere göre bilişsel işlevleri daha fazla bozmaz; prefrontal korteksteki 5-HT2A blokajı yoluyla dopamin salınımını artırarak bilişsel performansı daha iyi destekler (C yanlış). Ekstrapiramidal yan etkiler yüksek oranda klasik D2 blokerlerinde görülür; atipik antipsikotiklerin tanımlayıcı özelliği EPS riskinin belirgin biçimde düşük olmasıdır (D yanlış).",
     "id": "K6_2022-2023_Q31"
   },
   {
@@ -12760,7 +12760,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Hastanın iç organlarının, beyninin veya bedeninin çürüdüğüne ve tamamen yok olduğuna dair sarsılmaz inanç beslemesi **nihilistik sanrılar (Cotard sendromu)** olarak adlandırılır.",
+    "explanation": "Hastanın iç organlarının yok olduğuna, çürüyüp tükendiğine ya da kendisinin ölmüş olduğuna dair sarsılmaz yanlış inançlar beslemesi **nihilistik sanrılar** (Cotard sendromu) olarak adlandırılır ve sıklıkla ağır psikotik depresyon veya şizofrenide görülür (C doğru). Perseküsyon (kötülük görme) sanrısı kişinin takip edildiği, kendisine zarar verileceği veya komplo kurulduğu yönündeki sanrıdır (A yanlış). Erotomanik sanrı (de Clerambault sendromu), genellikle daha yüksek statüdeki bir kişinin kendisine aşık olduğuna dair gerçek dışı inançtır (B yanlış). Etkilenme sanrısı, kişinin düşüncelerinin, duygularının veya davranışlarının dış güçler tarafından yönetildiği ya da kontrol edildiği inancıdır (D yanlış). Grandiyoz (büyüklük) sanrılar kişinin olağanüstü güçlere, servete, bilgiye veya özel bir kimliğe sahip olduğuna dair sanrılardır (E yanlış).",
     "id": "K6_2022-2023_Q66"
   },
   {
@@ -12826,7 +12826,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Dışarıda gerçek bir akustik uyaran yokken 'günahkar ve suçlu' olduğunu söyleyen sesler duymak bir algı bozukluğu olan **işitsel halüsinasyon (varsanı)** örneğidir.",
+    "explanation": "Dışarıda gerçek bir akustik uyaran bulunmadığı halde 'günahkar ve suçlu' olduğunu söyleyen sesler işitmek, dış uyaransız duyusal yaşantı olan **işitsel halüsinasyon (varsanı)** yani bir algı sapması örneğidir (B doğru). Yakınları tarafından kendisine kötülük yapılacağını düşünmek duyusal algı alanına değil, **düşünce içeriği bozukluğu** olan persekütuar (kötülük görme) hezeyana örnektir (A yanlış). Konuşurken konudan konuya atlamak (fikir uçuşması veya çağrışım çözülmesi) bir algı bozukluğu değil **düşünce akışı/süreci bozukluğu**dur (C yanlış). Hiçbir dilde ve sözlükte olmayan yeni kelimeler türetmek (**neolojizm**) algı sapması olmayıp düşünce ve konuşma formasyonundaki bir bozukluktur (D yanlış). Eşinin kendisini aldattığına yönelik gerçek dışı düşüncelere sahip olmak algısal bir bozukluk değil, kıskançlık temalı bir **düşünce içeriği bozukluğudur** (E yanlış).",
     "id": "K6_2022-2023_Q68",
     "repeats": [
       {
@@ -12996,7 +12996,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Borderline kişilik örgütlenmesinde benlik savunmaları olarak ilkel bölme (splitting), yansıtmalı özdeşim (projektif identifikasyon) ve inkar tipik olarak bir arada kullanılır.",
+    "explanation": "Sınırda (Borderline) kişilik bozukluğunda benlik sınırlarındaki kırılganlık ve yoğun duygulanım dalgalanmaları nedeniyle **projektif identifikasyon (yansıtmalı özdeşim), splitting (ilkel bölme; kişileri tamamen iyi ya da tamamen kötü görme) ve inkar** en sık gözlenen ilkel savunma mekanizmalarıdır (C doğru). Borderline kişilik bozukluğu erkeklerde değil **kadınlarda yaklaşık 3 kat daha sık** tanı alır (A yanlış). Duygudurumun ayarlanmasında belirgin dengesizlik (affektif instabilite), boşluk hissi, öfke patlamaları ve dürtü denetiminde ciddi zorlanma (kendine zarar verme, intihar girişimleri, dürtüsel davranışlar) hastalığın çekirdek tanı ölçütlerindendir (B yanlış). Kuşkucu, alıngan ve sürekli başkalarının niyetlerinden şüphelenen kuruntulu yapı Borderline değil **Paranoid Kişilik Bozukluğunun** temel özelliğidir (D yanlış). İşin asıl amacını ve tamamlanmasını engelleyecek derecede aşırı ayrıntıcılık, kuralcılık ve mükemmeliyetçilik Borderline değil **Obsesif-Kompulsif Kişilik Bozukluğuna (OKKB)** özgüdür (E yanlış).",
     "id": "K6_2022-2023_Q72",
     "repeats": [
       {
@@ -13294,7 +13294,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Prader-Willi sendromunda 15q11-q13 bölgesindeki kritik genler maternal alelde fizyolojik olarak damgalanmış (metillenmiş) ve sessizdir; bu nedenle babadan gelen aktif kopyanın delesyonu hastalığa yol açar.",
+    "explanation": "Genomik imprinting (ebeveyne özgü damgalanma) mekanizması nedeniyle 15q11-q13 kromozom alt bölgesindeki Prader-Willi sendromu (PWS) genlerinin **anneden gelen kopyası fizyolojik olarak imprintlenmiştir (metillenmiştir) ve ifade edilmez**; bu nedenle aktif olan baba kopyasının delesyonu veya her iki kromozomun anneden geldiği maternal uniparental dizomi durumunda işlevsel gen ürünü üretilemeyerek PWS gelişir (D doğru). PWS genlerinin babadan gelen kopyası imprintlenmiş (susturulmuş) değil, tam tersine normal bireylerde **aktif ve ifade edilen** tek kopyadır (A yanlış). PWS, X kromozomu inaktivasyonundan değil 15. otozomal kromozomun 15q11-q13 lokusundaki ebeveyne özgü epigenetik damgalanmadan kaynaklanır (B yanlış). Angelman sendromundan (AS) sorumlu *UBE3A* geninin nöronlarda imprintlenmiş olan kopyası maternal değil **paternal** kopyadır; ayrıca bu mekanizma PWS'yi değil Angelman sendromunu açıklar (C yanlış). Anneden gelen PWS kopyası baba aleli üzerinde baskın olumsuz (dominant-negatif) bir etki yaratmaz; maternal kopya normal koşullarda dahi tamamen sessiz durumdadır (E yanlış).",
     "id": "K6_2022-2023_Q80",
     "repeats": [
       {
@@ -14190,7 +14190,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Peteşiyal döküntü ve BOS'ta gram negatif diplokoklarla seyreden meningokoksemi olgusunun yakın temaslılarına kemoprofilakside tek doz **oral siprofloksasin (500 mg)** verilir.",
+    "explanation": "Yüksek ateş, şuur bulanıklığı, makülopapüler/peteșiyal döküntü ve BOS'ta nötrofil hâkimiyetiyle gram-negatif diplokok saptanması ***Neisseria meningitidis*** menenjitini gösterir; bu olguyla yakın temasta bulunan sağlık çalışanları için en uygun kemoprofilaksi tek doz **oral 500 mg siprofloksasin** verilmesidir (B doğru). *Listeria monocytogenes* gram-negatif diplokok değil, özellikle yenidoğan, gebe ve yaşlılarda menenjit yapan **gram-pozitif basil**dir ve yakın temaslılara amoksisilin profilaksisi uygulanmaz (A yanlış). *Streptococcus pneumoniae* gram-negatif değil **gram-pozitif** diplokoktur ve pnömokok menenjiti için temaslılara gentamisin kemoprofilaksisi önerilmez (C yanlış). *Escherichia coli* diplokok olmayıp **gram-negatif çomaktır**, daha çok yenidoğan menenjitlerinden sorumludur ve sağlık çalışanlarına TMP-SMX temas profilaksisi gerektirmez (D yanlış). *Klebsiella* türleri kapsüllü **gram-negatif basillerdir**; döküntülü meningokok menenjiti tablosunun etkeni değildir ve temaslılara sefuroksim profilaksisi verilmez (E yanlış).",
     "id": "K6_2023-2024_Q8",
     "repeats": [
       {
@@ -14297,7 +14297,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Amfetamin ve türevleri, prefrontal kortekste dopamin ve noradrenalin salınımını artırarak dikkat ve uyanıklığı güçlendirir; bu nedenle **DEHB ve narkolepsi tedavisinde birinci basamak endikasyona sahiptir**.",
+    "explanation": "**Amfetamin**, presinaptik uçlardan dopamin ve noradrenalin salınımını artırıp geri alımını inhibe ederek prefrontal kortekste dikkati, odaklanmayı ve uyanıklığı güçlendirir; bu nedenle **Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB)** tedavisinde temel endikasyonlardan birine sahiptir (D doğru). Amfetaminler gündüz aşırı uyuklama ataklarını önlediği için narkolepside kontrendike değil, aksine **endikedir** (A yanlış). Amfetaminler serotonin (5-HT), dopamin ve noradrenalin salınımını azaltmaz, artırırlar ve hipotalamik merkezler üzerinden iştahı artırmak yerine **baskılarlar (anorektik etki)** (B yanlış). İştah baskılayıcı etkisi nedeniyle amfetamin ve türevleri (ör. fentermin) kısa süreli obezite tedavisinde kullanılabilmiştir, dolayısıyla kullanılamaz ifadesi yanlıştır (C yanlış). Amfetaminin primer etki mekanizması MAO inhibisyonu değil, **VMAT-2 ve plazma membran taşıyıcılarını (DAT, NET) etkileyerek sinaptik aralığa katekolamin salınımını artırmaktır** (zayıf MAO inhibisyonu sadece yüksek dozlarda ikincil etkidir) (E yanlış).",
     "id": "K6_2023-2024_Q11",
     "repeats": [
       {
@@ -14753,7 +14753,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Madde kesildiğinde somatik yoksunluk yerine anksiyete, irritabilite, huzursuzluk ve yoğun arama davranışı gibi emosyonel semptomların görülmesi **psişik (psikolojik) bağımlılık** tablosudur.",
+    "explanation": "Maddeye ulaşamadığında ortaya çıkan yoksunluk tablosunun bedensel semptomlardan ziyade ruhsal huzursuzluk, keyifsizlik, gerginlik, sinirlilik ve madde arama isteği gibi psikolojik belirtilerle seyretmesi **psişik bağımlılık** olarak tanımlanır (D doğru). Bir ilacın yanlış endikasyon, yanlış doz, yanlış uygulama yolu veya yanlış aralıklarla kullanılması ilaç suistimali (abuse) değil **hatalı/yanlış ilaç kullanımıdır (misuse)**; ilaç suistimali ise maddenin tıbbi gerekçe olmadan psişik veya keyif verici etkileri için kullanılmasıdır (A yanlış). Bağımlılık yapan maddenin oluşturduğu keyif ve ruhsal ödül etkisiyle tekrar kullanımı artırması negatif pekiştiri değil **pozitif pekiştiridir** (B yanlış). Maddeyi bulamamanın yaratacağı keyifsizlik ve yoksunluk sıkıntısından kaçınmak için madde alımını sürdürmek pozitif pekiştiri değil **negatif pekiştiridir** (C yanlış). Tüm madde bağımlılıklarında fiziksel bağımlılık (bedensel yoksunluk sendromu) gelişmek zorunda değildir; bazı maddelerde belirgin fiziksel belirti olmadan yalnızca psişik bağımlılık gelişebilir (E yanlış).",
     "id": "K6_2023-2024_Q23",
     "repeats": [
       {
@@ -15296,7 +15296,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Kronik migrende (en az 3 aydır ayda ≥15 gün baş ağrısı ve en az 8 günü migren karakterinde olan olgular) profilaktik botulinum toksini uygulaması FDA onaylı **kesin endikasyondur**.",
+    "explanation": "Botulinum toksini (onabotulinumtoxinA), yalnızca **kronik migren** (en az **3 aydır** devam eden, ayda **≥15 gün** baş ağrısı olup bunun en az 8 gününün migren özelliği taşıdığı durumlar) profilaksisinde endikedir; 4 aydır ayda 20 gün baş ağrısı yaşayan hasta bu ölçütleri karşılar (B doğru). 5 yıldır ayda yalnızca 2 kez ağrısı olan hasta düşük sıklıklı **epizodik migren** grubundadır ve botulinum toksini endikasyonu taşımaz (A yanlış). Ayda 4 kez baş ağrısı görülmesi ayda <15 gün kaldığı için epizodik migren sınırındadır ve botulinum toksini uygulanmasını gerektirmez (C yanlış). Haftada 2 sefer (ayda ortalama 8 gün) görsel auralı migren atağı yaşaması kronik migren tanısı için gereken ayda ≥15 gün sınırının altındadır (D yanlış). Günlük baş ağrısı sıklık ölçütünü karşılasa da kronik migren tanısı için sürenin **en az 3 ay** olması zorunlu olduğundan 2 aylık öykü henüz bu endikasyonu karşılamaz (E yanlış).",
     "id": "K6_2023-2024_Q38"
   },
   {
@@ -15535,7 +15535,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Amyotrofik Lateral Sklerozda (ALS) duyu, sfinkter ve ekstraoküler kaslar korunurken; diyafram ve interkostal **solunum kaslarının tutulumu** terminal dönemde solunum yetmezliğine yol açar.",
+    "explanation": "Amyotrofik Lateral Skleroz (ALS) üst ve alt motor nöronların ilerleyici dejenerasyonuyla giden bir motor nöron hastalığıdır; seyir sırasında diyafram ve interkostal **solunum kaslarının tutulması** ilerleyici solunum yetmezliğine ve en sık ölüm nedenine yol açar (D doğru). ALS'de kortikal uyanıklık sistemleri korunduğundan hastalık nedeniyle primer bilinç kapanması gelişmez, hastalar terminal dönemde dahi bilinçleri açıktır (A yanlış). Hastalık saf motor nöronları etkilediği için spinotalamik yollar ve arka kordon korunur, dolayısıyla objektif duyu bozuklukları görülmez (B yanlış). Sakral medulla spinalisteki Onuf nukleusu hastalığa dirençli olduğundan klasik ALS'de mesane ve bağırsak sfinkter fonksiyonları korunur (C yanlış). Okülomotor, troklear ve abdusens kraniyal sinir çekirdekleri korunduğundan ekstraoküler (oküler) göz kasları tutulmaz; ileri evre hastalar göz hareketleriyle iletişim kurabilir (E yanlış).",
     "id": "K6_2023-2024_Q45"
   },
   {
@@ -15634,7 +15634,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Dışarıda ses kaynağı yokken suçlayıcı sesler işitmek duyusal algılama alanındaki patolojiyi yansıtan bir **algı sapması (işitsel halüsinasyon)** örneğidir.",
+    "explanation": "Dışarıda gerçek bir ses kaynağı bulunmadığı halde 'günahkar ve suçlu' olduğunu söyleyen sesler duymak, dışsal uyaran olmaksızın ortaya çıkan **işitsel halüsinasyon (varsanı)** yani bir algı sapması örneğidir (B doğru). Yakınları tarafından kötülük yapılacağına inanmak duyusal algılama hatası değil, **düşünce içeriği bozukluğu** olan persekütuar sanrıdır (A yanlış). Konuşurken konudan konuya atlamak çağrışım düzeniyle ilgili olup algı sapması değil **düşünce süreci (akışı)** bozukluğudur (C yanlış). Sözlükte ve dilde yer almayan yeni kelimeler uydurmak (**neolojizm**) algı alanında değil düşünce ve konuşma alanında görülen bir belirtidir (D yanlış). Eşinin kendisini aldattığına yönelik düşüncelere sahip olmak algısal bir yanılsama değil, kıskançlık temalı **düşünce içeriği** bozukluğudur (E yanlış).",
     "id": "K6_2023-2024_Q48",
     "repeats": [
       {
@@ -15857,7 +15857,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Maddenin tekrarlayan kullanımları sonrasında başlangıçtaki farmakolojik etkiyi sağlayabilmek için **dozun giderek artırılması ihtiyacı tolerans** terimiyle ifade edilir.",
+    "explanation": "Bir maddenin tekrarlayan kullanımları sonrasında başlangıçtaki aynı farmakolojik etkiyi elde edebilmek için **zamanla dozu giderek artırma ihtiyacının doğması** (veya aynı dozla giderek daha az etki görülmesi) **tolerans** olarak tanımlanır (A doğru). Kontrol edilemeyen güçlü madde alma arzusu ve dürtüsü toleransı değil **aşerme (craving)** kavramını ifade eder (B yanlış). Uzun süreli kullanılan bir maddenin aniden bırakılması veya azaltılmasıyla gelişen klinik tablo tolerans değil **yoksunluk (kesilme) sendromu**dur (C yanlış). Maddenin yüksek miktarlarda alınmasıyla ortaya çıkan akut zehirlenme durumu **entoksikasyon (aşırı doz)** olarak adlandırılır, tolerans değildir (D yanlış). Trafikte veya tehlikeli işlerde olduğu gibi fiziksel zarar doğurabilecek durumlarda madde kullanmaya devam etmek madde kullanım bozukluğunun **riskli kullanım** ölçütüdür (E yanlış).",
     "id": "K6_2023-2024_Q53"
   },
   {
@@ -16220,7 +16220,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Epidemiyolojik veriler travmatik olay türünün (doğal afet, şiddet, saldırı) ve maruz kalma yaşının TSSB sıklığını ve klinik seyrini doğrudan etkilediğini ortaya koymaktadır.",
+    "explanation": "Epidemiyolojik veriler toplumda travmatik olayla karşılaşma sıklığının yaş gruplarına göre farklılaştığını ve TSSB gelişme olasılığının maruz kalınan **travmatik olayın türüne** (örneğin kişilerarası/cinsel şiddet ve savaş travmalarında doğal afetlere göre belirgin biçimde daha yüksek) göre değiştiğini göstermektedir (E doğru). Genel nüfusta TSSB'nin yaşam boyu yaygınlığı ortalama %5-10 (uluslararası toplum çalışmalarında yaklaşık %1-9) civarındadır; %13-15 (veya yazım hatasıyla 2613-15) düzeyindeki yüksek oranlar genel toplumu değil ancak seçilmiş yüksek riskli travma gruplarını yansıtır (A yanlış). TSSB tanısında kültür farklılıkları yadsınabilir değildir; kültürel normlar travmanın algılanışını, bedensel/ruhsal belirti dışavurumunu ve tanı ölçütlerinin değerlendirilmesini doğrudan etkiler (B yanlış). Erkeklerin yangın, kaza, afet, fiziksel saldırı, savaş, silahlı tehdit ve esaret gibi olaylara maruziyeti kadınlara göre daha az değil **daha fazladır**; buna karşın kadınlarda cinsel travma sıklığı ve travma sonrası TSSB gelişme riski daha yüksektir (C yanlış). Genel popülasyonda TSSB'nin yaşam boyu yaygınlığı %26,3 (veya 26.3) düzeyinde değildir; ulusal epidemiyolojik taramalarda bu oran tek haneli yüzdelerdedir (örneğin ABD'de yaklaşık %6,8) (D yanlış).",
     "id": "K6_2023-2024_Q62"
   },
   {
@@ -16294,7 +16294,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Hastanede yatan yaşlı cerrahi ve dahili hasta serilerinde **erkek cinsiyet**, deliryum gelişimi açısından bağımsız bir risk faktörü olarak kabul edilmektedir.",
+    "explanation": "Klinik ve epidemiyolojik çalışmalarda ileri yaş ve önceden var olan bilişsel bozukluğun yanı sıra **erkek cinsiyet**, hastanede yatan hastalarda deliryum gelişimi açısından **bağımsız bir risk faktörü** olarak kabul edilmektedir (B doğru). Deliryum az hospitalize edilen tıbbi hastalarda değil, özellikle yoğun bakım ünitelerinde ve uzun süre yatarak tedavi gören ağır medikal/cerrahi hastalarda yüksek sıklıkta görülür (A yanlış). Deliryum yaştan bağımsız değildir; ileri yaş (>65 yaş) beyin rezervinin azalması nedeniyle en güçlü yatkınlaştırıcı risk faktörlerinden biridir (C yanlış). Kardiyotomi (açık kalp cerrahisi) sonrası hastalar nadiren değil, kardiyopulmoner bypass ve inflamatuar süreçler nedeniyle **oldukça yüksek sıklıkta** postoperatif deliryum geliştirirler (D yanlış). Deliryum prognozu etkilemez değildir; hastanede kalış süresini uzatır, komplikasyonları, kalıcı bilişsel gerilemeyi ve mortaliteyi anlamlı biçimde artırır (E yanlış).",
     "id": "K6_2023-2024_Q64",
     "repeats": [
       {
@@ -16458,7 +16458,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Sınırda (Borderline) kişilik bozukluğunda duygulanım dengesizliğini ve kimlik karmaşasını yönetmek için ilkel savunma mekanizmaları sıklıkla kullanılır; özellikle **bölme (splitting)**, **yansıtmalı özdeşim (projektif identifikasyon)** ve inkar temel düzeneklerdir.",
+    "explanation": "Borderline (Sınırda) kişilik bozukluğunda kimlik dağınıklığını ve terk edilme kaygısını yönetmek için ilkel savunma düzenekleri ön plandadır; özellikle **projektif identifikasyon (yansıtmalı özdeşim), splitting (ilkel bölme) ve inkar** sıklıkla kullanılır (A doğru). Epidemiyolojik ve klinik dağılımda Borderline kişilik bozukluğu erkeklerde değil **kadınlarda daha sık** (yaklaşık 3:1 oranında) görülür (B yanlış). İşin tamamlanmasını engelleyecek derecede aşırı ayrıntıcılık, düzen tutkusu ve katı mükemmeliyetçilik Borderline değil **Obsesif-Kompulsif Kişilik Bozukluğunun** özelliğidir (C yanlış). Duygudurum ayarlamasında belirgin dalgalanmalar ve dürtü denetiminde zorlanma (kendine zarar verme, öfke patlamaları, riskli davranışlar) görülmez değil, aksine bu bozukluğun en temel klinik belirtileridir (D yanlış). Sürekli kuşkucu, alıngan ve başkalarının niyetlerinden kuruntulu olma durumu Borderline değil **Paranoid Kişilik Bozukluğunu** tanımlar (E yanlış).",
     "id": "K6_2023-2024_Q68",
     "repeats": [
       {
@@ -16694,7 +16694,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Prader-Willi sendromu lokusundaki kritik genler normalde **anneden gelen kopyada epigenetik olarak damgalanmış (imprintlenmiş)** ve inaktiftir; bu nedenle babadan gelen aktif alelin kaybı veya maternal dizomide aktif gen ürünü üretilemez.",
+    "explanation": "Prader-Willi sendromu (PWS) lokusu olan 15q11-q13 bölgesindeki sorumlu genlerin **anneden gelen kopyası fizyolojik olarak imprintlenmiş (metillenmiş) ve ifade edilmez**; bu nedenle babadan gelen aktif kopyada delesyon olduğunda ya da her iki 15. kromozom anneden geldiğinde (maternal uniparental dizomi) işlevsel gen ürünü kalmayarak PWS oluşur (D doğru). PWS genlerinin babadan gelen kopyası imprintlenmiş değil aktif olarak ifade edilen kopyadır; susturulmuş olan maternal aleldir (A yanlış). PWS, X kromozomu inaktivasyonu anomalisi değildir; 15. otozomal kromozomdaki ebeveyne özgü genomik damgalanmadan (imprinting) kaynaklanır (B yanlış). Angelman sendromundan sorumlu *UBE3A* geninin beyin dokusunda susturulmuş olan kopyası maternal değil **paternal** kopyadır; ayrıca bu ifade PWS'nin değil Angelman sendromunun genetik mekanizmasıyla ilgilidir (C yanlış). Anneden gelen kopya babaya ait alel üzerinde baskın olumsuz bir etki kurmaz; normal bireylerde dahi maternal kopya epigenetik olarak susturulmuş haldedir (E yanlış).",
     "id": "K6_2023-2024_Q74",
     "repeats": [
       {
@@ -17913,7 +17913,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Sempatomimetik bir amin olan amfetamin, prefrontal kortekste dopamin ve noradrenalin düzeylerini artırarak dikkat ve uyanıklığı güçlendirir; **DEHB ve narkolepsi tedavisinde** endikedir.",
+    "explanation": "İndirekt etkili bir sempatomimetik amin olan **amfetamin**, sinaptik aralığa dopamin ve noradrenalin salınımını artırarak uyanıklık, odaklanma ve dikkat kontrolünü iyileştirir; bu nedenle **Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB)** tedavisinde endikedir (E doğru). Amfetaminin primer etki mekanizması yalnızca MAO inhibisyonu değildir; esas olarak veziküler ve sitoplazmik katekolaminlerin presinaptik uçtan salınımını uyarıp geri alım taşıyıcılarını (DAT, NET) inhibe ederek etki gösterir (A yanlış). İştah merkezini baskılayan anorektik özelliği nedeniyle amfetamin türevleri kısa süreli obezite tedavisinde kullanılabilmiştir, dolayısıyla kullanılamaz ifadesi yanlıştır (B yanlış). Amfetaminler serotonin (5-HT) salınımını azaltmaz, artırırlar ve iştahı artırmak yerine belirgin şekilde **azaltırlar** (C yanlış). Gündüz aşırı uyku ataklarını önleyici uyarıcı etkisinden dolayı amfetamin türevleri narkolepside kontrendike değil, aksine **tedavi endikasyonuna sahiptir** (D yanlış).",
     "id": "K6_2024-2025_Q15",
     "prof_inferred": true,
     "repeats": [
@@ -17961,7 +17961,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "D2 dopamin reseptörleri hem mezolimbik yolakta emosyon ve hezeyanların kontrolünde hem de nigrostriatal yolakta ekstrapiramidal motor hareketlerin düzenlenmesinde anahtar rol oynar.",
+    "explanation": "**D2 dopamin reseptörleri** striatumda ve mezolimbik yollarda yoğun biçimde bulunur; mezolimbik yolda davranış ve psikoz süreçleriyle ilişkiliyken bazal ganglionlarda indirekt yolağı inhibe ederek **ekstrapiramidal sistemle ilgili motor etkilerde** (ve antipsikotiklerin EPS yan etkilerinde) temel rol oynar (A doğru). Yapısal olarak daha çok limbik sistemde (nükleus akkumbens, olfaktör tüberkül) yerleşmiş olan D2-benzeri reseptör alt tipi klasik sınıflamada D2'den ziyade **D3 reseptörü** olarak tanımlanır (B yanlış). Daha çok emosyonel ve kognitif süreçlerde ön planda rol oynadığı vurgulanan reseptörler limbik ve kortikal yerleşimli **D3 ve D4 reseptörleridir** (C yanlış). Klasik farmakoloji kaynaklarında şizofren hastaların beyinlerinde sayısının arttığı bildirilen dopamin reseptör alt tipi (özellikle klozapinin yüksek afinite gösterdiği) **D4 reseptörüdür** (D yanlış). En çok nigrostriatal yolakta bulunup direkt yolak üzerinden lokomotor sistemle ilgili hareketlerin başlatılmasında görev alan reseptör alt tipi D2 değil **D1 reseptörüdür** (E yanlış).",
     "id": "K6_2024-2025_Q16"
   },
   {
@@ -17994,7 +17994,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Benzodiazepinler GABA-A klor kanallarının açılma frekansını artırarak doza bağımlı sedasyon, hipnoz, motor koordinasyon kaybı, amnezi, antikonvülzan etki ve santral kas gevşemesi yaparlar.",
+    "explanation": "Benzodiazepinler merkezi sinir sistemindeki iyonotropik GABA-A reseptörlerine allosterik olarak bağlanıp klorür kanalının açılma frekansını artırarak **doza bağımlı sedasyon, hipnotik etki, motor koordinasyon bozukluğu, anterograd bellek bozukluğu (amnezi), antikonvülzan etki ve santral kas gevşemesi** oluştururlar (E doğru). Prototip benzodiazepin olan diazepam yüksek lipofilikliği sayesinde oral uygulama sonrası gastrointestinal sistemden en yavaş değil **en hızlı emilen** benzodiazepinlerden biridir (oksazepam ve lorazepam daha yavaş emilir) (A yanlış). Benzodiazepinler presinaptik uçtan GABA salınımını artırarak etki etmez; postsinaptik **GABA-A reseptöründe endojen GABA'nın bağlanma afinitesini** artırırlar (B yanlış). Benzodiazepinler doğrudan kanal açan GABA-mimetik ajanlar değil pozitif allosterik modülatör olduklarından etki gösterebilmeleri için ortamda **endojen GABA bulunması zorunludur** (C yanlış). Benzodiazepin bağlanma bölgesi metabotropik GABA-B reseptörü üzerinde değil, iyonotropik **GABA-A reseptörü** üzerinde (alfa ve gama alt birimleri arasında) bulunur (D yanlış).",
     "id": "K6_2024-2025_Q17"
   },
   {
@@ -18126,7 +18126,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Metanol zehirlenmesinde temel toksisite ve ölüm, metanolün metaboliti olan **formik asidin** birikmesiyle gelişen şiddetli **metabolik asidoz ve hücresel doku hipoksisi**ne bağlıdır.",
+    "explanation": "Metil alkol (metanol) zehirlenmesinde toksisiteden sorumlu esas mekanizma, metanolün alkol dehidrogenaz ve aldehit dehidrogenazla yıkılması sonucu biriken **formik asidin** sitokrom c oksidazı inhibe ederek hücresel hipoksi ve ağır **yüksek anyon açıklı metabolik asidoza bağlı ölüme** yol açmasıdır (A doğru). Formaldehit oluşumu esas olarak **retinaya toksiktir** (optik sinir hasarı ve kalıcı körlük yapar) ve hızla formik aside okside olur; ölümün doğrudan mekanizması formaldehitin beyin sapında solunum depresyonu yapması değildir (B yanlış). Metanolün yıkım ürünleri olan formaldehit ve formik asit nontoksik değil, aksine metanolün asıl öldürücü ve kör edici **toksik metabolitleridir** (C yanlış). Fomepizol, asetaldehit (aldehit) dehidrogenazı değil ilk basamak olan **alkol dehidrogenaz** enzimini inhibe ederek metanolün formaldehite ve ardından formik aside dönüşümünü durdurur (D yanlış). Tedavide etil alkol (etanol) verilmesi böbreklerden metanol atılımını hızlandırarak değil, alkol dehidrogenaz enzimine metanolden çok daha yüksek afiniteyle bağlanıp **yarışmalı inhibisyon** yaparak toksik metabolit oluşumunu önler (E yanlış).",
     "id": "K6_2024-2025_Q21"
   },
   {
@@ -18200,7 +18200,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Morfin ve diğer potent opioid analjeziklerin terapötik ve toksik dozlarda en tehlikeli ve hayati riski oluşturan majör yan etkisi **beyin sapı solunum merkezini deprese etmesidir**.",
+    "explanation": "Güçlü bir mü (μ) opioid reseptör agonisti olan morfinin terapötik ve toksik dozlarda yaşamı tehdit eden **en önemli yan etkisi, beyin sapı solunum merkezinin karbondioksite duyarlılığını azaltarak solunumu deprese etmesidir** (D doğru). Morfin pupilde midriyazis değil, okülomotor Edinger-Westphal çekirdeğini parasempatik yoldan uyararak **miyozis (iğne ucu pupil)** oluşturur ve bu etkiye tolerans gelişmez (A yanlış). Morfin insanlarda motor hareket artışı ve uyanıklık değil, santral sinir sisteminde sedasyon, uyuşukluk ve psikomotor yavaşlama yapar (eksitasyon ve hareket artışı kedi gibi bazı hayvan türlerine özgüdür) (B yanlış). Analjezi morfinin en önemsiz etkisi değildir; aksine şiddetli akut ve kronik ağrıların giderilmesi morfinin **en önemli terapötik etkisidir** (C yanlış). Morfin hipotalamustan GnRH ve CRH salınımını baskılayarak LH/FSH ve ACTH düzeylerini düşürdüğünden **testosteron ve kortizol seviyelerini yükseltmez, aksine azaltır** (prolaktin ve ADH'yi ise artırır) (E yanlış).",
     "id": "K6_2024-2025_Q23",
     "repeats": [
       {
@@ -18241,7 +18241,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Amid türevi bir lokal anestezik olan **bupivakain**, düşük konsantrasyonlarda motor lifleri korurken ağrı taşıyan duyusal lifleri selektif bloke eder (**diferansiye blok**).",
+    "explanation": "Uzun etkili bir amid lokal anestezik olan **bupivakain**, düşük konsantrasyonlarda motor sinir liflerini büyük ölçüde korurken ince ağrı ve duyu liflerini (C ve A-delta liflerini) selektif olarak bloke etme özelliğine (**diferansiye blok**) sahip olduğundan özellikle doğum analjezisinde tercih edilir (A doğru). Lidokain kısa etkili değil **orta etki süreli** bir lokal anesteziktir ve vazodilatör özelliği nedeniyle dokudan hızlı emilimini yavaşlatıp etki süresini uzatmak için genellikle adrenalin gibi bir vazokonstriktöre ihtiyaç duyar (B yanlış). Ropivakain amid yapılı diğer lokal anestezikler gibi serbest fraksiyonu üzerinden plasenta bariyerini pasif difüzyonla geçer ve fetal asidozda iyon tuzağıyla birikebilir; plasenta geçişi ihmal edilebilir düzeyde düşük olan klasik ajan maternal plazmada hızla yıkılan ester yapılı **kloroprokaindir** (C yanlış). Tetrakain bir amid değil **ester yapılı** lokal anesteziktir; karaciğerde sitokrom P450 enzimlerince değil plazmada ve dokularda **plazma psödokolinesterazı (butirilkolinesteraz)** tarafından hidroliz edilerek yıkılır (D yanlış). Mepivakain, yenidoğanın karaciğer metabolizması yetersiz olduğu ve fetal asidozda iyon tuzağıyla toksisite yapabildiği için pratikte doğumda rutin tercih edilmemekle birlikte, bu sorunun orijinal anahtarında yalnızca bupivakainin diferansiye blok özelliği doğru yanıt olarak seçilmiştir (nitekim aynı sorunun bir sonraki yıl sürümünde bu seçenek 'tercih edilir' şeklinde tersine çevrilmiştir) (E yanlış).",
     "id": "K6_2024-2025_Q24",
     "repeats": [
       {
@@ -18507,7 +18507,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Lokal anestezikler zayıf bazik yapıdadır; inflamasyonlu ve enfekte dokunun asidik ortamında iyonize forma dönüştükleri için membranları geçemezler ve **sinir blokaj etkinliği belirgin şekilde düşer**.",
+    "explanation": "Lokal anestezikler zayıf bazik bileşiklerdir ve sinir membranından geçebilmeleri için non-iyonize (lipofilik) formda bulunmaları gerekir; **enfekte ve inflamasyonlu dokunun asidik pH'sında ilaç moleküllerinin çoğu iyonize (katyonik) forma dönüştüğünden membranı geçemez, sinir blokajı zorlaşır ve etkinlik düşer** (B doğru). Lokal anestezik sistemik toksisitesinde (LAST) verilen intravenöz lipid emülsiyonu voltaj bağımlı Na+ kanallarını kapatarak etki etmez; dolaşımda bir 'lipid lavabo' (lipid sink) oluşturarak lipofilik lokal anesteziği dokulardan plazmaya çekip bağlar ve miyokardın enerji metabolizmasını destekler (A yanlış). Lokal anestezikler yüksek dozda santral sinir sistemine geçtiğinde yan etkisiz kalmaz; önce inhibitör nöronları baskılayarak kulak çınlaması, ağız çevresinde uyuşma, ajitasyon ve **konvülziyonlara**, ardından yaygın SSS depresyonu ve solunum arrestine yol açar (C yanlış). Sistemik dolaşıma yüksek dozda geçtiğinde kalpte taşikardi ve hipertansiyon oluşturmaz (bu yalnızca vazokonstriktör etkili kokaine özgüdür); standart lokal anestezikler miyokard Na+ kanallarını bloke ederek **bradikardi, iletim bloğu, vazodilatasyona bağlı hipotansiyon** ve kardiyak arrest yapar (D yanlış). Lokal anestezikler sinir lifi membranındaki voltaj bağımlı sodyum kanallarını aktive etmez, aksine hücre içi taraftan bağlanarak **bloke (inhibe) eder** ve aksiyon potansiyeli iletimini durdurur (E yanlış).",
     "id": "K6_2024-2025_Q31"
   },
   {
@@ -18573,7 +18573,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Peptid yapılı nöromediatörler ribozomal mekanizmalarla **nöron gövdesinde (soma)** sentezlenir ve veziküller içinde aksonal mikrotübüller aracılığıyla sinir ucuna taşınırlar.",
+    "explanation": "Peptid yapılı nörotransmitterler (nöropeptidler) ribozomal protein sentezi gerektirdiğinden sinir ucunda üretilemez; **nöron somasındaki granüllü endoplazmik retikulumda sentezlenip** veziküller içinde aksonal taşımayla terminale ulaştırılır (E doğru). Noradrenalinin salgılandığı sinapslar kolinerjik değil **adrenerjik (noradrenerjik)** sinapslardır; kolinerjik sinapslardan ise asetilkolin salınır (A yanlış). Katekolaminlerin sinaptik aralıktan uzaklaştırılması esas olarak sinaptik aralıktaki enzimatik yıkımla değil, presinaptik uca **aktif geri alımla (reuptake-1 / NET, DAT)** sağlanır (B yanlış). Benzodiazepinlerin allosterik bağlanma bölgesi glutamaterjik NMDA reseptörü üzerinde değil, iyonotropik **GABA-A reseptörü** üzerinde yer alır (C yanlış). Endokannabinoidler presinaptik nöron somasında sentezlenip depolanmaz; uyarım anında **postsinaptik nöronda** membran fosfolipitlerinden sentezlenerek retrograd haberci olarak presinaptik uca etki eder (D yanlış).",
     "id": "K6_2024-2025_Q33",
     "prof_inferred": true,
     "repeats": [
@@ -18662,7 +18662,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Opioidler ağrı iletimini medulla spinalis arka boynuzunda presinaptik nörotransmitter salınımını azaltarak ve beyinde duyusal algıyı değiştirerek **spinal ve supraspinal mekanizmalarla** bloke ederler.",
+    "explanation": "Narkotik (opioid) analjezikler ağrı iletimini medulla spinalis arka boynuzunda presinaptik/postsinaptik inhibisyon yaparak ve beyinde ağrı algısını modüle ederek **spinal ve supraspinal mekanizmalarla** gösterirken, NSAİİ'ler esasen periferik dokularda siklooksijenazı inhibe ederek ağrı duyarlılaşmasını azaltır (A doğru). NSAİİ'lerin hipotalamusta PGE2 sentezini baskılayarak ateş düşürücü etkisi bulunmasına karşın, opioid analjeziklerin antipiretik etkisi **yoktur** (B yanlış). NSAİİ'ler bağımlılık yapmazken opioid analjezikler santral mü reseptör aktivasyonu nedeniyle güçlü **fiziksel ve psikolojik bağımlılık** potansiyeline sahiptir (C yanlış). Her iki ilaç grubunun da periferik ağrı yolaklarını etkilemesi aralarındaki bir fark değil ortak bir yön olarak sunulmuş olup opioidlerin asıl analjezik etkinliği periferik değil santral sinir sistemindedir (D yanlış). NSAİİ'ler belirgin **antienflamatuvar** etkinlik gösterirken opioid analjeziklerin inflamasyonu baskılayan antienflamatuvar etkisi **yoktur** (E yanlış).",
     "id": "K6_2024-2025_Q35"
   },
   {
@@ -18695,7 +18695,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Benzodiazepinler GABA-A klor kanallarının açılma frekansını artırarak doza bağımlı sedasyon, hipnoz, amnezi, antikonvülzan etki ve santral kas gevşemesi yaparlar.",
+    "explanation": "Benzodiazepinler santral sinir sistemindeki **GABA-A** klor kanalı reseptörlerinin allosterik bölgesine bağlanarak kanalın açılma frekansını artırır ve **doza bağımlı olarak sedasyon, hipnotik etki, motor koordinasyon ve bellek bozukluğu (anterograd amnezi), antikonvülzan ve santral kas gevşetici** etkiler sergilerler (E doğru). Diazepam benzodiazepinlerin prototipi olmakla birlikte oral alımdan sonra en yavaş değil **en hızlı ve tam emilen** benzodiazepinlerden biridir (oksazepam ve prazepam yavaş emilir) (A yanlış). Benzodiazepinler presinaptik sinir ucundan **GABA salınımını artırmaz**; postsinaptik GABA-A reseptöründe endojen GABA'nın reseptöre bağlanma afinitesini pozitif allosterik olarak güçlendirir (B yanlış). Benzodiazepinler doğrudan kanal açıcı (GABA-mimetik) olmadığı için etki gösterebilmeleri amacıyla sinaptik aralıkta **endojen GABA bulunması zorunludur** (barbitüratlar yüksek dozda GABA olmadan da kanalı açabilir) (C yanlış). Benzodiazepin bağlanma bölgesi G-proteini kenetli **GABA-B** reseptöründe değil, iyonotropik klor kanalı olan **GABA-A** reseptörünün alfa ve gama alt birimleri arasında yer alır (D yanlış).",
     "id": "K6_2024-2025_Q36"
   },
   {
@@ -18981,7 +18981,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Kişinin çevresindeki dünyayı, nesneleri ve insanları bir rüyadaymış gibi cansız, yapay, yabancı veya gerçek dışı olarak algılaması **derealizasyon** olarak tanımlanır.",
+    "explanation": "Kişinin çevresindeki dış dünyayı, insanları ve nesneleri bir rüyadaymış gibi, sisli, cansız, **gerçek dışı, yabancı veya tuhaf olarak algılaması** **derealizasyon** olarak tanımlanır (A doğru). Ortada hiçbir dışsal uyaran yokken gerçekmiş gibi algı oluşması derealizasyon değil **halüsinasyon (varsanı)** tanımıdır (B yanlış). Daha önce hiç karşılaşılmamış bir ortam veya uyaranın sanki daha önce yaşanmış ve tanıdıkmış gibi algılanması **déjà vu** kavramını ifade eder (C yanlış). Bireyin çevresine değil kendi bedenine, zihnine veya benliğine yabancılaştığını hissetmesi derealizasyon değil **depersonalizasyon**dur (D yanlış). Mevcut bir dış uyaranın duyusal olarak bozulup yanlış yorumlanması (örneğin rüzgar sesini insan sesi sanmak) derealizasyon değil **illüzyon (yanılsama)** olarak adlandırılır (E yanlış).",
     "id": "K6_2024-2025_Q43",
     "repeats": [
       {
@@ -19531,7 +19531,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Aşıyla vücuduna takip çipi yerleştirildiğine ve düşüncelerinin kontrol edildiğine aksine tüm kanıtlara rağmen sarsılmaz biçimde inanıp cerrahi talep etmek gerçeği değerlendirmenin bozulduğu tipik bir **kötülük görme / kontrol edilme sanrısı (hezeyan)**dır.",
+    "explanation": "Gerçeklikle bağdaşmayan, aksine tüm kanıtlara rağmen değiştirilemeyen ve kültürel normlarla açıklanamayan **COVID aşısı ile çip takılıp düşüncelerinin değiştirildiğine inanarak çipi çıkarmak için ısrarla hastanelere başvurmak**, gerçeği değerlendirme yetisinin bozulduğu tipik bir bizar/kontrol edilme **sanrısıdır (hezeyan)** (A doğru). Cezaevinden çıkan bir muhalifin devlet tarafından takip edildiğini düşünmesi, kişinin geçmiş yaşam koşullarıyla gerçekçi bir bağ taşıyabileceğinden tek başına gerçeklikle tamamen kopuk sanrı sayılmaz (B yanlış). Fiziksel olarak anne babasına benzemediği için evlatlık olduğunu düşünen birinin DNA testi sonucuyla ikna edilebilmesi, düşüncenin aksine kanıtlarla düzeltilebildiğini gösterdiğinden sanrının **sarsılmazlık** ölçütünü taşımaz (C yanlış). Nazi dönemi Almanya'sında yaşayan bir gencin Almanların üstün ırk olduğunu düşünmesi, o dönemin yaygın sosyopolitik alt kültürü tarafından paylaşılan bir ideolojik inanç olduğundan bireysel sanrı olarak sınıflandırılmaz (D yanlış). Hastalığının nazar nedeniyle olduğunu düşünmek kişinin içinde yaşadığı kültürde yaygın olarak paylaşılan geleneksel bir inanış olup psikiyatride hezeyan kabul edilmez (E yanlış).",
     "id": "K6_2024-2025_Q56",
     "repeats": [
       {
@@ -19745,7 +19745,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Yatarak tedavi gören ve yoğun bakımda izlenen hastalarda yapılan epidemiyolojik çalışmalarda, ileri yaş ve organik zeminle birlikte **erkek cinsiyet** deliryum gelişimi açısından **bağımsız bir risk faktörü** olarak gösterilmiştir.",
+    "explanation": "Hastanede yatan medikal, cerrahi ve yoğun bakım hastalarında yapılan epidemiyolojik değerlendirmelerde ileri yaş, demans ve ağır sistemik hastalıkların yanı sıra **erkek cinsiyet** deliryum gelişimi açısından **bağımsız bir risk faktörü** olarak saptanmaktadır (B doğru). Açık kalp cerrahisi (kardiyotomi) sonrası hastalar nadiren değil, ekstra-korporeal dolaşım, mikroemboli ve inflamasyon nedeniyle **çok yüksek sıklıkta** postoperatif deliryum geliştirir (A yanlış). Deliryum hastanın prognozunu olumsuz etkiler; yatış süresini, hastane içi komplikasyonları, kalıcı bilişsel yıkımı ve mortalite oranlarını belirgin şekilde artırır (C yanlış). Deliryum yaştan bağımsız değildir; ileri yaş (>65 yaş) en önde gelen predispozan risk faktörüdür (D yanlış). Az hospitalize edilen veya ayaktan izlenen hastalarda değil, özellikle yoğun bakımda ve uzun süre yatarak izlenen ağır tıbbi hastalarda deliryum gelişimi çok daha sıktır (E yanlış).",
     "id": "K6_2024-2025_Q61",
     "prof_inferred": true,
     "repeats": [
@@ -20156,7 +20156,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Genç kadın hastada periventriküler demiyelinizan plaklar ve relapslarla seyreden Multipl Sklerozda BOS elektroforezinde **intratekal sentezlenen IgG oligoklonal bantları** patognomoniktir.",
+    "explanation": "Genç kadın hastada ataklarla seyreden görme kaybı, parestezi, sakarlık ve MRG'de periventriküler demiyelinizasyon plaklarıyla karakterize **Multipl Skleroz (MS)** tablosunda, BOS elektroforezinde intratekal B hücre klonları tarafından üretilen **çoklu IgG oligoklonal bantları** saptanması tanıyı destekleyen en tipik bulgudur (D doğru). Belirgin şekilde azalmış glukoz, yüksek protein ve artmış nötrofiller MS gibi otoimmün bir demiyelinizasyonda değil, **akut bakteriyel menenjitte** görülür (A yanlış). Hücre artışı minimal iken BOS proteininin belirgin yükselmesi (**albümino-sitolojik disosiyasyon**) MS'in değil periferik sinir köklerini tutan **Guillain-Barré sendromunun** klasik bulgusudur (B yanlış). MS'te hafif mononükleer hücre artışı görülebilse de **belirgin lenfositoz** öncelikle viral menenjit veya tüberküloz menenjiti gibi enfeksiyöz tabloları düşündürür (C yanlış). Asellüler, normal glukoz, normal protein ve normal immünoglobulin dağılımı sağlıklı BOS bulgusudur; aktif MS olgularının %90'ından fazlasında intratekal IgG artışı ve oligoklonal bant saptanır (E yanlış).",
     "id": "K6_2024-2025_Q71"
   },
   {
@@ -20420,7 +20420,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Otozomal dominant kalıtılan, koreiform hareketler ve demansla seyreden Huntington hastalığı; **kromozom 4** üzerindeki *HTT* geninde **CAG trinükleotid tekrar artışı** sonucu oluşur. Kuşaklar ilerledikçe tekrar sayısı artarak hastalığın daha erken yaşta ortaya çıkmasına **antisipasyon** denir. Nörofibriler yumaklar Alzheimer'da, nigral depigmentasyon Parkinson'da görülür.",
+    "explanation": "Otozomal dominant kalıtılan, koreiform istemsiz hareketler, ilerleyici demans ve kuşaklar içinde daha erken başlama (**antisipasyon**) özelliği gösteren **Huntington hastalığı**, **kromozom 4 üzerindeki *HTT* geninde CAG trinükleotid tekrar sayısının artması** sonucunda gelişir (D doğru). Serebral kortekste nörofibriler yumaklar ve beta-amiloid plakları Huntington hastalığının değil **Alzheimer hastalığının** karakteristik nöropatolojik bulgusudur (A yanlış). Dopamin tükenmesi ve substantia nigra pars compacta'da depigmentasyon kore ile seyreden Huntington'da değil, bradikinezi ve istirahat tremoruyla giden **Parkinson hastalığında** görülür (B yanlış). Yuvarlak intrasitoplazmik inklüzyonlar olan **Pick cisimcikleri** (ayrıca nörofilamentlerden ziyade tau proteininden oluşur) frontotemporal lobar dejenerasyon yani **Pick hastalığının** özelliğidir (C yanlış). Hem üst hem alt motor nöronların seçici dejenerasyonu koreiform hareketlerle giden Huntington hastalığında değil, **amiyotrofik lateral sklerozda (ALS)** izlenir (E yanlış).",
     "id": "K6_2024-2025_Q79"
   },
   {
@@ -21144,7 +21144,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Dismorfolojide **disrupsiyon**, başlangıçta intrensek olarak normal embriyonik gelişim gösteren bir organ veya vücut parçasının vasküler tıkanma veya amniyotik bant gibi ekstrinsek etkenlerle yıkıma uğraması ve doku kaybıyla sonuçlanmasıdır.",
+    "explanation": "Dismorfolojide **disrupsiyon**, başlangıçta normal genetik ve yapısal gelişim gösteren bir organ veya dokuda sonradan vasküler tıkanma, iskemi, enfeksiyon veya amniyotik bant gibi ekstrinsek bir etken nedeniyle **yıkım ve doku kaybı gelişmesiyle** oluşan konjenital anomalidir (C doğru). Doku içindeki hücrelerin yapısal olarak anormal organize olmasına bağlı oluşan anomaliler disrupsiyon değil **displazi** (örneğin akondroplazi veya ektodermal displazi) olarak tanımlanır (A yanlış). Tek bir birincil malformasyonun ya da mekanik etkenin zincirleme olarak birden fazla ikincil defekte yol açması (örneğin Potter veya Pierre Robin) **sekans** olarak adlandırılır (B yanlış). Etiyolojisi henüz bilinmeyen bir grup anomalinin rastlantıdan çok daha sık şekilde bir arada görülmesi (örneğin VACTERL) **birliktelik (asosyasyon)** kavramını ifade eder (D yanlış). Morfogenezdeki birden fazla hatadan kaynaklanan ve tek bir altta yatan nedene (kromozom anomalisi, tek gen mutasyonu vb.) bağlı fenotipik bulguların bütünü disrupsiyon değil **sendrom**dur (E yanlış).",
     "id": "K6_2024-2025_Q100"
   },
   {
@@ -21408,7 +21408,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Benzodiazepinler **GABA-A** reseptör allosterik bölgesine bağlanarak klorür kanallarının açılma frekansını artırır; doza bağımlı olarak **sedasyon, hipnoz, anterograd amnezi, antikonvülzan ve santral kas gevşetici** etkiler oluştururlar. GABA-B değil GABA-A reseptörüne etki ederler ve etkileri için ortamda endojen GABA'nın bulunması zorunludur.",
+    "explanation": "Benzodiazepinler **GABA-A** reseptörü üzerindeki allosterik bölgeye bağlanıp klorür kanallarının açılma frekansını artırarak doza bağımlı **sedasyon, hipnotik etki, motor koordinasyon bozukluğu, bellek bozukluğu (anterograd amnezi), antikonvülzan ve santral etkili kas gevşetici** etkiler oluştururlar (C doğru). Benzodiazepinlerin bağlanma bölgesi metabotropik GABA-B reseptörleri üzerinde değil, iyonotropik **GABA-A reseptörlerinin** alfa ve gama alt birimleri arasındadır (A yanlış). Benzodiazepinler presinaptik uçtan GABA salınımını artırarak etki etmez; reseptöre bağlanan **endojen GABA'nın afinitesini ve klor iletkenliği frekansını** artırırlar (B yanlış). Prototip benzodiazepin olan diazepam yüksek lipofilikliği sayesinde yavaş değil **çok hızlı emilen** bir benzodiazepindir (oksazepam ve lorazepam ise yavaş emilir) (D yanlış). Allosterik modülatör oldukları için benzodiazepinlerin etki gösterebilmesi açısından ortamda **endojen GABA bulunması zorunludur** (doğrudan kanal açabilen yüksek doz barbitüratlardan farkı budur) (E yanlış).",
     "id": "K6_2025-2026_Q5"
   },
   {
@@ -21441,7 +21441,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Güçlü bir mü (μ) opioid agonisti olan morfinin doz sınırlayıcı ve en ölümcül yan etkisi, beyin sapındaki solunum merkezinin CO₂ duyarlılığını azaltarak yaptığı **doza bağımlı solunum depresyonudur**. Morfin pupilde midriyazis değil parasempatik uyarıyla **miyozis** (iğne ucu pupil) yapar, sedasyon oluşturur ve anestezik değil analjeziktir.",
+    "explanation": "Güçlü mü (μ) opioid agonisti olan morfinin doz sınırlayıcı ve yaşamı tehdit eden **en önemli yan tesiri, beyin sapı solunum merkezinin CO₂ duyarlılığını baskılayarak solunumu deprese etmesidir** (C doğru). Morfin hipotalamus-hipofiz aksını inhibe ederek GnRH ve CRH salınımını azalttığından **testosteron ve kortizol seviyelerini yükseltmez, aksine düşürür** (ADH ve prolaktin ise artar) (A yanlış). Morfin insanlarda motor aktivitede artış ve uyanıklık yapmaz; santral baskılamayla **sedasyon, uyuşukluk ve hareketlerde azalma** oluşturur (eksitasyon sadece kedi gibi bazı hayvan türlerinde görülür) (B yanlış). Morfin pupilde midriyazis oluşturmaz; Edinger-Westphal çekirdeğini uyararak parasempatik etkiyle belirgin **miyozis (toplu iğne başı pupil)** yapar (D yanlış). Morfin bilinç kaybı ve cerrahi gevşeme sağlayan bir genel anestezik değildir; terapötik bakımdan en önemli ve temel etkisi şiddetli ağrıları kesen **analjezidir** (E yanlış).",
     "id": "K6_2025-2026_Q6",
     "repeats": [
       {
@@ -21482,7 +21482,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Presinaptik veziküllerden dopamin ve noradrenalin salınımını artıran indirekt sempatomimetik ajan **amfetamin**, santral uyarıcı etkisiyle **Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB)** ve **narkolepsi** tedavisinde onaylı ve temel endikasyona sahiptir. Hipotalamik merkezleri uyararak iştahı artırmaz, aksine belirgin olarak baskılar (anorektik etki).",
+    "explanation": "Presinaptik uçlardan dopamin ve noradrenalin salınımını artıran indirekt sempatomimetik **amfetamin**, prefrontal kortekste dikkat süreçlerini ve uyanıklığı düzenleyerek **Dikkat Eksikliği ve Hiperaktivite Bozukluğu (DEHB)** tedavisinde temel endikasyona sahiptir (A doğru). Amfetamin ve türevleri (ör. fentermin) hipotalamik doyma merkezini uyaran anorektik etkileri nedeniyle kısa süreli obezite tedavisinde kullanılabilmiştir, dolayısıyla kullanılamaz ifadesi yanlıştır (B yanlış). Amfetaminler gündüz aşırı uyuklama ataklarını kontrol altına aldığı için narkolepside kontrendike değil, aksine **onaylı endikasyonlardan biridir** (C yanlış). Amfetaminin primer etki mekanizması MAO inhibisyonu değildir; esas olarak **veziküler depolar ve plazma membran taşıyıcıları (DAT, NET) üzerinden katekolamin salınımını artırmasıdır** (yüksek dozda zayıf MAO inhibisyonu sekonderdir) (D yanlış). Amfetaminler serotonin (5-HT) salınımını azaltmaz, artırırlar ve iştahı artırmak yerine belirgin şekilde **baskılarlar** (E yanlış).",
     "id": "K6_2025-2026_Q7",
     "prof_inferred": true,
     "repeats": [
@@ -21563,7 +21563,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Nöropeptidler ribozomlarda translasyona uğradığı için sentezleri zorunlu olarak **nöron somasındaki granüllü endoplazmik retikulumda** gerçekleşir ve aksonal transport ile veziküller içinde sinir ucuna taşınır. Klasik amin ve amino asit nörotransmitterler ise akson terminalinde lokal olarak sentezlenir; noradrenalin sinapstan reuptake-1 ile uzaklaştırılır.",
+    "explanation": "Nöropeptid yapılı nörotransmitterler ribozomlarda translasyona uğradığı için sentezleri akson ucunda değil zorunlu olarak **nöron somasındaki (hücre gövdesindeki) granüllü endoplazmik retikulumda** gerçekleşir ve veziküller içinde aksonal transportla sinir ucuna taşınır (A doğru). Katekolaminlerin sinaptik aralıktan uzaklaştırılmasında temel mekanizma sinaptik enzimatik yıkım değil, presinaptik uca **aktif geri alımdır (reuptake-1)**; MAO ve COMT ile enzimatik yıkım nöron içi ya da ekstranöronal alanda işler (B yanlış). Endokannabinoidler presinaptik nöron somasında sentezlenip veziküllerde depolanmaz; uyarım anında **postsinaptik nöronda** membran lipidlerinden sentezlenerek retrograd yolla presinaptik uca etki ederler (C yanlış). Presinaptik uçtan noradrenalin salıverilen sinapslar kolinerjik değil **adrenerjik (noradrenerjik)** sinapslardır; kolinerjik sinapslardan asetilkolin salınır (D yanlış). Benzodiazepin bağlanma bölgesi NMDA glutamat reseptörü üzerinde değil, iyonotropik **GABA-A reseptörü** üzerinde yer alır (E yanlış).",
     "id": "K6_2025-2026_Q9",
     "prof_inferred": true,
     "repeats": [
@@ -21611,7 +21611,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Kolinerjik sinapsta salınan **asetilkolin**, sinaptik aralıkta lokalize bulunan **asetilkolinesteraz (AChE)** enzimince son derece hızlı bir biçimde asetat ve koline parçalanarak inaktive edilir; kolin daha sonra presinaptik uca geri alınır. Diğer birçok nörotransmitter (katekolaminler, serotonin) esas olarak reuptake mekanizmasıyla sinapstan uzaklaştırılır.",
+    "explanation": "Kolinerjik sinapstan salınan **asetilkolin**, diğer nörotransmitterlerden farklı olarak geri alınmaz; bunun yerine **sinaptik aralıkta lokalize asetilkolinesteraz (AChE) enzimiyle hızla asetat ve koline parçalanarak (enzimatik yıkıma uğrayarak)** etkisi sonlandırılır ve ardından kolin geri alınır (E doğru). Nörotransmitterlerin çoğu sinaptik aralıktan uzaklaştırılmak üzere terk edilmez; aksine noradrenalin, dopamin, serotonin, GABA ve glutamat gibi klasik nörotransmitterlerin büyük çoğunluğu presinaptik nörona veya glial hücrelere aktif taşıyıcılarla **geri alınır (reuptake) ve yeniden kullanılır** (A yanlış). Endokannabinoidler presinaptik nörondan değil **postsinaptik nörondan** ihtiyaç anında sentezlenip salınarak retrograd haberci gibi presinaptik CB1 reseptörlerine etki eder (B yanlış). Akson terminalinde ribozom bulunmadığından peptid yapılı nörotransmitterler akson ucunda değil **nöron somasında (hücre gövdesinde)** sentezlenir (C yanlış). GABA, glisin ve glutamat gibi amino asit nörotransmitterler asetilkolin gibi sinaptik aralıkta enzimatik yıkımla değil, presinaptik nöron ve astrositlere yüksek afiniteli **geri alım (reuptake)** taşıyıcılarıyla sonlandırılır (D yanlış).",
     "id": "K6_2025-2026_Q10"
   },
   {
@@ -21719,7 +21719,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Sinir terminaline aksiyon potansiyeli ulaştığında veziküllerin sinaptik yarığa ekzositozu için voltaj kapılı Ca²⁺ kanallarından **hücre içine Ca²⁺ girişi şarttır**; kalsiyum kanalları bloke olduğunda terminale Ca²⁺ giremez ve **nörotransmitter (asetilkolin) salınımı engellenir**, bu da nöromüsküler iletim bloğuna ve kas güçsüzlüğüne yol açar.",
+    "explanation": "Sinir terminaline aksiyon potansiyeli ulaştığında sinaptik veziküllerin ekzositozu için voltaj kapılı Ca²⁺ kanallarından hücre içine kalsiyum girişi şarttır; yüksek doz voltaj bağımlı kalsiyum kanal blokeri maruziyetinde **presinaptik uçta kalsiyum girişinin azalmasına bağlı olarak nörotransmitter (asetilkolin) salınımı azalır** ve nöromüsküler iletim bozulur (B doğru). Presinaptik aksonda aksiyon potansiyelinin oluşumu ve iletilmesi voltaj kapılı **Na⁺ kanallarına** dayandığından Ca²⁺ kanal blokajı aksiyon potansiyeli oluşumunu tamamen engellemez (A yanlış). Presinaptik uçtan yeterli nörotransmitter salınamadığı için postsinaptik reseptör aktivasyonu ve kas kasılması sürdürülemez; aksine klinik olarak kas güçsüzlüğü ve hiporefleksi gelişir (C yanlış). Fizyolojik nöromüsküler kavşakta vezikül ekzositozu sinaptotagmin üzerinden doğrudan kalsiyum iyonuna bağımlıdır; Ca²⁺ olmadan anlamlı salınım devam etmez (D yanlış). Kalsiyum kanal blokajı SNARE proteinlerinin membrana füzyonunu tetikleyen sinyali kestiği için vezikül füzyonunu artırmaz, belirgin şekilde inhibe eder (E yanlış).",
     "id": "K6_2025-2026_Q13"
   },
   {
@@ -21841,7 +21841,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Güçlü ve uzun etkili bir amid türevi olan **bupivakain**, düşük konsantrasyonlarda motor lifleri korurken duysal (ağrı) lifleri selektif olarak bloke etme özelliğine (**diferansiye/duysal blok**) sahiptir; bu nedenle obstetrik analjezide (epidural doğum) sıkça tercih edilir. Mepivakain yenidoğanda yavaş metabolize olduğu için doğumda kaçınılır.",
+    "explanation": "Güçlü ve uzun etkili amid yapılı lokal anestezik **bupivakain**, düşük konsantrasyonlarda motor lifleri korurken ince duysal (ağrı) liflerini seçici biçimde bloke etme özelliğine (**diferansiye blok**) sahiptir ve bu sayede doğum analjezisinde tercih edilir (D doğru). Mepivakain, yenidoğan karaciğerinde yavaş metabolize edilip uzamış yarı ömre sahip olması ve fetal asidozda iyon tuzağıyla neonatal toksisite (bradikardi, MSS depresyonu) yapabilmesi nedeniyle doğum yapacak kadınlarda özellikle tercih edilmez (A yanlış). Lidokain uzun etkili değil **orta etki süreli** bir lokal anesteziktir ve vazodilatör etkisine bağlı sistemik emilimi yavaşlatmak amacıyla genellikle adrenalin gibi bir vazokonstriktöre ihtiyaç duyar (B yanlış). Tetrakain amid değil **ester yapılı** bir lokal anestezik olduğundan karaciğerde sitokrom P450 enzimlerince değil, plazmada **psödokolinesteraz (plazma esterazları)** tarafından hidrolize edilerek yıkılır (C yanlış). Ropivakain amid yapılı diğer lokal anestezikler gibi serbest fraksiyonu üzerinden plasenta bariyerini pasif difüzyonla geçer ve fetal asidozda iyon tuzağıyla birikebilir; plasentaya geçişi ihmal edilebilir düzeyde düşük olan klasik lokal anestezik maternal kanda hızla hidrolize edilen ester yapılı **kloroprokaindir** (E yanlış).",
     "id": "K6_2025-2026_Q16",
     "repeats": [
       {
@@ -23046,7 +23046,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Kişilik bozukluklarının genel popülasyondaki sıklığı %10-15 civarında olup epidemiyolojik olarak en sık C kümesi saptanır; bu soru **A kümesi prevalansına dair seçenek çelişkileri** nedeniyle kurul komisyonunca **iptal edilmiştir**.",
+    "explanation": "Kişilik bozukluklarının genel popülasyondaki prevalansı yaklaşık %10-15 civarındadır ve bazı epidemiyolojik serilerde (ilgili ders notu kaynağında) A kümesinin en yüksek prevalansa sahip küme olarak yer alması nedeniyle cevap anahtarında D seçeneği işaretlenmiş, ancak A ve C kümelerinin prevalans sıralamasına dair literatür çelişkisi ve seçenek çatışması yüzünden bu soru kurul komisyonunca **iptal edilmiştir** (D doğru). C kümesi (çekingen, bağımlı, obsesif-kompulsif) klinik örneklemlerde ve birçok güncel toplum çalışmasında en sık saptanan küme olarak bildirilmekle birlikte bu sorunun anahtarındaki sınıflamada birinci sırada kabul edilmediğinden dışlanmıştır ve iptal gerekçesini doğurmuştur (A yanlış). Kişilik bozukluklarının genel toplumdaki prevalansı %20 değil, DSM verilerine göre yaklaşık **%9-15** aralığındadır (B yanlış). Kişilik bozuklukları akut başlangıçlı ve geçici tablolar değildir; aksine ergenlik ya da erken erişkinlikte başlayıp zaman içinde kalıcı ve katı seyir gösteren **kronik/süreğen** örüntülerdir (C yanlış). Kişilik bozukluklarında depresyon, anksiyete bozuklukları, madde kullanım bozuklukları veya diğer kişilik bozukluklarıyla eş zamanlı görülme (komorbidite) nadir değil, **son derece sıktır** (E yanlış).",
     "id": "K6_2025-2026_Q49"
   },
   {
@@ -23445,7 +23445,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Bireyin dış dünyayı, çevresini ve nesneleri rüyada gibi, sisli, yapay, cansız veya yabancı/tuhaf olarak deneyimlemesi algısal bozukluğuna **derealizasyon** denir. Bireyin kendi bedenine, zihnine veya benliğine yabancılaşması ise **depersonalizasyon**dur. Uyaran olmadan algı oluşması halüsinasyon, var olan uyaranın yanlış yorumlanması ise illüzyondur.",
+    "explanation": "Bireyin dış dünyayı, çevresini ve nesneleri bir rüyadaymış gibi cansız, yapay, **gerçek dışı, yabancı veya tuhaf olarak algılaması** **derealizasyon** kavramının tam tanımıdır (A doğru). Dışsal bir uyaran olmaksızın gerçekmiş gibi duyusal algı oluşması derealizasyon değil **halüsinasyon (varsanı)** olarak adlandırılır (B yanlış). Daha önce hiç karşılaşılmamış bir yer veya uyaranın tanıdıkmış gibi algılanması bellek yanılsaması olan **déjà vu** kavramıdır (C yanlış). Bireyin çevresine değil kendi bedenine, zihnine veya benliğine yabancılaştığını hissetmesi derealizasyon değil **depersonalizasyon**dur (D yanlış). Mevcut bir dış uyaranın duyusal olarak çarpıtılıp yanlış yorumlanması derealizasyon değil **illüzyon (yanılsama)** olarak tanımlanır (E yanlış).",
     "id": "K6_2025-2026_Q60",
     "repeats": [
       {
@@ -23486,7 +23486,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Gerçeklikle bağdaşmayan, aksi kanıtlara veya mantıklı açıklamalara rağmen değiştirilemeyen, bireyin kültürel/dini normlarıyla açıklanamayan sarsılmaz yanlış inançlar **sanrıdır (hezeyan)**; aşıyla çip takıldığı ve düşüncelerinin kontrol edildiği inancı tipik bir bizar/etkilenme hezeyanıdır. Toplumsal batıl inançlar veya değerler tek başına sanrı kabul edilmez.",
+    "explanation": "Gerçeklikle bağdaşmayan, aksine kanıtlarla değiştirilemeyen ve kültürel/dini normlarla açıklanamayan **COVID aşısı ile çip takılıp düşüncelerinin değiştirildiğine inanarak çipi çıkarttırmak için tekrarlayan biçimde hastanelere başvurmak**, gerçeği değerlendirmenin bozulduğu klasik bir bizar/kontrol edilme **sanrısıdır (hezeyan)** (D doğru). Cezaevinden çıkmış bir muhalifin devlet tarafından takip edildiğini düşünmesi, kişinin geçmiş deneyimleri ve somut yaşam bağlamıyla ilişkili olabileceği için tek başına gerçekle bağdaşmayan sanrı kabul edilmez (A yanlış). Hastalığının nazar nedeniyle ortaya çıktığını düşünmek toplumda kültürel olarak paylaşılan geleneksel bir inanç örüntüsü olduğundan psikiyatride sanrı sayılmaz (B yanlış). Nazi dönemi Almanya'sında yaşayan bir gencin Almanların üstün ırk olduğunu düşünmesi, o dönemin toplumsal ve ideolojik alt kültürü tarafından öğretilen bir görüş olup bireysel hezeyan ölçütünü karşılamaz (C yanlış). Anne babasına benzemediği için evlatlık olduğunu düşünen kişinin DNA testi sonucunu görünce ikna olabilmesi, düşüncenin kanıtlara karşı düzeltilebildiğini gösterdiğinden sanrının **sarsılmaz sabitlik** özelliğini taşımaz (E yanlış).",
     "id": "K6_2025-2026_Q61",
     "repeats": [
       {
@@ -23848,7 +23848,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Serebellumda küçük mavi yuvarlak hücreler ve Homer-Wright rozetleri içeren tümör medulloblastomdur; **tümör hücrelerinde nükleer beta-katenin birikimi, WNT yolak aktivasyonunu gösterir** ve medulloblastomun moleküler alt grupları arasında **en iyi prognoza sahip olan tiptir**. Rosenthal lifleri pilositik astrositomda, perivasküler psödorozetler ependimomda görülür.",
+    "explanation": "Serebellar orta hatta 4. ventrikülü daraltan kitlede küçük mavi yuvarlak hücreler, Homer-Wright rozetleri ve sinaptofizin pozitifliği **medulloblastom** tanısını koydurur; tümör hücrelerinde **nükleer beta-katenin birikimi WNT sinyal yolağı aktivasyonunu** gösterir ve bu alt tip medulloblastom moleküler grupları arasında **görece en iyi prognoza** sahiptir (A doğru). *INI1* (SMARCB1) kaybı medulloblastomun değil, genellikle bebeklik çağında görülen ve rabdoid hücreler içeren **atipik teratoid/rabdoid tümörün (AT/RT)** moleküler özelliğidir (B yanlış). Rosenthal lifleri ve eozinofilik granüler cisimler malign medulloblastomda değil, çocukluk çağının yavaş büyüyen benign tümörü olan **pilositik astrositomda** görülür (C yanlış). Diffüz GFAP pozitifliği glial kökenli pilositik astrositomu desteklerken, nöroektodermal diferansiyasyon gösteren medulloblastomda nöronal belirteç olan **sinaptofizin** pozitifliği ön plandadır (D yanlış). Perivasküler psödorozetler ve 4. ventrikül tabanından köken alma özelliği medulloblastomun değil **ependimomun** klasik morfolojik özellikleridir (E yanlış).",
     "id": "K6_2025-2026_Q71"
   },
   {
@@ -23881,7 +23881,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "*Campylobacter jejuni* lipopolisakkaritleri ile periferik sinir gangliosidleri (GM1, GD1a) arasındaki moleküler benzerlik sonucu tetiklenen **Guillain-Barré sendromunda**, hümoral ve hücresel **otoimmün mekanizmalar miyelin kılıfı ve Schwann hücre yüzeyini hedef alır**; makrofaj aracılı segmental demiyelinizasyon ve ileti yavaşlaması gelişir.",
+    "explanation": "*Campylobacter jejuni* enfeksiyonundan günler sonra gelişen akut ilerleyici güçsüzlük ve sinir biyopsisindeki segmental demiyelinizasyon ile makrofaj infiltrasyonu **Guillain-Barré sendromu** tablosudur; patolojik temelinde bakteri lipopolisakkaritleri ile periferik sinir gangliosidleri arasındaki moleküler benzerliğe bağlı olarak **otoimmün mekanizmalarla miyelin kılıfın ve/veya Schwann hücre yüzeyinin hedef alınması** yer alır (D doğru). *C. jejuni* periferik sinirlere doğrudan girip Schwann hücrelerini enfekte etmez; sinir hasarı enfeksiyon sonrası gelişen immün aracılı çapraz reaksiyonla oluşur (A yanlış). Aksonal transport bozukluğuna bağlı 'dying-back' aksonopati diyabetik veya toksik nöropatilerde izlenir; oysa bu olguda biyopsi ve ileti hızı düşüşü primer **segmental demiyelinizasyonu** göstermektedir (B yanlış). Anterior spinal arter tıkanıklığı medulla spinaliste ani parapleji ve ağrı-ısı duyusu kaybına yol açan santral iskemik bir olaydır; periferik sinir biyopsisinde segmental demiyelinizasyon oluşturmaz (C yanlış). Nöromüsküler kavşakta asetilkolin salınımının blokajı botulizm veya Lambert-Eaton sendromunun patofizyolojisidir ve bu tablolarda periferik sinir demiyelinizasyonu ile makrofaj infiltrasyonu görülmez (E yanlış).",
     "id": "K6_2025-2026_Q72"
   },
   {
@@ -23947,7 +23947,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Willis poligonundaki bifurkasyon noktaları kan akımının yarattığı en yüksek **hemodinamik kayma stresine (shear stress)** maruz kalır; arter duvarında **tunika media düz kas tabakasının zayıflığı ve internal elastik laminanın fragmentasyonu** ile birleştiğinde anevrizma dilatasyonu bu anatomik noktalarda gelişir.",
+    "explanation": "Ani şiddetli baş ağrısı, ense sertliği ve bazal sisternalarda kanama tablosunun nedeni rüptüre sakküler (berry) anevrizmadır; bu anevrizmaların özellikle Willis poligonunda gelişmesinin en önemli nedeni **arter dallanma (bifurkasyon) noktalarındaki yüksek hemodinamik stresin, tunika media düz kas tabakasındaki ve internal elastik laminadaki zayıflıkla birleşmesidir** (C doğru). Willis poligonu venöz drenaj sistemi değil, internal karotid ve vertebrobaziler **arterlerin** beyin tabanında oluşturduğu anastomoz halkasıdır (A yanlış). Sakküler anevrizma oluşumu kapiller endoteldeki kan-beyin bariyeri zayıflığından değil, büyük arter dallanmalarındaki duvar media/elastika defektlerinden kaynaklanır (B yanlış). Willis poligonu yalnızca posterior dolaşımı beslemez, anterior ve posterior dolaşımı birleştirir; ayrıca sakküler anevrizmaların yaklaşık %85-90'ı anterior dolaşımda (ACoA, MCA, PCoA) yerleşir (D yanlış). Subaraknoid boşluk yalnızca Willis poligonu çevresinde bulunmaz, tüm beyin ve omuriliği sarar; kanamanın bazal sisternalarda yoğunlaşması rüptür odağının burada bulunmasındandır (E yanlış).",
     "id": "K6_2025-2026_Q74"
   },
   {
@@ -24455,7 +24455,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Değerlendirmede: Yetişkinlerde kapalı kalvaryum nedeniyle USG değil BT/MR kullanılır (I yanlış); akut travmada hız ve kemik/kanama duyarlılığı nedeniyle kontrassız BT ilk tetkiktir (II doğru); plakları göstermede altın standart MR'dır (III doğru); ve MR kemik artefaktı içermediğinden posterior fossayı BT'den çok daha üstün gösterir (IV yanlış). Doğru öncüller II ve III'tür.",
+    "explanation": "Santral sinir sistemi görüntülemesinde majör kafa travması ve bilinç bulanıklığı olan acil olguda hızlı tarama, taze kanama ve kemik kırıklarını göstermedeki üstünlüğü nedeniyle ilk tetkik **kontrastsız beyin BT**'dir (II doğru) ve demyelinizan hastalıkların (ör. multipl skleroz) plaklarını göstermede en duyarlı yöntem **beyin MR**'dır (III doğru); dolayısıyla doğru birleşim II-III'tür (D doğru). Yetişkinlerde kafatası kemikleri kapalı ve kalın olduğundan ultrason dalgaları geçemez, transkranial/transfontanel USG yalnızca fontaneli açık yenidoğanlarda kullanılır (I yanlış); yetişkinlerde ise posterior fossa yapıları BT'deki gibi kemik artefaktından etkilenmez, aksine MR kemik artefaktı vermediği için posterior fossayı en net gösteren yöntemdir (IV yanlış), bu yüzden II-IV birleşimi hatalıdır (A yanlış). Doğru olan II. öncülü dışarıda bırakıp beyin MR'ının kemik artefaktı yüzünden posterior fossada zorlandığını öne süren yanlış IV. öncülü içerdiği için III-IV birleşimi geçersizdir (B yanlış). Yetişkinlerde transkranial USG kullanımını öneren I. öncül ile MR'a BT'ye ait kemik artefaktı kısıtlılığını yükleyen IV. öncülün her ikisi de yanlış olduğundan I-IV birleşimi hatalıdır (C yanlış). Doğru olan III. öncülü içerse de yetişkinlerde transkranial USG kullanıldığını iddia eden yanlış I. öncülü içerdiği ve doğru II. öncülü dışladığı için I-III birleşimi yanlıştır (E yanlış).",
     "id": "K6_2025-2026_Q88"
   },
   {
@@ -24653,7 +24653,7 @@ window.KURUL_DATA["6"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Klinik dismorfolojide birçok genetik sendromda (Down, Williams, Noonan, Cornelia de Lange), **aynı sendromu taşıyan akraba olmayan farklı bireylerin yüz ve fenotipik özellikleri, karakteristik sendromik bulgular nedeniyle kendi biyolojik kardeşlerinden çok daha fazla birbirine benzer**. Görsel hafıza bu tipik örüntü tanımada en kritik araçtır.",
+    "explanation": "Klinik dismorfolojide birçok genetik sendrom (Down, Williams, Noonan, Cornelia de Lange gibi) o kadar karakteristik bir yüz ve vücut gestaltına sahiptir ki **aynı sendroma sahip akraba olmayan bireyler, fenotipik olarak kendi sağlıklı biyolojik kardeşlerinden dahi daha fazla birbirine benzeyebilir**; hekimin görsel hafızası bu özgül örüntüyü tanımada kritik rol oynar (D doğru). Görsel hafızanın ve örüntü tanımanın tanısal katkısı yalnızca yüz bulgularıyla sınırlı değildir; ekstremite anomalileri, iskelet oranları, gövde postürü, deri bulguları ve genel fenotipik bütünü de kapsar (A yanlış). Tek başına majör anomalilerin saptanması sendromik tanı için yeterli değildir; eşlik eden minör dismorfik özelliklerin ve bunların kombinasyonunun önceki sendromik olgularla karşılaştırılması daima gereklidir (B yanlış). Sendromların çoğunda **değişken ekspresivite** ve eksik penetrans nedeniyle fenotipik bulgular aynı ailedeki bireyler arasında bile geniş varyasyonlar gösterebilir (C yanlış). Dismorfik bir çocuğun ilk muayenesinde aile kaygısını azaltmak uğruna kesinleşmemiş veya varsayımsal bir sendrom tanısı vermek klinik ve etik açıdan yanlıştır; tanısal belirsizlik uygun genetik danışmanlık eşliğinde açıkça paylaşılmalıdır (E yanlış).",
     "id": "K6_2025-2026_Q94"
   },
   {

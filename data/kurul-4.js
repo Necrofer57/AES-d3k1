@@ -3921,7 +3921,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Potasyum permanganat (KMnO4) güçlü oksidan özelliği nedeniyle su dezenfeksiyonunda ve özellikle kuyularda Vibrio cholerae etkeninin yok edilmesinde kullanılan klasik bir kimyasal ajandır.",
+    "explanation": "Potasyum permanganat (KMnO4) güçlü oksitleyici (yükseltgeyici) etkisi sayesinde kuyu suları ve acil durum su dezenfeksiyonunda Vibrio cholerae başta olmak üzere su kaynaklı enterik patojenleri inaktive edebilen klasik bir kimyasal dezenfektandır (D doğru). İçme suyu yönetmeliklerinde şebeke uç noktalarında ölçülen parametre toplam klor değil 'serbest bakiye klor' olup hedef aralık 0.2-0.5 ppm'dir (toplam klor sınırı veya minimum 0.2 ppm serbest klor gereksinimiyle karıştırılmamalıdır) (A yanlış). Ozonla dezenfeksiyon bakterilere, virüslere ve kistlere karşı son derece etkili ancak pahalı olması ve şebekede kalıcı bakiye dezenfektan bırakmaması nedeniyle kullanımı sınırlı olan bir yöntemdir (B yanlış). %2'lik tentürdiyot ana çözeltisi içme suyuna eklendikten sonra mikroorganizmaların yeterince inaktive olabilmesi için 10 dakika değil, en az 30 dakika temas süresi beklenmelidir (C yanlış). Flor suya dezenfeksiyon amacıyla değil diş çürüklerinden koruma amacıyla eklenir ve şebekede uçup uzaklaşması da bir dezenfeksiyon avantajı değildir (bakiye koruyuculuk klorda önemlidir) (E yanlış).",
     "id": "K4_2020-2021_Q22"
   },
   {
@@ -4020,7 +4020,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Yaşlanma yalnızca biyolojik bir süreç olmayıp aile rollerinde değişim, bakım ihtiyacı ve psiko-sosyal dinamiklerin başkalaşımı nedeniyle tüm aile yapısını doğrudan etkiler.",
+    "explanation": "Yaşlanma süreci yalnızca bireyin biyolojik fonksiyonlarını etkilemekle kalmayıp bakım yükü, rol değişimleri, ekonomik ve psiko-sosyal uyum gereksinimleri nedeniyle aileyi de doğrudan etkileyen toplumsal bir olgudur (B doğru). TÜİK 2019 yılı verilerine göre Türkiye'de 65 yaş ve üzeri nüfus 12,5 milyona değil, yaklaşık 7 milyon 550 bin kişiye (toplam nüfusun %9,1'ine) ulaşmıştır (A yanlış). Yaşlıların sosyal, ekonomik ve psikolojik problemlerini inceleyen disiplin geriatri değil sosyal gerontolojidir; geriatri 65 yaş üstü bireylerin hastalıklarının tanı, tedavi ve tıbbi bakımıyla ilgilenen tıp yan dalıdır (C yanlış). Fizyolojik yaşlanma kronolojik yaştan bağımsız patolojik bir organ yetersizliği değildir; zamanla ve yaşla birlikte patolojik bir hastalık olmaksızın organ rezervlerinde görülen doğal, ilerleyici değişim sürecidir (D yanlış). Yaşlılarda en sık yeti yitimine ve bağımlılığa yol açan durumlar sindirim şikayetlerinden ziyade kas-iskelet sistemi hastalıkları (osteoartrit, osteoporoz/kırıklar), kardiyovasküler/serebrovasküler hastalıklar, demans ve duyu kayıplarıdır (E yanlış).",
     "id": "K4_2020-2021_Q25"
   },
   {
@@ -7928,7 +7928,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Hap (ilaç) özofajitine en sık yol açan ajanlar lokal kostik ve asidik etkileri nedeniyle doksisiklin, tetrasiklin, bisfosfonatlar ve demir preparatlarıdır; yetersiz suyla yutulduğunda özofagusta erozyon ve ülser yaparlar.",
+    "explanation": "İlaçların özofagus mukozasına uzun süre temas etmesine bağlı **hap (ilaç) özofajitine en sık neden olan ajanlar** asidik ve lokal kostik etkileri nedeniyle **doksisiklin ve tetrasiklinlerdir** (bunun yanında bisfosfonatlar, KCl ve NSAİİ'ler de sık etkenlerdir) (D doğru). Sigara içimi özofagus kanserinden korumaz; aksine özofagus skuamöz hücreli karsinomu ve adenokarsinomu için majör risk faktörüdür (A yanlış). Dünya genelinde özofagus kanserinin en sık görülen histopatolojik tipi adenokarsinom değil **skuamöz hücreli karsinomdur** (B yanlış). Barrett özofagusu kronik reflüye bağlı gelişen intestinal kolumnar metaplazi olup skuamöz hücreli karsinoma değil **özofagus adenokarsinomuna** dönüşüm riski taşır (C yanlış). Koroziv (asit/alkali) madde içiminde hastayı kusturmak yakıcı maddenin özofagustan ikinci kez geçerek perforasyona ve aspirasyona yol açmasına neden olacağından kesinlikle kontrendikedir (E yanlış).",
     "id": "K4_2021-2022_Q22"
   },
   {
@@ -8159,7 +8159,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Otoimmün hepatit poliklonal B hücresi aktivasyonu ve belirgin hipergamaglobulinemi (özellikle IgG artışı) ile seyreder; bu durum eritrosit sedimentasyon hızında (ESH) belirgin artışa yol açar.",
+    "explanation": "Otoimmün hepatitte (OİH) yoğun plazma hücresi infiltrasyonu ve poliklonal hipergamaglobulinemi (özellikle yüksek IgG) nedeniyle **eritrosit sedimentasyon hızında (ESH) belirgin artış görülür**; bu nedenle sedimentasyonun artmayacağı ifadesi OİH için yanlıştır (C yanlış). Hepatosellüler hasara bağlı olarak serum transaminazları (AST/ALT) belirgin yükselir ve akut/alevlenme dönemlerinde normalin 10-20 katını aşabilir (A doğru). Hipergamaglobulinemi ve seçici olarak **serum IgG düzeyinin yükselmesi** OİH'nin karakteristik laboratuvar bulgusudur (B doğru). IgG yüksekliğinin aksine serum IgA ve IgM düzeyleri OİH'de tipik olarak normal sınırlarda kalır (IgM yüksekliği daha çok primer biliyer kolanjitte beklenir) (D doğru). Antinükleer antikor (ANA) ve anti-düz kas antikoru (ASMA), Tip 1 OİH'de en yaygın saptanan otoantikorlardır (E doğru).",
     "id": "K4_2021-2022_Q29"
   },
   {
@@ -10507,7 +10507,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Vibrio cholerae yüksek pH'ya dayanıklı olduğundan zenginleştirme amacıyla alkali peptonlu su (pH 8.6) ve selektif izolasyon amacıyla sükrozu fermente edip sarı koloni yaptığı TCBS agar kullanılır.",
+    "explanation": "Pirinç yıkantı suyu görünümünde sulu ishal yapan ve karanlık alan/faz kontrast mikroskopisinde hızla hareket eden virgül biçimli *Vibrio cholerae*'nın izolasyonunda, yüksek pH'da (8.6) diğer enterik florayı baskılayarak zenginleştirme sağlayan **alkali peptonlu su** ve sükroz fermantasyonuyla sarı koloniler oluşturan selektif **TCBS (tiyosülfat sitrat safra sükroz) agar** ikilisi kullanılır (B doğru). Mueller-Hinton agar antibiyotik duyarlılık testleri için, çikolatamsı agar ise *Haemophilus* ve *Neisseria* gibi nazlı bakteriler için tercih edilir (A yanlış). Kanlı agar genel üretim besiyeri, Sabouraud dekstroz agar ise mantar (maya ve küf) izolasyon besiyeridir (C yanlış). SS agar ve EMB agar *Salmonella*, *Shigella* ve *E. coli* gibi Enterobacteriaceae üyelerinin ayrımı için kullanılır, *V. cholerae* için primer selektif ikili değildir (D yanlış). Löwenstein-Jensen besiyeri *Mycobacterium tuberculosis*, MacConkey agar ise genel Gram-negatif basiller için kullanılır (E yanlış).",
     "id": "K4_2021-2022_Q89"
   },
   {
@@ -10614,7 +10614,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Entamoeba histolytica'yı non-patojen amiplerden (E. dispar gibi) ayıran en güvenilir tanısal mikroskobik kriter, trofozoitin sitoplazmasında fagositoz edilmiş eritrositlerin (eritrofagositoz) görülmesidir.",
+    "explanation": "Patojen *Entamoeba histolytica*'yı morfolojik olarak neredeyse aynı görünen apatojen *Entamoeba dispar*'dan ayırt ettiren ve aktif invaziv amebiyazis tanısını kesinleştiren mikroskobik bulgu, **trofozoit sitoplazması içinde fagosite edilmiş (yutulmuş) eritrositlerin** görülmesidir (C doğru). *E. histolytica* kistlerinde bulunan kromatoid cisimcikler çalı demeti gibi sivri uçlu değil, **puro/sosis biçiminde künt yuvarlak uçludur** (sivri uçlu kromatoid cisimcikler *E. coli*'ye aittir) (A yanlış). *E. histolytica* trofozoitlerinin çekirdek karyozomu asantral ve kaba değil, **tam merkezde (santral) ve ince noktasaldır** (B yanlış). Sekiz çekirdekli olgun kist yapısı non-patojen *Entamoeba coli*'de görülür, *E. histolytica* olgun kistleri **dört çekirdeklidir** (D yanlış). *E. histolytica* kamçılı (flagellat) bir protozoon olmayıp psödopodlarıyla (yalancı ayaklarla) hareket eden bir amiptir (kamçılı trofozoitler *Giardia* veya *Trichomonas*'ta izlenir) (E yanlış).",
     "id": "K4_2021-2022_Q92",
     "repeats": [
       {
@@ -10908,7 +10908,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Crohn hastaları genç yaşta olduklarından ve tekrarlayan takiplere ihtiyaç duyduklarından, iyonlaştırıcı radyasyon içermeyen manyetik rezonans (MR) enterografi bağırsak duvar kalınlaşması, fistül ve darlıkları izlemede en uygun yöntemdir.",
+    "explanation": "Crohn hastalığı genellikle genç yaşlarda başladığı ve hastalık aktivitesi ile komplikasyonların uzun dönem tekrarlayan takibini gerektirdiği için iyonlaştırıcı radyasyon içermeyen manyetik rezonans (MR) enterografi ile değerlendirilmesi ve takibi en uygun yöntemdir (E doğru). Arada sağlam bağırsak segmentleri bulunmadan rektumdan proksimale kesintisiz devamlı tutulum gösteren hastalık Crohn değil ülseratif kolittir (Crohn hastalığı segmenter ve atlamalı 'skip' lezyonlar yapar) (A yanlış). Terminal ileum Crohn hastalığında nadiren değil, en sık (%70-80) tutulan anatomik bölgedir (B yanlış). Testere dişi şeklindeki görünüm ve yüzeyel mukozal ülserler Crohn'dan ziyade ülseratif kolit veya divertiküler hastalık lehinedir; Crohn hastalığında derin transmural lineer ülserler ve kaldırım taşı (cobblestone) görünümü izlenir (C yanlış). Crohn hastalığında inflamasyon bağırsak duvarının tüm katlarını tuttuğu için apse ve fistül (enteroenterik, enterokutanöz, perianal) oluşumu sık görülen tipik komplikasyonlardır (D yanlış).",
     "id": "K4_2021-2022_Q100"
   },
   {
@@ -11550,7 +11550,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "İkinci kuşak H1 antihistaminikler (setirizin, loratadin, feksofenadin) daha az lipofilik ve daha hidrofilik oldukları için kan-beyin bariyerini geçemezler; bu sayede santral sedatif etkileri minimumdur.",
+    "explanation": "Hidrofilik özelliği daha yüksek ve lipofilitesi düşük olan H1 reseptör antagonistleri (setirizin, loratadin, feksofenadin) kan-beyin bariyerini çok az geçtikleri için santral sedasyona yol açmayan ikinci kuşak antihistaminikler olarak sınıflandırılırlar (A doğru). Antihistaminiklerin tümünde antiemetik etkinlik yoktur; antiemetik özellik yalnızca kan-beyin bariyerini geçip vestibüler/kusma merkezini etkileyen birinci kuşak H1 blokörlerinde (ör. dimenhidrinat, difenhidramin, meklizin) bulunur (B yanlış). İkinci kuşak H1 antihistaminikler ile H2 antihistaminikler (famotidin, simetidin) santrale yeterince geçemediği için taşıt tutmasında endike değildir (C yanlış). Yüksek lipofilik özellik gösteren birinci kuşak H1 antagonistleri kan-beyin bariyerini kolaylıkla geçerek santral H1 reseptörlerini bloke ettiklerinden tam tersine belirgin sedatif etki oluştururlar (D yanlış). Antihistaminiklerin antimuskarinik etkinlikleri sabit olmayıp kuşaklar arasında büyük değişkenlik gösterir: birinci kuşaklarda belirgin iken ikinci kuşaklarda yok denecek kadar azdır (E yanlış).",
     "id": "K4_2022-2023_Q18"
   },
   {
@@ -11723,7 +11723,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Kolesistokinin (CCK), safra kesesi düz kaslarını kuvvetle kasarak ve Oddi sfinkterini gevşeterek safranın lümene boşalmasını sağlayan fizyolojik kolagog hormondur.",
+    "explanation": "Kolesistokinin (CCK), safra kesesi düz kaslarını kuvvetle kasıp Oddi sfinkterini gevşeterek depolanmış safranın duodenuma boşalmasını sağlayan fizyolojik kolagog hormondur ve safra kesesinin boşalmasını kolaylaştırmak amacıyla kullanılabilir (C doğru). Koleritik ilaçlar karaciğer hücrelerinden safranın itrah hızını yavaşlatıp safra hacmini azaltmaz; tam tersine hepatositlerden safra sekresyon hızını ve hacmini artırırlar (A yanlış). Kolagog (kolesistokinetik) maddeler safra kesesini kasarak içerisindeki safrayı boşalttıkları için safra kesesinin hacmini artırmaz, aksine küçültüp azaltırlar (B yanlış). Safra ekstreleri/asitleri yağları emülsifiye edip miçel oluşturarak yağda çözünen vitaminlerin (A, D, E, K) bağırsaktan emilimini azaltmak için değil, artırmak amacıyla kullanılır (D yanlış). Dijestan ilaçlar (pankreatik enzimler, safra tuzları, HCl desteği) sindirim olayını yavaşlatmak amacıyla değil, sindirim yetersizliğinde besinlerin sindirimini kolaylaştırmak ve hızlandırmak amacıyla kullanılır (E yanlış).",
     "id": "K4_2022-2023_Q23",
     "repeats": [
       {
@@ -11930,7 +11930,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "HBeAg pozitif kaynaktan temas eden ve anti-HBs antikoru koruyucu sınırın (<10 mIU/mL) altında olan (5 mIU/mL) aşılı sağlık çalışanına ilk 24-48 saatte hem tek doz aşı rapeli hem de HBIG profilaksisi uygulanır.",
+    "explanation": "HBsAg ve HBeAg pozitif (yüksek bulaştırıcılıklı) kaynaktan iğne batması yoluyla temas eden, daha önce 3 doz Hepatit B aşısı yapılmış olmasına karşın anti-HBs titresi koruyucu sınır olan 10 mIU/mL'nin altında (5 mIU/mL) bulunan sağlık personeline acilen tek doz Hepatit B aşısı ve beraberinde Hepatit B hiperimmünoglobulini (HBIG) uygulanmalıdır (D doğru). Hepatit B için koruyucu antikor eşiği ≥10 mIU/mL olduğundan 5 mIU/mL düzeyi yetersizdir ve ilave önlem alınmaması enfeksiyon riski doğurur (A yanlış). Koruyucu antikoru oluşmamış bir kişide HBsAg/HBeAg pozitif temas sonrası yalnızca aşı yapmak hızlı pasif koruma sağlamada yetersiz kalır; mutlaka HBIG eklenmelidir (B yanlış). Daha önce tek seri aşılanmış fakat yeterli yanıt vermemiş bireyde yalnızca HBIG yapmak uzun süreli aktif immün belleği uyarmak için yeterli değildir; tek doz aşı rapeliyle birlikte verilmelidir (yalnızca iki tam aşılama serisine yanıtsızlığı kanıtlanmış kişilere 2 doz HBIG uygulanır) (C yanlış). Temas sonrası acil profilakside HBIG yapılmadan sadece birer ay ara ile 3 doz aşı başlamak erken bulaşı önlemede yetersizdir; başlangıçta derhal 1 doz HBIG + 1 doz aşı uygulanıp ardından yanıta göre seri tamamlanır (E yanlış).",
     "id": "K4_2022-2023_Q29"
   },
   {
@@ -14597,7 +14597,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Ülseratif kolitte inflamasyonun muskularis tabakasına ve nöromüsküler pleksusa derinleşmesi sonucu kolonik motilite felç olur ve yaşamı tehdit eden toksik megakolon dilatasyonu gelişebilir.",
+    "explanation": "Ülseratif kolitte ağır inflamasyonun muskularis propriyaya ve miyenterik sinir pleksusuna ulaşması sonucu kolon motilitesi felce uğrar ve yaşamı tehdit eden akut non-obstrüktif kolon dilatasyonu olan toksik megakolon gelişebilir (D doğru). En sık terminal ileumun tutulduğu inflamatuvar bağırsak hastalığı Crohn hastalığıdır; ülseratif kolit hemen her zaman rektumdan başlayıp proksimale uzanarak yalnızca kolonu tutar (A yanlış). Bağırsak duvarının tüm katlarının (transmural) ve mezenterik yağ dokusunun tutulumu Crohn hastalığının özelliğidir; ülseratif kolitte tutulum genellikle mukoza ve yüzeyel submukozaya sınırlıdır (B yanlış). Transmural inflamasyona bağlı fistül ve intraabdominal apse gelişimi Crohn hastalığında sık görülür; ülseratif kolitte ise beklenmez (C yanlış). Derin fissürler ve sağlam mukoza adacıklarının oluşturduğu kaldırım taşı (cobblestone) görünümü Crohn hastalığına özgüdür; kronik ülseratif kolitte haustraların kaybına bağlı kurşun boru (lead pipe) görünümü izlenir (E yanlış).",
     "id": "K4_2022-2023_Q99"
   },
   {
@@ -15207,7 +15207,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Bağırsak yüzeyini yağlandırarak dışkı geçişini kolaylaştıran laksatifler lubrikan laksatiflerdir (sıvı parafin); stimülan laksatifler (senozid, bisakodil) ise miyenterik pleksusu uyararak peristaltizmi artırırlar.",
+    "explanation": "Bağırsak yüzeyini yağlandırıp yumuşatarak dışkının atılımını kolaylaştıran grup **stimülan laksatifler değil, lubrikan (kayganlaştırıcı) laksatiflerdir** (sıvı parafin/vazelin); senna ve bisakodil gibi stimülan laksatifler ise enterik sinir pleksusunu uyararak peristaltizmi ve sıvı sekresyonunu artırır (D yanlış). Purgatifler laksatiflere kıyasla daha şiddetli etki göstererek dışkının sulu kalmasını ve hızla boşaltılmasını sağlar (A doğru). Özellikle stimülan laksatiflerin uzun süreli kontrolsüz kullanımı bağırsak atonisi ve laksatif bağımlılığına (katartik kolon) yol açabilir (B doğru). Magnezyum tuzları ve laktuloz gibi osmotik laksatifler lümende su tutarak ozmotik basıncı ve lümen gerimini artırıp motiliteyi uyarır (C doğru). Basit konstipasyonda ilk basamakta sistemik emilimi olmayan, fizyolojik kitle oluşturucu lif/kepek preparatları tercih edilir ve gebelikte güvenle kullanılır (E doğru).",
     "id": "K4_2023-2024_Q18"
   },
   {
@@ -15306,7 +15306,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Histamin H2 reseptörleri Gs kenetlidir; H2 reseptör antagonistleri bu reseptörü bloke ederek adenilat siklaz inhibisyonu yapar ve hücre içi cAMP düzeyini düşürerek asit salgısını baskılar.",
+    "explanation": "Mide paryetal hücrelerindeki histamin H2 reseptörleri Gs proteini üzerinden adenilat siklazı uyarır; H2 reseptör antagonistleri bu reseptörü bloke ederek adenilat siklaz yolağını ve hücre içi cAMP artışını inhibe eder ve mide asit salınımını azaltır (A doğru). Somatostatin CCK reseptörlerini aktive ederek asit salınımını artırmaz; aksine G hücrelerinden gastrin, ECL hücrelerinden histamin ve paryetal hücrelerden asit salgısını güçlü biçimde inhibe eder (B yanlış). Proton pompa inhibitörleri muskarinik reseptörleri kompetitif bloke etmez; paryetal hücre kanaliküllerinde aktifleşerek H⁺/K⁺-ATPaz pompasını geri dönüşümsüz inhibe ederler (M1 muskarinik blokörler pirenzepin/telenzepindir) (C yanlış). Sodyum bikarbonat gibi sodyum bileşikleri sistemik dolaşıma hızla emildikleri için alkaloz ve sodyum yüklenmesi gibi en fazla sistemik yan etki yaparlar; en az sistemik yan etki yapan antiasitler minimal emilen alüminyum ve magnezyum hidroksittir (D yanlış). Peptik ülser ve H. pylori eradikasyonunda standart üçlü kombinasyon tedavisi bir PPI ile birlikte klaritromisin + amoksisilin (veya metronidazol) ikilisinden oluşur; telenzepin ve müshil etkili magnezyum sülfat bu protokolde yer almaz (E yanlış).",
     "id": "K4_2023-2024_Q21",
     "repeats": [
       {
@@ -15413,7 +15413,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Dehidrokolik asit karaciğerden safra sekresyonunu ve su içeriğini en güçlü şekilde artıran yarı sentetik safra asidi türevi hidrokoleretiktir.",
+    "explanation": "Yarı sentetik bir safra asidi türevi olan dehidrokolik asit, hepatositlerden özellikle su ve elektrolit içeriği zengin safra sekresyonunu (safra debisini) en güçlü artıran klasik hidrokoleretik ilaçtır (E doğru). Azintamid aklorhidri ve hipoklorhidri tedavisinde kullanılmaz; safra yetersizliğinde safra salgısını artıran sentetik bir koleretiktir (aklorhidride seyreltik HCl veya betain HCl kullanılır) (A yanlış). Kolesistokinetik (kolagog) ilaçlar safra kesesinin boşalmasını sağlamak amacıyla safra kesesi düz kaslarında gevşeme değil güçlü kasılma (kontraksiyon) ve Oddi sfinkterinde gevşeme yaparlar (B yanlış). Pankrelipaz safra kesesini hızla boşaltan bir kolesistokinetik ajan değildir; ekzokrin pankreas yetmezliğinde besin sindirimini destekleyen lipaz, amilaz ve proteaz içerikli bir dijestan preparatıdır (C yanlış). Duodenumdan salgılanan sekretin pankreastan bikarbonatça zengin sıvı salgısını uyarırken insülin salınımını azaltmaz, aksine glukoz bağımlı insülin salınımını artırır (insülini baskılayan somatostatindir) (D yanlış).",
     "id": "K4_2023-2024_Q24"
   },
   {
@@ -17114,7 +17114,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Eritrositler plazmaya kıyasla yaklaşık 15-40 kat daha yüksek konsantrasyonda AST içerir; in vitro hemoliz durumunda seruma bol miktarda eritrosit içi AST salınır ve AST değeri yapay olarak belirgin yükselir.",
+    "explanation": "Eritrosit içi aspartat transaminaz (AST) aktivitesi plazmaya kıyasla yaklaşık 15-40 kat daha yüksek olduğundan in vitro hemoliz durumunda eritrositlerden seruma bol miktarda AST salınır ve hemolizden en fazla AST etkilenerek yalancı yükselme gösterir (C doğru). Transaminazların (ALT ve AST) amino grubu transfer reaksiyonlarındaki zorunlu koenzim biyotin değil, B6 vitamininin aktif formu olan piridoksal-5'-fosfattır (PLP) (biyotin karboksilaz enzimlerinin koenzimidir) (A yanlış). Karaciğerde neredeyse tamamen sitozolik yerleşim gösteren enzim alanin transaminazdır (ALT); yüksek oranda (%80'e varan) mitokondriyal izoenzime de sahip olan transaminaz ise aspartat transaminazdır (AST) (B yanlış). Çok yüksek akut transaminaz yükselmelerinde (>500-1000 U/L) ilk olarak akut viral hepatit, toksik/ilaç hepatiti veya iskemik hepatit düşünülür; alkolik hepatitte transaminazlar genellikle 300 U/L'nin altında ılımlı yükselir ve AST/ALT >2 oranı tipiktir (D yanlış). Wilson hastalığında (özellikle fulminan karaciğer hasarı ve eşlik eden hemolizde) mitokondriyal hasar nedeniyle alanin transaminaz (ALT) değil, aspartat transaminaz (AST) ALT'ye oranla daha çok artar (AST/ALT >2) (E yanlış).",
     "id": "K4_2023-2024_Q71"
   },
   {
@@ -17563,7 +17563,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Entamoeba histolytica'yı morfolojik ikizi olan apatatojen E. dispar'dan ayıran en kritik tanısal mikroskobik bulgu trofozoitlerin fagositoz ettiği eritrositleri (eritrofagositoz) içermesidir.",
+    "explanation": "*Entamoeba histolytica* enfeksiyonunda kesin mikroskobik tanı koydurucu bulgu, invaziv **trofozoitin içinde fagosite edilmiş (yutulmuş) eritrositlerin** saptanmasıdır; bu bulgu apatojen *E. dispar* ile ayırıcı tanıyı sağlar (C doğru). Asantral (eksantrik) ve kaba yerleşimli karyozom *E. histolytica*'ya değil *Entamoeba coli*'ye özgüdür (*E. histolytica*'da karyozom santral ve incedir) (A yanlış). Sekiz çekirdekli kistler non-patojen *Entamoeba coli* özelliği olup *E. histolytica* olgun kistleri en fazla dört çekirdeklidir (B yanlış). Çalı demeti şeklinde sivri sonlanan kromatoid cisimcikler *E. coli* kistlerinde görülürken *E. histolytica* kistlerinde puro şeklinde künt uçlu kromatoid cisimcikler bulunur (D yanlış). *E. histolytica* kamçı taşımaz, psödopodlarla hareket eder; kamçılı hareket *Giardia lamblia* gibi flagellatlara özgüdür (E yanlış).",
     "id": "K4_2023-2024_Q83",
     "repeats": [
       {
@@ -18985,7 +18985,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Wuchereria bancrofti (lenfatik filariyazis/fil hastalığı) tanısında mikrofilaryalar noktürnal periyodisite gösterdiğinden, saat 22:00-02:00 arasında alınan periferik kan yaymasında Giemsa boyama ile mikrofilaryaların gösterilmesi altın standarttır.",
+    "explanation": "Sol bacak ve skrotumda lenfödemle elefantiyazise yol açan *Wuchereria bancrofti* mikrofilaryaları **noktürnal periyodisite** gösterir (gündüz akciğer kapillerlerinde gizlenip gece dolaşıma çıkarlar); bu nedenle kesin laboratuvar tanısı **gece saatlerinde (22:00-02:00) alınan periferik kandan hazırlanan Giemsa boyalı yaymada mikrofilaryaların görülmesidir** (D doğru). *W. bancrofti* bağırsak paraziti değildir ve dişi erişkinleri yumurta değil doğrudan larva (mikrofilarya) doğurduğu için dışkı incelemesiyle yumurta saptanmaz (A yanlış). IFA ile antikor aranması endemik bölgelerde geçmiş maruziyet ve diğer helmintlerle çapraz reaksiyon verebildiğinden aktif tanıda primer doğrulama testi değildir (B yanlış). Lenf nodu biyopsisi gereksiz invaziv bir işlem olup zaten tıkalı olan lenfatik drenajı bozarak lenfödemi ağırlaştırabilir (C yanlış). Mikrofilaryalar cilt yüzeyinde bulunmadığından bacak ve skrotum sürüntüsünde gösterilemez (E yanlış).",
     "id": "K4_2024-2025_Q27",
     "prof_inferred": true,
     "repeats": [
@@ -19226,7 +19226,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Beslenme (rezorpsiyon) fazında bağırsaktan emilen karbonhidratlara bağlı kan glukozu ve insülin artar, lipoliz baskılanarak serbest yağ asitleri (lipid) düzeyi düşer; açlıkta (postrezorpsiyon) ise glukoz düşerken lipolizle serbest yağ asitleri artar.",
+    "explanation": "Yemek sonrası **rezorpsiyon (emilim/tokluk) fazında** bağırsaktan glukoz emilimiyle kan **glukozu yükselir**, buna yanıt olarak artan insülin hormona duyarlı lipazı baskıladığı için dolaşımdaki serbest yağ asidi/lipid düzeyleri **düşer** (D doğru). Tokluk fazında insülin artıp glukagon ve epinefrin baskılansa da kortizol esas olarak sirkadiyen ritim ve stresle düzenlendiğinden rezorpsiyon fazının sabit tanımlayıcı hormon çifti olarak gösterilmez (A yanlış). Açlık (postrezorpsiyon) fazında kan glukozu azalırken katabolik hormonlar lipolizi uyardığı için serbest yağ asitleri/lipid düzeyi düşmez, aksine yükselir (B yanlış). Postrezorpsiyonda intestinal glukoz girişi durduğu için glukoz artmaz (azalır) ve lipoliz arttığı için serbest yağ asidi düzeyi yükselir (C yanlış). Postrezorpsiyonda kan şekerini korumak amacıyla glukagon, adrenalin ve kortizol gibi karşıt-düzenleyici hormonlar azalmaz, belirgin şekilde artar (E yanlış).",
     "id": "K4_2024-2025_Q34"
   },
   {
@@ -19711,7 +19711,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "D",
     "note": null,
-    "explanation": "Hiatal hernilerde Tip 3, hem gastroözofageal bileşkenin (kardiya) hem de mide fundusunun hiatus açıklığından toraksa fıtıklaştığı mikst (sliding + rolling) hiatal herni tipidir.",
+    "explanation": "Hiatal hernilerin anatomik sınıflamasında **Tip III (mikst tip)**, hem gastroözofageal bileşkenin (**kardiya**) yukarı kaymasını hem de **mide fundusunun** diafragma hiatusundan toraksa doğru paraözofageal fıtıklaşmasını birlikte içeren tiptir (D doğru). Kolon, omentum veya dalak gibi mide dışındaki karın içi organların fıtıklaşması Tip I değil **Tip IV** hiatal hernidir (A yanlış). Kardiyanın tek başına yukarı yer değiştirmesi Tip II değil **Tip I (kayma/sliding)** hernidir (B yanlış). Sadece mide fundusunun (kardiya normal anatomik yerinde kalırken) yukarı fıtıklaşması Tip IV değil **Tip II (paraözofageal)** hernidir (C yanlış). Tip I hiatal herni mide fundusunun paraözofageal fıtıklaşması olmayıp kardiyanın aksiyel olarak yukarı kaymasıdır (E yanlış).",
     "id": "K4_2024-2025_Q48"
   },
   {
@@ -19975,7 +19975,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "Budd-Chiari şüphesinde ilk tetkik renkli Doppler USG'dir; karaciğer yağlanması USG/BT/MR ile evrelenebilir ve kist hidatikte USG altın standarttır. Periampuller tümörlerde ise en faydalı tetkik USG değil kontrastlı abdominal BT veya endosonografidir.",
+    "explanation": "I, II ve III numaralı ifadelerin üçü de doğrudur: Budd-Chiari sendromunda hepatik ven ve IVC akımını göstermede ilk tercih renkli Doppler USG'dir; karaciğer yağlanması USG, BT ve MRG ile saptanıp değerlendirilebilir; karaciğer kist hidatik hastalığında ise Gharbi/DSÖ evrelemesi ve tedavi takibi doğrudan USG ile yapılır (B doğru). A seçeneği I numaralı doğru ifadeyi dışlayıp hatalı olan IV numaralı ifadeyi içermektedir; oysa periampuller bölge tümörlerinde barsak gazı süperpozisyonu nedeniyle transabdominal USG yetersiz kalır ve en faydalı tetkikler kontrastlı dinamik BT, MRCP veya EUS'tur (A yanlış). C seçeneği doğru II'yi dışarıda bırakıp periampuller tümörlerde USG'yi en faydalı tetkik sayan hatalı IV numaralı ifadeyi içerdiği için yanlıştır (C yanlış). D seçeneği tüm ifadeleri doğru kabul ederek IV numaralı hatalı ifadeyi de kapsamaktadır; çünkü periampuller tümörlerin tanı ve evrelemesinde transabdominal USG en faydalı tetkik değildir (D yanlış). E seçeneği I ve II'yi doğru seçse de karaciğer kist hidatik hastalığının tanı ve evrelemesinde altın standart yöntemlerden biri olan III numaralı doğru ifadeyi dışladığı için eksiktir (E yanlış).",
     "id": "K4_2024-2025_Q54"
   },
   {
@@ -20248,7 +20248,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Metoklopramid D2 dopamin reseptör blokajının yanı sıra periferik enterik nöronlarda 5-HT4 reseptör aktivasyonu (prokinetik) ve yüksek dozlarda 5-HT3 reseptör blokajı (antiemetik) yapar.",
+    "explanation": "Metoklopramid, kemoreseptör triger zonda (KTZZ) D2 dopamin reseptörlerini bloke etmesine ek olarak yüksek dozlarda 5-HT3 serotonin reseptörlerini inhibe ederek antiemetik etki, enterik kolinerjik nöronlarda ise 5-HT4 reseptörlerini aktive ederek prokinetik etki gösterir (A doğru). Skopolamin NK1 (nörokinin-1) reseptörlerini aktive etmez; vestibüler sistem ve kusma merkezinde muskarinik (M1) kolinerjik reseptörleri bloke ederek taşıt tutmasında antiemetik etki sağlar (NK1 reseptörlerini bloke eden ise aprepitanttır) (B yanlış). Ondansetron H1 histamin reseptörünü aktive etmez; vagal aferentlerde ve KTZZ'deki 5-HT3 serotonin reseptörlerini selektif olarak bloke ederek emezisi önler (C yanlış). Difenhidramin (ve tuzu olan dimenhidrinat) santral H1 ve muskarinik blokajı sayesinde özellikle vestibüler kaynaklı bulantı ve taşıt tutmasında belirgin antiemetik etkiye sahiptir (D yanlış). Apomorfin bir antiemetik değil, kemoreseptör triger zondaki (KTZZ) D2 dopamin reseptörlerini uyararak şiddetli kusma başlatan güçlü bir emetik ilaçtır (E yanlış).",
     "id": "K4_2024-2025_Q62"
   },
   {
@@ -20380,7 +20380,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Birinci kuşak klasik H1 antihistaminikler yüksek lipofilik yapıları sayesinde kan-beyin bariyerini kolayca aşarak santral sinir sistemine geçer ve belirgin sedatif/antikolinerjik etki gösterirler.",
+    "explanation": "Yüksek lipofilik özellik taşıyan birinci kuşak klasik H1 antihistaminikler (difenhidramin, hidroksizin, klorfeniramin) kan-beyin bariyerini kolaylıkla geçerek santral H1 reseptörlerini bloke eder ve belirgin sedasyona yol açarlar (C doğru). Klasik antihistaminiklerin esas etki yerleri mide asit salgısında görevli H2 reseptörleri değil, alerjik yanıta aracılık eden H1 reseptörleridir (A yanlış). Hidrofilik özellikteki ikinci kuşak antihistaminikler (feksofenadin, setirizin, loratadin) santral sinir sistemine çok az geçtikleri için en fazla değil, en az sedasyona neden olan üyelerdir (B yanlış). Simetidin güçlü bir H1 agonisti değildir; mide paryetal hücrelerindeki H2 reseptörlerinin kompetitif antagonistidir (D yanlış). H2 reseptör antagonistleri (famotidin, simetidin, ranitidin) histaminin uyardığı cAMP artışını önleyerek mide asit salınımını artırmaz, aksine güçlü biçimde azaltırlar (E yanlış).",
     "id": "K4_2024-2025_Q66",
     "prof_inferred": true
   },
@@ -20456,7 +20456,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Soruda peptik ülser ve asit regülasyonu seçenekleri değerlendirilmiş olup fakülte sınav anahtarında A şıkkı işaretlenmiştir; bilimsel olarak H2 blokerleri adenilat siklazı inhibe ederek asit salınımını azaltır.",
+    "explanation": "Fakülte sınav anahtarında üç antiülser/asit düzenleyici bileşeni bir arada sayan lansoprazol + telenzepin + magnezyum sülfat seçeneği doğru olarak işaretlenmiş olsa da güncel tıpta standart H. pylori/peptik ülser üçlü tedavisi bir PPI ile birlikte klaritromisin + amoksisilin (veya metronidazol) kombinasyonudur; telenzepin ve magnezyum sülfat bu protokolün bileşeni değildir (A doğru). Somatostatin CCK reseptörlerini aktive ederek asit salınımını artırmaz; aksine G hücrelerinden gastrin ve paryetal hücrelerden asit salgısını güçlü biçimde inhibe eder (B yanlış). Sodyum bikarbonat gibi sodyum içeren antiasitler sistemik emilimleri yüksek olduğu için en az değil en fazla sistemik yan etki (metabolik alkaloz, sıvı yüklenmesi) oluştururlar (C yanlış). Proton pompa inhibitörleri muskarinik reseptörleri kompetitif bloke etmez; paryetal hücre kanaliküllerinde H⁺/K⁺-ATPaz pompasını geri dönüşümsüz inhibe ederler (D yanlış). H2 reseptör antagonistleri Gs kenetli H2 reseptörünü bloke ederek adenilat siklaz yolağını inhibe eder ve mide asit salınımını azaltır; bu ifade aynı sorunun K4_2023-2024 dönemindeki halinde de belirtildiği üzere bilimsel açıdan doğru olmasına karşın bu yılki sınav anahtarında hatalı biçimde yanlış kabul edilmiştir (E yanlış).",
     "id": "K4_2024-2025_Q68",
     "prof_inferred": true,
     "repeats": [
@@ -20615,7 +20615,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "B",
     "note": null,
-    "explanation": "**Kolagog** ilaçlar, kolesistokinin-pankreozimin (CCK-PZ) salınımını uyararak safra kesesi kasılmasını ve Oddi sfinkteri gevşemesiyle safranın duodenuma boşalmasını sağlar. Safra asidi/kolesterol oranı yüksekken değil **düşükken** kolesterol taşlaşır; koleretikler ise safra hacmini artırır.",
+    "explanation": "Kolagog ilaçlar duodenumdaki I hücrelerinden kolesistokinin-pankreozimin (CCK-PZ) hormonunun salgılanmasını uyararak safra kesesinin kasılmasını ve Oddi sfinkterinin gevşemesiyle safranın duodenuma boşalmasını sağlarlar (B doğru). Kenodeoksikolik asit (kenodiol) ve ursodeoksikolik asit bağırsaktan kolesterol reabsorpsiyonunu artırmaz; aksine safradaki kolesterol satürasyonunu, hepatik kolesterol sentezini ve bağırsaktan kolesterol emilimini azaltarak safra taşlarının çözünmesine yardımcı olur (A yanlış). Safra içinde kolesterolün çökerek kolesterol taşı oluşumuna yol açması safra asidi/kolesterol oranı yüksek kaldığında değil, kolesterolün safra asitleri ve fosfolipidlere kıyasla aşırı arttığı yani safra asidi/kolesterol oranının sürekli düşük kaldığı durumlarda gerçekleşir (C yanlış). Kolesistokinin (CCK-PZ) pankreas asiner hücrelerinden sindirim enzimlerinden zengin dış salgıyı azaltmaz, aksine kuvvetle artırır (ve mide boşalmasını yavaşlatıp asit sekresyonunu görece baskılar) (D yanlış). Koleretik ilaçlar karaciğer hücrelerinden safra itrah hızını ve safra hacmini (debisini) azaltan değil, artıran ilaçlardır (E yanlış).",
     "id": "K4_2024-2025_Q72"
   },
   {
@@ -22029,7 +22029,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "DSÖ klasik oral rehidrasyon sıvısı formülasyonu 1 litre kaynatılmış suda 3.5 g sodyum klorür, 2.5 g sodyum bikarbonat (veya 2.9 g trisodyum sitrat), 1.5 g potasyum klorür ve 20 g glukoz içerir.",
+    "explanation": "Dünya Sağlık Örgütü'nün (DSÖ) klasik oral rehidrasyon sıvısı (ORS) formülasyonu, bağırsak epitelindeki SGLT1 sodyum-glukoz kotransport mekanizmasını optimum ozmolaritede çalıştırmak üzere **1 L suya 3,5 g NaCl + 2,5 g NaHCO3 + 1,5 g KCl + 20 g glukoz** içerecek şekilde hazırlanır (A doğru). NaCl miktarını 5 g'a çıkarıp bikarbonatı 1 g ve glukozu 10 g yapmak sodyum-glukoz eş taşınım oranını bozarak hipernatremiye ve yetersiz asidoz düzeltmesine yol açar (B yanlış). NaHCO3 miktarını 5 g'a çıkarıp KCl'yi 1 g'a düşürmek metabolik alkaloza ve hipokalemiye neden olur (C yanlış). NaCl'yi 2 g'a düşürüp KCl'yi 3 g'a çıkarmak sodyum açığını kapatmazken potasyum yükünü artırarak hiperkalemi riski doğurur (D yanlış). Glukoz miktarını 40 g'a çıkarmak lümen içi ozmolariteyi aşırı yükselterek bağırsağa su çekip ozmotik ishali ağırlaştırır (E yanlış).",
     "id": "K4_2025-2026_Q7"
   },
   {
@@ -22251,7 +22251,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "**Kolesistokinin (CCK)**, safra kesesi düz kaslarını kuvvetle kasıp Oddi sfinkterini gevşeterek depolanmış safranın duodenuma boşalmasını sağlayan temel hormondur ve tanısal/terapötik amaçla safra kesesi boşalmasını kolaylaştırmada kullanılabilir. Koleretikler karaciğerden safra sekresyonunu artırırken, dijestanlar sindirimi hızlandırır.",
+    "explanation": "Kolesistokinin (CCK), safra kesesi düz kaslarını kuvvetle kasıp Oddi sfinkterini gevşeterek depolanmış safranın duodenuma boşalmasını sağlayan temel hormondur ve tanısal veya terapötik amaçla safra kesesinin boşalmasını kolaylaştırmada kullanılabilir (A doğru). Karaciğer hücrelerinden safranın itrah hızını yavaşlatıp safra hacmini azaltan değil, safra üretim ve itrah debisini artıran ilaçlar koleretik etkilidir (B yanlış). Kolagog etkili maddeler safra kesesini kasarak boşalmasını sağladıkları için safra kesesinin hacmini artırmaz, aksine azaltırlar (C yanlış). Dijestan ilaçlar sindirim olayını ve hızını yavaşlatmak için değil, pankreas veya safra yetmezliğine bağlı sindirim güçlüğünde sindirimi kolaylaştırıp hızlandırmak amacıyla kullanılır (D yanlış). Safra asidi/ekstreleri lipidleri emülsifiye edip miçel oluşturarak yağda çözünen vitaminlerin (A, D, E, K) bağırsaktan emilimini azaltmak değil, artırmak amacıyla kullanılır (E yanlış).",
     "id": "K4_2025-2026_Q13",
     "repeats": [
       {
@@ -22292,7 +22292,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Bir benzamid türevi olan **metoklopramid**, prokinetik etkisini enterik kolinerjik nöronlardaki **5-HT4 reseptörlerini aktive ederek** ve asetilkolin salınımını artırarak gösterir. Ayrıca santral ve periferik D2 dopamin reseptörlerini bloke ederek güçlü antiemetik etki gösterir ve prolaktin düzeyini yükseltir.",
+    "explanation": "Bir benzamid türevi olan metoklopramid, prokinetik etkisini enterik kolinerjik nöronlar üzerindeki 5-HT4 serotonin reseptörlerini aktive edip asetilkolin salınımını artırarak gösterir (böylece alt özofagus sfinkter tonusunu ve mide boşalmasını hızlandırır) (E doğru). Metoklopramid doğrudan antimuskarinik/antikolinerjik reseptör blokajı yapmayıp enterik kolinerjik iletiyi artırır ve antikolinerjik ilaçlarca antagonize edilir; ancak bu soruda doğrudan temel prokinetik reseptör mekanizması olan 5-HT4 aktivasyonu (E şıkkı) doğru yanıt olarak hedeflenmiştir (A yanlış). Metoklopramid hipofizde D2 reseptörlerini bloke ederek dopaminin tonik inhibisyonunu kaldırdığı için prolaktin salınımını azaltmaz, aksine artırır (hiperprolaktinemi ve galaktore yapabilir) (B yanlış). Metoklopramid kemoreseptör triger zonda ve enterik sistemde D2 dopamin reseptör aktivasyonu yapmaz, tam tersine D2 reseptörlerini bloke eden (antagonize eden) bir antidopaminerjik ajandır (C yanlış). Metoklopramid yüksek dozlarda 5-HT3 serotonin reseptörlerini aktive etmez, aksine bloke ederek (inhibe ederek) ek antiemetik etkinlik sağlar (D yanlış).",
     "id": "K4_2025-2026_Q14"
   },
   {
@@ -22585,7 +22585,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Paryetal hücrelerdeki **M3 muskarinik reseptörlerin uyarılması**, IP3/Ca²⁺ yolağını aktive ederek gastrik asit (HCl) salgısını artırır; dolayısıyla bir M3 agonisti olan **betanekol** asit üretimini daha da artıracağı için peptik ülser tedavisinde tamamen etkisizdir ve kontrendikedir.",
+    "explanation": "Paryetal hücrelerdeki muskarinik M3 reseptörlerinin uyarılması Gq/IP3/Ca²⁺ yolağını aktive ederek gastrik HCl salgısını artırır; bu nedenle bir **M3 reseptör agonisti olan betanekol** asit sekresyonunu azaltmak yerine daha da artıracağı için peptik ülser tedavisinde tamamen etkisiz ve kontrendikedir (E yanlış). H+/K+ ATPaz proton pompasının inhibisyonu peptik ülserde en güçlü asit baskılayıcı mekanizmadır (şık metnindeki 'statinlerin' ifadesi muhtemelen proton pompası inhibitörleri yerine yapılmış bir dizgi hatasıdır; gerçekte statinler kolesterol düşürücü HMG-CoA redüktaz inhibitörleridir) (A doğru). Histamin H2 reseptör blokeri ranitidin paryetal hücrede cAMP düzeyini düşürerek bazal ve uyarılmış asit salgısını etkili şekilde azaltır (B doğru). PGE analoğu mizoprostol Gi proteini üzerinden asit sekresyonunu baskılarken mukus ve bikarbonat salgısını artırarak mukozal koruma sağlar (C doğru). Selektif M1 reseptör antagonisti pirenzepin enterik sinir sisteminden asetilkolin/gastrin aracılı asit uyarısını azaltarak ülser tedavisinde etki gösterir (D doğru).",
     "id": "K4_2025-2026_Q23"
   },
   {
@@ -22684,7 +22684,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "Gastrointestinal enfeksiyon ve inflamasyon gibi benign patolojilerde simetrik, homojen ve diffüz duvar kalınlaşması gözlenir (I doğru) ve bu kalınlaşma genellikle 1 cm'nin altındadır (II doğru; malign lezyonlarda asimetrik ve belirgin kalınlaşma tipiktir). Lümen içi kitleler dolum defekti yapar; fistülde baryum kontrendikedir.",
+    "explanation": "Gastrointestinal enfeksiyon ve inflamasyon gibi benign patolojilerde duvar tutulumu genellikle çevresel, simetrik, homojen ve diffüz kalınlaşma biçimindedir (I doğru) ve bu kalınlaşma çoğu zaman 1 cm'nin altında kalır (II doğru; malign lezyonlarda ise asimetrik, eksantrik ve belirgin duvar kalınlaşması izlenir), dolayısıyla doğru öncüller I ve II'dir (A doğru). Baryumlu özefagografide özefagus duvarından lümen içine uzanan kitleler kontrast sütununda yer kaplayarak dolum fazlalığı değil dolum defekti oluşturur (dolum fazlalığı duvar dışına taşan ülser nişi veya divertiküllerde görülür); III. öncülü içerdiği için bu birleşim hatalıdır (B yanlış). Trakeoözefageal fistül düşünülen olguda baryum sülfat solunum yoluna geçerse şiddetli kimyasal pnömoni ve mediastinit gelişebileceğinden baryum sülfat kullanılmaz, suda çözünür düşük/izo-osmolar iyotlu kontrast madde tercih edilir; IV. öncülü içerdiği için bu birleşim geçersizdir (C yanlış). Doğru olan I. öncülü dışarıda bırakıp lümen içi kitlelerin dolum defekti yerine dolum fazlalığı yaptığı hatalı III. öncülünü içerdiği için bu seçenek yanlıştır (D yanlış). Doğru olan I. öncülü dışarıda bırakırken hem hatalı III. öncülü (dolum fazlalığı iddiası) hem de fistülde baryum sülfat kullanılmasını öneren kontrendike IV. öncülünü bir arada barındırdığı için bu seçenek yanlıştır (E yanlış).",
     "id": "K4_2025-2026_Q26"
   },
   {
@@ -22816,7 +22816,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "**Barrett özofagusu**, kronik gastroözofageal reflü zemininde alt özofagustaki çok katlı yassı epitelin **goblet hücreleri içeren özelleşmiş kolumnar intestinal metaplaziye** dönüşmesi tablosudur; distal özofagus adenokarsinomu gelişimi açısından en önemli premalign prekürsördür.",
+    "explanation": "**Barrett özofagusu**, kronik gastroözofageal reflü zemininde alt özofagustaki çok katlı yassı epitelin **goblet hücreleri içeren özelleşmiş kolumnar intestinal metaplaziye** dönüşmesi tablosudur ve distal özofagus adenokarsinomu açısından en önemli premalign prekürsör lezyondur (C doğru). Barrett özofagusunda skuamoz epitelin basit hiperplazisi söz konusu değildir; normal skuamoz epitelin yerini goblet hücreli kolumnar intestinal epitelin alması (metaplazi) gerçekleşir (A yanlış). Premalign bir lezyon olan Barrett özofagusunda özofagus adenokarsinomu gelişme riski azalmamış, aksine normal popülasyona kıyasla 30-40 kat belirgin şekilde artmıştır (B yanlış). Endoskopide gastroözofageal bileşkenin üzerinde somon rengi mukoza uzanımı görülmesi tek başına kesin tanı koydurmaz; tanı ve olası displazi taraması için mutlaka endoskopik biyopsi alınarak histopatolojik incelemede goblet hücreli intestinal metaplazi doğrulanmalıdır (D yanlış). Kronik asit ve safra reflüsüne bağlı geliştiği için en sık proksimal özofagusta değil, reflü hasarına en çok maruz kalan distal özofagusta yerleşir (E yanlış).",
     "id": "K4_2025-2026_Q30"
   },
   {
@@ -24298,7 +24298,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "A",
     "note": null,
-    "explanation": "HBsAg pozitifliği mevcut HBV enfeksiyonunu gösterirken, **anti-HBc IgM pozitifliği akut HBV enfeksiyonunun** en özgül ve kesin serolojik göstergesidir. Anti-HBs'nin henüz saptanmaması iyileşme fazına geçilmediğini teyit eder.",
+    "explanation": "HBsAg pozitifliği dolaşımda aktif HBV yüzey antijeninin varlığını gösterirken, **anti-HBc IgM pozitifliği akut HBV enfeksiyonunun** en özgül serolojik göstergesidir ve anti-HBs'nin henüz saptanmaması iyileşme fazına geçilmediğini teyit eder (A doğru). Kronik HBV enfeksiyonunda HBsAg 6 aydan uzun süre pozitif kalır ancak anti-HBc yanıtı IgM değil IgG (total) tipindedir; anti-HBc IgM tipik olarak negatiftir (B yanlış). Geçirilmiş doğal HBV enfeksiyonunda (iyileşme ve bağışıklık tablosunda) HBsAg kaybolur, koruyucu anti-HBs ile birlikte anti-HBc IgG pozitif saptanır ve anti-HBc IgM negatiftir (C yanlış). İnaktif taşıyıcılık kronik HBV enfeksiyonunun düşük replikasyonlu bir fazı olup HBsAg (+) yanında anti-HBc IgG (+) ve anti-HBc IgM (-) olarak izlenir (D yanlış). HBV aşısı yalnızca rekombinant HBsAg içerdiğinden aşı ile immünizasyon sonrasında sadece anti-HBs pozitifleşir; HBsAg, anti-HBc total ve anti-HBc IgM tamamen negatiftir (E yanlış).",
     "id": "K4_2025-2026_Q71"
   },
   {
@@ -24372,7 +24372,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "E",
     "note": null,
-    "explanation": "Lenfatik filaryazis (elefantiyazis) etkeni olan *Wuchereria bancrofti* mikrofilaryaları **gece periyodisitesi** gösterir ve gündüz akciğer kılcallarında bulunup yalnızca **gece saatlerinde (22:00–02:00)** periferik kana çıkarlar; kesin tanı gece alınan kanda mikrofilaryanın gösterilmesidir.",
+    "explanation": "Elefantiyazis (lenfatik filaryazis) etkeni *Wuchereria bancrofti* mikrofilaryaları gündüz akciğer kapillerlerinde sekestre olup yalnızca gece dolaşıma katıldığı için (noktürnal periyodisite), kesin tanı **gece saatlerinde alınan periferik kan yaymasının Giemsa ile boyanmasında mikrofilaryaların saptanmasıyla** konur (E doğru). Lenf nodu biyopsisi invaziv olup zaten hasar görmüş lenfatik akımı daha da bozarak lenfödemi kötüleştirebildiğinden rutin tanıda önerilmez (A yanlış). IFA ile antikor testi geçmiş teması aktif enfeksiyondan ayırt edemediği ve çapraz reaksiyon verebildiği için doğrudan doğrulayıcı yöntem değildir (B yanlış). *W. bancrofti* intestinal helmint olmadığı ve yumurta değil larva (mikrofilarya) doğurduğu için dışkının lugol ile incelenmesinde yumurtası görülmez (C yanlış). Mikrofilaryalar cilt yüzeyi sürüntüsünde değil periferik kan dolaşımında yer alır (D yanlış).",
     "id": "K4_2025-2026_Q73",
     "repeats": [
       {
@@ -24610,7 +24610,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Kırsal bölgede çıplak ayakla toprak teması sonrası deriden penetre olan filariform larvalarla bulaşan, ince bağırsakta villuslara tutunup kan emerek derin **demir eksikliği anemisi** yapan ve dışkıda ince kabuklu oval yumurtaları izlenen parazit **kancalı kurtlardır (Ancylostoma duodenale / Necator americanus)**.",
+    "explanation": "Kırsal bölgede çıplak ayakla toprak teması sonrası deriden penetre olan filariform larvalarla bulaşan, ince bağırsak villuslarına tutunup kan emerek derin **demir eksikliği anemisi** ve hipoproteinemiye bağlı ödem yapan, dışkıda ise ince kabuklu oval yumurtaları izlenen etken **kancalı kurtlardır (Ancylostoma duodenale / Necator americanus)** (C doğru). *Enterobius vermicularis* (kıl kurdu) perianal kaşıntı ve el-ağız otoenfeksiyonuyla bulaşır; belirgin demir eksikliği anemisi yapmaz ve tanısı dışkıda oval yumurta yerine selofan bant yöntemiyle bir yüzü düz D harfi biçimli yumurtaların görülmesiyle konur (A yanlış). *Taenia saginata* az pişmiş sığır etiyle bulaşsa da şiddetli demir eksikliği anemisi ve çıplak ayakla toprak teması öyküsüyle ilişkili değildir; dışkıda kalın ışınsal çizgili embriyoforlu yumurtalar ya da gebe proglottidler görülür (B yanlış). *Wuchereria bancrofti* sivrisinek sokmasıyla bulaşarak lenfatik filaryaz (elefantiyazis) yapar; dışkıda yumurta görülmez, tanı gece alınan periferik kanda mikrofilaryaların saptanmasıyla konur (D yanlış). *Strongyloides stercoralis* olgularında dışkıda rabditiform larva görülse de insana deriden penetre olan infektif form rabditiform larva değil filariform larvadır ve tipik olarak dışkıda yumurta değil larva izlenir (E yanlış).",
     "id": "K4_2025-2026_Q79"
   },
   {
@@ -24709,7 +24709,7 @@ window.KURUL_DATA["4"] = [
     ],
     "answer": "C",
     "note": null,
-    "explanation": "Toprakla doğrudan temas eden çıplak ayak derisini delerek vücuda giren filariform larvalarla bulaşan, intestinal mukozadan kan emerek kronik hipokrom mikrositer demir eksikliği anemisi oluşturan etken **Ancylostoma duodenale / Necator americanus (kancalı kurtlar)**'dur.",
+    "explanation": "Toprakla doğrudan temas eden çıplak ayak derisini delerek vücuda giren filariform larvalarla bulaşan, ince bağırsak mukozasından sürekli kan emerek derin hipokrom mikrositer demir eksikliği anemisi ile ödem oluşturan ve dışkıda ince kabuklu oval yumurtaları saptanan parazit **Ancylostoma duodenale / Necator americanus (kancalı kurtlar)**'dur (C doğru). *Enterobius vermicularis* otoenfeksiyonla bulaşmasına karşın derin demir eksikliği anemisi nedeni değildir ve selofan bantta bir yüzü basık asimetrik yumurtalarla tanınır (A yanlış). *Taenia saginata* çiğ/az pişmiş sığır etindeki sistiserkus bovis ile bulaşır; toprak temasıyla geçmez, demir eksikliği anemisine yol açmaz ve kalın çizgili kabuklu tenya yumurtaları ya da gebe halkalarla karakterizedir (B yanlış). *Wuchereria bancrofti* sivrisinek vektörlüğüyle bulaşan ve lenfatik obstrüksiyon yapan bir filarya etkenidir; dışkıda yumurtası bulunmaz ve gece periferik yaymada mikrofilarya aranarak tanınır (D yanlış). *Strongyloides stercoralis* enfeksiyonunda dışkıda rabditiform larvalar görülür ancak deriden bulaşan infektif form rabditiform değil filariform larvadır ve yumurtalar bağırsak içinde açıldığı için dışkıda ince kabuklu oval yumurta yerine larva saptanır (E yanlış).",
     "id": "K4_2025-2026_Q82"
   },
   {
