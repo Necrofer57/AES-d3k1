@@ -3,7 +3,7 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/((?!data/|assets/|.*\\..*).*)",
+      "source": "/((?!_vercel/|data/|assets/|.*\\..*).*)",
       "destination": "/index.html"
     }
   ],

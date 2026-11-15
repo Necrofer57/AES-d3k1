@@ -1,5 +1,13 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import {
+  getAuth,
+  GoogleAuthProvider,
+  setPersistence,
+  browserLocalPersistence,
+  indexedDBLocalPersistence,
+  onAuthStateChanged,
+  User,
+} from 'firebase/auth';
 import { getFirestore, doc, getDocFromServer } from 'firebase/firestore';
 
 // Safe client config with environment variable support
@@ -24,6 +32,23 @@ export const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+
+// Explicitly configure local session persistence across reloads / offline
+setPersistence(auth, indexedDBLocalPersistence).catch(() =>
+  setPersistence(auth, browserLocalPersistence).catch(() => {})
+);
+
+// Resolves once Firebase Auth finishes restoring the initial session
+export const authReadyPromise: Promise<User | null> =
+  typeof (auth as unknown as { authStateReady?: () => Promise<void> }).authStateReady === 'function'
+    ? (auth as unknown as { authStateReady: () => Promise<void> }).authStateReady().then(() => auth.currentUser)
+    : new Promise((resolve) => {
+        const unsub = onAuthStateChanged(auth, (u) => {
+          unsub();
+          resolve(u);
+        });
+      });
+
 export const googleProvider = new GoogleAuthProvider();
 
 /* CRITICAL: Must use firestoreDatabaseId per Firebase skill guidelines */

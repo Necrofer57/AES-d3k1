@@ -10,9 +10,80 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['DM Sans', 'system-ui', '-apple-system', 'sans-serif'],
+            display: ['Space Grotesk', 'DM Sans', 'system-ui', 'sans-serif'],
+            mono: ['IBM Plex Mono', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+          },
+          colors: {
+            indigo: {
+              50: '#eef5f2',
+              100: '#e4f1ed',
+              200: '#c5dcd4',
+              300: '#9ec4b8',
+              400: '#6fa494',
+              500: '#3f8475',
+              600: '#2e6f62',
+              700: '#24594e',
+              800: '#1d473f',
+              900: '#17302b',
+              950: '#0d1f1b',
+            },
+            slate: {
+              50: '#f3f7f5',
+              100: '#e6f0ec',
+              200: '#d6e2de',
+              300: '#b8ccc5',
+              400: '#7e9990',
+              500: '#5b7a72',
+              600: '#435e57',
+              700: '#2e4540',
+              800: '#1f332e',
+              900: '#17302b',
+              950: '#0d1715',
+            },
+            emerald: {
+              50: '#e4f1ed',
+              100: '#d0e8e0',
+              200: '#a8d5c6',
+              300: '#7abca7',
+              500: '#2e6f62',
+              600: '#256054',
+              700: '#1d4d43',
+              800: '#173d35',
+              900: '#122f29',
+              950: '#0a1c18',
+            },
+            rose: {
+              50: '#fbeae6',
+              100: '#f6d5cd',
+              200: '#eab3a6',
+              300: '#dc8d7b',
+              500: '#c0503a',
+              600: '#a8412d',
+              700: '#8c3524',
+              800: '#732c1e',
+              900: '#5e2419',
+              950: '#36130d',
+            },
+          },
+        },
+      },
+    };
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
   <script>
     try {
       const savedTheme = localStorage.getItem('d3_theme_v1');
@@ -23,66 +94,87 @@
   </script>
   <style>
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: #f8fafc;
-      color: #0f172a;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #f3f7f5;
+      color: #17302b;
       transition: background-color 0.2s ease, color 0.2s ease;
     }
+    h1, h2, h3, h4,
+    #home-global-kpis .text-xl,
+    #global-stats-kpis .text-2xl {
+      font-family: 'Space Grotesk', 'DM Sans', system-ui, sans-serif;
+    }
+    .font-mono, code, kbd {
+      font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+    }
+    .rounded-3xl,
+    .rounded-2xl {
+      border-radius: 0.5rem !important;
+    }
+    .rounded-xl {
+      border-radius: 0.375rem !important;
+    }
+    .shadow-xl,
+    .shadow-2xl,
+    .shadow-lg,
+    .shadow-md {
+      box-shadow: 0 1px 2px rgba(23, 48, 43, 0.05) !important;
+    }
     html.dark body {
-      background-color: #0b1120 !important;
-      color: #f1f5f9 !important;
+      background-color: #0d1715 !important;
+      color: #e6f0ed !important;
     }
     html.dark header {
-      background-color: rgba(15, 23, 42, 0.95) !important;
-      border-color: #1e293b !important;
+      background-color: rgba(19, 34, 31, 0.96) !important;
+      border-color: #233b36 !important;
     }
     html.dark .bg-white {
-      background-color: #111827 !important;
+      background-color: #13221f !important;
     }
     html.dark .bg-slate-50,
     html.dark .bg-slate-50\/50 {
-      background-color: #0f172a !important;
+      background-color: #182b27 !important;
     }
     html.dark .bg-slate-100 {
-      background-color: #1e293b !important;
+      background-color: #182b27 !important;
     }
     html.dark .border-slate-200,
     html.dark .border-slate-200\/80,
     html.dark .border-slate-300 {
-      border-color: #334155 !important;
+      border-color: #233b36 !important;
     }
     html.dark .border-slate-100 {
-      border-color: #1e293b !important;
+      border-color: #1d322d !important;
     }
     html.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
-      border-color: #1e293b !important;
+      border-color: #1d322d !important;
     }
     html.dark .text-slate-900,
     html.dark .text-slate-950 {
-      color: #f8fafc !important;
+      color: #e6f0ed !important;
     }
     html.dark .text-slate-800 {
-      color: #e2e8f0 !important;
+      color: #d3e4df !important;
     }
     html.dark .text-slate-700 {
-      color: #cbd5e1 !important;
+      color: #b7d0c9 !important;
     }
     html.dark .text-slate-600 {
-      color: #94a3b8 !important;
+      color: #8faea6 !important;
     }
     html.dark .text-slate-500,
     html.dark .text-slate-400 {
-      color: #64748b !important;
+      color: #8faea6 !important;
     }
     html.dark input,
     html.dark select {
-      background-color: #0f172a !important;
-      color: #f1f5f9 !important;
-      border-color: #334155 !important;
+      background-color: #0d1715 !important;
+      color: #e6f0ed !important;
+      border-color: #233b36 !important;
     }
     html.dark .hover\:bg-slate-50:hover,
     html.dark .hover\:bg-slate-100:hover {
-      background-color: #1e293b !important;
+      background-color: #1d3530 !important;
     }
     html.dark .bg-indigo-50,
     html.dark .bg-indigo-50\/90,
@@ -91,15 +183,15 @@
     html.dark .bg-indigo-50\/60,
     html.dark .bg-indigo-50\/40,
     html.dark .bg-indigo-100 {
-      background-color: #1e1b4b !important;
-      border-color: rgba(99, 102, 241, 0.45) !important;
+      background-color: #16332c !important;
+      border-color: rgba(61, 143, 126, 0.45) !important;
     }
     html.dark .text-indigo-700,
     html.dark .text-indigo-800,
     html.dark .text-indigo-900,
     html.dark .text-indigo-950,
     html.dark .text-indigo-900\/80 {
-      color: #e0e7ff !important;
+      color: #bfe3d9 !important;
     }
     html.dark .bg-emerald-50,
     html.dark .bg-emerald-50\/90,
@@ -107,15 +199,15 @@
     html.dark .bg-emerald-50\/70,
     html.dark .bg-emerald-50\/60,
     html.dark .bg-emerald-100 {
-      background-color: #064e3b !important;
-      border-color: rgba(16, 185, 129, 0.5) !important;
+      background-color: #143628 !important;
+      border-color: rgba(61, 143, 126, 0.5) !important;
     }
     html.dark .text-emerald-700,
     html.dark .text-emerald-800,
     html.dark .text-emerald-900,
     html.dark .text-emerald-950,
     html.dark .text-emerald-900\/80 {
-      color: #d1fae5 !important;
+      color: #c9ebe0 !important;
     }
     html.dark .bg-rose-50,
     html.dark .bg-rose-50\/90,
@@ -123,8 +215,8 @@
     html.dark .bg-rose-50\/70,
     html.dark .bg-rose-50\/60,
     html.dark .bg-rose-100 {
-      background-color: #4c0519 !important;
-      border-color: rgba(244, 63, 94, 0.5) !important;
+      background-color: #3e1712 !important;
+      border-color: rgba(192, 80, 58, 0.55) !important;
     }
     html.dark .text-rose-600,
     html.dark .text-rose-700,
@@ -132,7 +224,7 @@
     html.dark .text-rose-900,
     html.dark .text-rose-950,
     html.dark .text-rose-900\/80 {
-      color: #ffe4e6 !important;
+      color: #fbe0da !important;
     }
     html.dark .bg-amber-50,
     html.dark .bg-amber-50\/90,
@@ -140,8 +232,8 @@
     html.dark .bg-amber-50\/70,
     html.dark .bg-amber-50\/60,
     html.dark .bg-amber-100 {
-      background-color: #451a03 !important;
-      border-color: rgba(245, 158, 11, 0.5) !important;
+      background-color: #36250b !important;
+      border-color: rgba(217, 119, 6, 0.45) !important;
     }
     html.dark .text-amber-600,
     html.dark .text-amber-700,
@@ -152,29 +244,31 @@
       color: #fef3c7 !important;
     }
     html.dark .from-rose-50 {
-      background-image: linear-gradient(to right, rgba(244, 63, 94, 0.2), rgba(245, 158, 11, 0.15), rgba(244, 63, 94, 0.2)) !important;
-      border-color: rgba(244, 63, 94, 0.45) !important;
+      background-color: #3e1712 !important;
+      background-image: none !important;
+      border-color: rgba(192, 80, 58, 0.45) !important;
     }
     html.dark .from-indigo-50\/80 {
-      background-image: linear-gradient(to bottom right, rgba(79, 70, 229, 0.2), rgba(15, 23, 42, 0.95), rgba(59, 130, 246, 0.18)) !important;
+      background-color: #16332c !important;
+      background-image: none !important;
     }
     html.dark .bg-purple-50,
     html.dark .bg-purple-50\/80,
     html.dark .bg-purple-100 {
-      background-color: #3b0764 !important;
-      border-color: rgba(168, 85, 247, 0.45) !important;
+      background-color: #271b3d !important;
+      border-color: rgba(168, 85, 247, 0.4) !important;
     }
     html.dark .text-purple-700,
     html.dark .text-purple-800,
     html.dark .text-purple-900,
     html.dark .text-purple-950 {
-      color: #f3e8ff !important;
+      color: #e9d5ff !important;
     }
     html.dark .bg-cyan-50,
     html.dark .bg-cyan-50\/80,
     html.dark .bg-cyan-100 {
-      background-color: #083344 !important;
-      border-color: rgba(6, 182, 212, 0.45) !important;
+      background-color: #123138 !important;
+      border-color: rgba(61, 143, 126, 0.45) !important;
     }
     html.dark .text-cyan-700,
     html.dark .text-cyan-800,
@@ -187,33 +281,27 @@
       height: 6px;
     }
     .custom-scroll::-webkit-scrollbar-track {
-      background: #f1f5f9;
+      background: #e6f0ec;
       border-radius: 4px;
     }
     html.dark .custom-scroll::-webkit-scrollbar-track {
-      background: #0f172a;
+      background: #0d1715;
     }
     .custom-scroll::-webkit-scrollbar-thumb {
-      background: #cbd5e1;
+      background: #b8ccc5;
       border-radius: 4px;
     }
     html.dark .custom-scroll::-webkit-scrollbar-thumb {
-      background: #334155;
+      background: #233b36;
     }
     .custom-scroll::-webkit-scrollbar-thumb:hover {
-      background: #94a3b8;
+      background: #7e9990;
     }
     .option-btn {
-      transition: all 0.15s ease-in-out;
-    }
-    .option-btn:hover:not(:disabled) {
-      transform: translateY(-1px);
+      transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
     }
     .kurul-card {
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .kurul-card:hover {
-      transform: translateY(-3px);
+      transition: border-color 0.18s ease, background-color 0.18s ease;
     }
   </style>
 </head>
@@ -229,19 +317,16 @@
         </button>
 
         <button id="btn-go-home" type="button" class="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold flex items-center gap-1.5 shadow-sm transition-colors" title="Kurul Seçim Ana Sayfasına Dön">
-          <span>🏠</span>
-          <span class="hidden sm:inline">Ana Sayfa</span>
+          <span>Ana Sayfa</span>
         </button>
 
         <div class="flex items-center gap-2">
-          <div id="hdr-kurul-icon" class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-600 to-blue-600 flex items-center justify-center text-white font-bold shadow-sm shrink-0 text-lg">
-            🩺
-          </div>
+          <div id="hdr-kurul-icon" class="hidden"></div>
           <div>
             <div class="flex flex-wrap items-center gap-2">
               <h1 id="hdr-title" class="text-sm sm:text-base font-bold text-slate-900 tracking-tight">Dönem 1, 2 & 3 • Tüm Kurullar Çıkmış Sorular</h1>
               <select id="header-kurul-select" class="px-2.5 py-0.5 rounded-lg text-base sm:text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-200 outline-none cursor-pointer hover:bg-indigo-100 transition-colors" title="Hızlı Kurul Değiştir">
-                <option value="home">📋 Kurul Seçim Ekranı (Tüm Dönemler)</option>
+                <option value="home">Kurul Seçim Ekranı (Tüm Dönemler)</option>
                 <optgroup label="Dönem 1 (1. Sınıf • 3.354 Soru)">
                   <option value="d1-1">D1 • 1. Kurul (Tıbba Giriş & Hücre • 569 Soru)</option>
                   <option value="d1-2">D1 • 2. Kurul (Metabolizma • 554 Soru)</option>
@@ -276,13 +361,13 @@
       <!-- Orta: Mod Sekmeleri (Sadece Bir Kurul Seçiliyken Görünür) -->
       <div id="header-mode-tabs" class="hidden flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200">
         <button id="tab-study" type="button" class="px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-white text-indigo-700 shadow-sm">
-          📚 Çalışma Modu
+          Çalışma Modu
         </button>
         <button id="tab-exam" type="button" class="px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all text-slate-600 hover:text-slate-900">
-          ⏱️ Sınav Modu
+          Sınav Modu
         </button>
         <button id="tab-stats" type="button" class="px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all text-slate-600 hover:text-slate-900">
-          📊 Analiz & Tablo
+          Analiz & Tablo
         </button>
       </div>
 
@@ -291,36 +376,35 @@
         <!-- Kullanıcı / Giriş / Kayıt Butonu (En başta ve her ekranda görünür) -->
         <div id="auth-header-container" class="relative shrink-0">
           <button id="btn-auth-trigger" type="button" class="px-3 py-1.5 rounded-xl border border-indigo-400 bg-indigo-600 hover:bg-indigo-700 text-xs font-bold text-white shadow-md flex items-center gap-1.5 transition-all shrink-0 cursor-pointer" title="Kullanıcı Girişi / Kayıt Ol">
-            <span id="auth-btn-icon">👤</span>
+            <span id="auth-btn-icon" class="hidden"></span>
             <span id="auth-btn-text">Giriş Yap / Kayıt</span>
           </button>
         </div>
         <!-- Yönetici Paneli Butonu (Sadece Admin Hesabı Giriş Yaptığında Görünür) -->
         <button id="btn-admin-nav" type="button" class="hidden px-3 py-1.5 rounded-xl border border-amber-300 dark:border-amber-700 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs shadow-md items-center gap-1.5 transition-all shrink-0 cursor-pointer" title="Yönetici Paneli (Salt Okunur)">
-          <span>👑</span>
           <span class="inline font-black">Admin Paneli</span>
         </button>
         <!-- Öğrenci / Kullanıcı Çalışma Süresi Rozeti -->
         <div id="header-study-timer" class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-950/60 text-xs font-bold text-indigo-700 dark:text-indigo-300 shadow-sm shrink-0" title="Aktif Çalışma Süreniz">
-          <span class="animate-pulse">⏱️</span>
+          <span>Süre:</span>
           <span id="hdr-study-time">0 dk</span>
         </div>
         <div id="header-score-pill" class="hidden xl:flex items-center gap-2 bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-xl text-xs font-medium">
-          <span class="text-emerald-700 font-semibold" id="hdr-correct">✓ 0 Doğru</span>
+          <span class="text-emerald-700 font-semibold" id="hdr-correct">0 Doğru</span>
           <span class="text-slate-300">|</span>
-          <span class="text-rose-600 font-semibold" id="hdr-wrong">✗ 0 Yanlış</span>
+          <span class="text-rose-600 font-semibold" id="hdr-wrong">0 Yanlış</span>
           <span class="text-slate-300">|</span>
-          <span class="text-amber-600 font-semibold" id="hdr-fav">★ 0 Favori</span>
+          <span class="text-amber-600 font-semibold" id="hdr-fav">0 Favori</span>
         </div>
         <button id="btn-view-toggle" type="button" class="hidden px-3 py-1.5 rounded-xl border border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-xs font-bold text-indigo-700 items-center gap-1.5 shadow-sm transition-colors" title="Liste / Tek Tek Soru Görünümü Değiştir">
-          <span id="view-toggle-label">🎯 Tek Tek Soru Ekranı</span>
+          <span id="view-toggle-label">Tek Tek Soru Ekranı</span>
         </button>
         <button id="btn-theme-toggle" type="button" class="px-2.5 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 transition-colors flex items-center gap-1" title="Koyu / Açık Mod Değiştir">
-          <span id="theme-toggle-icon">🌙</span>
-          <span id="theme-toggle-text" class="hidden md:inline">Koyu Mod</span>
+          <span id="theme-toggle-icon" class="hidden"></span>
+          <span id="theme-toggle-text">Koyu Mod</span>
         </button>
         <button id="btn-open-welcome-modal" type="button" class="px-2.5 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 transition-colors" title="Uygulama Rehberi">
-          ℹ️ Rehber
+          Rehber
         </button>
         <button id="btn-open-reset-modal" type="button" class="px-2.5 py-1.5 rounded-xl border border-rose-200 bg-rose-50 hover:bg-rose-100 text-xs font-semibold text-rose-700 transition-colors" title="Çözüm Geçmişini Sıfırla">
           Sıfırla
@@ -335,13 +419,10 @@
   <section id="home-screen" class="flex-1 max-w-[1600px] w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col gap-6">
 
     <!-- ÖĞRENCİ HESABI & BULUT SENKRONİZASYON KARTI -->
-    <div id="home-auth-banner" class="rounded-3xl bg-white dark:bg-slate-900 border-2 border-indigo-200 dark:border-indigo-900/60 p-5 sm:p-6 shadow-md transition-all">
+    <div id="home-auth-banner" class="rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-5 sm:p-6 shadow-sm transition-all">
       <!-- Oturum Açık Değilken (Giriş Yap / Kayıt Ol) -->
       <div id="home-auth-logged-out" class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div class="flex items-start gap-3.5">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center text-white text-2xl shadow-md shrink-0">
-            👤
-          </div>
           <div>
             <div class="flex items-center gap-2 mb-1">
               <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">Öğrenci Hesabı & Bulut Senkronizasyonu</h3>
@@ -351,18 +432,18 @@
               E-posta adresinizle ücretsiz hesap oluşturun; işaretlediğiniz <strong>favori soruları</strong> ve <strong>sınav puanlarınızı</strong> tüm cihazlarınızda kaybetmeden senkronize edin.
             </p>
             <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-700/60 text-amber-900 dark:text-amber-200 text-xs font-bold">
-              <span>🔒 Zorunlu Giriş:</span>
+              <span>Zorunlu Giriş:</span>
               <span>Çıkmış soru çözmek ve cevap şıklarını işaretlemek için üye girişi gerekmektedir.</span>
             </div>
           </div>
         </div>
 
         <div class="flex flex-wrap items-center gap-2.5 shrink-0 w-full md:w-auto">
-          <button id="btn-home-open-register" type="button" class="flex-1 md:flex-none px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white text-xs sm:text-sm font-bold shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
-            <span>✨ E-posta ile Kayıt Ol</span>
+          <button id="btn-home-open-register" type="button" class="flex-1 md:flex-none px-4 py-2.5 rounded-md bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold shadow-sm transition-colors flex items-center justify-center gap-2 cursor-pointer">
+            <span>E-posta ile Kayıt Ol</span>
           </button>
-          <button id="btn-home-open-login" type="button" class="flex-1 md:flex-none px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-bold shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer">
-            <span>🔑 Giriş Yap</span>
+          <button id="btn-home-open-login" type="button" class="flex-1 md:flex-none px-4 py-2.5 rounded-md border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 text-xs sm:text-sm font-bold shadow-sm transition-colors flex items-center justify-center gap-2 cursor-pointer">
+            <span>Giriş Yap</span>
           </button>
         </div>
       </div>
@@ -371,9 +452,6 @@
       <div id="home-auth-logged-in" class="hidden flex flex-col gap-4">
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div class="flex items-center gap-3.5">
-            <div class="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-xl font-bold shadow-md shrink-0">
-              ✓
-            </div>
             <div>
               <div class="flex items-center gap-2 mb-1">
                 <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100">
@@ -392,7 +470,7 @@
 
           <div class="flex items-center gap-2 shrink-0">
             <button id="btn-home-open-profile" type="button" class="px-3.5 py-2 rounded-xl border border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 text-xs font-bold text-indigo-700 dark:text-indigo-300 transition-colors flex items-center gap-1.5 cursor-pointer">
-              <span>⚙️ Hesap Detayları</span>
+              <span>Hesap Detayları</span>
             </button>
             <button id="btn-home-logout" type="button" class="px-3.5 py-2 rounded-xl border border-rose-200 dark:border-rose-900 bg-rose-50 dark:bg-rose-950/40 hover:bg-rose-100 text-xs font-bold text-rose-700 dark:text-rose-300 transition-colors cursor-pointer">
               Çıkış
@@ -403,15 +481,15 @@
         <!-- Öğrenci Çalışma Süresi & Anlık Aktivite Özeti -->
         <div class="pt-3 border-t border-slate-100 dark:border-slate-800 grid grid-cols-2 sm:grid-cols-3 gap-2.5">
           <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60">
-            <div class="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400">⏱️ Toplam Çalışma Süresi</div>
+            <div class="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400">Toplam Çalışma Süresi</div>
             <div id="home-study-total" class="text-sm sm:text-base font-extrabold text-indigo-600 dark:text-indigo-400 mt-0.5">0 dk</div>
           </div>
           <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60">
-            <div class="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400">⚡ Bu Oturumdaki Çalışma</div>
+            <div class="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400">Bu Oturumdaki Çalışma</div>
             <div id="home-study-session" class="text-sm sm:text-base font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5">0 dk</div>
           </div>
           <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60 col-span-2 sm:col-span-1">
-            <div class="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400">🟢 Aktivite Durumu</div>
+            <div class="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400">Aktivite Durumu</div>
             <div id="home-study-status" class="text-xs font-bold text-emerald-700 dark:text-emerald-300 flex items-center gap-1.5 mt-1">
               <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               <span>Aktif Çalışılıyor</span>
@@ -423,9 +501,6 @@
       <!-- Yalnızca Yetkili Admin (sezgin45efe@gmail.com) İçin Hızlı Yönetici Paneli Kartı -->
       <div id="home-admin-box" class="hidden mt-4 pt-4 border-t border-amber-200 dark:border-amber-900/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-amber-500/10 -mx-5 -mb-5 p-4 rounded-b-3xl">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-amber-500 text-slate-950 font-black flex items-center justify-center text-lg shadow-md shrink-0">
-            👑
-          </div>
           <div>
             <div class="text-xs sm:text-sm font-bold text-amber-950 dark:text-amber-200 flex items-center gap-2">
               <span>Yetkili Yönetici Hesabı (Salt Okunur İzleme)</span>
@@ -437,22 +512,22 @@
           </div>
         </div>
         <button id="btn-home-go-admin" type="button" class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-black text-xs shadow-md transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer">
-          <span>👑 Yönetici Panelini Aç</span>
+          <span>Yönetici Panelini Aç</span>
           <span>→</span>
         </button>
       </div>
     </div>
     <!-- Üst Karşılama & Genel İlerleme Kartı -->
-    <div class="rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white p-6 sm:p-8 shadow-xl border border-slate-800 relative overflow-hidden">
+    <div class="rounded-lg bg-white border border-slate-200 text-slate-900 p-6 sm:p-7 shadow-sm relative overflow-hidden">
       <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div class="space-y-2 max-w-2xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-200 text-xs font-bold">
-            <span>🎓 Dönem 1 • Dönem 2 • Dönem 3 Soru Bankası</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-bold">
+            <span>Dönem 1 • Dönem 2 • Dönem 3 Soru Bankası</span>
             <span>•</span>
-            <span>2018–2026</span>
+            <span class="font-mono">2018–2026</span>
           </div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Hangi Dönem ve Kurula Çalışmak İstiyorsunuz?</h2>
-          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Hangi Dönem ve Kurula Çalışmak İstiyorsunuz?</h2>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
             <strong>1., 2. ve 3. Sınıf</strong> tüm kurul, final, bütünleme, pratik/lab ve öğrenci hatırlaması çıkmış sorular; yıl, ders, hoca ve <strong>tekrar eden çıkmış soru</strong> filtreleriyle tek platformda.
           </p>
         </div>
@@ -462,22 +537,22 @@
       </div>
 
       <!-- Dönem Seçici Sekmeler -->
-      <div class="relative z-10 mt-6 pt-5 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+      <div class="relative z-10 mt-6 pt-5 border-t border-slate-200 flex flex-wrap items-center justify-between gap-3">
         <div class="flex flex-wrap items-center gap-2" id="home-donem-tabs">
-          <button type="button" data-donem-tab="all" class="donem-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all bg-white text-slate-900 shadow-sm">
-            🏛️ Tüm Dönemler (12.016)
+          <button type="button" data-donem-tab="all" class="donem-tab-btn px-4 py-2 rounded-md text-xs sm:text-sm font-bold transition-colors bg-indigo-600 text-white shadow-sm">
+            Tüm Dönemler (12.016)
           </button>
-          <button type="button" data-donem-tab="1" class="donem-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white/10 hover:bg-white/20 text-white border border-white/15">
-            1️⃣ Dönem 1 • 1. Sınıf (3.354)
+          <button type="button" data-donem-tab="1" class="donem-tab-btn px-4 py-2 rounded-md text-xs sm:text-sm font-semibold transition-colors bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200">
+            Dönem 1 • 1. Sınıf (3.354)
           </button>
-          <button type="button" data-donem-tab="2" class="donem-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white/10 hover:bg-white/20 text-white border border-white/15">
-            2️⃣ Dönem 2 • 2. Sınıf (3.994)
+          <button type="button" data-donem-tab="2" class="donem-tab-btn px-4 py-2 rounded-md text-xs sm:text-sm font-semibold transition-colors bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200">
+            Dönem 2 • 2. Sınıf (3.994)
           </button>
-          <button type="button" data-donem-tab="3" class="donem-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white/10 hover:bg-white/20 text-white border border-white/15">
-            3️⃣ Dönem 3 • 3. Sınıf (4.668)
+          <button type="button" data-donem-tab="3" class="donem-tab-btn px-4 py-2 rounded-md text-xs sm:text-sm font-semibold transition-colors bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200">
+            Dönem 3 • 3. Sınıf (4.668)
           </button>
         </div>
-        <span class="text-xs text-indigo-200 font-medium">💡 Eksik şıklı / hatırlanan ve pratik sorular özel rozetlerle işaretlenmiştir</span>
+        <span class="text-xs text-slate-500 font-medium">Eksik şıklı / hatırlanan ve pratik sorular özel rozetlerle işaretlenmiştir</span>
       </div>
     </div>
 
@@ -495,17 +570,17 @@
       <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 flex flex-col gap-4">
 
         <!-- Aktif Kurul Bilgi Bandı & Kurul Değiştirme -->
-        <div class="p-3 rounded-xl bg-slate-900 text-white flex items-center justify-between gap-2">
+        <div class="p-3 rounded-lg bg-indigo-50 border border-indigo-200 text-slate-900 flex items-center justify-between gap-2">
           <div class="min-w-0">
-            <div class="text-[10px] font-bold uppercase tracking-wider text-indigo-300" id="sidebar-kurul-code">D3K1 • AKTİF KURUL</div>
-            <div class="text-xs sm:text-sm font-extrabold truncate" id="sidebar-kurul-title">1. Kurul</div>
+            <div class="text-[10px] font-bold font-mono uppercase tracking-wider text-indigo-700" id="sidebar-kurul-code">D3K1 • AKTİF KURUL</div>
+            <div class="text-xs sm:text-sm font-bold text-slate-900 truncate" id="sidebar-kurul-title">1. Kurul</div>
           </div>
           <div class="flex items-center gap-1.5 shrink-0">
-            <button id="btn-sidebar-kurul-info" type="button" class="px-2 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 border border-amber-400/30 text-xs font-bold transition-colors" title="Bu Kurulun Eksik Yıl ve Soru Durumu">
-              📋 Arşiv
+            <button id="btn-sidebar-kurul-info" type="button" class="px-2 py-1.5 rounded-md bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 text-xs font-bold transition-colors" title="Bu Kurulun Eksik Yıl ve Soru Durumu">
+              Arşiv
             </button>
-            <button id="btn-sidebar-change-kurul" type="button" class="px-2.5 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 text-white text-xs font-bold transition-colors">
-              ⇄ Kurul Seç
+            <button id="btn-sidebar-change-kurul" type="button" class="px-2.5 py-1.5 rounded-md bg-white hover:bg-slate-50 text-indigo-700 border border-indigo-200 text-xs font-bold transition-colors">
+              Kurul Seç
             </button>
           </div>
         </div>
@@ -517,8 +592,7 @@
             <button id="btn-reset-all-filters" type="button" class="text-xs font-semibold text-indigo-600 hover:text-indigo-800">Tüm Filtreleri Temizle</button>
           </div>
           <div class="relative">
-            <input id="search-input" type="text" placeholder="Soru metni, şık, hastalık, ilaç ara..." class="w-full pl-9 pr-8 py-2 text-sm rounded-xl border border-slate-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none" />
-            <svg class="w-4 h-4 text-slate-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            <input id="search-input" type="text" placeholder="Soru metni, şık, hastalık, ilaç ara..." class="w-full px-3 pr-8 py-2 text-sm rounded-xl border border-slate-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none" />
             <button id="btn-clear-search" type="button" class="hidden absolute right-2.5 top-2 text-slate-400 hover:text-slate-600 text-sm font-bold">✕</button>
           </div>
         </div>
@@ -529,16 +603,16 @@
             <label for="status-filter" class="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">Durum Filtresi</label>
             <select id="status-filter" class="w-full px-2.5 py-1.5 text-xs font-medium rounded-xl border border-slate-300 bg-white focus:border-indigo-500 outline-none">
               <option value="all">Tüm Sorular</option>
-              <option value="repeated">🔁 Tekrar Eden Sorular</option>
-              <option value="complete">✅ Orijinal Sınav Soruları</option>
-              <option value="ai_options">🤖 AI ile Şıklandırılanlar</option>
-              <option value="ai_answer">✨ AI Cevap Anahtarlılar</option>
-              <option value="incomplete">📝 Hatırlanan / Açık Uçlu / Eksikler</option>
+              <option value="repeated">Tekrar Eden Sorular</option>
+              <option value="complete">Orijinal Sınav Soruları</option>
+              <option value="ai_options">AI ile Şıklandırılanlar</option>
+              <option value="ai_answer">AI Cevap Anahtarlılar</option>
+              <option value="incomplete">Hatırlanan / Açık Uçlu / Eksikler</option>
               <option value="unanswered">Çözülmemişler</option>
               <option value="wrong">Yanlış Yaptıklarım</option>
               <option value="correct">Doğru Yaptıklarım</option>
-              <option value="fav">⭐ Favorilerim</option>
-              <option value="image">🖼️ Görselli Sorular</option>
+              <option value="fav">Favorilerim</option>
+              <option value="image">Görselli Sorular</option>
             </select>
           </div>
           <div>
@@ -546,8 +620,8 @@
             <select id="sort-order" class="w-full px-2.5 py-1.5 text-xs font-medium rounded-xl border border-slate-300 bg-white focus:border-indigo-500 outline-none">
               <option value="default">Yıl & Soru No (Sıralı)</option>
               <option value="year_desc">Yeniden Eskiye (25-26 → 19-20)</option>
-              <option value="repeat_desc">🔥 En Çok Tekrar Edene Göre</option>
-              <option value="random">🎲 Rastgele Karıştır</option>
+              <option value="repeat_desc">En Çok Tekrar Edene Göre</option>
+              <option value="random">Rastgele Karıştır</option>
             </select>
           </div>
         </div>
@@ -556,7 +630,7 @@
         <div class="border border-slate-200 rounded-xl overflow-hidden">
           <div class="bg-slate-50 px-3 py-2 border-b border-slate-200 flex items-center justify-between">
             <div class="flex items-center gap-1.5">
-              <span class="text-xs font-bold text-slate-800 uppercase tracking-wide">📅 1. Yıl Seçimi</span>
+              <span class="text-xs font-bold text-slate-800 uppercase tracking-wide">1. Yıl Seçimi</span>
               <span id="badge-year-count" class="text-[11px] font-semibold px-1.5 py-0.5 rounded-md bg-indigo-100 text-indigo-700">7/7</span>
             </div>
             <div class="flex items-center gap-2 text-xs">
@@ -572,7 +646,7 @@
         <div class="border border-slate-200 rounded-xl overflow-hidden">
           <div class="bg-slate-50 px-3 py-2 border-b border-slate-200 flex items-center justify-between">
             <div class="flex items-center gap-1.5">
-              <span class="text-xs font-bold text-slate-800 uppercase tracking-wide">🩺 2. Ders Seçimi</span>
+              <span class="text-xs font-bold text-slate-800 uppercase tracking-wide">2. Ders Seçimi</span>
               <span id="badge-subj-count" class="text-[11px] font-semibold px-1.5 py-0.5 rounded-md bg-indigo-100 text-indigo-700">Tümü</span>
             </div>
             <div class="flex items-center gap-2 text-xs">
@@ -588,7 +662,7 @@
         <div class="border border-slate-200 rounded-xl overflow-hidden">
           <div class="bg-slate-50 px-3 py-2 border-b border-slate-200 flex items-center justify-between">
             <div class="flex items-center gap-1.5">
-              <span class="text-xs font-bold text-slate-800 uppercase tracking-wide">👨‍⚕️ 3. Hoca Seçimi</span>
+              <span class="text-xs font-bold text-slate-800 uppercase tracking-wide">3. Hoca Seçimi</span>
               <span id="badge-prof-count" class="text-[11px] font-semibold px-1.5 py-0.5 rounded-md bg-indigo-100 text-indigo-700">Tümü</span>
             </div>
             <div class="flex items-center gap-2 text-xs">
@@ -636,52 +710,51 @@
         <div class="flex flex-wrap items-center gap-2">
           <div class="inline-flex items-center bg-slate-100 p-1 rounded-xl border border-slate-200">
             <button id="btn-toolbar-list" type="button" class="px-2.5 py-1 rounded-lg text-xs font-bold transition-all bg-white text-indigo-700 shadow-sm">
-              📋 Liste Görünümü
+              Liste Görünümü
             </button>
             <button id="btn-toolbar-single" type="button" class="px-2.5 py-1 rounded-lg text-xs font-semibold transition-all text-slate-600 hover:text-slate-900">
-              🎯 Tek Tek Soru
+              Tek Tek Soru
             </button>
           </div>
           <button id="btn-shuffle-now" type="button" class="px-3 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 transition-colors">
-            🎲 Karıştır
+            Karıştır
           </button>
           <button id="btn-reveal-all" type="button" class="px-3 py-1.5 rounded-xl border border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-xs font-semibold text-indigo-700 transition-colors">
-            👁️ Tüm Cevapları Göster
+            Tüm Cevapları Göster
           </button>
           <button id="btn-reset-filtered" type="button" class="px-3 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-rose-50 hover:text-rose-700 hover:border-rose-200 text-xs font-semibold text-slate-600 transition-colors">
-            🔄 Bu Filtreyi Sıfırla
+            Bu Filtreyi Sıfırla
           </button>
         </div>
       </div>
 
       <!-- SINAV MODU KONTROL BARI -->
-      <div id="exam-toolbar" class="hidden bg-gradient-to-r from-indigo-900 via-indigo-800 to-blue-900 text-white rounded-2xl shadow-md p-4 flex flex-wrap items-center justify-between gap-4">
+      <div id="exam-toolbar" class="hidden bg-white border border-indigo-200 text-slate-900 rounded-lg shadow-sm p-4 flex flex-wrap items-center justify-between gap-4">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center text-xl">⏱️</div>
           <div>
-            <h2 class="text-sm sm:text-base font-bold">Deneme Sınavı Simülasyonu</h2>
-            <p id="exam-status-subtitle" class="text-xs text-indigo-200">Seçtiğiniz kategorilerden gerçek sınav modunda kendinizi test edin (cevaplar sınav sonunda açılır).</p>
+            <h2 class="text-sm sm:text-base font-bold text-slate-900">Deneme Sınavı Simülasyonu</h2>
+            <p id="exam-status-subtitle" class="text-xs text-slate-600">Seçtiğiniz kategorilerden gerçek sınav modunda kendinizi test edin (cevaplar sınav sonunda açılır).</p>
           </div>
         </div>
         <div class="flex flex-wrap items-center gap-2.5">
           <div id="exam-setup-controls" class="flex flex-wrap items-center gap-2">
-            <label for="exam-q-count" class="text-xs text-indigo-200 font-medium">Soru Sayısı:</label>
-            <select id="exam-q-count" class="px-2.5 py-1.5 rounded-xl text-xs font-bold bg-white/10 border border-white/20 text-white outline-none">
+            <label for="exam-q-count" class="text-xs text-slate-600 font-semibold">Soru Sayısı:</label>
+            <select id="exam-q-count" class="px-2.5 py-1.5 rounded-md text-xs font-bold bg-slate-50 border border-slate-200 text-slate-900 outline-none">
               <option value="20" class="text-slate-900">20 Soru</option>
               <option value="50" class="text-slate-900">50 Soru</option>
               <option value="100" selected class="text-slate-900">100 Soru (Tam Kurul)</option>
               <option value="all" class="text-slate-900">Tüm Filtrelenenler</option>
             </select>
-            <button id="btn-start-exam" type="button" class="px-4 py-1.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-sm transition-colors">
-              ▶️ Sınavı Başlat
+            <button id="btn-start-exam" type="button" class="px-4 py-1.5 rounded-md bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-sm transition-colors">
+              Sınavı Başlat
             </button>
           </div>
           <div id="exam-active-controls" class="hidden flex items-center gap-3">
-            <div class="px-3 py-1.5 rounded-xl bg-white/10 border border-white/20 font-mono text-sm font-bold tracking-wider" id="exam-timer-display">
+            <div class="px-3 py-1.5 rounded-md bg-indigo-50 border border-indigo-200 text-indigo-800 font-mono text-sm font-bold tracking-wider" id="exam-timer-display">
               00:00
             </div>
-            <button id="btn-finish-exam" type="button" class="px-4 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs shadow-sm transition-colors">
-              🏁 Sınavı Bitir & Sonucu Gör
+            <button id="btn-finish-exam" type="button" class="px-4 py-1.5 rounded-md bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs shadow-sm transition-colors">
+              Sınavı Bitir & Sonucu Gör
             </button>
           </div>
         </div>
@@ -696,7 +769,7 @@
           </div>
           <div class="flex flex-wrap items-center gap-2">
             <button id="btn-new-exam" type="button" class="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition-colors">Yeni Sınav Oluştur</button>
-            <button id="btn-review-wrong-exam" type="button" class="px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold shadow-sm transition-colors" title="Sadece yanlış veya boş bıraktığınız soruları sırayla inceleyin">⚠️ Yanlış ve Boş Soruları İncele</button>
+            <button id="btn-review-wrong-exam" type="button" class="px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold shadow-sm transition-colors" title="Sadece yanlış veya boş bıraktığınız soruları sırayla inceleyin">Yanlış ve Boş Soruları İncele</button>
             <button id="btn-close-exam-res" type="button" class="px-3 py-1.5 rounded-xl border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-semibold transition-colors">Tüm Soruları İncele</button>
           </div>
         </div>
@@ -726,7 +799,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <!-- Yıllara Göre Tablo -->
             <div>
-              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">📅 Yıllara Göre Dağılım ve Başarı</h3>
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Yıllara Göre Dağılım ve Başarı</h3>
               <div class="border border-slate-200 rounded-xl overflow-hidden">
                 <table class="w-full text-left border-collapse text-xs">
                   <thead>
@@ -746,7 +819,7 @@
 
             <!-- Derslere Göre Tablo -->
             <div>
-              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">🩺 Derslere Göre Dağılım ve Başarı</h3>
+              <h3 class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Derslere Göre Dağılım ve Başarı</h3>
               <div class="border border-slate-200 rounded-xl overflow-hidden">
                 <table class="w-full text-left border-collapse text-xs">
                   <thead>
@@ -767,7 +840,7 @@
 
           <!-- Hocalara Göre Tablo -->
           <div class="mt-6">
-            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">👨‍⚕️ Hocalara Göre Soru Dağılımı ve Başarı</h3>
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-2">Hocalara Göre Soru Dağılımı ve Başarı</h3>
             <div class="border border-slate-200 rounded-xl overflow-hidden">
               <table class="w-full text-left border-collapse text-xs">
                 <thead>
@@ -794,7 +867,7 @@
     <aside id="right-map-panel" class="w-full lg:w-64 xl:w-72 shrink-0 flex flex-col gap-3">
       <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 sticky top-16">
         <div class="flex items-center justify-between mb-2">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700">🧭 Soru Haritası (Optik)</h3>
+          <h3 class="text-xs font-bold uppercase tracking-wider text-slate-700">Soru Haritası (Optik)</h3>
           <span id="map-progress-text" class="text-[11px] font-semibold text-slate-500">0 / 0</span>
         </div>
         <div class="flex flex-wrap items-center gap-2 text-[10px] text-slate-500 mb-3 pb-2 border-b border-slate-100">
@@ -805,7 +878,7 @@
         </div>
         <div id="question-map-grid" class="grid grid-cols-6 sm:grid-cols-8 lg:grid-cols-5 xl:grid-cols-6 gap-1.5 max-h-[60vh] overflow-y-auto custom-scroll p-0.5"></div>
         <div class="mt-3 pt-2.5 border-t border-slate-100 text-[11px] text-slate-500 space-y-1">
-          <div class="font-semibold text-slate-700">⌨️ Klavye Kısayolları (Tek Soru):</div>
+          <div class="font-semibold text-slate-700">Klavye Kısayolları (Tek Soru):</div>
           <div><kbd class="px-1.5 py-0.5 bg-slate-100 border rounded text-[10px]">←</kbd> <kbd class="px-1.5 py-0.5 bg-slate-100 border rounded text-[10px]">→</kbd> Önceki / Sonraki Soru</div>
           <div><kbd class="px-1.5 py-0.5 bg-slate-100 border rounded text-[10px]">A</kbd>-<kbd class="px-1.5 py-0.5 bg-slate-100 border rounded text-[10px]">E</kbd> veya <kbd class="px-1.5 py-0.5 bg-slate-100 border rounded text-[10px]">1</kbd>-<kbd class="px-1.5 py-0.5 bg-slate-100 border rounded text-[10px]">5</kbd> Şık Seç</div>
           <div><kbd class="px-1.5 py-0.5 bg-slate-100 border rounded text-[10px]">G</kbd> Cevabı Göster • <kbd class="px-1.5 py-0.5 bg-slate-100 border rounded text-[10px]">F</kbd> Favori</div>
@@ -821,26 +894,26 @@
   <section id="admin-screen" class="hidden flex-1 max-w-[1600px] w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col gap-6">
 
     <!-- Üst Başlık Kartı -->
-    <div class="rounded-3xl bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-950 text-white p-6 sm:p-8 shadow-xl border border-slate-700/60 relative overflow-hidden">
+    <div class="rounded-lg bg-white text-slate-900 p-6 sm:p-7 shadow-sm border border-slate-200 relative overflow-hidden">
       <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5">
         <div class="space-y-2">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs font-bold">
-            <span>👑 Yönetici Hesabı: sezgin45efe@gmail.com</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-800 text-xs font-bold">
+            <span>Yönetici Hesabı: sezgin45efe@gmail.com</span>
             <span>•</span>
-            <span class="text-amber-200">🔒 Salt Okunur / Read-Only</span>
+            <span>Salt Okunur / Read-Only</span>
           </div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Platform Denetim & Kullanıcı İstatistikleri</h2>
-          <p class="text-slate-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900">Platform Denetim & Kullanıcı İstatistikleri</h2>
+          <p class="text-slate-600 text-xs sm:text-sm max-w-2xl leading-relaxed">
             Kayıtlı öğrencileri, toplam çözülen soru sayılarını ve kurul analitiklerini izleyebilirsiniz. Güvenlik gereği veriler salt okunurdur; hiçbir öğrenci verisi veya soru içeriği değiştirilemez.
           </p>
         </div>
 
         <div class="flex flex-wrap items-center gap-2.5 shrink-0">
-          <button id="btn-admin-back-home" type="button" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/20 text-xs sm:text-sm font-bold shadow-sm transition-all flex items-center gap-2 cursor-pointer">
+          <button id="btn-admin-back-home" type="button" class="px-4 py-2.5 rounded-md bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 text-xs sm:text-sm font-bold shadow-sm transition-colors flex items-center gap-2 cursor-pointer">
             <span>← Ana Sayfaya Dön</span>
           </button>
-          <button id="btn-admin-refresh" type="button" class="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-bold shadow-md transition-all flex items-center gap-2 cursor-pointer">
-            <span>🔄 Verileri Yenile</span>
+          <button id="btn-admin-refresh" type="button" class="px-4 py-2.5 rounded-md bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold shadow-sm transition-colors flex items-center gap-2 cursor-pointer">
+            <span>Verileri Yenile</span>
           </button>
         </div>
       </div>
@@ -851,16 +924,14 @@
       <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
         <div class="flex items-center justify-between text-slate-500 dark:text-slate-400 mb-2">
           <span class="text-xs font-bold uppercase tracking-wider">Kayıtlı Öğrenci</span>
-          <span class="text-base">👥</span>
         </div>
         <div class="text-2xl font-black text-slate-900 dark:text-slate-100" id="admin-stat-users-count">5+</div>
-        <div class="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold mt-1">✓ Firestore Verisi</div>
+        <div class="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold mt-1">Firestore Verisi</div>
       </div>
 
       <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-emerald-200 dark:border-emerald-900/60 shadow-sm flex flex-col justify-between">
         <div class="flex items-center justify-between text-emerald-600 dark:text-emerald-400 mb-2">
           <span class="text-xs font-bold uppercase tracking-wider">Şu An Aktif</span>
-          <span class="text-base">🟢</span>
         </div>
         <div class="text-2xl font-black text-emerald-600 dark:text-emerald-400" id="admin-stat-active-count">1 Aktif</div>
         <div class="text-[11px] text-emerald-700/80 dark:text-emerald-300/80 font-semibold mt-1">Canlı Çalışanlar</div>
@@ -869,7 +940,6 @@
       <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-indigo-200 dark:border-indigo-900/60 shadow-sm flex flex-col justify-between">
         <div class="flex items-center justify-between text-indigo-600 dark:text-indigo-400 mb-2">
           <span class="text-xs font-bold uppercase tracking-wider">Toplam Çalışma</span>
-          <span class="text-base">⏱️</span>
         </div>
         <div class="text-2xl font-black text-indigo-600 dark:text-indigo-400" id="admin-stat-total-study-time">48 sa 50 dk</div>
         <div class="text-[11px] text-indigo-700/80 dark:text-indigo-300/80 font-semibold mt-1">Tüm Öğrenciler</div>
@@ -878,7 +948,6 @@
       <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
         <div class="flex items-center justify-between text-slate-500 dark:text-slate-400 mb-2">
           <span class="text-xs font-bold uppercase tracking-wider">Soru Havuzu</span>
-          <span class="text-base">📚</span>
         </div>
         <div class="text-2xl font-black text-slate-900 dark:text-slate-100" id="admin-stat-total-q">12.016</div>
         <div class="text-[11px] text-slate-500 font-semibold mt-1">18 Kurul & Final</div>
@@ -887,7 +956,6 @@
       <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col justify-between">
         <div class="flex items-center justify-between text-slate-500 dark:text-slate-400 mb-2">
           <span class="text-xs font-bold uppercase tracking-wider">Favoriler</span>
-          <span class="text-base">⭐</span>
         </div>
         <div class="text-2xl font-black text-amber-500" id="admin-stat-total-favs">1.480+</div>
         <div class="text-[11px] text-slate-500 font-semibold mt-1">Yıldızlı Sorular</div>
@@ -896,7 +964,6 @@
       <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-900/60 shadow-sm flex flex-col justify-between">
         <div class="flex items-center justify-between text-amber-600 dark:text-amber-400 mb-2">
           <span class="text-xs font-bold uppercase tracking-wider">Yetki</span>
-          <span class="text-base">🛡️</span>
         </div>
         <div class="text-xl font-black text-amber-600 dark:text-amber-400">Salt Okunur</div>
         <div class="text-[11px] text-slate-500 font-semibold mt-1">İzleme Modu</div>
@@ -909,19 +976,18 @@
       <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-4">
         <div class="flex items-center gap-2 bg-slate-100 dark:bg-slate-800 p-1 rounded-2xl">
           <button id="admin-tab-users-btn" type="button" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 shadow-sm cursor-pointer">
-            👥 Kayıtlı Öğrenciler (<span id="admin-users-badge-count">5</span>)
+            Kayıtlı Öğrenciler (<span id="admin-users-badge-count">5</span>)
           </button>
           <button id="admin-tab-analytics-btn" type="button" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer">
-            📊 Kurul & Soru Dağılımı
+            Kurul & Soru Dağılımı
           </button>
           <button id="admin-tab-security-btn" type="button" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer">
-            🛡️ Güvenlik & Yetki
+            Güvenlik & Yetki
           </button>
         </div>
 
         <div id="admin-users-search-container" class="relative w-full sm:w-72">
-          <input id="admin-user-search-input" type="text" placeholder="Öğrenci adı veya e-posta ara..." class="w-full pl-9 pr-4 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs sm:text-sm text-slate-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-indigo-500" />
-          <span class="absolute left-3 top-2.5 text-slate-400 text-xs">🔍</span>
+          <input id="admin-user-search-input" type="text" placeholder="Öğrenci adı veya e-posta ara..." class="w-full px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-xs sm:text-sm text-slate-900 dark:text-slate-100 outline-none focus:ring-2 focus:ring-indigo-500" />
         </div>
       </div>
 
@@ -932,7 +998,7 @@
             Platformda hesap açmış kullanıcıların aktiflik ve çalışma süreleriyle salt okunur kayıtları listelenmektedir.
           </p>
           <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
-            👁️ Salt Okunur İzleme Modu
+            Salt Okunur İzleme Modu
           </span>
         </div>
 
@@ -948,8 +1014,8 @@
               <tr>
                 <th class="p-3.5">Kullanıcı (İsim & E-posta)</th>
                 <th class="p-3.5">E-posta Adresi</th>
-                <th class="p-3.5">⏱️ Çalışma Süresi</th>
-                <th class="p-3.5">🟢 Aktiflik / Son Görülme</th>
+                <th class="p-3.5">Çalışma Süresi</th>
+                <th class="p-3.5">Aktiflik / Son Görülme</th>
                 <th class="p-3.5">Kayıt Tarihi</th>
                 <th class="p-3.5 text-right">Rol & Durum</th>
               </tr>
@@ -1029,15 +1095,15 @@
           <div class="font-bold text-sm text-slate-900 dark:text-slate-100">Yetkilendirme ve Kısıtlama Kuralları</div>
           <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-300">
             <li class="flex items-start gap-2">
-              <span class="text-emerald-500 font-bold">✓</span>
+              <span class="text-emerald-500 font-bold">•</span>
               <span><strong>Yetkili Yönetici:</strong> <code class="px-1.5 py-0.5 rounded bg-white dark:bg-slate-900 border">sezgin45efe@gmail.com</code> (Kimlik doğrulama belirteci ile eşleştiğinde admin görünümü açılır).</span>
             </li>
             <li class="flex items-start gap-2">
-              <span class="text-amber-500 font-bold">🔒</span>
+              <span class="text-amber-500 font-bold">•</span>
               <span><strong>Salt Okunur (Read-Only):</strong> Kullanıcı silme, soru veritabanını değiştirme veya sınav sonuçlarını tahrif etme yetkileri bilerek verilmemiştir.</span>
             </li>
             <li class="flex items-start gap-2">
-              <span class="text-indigo-500 font-bold">🛡️</span>
+              <span class="text-indigo-500 font-bold">•</span>
               <span><strong>Zorunlu Hesap Açma:</strong> Soru çözerken şıklara tıklayan tüm öğrenciler kayıt/giriş yapmaya yönlendirilir; böylece veriler ve istatistikler kayıpsız toplanır.</span>
             </li>
           </ul>
@@ -1052,7 +1118,7 @@
     <div class="bg-white rounded-2xl max-w-2xl w-full p-4 shadow-2xl relative flex flex-col items-center">
       <div class="w-full flex items-center justify-between pb-3 mb-3 border-b border-slate-200">
         <span class="text-sm font-bold text-slate-800" id="image-modal-title">Mikroskobik / Radyolojik Görsel</span>
-        <button id="btn-close-image-modal" type="button" class="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs">✕ Kapat</button>
+        <button id="btn-close-image-modal" type="button" class="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs">Kapat</button>
       </div>
       <img id="image-modal-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" alt="Soru Görseli" class="max-w-full max-h-[75vh] h-auto rounded-xl border border-slate-200 object-contain" />
     </div>
@@ -1073,42 +1139,38 @@
 
   <!-- İlk Açılış Tanıtım (Hoş Geldiniz / Rehber) Modalı -->
   <div id="welcome-modal" class="hidden fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200 max-h-[90vh] flex flex-col">
-      <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-5 sm:p-6 shrink-0">
-        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-500/25 border border-indigo-400/30 text-indigo-200 text-[11px] font-bold mb-2">
-          <span>🩺 Dönem 1, 2 & 3 • Kurul Soru & Sınav Platformu • ✨ created by AES</span>
+    <div class="bg-white rounded-lg max-w-lg w-full overflow-hidden shadow-lg border border-slate-200 max-h-[90vh] flex flex-col">
+      <div class="bg-indigo-50 border-b border-indigo-200 text-slate-900 p-5 sm:p-6 shrink-0">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white border border-indigo-200 text-indigo-700 text-[11px] font-bold mb-2">
+          <span>Dönem 1, 2 & 3 • Kurul Soru & Sınav Platformu • created by AES</span>
         </div>
-        <h3 class="text-lg sm:text-xl font-extrabold tracking-tight">Hoş Geldiniz! Bu Platform Ne Yapar?</h3>
-        <p class="text-xs text-slate-300 mt-1 leading-relaxed">
+        <h3 class="text-lg sm:text-xl font-bold tracking-tight text-slate-900">Hoş Geldiniz! Bu Platform Ne Yapar?</h3>
+        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
           2018–2026 yılları arasındaki <strong>Dönem 1, Dönem 2 ve Dönem 3</strong> tüm kurul, final, bütünleme, pratik ve hatırlanan çıkmış sorularını (<strong>12.016 soru</strong>) interaktif olarak çözmeniz için hazırlandı.
         </p>
       </div>
       <div class="p-5 sm:p-6 space-y-3 text-xs text-slate-700 overflow-y-auto custom-scroll">
-        <div class="flex items-start gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-200/80">
-          <span class="text-lg shrink-0">🎯</span>
+        <div class="p-3 rounded-2xl bg-slate-50 border border-slate-200/80">
           <div>
             <div class="font-extrabold text-slate-900">Dönem, Yıl, Ders ve Hoca Bazlı Filtreleme</div>
             <p class="text-slate-600 mt-0.5 leading-relaxed">İstediğiniz dönemi ve kurulu seçip sol menüden yıl, branş veya hoca filtreleriyle soruları <strong>Liste Görünümünde</strong> veya <strong>Tek Tek Soru Ekranında</strong> çözebilirsiniz.</p>
           </div>
         </div>
-        <div class="flex items-start gap-3 p-3 rounded-2xl bg-amber-50/90 border border-amber-300/90">
-          <span class="text-lg shrink-0">🤖</span>
+        <div class="p-3 rounded-2xl bg-amber-50/90 border border-amber-300/90">
           <div>
             <div class="font-extrabold text-amber-950">Hatırlanan Sorular & Yapay Zekâ (AI) Desteği Hakkında</div>
             <p class="text-amber-900/90 mt-0.5 leading-relaxed">
-              Özellikle <strong>Dönem 1 ve Dönem 2</strong> arşivinde öğrencilerin sınav sonrası hatırlayarak derlediği eksik şıklı veya sadece soru kökü kalan sorular, tıp literatürüne uygun 4 gerçekçi çeldirici eklenerek 5 seçenekli soruya dönüştürülmüş ve cevap anahtarları tamamlanmıştır. Bu sorular şeffaflık adına kartların üzerinde <strong>🤖 AI ile Şıklandırıldı</strong> veya <strong>✨ AI Cevap Anahtarı</strong> rozetiyle açıkça belirtilmiştir.
+              Özellikle <strong>Dönem 1 ve Dönem 2</strong> arşivinde öğrencilerin sınav sonrası hatırlayarak derlediği eksik şıklı veya sadece soru kökü kalan sorular, tıp literatürüne uygun 4 gerçekçi çeldirici eklenerek 5 seçenekli soruya dönüştürülmüş ve cevap anahtarları tamamlanmıştır. Bu sorular şeffaflık adına kartların üzerinde <strong>AI ile Şıklandırıldı</strong> veya <strong>AI Cevap Anahtarı</strong> rozetiyle açıkça belirtilmiştir.
             </p>
           </div>
         </div>
-        <div class="flex items-start gap-3 p-3 rounded-2xl bg-rose-50/70 border border-rose-200/80">
-          <span class="text-lg shrink-0">🔁</span>
+        <div class="p-3 rounded-2xl bg-rose-50/70 border border-rose-200/80">
           <div>
             <div class="font-extrabold text-rose-950">Tekrar Eden (Çıkmış) Soruların Tespiti</div>
             <p class="text-rose-900/80 mt-0.5 leading-relaxed">Farklı yıllarda birden fazla kez sorulmuş sorular otomatik olarak eşleştirilir. Sorunun üstündeki kutucuktan hangi yıl ve kurullarda çıktığını görüp tek tıkla o soruya geçebilirsiniz.</p>
           </div>
         </div>
-        <div class="flex items-start gap-3 p-3 rounded-2xl bg-indigo-50/70 border border-indigo-200/80">
-          <span class="text-lg shrink-0">⏱️</span>
+        <div class="p-3 rounded-2xl bg-indigo-50/70 border border-indigo-200/80">
           <div>
             <div class="font-extrabold text-indigo-950">Deneme Sınavı & Başarı Analizi</div>
             <p class="text-indigo-900/80 mt-0.5 leading-relaxed">Gerçek sınav modunda süreli deneme çözebilir, <strong>Analiz & Tablo</strong> sekmesinden ders/hoca bazlı doğruluk oranlarınızı takip edebilirsiniz. İlerlemeniz bu cihazda otomatik kaydedilir.</p>
@@ -1125,18 +1187,18 @@
 
   <!-- Dönem Seçimi Eksik Kurul / Yıl ve Soru Durumu Bilgilendirme Modalı -->
   <div id="donem-info-modal" class="hidden fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200 max-h-[90vh] flex flex-col">
-      <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-5 sm:p-6 shrink-0">
-        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/25 border border-amber-400/40 text-amber-200 text-[11px] font-bold mb-2">
-          <span>📋 Arşiv & Eksik Kurul Bilgilendirmesi • ✨ created by AES</span>
+    <div class="bg-white rounded-lg max-w-lg w-full overflow-hidden shadow-lg border border-slate-200 max-h-[90vh] flex flex-col">
+      <div class="bg-indigo-50 border-b border-indigo-200 text-slate-900 p-5 sm:p-6 shrink-0">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-amber-50 border border-amber-200 text-amber-800 text-[11px] font-bold mb-2">
+          <span>Arşiv & Eksik Kurul Bilgilendirmesi • created by AES</span>
         </div>
-        <h3 id="donem-modal-title" class="text-lg sm:text-xl font-extrabold tracking-tight">Dönem Bilgilendirmesi</h3>
-        <p id="donem-modal-subtitle" class="text-xs text-slate-300 mt-1 leading-relaxed"></p>
+        <h3 id="donem-modal-title" class="text-lg sm:text-xl font-bold tracking-tight text-slate-900">Dönem Bilgilendirmesi</h3>
+        <p id="donem-modal-subtitle" class="text-xs text-slate-600 mt-1 leading-relaxed"></p>
       </div>
       <div class="p-5 sm:p-6 space-y-3 text-xs text-slate-700 overflow-y-auto custom-scroll">
         <div id="donem-modal-list" class="space-y-2.5"></div>
         <div class="p-3 rounded-2xl bg-amber-50/90 border border-amber-200 text-amber-950 leading-relaxed">
-          <strong>💡 Yapay Zekâ & Şık Desteği:</strong> Öğrencilerin sınav sonrası hatırlayarak elle topladığı eksik şıklı veya cevapsız sorular, kurul konularına uygun olarak 5 seçenekli soruya dönüştürülmüştür. Bu sorular <strong>🤖 AI ile Şıklandırıldı</strong> veya <strong>✨ AI Cevap Anahtarı</strong> rozetiyle gösterilir. Sol menüdeki <strong>Durum Filtresi</strong>nden dilediğiniz zaman <em>"✅ Orijinal Sınav Soruları"</em> veya <em>"🤖 AI ile Şıklandırılanlar"</em> seçimi yapabilirsiniz.
+          <strong>Yapay Zekâ & Şık Desteği:</strong> Öğrencilerin sınav sonrası hatırlayarak elle topladığı eksik şıklı veya cevapsız sorular, kurul konularına uygun olarak 5 seçenekli soruya dönüştürülmüştür. Bu sorular <strong>AI ile Şıklandırıldı</strong> veya <strong>AI Cevap Anahtarı</strong> rozetiyle gösterilir. Sol menüdeki <strong>Durum Filtresi</strong>nden dilediğiniz zaman <em>"Orijinal Sınav Soruları"</em> veya <em>"AI ile Şıklandırılanlar"</em> seçimi yapabilirsiniz.
         </div>
         <div class="pt-2 flex justify-end">
           <button id="btn-confirm-donem-modal" type="button" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-extrabold shadow-md transition-colors">
@@ -1184,7 +1246,7 @@
         "shortTitle": "D1 1. Kurul",
         "subtitle": "Tıbbi Biyoloji, Biyokimya, Biyofizik, Halk Sağlığı, Biyoistatistik, Tıp Tarihi ve Davranış Bilimleri",
         "years": "2018–2025",
-        "icon": "🔬",
+        "icon": "",
         "gradient": "from-blue-600 to-indigo-600",
         "badgeBg": "bg-blue-50 text-blue-700 border-blue-200"
       },
@@ -1197,7 +1259,7 @@
         "shortTitle": "D1 2. Kurul",
         "subtitle": "Biyokimya, Tıbbi Biyoloji, Histoloji ve Embriyoloji, Biyofizik ve Biyoistatistik",
         "years": "2018–2025",
-        "icon": "🧪",
+        "icon": "",
         "gradient": "from-teal-600 to-emerald-600",
         "badgeBg": "bg-teal-50 text-teal-700 border-teal-200"
       },
@@ -1210,7 +1272,7 @@
         "shortTitle": "D1 3. Kurul",
         "subtitle": "Tıbbi Genetik, Tıbbi Biyoloji, Mikrobiyoloji, Biyokimya ve Histoloji-Embriyoloji",
         "years": "2018–2024",
-        "icon": "🧬",
+        "icon": "",
         "gradient": "from-violet-600 to-purple-600",
         "badgeBg": "bg-violet-50 text-violet-700 border-violet-200"
       },
@@ -1223,7 +1285,7 @@
         "shortTitle": "D1 4. Kurul",
         "subtitle": "Anatomi, Histoloji ve Embriyoloji, Fizyoloji, Biyofizik ve Tıbbi Biyoloji",
         "years": "2018–2024",
-        "icon": "🦴",
+        "icon": "",
         "gradient": "from-amber-600 to-orange-600",
         "badgeBg": "bg-amber-50 text-amber-700 border-amber-200"
       },
@@ -1236,7 +1298,7 @@
         "shortTitle": "D1 Final & Büt",
         "subtitle": "Dönem 1 Tüm Kurulları Kapsayan Teorik Final, Bütünleme ve Laboratuvar/Pratik Sınavları",
         "years": "2018–2023",
-        "icon": "🎓",
+        "icon": "",
         "gradient": "from-slate-700 to-slate-900",
         "badgeBg": "bg-slate-100 text-slate-800 border-slate-300"
       },
@@ -1251,7 +1313,7 @@
         "shortTitle": "D2 1. Kurul",
         "subtitle": "Anatomi, Fizyoloji, Histoloji ve Embriyoloji, Biyokimya ve Biyofizik",
         "years": "2018–2026",
-        "icon": "💪",
+        "icon": "",
         "gradient": "from-indigo-600 to-blue-600",
         "badgeBg": "bg-indigo-50 text-indigo-700 border-indigo-200"
       },
@@ -1264,7 +1326,7 @@
         "shortTitle": "D2 2. Kurul",
         "subtitle": "Nöroanatomi, Nörofizyoloji, Histoloji ve Embriyoloji, Biyokimya ve Biyofizik",
         "years": "2018–2026",
-        "icon": "🧠",
+        "icon": "",
         "gradient": "from-cyan-600 to-sky-600",
         "badgeBg": "bg-cyan-50 text-cyan-700 border-cyan-200"
       },
@@ -1277,7 +1339,7 @@
         "shortTitle": "D2 3. Kurul",
         "subtitle": "Kalp-Dolaşım ve Solunum Anatomisi, Fizyolojisi, Histolojisi, Biyokimyası ve İmmünoloji",
         "years": "2019–2026",
-        "icon": "🫁",
+        "icon": "",
         "gradient": "from-rose-600 to-pink-600",
         "badgeBg": "bg-rose-50 text-rose-700 border-rose-200"
       },
@@ -1290,7 +1352,7 @@
         "shortTitle": "D2 4. Kurul",
         "subtitle": "Endokrin ve Ürogenital Anatomi, Fizyoloji, Histoloji-Embriyoloji ve Biyokimya",
         "years": "2019–2026",
-        "icon": "⚡",
+        "icon": "",
         "gradient": "from-purple-600 to-violet-600",
         "badgeBg": "bg-purple-50 text-purple-700 border-purple-200"
       },
@@ -1303,7 +1365,7 @@
         "shortTitle": "D2 5. Kurul",
         "subtitle": "Sindirim Sistemi Anatomisi, Fizyolojisi, Histolojisi, Mikrobiyoloji, Patoloji ve Farmakoloji Giriş",
         "years": "2019–2024",
-        "icon": "🩺",
+        "icon": "",
         "gradient": "from-emerald-600 to-teal-600",
         "badgeBg": "bg-emerald-50 text-emerald-700 border-emerald-200"
       },
@@ -1316,7 +1378,7 @@
         "shortTitle": "D2 Final & Büt",
         "subtitle": "Dönem 2 Tüm Kurulları Kapsayan Final (1. ve 2. Oturum), Bütünleme ve Spot Çıkmış Sorular",
         "years": "2018–2024",
-        "icon": "🏆",
+        "icon": "",
         "gradient": "from-slate-700 to-slate-900",
         "badgeBg": "bg-slate-100 text-slate-800 border-slate-300"
       },
@@ -1331,7 +1393,7 @@
         "shortTitle": "D3 1. Kurul",
         "subtitle": "Neoplazi ve Hematopoetik Sistem Hastalıkları",
         "years": "2019–2026",
-        "icon": "🩸",
+        "icon": "",
         "gradient": "from-indigo-600 to-blue-600",
         "badgeBg": "bg-indigo-50 text-indigo-700 border-indigo-200"
       },
@@ -1344,7 +1406,7 @@
         "shortTitle": "D3 2. Kurul",
         "subtitle": "Enfeksiyon Hastalıkları, Mikrobiyoloji, Farmakoloji ve Pediatri",
         "years": "2020–2026",
-        "icon": "🦠",
+        "icon": "",
         "gradient": "from-emerald-600 to-teal-600",
         "badgeBg": "bg-emerald-50 text-emerald-700 border-emerald-200"
       },
@@ -1357,7 +1419,7 @@
         "shortTitle": "D3 3. Kurul",
         "subtitle": "Kardiyoloji, Göğüs Hastalıkları, KVC, KBB ve Pediatri",
         "years": "2020–2026",
-        "icon": "💓",
+        "icon": "",
         "gradient": "from-rose-600 to-pink-600",
         "badgeBg": "bg-rose-50 text-rose-700 border-rose-200"
       },
@@ -1370,7 +1432,7 @@
         "shortTitle": "D3 4. Kurul",
         "subtitle": "Gastroenteroloji, Genel Cerrahi, Patoloji, Mikrobiyoloji ve Pediatri",
         "years": "2019–2026",
-        "icon": "🩺",
+        "icon": "",
         "gradient": "from-amber-600 to-orange-600",
         "badgeBg": "bg-amber-50 text-amber-700 border-amber-200"
       },
@@ -1383,7 +1445,7 @@
         "shortTitle": "D3 5. Kurul",
         "subtitle": "Endokrinoloji, Üroloji, Kadın Doğum, Patoloji ve Biyokimya",
         "years": "2019–2026",
-        "icon": "🧬",
+        "icon": "",
         "gradient": "from-purple-600 to-violet-600",
         "badgeBg": "bg-purple-50 text-purple-700 border-purple-200"
       },
@@ -1396,7 +1458,7 @@
         "shortTitle": "D3 6. Kurul",
         "subtitle": "Nöroloji, Psikiyatri, Farmakoloji, Patoloji ve Radyoloji",
         "years": "2019–2026",
-        "icon": "🧠",
+        "icon": "",
         "gradient": "from-cyan-600 to-sky-600",
         "badgeBg": "bg-cyan-50 text-cyan-700 border-cyan-200"
       },
@@ -1409,7 +1471,7 @@
         "shortTitle": "D3 7. Kurul",
         "subtitle": "Ortopedi, FTR, Dermatoloji, Halk Sağlığı, Adli Tıp ve Etik",
         "years": "2019–2026",
-        "icon": "🦴",
+        "icon": "",
         "gradient": "from-slate-700 to-slate-900",
         "badgeBg": "bg-slate-100 text-slate-800 border-slate-300"
       }
@@ -1418,19 +1480,19 @@
     const DONEM_SECTIONS = [
       {
         donem: "1",
-        title: "1️⃣ Dönem 1 (1. Sınıf) Kurulları ve Final Sınavları",
+        title: "Dönem 1 (1. Sınıf) Kurulları ve Final Sınavları",
         subtitle: "2018–2025 • 1–4. Kurul Teorik, Pratik/Lab, Final ve Bütünleme Çıkmış Soruları (3.354 Soru)",
         kurulIds: ["d1-1", "d1-2", "d1-3", "d1-4", "d1-5"]
       },
       {
         donem: "2",
-        title: "2️⃣ Dönem 2 (2. Sınıf) Kurulları ve Final Sınavları",
+        title: "Dönem 2 (2. Sınıf) Kurulları ve Final Sınavları",
         subtitle: "2018–2026 • 1–5. Kurul Teorik, Çalışma Soruları, Final ve Bütünleme Sınavları (3.994 Soru)",
         kurulIds: ["d2-1", "d2-2", "d2-3", "d2-4", "d2-5", "d2-6"]
       },
       {
         donem: "3",
-        title: "3️⃣ Dönem 3 (3. Sınıf) Kurulları",
+        title: "Dönem 3 (3. Sınıf) Kurulları",
         subtitle: "2019–2026 • 1. Kurul'dan 7. Kurul'a Tüm Çıkmış ve Çalışma Soruları (4.668 Soru)",
         kurulIds: ["1", "2", "3", "4", "5", "6", "7"]
       }
@@ -1438,7 +1500,7 @@
 
     const DONEM_MISSING_INFO = {
       "1": {
-        title: "1️⃣ Dönem 1 (1. Sınıf) • Eksik Kurul & Arşiv Durumu",
+        title: "Dönem 1 (1. Sınıf) • Eksik Kurul & Arşiv Durumu",
         subtitle: "Dönem 1 arşivinde toplam 3.354 soru yer almaktadır. Yıllara göre mevcut ve eksik sınavların detayı aşağıdadır:",
         items: [
           {
@@ -1474,7 +1536,7 @@
         ]
       },
       "2": {
-        title: "2️⃣ Dönem 2 (2. Sınıf) • Eksik Kurul & Arşiv Durumu",
+        title: "Dönem 2 (2. Sınıf) • Eksik Kurul & Arşiv Durumu",
         subtitle: "Dönem 2 arşivinde toplam 3.994 soru yer almaktadır. Yıllara göre mevcut ve eksik kurulların detayı aşağıdadır:",
         items: [
           {
@@ -1510,7 +1572,7 @@
         ]
       },
       "3": {
-        title: "3️⃣ Dönem 3 (3. Sınıf) • Eksik Kurul & Arşiv Durumu",
+        title: "Dönem 3 (3. Sınıf) • Eksik Kurul & Arşiv Durumu",
         subtitle: "Dönem 3 arşivinde toplam 4.668 soru yer almaktadır. Kurullara göre arşiv durumu aşağıdadır:",
         items: [
           {
@@ -1576,7 +1638,7 @@
           <div class="p-3.5 rounded-2xl bg-indigo-50/90 border border-indigo-200 space-y-2">
             <div class="flex items-center justify-between gap-2 flex-wrap">
               <span class="px-2 py-0.5 rounded-md text-[11px] font-extrabold bg-indigo-600 text-white">Açılan Kurul: ${escapeHtml(kMeta.shortTitle)} (${qs.length} Soru)</span>
-              <span class="text-[11px] font-bold text-indigo-900">✅ ${fullCnt} Tam Şıklı • 📝 ${incCnt} Hatırlanan/Açık Uçlu</span>
+              <span class="text-[11px] font-bold text-indigo-900">${fullCnt} Tam Şıklı • ${incCnt} Hatırlanan/Açık Uçlu</span>
             </div>
             ${kNote ? `<p class="text-xs text-rose-900 bg-rose-50/90 border border-rose-200 rounded-xl px-2.5 py-1.5 leading-relaxed">${kNote}</p>` : ''}
             <p class="text-xs text-indigo-950 leading-relaxed">
@@ -1770,7 +1832,7 @@
         updateHeaderAndToolbarStats();
         renderMainArea();
         renderQuestionMap();
-        showToast('⏱️ Devam eden deneme sınavınız geri yüklendi.');
+        showToast('Devam eden deneme sınavınız geri yüklendi.');
         return true;
       } catch (e) {
         console.warn('Failed to restore active exam:', e);
@@ -1845,24 +1907,19 @@
         .join('');
 
       return `
-        <div class="kurul-card bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-indigo-300 p-5 flex flex-col justify-between gap-4">
+        <div class="kurul-card bg-white rounded-lg border border-slate-200 shadow-sm hover:border-indigo-400 p-5 flex flex-col justify-between gap-4">
           <div class="space-y-3">
             <div class="flex items-start justify-between gap-3">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-2xl bg-gradient-to-br ${meta.gradient} text-white flex items-center justify-center text-2xl shadow-sm shrink-0">
-                  ${meta.icon}
+              <div>
+                <div class="flex items-center gap-1.5 flex-wrap">
+                  <span class="px-2 py-0.5 rounded-md text-[11px] font-bold font-mono border ${meta.badgeBg}">${meta.code}</span>
+                  <span class="text-xs font-semibold font-mono text-slate-400">${meta.years}</span>
+                  <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-rose-50 text-rose-700 border border-rose-200">${repCnt} Tekrar</span>
+                  ${incCnt > 0 ? `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-200" title="Öğrenci hatırlaması, açık uçlu pratik veya cevap anahtarı belirtilmemiş sorular dahil">${incCnt} Hatırlanan/Açık Uçlu</span>` : ''}
                 </div>
-                <div>
-                  <div class="flex items-center gap-1.5 flex-wrap">
-                    <span class="px-2 py-0.5 rounded-md text-[11px] font-extrabold border ${meta.badgeBg}">${meta.code}</span>
-                    <span class="text-xs font-semibold text-slate-400">${meta.years}</span>
-                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-rose-50 text-rose-700 border border-rose-200">🔁 ${repCnt} Tekrar</span>
-                    ${incCnt > 0 ? `<span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-amber-50 text-amber-800 border border-amber-200" title="Öğrenci hatırlaması, açık uçlu pratik veya cevap anahtarı belirtilmemiş sorular dahil">📝 ${incCnt} Hatırlanan/Açık Uçlu</span>` : ''}
-                  </div>
-                  <h4 class="text-base font-extrabold text-slate-900 mt-0.5">${escapeHtml(meta.title)}</h4>
-                </div>
+                <h4 class="text-base font-bold text-slate-900 mt-0.5">${escapeHtml(meta.title)}</h4>
               </div>
-              <span class="px-2.5 py-1 rounded-xl bg-slate-900 text-white text-xs font-extrabold shrink-0">${qs.length} Soru</span>
+              <span class="px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200 text-xs font-bold shrink-0">${qs.length} Soru</span>
             </div>
 
             <p class="text-xs text-slate-500 leading-relaxed">${escapeHtml(meta.subtitle)}</p>
@@ -1879,26 +1936,26 @@
               <div class="flex items-center justify-between text-[11px] font-semibold mb-1">
                 <span class="text-slate-600">Çözülen: <strong class="text-slate-900">${ans} / ${qs.length}</strong> (%${progressPct})</span>
                 <span>
-                  <span class="text-emerald-700 font-bold">✓ ${cor}D</span>
+                  <span class="text-emerald-700 font-bold">${cor}D</span>
                   <span class="text-slate-300 mx-1">•</span>
-                  <span class="text-rose-600 font-bold">✗ ${wro}Y</span>
+                  <span class="text-rose-600 font-bold">${wro}Y</span>
                   <span class="text-slate-300 mx-1">•</span>
                   <span class="text-indigo-700 font-bold">Başarı: %${rate}</span>
                 </span>
               </div>
               <div class="w-full h-2 rounded-full bg-slate-100 overflow-hidden">
-                <div class="h-full bg-gradient-to-r ${meta.gradient} transition-all duration-300" style="width: ${progressPct}%"></div>
+                <div class="h-full bg-indigo-600 transition-all duration-300" style="width: ${progressPct}%"></div>
               </div>
             </div>
 
             <!-- Aksiyon Butonları -->
             <div class="grid grid-cols-3 gap-2">
-              <button type="button" data-open-kurul="${kId}" data-open-mode="study" class="btn-open-kurul col-span-2 py-2 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm transition-colors">
-                <span>📚 Soruları Çöz</span>
+              <button type="button" data-open-kurul="${kId}" data-open-mode="study" class="btn-open-kurul col-span-2 py-2 px-3 rounded-md bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm transition-colors">
+                <span>Soruları Çöz</span>
                 <span>→</span>
               </button>
-              <button type="button" data-open-kurul="${kId}" data-open-mode="exam" class="btn-open-kurul py-2 px-3 rounded-xl border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-bold flex items-center justify-center gap-1 transition-colors">
-                <span>⏱️ Sınav</span>
+              <button type="button" data-open-kurul="${kId}" data-open-mode="exam" class="btn-open-kurul py-2 px-3 rounded-md border border-slate-200 hover:bg-slate-100 text-slate-700 text-xs font-bold flex items-center justify-center gap-1 transition-colors">
+                <span>Sınav</span>
               </button>
             </div>
           </div>
@@ -1938,7 +1995,7 @@
                 <p class="text-xs text-slate-500">${escapeHtml(sec.subtitle)}</p>
               </div>
               <button type="button" data-show-donem-info="${sec.donem}" class="btn-show-donem-info px-3 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 text-xs font-bold flex items-center gap-1.5 transition-colors">
-                <span>📋 Eksik Kurul & Arşiv Bilgisi</span>
+                <span>Eksik Kurul & Arşiv Bilgisi</span>
               </button>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
@@ -1954,35 +2011,35 @@
       document.querySelectorAll('.donem-tab-btn').forEach(btn => {
         const tabVal = btn.getAttribute('data-donem-tab');
         if (tabVal === state.selectedDonem) {
-          btn.className = "donem-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all bg-white text-slate-900 shadow-sm";
+          btn.className = "donem-tab-btn px-4 py-2 rounded-md text-xs sm:text-sm font-bold transition-colors bg-indigo-600 text-white shadow-sm";
         } else {
-          btn.className = "donem-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white/10 hover:bg-white/20 text-white border border-white/15";
+          btn.className = "donem-tab-btn px-4 py-2 rounded-md text-xs sm:text-sm font-semibold transition-colors bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200";
         }
       });
 
       const grandRate = grandAns > 0 ? Math.round((grandCor / grandAns) * 100) : 0;
       document.getElementById('home-global-kpis').innerHTML = `
-        <div class="p-3.5 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm min-w-[120px]">
-          <div class="text-[11px] text-indigo-200 font-semibold">Toplam Soru Havuzu</div>
-          <div class="text-xl sm:text-2xl font-extrabold text-white mt-0.5">${grandTotal}</div>
+        <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200 min-w-[125px]">
+          <div class="text-[11px] text-slate-500 font-semibold">Toplam Soru Havuzu</div>
+          <div class="text-xl sm:text-2xl font-bold text-indigo-600 mt-0.5">${grandTotal}</div>
         </div>
-        <div class="p-3.5 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-sm min-w-[120px]">
-          <div class="text-[11px] text-indigo-200 font-semibold">Çözülen Soru</div>
-          <div class="text-xl sm:text-2xl font-extrabold text-white mt-0.5">${grandAns}</div>
+        <div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200 min-w-[125px]">
+          <div class="text-[11px] text-slate-500 font-semibold">Çözülen Soru</div>
+          <div class="text-xl sm:text-2xl font-bold text-slate-900 mt-0.5">${grandAns}</div>
         </div>
-        <div class="p-3.5 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 backdrop-blur-sm min-w-[120px]">
-          <div class="text-[11px] text-emerald-200 font-semibold">Doğru / Yanlış</div>
-          <div class="text-xl sm:text-2xl font-extrabold text-emerald-300 mt-0.5">${grandCor}D <span class="text-sm font-normal text-rose-300">/ ${grandWro}Y</span></div>
+        <div class="p-3.5 rounded-lg bg-emerald-50 border border-emerald-200 min-w-[125px]">
+          <div class="text-[11px] text-emerald-700 font-semibold">Doğru / Yanlış</div>
+          <div class="text-xl sm:text-2xl font-bold text-emerald-700 mt-0.5">${grandCor}D <span class="text-sm font-normal text-rose-600">/ ${grandWro}Y</span></div>
         </div>
-        <div class="p-3.5 rounded-2xl bg-amber-500/20 border border-amber-400/30 backdrop-blur-sm min-w-[120px]">
-          <div class="text-[11px] text-amber-200 font-semibold">Genel Başarı</div>
-          <div class="text-xl sm:text-2xl font-extrabold text-amber-300 mt-0.5">%${grandRate}</div>
+        <div class="p-3.5 rounded-lg bg-indigo-50 border border-indigo-200 min-w-[125px]">
+          <div class="text-[11px] text-indigo-700 font-semibold">Genel Başarı</div>
+          <div class="text-xl sm:text-2xl font-bold text-indigo-700 mt-0.5">%${grandRate}</div>
         </div>
       `;
 
-      document.getElementById('hdr-correct').textContent = `✓ ${grandCor} Doğru`;
-      document.getElementById('hdr-wrong').textContent = `✗ ${grandWro} Yanlış`;
-      document.getElementById('hdr-fav').textContent = `★ ${state.favorites.size} Favori`;
+      document.getElementById('hdr-correct').textContent = `${grandCor} Doğru`;
+      document.getElementById('hdr-wrong').textContent = `${grandWro} Yanlış`;
+      document.getElementById('hdr-fav').textContent = `${state.favorites.size} Favori`;
 
       document.querySelectorAll('.btn-show-donem-info').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -2077,9 +2134,9 @@
       const isAdmin = authMod && typeof authMod.isCurrentUserAdmin === 'function' ? authMod.isCurrentUserAdmin() : false;
       if (!isAdmin) {
         if (authMod && typeof authMod.requireAuth === 'function') {
-          authMod.requireAuth('👑 Yönetici paneline erişmek için lütfen yetkili yönetici (sezgin45efe@gmail.com) hesabıyla giriş yapınız.');
+          authMod.requireAuth('Yönetici paneline erişmek için lütfen yetkili yönetici (sezgin45efe@gmail.com) hesabıyla giriş yapınız.');
         } else {
-          showToast('🔒 Bu panele yalnızca yetkili yönetici (sezgin45efe@gmail.com) erişebilir.');
+          showToast('Bu panele yalnızca yetkili yönetici (sezgin45efe@gmail.com) erişebilir.');
         }
         showHomeScreen();
         return;
@@ -2107,9 +2164,9 @@
       document.getElementById('btn-mobile-sidebar').classList.add('hidden');
 
       document.getElementById('header-kurul-select').value = 'home';
-      document.getElementById('hdr-title').textContent = '👑 Yönetici Paneli (Salt Okunur)';
+      document.getElementById('hdr-title').textContent = 'Yönetici Paneli (Salt Okunur)';
       document.getElementById('hdr-subtitle').textContent = 'Kullanıcı Listesi, Platform Analitiği ve Sınav İstatistikleri • sezgin45efe@gmail.com';
-      document.getElementById('hdr-kurul-icon').textContent = '👑';
+      document.getElementById('hdr-kurul-icon').textContent = '';
 
       if (window.location.protocol !== 'file:') {
         if (`${window.location.pathname}${window.location.hash}` !== '/#/admin') {
@@ -2269,7 +2326,7 @@
               <td class="p-3.5">
                 <div class="flex items-center gap-3">
                   <div class="w-9 h-9 rounded-full ${isAdmin ? 'bg-amber-500 text-slate-950 font-black' : 'bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 font-bold'} flex items-center justify-center text-xs shrink-0 shadow-sm">
-                    ${isAdmin ? '👑' : (displayName ? displayName.charAt(0).toUpperCase() : '👤')}
+                    ${isAdmin ? 'Y' : (displayName ? displayName.charAt(0).toUpperCase() : 'Ö')}
                   </div>
                   <div>
                     <div class="font-bold text-slate-900 dark:text-slate-100 flex items-center gap-1.5 text-sm">
@@ -2277,7 +2334,6 @@
                       ${isAdmin ? '<span class="px-1.5 py-0.5 rounded text-[10px] font-extrabold bg-amber-100 text-amber-900 border border-amber-300">Yönetici</span>' : ''}
                     </div>
                     <div class="text-xs font-mono font-medium text-indigo-600 dark:text-indigo-400 mt-0.5 flex items-center gap-1">
-                      <span>✉️</span>
                       <span>${escapeHtml(u.email || 'E-posta Kayıtlı Değil')}</span>
                     </div>
                   </div>
@@ -2288,7 +2344,6 @@
               </td>
               <td class="p-3.5">
                 <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800 shadow-xs">
-                  <span>⏱️</span>
                   <span>${studyTimeStr}</span>
                 </span>
               </td>
@@ -2301,7 +2356,7 @@
               <td class="p-3.5 text-xs text-slate-500 dark:text-slate-400 font-mono">${createdDate}</td>
               <td class="p-3.5 text-right text-xs">
                 <span class="inline-flex items-center px-2 py-0.5 rounded-md font-bold ${isAdmin ? 'bg-amber-100 text-amber-800 border border-amber-200 dark:bg-amber-950 dark:text-amber-200' : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700'}">
-                  ${isAdmin ? '👑 Salt Okunur' : '🎓 Tıp Öğrencisi'}
+                  ${isAdmin ? 'Salt Okunur' : 'Tıp Öğrencisi'}
                 </span>
               </td>
             </tr>
@@ -2330,7 +2385,7 @@
               <div class="flex items-start justify-between gap-3">
                 <div class="flex items-center gap-3">
                   <div class="w-10 h-10 rounded-xl ${isAdmin ? 'bg-amber-500 text-slate-950 font-black' : 'bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 font-bold'} flex items-center justify-center text-sm shrink-0 shadow-xs">
-                    ${isAdmin ? '👑' : (displayName ? displayName.charAt(0).toUpperCase() : '👤')}
+                    ${isAdmin ? 'Y' : (displayName ? displayName.charAt(0).toUpperCase() : 'Ö')}
                   </div>
                   <div>
                     <div class="font-bold text-slate-900 dark:text-slate-100 text-sm flex items-center gap-1.5">
@@ -2338,7 +2393,6 @@
                       ${isAdmin ? '<span class="px-1.5 py-0.5 rounded text-[10px] font-extrabold bg-amber-100 text-amber-900 border border-amber-300">Yönetici</span>' : ''}
                     </div>
                     <div class="text-xs font-mono font-medium text-indigo-600 dark:text-indigo-400 mt-0.5 flex items-center gap-1 break-all">
-                      <span>✉️</span>
                       <span>${escapeHtml(u.email || 'E-posta Kayıtlı Değil')}</span>
                     </div>
                   </div>
@@ -2350,11 +2404,11 @@
 
               <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-100 dark:border-slate-800/80 text-xs">
                 <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-800/50">
-                  <div class="text-[10px] text-slate-400 font-medium">⏱️ Toplam Çalışma</div>
+                  <div class="text-[10px] text-slate-400 font-medium">Toplam Çalışma</div>
                   <div class="font-bold text-indigo-600 dark:text-indigo-400 font-mono mt-0.5 text-xs">${studyTimeStr}</div>
                 </div>
                 <div class="p-2 rounded-xl bg-slate-50 dark:bg-slate-800/50">
-                  <div class="text-[10px] text-slate-400 font-medium">📅 Kayıt Tarihi</div>
+                  <div class="text-[10px] text-slate-400 font-medium">Kayıt Tarihi</div>
                   <div class="font-semibold text-slate-700 dark:text-slate-300 font-mono mt-0.5 text-xs">${createdDate}</div>
                 </div>
               </div>
@@ -2388,7 +2442,7 @@
       document.getElementById('header-kurul-select').value = 'home';
       document.getElementById('hdr-title').textContent = 'Dönem 1, 2 & 3 • Tüm Kurullar Çıkmış Sorular';
       document.getElementById('hdr-subtitle').textContent = '2018–2026 • Dönem 1, Dönem 2 ve Dönem 3 Tüm Çıkmış, Hatırlanan, Pratik ve Çalışma Soruları (12.016 Soru)';
-      document.getElementById('hdr-kurul-icon').textContent = '🩺';
+      document.getElementById('hdr-kurul-icon').textContent = '';
 
       syncUrlRoute();
       renderHomeScreen();
@@ -2453,7 +2507,7 @@
       document.getElementById('status-filter').value = 'all';
       document.getElementById('sort-order').value = 'default';
       document.getElementById('btn-clear-search').classList.add('hidden');
-      document.getElementById('btn-reveal-all').textContent = '👁️ Tüm Cevapları Göster';
+      document.getElementById('btn-reveal-all').textContent = 'Tüm Cevapları Göster';
 
       document.getElementById('home-screen').classList.add('hidden');
       const adminScreen = document.getElementById('admin-screen');
@@ -2470,7 +2524,7 @@
       document.getElementById('header-kurul-select').value = kId;
       document.getElementById('hdr-title').textContent = `${meta.donemTitle} • ${meta.title}`;
       document.getElementById('hdr-subtitle').textContent = `${meta.subtitle} • ${meta.years} (${RAW_QUESTIONS.length} Soru)`;
-      document.getElementById('hdr-kurul-icon').textContent = meta.icon;
+      document.getElementById('hdr-kurul-icon').textContent = '';
       document.getElementById('sidebar-kurul-code').textContent = `${meta.code} • ${RAW_QUESTIONS.length} SORU`;
       document.getElementById('sidebar-kurul-title').textContent = meta.title;
       document.getElementById('stats-heading-title').textContent = `${meta.donemTitle} • ${meta.title} Çalışma İstatistikleri (Tüm ${RAW_QUESTIONS.length} Soru)`;
@@ -2707,9 +2761,9 @@
           else totalWrong++;
         }
       });
-      document.getElementById('hdr-correct').textContent = `✓ ${totalCorrect} Doğru`;
-      document.getElementById('hdr-wrong').textContent = `✗ ${totalWrong} Yanlış`;
-      document.getElementById('hdr-fav').textContent = `★ ${state.favorites.size} Favori`;
+      document.getElementById('hdr-correct').textContent = `${totalCorrect} Doğru`;
+      document.getElementById('hdr-wrong').textContent = `${totalWrong} Yanlış`;
+      document.getElementById('hdr-fav').textContent = `${state.favorites.size} Favori`;
 
       const activeList = state.viewMode === 'exam' && state.examActive ? state.examQuestions : state.filteredQuestions;
       let fAnswered = 0, fCorrect = 0, fWrong = 0;
@@ -2732,8 +2786,12 @@
 
     function formatExplanationText(str) {
       if (!str) return '';
-      const escaped = escapeHtml(str);
-      return escaped.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-slate-900 underline decoration-indigo-300 decoration-2 underline-offset-2">$1</strong>');
+      const escaped = escapeHtml(String(str).trim());
+      const withBold = escaped.replace(/\*\*(.+?)\*\*/g, '<strong class="font-bold text-slate-900 dark:text-slate-100 underline decoration-indigo-300 decoration-2 underline-offset-2">$1</strong>');
+      return withBold
+        .replace(/\r\n|\r|\n/g, '<br>')
+        .replace(/(?:^|<br>)\s*(?:•|&bull;|\-)\s+/g, '<br><span class="inline-block text-indigo-500 font-bold mr-1.5">•</span>')
+        .replace(/^<br>/, '');
     }
 
     function buildSmartSolutionAnalysis(q, selectedLetter, selectedText, correctText) {
@@ -2787,13 +2845,13 @@
           if (romanStatements.length > 0) {
             romanListHtml = `
               <div class="mt-2 space-y-1.5 text-xs bg-white/90 p-2.5 rounded-lg border border-amber-200/80 shadow-xs">
-                <div class="font-bold text-slate-800">📌 Soru Öncülleri ve Doğruluk Durumu:</div>
+                <div class="font-bold text-slate-800">Soru Öncülleri ve Doğruluk Durumu:</div>
                 ${romanStatements.map(st => {
                   const inCorrect = correctRomans.includes(st.num);
                   const inSelected = selectedRomans.includes(st.num);
                   const badge = inCorrect 
-                    ? '<span class="text-emerald-700 font-bold ml-auto shrink-0">✓ Doğru Cevapta Var</span>'
-                    : '<span class="text-slate-500 font-medium ml-auto shrink-0">✗ Doğru Cevapta Yok</span>';
+                    ? '<span class="text-emerald-700 font-bold ml-auto shrink-0">Doğru Cevapta Var</span>'
+                    : '<span class="text-slate-500 font-medium ml-auto shrink-0">Doğru Cevapta Yok</span>';
                   return `
                     <div class="flex items-start gap-2 py-0.5 border-b border-slate-100 last:border-0">
                       <span class="font-bold text-slate-900 w-6 shrink-0">${st.num}.</span>
@@ -2810,7 +2868,6 @@
             <div class="space-y-2">
               ${isNegative ? `
                 <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-amber-100 text-amber-900 text-[11px] font-extrabold mb-1">
-                  <span>⚠️</span>
                   <span>Olumsuz Soru Kökü: Yanlış/İstisna Olan Öncüller İstenmektedir!</span>
                 </div>
               ` : ''}
@@ -2822,7 +2879,6 @@
           errorDetailHtml = `
             <div class="space-y-1.5">
               <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-900 text-[11px] font-extrabold mb-1">
-                <span>⚠️</span>
                 <span>Olumsuz Soru Kökü Uyarısı</span>
               </div>
               <p class="leading-relaxed">
@@ -2846,7 +2902,6 @@
         errorAnalysisHtml = `
           <div class="p-3.5 rounded-xl bg-rose-50/90 border border-rose-200 text-xs sm:text-sm text-rose-950 space-y-2">
             <div class="font-extrabold text-rose-900 flex items-center gap-1.5">
-              <span>🔍</span>
               <span>Hata Analizi (Neden ${selectedLetter} Şıkkı Değil?):</span>
             </div>
             ${errorDetailHtml}
@@ -2870,7 +2925,7 @@
           solutionText = `Soru kökünde verilen klinik ve teorik bilgiler doğrultusunda <strong>${subjectName}</strong> dersi temel prensiplerine göre aranan doğru yanıt <strong>${q.answer}) ${escapeHtml(correctText)}</strong> seçeneğidir. Soru kökündeki anahtar klinik bulgular ve mekanizma bu seçeneği doğrulamaktadır. Diğer seçenekler (${otherOpts || 'diğer şıklar'}) ise konuyla ilişkili çeldirici nitelikte olup soru kökündeki kriterleri tam olarak karşılamamaktadır. Bu nedenle hedeflenen doğru seçenek <strong>${q.answer}</strong> şıkkıdır.`;
         }
         if (rawExp && !isExpSubstantial) {
-          solutionText += ` <span class="text-slate-500 text-xs block mt-1.5 font-medium">📌 Kaynak Notu: ${escapeHtml(rawExp)}</span>`;
+          solutionText += ` <span class="text-slate-500 text-xs block mt-1.5 font-medium">Kaynak Notu: ${formatExplanationText(rawExp)}</span>`;
         }
       }
 
@@ -2878,7 +2933,6 @@
         <div class="p-3.5 rounded-xl bg-white/95 border border-slate-200/90 text-xs sm:text-sm text-slate-800 leading-relaxed shadow-xs space-y-2">
           <div class="font-extrabold text-indigo-900 flex items-center justify-between gap-2 border-b border-indigo-100/70 pb-2">
             <div class="flex items-center gap-1.5">
-              <span>🩺</span>
               <span>Soru Çözümü ve Tıbbi Açıklama (Neden ${q.answer} Şıkkı?):</span>
             </div>
             <span class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200">
@@ -2900,13 +2954,13 @@
           let rowClass = '';
 
           if (isCorrectOpt) {
-            badge = `<span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 border border-emerald-300 font-extrabold text-[11px] shrink-0">✓ Doğru Cevap</span>`;
+            badge = `<span class="px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 border border-emerald-300 font-extrabold text-[11px] shrink-0">Doğru Cevap</span>`;
             rowClass = 'bg-emerald-50/90 border-emerald-300 text-emerald-950 font-semibold';
           } else if (isNegative) {
-            badge = `<span class="px-2 py-0.5 rounded-md bg-sky-100 text-sky-800 border border-sky-300 font-semibold text-[11px] shrink-0">• Doğru Bilgi (Olumsuz Soru Kökü)</span>`;
+            badge = `<span class="px-2 py-0.5 rounded-md bg-sky-100 text-sky-800 border border-sky-300 font-semibold text-[11px] shrink-0">Doğru Bilgi (Olumsuz Soru Kökü)</span>`;
             rowClass = 'bg-white border-slate-200 text-slate-700';
           } else {
-            badge = `<span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-300 font-semibold text-[11px] shrink-0">• Çeldirici / Diğer Seçenek</span>`;
+            badge = `<span class="px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 border border-slate-300 font-semibold text-[11px] shrink-0">Çeldirici / Diğer Seçenek</span>`;
             rowClass = 'bg-white border-slate-200 text-slate-700';
           }
 
@@ -2933,7 +2987,6 @@
         <details class="group rounded-xl border border-slate-200 bg-slate-50/70 overflow-hidden text-xs">
           <summary class="flex items-center justify-between p-3 cursor-pointer hover:bg-slate-100/90 transition-colors font-bold text-slate-800 select-none">
             <span class="flex items-center gap-2">
-              <span>📋</span>
               <span>Tüm Şıkların Değerlendirmesi (A–E Özeti)</span>
             </span>
             <span class="text-slate-400 group-open:rotate-180 transition-transform duration-200 text-[10px]">▼</span>
@@ -2961,21 +3014,20 @@
       if (!q.answer) {
         if (!selectedLetter && !isManuallyRevealed) return '';
         const selfEvalNotice = selectedLetter === 'CORRECT'
-          ? '<span class="text-emerald-800 font-bold">✓ Kendinizi "Biliyorum (Doğru)" olarak değerlendirdiniz.</span>'
+          ? '<span class="text-emerald-800 font-bold">Kendinizi "Biliyorum (Doğru)" olarak değerlendirdiniz.</span>'
           : selectedLetter === 'WRONG'
-            ? '<span class="text-rose-800 font-bold">✗ Kendinizi "Tekrar Et (Yanlış)" olarak değerlendirdiniz.</span>'
+            ? '<span class="text-rose-800 font-bold">Kendinizi "Tekrar Et (Yanlış)" olarak değerlendirdiniz.</span>'
             : selectedLetter
               ? `<span>Seçtiğiniz şık (<strong>${selectedLetter}</strong>) işaretlendi. Doğruluk istatistiği için yukarıdaki değerlendirme butonlarını kullanabilirsiniz.</span>`
               : '';
         return `
           <div class="mt-2 px-4 py-3 rounded-xl bg-amber-50/90 border border-amber-200 flex flex-wrap items-center justify-between gap-2 text-xs text-amber-900">
             <div class="flex items-center gap-2 font-semibold">
-              <span>📝</span>
               <span>Bu arşiv sorusunun resmi cevap anahtarı kaynak dosyada yer almamaktadır. ${selfEvalNotice}</span>
             </div>
             ${q.explanation ? `
               <div class="w-full mt-2 p-3 rounded-xl bg-white/90 border border-amber-200/90 text-xs text-slate-800 leading-relaxed">
-                <div class="font-bold text-amber-900 mb-1">📖 Açıklama / Not:</div>
+                <div class="font-bold text-amber-900 mb-1">Açıklama / Not:</div>
                 <p class="text-slate-700">${formatExplanationText(q.explanation)}</p>
               </div>
             ` : ''}
@@ -2991,11 +3043,10 @@
         return `
           <div class="mt-1 px-3.5 py-2.5 rounded-xl bg-emerald-50/80 border border-emerald-200 flex flex-wrap items-center justify-between gap-2">
             <div class="flex items-center gap-2 text-xs font-bold text-emerald-800">
-              <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[11px]">✓</span>
               <span>Tebrikler, doğru cevapladınız! (${q.answer} şıkkı)</span>
             </div>
             <button type="button" data-reveal-qid="${q.id}" class="btn-card-reveal px-3 py-1 rounded-lg bg-white hover:bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-bold transition-colors">
-              📖 Soru Çözümünü Gör
+              Soru Çözümünü Gör
             </button>
           </div>
         `;
@@ -3012,22 +3063,21 @@
 
       if (isWrong) {
         return `
-          <div class="mt-2 rounded-2xl border-2 border-rose-200 bg-gradient-to-br from-rose-50/90 via-white to-amber-50/50 p-4 sm:p-5 shadow-sm space-y-3">
+          <div class="mt-2 rounded-lg border border-rose-200 bg-rose-50/60 p-4 sm:p-5 shadow-sm space-y-3">
             <div class="flex flex-wrap items-center justify-between gap-2 pb-2.5 border-b border-rose-200/80">
               <div class="flex items-center gap-2">
-                <span class="w-6 h-6 rounded-lg bg-rose-600 text-white font-extrabold text-xs flex items-center justify-center shadow-sm">✗</span>
-                <span class="text-xs sm:text-sm font-extrabold text-rose-900">Yanlış Cevap (${selectedLetter}) — Doğru Cevap: ${q.answer} Şıkkı</span>
+                <span class="text-xs sm:text-sm font-bold text-rose-900">Yanlış Cevap (${selectedLetter}) — Doğru Cevap: ${q.answer} Şıkkı</span>
               </div>
-              <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-[11px] font-bold">💡 Doğru Cevap Karşılaştırması</span>
+              <span class="px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-900 border border-amber-300 text-[11px] font-bold">Doğru Cevap Karşılaştırması</span>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
-              <div class="p-2.5 rounded-xl bg-rose-100/60 border border-rose-200 text-rose-950">
-                <div class="font-bold text-rose-700 mb-0.5">✗ Sizin İşaretlediğiniz (${selectedLetter}):</div>
+              <div class="p-2.5 rounded-md bg-rose-100/60 border border-rose-200 text-rose-950">
+                <div class="font-bold text-rose-700 mb-0.5">Sizin İşaretlediğiniz (${selectedLetter}):</div>
                 <div class="font-medium leading-snug">${escapeHtml(selectedText)}</div>
               </div>
-              <div class="p-2.5 rounded-xl bg-emerald-100/70 border border-emerald-300 text-emerald-950">
-                <div class="font-bold text-emerald-800 mb-0.5">✓ Doğru Seçenek (${q.answer}):</div>
+              <div class="p-2.5 rounded-md bg-emerald-100/70 border border-emerald-300 text-emerald-950">
+                <div class="font-bold text-emerald-800 mb-0.5">Doğru Seçenek (${q.answer}):</div>
                 <div class="font-semibold leading-snug">${escapeHtml(correctText)}</div>
               </div>
             </div>
@@ -3046,15 +3096,14 @@
       const isAiAns = q.ai_completion === 'answer' || (q.note || '').toLowerCase().includes('tıbbi literatüre');
 
       const expBadge = isAiOpt
-        ? `<span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-900 border border-purple-300 text-[11px] font-extrabold flex items-center gap-1 shadow-sm">🤖 AI ile Şıklandırıldı</span>`
+        ? `<span class="px-2.5 py-0.5 rounded-full bg-purple-100 text-purple-900 border border-purple-300 text-[11px] font-extrabold flex items-center gap-1 shadow-sm">AI ile Şıklandırıldı</span>`
         : isAiAns
-          ? `<span class="px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-900 border border-cyan-300 text-[11px] font-extrabold flex items-center gap-1 shadow-sm">✨ AI Literatür Analizi</span>`
-          : `<span class="px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-800 border border-indigo-200 text-[11px] font-bold">📖 Cevap Anahtarı</span>`;
+          ? `<span class="px-2.5 py-0.5 rounded-full bg-cyan-100 text-cyan-900 border border-cyan-300 text-[11px] font-extrabold flex items-center gap-1 shadow-sm">AI Literatür Analizi</span>`
+          : `<span class="px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-800 border border-indigo-200 text-[11px] font-bold">Cevap Anahtarı</span>`;
 
       const correctBanner = isCorrect ? `
         <div class="px-3.5 py-2.5 rounded-xl bg-emerald-100/90 border border-emerald-300 flex items-center justify-between gap-2 text-xs font-bold text-emerald-900">
           <div class="flex items-center gap-2">
-            <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[11px]">✓</span>
             <span>Tebrikler, bu soruyu doğru yanıtladınız (${selectedLetter} şıkkı)! Detaylı çözüm ve şık analizi aşağıdadır:</span>
           </div>
           <span class="text-[11px] font-extrabold px-2 py-0.5 rounded-md bg-emerald-200 text-emerald-950 shrink-0">Doğru Yanıt</span>
@@ -3062,11 +3111,10 @@
       ` : '';
 
       return `
-        <div class="mt-2 rounded-2xl border-2 border-indigo-200 bg-gradient-to-br from-indigo-50/70 via-white to-emerald-50/40 p-4 sm:p-5 shadow-sm space-y-3">
-          <div class="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-indigo-100">
+        <div class="mt-2 rounded-lg border border-indigo-200 bg-indigo-50/80 p-4 sm:p-5 shadow-sm space-y-3">
+          <div class="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-indigo-200/70">
             <div class="flex items-center gap-2">
-              <span class="w-6 h-6 rounded-lg bg-emerald-600 text-white font-extrabold text-xs flex items-center justify-center shadow-sm">✓</span>
-              <span class="text-xs sm:text-sm font-extrabold text-slate-900">Doğru Cevap: ${q.answer}) ${escapeHtml(correctText)}</span>
+              <span class="text-xs sm:text-sm font-bold text-slate-900">Doğru Cevap: ${q.answer}) ${escapeHtml(correctText)}</span>
             </div>
             ${expBadge}
           </div>
@@ -3104,7 +3152,7 @@
       if (hasRepeats) {
         const selfPill = `
           <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border text-[11px] font-extrabold bg-slate-800 text-white border-slate-900 shadow-sm" title="Şu an görüntülediğiniz soru">
-            <span>📍 ${escapeHtml(q.year)}</span>
+            <span>${escapeHtml(q.year)}</span>
             <span>•</span>
             <span>${escapeHtml(selfKurulLabel)} (#${q.q_num}) (Bu Soru)</span>
           </span>
@@ -3118,7 +3166,7 @@
             : "bg-indigo-600 hover:bg-indigo-700 text-white border-indigo-700";
           return `
             <button type="button" data-jump-kurul="${r.kurul}" data-jump-qid="${r.id}" class="btn-jump-repeat inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border text-[11px] font-bold shadow-sm transition-colors ${badgeStyle}" title="Diğer çıktığı yıla git: ${r.year} • ${kurulLabel} ${r.q_num}. Soru">
-              <span>📅 ${escapeHtml(r.year)}</span>
+              <span>${escapeHtml(r.year)}</span>
               <span>•</span>
               <span>${escapeHtml(kurulLabel)} (#${r.q_num})</span>
             </button>
@@ -3126,9 +3174,9 @@
         }).join('');
 
         repeatsBannerHtml = `
-          <div class="px-3.5 py-2.5 rounded-xl bg-gradient-to-r from-rose-50 via-amber-50/70 to-rose-50 border border-rose-200/90 flex flex-wrap items-center justify-between gap-2">
-            <div class="flex items-center gap-2 text-xs font-extrabold text-rose-900">
-              <span class="px-2 py-0.5 rounded-md bg-rose-600 text-white text-[11px] font-extrabold shadow-sm">🔁 ${totalAskCount} FARKLI YILDA SORULDU</span>
+          <div class="px-3.5 py-2.5 rounded-md bg-amber-50/80 border border-amber-200 flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2 text-xs font-bold text-rose-900">
+              <span class="px-2 py-0.5 rounded-md bg-rose-600 text-white text-[11px] font-bold">${totalAskCount} FARKLI YILDA SORULDU</span>
               <span>Çıktığı yıllar ve kurullar:</span>
             </div>
             <div class="flex flex-wrap items-center gap-1.5">
@@ -3153,22 +3201,22 @@
             <div class="flex flex-wrap items-center justify-between gap-2">
               <div class="flex items-center gap-2 text-xs font-extrabold text-slate-800">
                 <span class="px-2.5 py-0.5 rounded-md bg-amber-100 text-amber-900 border border-amber-300">
-                  ${hasOpenAns ? '📝 Açık Uçlu / Pratik / Spot Soru' : '💭 Öğrenci Hatırlaması (Şıksız Soru Kökü)'}
+                  ${hasOpenAns ? 'Açık Uçlu / Pratik / Spot Soru' : 'Öğrenci Hatırlaması (Şıksız Soru Kökü)'}
                 </span>
                 ${q.incomplete_reason ? `<span class="text-slate-500 font-medium">• ${escapeHtml(q.incomplete_reason)}</span>` : ''}
               </div>
               <div class="flex flex-wrap items-center gap-1.5">
                 ${hasOpenAns && (!isExam || state.examFinished) ? `
                   <button type="button" data-reveal-qid="${q.id}" class="btn-card-reveal px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-sm transition-colors">
-                    👁️ ${isRevealed ? 'Cevabı Gizle' : 'Cevabı / Notu Göster'}
+                    ${isRevealed ? 'Cevabı Gizle' : 'Cevabı / Notu Göster'}
                   </button>
                 ` : ''}
                 <button type="button" data-qid="${q.id}" data-opt="CORRECT" class="opt-select-btn px-3 py-1.5 rounded-xl border text-xs font-bold transition-colors ${isSelfCor ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm' : 'bg-white hover:bg-emerald-50 text-emerald-700 border-emerald-300'}">
-                  ✓ ${hasOpenAns ? 'Biliyorum (Doğru Say)' : 'Çalıştım / İnceledim'}
+                  ${hasOpenAns ? 'Biliyorum (Doğru Say)' : 'Çalıştım / İnceledim'}
                 </button>
                 ${hasOpenAns ? `
                   <button type="button" data-qid="${q.id}" data-opt="WRONG" class="opt-select-btn px-3 py-1.5 rounded-xl border text-xs font-bold transition-colors ${isSelfWro ? 'bg-rose-600 text-white border-rose-600 shadow-sm' : 'bg-white hover:bg-rose-50 text-rose-700 border-rose-300'}">
-                    ✗ Tekrar Et (Yanlış Say)
+                    Tekrar Et (Yanlış Say)
                   </button>
                 ` : ''}
               </div>
@@ -3177,18 +3225,18 @@
             ${isRevealed && hasOpenAns ? `
               <div class="p-3.5 rounded-xl bg-white border border-emerald-300 shadow-sm space-y-2">
                 <div class="text-xs font-extrabold text-emerald-800 uppercase tracking-wide flex items-center gap-1.5">
-                  <span>✓ Doğru Cevap / Hatırlanan Yanıt:</span>
+                  <span>Doğru Cevap / Hatırlanan Yanıt:</span>
                 </div>
                 <div class="text-sm font-bold text-slate-900 leading-relaxed">${escapeHtml(q.open_answer)}</div>
                 ${hasExtraExp ? `
                   <div class="pt-2 border-t border-slate-100 text-xs text-slate-700 leading-relaxed">
-                    <strong class="text-indigo-900">📖 Açıklama:</strong> ${formatExplanationText(q.explanation)}
+                    <strong class="text-indigo-900">Açıklama:</strong> ${formatExplanationText(q.explanation)}
                   </div>
                 ` : ''}
               </div>
             ` : (!hasOpenAns ? `
               <div class="text-xs text-slate-600 leading-relaxed">
-                Bu soru sınav sonrasında öğrencilerin hatırladığı kadarıyla derlenmiştir; kaynak dosyada şıkları veya net cevabı yer almamaktadır. Konu başlığını gözden geçirip <strong>"✓ Çalıştım / İnceledim"</strong> olarak işaretleyebilirsiniz.
+                Bu soru sınav sonrasında öğrencilerin hatırladığı kadarıyla derlenmiştir; kaynak dosyada şıkları veya net cevabı yer almamaktadır. Konu başlığını gözden geçirip <strong>"Çalıştım / İnceledim"</strong> olarak işaretleyebilirsiniz.
               </div>
             ` : '')}
           </div>
@@ -3207,29 +3255,29 @@
             if (isSelected) {
               btnClass = "border-indigo-600 bg-indigo-50/80 text-indigo-950 ring-2 ring-indigo-500/20";
               badgeClass = "bg-indigo-600 text-white border-indigo-600";
-              rightTag = `<span class="ml-auto text-xs font-bold text-indigo-700 shrink-0">${hasKey ? 'İşaretlendi' : '✓ Seçiminiz (Cevap Anahtarsız)'}</span>`;
+              rightTag = `<span class="ml-auto text-xs font-bold text-indigo-700 shrink-0">${hasKey ? 'İşaretlendi' : 'Seçiminiz (Cevap Anahtarsız)'}</span>`;
             }
           } else if (isRevealed && hasKey) {
             if (isCorrectOpt && isSelected) {
               btnClass = "border-emerald-500 bg-emerald-50/90 text-emerald-950 ring-2 ring-emerald-500/20";
               badgeClass = "bg-emerald-600 text-white border-emerald-600";
-              rightTag = `<span class="ml-auto text-xs font-bold text-emerald-700 shrink-0">✓ Doğru Cevabınız</span>`;
+              rightTag = `<span class="ml-auto text-xs font-bold text-emerald-700 shrink-0">Doğru Cevabınız</span>`;
             } else if (isCorrectOpt && !isSelected) {
               btnClass = "border-emerald-500 bg-emerald-50/60 text-emerald-950";
               badgeClass = "bg-emerald-600 text-white border-emerald-600";
-              rightTag = `<span class="ml-auto text-xs font-bold text-emerald-700 shrink-0">✓ Doğru Seçenek</span>`;
+              rightTag = `<span class="ml-auto text-xs font-bold text-emerald-700 shrink-0">Doğru Seçenek</span>`;
             } else if (isSelected && !isCorrectOpt) {
               btnClass = "border-rose-500 bg-rose-50/90 text-rose-950 ring-2 ring-rose-500/20";
               badgeClass = "bg-rose-600 text-white border-rose-600";
-              rightTag = `<span class="ml-auto text-xs font-bold text-rose-700 shrink-0">✗ Sizin Seçiminiz</span>`;
+              rightTag = `<span class="ml-auto text-xs font-bold text-rose-700 shrink-0">Sizin Seçiminiz</span>`;
             } else {
               btnClass = "border-slate-200 bg-slate-50/50 text-slate-500 opacity-80";
             }
           }
 
           return `
-            <button type="button" data-qid="${q.id}" data-opt="${opt.letter}" class="opt-select-btn option-btn w-full text-left p-3 sm:p-3.5 rounded-xl border-2 flex items-start gap-3 ${btnClass}">
-              <span class="w-7 h-7 rounded-lg border text-xs font-extrabold flex items-center justify-center shrink-0 mt-0.5 ${badgeClass}">${opt.letter}</span>
+            <button type="button" data-qid="${q.id}" data-opt="${opt.letter}" class="opt-select-btn option-btn w-full text-left p-3 sm:p-3.5 rounded-md border flex items-start gap-3 ${btnClass}">
+              <span class="w-7 h-7 rounded-md border text-xs font-bold font-mono flex items-center justify-center shrink-0 mt-0.5 ${badgeClass}">${opt.letter}</span>
               <span class="text-sm font-medium leading-relaxed flex-1">${escapeHtml(opt.text)}</span>
               ${rightTag}
             </button>
@@ -3242,15 +3290,14 @@
           optionsOrOpenHtml += `
             <div class="mt-2 p-3.5 rounded-xl border border-amber-300 bg-amber-50/70 flex flex-wrap items-center justify-between gap-2.5">
               <div class="flex items-center gap-2 text-xs text-amber-900 font-semibold leading-relaxed">
-                <span class="text-base shrink-0">⚠️</span>
                 <span><strong>Resmi Cevap Anahtarı Yok:</strong> Bu arşiv sorusunun doğru şıkkı orijinal kaynakta belirtilmemiştir. Şıkları inceleyip kendinizi değerlendirebilirsiniz:</span>
               </div>
               <div class="flex items-center gap-2 shrink-0">
                 <button type="button" data-qid="${q.id}" data-opt="CORRECT" class="opt-select-btn px-3 py-1.5 rounded-xl border text-xs font-bold transition-colors ${isSelfCor ? 'bg-emerald-600 text-white border-emerald-600 shadow-sm' : 'bg-white hover:bg-emerald-50 text-emerald-700 border-emerald-300'}">
-                  ✓ Biliyorum (Doğru Say)
+                  Biliyorum (Doğru Say)
                 </button>
                 <button type="button" data-qid="${q.id}" data-opt="WRONG" class="opt-select-btn px-3 py-1.5 rounded-xl border text-xs font-bold transition-colors ${isSelfWro ? 'bg-rose-600 text-white border-rose-600 shadow-sm' : 'bg-white hover:bg-rose-50 text-rose-700 border-rose-300'}">
-                  ✗ Tekrar Et (Yanlış Say)
+                  Tekrar Et (Yanlış Say)
                 </button>
               </div>
             </div>
@@ -3265,20 +3312,20 @@
           <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-100">
             <div class="flex flex-wrap items-center gap-1.5">
               <span class="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-slate-900 text-white">${escapeHtml(q.year)} • ${q.q_num}. Soru</span>
-              <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">🩺 ${escapeHtml(q.subject)}</span>
-              <span class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200">👨‍⚕️ ${escapeHtml(profBadgeText)}</span>
-              ${hasRepeats ? `<span class="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-rose-100 text-rose-800 border border-rose-300">🔁 ${totalAskCount} Kez Çıkmış</span>` : ''}
-              ${isAiOpt ? `<span class="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-purple-100 text-purple-900 border border-purple-300 flex items-center gap-1 shadow-sm" title="Öğrenci hatırlama notundan / eksik soru kökünden yapay zekâ desteğiyle 5 seçenekli çoktan seçmeli soruya dönüştürülmüştür">🤖 AI ile Şıklandırıldı</span>` : ''}
-              ${!isAiOpt && isAiAns ? `<span class="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-cyan-100 text-cyan-900 border border-cyan-300 flex items-center gap-1 shadow-sm" title="Orijinal sınavda cevap anahtarı bulunmayan sorunun doğru seçeneği ve tıbbi açıklaması yapay zekâ tarafından tıp literatürüne göre tamamlanmıştır">✨ AI Cevap Anahtarı</span>` : ''}
-              ${q.incomplete ? `<span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300" title="${escapeHtml(q.incomplete_reason || 'Hatırlanan / Eksik Soru')}">⚠️ ${escapeHtml(q.incomplete_reason || 'Hatırlanan / Eksik Soru')}</span>` : ''}
-              ${!q.incomplete && isOpenQuestion ? `<span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">📝 Açık Uçlu / Spot Soru</span>` : ''}
-              ${q.note && q.note.toLowerCase().includes('iptal') ? `<span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-rose-100 text-rose-800 border border-rose-300">⚠️ Sınavda İptal Edildi</span>` : ''}
+              <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">${escapeHtml(q.subject)}</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-200">${escapeHtml(profBadgeText)}</span>
+              ${hasRepeats ? `<span class="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-rose-100 text-rose-800 border border-rose-300">${totalAskCount} Kez Çıkmış</span>` : ''}
+              ${isAiOpt ? `<span class="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-purple-100 text-purple-900 border border-purple-300 flex items-center gap-1 shadow-sm" title="Öğrenci hatırlama notundan / eksik soru kökünden yapay zekâ desteğiyle 5 seçenekli çoktan seçmeli soruya dönüştürülmüştür">AI ile Şıklandırıldı</span>` : ''}
+              ${!isAiOpt && isAiAns ? `<span class="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-cyan-100 text-cyan-900 border border-cyan-300 flex items-center gap-1 shadow-sm" title="Orijinal sınavda cevap anahtarı bulunmayan sorunun doğru seçeneği ve tıbbi açıklaması yapay zekâ tarafından tıp literatürüne göre tamamlanmıştır">AI Cevap Anahtarı</span>` : ''}
+              ${q.incomplete ? `<span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300" title="${escapeHtml(q.incomplete_reason || 'Hatırlanan / Eksik Soru')}">${escapeHtml(q.incomplete_reason || 'Hatırlanan / Eksik Soru')}</span>` : ''}
+              ${!q.incomplete && isOpenQuestion ? `<span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">Açık Uçlu / Spot Soru</span>` : ''}
+              ${q.note && q.note.toLowerCase().includes('iptal') ? `<span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-rose-100 text-rose-800 border border-rose-300">Sınavda İptal Edildi</span>` : ''}
             </div>
             <div class="flex flex-wrap items-center gap-1.5">
               <span class="text-xs font-semibold text-slate-400 mr-1">#${idxInList + 1} / ${totalInList}</span>
               ${!isExam ? `
                 <button type="button" data-reveal-qid="${q.id}" class="btn-card-reveal px-2.5 py-1 rounded-lg border border-slate-200 hover:bg-slate-100 text-xs font-semibold text-slate-600" title="Cevabı Göster/Gizle">
-                  👁️ ${state.revealedIds.has(q.id) ? 'Cevabı Gizle' : 'Cevabı Göster'}
+                  ${state.revealedIds.has(q.id) ? 'Cevabı Gizle' : 'Cevabı Göster'}
                 </button>
                 ${selectedLetter ? `
                   <button type="button" data-clear-qid="${q.id}" class="btn-card-clear px-2.5 py-1 rounded-lg border border-slate-200 hover:bg-rose-50 hover:text-rose-700 text-xs font-semibold text-slate-500" title="Bu Sorudaki İşaretimi Temizle">
@@ -3287,7 +3334,7 @@
                 ` : ''}
               ` : ''}
               <button type="button" data-fav-qid="${q.id}" class="btn-card-fav px-2.5 py-1 rounded-lg border text-xs font-bold transition-colors ${isFav ? 'bg-amber-100 border-amber-300 text-amber-800' : 'bg-white border-slate-200 text-slate-500 hover:bg-slate-50'}" title="Favorilere Ekle/Çıkar">
-                ${isFav ? '★ Favori' : '☆ Favori'}
+                ${isFav ? 'Favoride' : 'Favoriye Ekle'}
               </button>
             </div>
           </div>
@@ -3302,7 +3349,7 @@
             <div class="my-1 flex flex-col items-start gap-1.5">
               <div class="relative group cursor-pointer overflow-hidden rounded-xl border border-slate-200 bg-slate-100" data-zoom-img="${escapeHtml(q.image)}" data-zoom-title="${escapeHtml(q.year)} - ${q.q_num}. Soru (${escapeHtml(q.subject)})">
                 <img src="${escapeHtml(q.image)}" alt="Soru Görseli" class="max-w-full sm:max-w-sm h-auto object-contain rounded-xl transition-transform duration-200 group-hover:scale-[1.02]" />
-                <div class="absolute bottom-2 right-2 px-2.5 py-1 rounded-lg bg-slate-900/75 text-white text-[11px] font-semibold backdrop-blur-sm">🔍 Büyütmek için tıklayın</div>
+                <div class="absolute bottom-2 right-2 px-2.5 py-1 rounded-lg bg-slate-900/75 text-white text-[11px] font-semibold backdrop-blur-sm">Büyütmek için tıklayın</div>
               </div>
             </div>
           ` : ''}
@@ -3322,7 +3369,7 @@
                   : 'bg-slate-50 border-slate-200 text-slate-600'
             }">
               <span class="leading-relaxed">
-                ${isAiOpt ? '🤖 <strong>Yapay Zekâ (AI) Notu:</strong> ' : isAiAns ? '✨ <strong>Yapay Zekâ (AI) Analizi:</strong> ' : 'ℹ️ <strong>Kaynak Notu:</strong> '}
+                ${isAiOpt ? '<strong>Yapay Zekâ (AI) Notu:</strong> ' : isAiAns ? '<strong>Yapay Zekâ (AI) Analizi:</strong> ' : '<strong>Kaynak Notu:</strong> '}
                 ${escapeHtml(q.note)}
               </span>
               ${isRevealed && q.answer ? `<span class="font-bold text-emerald-700 shrink-0">Doğru Cevap: ${q.answer}</span>` : ''}
@@ -3368,7 +3415,6 @@
       if (activeList.length === 0) {
         container.innerHTML = `
           <div class="bg-white rounded-2xl border border-slate-200 p-10 text-center flex flex-col items-center gap-3">
-            <div class="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center text-2xl">🔍</div>
             <h3 class="text-base font-bold text-slate-800">Seçtiğiniz kriterlere uygun soru bulunamadı</h3>
             <p class="text-xs text-slate-500 max-w-md">Sol menüden en az bir Yıl, bir Ders ve bir Hoca seçili olduğundan emin olun veya arama/durum filtresini sıfırlayın.</p>
             <button id="btn-empty-reset" type="button" class="mt-1 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold">Tüm Filtreleri Varsayılana Döndür</button>
@@ -3382,7 +3428,6 @@
       if (state.viewMode === 'exam' && !state.examActive && !state.examFinished) {
         container.innerHTML = `
           <div class="bg-white rounded-2xl border border-slate-200 p-8 text-center flex flex-col items-center gap-3">
-            <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-3xl">📝</div>
             <h3 class="text-base font-bold text-slate-900">Deneme Sınavına Hazırsınız</h3>
             <p class="text-xs text-slate-600 max-w-lg">Şu anda sol panelde seçtiğiniz kategorilerde toplam <strong>${state.filteredQuestions.length} soru</strong> bulunuyor. Yukarıdan soru sayısını seçip <strong>"Sınavı Başlat"</strong> butonuna tıklayarak süreli deneme sınavını başlatabilirsiniz.</p>
           </div>
@@ -3406,7 +3451,7 @@
                 Soru <strong class="text-slate-900">${state.currentIndex + 1}</strong> / ${activeList.length}
               </div>
               <button type="button" class="btn-card-back-list px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-xs font-bold text-slate-700">
-                📋 Liste Görünümüne Dön
+                Liste Görünümüne Dön
               </button>
             </div>
             <button id="btn-next-q" type="button" ${state.currentIndex >= activeList.length - 1 ? 'disabled' : ''} class="px-4 py-2 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center gap-1.5 ${nextDisabled}">
@@ -3519,17 +3564,17 @@
             const idx = state.filteredQuestions.findIndex(q => q.id === targetQid);
             if (idx !== -1) {
               goToQuestion(idx);
-              showToast('🔁 Tekrar eden soruya geçildi');
+              showToast('Tekrar eden soruya geçildi');
             } else {
               resetAllFilters();
               const newIdx = state.filteredQuestions.findIndex(q => q.id === targetQid);
               if (newIdx !== -1) goToQuestion(newIdx);
-              showToast('🔁 Filtreler açılarak tekrar eden soruya geçildi');
+              showToast('Filtreler açılarak tekrar eden soruya geçildi');
             }
           } else {
             const tMeta = KURUL_META[targetKurul];
             selectKurul(String(targetKurul), 'study', targetQid);
-            showToast(`🔁 ${tMeta ? tMeta.shortTitle : targetKurul + '. Kurul'} içindeki eşleşen soruya geçildi`);
+            showToast(`${tMeta ? tMeta.shortTitle : targetKurul + '. Kurul'} içindeki eşleşen soruya geçildi`);
           }
         });
       });
@@ -3595,7 +3640,7 @@
         showToast('Favorilerden çıkarıldı');
       } else {
         state.favorites.add(qid);
-        showToast('⭐ Favorilere eklendi');
+        showToast('Favorilere eklendi');
       }
       saveUserProgress();
       updateHeaderAndToolbarStats();
@@ -3746,7 +3791,7 @@
       updateHeaderAndToolbarStats();
       renderMainArea();
       renderQuestionMap();
-      showToast(`⏱️ ${limit} soruluk deneme sınavı başladı!`);
+      showToast(`${limit} soruluk deneme sınavı başladı!`);
     }
 
     function finishExamSession() {
@@ -4022,8 +4067,8 @@
       const lbl = document.getElementById('view-toggle-label');
       if (lbl) {
         lbl.textContent = state.displayStyle === 'single'
-          ? '📋 Liste Görünümü'
-          : '🎯 Tek Tek Soru Ekranı';
+          ? 'Liste Görünümü'
+          : 'Tek Tek Soru Ekranı';
       }
       const btnList = document.getElementById('btn-toolbar-list');
       const btnSingle = document.getElementById('btn-toolbar-single');
@@ -4232,7 +4277,7 @@
         state.sortOrder = 'random';
         document.getElementById('sort-order').value = 'random';
         applyFiltersAndRender(true);
-        showToast('🎲 Sorular rastgele karıştırıldı');
+        showToast('Sorular rastgele karıştırıldı');
       });
 
       document.getElementById('btn-reveal-all').addEventListener('click', e => {
@@ -4241,7 +4286,7 @@
           return;
         }
         state.revealAll = !state.revealAll;
-        e.currentTarget.textContent = state.revealAll ? '🙈 Cevapları Gizle' : '👁️ Tüm Cevapları Göster';
+        e.currentTarget.textContent = state.revealAll ? 'Cevapları Gizle' : 'Tüm Cevapları Göster';
         renderMainArea();
       });
 
@@ -4255,7 +4300,7 @@
         updateHeaderAndToolbarStats();
         renderMainArea();
         renderQuestionMap();
-        showToast(`🔄 Listelenen ${state.filteredQuestions.length} sorunun yanıtları temizlendi`);
+        showToast(`Listelenen ${state.filteredQuestions.length} sorunun yanıtları temizlendi`);
       });
 
       document.getElementById('btn-start-exam').addEventListener('click', startExamSession);
@@ -4431,7 +4476,7 @@
         const isDark = document.documentElement.classList.contains('dark');
         const iconEl = document.getElementById('theme-toggle-icon');
         const textEl = document.getElementById('theme-toggle-text');
-        if (iconEl) iconEl.textContent = isDark ? '☀️' : '🌙';
+        if (iconEl) iconEl.textContent = '';
         if (textEl) textEl.textContent = isDark ? 'Açık Mod' : 'Koyu Mod';
       };
       syncThemeButtonUI();
@@ -4515,6 +4560,19 @@
       applyRouteFromUrl();
       restoreActiveExamIfAny();
 
+      function refreshAllUI() {
+        try { renderHomeScreen(); } catch (e) {}
+        try { updateHeaderAndToolbarStats(); } catch (e) {}
+        if (state.activeKurul) {
+          try { renderSidebarFilters(); } catch (e) {}
+          try { renderMainArea(); } catch (e) {}
+          try { renderQuestionMap(); } catch (e) {}
+          if (state.viewMode === 'stats') {
+            try { renderStatsTables(); } catch (e) {}
+          }
+        }
+      }
+
       window.d3k1App = {
         state,
         saveUserProgress,
@@ -4524,6 +4582,13 @@
         renderOpticalGrid,
         updateHeaderScores: updateHeaderAndToolbarStats,
         updateHeaderAndToolbarStats,
+        renderHomeScreen,
+        renderSidebarFilters,
+        renderMainArea,
+        renderQuestionMap,
+        renderStatsTables,
+        updateStats: renderStatsTables,
+        refreshAllUI,
         showHomeScreen,
         showAdminScreen,
         renderAdminScreen,

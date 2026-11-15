@@ -2,6 +2,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
   signOut,
   updateProfile,
   sendPasswordResetEmail,
@@ -19,8 +21,10 @@ import {
   writeBatch,
   deleteDoc,
   addDoc,
+  onSnapshot,
+  Unsubscribe,
 } from 'firebase/firestore';
-import { auth, googleProvider, db } from './firebase.ts';
+import { auth, googleProvider, db, authReadyPromise } from './firebase.ts';
 
 // Designated Read-Only Admin Email
 export const ADMIN_EMAIL = 'sezgin45efe@gmail.com';
@@ -41,13 +45,6 @@ export function escapeHtml(str: string): string {
     .replace(/'/g, '&#039;');
 }
 
-export function requireAuth(message?: string): void {
-  openAuthModal(
-    'register',
-    message || '🔒 Soru çözmek ve ilerlemenizi kaydetmek için lütfen ücretsiz giriş yapın veya kayıt olun.'
-  );
-}
-
 // User profile interface matching firebase-blueprint.json
 export interface UserProfileData {
   userId: string;
@@ -60,6 +57,7 @@ export interface UserProfileData {
   isOnline?: boolean;
 }
 
+let isAuthInitialized = false;
 let hadPreviousUser = false;
 let isCloudTimeLoaded = false;
 let currentStudySeconds = 0;
@@ -70,6 +68,73 @@ let studyTimerInterval: number | null = null;
 let studyCloudSyncInterval: number | null = null;
 let activityListenersInitialized = false;
 const cloudBookmarkIds = new Set<string>();
+
+// Real-time synchronization state
+let activeUnsubscribers: Unsubscribe[] = [];
+let isInitialCloudSyncComplete = false;
+let lastSyncedAnswersJson = '';
+let lastSyncedFavoritesJson = '';
+
+export function isAuthenticated(): boolean {
+  if (auth.currentUser) return true;
+  if (!isAuthInitialized) {
+    try {
+      return Boolean(localStorage.getItem('d3k1_last_auth_uid'));
+    } catch {
+      return false;
+    }
+  }
+  return false;
+}
+
+export function requireAuth(message?: string): void {
+  if (auth.currentUser) return;
+  const msg = message || 'Soru çözmek ve ilerlemenizi kaydetmek için lütfen giriş yapın veya ücretsiz kayıt olun.';
+  if (!isAuthInitialized) {
+    authReadyPromise.then((u) => {
+      if (!u) {
+        openAuthModal('login', msg);
+      }
+    });
+    return;
+  }
+  openAuthModal('login', msg);
+}
+
+function refreshAppUI(): void {
+  try {
+    const app = (window as unknown as {
+      d3k1App?: {
+        refreshAllUI?: () => void;
+        updateHeaderScores?: () => void;
+        updateHeaderAndToolbarStats?: () => void;
+      };
+    }).d3k1App;
+    app?.refreshAllUI?.();
+    app?.updateHeaderScores?.();
+    app?.updateHeaderAndToolbarStats?.();
+  } catch {}
+
+  const modalRoot = document.getElementById('auth-modal-root');
+  if (modalRoot && !modalRoot.classList.contains('hidden')) {
+    const favsEl = document.getElementById('profile-stat-favs');
+    const ansEl = document.getElementById('profile-stat-answers');
+    const app = (window as unknown as { d3k1App?: { state?: { favorites?: Set<string>; userAnswers?: Record<string, string> } } }).d3k1App;
+    if (app?.state) {
+      if (favsEl) favsEl.textContent = String(app.state.favorites?.size || 0);
+      if (ansEl) ansEl.textContent = String(Object.keys(app.state.userAnswers || {}).length);
+    }
+  }
+}
+
+function cleanupCloudListeners(): void {
+  activeUnsubscribers.forEach((unsub) => {
+    try {
+      unsub();
+    } catch {}
+  });
+  activeUnsubscribers = [];
+}
 
 export function formatStudyTime(seconds?: number): string {
   if (!seconds || seconds <= 0) return '0 dk';
@@ -93,21 +158,21 @@ export function formatLastActive(lastActiveAt?: string, isOnline?: boolean): { l
 
   if (isTrulyOnline) {
     return {
-      label: '🟢 Şu An Aktif',
+      label: 'Şu An Aktif',
       badgeClass: 'bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 font-bold',
       isHot: true,
     };
   }
   if (diffMin < 1) {
     return {
-      label: '🟡 Az önce ayrıldı',
+      label: 'Az önce ayrıldı',
       badgeClass: 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800',
       isHot: false,
     };
   }
   if (diffMin < 60) {
     return {
-      label: `🟡 ${diffMin} dk önce`,
+      label: `${diffMin} dk önce`,
       badgeClass: 'bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800',
       isHot: false,
     };
@@ -115,14 +180,14 @@ export function formatLastActive(lastActiveAt?: string, isOnline?: boolean): { l
   const diffHour = Math.floor(diffMin / 60);
   if (diffHour < 24) {
     return {
-      label: `🔵 ${diffHour} saat önce`,
+      label: `${diffHour} saat önce`,
       badgeClass: 'bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800',
       isHot: false,
     };
   }
   const days = Math.floor(diffHour / 24);
   return {
-    label: `⚪ ${days} gün önce`,
+    label: `${days} gün önce`,
     badgeClass: 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700',
     isHot: false,
   };
@@ -203,7 +268,7 @@ function updateStudyUI(): void {
   if (profTotalEl) profTotalEl.textContent = formattedTotal;
   if (profSessionEl) profSessionEl.textContent = formattedSession;
   if (profStatusEl) {
-    profStatusEl.textContent = isUserActive ? '🟢 Şu An Aktif' : '🟡 Mola / Beklemede';
+    profStatusEl.textContent = isUserActive ? 'Şu An Aktif' : 'Mola / Beklemede';
   }
 }
 
@@ -341,6 +406,7 @@ function initActivityListeners(): void {
       isUserActive = false;
       updateStudyUI();
       syncStudyTimeToCloud(false);
+      flushProgressToCloudNow();
     } else {
       lastInteractionTime = Date.now();
       isUserActive = true;
@@ -351,6 +417,7 @@ function initActivityListeners(): void {
 
   window.addEventListener('beforeunload', () => {
     syncStudyTimeToCloud(false);
+    flushProgressToCloudNow();
   });
 }
 
@@ -360,16 +427,39 @@ export function initAuthUI(): void {
     injectAuthModalDOM();
   }
 
+  // Handle Google redirect auth result if returning from redirect sign-in
+  getRedirectResult(auth).catch(() => {});
+
+  // Wait on auth ready promise to establish initial auth restoration status
+  authReadyPromise
+    .then((u) => {
+      isAuthInitialized = true;
+      if (u) {
+        try {
+          localStorage.setItem('d3k1_last_auth_uid', u.uid);
+          if (u.email) localStorage.setItem('d3k1_last_auth_email', u.email);
+        } catch {}
+      }
+    })
+    .catch(() => {
+      isAuthInitialized = true;
+    });
+
   // Setup Event Listeners
   setupAuthEventListeners();
   initActivityListeners();
 
   // Listen to Auth state changes
   onAuthStateChanged(auth, async (user) => {
+    isAuthInitialized = true;
     updateHeaderUserUI(user);
     updateHomeBannerUI(user);
 
     if (user) {
+      try {
+        localStorage.setItem('d3k1_last_auth_uid', user.uid);
+        if (user.email) localStorage.setItem('d3k1_last_auth_email', user.email);
+      } catch {}
       hadPreviousUser = true;
       startStudyTracker(user);
       await onUserSignedIn(user);
@@ -378,6 +468,9 @@ export function initAuthUI(): void {
       currentStudySeconds = 0;
       sessionStudySeconds = 0;
       updateStudyUI();
+      try {
+        localStorage.removeItem('d3k1_last_auth_uid');
+      } catch {}
       if (hadPreviousUser) {
         onUserSignedOut();
       }
@@ -397,7 +490,7 @@ export function initAuthUI(): void {
     auth,
     ADMIN_EMAIL,
     isCurrentUserAdmin,
-    isAuthenticated: () => Boolean(auth.currentUser),
+    isAuthenticated: () => isAuthenticated(),
     requireAuth,
     openAuthModal,
     fetchUsersForAdmin,
@@ -408,6 +501,7 @@ export function initAuthUI(): void {
     isUserActive: () => isUserActive,
     saveExamResultToCloud,
     syncProgressToCloud,
+    flushProgressToCloudNow,
     loadCloudBookmarks,
     escapeHtml,
   };
@@ -444,7 +538,7 @@ function updateHeaderUserUI(user: User | null): void {
   if (user) {
     const isAdmin = isCurrentUserAdmin();
     const name = user.displayName || user.email?.split('@')[0] || 'Kullanıcı';
-    btnIcon.textContent = isAdmin ? '👑' : '✅';
+    btnIcon.textContent = '';
     btnText.textContent = isAdmin
       ? 'Admin (İzleme)'
       : (name.length > 10 ? name.substring(0, 9) + '..' : name);
@@ -452,10 +546,10 @@ function updateHeaderUserUI(user: User | null): void {
       ? 'px-3 py-1.5 rounded-xl border border-amber-300 dark:border-amber-700 bg-amber-600 hover:bg-amber-700 text-xs font-bold text-white shadow-sm flex items-center gap-1.5 transition-all shrink-0 cursor-pointer'
       : 'px-3 py-1.5 rounded-xl border border-emerald-300 dark:border-emerald-700 bg-emerald-600 hover:bg-emerald-700 text-xs font-bold text-white shadow-sm flex items-center gap-1.5 transition-all shrink-0 cursor-pointer';
     triggerBtn.title = isAdmin
-      ? `👑 Yönetici Paneli (${user.email}) - Açmak için tıklayın`
+      ? `Yönetici Paneli (${user.email}) - Açmak için tıklayın`
       : `Giriş yapıldı: ${user.email}`;
   } else {
-    btnIcon.textContent = '👤';
+    btnIcon.textContent = '';
     btnText.textContent = 'Giriş Yap / Kayıt';
     triggerBtn.className =
       'px-3 py-1.5 rounded-xl border border-indigo-300 dark:border-indigo-700 bg-indigo-600 hover:bg-indigo-700 text-xs font-bold text-white shadow-sm flex items-center gap-1.5 transition-all shrink-0 cursor-pointer';
@@ -505,7 +599,31 @@ function updateHomeBannerUI(user: User | null): void {
 async function onUserSignedIn(user: User): Promise<void> {
   const toast = getToastFunction();
   if (toast) {
-    toast(`👋 Hoş geldiniz, ${user.displayName || user.email}!`);
+    toast(`Hoş geldiniz, ${user.displayName || user.email}!`);
+  }
+
+  // Account switch guard: prevent previous user's local progress from leaking into this account
+  try {
+    const prevOwner = localStorage.getItem('d3k1_answers_owner_uid');
+    if (prevOwner && prevOwner !== user.uid) {
+      localStorage.removeItem('d3k1_user_answers_v1');
+      localStorage.removeItem('d3k1_favorites_v1');
+      localStorage.removeItem('d3k1_active_exam_v1');
+      localStorage.removeItem('d3k1_exam_history_v1');
+      const app = (window as unknown as {
+        d3k1App?: {
+          state?: { userAnswers: Record<string, string>; favorites: Set<string>; revealedIds?: Set<string> };
+        };
+      }).d3k1App;
+      if (app?.state) {
+        app.state.userAnswers = {};
+        app.state.favorites.clear();
+        if (app.state.revealedIds) app.state.revealedIds.clear();
+      }
+    }
+    localStorage.setItem('d3k1_answers_owner_uid', user.uid);
+  } catch {
+    // Ignore storage errors
   }
 
   // 1. Sync / Save user profile to Firestore & local registry
@@ -533,19 +651,29 @@ async function onUserSignedIn(user: User): Promise<void> {
 
     await setDoc(userDocRef, profileData, { merge: true });
     saveUserToLocalRegistry(profileData);
-  } catch {
-    // Handled gracefully
+  } catch (err) {
+    console.warn('Initial profile sync warning:', err);
   }
 
-  // 2. Load cloud bookmarks into local state
+  // 2. Load cloud bookmarks, answers and exam results
   await loadCloudBookmarks(user);
+
+  // 3. Setup real-time listeners for cross-device synchronization
+  setupRealtimeCloudSync(user);
 }
 
 function onUserSignedOut(): void {
+  cleanupCloudListeners();
+  isInitialCloudSyncComplete = false;
+  lastSyncedAnswersJson = '';
+  lastSyncedFavoritesJson = '';
+
   try {
     localStorage.removeItem('d3k1_user_answers_v1');
     localStorage.removeItem('d3k1_favorites_v1');
     localStorage.removeItem('d3k1_active_exam_v1');
+    localStorage.removeItem('d3k1_answers_owner_uid');
+    localStorage.removeItem('d3k1_last_auth_uid');
   } catch {
     // Ignore storage errors
   }
@@ -554,12 +682,6 @@ function onUserSignedOut(): void {
   const app = (window as unknown as {
     d3k1App?: {
       state?: { userAnswers: Record<string, string>; favorites: Set<string>; revealedIds?: Set<string> };
-      updateStats?: () => void;
-      updateHeaderScores?: () => void;
-      updateHeaderAndToolbarStats?: () => void;
-      renderQuestions?: () => void;
-      renderMainArea?: () => void;
-      renderQuestionMap?: () => void;
     };
   }).d3k1App;
 
@@ -569,12 +691,7 @@ function onUserSignedOut(): void {
     if (app.state.revealedIds) {
       app.state.revealedIds.clear();
     }
-    app.updateStats?.();
-    app.updateHeaderScores?.();
-    app.updateHeaderAndToolbarStats?.();
-    app.renderQuestions?.();
-    app.renderMainArea?.();
-    app.renderQuestionMap?.();
+    refreshAppUI();
   }
 
   const toast = getToastFunction();
@@ -585,40 +702,51 @@ function onUserSignedOut(): void {
 
 async function loadCloudBookmarks(user: User): Promise<void> {
   try {
-    cloudBookmarkIds.clear();
-    const bookmarksRef = collection(db, 'users', user.uid, 'bookmarks');
-    const snap = await getDocs(bookmarksRef);
-    const cloudFavs: string[] = [];
-    snap.forEach((d) => {
-      cloudBookmarkIds.add(d.id);
-      const data = d.data();
-      if (data.questionId) cloudFavs.push(data.questionId);
-    });
-
     const app = (window as unknown as {
       d3k1App?: {
         state: { favorites: Set<string>; userAnswers: Record<string, string> };
-        saveUserProgress: () => void;
-        updateHeaderScores?: () => void;
-        updateHeaderAndToolbarStats?: () => void;
-        updateStats?: () => void;
-        renderQuestions?: () => void;
-        renderMainArea?: () => void;
-        renderQuestionMap?: () => void;
+        saveUserProgress?: () => void;
       };
     }).d3k1App;
 
+    let hasLocalUnsyncedFavorites = false;
+    let hasLocalUnsyncedAnswers = false;
+
+    // 1. Load bookmarks
+    cloudBookmarkIds.clear();
+    const bookmarksRef = collection(db, 'users', user.uid, 'bookmarks');
+    const bSnap = await getDocs(bookmarksRef);
+    const cloudFavs: string[] = [];
+    bSnap.forEach((d) => {
+      cloudBookmarkIds.add(d.id);
+      const data = d.data();
+      if (data.questionId) cloudFavs.push(String(data.questionId));
+    });
+
     let mergedFavCount = 0;
     if (app && app.state) {
+      if (!app.state.favorites) {
+        app.state.favorites = new Set<string>();
+      }
+      for (const localF of app.state.favorites) {
+        const sId = String(localF).replace(/[^a-zA-Z0-9_-]/g, '_');
+        if (!cloudBookmarkIds.has(sId)) {
+          hasLocalUnsyncedFavorites = true;
+          break;
+        }
+      }
       cloudFavs.forEach((qid) => {
         if (!app.state.favorites.has(qid)) {
           app.state.favorites.add(qid);
           mergedFavCount++;
         }
       });
+      try {
+        localStorage.setItem('d3k1_favorites_v1', JSON.stringify(Array.from(app.state.favorites)));
+      } catch {}
     }
 
-    // Also read user profile doc for cloud-synced userAnswers
+    // 2. Load cloud-synced userAnswers from profile doc
     let mergedAnsCount = 0;
     try {
       const userDocRef = doc(db, 'users', user.uid);
@@ -626,11 +754,17 @@ async function loadCloudBookmarks(user: User): Promise<void> {
       if (userSnap.exists()) {
         const uData = userSnap.data();
         if (uData?.userAnswers && typeof uData.userAnswers === 'object' && !Array.isArray(uData.userAnswers)) {
+          const cloudAnswers = uData.userAnswers as Record<string, string>;
           if (app && app.state) {
             if (!app.state.userAnswers) {
               app.state.userAnswers = {};
             }
-            for (const [qid, ans] of Object.entries(uData.userAnswers as Record<string, string>)) {
+            for (const [lKey, lVal] of Object.entries(app.state.userAnswers)) {
+              if (lVal && !cloudAnswers[lKey]) {
+                hasLocalUnsyncedAnswers = true;
+              }
+            }
+            for (const [qid, ans] of Object.entries(cloudAnswers)) {
               if (typeof ans === 'string' && !app.state.userAnswers[qid]) {
                 app.state.userAnswers[qid] = ans;
                 mergedAnsCount++;
@@ -638,145 +772,361 @@ async function loadCloudBookmarks(user: User): Promise<void> {
             }
             try {
               localStorage.setItem('d3k1_user_answers_v1', JSON.stringify(app.state.userAnswers));
-            } catch {
-              // Ignore storage errors
-            }
+            } catch {}
           }
+        } else if (app?.state?.userAnswers && Object.keys(app.state.userAnswers).length > 0) {
+          hasLocalUnsyncedAnswers = true;
         }
       }
-    } catch {
-      // Ignore userAnswers fetch error
+    } catch (err) {
+      console.warn('loadCloudBookmarks userAnswers error:', err);
     }
 
-    if (app && app.state) {
-      if (mergedFavCount > 0 || mergedAnsCount > 0) {
-        try {
-          localStorage.setItem('d3k1_favorites_v1', JSON.stringify(Array.from(app.state.favorites)));
-        } catch {
-          // Ignore storage errors
-        }
-        app.updateStats?.();
-        app.updateHeaderScores?.();
-        app.updateHeaderAndToolbarStats?.();
-        app.renderQuestions?.();
-        app.renderMainArea?.();
-        app.renderQuestionMap?.();
+    // 3. Load examResults
+    try {
+      const examCol = collection(db, 'users', user.uid, 'examResults');
+      const examSnap = await getDocs(examCol);
+      if (!examSnap.empty) {
+        const rawHistory = localStorage.getItem('d3k1_exam_history_v1');
+        let localHistory: any[] = rawHistory ? JSON.parse(rawHistory) : [];
+        if (!Array.isArray(localHistory)) localHistory = [];
 
+        examSnap.forEach((d) => {
+          const data = d.data();
+          const cloudItem = {
+            id: d.id,
+            date: data.completedAt || new Date().toISOString(),
+            kurul: data.kurul || data.kurulId || '',
+            score: typeof data.score === 'number' ? data.score : 0,
+            correctCount: typeof data.correctCount === 'number' ? data.correctCount : 0,
+            wrongCount: typeof data.wrongCount === 'number' ? data.wrongCount : 0,
+            emptyCount: typeof data.emptyCount === 'number' ? data.emptyCount : 0,
+            totalQuestions: typeof data.totalQuestions === 'number' ? data.totalQuestions : 0,
+            durationSeconds: typeof data.durationSeconds === 'number' ? data.durationSeconds : 0,
+          };
+
+          const isDuplicate = localHistory.some((loc) => {
+            const dateMatch = loc.date === cloudItem.date || loc.completedAt === cloudItem.date;
+            const kurulMatch = (loc.kurul || '') === cloudItem.kurul;
+            const scoreMatch = loc.score === cloudItem.score;
+            const totalMatch = loc.totalQuestions === cloudItem.totalQuestions;
+            return (dateMatch && kurulMatch && scoreMatch) || (loc.id && loc.id === cloudItem.id);
+          });
+
+          if (!isDuplicate) {
+            localHistory.push(cloudItem);
+          }
+        });
+
+        localHistory.sort((a, b) => {
+          const tA = new Date(a.date || a.completedAt || 0).getTime();
+          const tB = new Date(b.date || b.completedAt || 0).getTime();
+          return tB - tA;
+        });
+        if (localHistory.length > 50) localHistory = localHistory.slice(0, 50);
+
+        try {
+          localStorage.setItem('d3k1_exam_history_v1', JSON.stringify(localHistory));
+        } catch {}
+        (window as unknown as { d3k1App?: { renderStatsTables?: () => void } }).d3k1App?.renderStatsTables?.();
+      }
+    } catch (err) {
+      console.warn('loadCloudBookmarks examResults error:', err);
+    }
+
+    isInitialCloudSyncComplete = true;
+
+    if (app?.state) {
+      lastSyncedAnswersJson = JSON.stringify(app.state.userAnswers || {});
+      lastSyncedFavoritesJson = JSON.stringify(Array.from(app.state.favorites || []).sort());
+      refreshAppUI();
+
+      if (mergedFavCount > 0 || mergedAnsCount > 0) {
         const toast = getToastFunction();
         if (toast) {
           const parts: string[] = [];
           if (mergedFavCount > 0) parts.push(`${mergedFavCount} favori`);
           if (mergedAnsCount > 0) parts.push(`${mergedAnsCount} yanıt`);
-          toast(`☁️ Buluttan ${parts.join(', ')} senkronize edildi!`);
+          toast(`Buluttan ${parts.join(', ')} senkronize edildi!`);
         }
       }
     }
-  } catch {
-    // Offline or initial load handled without noise
+
+    if (hasLocalUnsyncedAnswers || hasLocalUnsyncedFavorites) {
+      syncProgressToCloud(user);
+    }
+  } catch (err) {
+    console.warn('loadCloudBookmarks critical error:', err);
+    isInitialCloudSyncComplete = true;
+  }
+}
+
+function setupRealtimeCloudSync(user: User): void {
+  cleanupCloudListeners();
+
+  // 1. Real-time users/{uid} listener (userAnswers)
+  const unsubUser = onSnapshot(doc(db, 'users', user.uid), (docSnap) => {
+    if (docSnap.metadata.hasPendingWrites) return;
+    if (!docSnap.exists()) return;
+
+    const uData = docSnap.data();
+    if (uData?.userAnswers && typeof uData.userAnswers === 'object' && !Array.isArray(uData.userAnswers)) {
+      const incomingAnswers = uData.userAnswers as Record<string, string>;
+      const incomingJson = JSON.stringify(incomingAnswers);
+      const app = (window as unknown as { d3k1App?: { state?: { userAnswers: Record<string, string> } } }).d3k1App;
+
+      if (incomingJson !== lastSyncedAnswersJson) {
+        if (!syncTimeout) {
+          if (app?.state) {
+            app.state.userAnswers = { ...incomingAnswers };
+            try {
+              localStorage.setItem('d3k1_user_answers_v1', JSON.stringify(app.state.userAnswers));
+            } catch {}
+            lastSyncedAnswersJson = incomingJson;
+            refreshAppUI();
+          }
+        }
+      }
+    }
+  }, (err) => {
+    console.warn('Realtime user doc sync listener warning:', err);
+  });
+  activeUnsubscribers.push(unsubUser);
+
+  // 2. Real-time bookmarks listener
+  const unsubBookmarks = onSnapshot(collection(db, 'users', user.uid, 'bookmarks'), (snap) => {
+    if (snap.metadata.hasPendingWrites) return;
+
+    const app = (window as unknown as { d3k1App?: { state?: { favorites: Set<string> } } }).d3k1App;
+    const newBookmarkIds = new Set<string>();
+    const newFavorites = new Set<string>();
+
+    snap.forEach((d) => {
+      newBookmarkIds.add(d.id);
+      const data = d.data();
+      if (data.questionId) {
+        newFavorites.add(String(data.questionId));
+      }
+    });
+
+    const newFavSortedJson = JSON.stringify(Array.from(newFavorites).sort());
+    if (newFavSortedJson !== lastSyncedFavoritesJson && !syncTimeout) {
+      cloudBookmarkIds.clear();
+      newBookmarkIds.forEach(id => cloudBookmarkIds.add(id));
+
+      if (app?.state) {
+        app.state.favorites = newFavorites;
+        try {
+          localStorage.setItem('d3k1_favorites_v1', JSON.stringify(Array.from(newFavorites)));
+        } catch {}
+        lastSyncedFavoritesJson = newFavSortedJson;
+        refreshAppUI();
+      }
+    }
+  }, (err) => {
+    console.warn('Realtime bookmarks sync listener warning:', err);
+  });
+  activeUnsubscribers.push(unsubBookmarks);
+
+  // 3. Real-time examResults listener
+  const unsubExams = onSnapshot(collection(db, 'users', user.uid, 'examResults'), (snap) => {
+    if (snap.metadata.hasPendingWrites) return;
+    if (snap.empty) return;
+
+    try {
+      const rawHistory = localStorage.getItem('d3k1_exam_history_v1');
+      let localHistory: any[] = rawHistory ? JSON.parse(rawHistory) : [];
+      if (!Array.isArray(localHistory)) localHistory = [];
+      let addedAny = false;
+
+      snap.forEach((d) => {
+        const data = d.data();
+        const cloudItem = {
+          id: d.id,
+          date: data.completedAt || new Date().toISOString(),
+          kurul: data.kurul || data.kurulId || '',
+          score: typeof data.score === 'number' ? data.score : 0,
+          correctCount: typeof data.correctCount === 'number' ? data.correctCount : 0,
+          wrongCount: typeof data.wrongCount === 'number' ? data.wrongCount : 0,
+          emptyCount: typeof data.emptyCount === 'number' ? data.emptyCount : 0,
+          totalQuestions: typeof data.totalQuestions === 'number' ? data.totalQuestions : 0,
+          durationSeconds: typeof data.durationSeconds === 'number' ? data.durationSeconds : 0,
+        };
+
+        const isDuplicate = localHistory.some((loc) => {
+          const dateMatch = loc.date === cloudItem.date || loc.completedAt === cloudItem.date;
+          const kurulMatch = (loc.kurul || '') === cloudItem.kurul;
+          const scoreMatch = loc.score === cloudItem.score;
+          const totalMatch = loc.totalQuestions === cloudItem.totalQuestions;
+          return (dateMatch && kurulMatch && scoreMatch) || (loc.id && loc.id === cloudItem.id);
+        });
+
+        if (!isDuplicate) {
+          localHistory.push(cloudItem);
+          addedAny = true;
+        }
+      });
+
+      if (addedAny) {
+        localHistory.sort((a, b) => {
+          const tA = new Date(a.date || a.completedAt || 0).getTime();
+          const tB = new Date(b.date || b.completedAt || 0).getTime();
+          return tB - tA;
+        });
+        if (localHistory.length > 50) localHistory = localHistory.slice(0, 50);
+        try {
+          localStorage.setItem('d3k1_exam_history_v1', JSON.stringify(localHistory));
+        } catch {}
+        (window as unknown as { d3k1App?: { renderStatsTables?: () => void } }).d3k1App?.renderStatsTables?.();
+      }
+    } catch (err) {
+      console.warn('Realtime exam results listener processing error:', err);
+    }
+  }, (err) => {
+    console.warn('Realtime exam results sync listener warning:', err);
+  });
+  activeUnsubscribers.push(unsubExams);
+}
+
+async function executeProgressSync(user: User, favsArg?: string[], userAnswersArg?: Record<string, string>): Promise<void> {
+  if (!isInitialCloudSyncComplete) return;
+
+  try {
+    const app = (window as unknown as {
+      d3k1App?: {
+        state?: { favorites?: Set<string>; userAnswers?: Record<string, string> };
+      };
+    }).d3k1App;
+
+    // Determine current favorites
+    const favList: string[] = (favsArg && Array.isArray(favsArg))
+      ? favsArg
+      : (app?.state?.favorites ? Array.from(app.state.favorites) : []);
+
+    const currentSanitizedMap = new Map<string, string>();
+    for (const qid of favList) {
+      const sanitizedId = String(qid).replace(/[^a-zA-Z0-9_-]/g, '_');
+      if (sanitizedId) {
+        currentSanitizedMap.set(sanitizedId, String(qid));
+      }
+    }
+
+    const currentSanitizedIds = new Set(currentSanitizedMap.keys());
+    const now = new Date().toISOString();
+
+    const toAdd: { id: string; qid: string }[] = [];
+    currentSanitizedMap.forEach((qid, sId) => {
+      if (!cloudBookmarkIds.has(sId)) {
+        toAdd.push({ id: sId, qid });
+      }
+    });
+
+    const toDelete: string[] = [];
+    cloudBookmarkIds.forEach((sId) => {
+      if (!currentSanitizedIds.has(sId)) {
+        toDelete.push(sId);
+      }
+    });
+
+    if (toAdd.length > 0 || toDelete.length > 0) {
+      const batch = writeBatch(db);
+      const batchAdd = toAdd.slice(0, 200);
+      const batchDelete = toDelete.slice(0, 200);
+
+      for (const item of batchAdd) {
+        const bmRef = doc(db, 'users', user.uid, 'bookmarks', item.id);
+        batch.set(bmRef, {
+          userId: user.uid,
+          questionId: item.qid,
+          createdAt: now,
+        }, { merge: true });
+      }
+
+      for (const delId of batchDelete) {
+        const bmRef = doc(db, 'users', user.uid, 'bookmarks', delId);
+        batch.delete(bmRef);
+      }
+
+      await batch.commit();
+
+      batchAdd.forEach(item => cloudBookmarkIds.add(item.id));
+      batchDelete.forEach(delId => cloudBookmarkIds.delete(delId));
+      lastSyncedFavoritesJson = JSON.stringify(Array.from(currentSanitizedMap.values()).sort());
+    }
+
+    // Sync user profile document (including userAnswers)
+    const currentAnswers: Record<string, string> =
+      (userAnswersArg && typeof userAnswersArg === 'object')
+        ? userAnswersArg
+        : (app?.state?.userAnswers && typeof app.state.userAnswers === 'object' ? app.state.userAnswers : {});
+
+    const userRef = doc(db, 'users', user.uid);
+    await setDoc(userRef, {
+      userId: user.uid,
+      email: user.email || '',
+      updatedAt: now,
+      lastActiveAt: now,
+      userAnswers: currentAnswers,
+    }, { mergeFields: ['userId', 'email', 'updatedAt', 'lastActiveAt', 'userAnswers'] });
+
+    lastSyncedAnswersJson = JSON.stringify(currentAnswers);
+
+    const syncBadge = document.getElementById('cloud-sync-status');
+    if (syncBadge) {
+      syncBadge.textContent = 'Senkronize Edildi';
+    }
+  } catch (err) {
+    console.warn('Cloud sync error:', err);
+    const syncBadge = document.getElementById('cloud-sync-status');
+    if (syncBadge) {
+      syncBadge.textContent = 'Çevrimdışı (Yerel Kaydedildi)';
+    }
   }
 }
 
 let syncTimeout: number | null = null;
+let pendingFavsArg: string[] | undefined;
+let pendingAnswersArg: Record<string, string> | undefined;
+
 export function syncProgressToCloud(userArg?: User, favsArg?: string[], userAnswersArg?: Record<string, string>): void {
+  if (!isInitialCloudSyncComplete) return;
+
+  const user = userArg || auth.currentUser;
+  if (!user) return;
+
+  if (favsArg) pendingFavsArg = favsArg;
+  if (userAnswersArg) pendingAnswersArg = userAnswersArg;
+
+  const syncBadge = document.getElementById('cloud-sync-status');
+  if (syncBadge) {
+    syncBadge.textContent = 'Senkronize ediliyor...';
+  }
+
   if (syncTimeout) window.clearTimeout(syncTimeout);
 
   syncTimeout = window.setTimeout(async () => {
-    const user = userArg || auth.currentUser;
-    if (!user) return;
+    syncTimeout = null;
+    const fArg = pendingFavsArg;
+    const aArg = pendingAnswersArg;
+    pendingFavsArg = undefined;
+    pendingAnswersArg = undefined;
+    await executeProgressSync(user, fArg, aArg);
+  }, 350);
+}
 
-    try {
-      const app = (window as unknown as {
-        d3k1App?: {
-          state?: { favorites?: Set<string>; userAnswers?: Record<string, string> };
-        };
-      }).d3k1App;
-
-      // Determine current favorites
-      const favList: string[] = (favsArg && Array.isArray(favsArg))
-        ? favsArg
-        : (app?.state?.favorites ? Array.from(app.state.favorites) : []);
-
-      // Build sanitized ID map: sanitizedId -> original qid
-      const currentSanitizedMap = new Map<string, string>();
-      for (const qid of favList) {
-        const sanitizedId = String(qid).replace(/[^a-zA-Z0-9_-]/g, '_');
-        if (sanitizedId) {
-          currentSanitizedMap.set(sanitizedId, String(qid));
-        }
-      }
-
-      const currentSanitizedIds = new Set(currentSanitizedMap.keys());
-      const now = new Date().toISOString();
-
-      // Find new bookmarks to add (in currentSanitizedIds but not in cloudBookmarkIds)
-      const toAdd: { id: string; qid: string }[] = [];
-      currentSanitizedMap.forEach((qid, sId) => {
-        if (!cloudBookmarkIds.has(sId)) {
-          toAdd.push({ id: sId, qid });
-        }
-      });
-
-      // Find removed bookmarks to delete (in cloudBookmarkIds but not in currentSanitizedIds)
-      const toDelete: string[] = [];
-      cloudBookmarkIds.forEach((sId) => {
-        if (!currentSanitizedIds.has(sId)) {
-          toDelete.push(sId);
-        }
-      });
-
-      // Execute batch operations if there are bookmarks to add or delete
-      if (toAdd.length > 0 || toDelete.length > 0) {
-        const batch = writeBatch(db);
-        // Limit batch operations to stay safely below 500
-        const batchAdd = toAdd.slice(0, 200);
-        const batchDelete = toDelete.slice(0, 200);
-
-        for (const item of batchAdd) {
-          const bmRef = doc(db, 'users', user.uid, 'bookmarks', item.id);
-          batch.set(bmRef, {
-            userId: user.uid,
-            questionId: item.qid,
-            createdAt: now,
-          }, { merge: true });
-        }
-
-        for (const delId of batchDelete) {
-          const bmRef = doc(db, 'users', user.uid, 'bookmarks', delId);
-          batch.delete(bmRef);
-        }
-
-        await batch.commit();
-
-        // Update local tracking set
-        batchAdd.forEach(item => cloudBookmarkIds.add(item.id));
-        batchDelete.forEach(delId => cloudBookmarkIds.delete(delId));
-      }
-
-      // Sync user profile document (including userAnswers if present)
-      const userRef = doc(db, 'users', user.uid);
-      const userUpdatePayload: Record<string, unknown> = {
-        userId: user.uid,
-        email: user.email || '',
-        updatedAt: now,
-        lastActiveAt: now,
-      };
-
-      if (userAnswersArg && typeof userAnswersArg === 'object') {
-        userUpdatePayload.userAnswers = userAnswersArg;
-      } else if (app?.state?.userAnswers && typeof app.state.userAnswers === 'object') {
-        userUpdatePayload.userAnswers = app.state.userAnswers;
-      }
-
-      await setDoc(userRef, userUpdatePayload, { merge: true });
-
-      const syncBadge = document.getElementById('cloud-sync-status');
-      if (syncBadge) {
-        syncBadge.textContent = '🟢 Senkronize Edildi';
-      }
-    } catch {
-      // Quiet background sync catch
-    }
-  }, 1200);
+export function flushProgressToCloudNow(): void {
+  if (syncTimeout) {
+    window.clearTimeout(syncTimeout);
+    syncTimeout = null;
+  }
+  const user = auth.currentUser;
+  if (user && isInitialCloudSyncComplete) {
+    const fArg = pendingFavsArg;
+    const aArg = pendingAnswersArg;
+    pendingFavsArg = undefined;
+    pendingAnswersArg = undefined;
+    executeProgressSync(user, fArg, aArg).catch(() => {});
+  }
 }
 
 export interface UserExamResultData {
@@ -923,8 +1273,7 @@ export function openAuthModal(defaultTab: 'login' | 'register' = 'login', custom
     if (customNotice) {
       const safeNotice = escapeHtml(customNotice);
       noticeBox.innerHTML = `
-        <div class="p-3.5 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/70 dark:to-orange-950/70 border border-amber-300 dark:border-amber-700 text-amber-900 dark:text-amber-200 text-xs flex items-start gap-2.5 shadow-sm">
-          <span class="text-base shrink-0">🔒</span>
+        <div class="p-3.5 rounded-md bg-amber-50 dark:bg-amber-950/70 border border-amber-300 dark:border-amber-700 text-amber-900 dark:text-amber-200 text-xs shadow-sm">
           <div class="leading-relaxed">
             <span class="font-extrabold block text-amber-950 dark:text-amber-100 mb-0.5">Soru Çözmek İçin Hesap Zorunludur</span>
             <span>${safeNotice}</span>
@@ -970,11 +1319,20 @@ export function openAuthModal(defaultTab: 'login' | 'register' = 'login', custom
     formsContainer?.classList.remove('hidden');
     profileContainer?.classList.add('hidden');
 
-    // Switch to desired tab
+    // Switch to desired tab (default to 'login')
     if (defaultTab === 'register') {
       switchToTab('register');
     } else {
       switchToTab('login');
+      try {
+        const loginEmailInput = document.getElementById('login-email') as HTMLInputElement | null;
+        if (loginEmailInput && !loginEmailInput.value) {
+          const savedEmail = localStorage.getItem('d3k1_last_auth_email');
+          if (savedEmail) {
+            loginEmailInput.value = savedEmail;
+          }
+        }
+      } catch {}
     }
   }
 
@@ -995,6 +1353,15 @@ function switchToTab(tab: 'login' | 'register'): void {
     formLogin?.classList.remove('hidden');
     formRegister?.classList.add('hidden');
     formForgot?.classList.add('hidden');
+    try {
+      const loginEmailInput = document.getElementById('login-email') as HTMLInputElement | null;
+      if (loginEmailInput && !loginEmailInput.value) {
+        const savedEmail = localStorage.getItem('d3k1_last_auth_email');
+        if (savedEmail) {
+          loginEmailInput.value = savedEmail;
+        }
+      }
+    } catch {}
   } else {
     if (tabRegister) tabRegister.className = 'flex-1 py-1.5 rounded-lg text-xs font-bold transition-all bg-white dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 shadow-sm';
     if (tabLogin) tabLogin.className = 'flex-1 py-1.5 rounded-lg text-xs font-bold transition-all text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200';
@@ -1008,22 +1375,17 @@ function injectAuthModalDOM(): void {
   const modalHTML = `
     <!-- Auth & Profile Modal Container -->
     <div id="auth-modal-root" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-in fade-in duration-200">
-      <div class="relative w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl overflow-hidden p-6 text-slate-900 dark:text-slate-100">
+      <div class="relative w-full max-w-md bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg shadow-lg overflow-hidden p-6 text-slate-900 dark:text-slate-100">
         
         <!-- Modal Kapatma Butonu -->
-        <button id="btn-close-auth-modal" type="button" class="absolute top-4 right-4 p-2 rounded-xl text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+        <button id="btn-close-auth-modal" type="button" class="absolute top-4 right-4 p-2 rounded-md text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
         </button>
 
-        <!-- Başlık ve İkon -->
-        <div class="flex items-center gap-3 mb-5">
-          <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center text-white text-xl shadow-md">
-            🩺
-          </div>
-          <div>
-            <h3 class="text-lg font-bold tracking-tight">Tıp Öğrencisi Hesabı</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400">Çıkmış soru çözümlerinizi ve favorilerinizi bulutta saklayın</p>
-          </div>
+        <!-- Başlık -->
+        <div class="mb-5">
+          <h3 class="text-lg font-bold tracking-tight">Tıp Öğrencisi Hesabı</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Çıkmış soru çözümlerinizi ve favorilerinizi bulutta saklayın</p>
         </div>
 
         <!-- Zorunlu Giriş Uyarısı -->
@@ -1078,7 +1440,7 @@ function injectAuthModalDOM(): void {
               <input id="reg-password" type="password" required minlength="6" placeholder="••••••••" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-xs sm:text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all" />
             </div>
 
-            <button id="btn-submit-register" type="submit" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 active:scale-[0.99] text-white text-xs sm:text-sm font-bold shadow-md transition-all flex items-center justify-center gap-2">
+            <button id="btn-submit-register" type="submit" class="w-full py-2.5 px-4 rounded-md bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold shadow-sm transition-colors flex items-center justify-center gap-2">
               <span>Hesap Oluştur ve Başla</span>
             </button>
           </form>
@@ -1106,18 +1468,16 @@ function injectAuthModalDOM(): void {
           </div>
 
           <!-- Google ile Giriş -->
-          <button id="btn-google-login" type="button" class="w-full py-2.5 px-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-bold shadow-sm transition-all flex items-center justify-center gap-2.5">
-            <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+          <button id="btn-google-login" type="button" class="w-full py-2.5 px-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-700 dark:text-slate-200 text-xs sm:text-sm font-bold shadow-sm transition-all flex items-center justify-center">
             <span>Google ile Hızlı Giriş</span>
           </button>
 
           <!-- Geri Bildirim ve Öneri Kutusu -->
           <div class="pt-3 mt-3 border-t border-slate-100 dark:border-slate-800 text-center space-y-1">
             <div class="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
-              💡 Öneri, soru veya geri bildirimleriniz için:
+              Öneri, soru veya geri bildirimleriniz için:
             </div>
-            <a href="mailto:${ADMIN_EMAIL}?subject=AES%20d3k1%20Öneri%20ve%20Geri%20Bildirim" class="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline">
-              <span>✉️</span>
+            <a href="mailto:${ADMIN_EMAIL}?subject=AES%20d3k1%20Öneri%20ve%20Geri%20Bildirim" class="inline-flex items-center text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline">
               <span class="font-mono">${ADMIN_EMAIL}</span>
             </a>
           </div>
@@ -1126,10 +1486,9 @@ function injectAuthModalDOM(): void {
         <!-- 2. PROFİL DETAYLARI GÖRÜNÜMÜ (Oturum Açıkken) -->
         <div id="auth-profile-container" class="hidden space-y-4">
           <!-- Yönetici Rozeti ve Yönlendirme -->
-          <div id="profile-admin-badge-box" class="hidden p-3.5 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/40 dark:to-orange-950/40 border border-amber-300 dark:border-amber-700/60 flex items-center justify-between gap-3">
+          <div id="profile-admin-badge-box" class="hidden p-3.5 rounded-md bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-700/60 flex items-center justify-between gap-3">
             <div>
-              <div class="text-xs font-extrabold text-amber-900 dark:text-amber-200 flex items-center gap-1.5">
-                <span>👑</span>
+              <div class="text-xs font-extrabold text-amber-900 dark:text-amber-200">
                 <span>Yönetici Hesabı (Salt Okunur)</span>
               </div>
               <div class="text-[11px] text-amber-700 dark:text-amber-400">Kullanıcıları ve istatistikleri izleme modundasınız.</div>
@@ -1142,7 +1501,7 @@ function injectAuthModalDOM(): void {
           <div class="p-4 rounded-2xl bg-indigo-50/60 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/50 space-y-2">
             <div class="flex items-center justify-between">
               <span class="text-xs font-semibold text-slate-500 dark:text-slate-400">Giriş Yapılan Hesap</span>
-              <span id="cloud-sync-status" class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">🟢 Bulut Senkronizasyonu Aktif</span>
+              <span id="cloud-sync-status" class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">Bulut Senkronizasyonu Aktif</span>
             </div>
             <div class="font-bold text-slate-900 dark:text-slate-100" id="profile-display-name">Öğrenci</div>
             <div class="text-xs text-slate-600 dark:text-slate-300 font-mono" id="profile-display-email">ogrenci@tip.edu.tr</div>
@@ -1162,11 +1521,8 @@ function injectAuthModalDOM(): void {
           <!-- Çalışma Süresi ve Canlı Durum Kartı -->
           <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/80 space-y-2">
             <div class="flex items-center justify-between text-xs font-bold text-slate-700 dark:text-slate-300">
-              <span class="flex items-center gap-1.5">
-                <span>⏱️</span>
-                <span>Çalışma Süresi Takibi</span>
-              </span>
-              <span id="profile-stat-activity" class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">🟢 Şu An Aktif</span>
+              <span>Çalışma Süresi Takibi</span>
+              <span id="profile-stat-activity" class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">Şu An Aktif</span>
             </div>
             <div class="grid grid-cols-2 gap-2 text-center pt-1">
               <div class="p-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800">
@@ -1182,10 +1538,10 @@ function injectAuthModalDOM(): void {
 
           <div class="space-y-2 pt-2">
             <button id="btn-send-reset-from-profile" type="button" class="w-full py-2 px-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-200 transition-colors">
-              🔑 Şifremi Değiştir (E-posta İste)
+              Şifremi Değiştir (E-posta İste)
             </button>
             <button id="btn-logout" type="button" class="w-full py-2.5 px-3 rounded-xl bg-rose-50 dark:bg-rose-950/40 hover:bg-rose-100 dark:hover:bg-rose-900/40 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-900/50 text-xs sm:text-sm font-bold transition-colors">
-              🚪 Oturumu Kapat
+              Oturumu Kapat
             </button>
           </div>
         </div>
@@ -1412,7 +1768,7 @@ function setupAuthEventListeners(): void {
       submitBtn.disabled = true;
       submitBtn.textContent = 'Gönderiliyor...';
       await sendPasswordResetEmail(auth, email);
-      showFeedback('✅ Şifre sıfırlama bağlantısı e-posta adresinize gönderildi. Lütfen gelen kutunuzu kontrol ediniz.', false);
+      showFeedback('Şifre sıfırlama bağlantısı e-posta adresinize gönderildi. Lütfen gelen kutunuzu kontrol ediniz.', false);
     } catch (err: unknown) {
       const error = err as { code?: string; message?: string };
       console.error('Forgot error:', error);
@@ -1431,7 +1787,21 @@ function setupAuthEventListeners(): void {
       modalRoot?.classList.add('hidden');
     } catch (err: unknown) {
       const error = err as { code?: string; message?: string };
-      console.error('Google sign-in error:', error);
+      console.warn('Google sign-in popup error:', error);
+      if (
+        error.code === 'auth/popup-blocked' ||
+        error.code === 'auth/cancelled-popup-request' ||
+        error.code === 'auth/operation-not-supported-in-this-environment'
+      ) {
+        try {
+          await signInWithRedirect(auth, googleProvider);
+          return;
+        } catch (redirectErr) {
+          console.error('Google sign-in redirect error:', redirectErr);
+          showFeedback('Google ile yönlendirme sırasında bir sorun oluştu.', true);
+          return;
+        }
+      }
       if (error.code !== 'auth/popup-closed-by-user') {
         showFeedback('Google ile giriş yapılırken bir sorun oluştu.', true);
       }
