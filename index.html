@@ -415,6 +415,10 @@
           <span id="theme-toggle-icon" class="hidden"></span>
           <span id="theme-toggle-text">Koyu Mod</span>
         </button>
+        <button id="btn-open-calculator" type="button" class="px-2.5 py-1.5 rounded-xl border border-indigo-200 bg-indigo-50 hover:bg-indigo-100 text-xs font-bold text-indigo-700 transition-colors flex items-center gap-1.5 cursor-pointer" title="MedNot Tıp Fakültesi Not Hesaplama Aracı">
+          <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.85" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path stroke-linecap="round" d="M8 6h8M8 10h2M12 10h4M8 14h2M12 14h4M8 18h2M12 18h4"/></svg>
+          <span>Not Hesapla</span>
+        </button>
         <button id="btn-open-welcome-modal" type="button" class="px-2.5 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 transition-colors flex items-center gap-1.5" title="Uygulama Rehberi">
           <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="1.85" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.25v13m0-13C10.83 5.48 9.25 5 7.5 5S4.17 5.48 3 6.25v13C4.17 18.48 5.75 18 7.5 18s3.33.48 4.5 1.25m0-13C13.17 5.48 14.75 5 16.5 5c1.75 0 3.33.48 4.5 1.25v13C19.83 18.48 18.25 18 16.5 18c-1.75 0-3.33.48-4.5 1.25"/></svg>
           <span>Rehber</span>
@@ -1135,6 +1139,13 @@
       </div>
     </div>
 
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 4. MEDNOT TIP FAKÜLTESİ NOT HESAPLAMA ARACI (#calculator-screen)      -->
+  <!-- ===================================================================== -->
+  <section id="calculator-screen" class="hidden flex-1 max-w-[1600px] w-full mx-auto p-4 sm:p-6 lg:p-8 flex flex-col gap-6">
+    <div id="calculator-screen-root"></div>
   </section>
 
   <!-- Görsel Büyütme (Lightbox) Modalı -->
@@ -2134,6 +2145,11 @@
         return;
       }
 
+      if (rawPath.includes('not-hesapla') || window.location.hash === '#not-hesapla' || window.location.hash === '#/not-hesapla') {
+        showCalculatorScreen();
+        return;
+      }
+
       const m = rawPath.match(/\/(?:kurul-([1-7])|(d[12]-[1-6]))(?:\/(sinav|analiz))?/i);
       _suppressUrlPush = true;
       try {
@@ -2149,6 +2165,48 @@
         _suppressUrlPush = false;
       }
       syncUrlRoute(true);
+    }
+
+    function showCalculatorScreen() {
+      if (state.examTimerId) clearInterval(state.examTimerId);
+      if (state.examActive) clearActiveExamState();
+      state.examActive = false;
+      state.examFinished = false;
+      state.activeKurul = null;
+      state.currentKurul = null;
+
+      document.getElementById('home-screen').classList.add('hidden');
+      const adminScreen = document.getElementById('admin-screen');
+      if (adminScreen) adminScreen.classList.add('hidden');
+      const ws = document.getElementById('app-workspace');
+      ws.classList.add('hidden');
+      ws.classList.remove('flex');
+
+      const calcScreen = document.getElementById('calculator-screen');
+      if (calcScreen) {
+        calcScreen.classList.remove('hidden');
+        calcScreen.classList.add('flex');
+      }
+
+      document.getElementById('header-mode-tabs').classList.add('hidden');
+      document.getElementById('btn-view-toggle').classList.add('hidden');
+      document.getElementById('btn-view-toggle').classList.remove('flex');
+      document.getElementById('btn-mobile-sidebar').classList.add('hidden');
+
+      document.getElementById('header-kurul-select').value = 'home';
+      document.getElementById('hdr-title').textContent = 'MedNot • Tıp Fakültesi Not Hesaplama Aracı';
+      document.getElementById('hdr-subtitle').textContent = 'Kurul Ortalaması, 50 Final Barajı ve Finalsiz Geçme Hesaplayıcı';
+      document.getElementById('hdr-kurul-icon').textContent = '';
+
+      if (window.location.protocol !== 'file:') {
+        if (`${window.location.pathname}${window.location.hash}` !== '/#/not-hesapla') {
+          try { window.history.pushState({ mode: 'calculator' }, '', '/#/not-hesapla'); } catch (e) {}
+        }
+      } else {
+        if (window.location.hash !== '#/not-hesapla') window.location.hash = '#/not-hesapla';
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     let _adminCachedUsers = null;
@@ -2172,6 +2230,8 @@
       state.currentKurul = null;
 
       document.getElementById('home-screen').classList.add('hidden');
+      const calcScreen = document.getElementById('calculator-screen');
+      if (calcScreen) calcScreen.classList.add('hidden');
       const ws = document.getElementById('app-workspace');
       ws.classList.add('hidden');
       ws.classList.remove('flex');
@@ -2452,6 +2512,8 @@
 
       const adminScreen = document.getElementById('admin-screen');
       if (adminScreen) adminScreen.classList.add('hidden');
+      const calcScreen = document.getElementById('calculator-screen');
+      if (calcScreen) calcScreen.classList.add('hidden');
 
       document.getElementById('home-screen').classList.remove('hidden');
       const ws = document.getElementById('app-workspace');
@@ -5272,6 +5334,10 @@
         }
       }
 
+      document.getElementById('btn-open-calculator')?.addEventListener('click', () => {
+        showCalculatorScreen();
+      });
+
       window.d3k1App = {
         state,
         saveUserProgress,
@@ -5290,6 +5356,7 @@
         refreshAllUI,
         showHomeScreen,
         showAdminScreen,
+        showCalculatorScreen,
         renderAdminScreen,
         showToast
       };
@@ -5305,5 +5372,6 @@
   </script>
 
   <script type="module" src="/src/auth-ui.ts"></script>
+  <script type="module" src="/src/grade-calculator.ts"></script>
 </body>
 </html>
