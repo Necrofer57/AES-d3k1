@@ -25,6 +25,11 @@ import {
   Unsubscribe,
 } from 'firebase/firestore';
 import { auth, googleProvider, db, authReadyPromise } from './firebase.ts';
+import {
+  initSubscriptionForUser,
+  clearSubscriptionState,
+  subscriptionService,
+} from './subscription.ts';
 
 // Designated Read-Only Admin Email
 export const ADMIN_EMAIL = 'sezgin45efe@gmail.com';
@@ -504,6 +509,7 @@ export function initAuthUI(): void {
     flushProgressToCloudNow,
     loadCloudBookmarks,
     escapeHtml,
+    subscription: subscriptionService,
   };
 }
 
@@ -660,10 +666,14 @@ async function onUserSignedIn(user: User): Promise<void> {
 
   // 3. Setup real-time listeners for cross-device synchronization
   setupRealtimeCloudSync(user);
+
+  // 4. Initialize dormant subscription infrastructure (no-op while VITE_SUBSCRIPTIONS_ENABLED !== 'true')
+  initSubscriptionForUser(user.uid);
 }
 
 function onUserSignedOut(): void {
   cleanupCloudListeners();
+  clearSubscriptionState();
   isInitialCloudSyncComplete = false;
   lastSyncedAnswersJson = '';
   lastSyncedFavoritesJson = '';

@@ -113,6 +113,62 @@
         "totalQuestions",
         "correctCount"
       ]
+    },
+    "UserSubscription": {
+      "title": "UserSubscription",
+      "description": "Server-managed subscription state for a user account (read-only for clients)",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "plan": {
+          "type": "string",
+          "enum": ["free", "monthly", "semester", "yearly", "lifetime"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["inactive", "trialing", "active", "past_due", "canceled", "expired"]
+        },
+        "provider": {
+          "type": "string",
+          "enum": ["none", "iyzico", "stripe", "paddle", "lemonsqueezy", "manual"]
+        },
+        "providerCustomerId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "providerSubscriptionId": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "currentPeriodStart": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "currentPeriodEnd": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "trialEndsAt": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "cancelAtPeriodEnd": {
+          "type": "boolean"
+        },
+        "updatedAt": {
+          "type": "string",
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "userId",
+        "plan",
+        "status",
+        "provider"
+      ]
     }
   },
   "firestore": {
@@ -127,6 +183,10 @@
     "/users/{userId}/examResults/{resultId}": {
       "schema": "UserExamResult",
       "description": "Exam and trial session history and scores for the user."
+    },
+    "/users/{userId}/subscription/{subId}": {
+      "schema": "UserSubscription",
+      "description": "Server-managed subscription document (canonical ID: current). Read-only for clients."
     }
   }
 }
